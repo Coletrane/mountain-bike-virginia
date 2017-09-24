@@ -3,7 +3,7 @@ const express = require('express');
 const compression = require('compression');
 
 const app = express();
-const PORT = 9001;
+const PORT = 9002;
 
 app.use(compression());
 app.use(express.static('dist'));
