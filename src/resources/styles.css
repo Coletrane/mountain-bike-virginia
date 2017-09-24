@@ -7,35 +7,104 @@
 }
 
 .navlink :hover {
-    color: rgba(255,255,255,0.65)
+    color: rgba(255, 255, 255, 0.65)
 }
 
 .logos {
     background-color: white;
 }
 
-body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+.logos-container {
+    padding: 1rem;
 }
+
+@media screen and (min-width: 768px) {
+    .logos {
+        width: 40rem !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logos {
+        width: 30rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logos {
+        width: 20rem !important;
+    }
+}
+.ytWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+.ytWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.yt-container {
+    max-width: 720px !important;
+}
+
+footer {
+    padding: 3rem 1.5rem 0 !important;
+}
+
+.copyright {
+    padding-top: 1rem !important;
+    color: white !important;
+}
+
+.github {
+    width: 3rem !important;
+    max-width: 10rem !important;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 .header-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.69)),url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.69) !important;
 
 }
-.is-outlined {
-    background-color:transparent;
-    color:#fff;
+
+.footer-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/blue_ridge_mountains.jpg');
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.69) !important;
 }
+.is-outlined {
+    background-color: transparent;
+    color: #fff;
+}
+
 .hero-cta {
     padding: 30px 0;
 }
+
 .panel-block.section p {
     font-size: 17px;
     line-height: 1.4;
-    color:#95A5A6;
+    color: #95A5A6;
 }
+
 .section.main {
-    background-color:#F0F0F0;
+    background-color: #F0F0F0;
 }
+
 .icon-block {
-    font-size:5em;
+    font-size: 5em;
 }

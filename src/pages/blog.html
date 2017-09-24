@@ -1,7 +1,7 @@
 <template>
   <div class="section main">
-    <div class="container">
-        <div repeat.for="post of posts">
+        <div repeat.for="post of posts"
+             class="container yt-container">
           <compose if.bind="post.type === 'generic'"
                    view-model="./blog-posts/generic">
 
@@ -12,7 +12,6 @@
 
           </compose>
         </div>
-      </div>
     </div>
   </div>
 </template>
