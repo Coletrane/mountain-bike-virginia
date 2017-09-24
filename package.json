@@ -14,6 +14,7 @@
     "bluebird": "^3.4.1",
     "bulma": "^0.5.3",
     "compression": "^1.7.0",
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
     "newrelic": "^2.2.1"
   },
@@ -64,8 +65,8 @@
     "node": ">= 6.0.0"
   },
   "scripts": {
-    "dev": "au run --watch --hmr",
-    "build": "au build",
+    "dev": "au run --watch --hmr --env dev",
+    "build": "au build --env prod",
     "start": "node ./main.js"
   },
   "main": "dist/app.bundle.js"

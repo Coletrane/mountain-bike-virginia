@@ -6,3 +6,11 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":31889,"time":"2017-09-24T03:43:17.946Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":31889,"time":"2017-09-24T03:43:19.498Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1701365/applications/82989772","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":31889,"time":"2017-09-24T03:43:19.501Z","msg":"Connected to collector-166.newrelic.com:443 with agent run ID 356438361582490586.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46761,"time":"2017-09-24T15:17:34.907Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v7.8.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46761,"time":"2017-09-24T15:17:35.602Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46761,"time":"2017-09-24T15:17:37.146Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46761,"time":"2017-09-24T15:17:37.147Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 146703537546795970.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46985,"time":"2017-09-24T15:26:02.268Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v7.8.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46985,"time":"2017-09-24T15:26:02.627Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46985,"time":"2017-09-24T15:26:04.181Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":46985,"time":"2017-09-24T15:26:04.182Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 146703537546817384.","component":"collector_api"}
