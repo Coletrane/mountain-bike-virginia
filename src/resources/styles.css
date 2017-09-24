@@ -1,0 +1,41 @@
+.xxcva {
+    width: 8rem;
+}
+
+.navlink {
+    color: white !important;
+}
+
+.navlink :hover {
+    color: rgba(255,255,255,0.65)
+}
+
+.logos {
+    background-color: white;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.69)),url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
+
+}
+.is-outlined {
+    background-color:transparent;
+    color:#fff;
+}
+.hero-cta {
+    padding: 30px 0;
+}
+.panel-block.section p {
+    font-size: 17px;
+    line-height: 1.4;
+    color:#95A5A6;
+}
+.section.main {
+    background-color:#F0F0F0;
+}
+.icon-block {
+    font-size:5em;
+}

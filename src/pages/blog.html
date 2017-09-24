@@ -1,0 +1,18 @@
+<template>
+  <div class="section main">
+    <div class="container">
+        <div repeat.for="post of posts">
+          <compose if.bind="post.type === 'generic'"
+                   view-model="./blog-posts/generic">
+
+          </compose>
+          <compose if.bind="post.type === 'youtube'"
+                   view-model="./blog-posts/youtube"
+                   model.bind="post.url">
+
+          </compose>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
