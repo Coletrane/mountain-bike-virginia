@@ -1,3 +1,28 @@
 <template>
+  <div class="columns">
+    <div class="column">
+      <img src="../../resources/img/creature.png"
+           class="blog-img">
+    </div>
 
+    <div class="column">
+      <h1 class="title">${title}</h1>
+      <h2 class="subtitle">${subtitle}</h2>
+      <p>${content}</p>
+      <p>
+        <span repeat.for="link of links">
+        <a if.bind="link.url !== null"
+           href="link.url">
+          ${link.words}
+        </a>
+        <span if.bind="link.url === null">
+          ${link.words}
+        </span>
+        </span>
+      </p>
+      <compose view-model="./facebook"
+               if.bind="fb">
+      </compose>
+    </div>
+  </div>
 </template>

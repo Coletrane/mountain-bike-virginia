@@ -1,17 +1,19 @@
 <template>
-  <div class="section main">
-        <div repeat.for="post of posts"
-             class="container yt-container">
-          <compose if.bind="post.type === 'generic'"
-                   view-model="./blog-posts/generic">
+  <div class="section main blog">
+    <div repeat.for="post of posts"
+         class="container blog-container">
+      <compose if.bind="post.type === 'generic'"
+               view-model="./blog-posts/generic"
+               model.bind="post">
+      </compose>
 
-          </compose>
-          <compose if.bind="post.type === 'youtube'"
-                   view-model="./blog-posts/youtube"
-                   model.bind="post.url">
+      <div class="yt-container" if.bind="post.type === 'youtube'">
+        <compose view-model="./blog-posts/youtube"
+                 model.bind="post.url">
 
-          </compose>
-        </div>
+        </compose>
+      </div>
     </div>
+  </div>
   </div>
 </template>

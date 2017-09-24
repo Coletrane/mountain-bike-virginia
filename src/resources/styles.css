@@ -1,15 +1,43 @@
 .xxcva {
-    width: 8rem;
+    height: 4rem;
+    width: auto;
+}
+
+.fb {
+    width: 5rem !important;
+}
+
+a:hover{
+    color: #e96a25 !important;
+}
+
+button:focus, .button.is-focused {
+    border-color: #e96a25 !important;
 }
 
 .navlink {
     color: white !important;
 }
 
-.navlink :hover {
-    color: rgba(255, 255, 255, 0.65)
+.nav-item img {
+    max-height: 4rem !important;
 }
 
+.nav {
+    height: 6rem !important;
+}
+.blog-container {
+    padding-bottom: 2rem;
+}
+
+.blog-img {
+    display: block;
+    margin: auto;
+}
+
+.blog {
+    padding: 1.5rem;
+}
 .logos {
     background-color: white;
 }
@@ -51,6 +79,7 @@
 
 .yt-container {
     max-width: 720px !important;
+    margin: auto;
 }
 
 footer {

@@ -1,27 +1,26 @@
 <template>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <section class="hero is-primary is-large header-image">
     <div class="hero-head">
       <header class="nav">
         <div class="container">
           <div class="nav-left">
-            <a>
+            <span class="nav-item">
               <img class="xxcva" src="./resources/img/XXCVA.jpg" alt="XXCVA">
-            </a>
+            </span>
           </div>
-          <span class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <div class="nav-right nav-menu">
-            <a class="navlink nav-item">
-              Ride
-            </a>
-            <a class="navlink nav-item">
-              Race!
-            </a>
-            <a class="navlink nav-item fb">
-              <img src="./resources/img/fb.svg">
+          <div class="nav-right">
+            <a class="navlink nav-item fb"
+               href="https://www.facebook.com/xxcva/">
+              <img class="fb" src="./resources/img/fb.svg">
             </a>
           </div>
         </div>
@@ -36,7 +35,8 @@
           Exposing the trove of trails in Southwestern Virginia
         </h2>
         <p>
-          <a class="button is-outlined">
+          <a class="button is-outlined"
+             href="https://www.facebook.com/pg/xxcva/events/">
             <span>
               Ride or Race with us
             </span>
@@ -109,7 +109,7 @@
     <div class="container copyright">
       <div class="content has-text-centered">
         <p>
-          © 2017 Virginia Championship Comission, LLC
+          © 2017 Virginia Championship Comission, Inc.
         </p>
         <p>
           Developed by Cole Inman.
