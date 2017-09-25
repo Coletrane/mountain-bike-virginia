@@ -15,6 +15,14 @@ button:focus, .button.is-focused {
     border-color: #e96a25 !important;
 }
 
+.button {
+    background-color: transparent;
+}
+
+.ride-race {
+    color: white;
+}
+
 .navlink {
     color: white !important;
 }
