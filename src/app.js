@@ -14,8 +14,14 @@ export class App {
         nav: true,
       },
       {
-        route: 'race',
-        name: 'race',
+        route: 'results',
+        name: 'results',
+        moduleId: PLATFORM.moduleName('./pages/results'),
+        nav: true,
+      },
+      {
+        route: 'race-ride',
+        name: 'race-ride',
         moduleId: PLATFORM.moduleName('./pages/race'),
         nav: true,
       }

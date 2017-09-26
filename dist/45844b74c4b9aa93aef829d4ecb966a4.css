@@ -1,142 +1,201 @@
 .xxcva {
-    height: 4rem;
-    width: auto;
+  height: 4rem;
+  width: auto;
 }
 
 .fb {
-    width: 5rem !important;
+  width: 3rem !important;
 }
 
-a:hover{
-    color: #e96a25 !important;
+a svg:hover .svg-hov {
+  fill: #e96a25;
 }
 
-button:focus, .button.is-focused {
-    border-color: #e96a25 !important;
+a:hover {
+  color: #e96a25 !important;
+}
+
+.button:focus, .button.is-focused {
+  border-color: #e96a25 !important;
+}
+
+.button {
+  background-color: transparent !important;
+}
+
+.ride-race {
+  color: white;
+}
+
+.ride-race:hover {
+  color: #e96a25 !important;
 }
 
 .navlink {
-    color: white !important;
+  color: white !important;
 }
 
 .nav-item img {
-    max-height: 4rem !important;
+  max-height: 4rem !important;
 }
 
 .nav {
-    height: 6rem !important;
+  height: 6rem !important;
 }
+
 .blog-container {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .blog-img {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .blog {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
+
 .logos {
-    background-color: white;
+  background-color: white;
 }
 
 .logos-container {
-    padding: 1rem;
+  padding: 1rem;
+}
+
+.section.main {
+  background-color: #989494 !important;;
+}
+
+.race-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+td, td {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.race-title {
+  margin-bottom: 0rem !important;
+}
+.results-subtitle {
+  padding-top: 2rem;
+  margin-bottom: 1rem !important;
+}
+.post-container {
+  margin-bottom: 2rem;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
+}
+
+.center-blog-title {
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-    .logos {
-        width: 40rem !important;
-    }
+  .logos {
+    width: 40rem !important;
+  }
 }
+
 @media screen and (max-width: 768px) {
-    .logos {
-        width: 30rem !important;
-    }
+  .logos {
+    width: 30rem !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .logos {
-        width: 20rem !important;
-    }
+  .logos {
+    width: 20rem !important;
+  }
 }
+
 .ytWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
 
 .ytWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .yt-container {
-    max-width: 720px !important;
-    margin: auto;
+  max-width: 720px !important;
+  margin: auto;
 }
 
 footer {
-    padding: 3rem 1.5rem 0 !important;
+  padding: 3rem 1.5rem 0 !important;
 }
 
 .copyright {
-    padding-top: 1rem !important;
-    color: white !important;
+  padding-top: 1rem !important;
+  color: white !important;
 }
 
 .github {
-    width: 3rem !important;
-    max-width: 10rem !important;
+  width: 3rem !important;
+  max-width: 10rem !important;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .header-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.69) !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.69) !important;
 
 }
 
 .footer-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url(/9069b3e00b14462bf8347a4862a8c728.jpg);
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.69) !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url(/9069b3e00b14462bf8347a4862a8c728.jpg);
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.69) !important;
 }
+
 .is-outlined {
-    background-color: transparent;
-    color: #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .hero-cta {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 
 .panel-block.section p {
-    font-size: 17px;
-    line-height: 1.4;
-    color: #95A5A6;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #95A5A6;
 }
 
 .section.main {
-    background-color: #F0F0F0;
+  background-color: #F0F0F0;
 }
 
 .icon-block {
-    font-size: 5em;
-}/*! bulma.io v0.5.3 | MIT License | github.com/jgthms/bulma */
+  font-size: 5em;
+}
+/*! bulma.io v0.5.3 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -10270,4 +10329,4 @@ label.panel-block:hover {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem;
 }
-/*# sourceMappingURL=app.54018ec985be3a477702.bundle.map*/
+/*# sourceMappingURL=app.112407f393727d643c7c.bundle.map*/

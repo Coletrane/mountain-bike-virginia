@@ -5,10 +5,17 @@
         <div class="container">
           <div class="nav-left">
             <span class="nav-item">
-              <img class="xxcva" src="./resources/img/XXCVA.jpg" alt="XXCVA">
+              <a href="" click.trigger="router.navigateToRoute('blog')">
+                <img class="xxcva" src="./resources/img/XXCVA.jpg" alt="XXCVA">
+              </a>
             </span>
           </div>
           <div class="nav-right">
+            <a class="navlink nav-item"
+               href=""
+               click.trigger="router.navigateToRoute('results')">
+              Results
+            </a>
             <a class="navlink nav-item fb"
                href="https://www.facebook.com/xxcva/">
               <img class="fb" src="./resources/img/fb.svg">
@@ -38,7 +45,9 @@
   </section>
 
   <section>
-    <router-view></router-view>
+    <div class="section main">
+        <router-view></router-view>
+    </div>
   </section>
 
   <footer class="footer footer-image">
@@ -70,6 +79,15 @@
 
         <div class="columns is-mobile">
           <div class="column">
+            <img src="./resources/img/parkway.jpg">
+          </div>
+          <div class="column">
+            <img src="./resources/img/outdoortrails.JPG">
+          </div>
+        </div>
+
+        <div class="columns is-mobile">
+          <div class="column">
             <img src="./resources/img/sbc.gif"
                  style="margin-top: 1rem">
           </div>
@@ -91,7 +109,8 @@
                  style="margin-top: 1.5rem">
           </div>
           <div class="column">
-            <img src="./resources/img/bath.jpg">
+            <img src="./resources/img/bath.jpg"
+                 style="margin-left: 2rem">
           </div>
         </div>
       </div>
