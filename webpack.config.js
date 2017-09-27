@@ -34,9 +34,9 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
   output: {
     path: outDir,
     publicPath: baseUrl,
-    filename: production ? '[name].[chunkhash].bundle.js' : '[name].[hash].bundle.js',
-    sourceMapFilename: production ? '[name].[chunkhash].bundle.map' : '[name].[hash].bundle.map',
-    chunkFilename: production ? '[name].[chunkhash].chunk.js' : '[name].[hash].chunk.js'
+    filename: production ? '[name].bundle.js' : '[name].[hash].bundle.js',
+    sourceMapFilename: production ? '[name].bundle.map' : '[name].[hash].bundle.map',
+    chunkFilename: production ? '[name].chunk.js' : '[name].[hash].chunk.js'
   },
   devServer: {
     contentBase: outDir,

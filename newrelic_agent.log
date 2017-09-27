@@ -30,3 +30,31 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":20320,"time":"2017-09-27T01:59:54.762Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":20320,"time":"2017-09-27T01:59:56.714Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Macintosh-2","pid":20320,"time":"2017-09-27T01:59:56.715Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 146703537556661244.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75362,"time":"2017-09-27T14:15:12.480Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75362,"time":"2017-09-27T14:15:12.781Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75362,"time":"2017-09-27T14:15:14.562Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75362,"time":"2017-09-27T14:15:14.562Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357149145.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75616,"time":"2017-09-27T14:20:56.411Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75616,"time":"2017-09-27T14:20:56.815Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75616,"time":"2017-09-27T14:20:58.328Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75616,"time":"2017-09-27T14:20:58.329Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357165982.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75889,"time":"2017-09-27T14:31:15.581Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75889,"time":"2017-09-27T14:31:15.930Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75889,"time":"2017-09-27T14:31:17.447Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":75889,"time":"2017-09-27T14:31:17.447Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357197104.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76226,"time":"2017-09-27T14:32:56.263Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76226,"time":"2017-09-27T14:32:56.698Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76226,"time":"2017-09-27T14:32:58.217Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76226,"time":"2017-09-27T14:32:58.218Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357201724.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76479,"time":"2017-09-27T14:37:38.033Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76479,"time":"2017-09-27T14:37:38.951Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76479,"time":"2017-09-27T14:37:40.482Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76479,"time":"2017-09-27T14:37:40.482Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357215709.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76533,"time":"2017-09-27T14:38:17.206Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76533,"time":"2017-09-27T14:38:17.466Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76533,"time":"2017-09-27T14:38:18.035Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76533,"time":"2017-09-27T14:38:18.035Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357217366.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76600,"time":"2017-09-27T14:39:28.991Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.0.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76600,"time":"2017-09-27T14:39:29.366Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76600,"time":"2017-09-27T14:39:30.895Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1751360/applications/34152829","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"cole.inman","pid":76600,"time":"2017-09-27T14:39:30.896Z","msg":"Connected to collector-192.newrelic.com:443 with agent run ID 147091158357224125.","component":"collector_api"}
