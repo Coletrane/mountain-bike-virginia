@@ -28799,7 +28799,7 @@ var Creature2017 = function Creature2017() {
 /***/ "pages/blog-posts/creature2017.html":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<template>\n  <div class=\"columns\">\n    <div class=\"column\">\n      <img src=\"" + __webpack_require__(139) + "\"\n           class=\"blog-img\">\n    </div>\n\n    <div class=\"column\">\n      <h1 class=\"title\">Creature from Carvins Cove</h1>\n      <h2 class=\"subtitle\">Oct 1st, 2017</h2>\n      <p>Once again the Creature that slithered out of the depths of Carvins Cove is upon us.</p>\n      <p>\n        <a href=\"https://apm.activecommunities.com/roanokeparksrec/Activity_Search/7122\">\n          Register for the 15 mile XC\n        </a>\n        or\n        <a href=\"https://www.bikereg.com/creature\">\n          tackle the Creature head on and register for the 42 mile XXC\n        </a>\n      </p>\n\n    </div>\n  </div>\n  <div class=\"ytWrapper\">\n    <iframe width=\"100%\"\n            height=\"400\"\n            src=\"https://www.youtube.com/embed/656HZ2mYpc0\"\n            frameborder=\"0\" allowfullscreen>\n\n    </iframe>\n  </div>\n</template>\n";
+module.exports = "<template>\n  <div class=\"columns\">\n    <div class=\"column\">\n      <img src=\"" + __webpack_require__(139) + "\"\n           class=\"blog-img\">\n    </div>\n\n    <div class=\"column\">\n      <h1 class=\"title\">Creature from Carvins Cove</h1>\n      <h2 class=\"subtitle\">Oct 1st, 2017</h2>\n      <p>Once again the Creature that slithered out of the depths of Carvins Cove is upon us.</p>\n      <p>\n        <a href=\"https://apm.activecommunities.com/roanokeparksrec/Activity_Search/7122\">\n          Register for the 15 mile XC\n        </a>\n        or\n        <a href=\"https://www.bikereg.com/creature\">\n          tackle the Creature head on and register for the 42 mile XXC\n        </a>\n      </p>\n\n    </div>\n  </div>\n  <div class=\"ytWrapperWrapper\">\n    <div class=\"ytWrapper\">\n      <iframe width=\"100%\"\n              src=\"https://www.youtube.com/embed/656HZ2mYpc0\"\n              frameborder=\"0\" allowfullscreen>\n\n      </iframe>\n    </div>\n  </div>\n\n  <div class=\"creatureCourse\">\n    <iframe src='https://rwgps-embeds.com/embeds?type=route&id=14246790&sampleGraph=true' style='width: 1px; min-width: 100%; height: 700px; border: none;' scrolling='no'></iframe>\n  </div>\n</template>\n";
 
 /***/ }),
 
@@ -28886,4 +28886,4 @@ module.exports = "<template>\n  <div class=\"post-container\">\n    <div repeat.
 /***/ })
 
 },[117]);
-//# sourceMappingURL=app.112407f393727d643c7c.bundle.map
+//# sourceMappingURL=app.48020d38be2c3253de56.bundle.map

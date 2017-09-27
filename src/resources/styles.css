@@ -119,7 +119,22 @@ td, td {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .ytWrapperWrapper {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ytWrapperWrapper {
+    width: 100%;
+  }
+}
+
+
 .ytWrapper {
+  margin: auto;
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
@@ -127,11 +142,12 @@ td, td {
 }
 
 .ytWrapper iframe {
+  margin: auto;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 93%;
 }
 
 .yt-container {
