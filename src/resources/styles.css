@@ -158,7 +158,7 @@ body {
 }
 
 .header-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://activeazur-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.69) !important;
