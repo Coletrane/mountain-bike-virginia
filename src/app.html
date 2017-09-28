@@ -6,6 +6,11 @@
           <div class="nav-left">
             <span class="nav-item">
               <a href="" click.trigger="router.navigateToRoute('blog')">
+                <img class="mtbva" src="./resources/img/mtbva.png">
+              </a>
+            </span>
+            <span class="nav-item">
+              <a href="" click.trigger="router.navigateToRoute('blog')">
                 <img class="xxcva" src="./resources/img/XXCVA.jpg" alt="XXCVA">
               </a>
             </span>
@@ -24,7 +29,7 @@
         </div>
       </header>
     </div>
-    <div class="hero-body">
+    <div class="${currentRoute === 'blog' ? 'header-blog hero-body' : 'header-other hero-body'}">
       <div class="container has-text-centered">
         <h1 class="title is-2">
           Mountain Bike Virginia
@@ -54,12 +59,13 @@
     <div class="container logos">
       <div class="logos-container">
 
-        <div class="columns is-mobile">
+        <div class="columns ">
           <div class="column">
             <img src="./resources/img/va-blueridge.png">
+            <img src="./resources/img/starlight.png">
           </div>
           <div class="column">
-            <img src="./resources/img/starlight.png">
+            <img src="./resources/img/parkway.jpg">
           </div>
         </div>
 
@@ -77,9 +83,17 @@
 
         </div>
 
+        <div class="columns">
+          <div class="column">
+            <img src="./resources/img/bath.jpg"
+                 class="bath">
+          </div>
+
+        </div>
+
         <div class="columns is-mobile">
           <div class="column">
-            <img src="./resources/img/parkway.jpg">
+            <img src="./resources/img/tavern.gif">
           </div>
           <div class="column">
             <img src="./resources/img/outdoortrails.JPG">
@@ -92,9 +106,6 @@
                  style="margin-top: 1rem">
           </div>
           <div class="column">
-            <img src="./resources/img/tavern.gif">
-          </div>
-          <div class="column">
             <img src="./resources/img/east-coasters.jpg">
           </div>
         </div>
@@ -102,15 +113,11 @@
         <div class="columns is-mobile">
           <div class="column">
             <img src="./resources/img/woods.png"
-                 style="margin-top: 2rem">
+                 >
           </div>
           <div class="column">
             <img src="./resources/img/massanutten.jpg"
-                 style="margin-top: 1.5rem">
-          </div>
-          <div class="column">
-            <img src="./resources/img/bath.jpg"
-                 style="margin-left: 2rem">
+                 >
           </div>
         </div>
       </div>

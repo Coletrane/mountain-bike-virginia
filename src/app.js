@@ -29,4 +29,10 @@ export class App {
 
     this.router = router;
   }
+
+  get currentRoute() {
+    if (this.router.currentInstruction) {
+      return this.router.currentInstruction.config.name;
+    }
+  }
 }

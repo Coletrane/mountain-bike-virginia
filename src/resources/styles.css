@@ -1,6 +1,5 @@
-.xxcva {
-  height: 4rem;
-  width: auto;
+.nav-item img {
+  max-height: 20rem !important;
 }
 
 .fb {
@@ -15,6 +14,66 @@ a:hover {
   color: #e96a25 !important;
 }
 
+.navlink {
+  color: white !important;
+}
+
+.nav {
+  height: 9rem !important;
+}
+
+.header-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.69) !important;
+
+}
+
+.header-blog {
+  padding-top: 12rem !important;
+  padding-bottom: 12rem !important;
+}
+
+.header-other {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.xxcva .mtbva {
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .header-blog {
+
+  }
+  .header-other {
+
+  }
+  .xxcva {
+    display: none;
+  }
+  .mtbva {
+    width: 8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-blog {
+
+  }
+  .header-other {
+
+  }
+  .xxcva {
+    width: 10rem;
+  }
+
+  .mtbva {
+    width: 8rem;
+  }
+}
 .button:focus, .button.is-focused {
   border-color: #e96a25 !important;
 }
@@ -29,18 +88,6 @@ a:hover {
 
 .ride-race:hover {
   color: #e96a25 !important;
-}
-
-.navlink {
-  color: white !important;
-}
-
-.nav-item img {
-  max-height: 4rem !important;
-}
-
-.nav {
-  height: 6rem !important;
 }
 
 .blog-container {
@@ -64,6 +111,17 @@ a:hover {
   padding: 1rem;
 }
 
+@media screen and (max-width: 480px) {
+  .bath {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .bath {
+    margin-left: 2rem;
+  }
+}
 .section.main {
   background-color: #989494 !important;;
 }
@@ -113,9 +171,12 @@ td, td {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 530px) {
   .logos {
-    width: 20rem !important;
+    width: 15rem !important;
+  }
+  .column {
+    padding: .2rem;
   }
 }
 
@@ -155,6 +216,17 @@ td, td {
   margin: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .creature-course iframe {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .creature-course iframe {
+    height: 700px;
+  }
+}
+
 footer {
   padding: 3rem 1.5rem 0 !important;
 }
@@ -173,13 +245,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.header-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.69) !important;
 
-}
 
 .footer-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/blue_ridge_mountains.jpg');
