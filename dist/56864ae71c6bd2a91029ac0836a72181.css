@@ -21,13 +21,30 @@ a:hover {
 .nav {
   height: 9rem !important;
 }
+.xxcva {
+  width: 10rem;
+}
+.mtbva {
+  width: 8rem;
+}
 
 .header-image {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.49)), to(rgba(0, 0, 0, 0.69))), url(/d54b61a29f9e7bc5c7f03c20cbbcc85b.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url(/d54b61a29f9e7bc5c7f03c20cbbcc85b.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.69) !important;
 
+}
+@media screen and (max-width: 768px) {
+  .header-image {
+    background-size: 155%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-image {
+    background-size: 120%;
+  }
 }
 
 .header-blog {
@@ -44,36 +61,7 @@ a:hover {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  .header-blog {
 
-  }
-  .header-other {
-
-  }
-  .xxcva {
-    display: none;
-  }
-  .mtbva {
-    width: 8rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .header-blog {
-
-  }
-  .header-other {
-
-  }
-  .xxcva {
-    width: 10rem;
-  }
-
-  .mtbva {
-    width: 8rem;
-  }
-}
 .button:focus, .button.is-focused {
   border-color: #e96a25 !important;
 }
@@ -111,19 +99,29 @@ a:hover {
   padding: 1rem;
 }
 
-@media screen and (max-width: 480px) {
+.nutten {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 530px) {
   .bath {
     margin: 0;
   }
+  .sbc {
+    margin-top: .3rem;
+  }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 530px) {
   .bath {
-    margin-left: 2rem;
+    margin-left: 1rem;
+  }
+  .sbc {
+    margin-top: 0;
   }
 }
 .section.main {
-  background-color: #989494 !important;;
+  background-color: rgb(45, 26, 7) !important;
+  background-image: url(/8ba198fc94a9d91143b38e77bc87cb34.png) !important;
 }
 
 .race-container {
@@ -151,7 +149,6 @@ td, td {
   margin-bottom: 2rem;
   background-color: white;
   -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
 }
 
@@ -248,11 +245,12 @@ body {
 
 
 .footer-image {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.49)), to(rgba(0, 0, 0, 0.69))), url(/9069b3e00b14462bf8347a4862a8c728.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url(/9069b3e00b14462bf8347a4862a8c728.jpg);
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.69) !important;
+  background-color: rgb(0, 15, 24) !important;
 }
 
 .is-outlined {

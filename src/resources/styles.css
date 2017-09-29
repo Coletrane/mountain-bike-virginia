@@ -21,6 +21,12 @@ a:hover {
 .nav {
   height: 9rem !important;
 }
+.xxcva {
+  width: 10rem;
+}
+.mtbva {
+  width: 8rem;
+}
 
 .header-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
@@ -28,6 +34,16 @@ a:hover {
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.69) !important;
 
+}
+@media screen and (max-width: 768px) {
+  .header-image {
+    background-size: 155%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-image {
+    background-size: 120%;
+  }
 }
 
 .header-blog {
@@ -44,36 +60,7 @@ a:hover {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  .header-blog {
 
-  }
-  .header-other {
-
-  }
-  .xxcva {
-    display: none;
-  }
-  .mtbva {
-    width: 8rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .header-blog {
-
-  }
-  .header-other {
-
-  }
-  .xxcva {
-    width: 10rem;
-  }
-
-  .mtbva {
-    width: 8rem;
-  }
-}
 .button:focus, .button.is-focused {
   border-color: #e96a25 !important;
 }
@@ -111,19 +98,29 @@ a:hover {
   padding: 1rem;
 }
 
-@media screen and (max-width: 480px) {
+.nutten {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 530px) {
   .bath {
     margin: 0;
   }
+  .sbc {
+    margin-top: .3rem;
+  }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 530px) {
   .bath {
-    margin-left: 2rem;
+    margin-left: 1rem;
+  }
+  .sbc {
+    margin-top: 0;
   }
 }
 .section.main {
-  background-color: #989494 !important;;
+  background-color: rgb(45, 26, 7) !important;
+  background-image: url("./img/asfalt-light.png") !important;
 }
 
 .race-container {
@@ -252,7 +249,7 @@ body {
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.69) !important;
+  background-color: rgb(0, 15, 24) !important;
 }
 
 .is-outlined {

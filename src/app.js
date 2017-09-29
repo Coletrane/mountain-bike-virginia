@@ -1,8 +1,17 @@
 import { Router } from 'aurelia-router';
+import {CssAnimator} from 'aurelia-animator-css';
 import { PLATFORM } from 'aurelia-pal';
+import {inject} from 'aurelia-framework';
+
 require('../node_modules/bulma/css/bulma.css');
 require('./resources/styles.css');
+
+@inject(CssAnimator)
 export class App {
+
+  constructor(CssAnimator) {
+    this.animator = CssAnimator;
+  }
 
   configureRouter(config, router) {
     config.title = 'Mountain Bike Virginia';
@@ -20,9 +29,9 @@ export class App {
         nav: true,
       },
       {
-        route: 'race-ride',
-        name: 'race-ride',
-        moduleId: PLATFORM.moduleName('./pages/race'),
+        route: 'relaunch',
+        name: 'relaunch',
+        moduleId: PLATFORM.moduleName('./pages/blog-posts/relaunch'),
         nav: true,
       }
     ]);

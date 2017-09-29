@@ -17,8 +17,7 @@
           </div>
           <div class="nav-right">
             <a class="navlink nav-item"
-               href=""
-               click.trigger="router.navigateToRoute('results')">
+               href="#/results">
               Results
             </a>
             <a class="navlink nav-item fb"
@@ -51,7 +50,7 @@
 
   <section>
     <div class="section main">
-        <router-view></router-view>
+        <router-view swap-order="with"></router-view>
     </div>
   </section>
 
@@ -93,29 +92,29 @@
 
         <div class="columns is-mobile">
           <div class="column">
+            <img src="./resources/img/woods.png"
+                 style="margin-top: 2rem">
+          </div>
+          <div class="column">
+            <img src="./resources/img/bath.jpg"
+                 class="bath">
+          </div>
+          <div class="column">
+            <img src="./resources/img/massanutten.jpg"
+                 class="nutten">
+          </div>
+        </div>
+
+        <div class="columns is-mobile">
+          <div class="column">
             <img src="./resources/img/sbc.gif"
-                 style="margin-top: 1rem">
+                 class="sbc">
           </div>
           <div class="column">
             <img src="./resources/img/tavern.gif">
           </div>
           <div class="column">
             <img src="./resources/img/east-coasters.jpg">
-          </div>
-        </div>
-
-        <div class="columns is-mobile">
-          <div class="column">
-            <img src="./resources/img/woods.png"
-                 style="margin-top: 2rem">
-          </div>
-          <div class="column">
-            <img src="./resources/img/massanutten.jpg"
-                 style="margin-top: 1.5rem">
-          </div>
-          <div class="column">
-            <img src="./resources/img/bath.jpg"
-                 class="bath">
           </div>
         </div>
       </div>

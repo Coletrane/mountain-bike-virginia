@@ -16,7 +16,6 @@ export class Results {
       result.push(classes.slice(i, i+ size));
     }
 
-    console.log(result);
     return result;
   }
 }

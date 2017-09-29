@@ -18,9 +18,7 @@ const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const baseUrl = '/';
 
-const cssRules = [
-  { loader: 'css-loader' },
-];
+const cssRules = ['css-loader' , 'postcss-loader'];
 
 module.exports = ({production, server, extractCss, coverage} = {}) => ({
   resolve: {

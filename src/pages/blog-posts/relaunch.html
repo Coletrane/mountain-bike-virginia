@@ -1,0 +1,22 @@
+<template>
+  <div class="post-container">
+    <div class="blog">
+      <div class="center-blog-title">
+        <div class="title">
+          <a href="" click.trigger="router.navigateToRoute('relaunch')">
+            Full Site Relaunch!
+          </a>
+        </div>
+        <div class="subtitle">The same pirates are back at it.</div>
+      </div>
+      <div class="blog">
+        <img src="../../resources/img/rockymthi8.jpg"
+             class="blog-img">
+      </div>
+
+      <div if.bind="router.currentInstruction.config.name === 'relauch'">
+        YOOO
+      </div>
+    </div>
+  </div>
+</template>
