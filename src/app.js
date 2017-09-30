@@ -3,8 +3,8 @@ import {CssAnimator} from 'aurelia-animator-css';
 import { PLATFORM } from 'aurelia-pal';
 import {inject} from 'aurelia-framework';
 
-require('../node_modules/bulma/css/bulma.css');
-require('./resources/styles.css');
+let bulma = require('../node_modules/bulma/css/bulma.css');
+let css = require('./resources/styles.css');
 
 @inject(CssAnimator)
 export class App {

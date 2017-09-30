@@ -21,6 +21,11 @@ a:hover {
 .nav {
   height: 9rem !important;
 }
+@media screen and (max-width: 480px) {
+  .xxcva {
+    display: none;
+  }
+}
 .xxcva {
   width: 10rem;
 }
@@ -36,9 +41,10 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.69) !important;
 
 }
+
 @media screen and (max-width: 768px) {
   .header-image {
-    background-size: 155%;
+    background-size: 169%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -47,15 +53,19 @@ a:hover {
   }
 }
 
-.header-blog {
-  padding-top: 12rem !important;
-  padding-bottom: 12rem !important;
+@media screen and (max-width: 768px) {
+  .header-blog {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-blog {
+    padding-top: 12rem !important;
+    padding-bottom: 12rem !important;
+  }
 }
 
-.header-other {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
-}
 
 .xxcva .mtbva {
   height: auto;
@@ -234,7 +244,7 @@ footer {
 }
 
 .github {
-  width: 3rem !important;
+  width: 2rem !important;
   max-width: 10rem !important;
 }
 
