@@ -1,0 +1,48 @@
+<template>
+  <div class="title race-title">${name}</div>
+  <img class="results-header" src="../../resources/img/creature-generic.png">
+  <div class="columns results-columns">
+    <div class="column">
+      <div repeat.for="class of firstColumnClasses">
+        <div class="subtitle results-subtitle">${class.name}</div>
+        <table class="table is-striped">
+          <thead>
+          <tr>
+            <td>Position</td>
+            <td class="name">Name</td>
+            <td>Time</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr repeat.for="rider of class.riders">
+            <td>${$index + 1}</td>
+            <td>${rider.name}</td>
+            <td>${rider.time}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="column">
+      <div repeat.for="class of secondColumnClasses">
+        <div class="subtitle results-subtitle">${class.name}</div>
+        <table class="table is-striped">
+          <thead>
+          <tr>
+            <td>Position</td>
+            <td class="name">Name</td>
+            <td>Time</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr repeat.for="rider of class.riders">
+            <td>${$index + 1}</td>
+            <td>${rider.name}</td>
+            <td>${rider.time}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

@@ -2,15 +2,18 @@ import { Router } from 'aurelia-router';
 import {CssAnimator} from 'aurelia-animator-css';
 import { PLATFORM } from 'aurelia-pal';
 import {inject} from 'aurelia-framework';
+import {EventAggregator} from 'aurelia-event-aggregator';
 
 let bulma = require('../node_modules/bulma/css/bulma.css');
 let css = require('./resources/styles.css');
 
-@inject(CssAnimator)
+@inject(CssAnimator, EventAggregator)
 export class App {
 
-  constructor(CssAnimator) {
+  constructor(CssAnimator, EventAggregator) {
     this.animator = CssAnimator;
+    this.events = EventAggregator;
+    this.events.subscribe('router:navigation:complete', payload => window.scrollTo(0, 0));
   }
 
   configureRouter(config, router) {
