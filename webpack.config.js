@@ -93,9 +93,6 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
               mozjpeg: {
                 progressive: true,
                 quality: 65
-              },
-              webp: {
-                quality: 75
               }
             }
           }
