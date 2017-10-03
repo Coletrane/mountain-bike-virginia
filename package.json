@@ -3,26 +3,21 @@
   "description": "An Aurelia client application.",
   "version": "0.1.0",
   "repository": {
-    "type": "???",
-    "url": "???"
+    "type": "git",
+    "url": "https://github.com/coletrane/mtbva"
   },
   "license": "MIT",
   "dependencies": {
-    "aurelia-animator-css": "^1.0.2",
-    "aurelia-bootstrapper": "^2.1.1",
-    "aurelia-polyfills": "latest",
-    "bluebird": "^3.4.1",
     "bulma": "^0.5.3",
     "compression": "^1.7.0",
     "express": "^4.15.4",
-    "newrelic": "^2.2.1"
+    "newrelic": "^2.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "aurelia-cli": "^0.31.3",
-    "aurelia-testing": "^1.0.0-beta.3.0.1",
-    "aurelia-tools": "^1.0.0",
-    "aurelia-webpack-plugin": "^2.0.0-rc.4",
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.25.0",
     "babel-eslint": "7.2.3",
@@ -44,8 +39,6 @@
     "expose-loader": "0.7.3",
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-rename": "^1.2.2",
     "html-loader": "0.4.5",
     "html-webpack-plugin": "2.30.1",
     "image-webpack-loader": "^3.4.2",
@@ -57,21 +50,18 @@
     "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.2",
     "through2": "^2.0.1",
-    "uglify-js": "^3.0.19",
-    "uglifyjs": "^2.4.11",
     "url-loader": "0.5.8",
     "vinyl-fs": "^2.4.3",
     "webpack": "3.5.5",
+    "webpack-config-utils": "^2.3.0",
     "webpack-dev-server": "2.7.1"
   },
   "engines": {
     "node": ">= 6.0.0"
   },
   "scripts": {
-    "dev": "au run --watch --hmr --env dev",
-    "build": "au build --env prod && npm run minify-js",
-    "minify-js": "uglifyjs ./dist/app.bundle.js -c  -m  -o ./dist/app.bundle.js && uglifyjs ./dist/common.bundle.js -c -m -o ./dist/common.bundle.js && uglifyjs ./dist/vendor.bundle.js -c -m -o ./dist/vendor.bundle.js",
+    "dev": "webpack-dev-server --inline --content-base ./ --env.dev",
+    "build": "webpack --env.prod",
     "start": "node ./main.js"
-  },
-  "main": "dist/app.bundle.js"
+  }
 }
