@@ -138,7 +138,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       allChunks: true
     })),
     ...when(production, new CommonsChunkPlugin({
-      name: ['common']
+      names: ['common']
     })),
     ...when(production, new UglifyJSPlugin({
       compress: true,

@@ -1,4 +1,3 @@
-import { Router } from 'aurelia-router';
 import {CssAnimator} from 'aurelia-animator-css';
 import { PLATFORM } from 'aurelia-pal';
 import {inject} from 'aurelia-framework';
@@ -34,7 +33,7 @@ export class App {
       {
         route: 'relaunch',
         name: 'relaunch',
-        moduleId: PLATFORM.moduleName('./pages/blog-posts/relaunch', 'relaunch'),
+        moduleId: PLATFORM.moduleName('./pages/relaunch', 'relaunch'),
         nav: true,
       }
     ]);
