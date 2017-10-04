@@ -13,7 +13,7 @@ module.exports = () => {
           } : {
             "browsers": [
               "last 2 versions",
-              "not ie <= 11"
+              "not ie <= 10"
             ],
             "uglify": process.env.NODE_ENV === 'production',
           },

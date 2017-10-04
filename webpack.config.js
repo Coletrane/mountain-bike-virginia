@@ -29,6 +29,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
   entry: {
     app: ['aurelia-bootstrapper'],
     vendor: ['bluebird'],
+    polyfill: ['babel-polyfill']
   },
   output: {
     path: outDir,
@@ -143,7 +144,8 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       compress: true,
       mangle: true
     })),
-    ...when(production, new CopyWebpackPlugin([
+    ...when(production, new CopyWebpackPlugin([,
+      { from: './node_modules/babel-polyfill/dist/polyfill.min.js', to: 'polyfill.min.js'},
       { from: './src/resources/favicon.ico', to: 'favicon.ico' }
     ]))
   ]
