@@ -1,0 +1,1 @@
+webpackJsonp([1],{"pages/blog-posts/relaunch":function(e,n,t){"use strict";function a(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(n,"__esModule",{value:!0}),t.d(n,"Relaunch",function(){return u});var o,r,c=t(23),s=t("aurelia-framework"),u=(o=Object(s.b)(c.c))(r=function e(n){a(this,e),this.router=n})||r}});

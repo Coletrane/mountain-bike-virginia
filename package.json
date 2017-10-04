@@ -19,7 +19,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "aurelia-cli": "^0.31.3",
+    "aurelia-cli": "0.31.3",
     "aurelia-testing": "^1.0.0-beta.3.0.1",
     "aurelia-tools": "^1.0.0",
     "aurelia-webpack-plugin": "^2.0.0-rc.4",
@@ -58,7 +58,7 @@
     "style-loader": "^0.18.2",
     "through2": "^2.0.1",
     "uglify-js": "^3.0.19",
-    "uglifyjs": "^2.4.11",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "0.5.8",
     "vinyl-fs": "^2.4.3",
     "webpack": "3.5.5",
@@ -69,8 +69,7 @@
   },
   "scripts": {
     "dev": "au run --watch --hmr --env dev",
-    "build": "au build --env prod && npm run minify-js",
-    "minify-js": "uglifyjs ./dist/app.bundle.js -c  -m  -o ./dist/app.bundle.js && uglifyjs ./dist/common.bundle.js -c -m -o ./dist/common.bundle.js && uglifyjs ./dist/vendor.bundle.js -c -m -o ./dist/vendor.bundle.js",
+    "build": "au build --env prod",
     "start": "node ./main.js"
   },
   "main": "dist/app.bundle.js"

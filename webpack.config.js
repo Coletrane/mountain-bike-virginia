@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const project = require('./aurelia_project/aurelia.json');
 const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin');
 const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack');
@@ -23,7 +24,7 @@ const cssRules = ['css-loader' , 'postcss-loader'];
 module.exports = ({production, server, extractCss, coverage} = {}) => ({
   resolve: {
     extensions: ['.js'],
-    modules: [srcDir, 'node_modules'],
+    modules: [srcDir, 'node_modules'].map(x => path.resolve(x)),
   },
   entry: {
     app: ['aurelia-bootstrapper'],
@@ -74,7 +75,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
           {
             loader: 'url-loader',
             options: {
-              limit: 8192
+              limit: 10000
             }
           },
           {
@@ -138,8 +139,12 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
     ...when(production, new CommonsChunkPlugin({
       name: ['common']
     })),
+    ...when(production, new UglifyJSPlugin({
+      compress: true,
+      mangle: true
+    })),
     ...when(production, new CopyWebpackPlugin([
-      { from: 'static/favicon.ico', to: 'favicon.ico' }
+      { from: './src/resources/favicon.ico', to: 'favicon.ico' }
     ]))
   ]
 });

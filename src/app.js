@@ -28,13 +28,13 @@ export class App {
       {
         route: 'results',
         name: 'results',
-        moduleId: PLATFORM.moduleName('./pages/results'),
+        moduleId: PLATFORM.moduleName('./pages/results', 'results'),
         nav: true,
       },
       {
         route: 'relaunch',
         name: 'relaunch',
-        moduleId: PLATFORM.moduleName('./pages/blog-posts/relaunch'),
+        moduleId: PLATFORM.moduleName('./pages/blog-posts/relaunch', 'relaunch'),
         nav: true,
       }
     ]);
