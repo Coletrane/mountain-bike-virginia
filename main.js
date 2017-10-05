@@ -7,6 +7,7 @@ const PORT = 9002;
 
 app.use(compression());
 app.use(express.static('dist'));
+app.use(require('prerender-node'));
 
 app.listen(process.env.PORT || PORT, function() {
   console.log('Mountain Bike Virginia running on port', PORT);

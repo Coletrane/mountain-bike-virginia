@@ -15,7 +15,8 @@
     "bulma": "^0.5.3",
     "compression": "^1.7.0",
     "express": "^4.15.4",
-    "newrelic": "^2.2.1"
+    "newrelic": "^2.2.1",
+    "prerender-node": "^2.7.4"
   },
   "peerDependencies": {},
   "devDependencies": {
