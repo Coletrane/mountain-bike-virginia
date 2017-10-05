@@ -116,6 +116,8 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
+      chunks:['polyfill', 'app', 'vendor'],
+      chunksSortMode: 'manual',
       minify: production ? {
         removeComments: true,
         collapseWhitespace: true,

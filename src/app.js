@@ -21,20 +21,24 @@ export class App {
       {
         route: ['', 'blog'],
         name: 'blog',
-        moduleId: PLATFORM.moduleName('./pages/blog'),
+        moduleId: PLATFORM.moduleName('./pages/blog/blog'),
         nav: true,
       },
       {
         route: 'results',
         name: 'results',
-        moduleId: PLATFORM.moduleName('./pages/results', 'results'),
+        moduleId: PLATFORM.moduleName('./pages/results/results', 'results'),
         nav: true,
       },
       {
         route: 'relaunch',
         name: 'relaunch',
-        moduleId: PLATFORM.moduleName('./pages/relaunch', 'relaunch'),
-        nav: true,
+        moduleId: PLATFORM.moduleName('./pages/relaunch/relaunch', 'relaunch'),
+      },
+      {
+        route: 'creature2017',
+        name: 'creature2017',
+        moduleId: PLATFORM.moduleName('./pages/creature2017/creature2017', 'creature2017')
       }
     ]);
 

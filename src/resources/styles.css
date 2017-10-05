@@ -1,3 +1,11 @@
+p {
+  font-size: 1.2rem !important;
+}
+.subtitle {
+  font-size: 1.4rem !important;
+}
+
+
 .nav-item img {
   max-height: 20rem !important;
 }
@@ -73,11 +81,9 @@ a:hover {
   }
 }
 
-
 .xxcva .mtbva {
   height: auto;
 }
-
 
 .button:focus, .button.is-focused {
   border-color: #e96a25 !important;
@@ -93,6 +99,21 @@ a:hover {
 
 .ride-race:hover {
   color: #e96a25 !important;
+}
+
+@media screen and (max-width: 480px) {
+  .section.main {
+    padding: 0 !important;
+  }
+}
+@media screen and (min-width: 480px) {
+  .section.main {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+.section.main {
+  background-color: #F0F0F0;
 }
 
 .blog-container {
@@ -209,14 +230,11 @@ td, th {
   margin-bottom: 1rem !important;
 }
 .post-container {
-  margin-bottom: 4rem;
-  background-color: white;
+  margin-bottom: 3rem;
+  background-color: #f2f1ee;
   -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
-}
-.post-container:last-child {
-  margin-bottom: 1rem;
 }
 
 .center-blog-title {
@@ -279,6 +297,9 @@ td, th {
   max-width: 720px !important;
   margin: auto;
 }
+.after-yt {
+  margin-top: -5%;
+}
 
 @media screen and (max-width: 768px) {
   .creature-course iframe {
@@ -289,6 +310,11 @@ td, th {
   .creature-course iframe {
     height: 700px;
   }
+}
+.creature-course {
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 
 footer {
@@ -332,10 +358,6 @@ body {
   font-size: 17px;
   line-height: 1.4;
   color: #95A5A6;
-}
-
-.section.main {
-  background-color: #F0F0F0;
 }
 
 .icon-block {
