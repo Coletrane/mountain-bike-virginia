@@ -3,7 +3,7 @@ import {PLATFORM} from 'aurelia-pal';
 import 'babel-polyfill';
 import * as Bluebird from 'bluebird';
 
-// remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
+// remove out if you don't want a Promise polyfill (remove also from webpack.config1.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia) {
