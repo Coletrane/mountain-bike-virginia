@@ -15,7 +15,8 @@
     "bulma": "^0.5.3",
     "compression": "^1.7.0",
     "express": "^4.15.4",
-    "newrelic": "^2.2.1"
+    "newrelic": "^2.2.1",
+    "prerender-node": "^2.7.4"
   },
   "peerDependencies": {},
   "devDependencies": {
@@ -47,7 +48,7 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-rename": "^1.2.2",
     "html-loader": "0.4.5",
-    "html-webpack-plugin": "2.30.1",
+    "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "istanbul-instrumenter-loader": "^2.0.0",
     "json-loader": "0.5.7",

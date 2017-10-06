@@ -116,8 +116,6 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
-      chunks:['polyfill', 'app', 'vendor'],
-      chunksSortMode: 'manual',
       minify: production ? {
         removeComments: true,
         collapseWhitespace: true,
@@ -147,7 +145,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       mangle: true
     })),
     ...when(production, new CopyWebpackPlugin([,
-      { from: './node_modules/babel-polyfill/dist/polyfill.min.js', to: 'polyfill.min.js'},
+      // { from: './node_modules/babel-polyfill/dist/polyfill.min.js', to: 'polyfill.min.js'},
       { from: './src/resources/favicon.ico', to: 'favicon.ico' }
     ]))
   ]
