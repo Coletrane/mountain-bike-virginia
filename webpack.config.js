@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const cssRules = ['css-loader', 'postcss-loader'];
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -19,10 +21,17 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-
       {
         test: /\.css$/i,
-        loaders: ['style-loader', 'postcss-loader']
+        issuer: [{ not: [{ test: /\.html$/i }] }],
+        use: ['style-loader', ...cssRules],
+      },
+      {
+        test: /\.css$/i,
+        issuer: [{ test: /\.html$/i }],
+        // CSS required in templates cannot be extracted safely
+        // because Aurelia would try to require it again in runtime
+        use: cssRules
       },
       { test: /\.(png|gif|jpg|cur)$/i,
         loaders: [
@@ -54,6 +63,7 @@ module.exports = {
           }
         ],
       },
+      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' }
     ]
   },
   resolve: {

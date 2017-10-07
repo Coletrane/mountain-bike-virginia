@@ -1,12 +1,12 @@
 <template>
-  <div class="post-container">
+  <div id="creature-2017-blog" class="post-container">
     <div class="blog">
       <div class="columns">
         <div class="column">
           <div class="title">
-            <a href="" click.trigger="router.navigateToRoute('creature2017')">
+            <router-link to="creature2017">
               Virginia's Blue Ridge Creature from Carvins Cove
-            </a>
+            </router-link>
           </div>
           <div class="subtitle">Oct 1st, 2017</div>
           <p>
@@ -14,7 +14,7 @@
             Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.
           </p>
           <p>
-            <a href="" click.trigger="router.navigateToRoute('results')">View the results.</a>
+            <router-link to="results">View the results.</router-link>
           </p>
 
         </div>
@@ -35,3 +35,9 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'creature-2017-blog'
+  }
+</script>

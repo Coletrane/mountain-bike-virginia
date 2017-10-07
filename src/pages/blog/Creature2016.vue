@@ -1,5 +1,5 @@
 <template>
-  <div class="post-container" style="margin-bottom: 0">
+  <div id="creature-2016-blog" class="post-container" style="margin-bottom: 0">
     <div class="blog">
       <div class="columns">
         <div class="column">
@@ -10,9 +10,12 @@
         <div class="column">
           <h1 class="title">Virginia's Blue Ridge Creature from Carvins Cove</h1>
           <h2 class="subtitle">Oct 2nd, 2016</h2>
-          <p>The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a>, who took first with a time of 4:04.  </p>
           <p>
-            <a href="" click.trigger="router.navigateToRoute('results')">View the rest of the results</a>
+            The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a
+            href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a>, who took first with a time of 4:04.
+            </p>
+          <p>
+            <router-link to="results">View the rest of the results</router-link>
           </p>
 
         </div>
@@ -31,4 +34,11 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
+
+<script>
+  export default {
+    name: 'creature-2016-blog'
+  }
+</script>

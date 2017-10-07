@@ -1,11 +1,11 @@
 <template>
-  <div class="post-container">
+  <div id="relaunch-blog" class="post-container">
     <div class="blog">
       <div class="center-blog-title">
         <div class="title">
-          <a href="" click.trigger="router.navigateToRoute('relaunch')">
+          <router-link to="relaunch">
             Full Site Relaunch!
-          </a>
+          </router-link>
         </div>
         <div class="subtitle">The same pirates are back at it.</div>
       </div>
@@ -16,3 +16,9 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'relaunch-blog'
+  }
+</script>
