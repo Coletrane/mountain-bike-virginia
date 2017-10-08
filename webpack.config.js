@@ -1,20 +1,64 @@
 var path = require('path');
 var webpack = require('webpack');
 
-const cssRules = ['css-loader', 'postcss-loader'];
+let imageLoaders = [{
+    loader: 'url-loader',
+    options: {
+      limit: 10000,
+      name: '[name].[ext]'
+    }
+  }]
+if (process.env.NODE_ENV === 'production') {
+  imageLoaders.push({
+    loader: 'image-webpack-loader',
+    options: {
+      gifsicle: {
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4
+      },
+      mozjpeg: {
+        progressive: true,
+        quality: 65
+      }
+    }
+  });
+}
+
+const resolve = (file) => path.resolve(__dirname, file)
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js',
+  },
+  resolve: {
+    extensions: ['*', '.jpg', '.png', '.gif'],
+    alias: {
+      'resources': resolve('./resources')
+    }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          extractCSS: process.env.NODE_ENV === 'production',
+          preserveWhitespace: false,
+          postcss: [
+            require('autoprefixer')({
+              browsers: ['last 3 versions']
+            })
+          ]
+        }
       },
       {
         test: /\.js$/,
@@ -23,45 +67,14 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        issuer: [{ not: [{ test: /\.html$/i }] }],
-        use: ['style-loader', ...cssRules],
+        loaders: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.css$/i,
-        issuer: [{ test: /\.html$/i }],
-        // CSS required in templates cannot be extracted safely
-        // because Aurelia would try to require it again in runtime
-        use: cssRules
+        test: /\.styl$/,
+        loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/'
       },
       { test: /\.(png|gif|jpg|cur)$/i,
-        loaders: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: '[name].[ext]?[hash]'
-            }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              gifsicle: {
-                interlaced: false,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4
-              },
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              }
-            }
-          }
-        ],
+        loaders: imageLoaders,
       },
       { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' }
     ]
@@ -76,7 +89,7 @@ module.exports = {
     noInfo: true
   },
   performance: {
-    hints: false
+    hints: process.env.NODE_ENV === 'production' ? false : 'warning'
   },
   devtool: '#eval-source-map'
 };
@@ -91,7 +104,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       },

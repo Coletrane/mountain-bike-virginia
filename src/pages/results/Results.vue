@@ -1,7 +1,7 @@
 <template>
   <div id="results">
-    <creature-2017-results></creature-2017-results>
-    <creature-2016-results></creature-2016-results>
+    <creature-2017></creature-2017>
+    <creature-2016></creature-2016>
   </div>
 </template>
 
@@ -11,8 +11,8 @@
 
   export default {
     components: {
-      Creature2017,
-      Creature2016
+      'creature-2017': Creature2017,
+      'creature-2016': Creature2016
     },
 
     name: 'results',

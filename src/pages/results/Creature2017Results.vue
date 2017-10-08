@@ -1,10 +1,10 @@
 <template>
   <div id="creature-2017-results" class="post-container">
-    <div class="title race-title">{{data.name}}</div>
+    <div class="title race-title">{{race}}</div>
     <img class="results-header" src="../../resources/img/creature-generic.png">
     <div class="columns results-columns">
       <div class="column">
-        <div v-for="clazz in data.firstColumnClasses">
+        <div v-for="clazz in firstColumnClasses">
           <div class="subtitle results-subtitle">{{clazz.name}}</div>
           <table class="table is-striped">
             <thead>
@@ -15,8 +15,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(rider, key, index) in clazz.riders">
-              <td>{{$index + 1}}</td>
+            <tr v-for="(rider, index) in clazz.riders">
+              <td>{{index + 1}}</td>
               <td>{{rider.name}}</td>
               <td>{{rider.time}}</td>
             </tr>
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="column">
-        <div v-for="clazz in data.secondColumnClasses">
+        <div v-for="clazz in secondColumnClasses">
           <div class="subtitle results-subtitle">{{clazz.name}}</div>
           <table class="table is-striped">
             <thead>
@@ -36,8 +36,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(rider, key, index) in clazz.riders">
-              <td>{{$index + 1}}</td>
+            <tr v-for="(rider, index) in clazz.riders">
+              <td>{{index + 1}}</td>
               <td>{{rider.name}}</td>
               <td>{{rider.time}}</td>
             </tr>
@@ -52,9 +52,13 @@
 <script>
   export default {
     name: 'creature-2017-results',
-    data: function() {
+    created() {
+      this.firstColumnClasses = [this.results.classes[0], this.results.classes[4]]
+      this.secondColumnClasses = this.results.classes.slice(1, 4)
+    },
+    data() {
       return {
-        name: "Virginia's Blue Ridge, Creature From Carvins Cove 2017",
+        race: "Virginia's Blue Ridge, Creature From Carvins Cove 2017",
         results: {
           classes: [
             {
@@ -296,9 +300,7 @@
               ]
             }
           ]
-        },
-        firstColumnClasses: [this.results.classes[0], this.results.classes[4]],
-        secondColumnClasses: this.results.classes.slice(1, 4)
+        }
       }
     }
   }

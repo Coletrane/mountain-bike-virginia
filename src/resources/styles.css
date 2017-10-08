@@ -29,17 +29,7 @@ a:hover {
 .nav {
   height: 9rem !important;
 }
-@media screen and (max-width: 480px) {
-  .xxcva {
-    display: none;
-  }
-}
-.xxcva {
-  width: 10rem;
-}
-.mtbva {
-  width: 8rem;
-}
+
 
 .header-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
@@ -169,8 +159,7 @@ a:hover {
   }
 }
 .section.main {
-  background-color: #291d00 !important;
-  background-image: url("./img/asfalt-light.png") !important;
+
 }
 
 .race-container {

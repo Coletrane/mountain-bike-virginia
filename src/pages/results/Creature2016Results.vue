@@ -1,10 +1,10 @@
 <template>
   <div id="creature-2016-results" class="post-container">
-    <div class="title race-title">{{data.name}}</div>
+    <div class="title race-title">{{race}}</div>
     <img class="results-header" src="../../resources/img/creature-generic.png">
     <div class="columns results-columns">
       <div class="column">
-        <div class="subtitle results-subtitle">{{data.results.classes[0].name}}</div>
+        <div class="subtitle results-subtitle">{{results.classes[0].name}}</div>
         <table class="table is-striped">
           <thead>
           <tr>
@@ -14,7 +14,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="(rider, key, index) in data.results.classes[0].riders">
+          <tr v-for="(rider, index) in results.classes[0].riders">
             <td>{{index + 1}}</td>
             <td>{{rider.name}}</td>
             <td>{{rider.time}}</td>
@@ -23,7 +23,7 @@
         </table>
       </div>
       <div class="column">
-        <div v-for="clazz in data.secondColumnClasses">
+        <div v-for="clazz in secondColumnClasses">
           <div class="subtitle results-subtitle">{{clazz.name}}</div>
           <table class="table is-striped">
             <thead>
@@ -34,7 +34,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(rider, key, index) in clazz.riders">
+            <tr v-for="(rider, index) in clazz.riders">
               <td>{{index + 1}}</td>
               <td>{{rider.name}}</td>
               <td>{{rider.time}}</td>
@@ -50,9 +50,12 @@
 <script>
   export default {
     name: 'creature-2016-results',
-    data: function() {
+    created() {
+      this.secondColumnClasses = this.results.classes.slice(1, 4)
+    },
+    data() {
       return {
-        name: "Virginia's Blue Ridge, Creature From Carvins Cove 2016",
+        race: "Virginia's Blue Ridge, Creature From Carvins Cove 2016",
         results: {
           classes: [
             {
@@ -329,7 +332,6 @@
             }
           ]
         },
-        secondColumnClasses: this.results.classes.slice(1, 4)
       }
     }
   }
