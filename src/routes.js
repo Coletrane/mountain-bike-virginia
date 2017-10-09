@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Blog = () => import('./pages/blog/Blog.vue')
+const Blog = () => import('./pages/Blog.vue')
 const Results = () => import('./pages/results/Results.vue')
 const Relaunch = () => import('./pages/relaunch/Relaunch.vue')
 const Creature2017 = () => import('./pages/creature2017/Creature2017.vue')

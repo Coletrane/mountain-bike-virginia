@@ -23,7 +23,7 @@
                 <h6>{{post.subtitle}}</h6>
 
                 <paragraph-with-links
-                  v-bind:content="post.promoParagraph">
+                  v-bind:paragraph="post.promoParagraph">
                 </paragraph-with-links>
 
                 <div v-if="post.altUrl">
@@ -37,8 +37,9 @@
                        :src="post.youtubeSrc">
               </youtube>
 
-              <img v-if="post.imgSrc"
-                   :src="post.imgSrc">
+              <img v-if="post.img"
+                   :src="post.img"
+                   class="post-img">
 
               <social-actions :post="post"></social-actions>
 
@@ -52,12 +53,12 @@
 </template>
 
 <script>
-  import Foliage from '../../../static/img/foliage.png'
-  import MTBVAHeader from '../../components/MTBVAHeader.vue'
-  import Youtube from '../../components/Youtube.vue'
-  import ParagraphWithLinks from "../../components/ParagraphWithLinks.vue"
-  import SocialActions from '../../components/SocialActions.vue'
-  import posts from '../posts'
+  import Foliage from '../../static/img/foliage.png'
+  import MTBVAHeader from '../components/MTBVAHeader.vue'
+  import Youtube from '../components/Youtube.vue'
+  import ParagraphWithLinks from "../components/ParagraphWithLinks.vue"
+  import SocialActions from '../components/SocialActions.vue'
+  import posts from './posts'
 
   export default {
     name: 'blog',
@@ -69,7 +70,7 @@
     },
     data() {
       return {
-        posts: posts.posts
+        posts: posts.posts.reverse()
       }
     },
     computed: {
@@ -85,5 +86,7 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
-
+  .post-img {
+    width: 100%;
+  }
 </style>

@@ -1,22 +1,27 @@
 <template>
   <div id="results">
-    <creature-2017></creature-2017>
-    <creature-2016></creature-2016>
+    <m-t-b-v-a-header
+      v-bind:header-height="500"
+      v-bind:image="image">
+    </m-t-b-v-a-header>
+
   </div>
 </template>
 
 <script>
-  import Creature2017 from './Creature2017Results.vue'
-  import Creature2016 from './Creature2016Results.vue'
+  import MTBVAHeader from '../../components/MTBVAHeader.vue'
+  import Podium from './img/podium.png'
 
   export default {
-    components: {
-      'creature-2017': Creature2017,
-      'creature-2016': Creature2016
-    },
-
     name: 'results',
-
+    components: {
+      MTBVAHeader
+    },
+    data() {
+      return {
+        image: Podium
+      }
+    },
     methods: {
       divide(classes) {
         let result = [];
@@ -31,3 +36,7 @@
   }
 
 </script>
+
+<style>
+
+</style>

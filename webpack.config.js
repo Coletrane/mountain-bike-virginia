@@ -10,7 +10,7 @@ let imageLoaders = [{
     name: '[name].[ext]'
   }
 }]
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && !process.env.NO_IMG) {
   imageLoaders.push({
     loader: 'image-webpack-loader',
     options: {
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['babel-polyfill', './src/main.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'build.js',

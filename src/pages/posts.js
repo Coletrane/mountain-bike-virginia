@@ -1,3 +1,6 @@
+// This is ES5 MFs
+const pirates = require('./relaunch/img/rockymthi8.jpg');
+
 // IN REVERSE ORDER
 exports.posts = [
   {
@@ -19,13 +22,14 @@ exports.posts = [
     altUrl: "/results",
     altText: "View the Results.",
     youtubeSrc: "https://www.youtube.com/embed/656HZ2mYpc0",
-    href: "/creature2017"
+    href: "/creature2016"
   },
-
   {
-
+    title: "Full Site Relaunch!",
+    subtitle: "The same pirates are still at it.",
+    img: pirates,
+    href: "/relaunch"
   },
-  
   {
     title: "Virginia's Blue Ridge Creature from Carvins Cove",
     subtitle: "Oct 1st, 2017",

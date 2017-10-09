@@ -27,11 +27,11 @@
     methods: {
       facebookLink(post) {
         return "http://www.facebook.com/share.php?u=" +
-          this.baseUrl + post.url
+          this.baseUrl + post.href
       },
       redditLink(post) {
         return "http://www.reddit.com/submit?url=" +
-          this.baseUrl + post.url
+          this.baseUrl + post.href
       },
       twitterLink(post) {
         return "http://twitter.com/home?status=" +
