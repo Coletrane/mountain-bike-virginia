@@ -70,7 +70,7 @@
     },
     data() {
       return {
-        posts: posts.posts.reverse()
+        posts: posts
       }
     },
     computed: {

@@ -34,7 +34,7 @@
   import OneOff from './img/oneoff.jpg'
   import WoodsSign from './img/woods-sign.jpg'
 
-  const post = posts.posts[2]
+  const post = posts[2]
 
   export default {
     name: 'creature2017',

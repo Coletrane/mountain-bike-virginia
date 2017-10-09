@@ -1,6 +1,6 @@
 {
   "name": "mtbva",
-  "description": "An Aurelia client application.",
+  "description": "Mountain Bike Virginia XXC VA Series",
   "version": "0.1.0",
   "repository": {
     "type": "???",
@@ -39,6 +39,7 @@
     "image-webpack-loader": "^3.4.2",
     "istanbul-instrumenter-loader": "^2.0.0",
     "postcss-loader": "^2.0.6",
+    "prerender-spa-plugin": "^2.1.0",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",

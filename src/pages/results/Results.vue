@@ -34,7 +34,7 @@
     data() {
       return {
         image: Podium,
-        races: this.initClasses().reverse(),
+        races: this.initClasses(),
         headers: [
           {
             text: 'Position',
