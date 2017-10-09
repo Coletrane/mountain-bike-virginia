@@ -9,6 +9,7 @@ const Creature2017 = () => import('./pages/creature2017/Creature2017.vue')
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

@@ -1,7 +1,7 @@
 <template>
   <div id="creature-2017-results" class="post-container">
     <div class="title race-title">{{race}}</div>
-    <img class="results-header" src="../../resources/img/creature-generic.png">
+    <img class="results-header" src="../../../static/img/creature-generic.png">
     <div class="columns results-columns">
       <div class="column">
         <div v-for="clazz in firstColumnClasses">

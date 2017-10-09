@@ -1,6 +1,7 @@
 <template>
   <div id="blog">
     <m-t-b-v-a-header
+      header-height="800"
       v-bind:image="image"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
@@ -12,19 +13,19 @@
       <v-container>
         <v-layout row wrap align-center>
           <div v-for="post in posts">
-            <v-card hover v-bind:href="post.href">
+            <v-card hover
+                    ripple
+                    v-bind:href="post.href"
+                    class="post">
 
               <v-card-text>
-                <span class="headline">{{post.title}}</span>
-                <span class="subheader">{{post.subtitle}}</span>
-                <span v-for="content in post.promoContent">
-                  <a v-if="content.url" :href="content.url">
-                    {{content.words}}
-                  </a>
-                  <span v-else>
-                    {{content.words}}
-                  </span>
-                </span>
+                <h4>{{post.title}}</h4>
+                <h6>{{post.subtitle}}</h6>
+
+                <paragraph-with-links
+                  v-bind:content="post.promoParagraph">
+                </paragraph-with-links>
+
                 <div v-if="post.altUrl">
                   <router-link v-bind:to="post.altUrl">
                   {{post.altText}}
@@ -32,21 +33,14 @@
                 </div>
               </v-card-text>
 
-              <v-card-actions>
-                <v-btn icon class="light-blue--text">
-                  <v-icon medium>fa-twitter</v-icon>
-                </v-btn>
-                <v-btn icon class="blue--text text--darken-4">
-                  <v-icon medium>fa-facebook</v-icon>
-                </v-btn>
-              </v-card-actions>
-
               <youtube v-if="post.youtubeSrc"
                        :src="post.youtubeSrc">
               </youtube>
 
               <img v-if="post.imgSrc"
                    :src="post.imgSrc">
+
+              <social-actions :post="post"></social-actions>
 
             </v-card>
           </div>
@@ -58,27 +52,38 @@
 </template>
 
 <script>
-  import Foliage from '../../resources/img/foliage.png'
+  import Foliage from '../../../static/img/foliage.png'
   import MTBVAHeader from '../../components/MTBVAHeader.vue'
   import Youtube from '../../components/Youtube.vue'
+  import ParagraphWithLinks from "../../components/ParagraphWithLinks.vue"
+  import SocialActions from '../../components/SocialActions.vue'
   import posts from '../posts'
 
   export default {
+    name: 'blog',
     components: {
+      ParagraphWithLinks,
       MTBVAHeader,
-      Youtube
+      Youtube,
+      SocialActions
     },
     data() {
       return {
-        posts: posts.posts,
-        showImg: false
+        posts: posts.posts
       }
     },
-    name: 'blog',
     computed: {
       image() {
         return Foliage
-      }
-    }
+      },
+    },
   }
 </script>
+
+<style>
+  .post {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+</style>

@@ -10,7 +10,7 @@
         <div class="subtitle">The same pirates are back at it.</div>
       </div>
       <div class="blog">
-        <img src="../../resources/img/rockymthi8.jpg"
+        <img src="../../../static/img/rockymthi8.jpg"
              class="center">
       </div>
     </div>

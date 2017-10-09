@@ -32,7 +32,7 @@ a:hover {
 
 
 .header-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/foliage.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('img/foliage.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.69) !important;
@@ -331,7 +331,7 @@ body {
 
 
 .footer-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('./img/blue_ridge_mountains.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('img/blue_ridge_mountains.jpg');
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;

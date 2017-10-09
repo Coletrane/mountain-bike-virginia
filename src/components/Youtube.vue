@@ -17,19 +17,18 @@
 
 <style>
   .yt-wrapper {
-    margin: auto;
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
   }
 
   .yt-wrapper iframe {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 93%;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
   }
 </style>

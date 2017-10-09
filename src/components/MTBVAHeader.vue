@@ -1,29 +1,33 @@
 <template>
   <v-parallax v-bind:src="image"
-              v-bind:height="parallaxHeight">
+              v-bind:height="headerHeight">
     <v-toolbar extended absolute class="toolbar">
       <router-link to="blog" class="nav-link">
-        <img class="mtbva" src="../resources/img/mtbva.png">
+        <img class="mtbva" src="../../static/img/mtbva.png">
       </router-link>
       <router-link to="blog" class="xxcva-link nav-link">
-        <img class="xxcva" src="../resources/img/XXCVA.jpg" alt="XXCVA">
+        <img class="xxcva" src="../../static/img/XXCVA.jpg" alt="XXCVA">
       </router-link>
 
       <v-spacer></v-spacer>
 
       <router-link to="/results" class="nav-text">
-        Results
+          Results
       </router-link>
-      <a class="fb nav-link"
+      <a class="nav-link"
          href="https://www.facebook.com/xxcva/">
-        <img src="../resources/img/fb.svg">
+        <img src="../../static/img/fb.svg"
+             class="fb">
       </a>
     </v-toolbar>
 
     <v-layout column align-center justify-center>
-      <h3 class="white--text">{{title}}</h3>
-      <h5 class="white--text">{{subtitle}}</h5>
-      <v-btn raised v-bind:href="buttonLink">
+      <h3 class="white--text mtbva-title">{{title}}</h3>
+      <h5 class="white--text mtbva-title">{{subtitle}}</h5>
+      <v-btn raised
+             v-if="buttonLink"
+             v-bind:href="buttonLink"
+             class="header-button">
         {{button}}
       </v-btn>
     </v-layout>
@@ -31,38 +35,16 @@
 </template>
 
 <script>
-  import VParallax from "vuetify/src/components/VParallax/VParallax"
-
   export default {
     name: 'mtbva-header',
-    components: {VParallax},
     props: [
+      'header-height',
       'image',
       'title',
       'subtitle',
       'button',
       'buttonLink'
     ],
-    computed: {
-      parallaxHeight() {
-        const whitelist = [
-          'results'
-        ]
-        let isWhitelist
-        whitelist.forEach(name => {
-          if (this.$route.name === name) {
-            isWhitelist = true;
-          }
-        })
-        if (isWhitelist) {
-          return '500'
-        } else {
-          return '800'
-        }
-      },
-
-    }
-
   }
 </script>
 
@@ -80,14 +62,13 @@
     background-color: transparent !important;
     margin-bottom: 32rem;
   }
-
   @media screen and (max-width: 480px) {
     .xxcva {
       display: none;
     }
   }
   .xxcva {
-    width: 10rem;
+    width: 12rem;
   }
   .mtbva {
     width: 8rem;
@@ -96,12 +77,26 @@
     margin-left: 1rem;
   }
   .fb {
-    width: 3rem !important;
+    width: 2.5rem;
   }
   .nav-text {
-    margin-top: 4.6rem !important;
+    margin-top: 4.5rem !important;
+    color: white !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
   }
   .nav-link {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
+  }
+
+  .mtbva-title {
+    text-align: center;
+  }
+  .header-button {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    color: white !important;
   }
   </style>

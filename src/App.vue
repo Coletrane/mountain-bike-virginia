@@ -26,9 +26,16 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
+  @media screen and (max-width: 599px) {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   .content {
-    background-color: #291d00 !important;
-    background-image: url("./resources/img/asfalt-light.png") !important;
+    background-color: #211906 !important;
+    background-image: url("../static/img/asfalt-light.png") !important;
     background-repeat: repeat !important;
   }
 
