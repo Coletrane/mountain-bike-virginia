@@ -53,8 +53,8 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          // extractCSS: process.env.NODE_ENV === 'production',
-          // preserveWhitespace: false,
+          extractCSS: process.env.NODE_ENV === 'production',
+          preserveWhitespace: false,
           postcss: [
             require('autoprefixer')({
               browsers: ['last 3 versions']
@@ -65,6 +65,9 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        options: {
+          presets: ['es2015']
+        },
         exclude: /node_modules/
       },
       {
@@ -102,19 +105,19 @@ if (process.env.NODE_ENV === 'production') {
   // // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CleanWebpackPlugin('dist'),
-    // new ExtractTextPlugin({
-    //   filename: '[name].css',
-    // }),
+    new ExtractTextPlugin({
+      filename: 'common.[chunkhash].css',
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      inject: 'head',
+      chunksSortMode: 'dependency',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
       },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      // chunksSortMode: 'dependency'
     }),
     new webpack.DefinePlugin({
       'process.env': {
