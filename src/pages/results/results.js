@@ -1,6 +1,6 @@
 module.exports = [
   {
-    race: "Virginia's Blue Ridge, Creature From Carvins Cove 2017",
+    race: "Creature From Carvins Cove 2017",
     results: {
       classes: [
         {
@@ -245,7 +245,7 @@ module.exports = [
     }
   },
   {
-    race: "Virginia's Blue Ridge, Creature From Carvins Cove 2016",
+    race: "Creature From Carvins Cove 2016",
     results: {
       classes: [
         {

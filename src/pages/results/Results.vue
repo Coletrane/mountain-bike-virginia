@@ -5,18 +5,37 @@
       v-bind:image="image">
     </m-t-b-v-a-header>
 
-    <div v-for="race in races">
-      <h4>{{race.race}}</h4>
+    <v-content>
+      <v-container>
+        <v-layout row wrap align-center>
+          <v-card class="post">
+            <v-select
+              v-bind:items="races"
+              item-text="race"
+              v-model="currentRace"
+              v-bind:placeholder="currentRace.race"
+              label="Select"
+              bottom
+            ></v-select>
 
-      <div v-for="clazz in race.results.classes">
-        <h6>{{clazz.name}}</h6>
-        <v-data-table
-          v-bind:headers="headers"
-          v-bind:items="clazz.riders"
-          hide-actions>
-        </v-data-table>
-      </div>
-    </div>
+            <div v-for="clazz in currentRace.results.classes">
+              <h5 class="center clazz">{{clazz.name}}</h5>
+              <v-data-table
+                v-bind:headers="headers"
+                :items="clazz.riders"
+                hide-actions>
+
+                <template slot="items" scope="props">
+                  <td class="center">{{props.item.position}}</td>
+                  <td class="center">{{props.item.name}}</td>
+                  <td class="center">{{props.item.time}}</td>
+                </template>
+              </v-data-table>
+            </div>
+          </v-card>
+        </v-layout>
+      </v-container>
+    </v-content>
 
   </div>
 </template>
@@ -34,12 +53,13 @@
     data() {
       return {
         image: Podium,
-        races: this.initClasses(),
+        races: this.initRaces().reverse(),
+        currentRace:  this.initRaces().reverse()[0],
         headers: [
           {
             text: 'Position',
             align: 'center',
-            sortable: true,
+            sortable: false,
             value: 'position'
           },
           {
@@ -51,20 +71,21 @@
           {
             text: 'Time',
             align: 'center',
-            sortable: true,
+            sortable: false,
             value: 'time'
           }
         ]
       }
     },
     methods: {
-      initClasses() {
+      initRaces() {
         // Deep copy
-        let resultsWithPos = JSON.parse(JSON.stringify(results.results))
+        let resultsWithPos = JSON.parse(JSON.stringify(results))
         resultsWithPos.forEach(race => {
           race.results.classes.forEach(clazz => {
             clazz.riders.forEach((rider, i, arr) => {
               rider.position = i + 1
+              rider.value = false
             })
           })
         })
@@ -85,5 +106,24 @@
 </script>
 
 <style>
+  .clazz {
+    margin-bottom: 0 !important;
+    margin-top: 1rem;
+    padding-left: 6%;
+  }
 
+  .post {
+    margin: auto;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .center {
+    text-align: center;
+  }
+  .results-container {
+    padding: 1rem;
+    background-color: white;
+  }
 </style>

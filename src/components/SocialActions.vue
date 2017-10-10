@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <v-btn icon class="blue--text text--darken-4"
-           :href="facebookLink(post.href)">
+  <div class="social-right">
+    <v-btn icon class="blue--text text--darken-4 social-button"
+           :href="facebookLink(post)">
       <v-icon medium>fa-facebook</v-icon>
     </v-btn>
-    <v-btn icon class="red--text"
-           :href="redditLink(post.href)">
+    <v-btn icon class="red--text social-button"
+           :href="redditLink(post)">
       <v-icon medium>fa-reddit</v-icon>
     </v-btn>
-    <v-btn icon class="light-blue--text"
+    <v-btn icon class="light-blue--text social-button"
            :href="twitterLink(post)">
       <v-icon medium>fa-twitter</v-icon>
     </v-btn>
@@ -21,7 +21,7 @@
     props: ['post'],
     data() {
       return {
-        baseUrl: "http://bikeva.com/"
+        baseUrl: "http://bikeva.com"
       }
     },
     methods: {
@@ -41,3 +41,20 @@
     }
   }
   </script>
+
+<style>
+  @media screen and (max-width: 600px) {
+    .social-button {
+      margin: 0 !important;
+      width: 2rem !important;
+    }
+    .icon {
+      font-size: 1.5rem !important;
+    }
+
+  }
+  .social-right {
+    margin-top: -1rem;
+    float: right;
+  }
+</style>

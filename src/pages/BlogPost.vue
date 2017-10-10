@@ -13,8 +13,7 @@
             <div class="blog-p subheading">
               <span>{{post.subtitle}}</span>
 
-              <social-actions :post="post"
-                              class="social-right">
+              <social-actions :post="post">
               </social-actions>
             </div>
 
@@ -78,8 +77,5 @@
   .blog-p {
     padding: 1rem;
   }
-  .social-right {
-    margin-top: -1rem;
-    float: right;
-  }
+
 </style>

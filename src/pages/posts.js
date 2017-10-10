@@ -12,8 +12,9 @@ module.exports = [
     ],
     altUrl: "/results",
     altText: "View the Results.",
+    resultsIdx: 0,
     youtubeSrc: "https://www.youtube.com/embed/uO44Tt0woT8",
-    href: "/creature2017"
+    href: "/creature2017recap",
   },
   {
     title: "Full Site Relaunch!",
@@ -39,7 +40,8 @@ module.exports = [
     ],
     altUrl: "/results",
     altText: "View the Results.",
+    resultsIdx: 1,
     youtubeSrc: "https://www.youtube.com/embed/656HZ2mYpc0",
-    href: "/creature2016"
+    href: "/creature2016",
   },
 ].reverse()

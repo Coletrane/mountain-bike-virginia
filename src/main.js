@@ -13,7 +13,7 @@ const Creature2017 = () => import('./pages/creature2017/Creature2017.vue')
 let routes = [
   {
     path: '*',
-    redirect: '/home'
+    redirect: '/'
   },
   {
     name: 'home',
@@ -28,18 +28,20 @@ let routes = [
     component: Relaunch,
   },
   {
-    name: 'creature2017',
+    name: 'creature2017recap',
     component: Creature2017
   }
 ]
 routePaths.forEach((path, i, arr) => {
-  routes[i].path = path
+  routes[i + 1].path = path
 })
-console.log(routes)
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
-  routes: routes
+  routes: routes,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0}
+  }
 })
 
 Vue.use(Vuetify)

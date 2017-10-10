@@ -12,7 +12,7 @@
     <v-content>
       <v-container>
         <v-layout row wrap align-center>
-          <div v-for="post in posts">
+          <div v-for="post in posts" class="post-card">
             <v-card hover
                     ripple
                     v-bind:href="post.href"
@@ -20,6 +20,8 @@
 
               <v-card-text>
                 <h4>{{post.title}}</h4>
+                <social-actions :post="post"></social-actions>
+
                 <h6>{{post.subtitle}}</h6>
 
                 <paragraph-with-links
@@ -40,8 +42,6 @@
               <img v-if="post.img"
                    :src="post.img"
                    class="post-img">
-
-              <social-actions :post="post"></social-actions>
 
             </v-card>
           </div>
@@ -70,7 +70,7 @@
     },
     data() {
       return {
-        posts: posts
+        posts: posts.reverse()
       }
     },
     computed: {
@@ -82,6 +82,9 @@
 </script>
 
 <style>
+  .post-card {
+    width: 100%
+  }
   .post {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;

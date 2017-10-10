@@ -6,13 +6,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const routes = require('./routes.js');
 
-let imageLoaders = [{
+var imageLoaders = [{
   loader: 'url-loader',
   options: {
     limit: 10000,
     name: '[name].[ext]'
   }
-}]
+}];
 if (process.env.NODE_ENV === 'production' && !process.env.NO_IMG) {
   imageLoaders.push({
     loader: 'image-webpack-loader',
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production' && !process.env.NO_IMG) {
 }
 
 module.exports = {
-  entry: ['babel-polyfill', './src/main.js'],
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'build.js',

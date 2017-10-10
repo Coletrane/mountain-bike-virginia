@@ -2,5 +2,5 @@ module.exports = [
   '/',
   '/results',
   '/relaunch',
-  '/creature2017'
+  '/creature2017recap'
 ];
