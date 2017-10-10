@@ -3,13 +3,23 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const history = require('connect-history-api-fallback');
+const favicon = require('serve-favicon')
 
 const app = express();
 const PORT = 9002;
 
+const root = path.join(__dirname, './dist');
+
 app.use(history());
 app.use(compression());
-app.use(express.static(path.join(__dirname, './dist')));
+
+app.use(express.static(root));
+// app.use(favicon(root + '/favicon.ico'));
+app.use('/robots.txt', express.static(root + '/robots.txt'))
+app.get('/sitemap.xml', (req, res) => {
+  res.setHeader("Content-Type", "text/xml")
+  res.sendFile(resolve(root + '/sitemap.xml'))
+})
 
 app.listen(process.env.PORT || PORT, function() {
   console.log('Mountain Bike Virginia running on port', PORT);

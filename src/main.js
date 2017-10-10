@@ -5,6 +5,10 @@ import Router from 'vue-router'
 import App from './App.vue'
 import Vuetify from 'vuetify'
 
+// Regular server stuff
+import * as favicons from '../static/favicons';
+import '../static/robots.txt'
+
 import routePaths from '../routes.js'
 
 const Blog = () => import('./pages/Blog.vue')

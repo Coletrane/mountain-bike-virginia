@@ -44,7 +44,7 @@ module.exports = {
   resolve: {
     extensions: ['*', '.jpg', '.png', '.gif'],
     alias: {
-      'resources': path.resolve(__dirname, './resources')
+      'static': path.resolve(__dirname, './static')
     }
   },
   module: {
@@ -59,7 +59,10 @@ module.exports = {
             require('autoprefixer')({
               browsers: ['last 3 versions']
             })
-          ]
+          ],
+          loaders: {
+            js: 'babel-loader'
+          }
         }
       },
       {
@@ -79,12 +82,19 @@ module.exports = {
         loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/'
       },
       {
-        test: /\.(png|gif|jpg|cur)$/i,
+        test: /\.(png|gif|jpg|cur|ico)$/i,
         loaders: imageLoaders,
       },
       {
-        test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
-        loader: 'file-loader'
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.(ttf|eot|svg|otf|txt)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
       }
     ]
   },
