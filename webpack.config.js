@@ -90,7 +90,7 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        test: /\.(ttf|eot|svg|otf|txt)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        test: /\.(ttf|eot|svg|otf|txt|xml)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'

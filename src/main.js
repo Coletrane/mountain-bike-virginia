@@ -6,8 +6,9 @@ import App from './App.vue'
 import Vuetify from 'vuetify'
 
 // Regular server stuff
-import * as favicons from '../static/favicons';
+import * as favicons from '../static/favicons'
 import '../static/robots.txt'
+import '../static/sitemap.xml'
 
 import routePaths from '../routes.js'
 
