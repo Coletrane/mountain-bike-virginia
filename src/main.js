@@ -9,6 +9,7 @@ import Vuetify from 'vuetify'
 import '../static/robots.txt'
 import '../static/sitemap.xml'
 
+
 import routePaths from '../routes.js'
 
 const Blog = () => import('./pages/Blog.vue')
