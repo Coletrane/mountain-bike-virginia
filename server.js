@@ -16,6 +16,7 @@ app.use(history());
 app.use(express.static(root));
 app.use(favicon(root + '/favicon.ico'));
 app.use('/robots.txt', express.static(root + '/robots.txt'))
+app.use('/manifest.json', express.static(root + '/manifest.json'))
 app.get('/sitemap.xml', (req, res) => {
   res.setHeader("Content-Type", "text/xml")
   res.sendFile(resolve(root + '/sitemap.xml'))
