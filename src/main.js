@@ -4,6 +4,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App.vue'
 import Vuetify from 'vuetify'
+import Meta from 'vue-meta'
+
+Vue.use(Router)
+Vue.use(Meta)
+Vue.use(Vuetify)
 
 // Regular server stuff
 import '../static/robots.txt'
@@ -14,7 +19,7 @@ import routePaths from '../routes.js'
 const Blog = () => import('./pages/Blog.vue')
 const Results = () => import('./pages/results/Results.vue')
 const Relaunch = () => import('./pages/relaunch/Relaunch.vue')
-const Creature2017 = () => import('./pages/creature2017/Creature2017.vue')
+const Creature2017 = () => import('./pages/creature2017recap/Creature2017Recap.vue')
 
 let routes = [
   {
@@ -42,8 +47,6 @@ routePaths.forEach((path, i, arr) => {
   routes[i + 1].path = path
 })
 
-Vue.use(Router)
-
 const router = new Router({
   mode: 'history',
   routes: routes,
@@ -51,8 +54,6 @@ const router = new Router({
     return { x: 0, y: 0}
   }
 })
-
-Vue.use(Vuetify)
 
 var root = new Vue({
   el: '#app',

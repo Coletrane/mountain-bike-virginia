@@ -1,14 +1,3 @@
-<head>
-  <!-- made by www.metatags.org -->
-  <meta name="description" content="Results and pictures from the second annual 44mile XXC race. " />
-  <meta name="keywords" content="mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove" />
-  <meta name="author" content="metatags generator">
-  <meta name="robots" content="index, follow">
-  <meta name="revisit-after" content="3 month">
-  <title>Creature from Carvin's Cove 2017</title>
-  <!-- creature, carvins, cove -->
-</head>
-
 <template>
   <div id="creature-2017">
     <blog-post
@@ -48,9 +37,16 @@
   const post = posts[2]
 
   export default {
-    name: 'creature2017',
+    name: 'creature2017recap',
     components: {
       BlogPost
+    },
+    metaInfo: {
+      title: "Creature from Carvin's Cove 2017",
+      meta: [
+        {description: "Results and pictures from the second annual race in Roanoke's fine Carvin's Cove"},
+        {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove'}
+      ]
     },
     data() {
       return {
