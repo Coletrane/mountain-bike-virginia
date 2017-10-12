@@ -42,7 +42,7 @@ module.exports = {
     filename: 'build.js',
   },
   resolve: {
-    extensions: ['*', '.jpg', '.png', '.gif'],
+    extensions: ['*', '.jpg', '.png', '.gif', '.json'],
     alias: {
       'static': path.resolve(__dirname, './static')
     }
@@ -86,11 +86,7 @@ module.exports = {
         loaders: imageLoaders,
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.(ttf|eot|svg|otf|txt|xml)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        test: /\.(ttf|eot|svg|otf|txt|xml|json)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'

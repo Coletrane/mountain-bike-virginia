@@ -20,7 +20,6 @@
   import '../static/favicons/favicon-16x16.png'
   import '../static/favicons/favicon-32x32.png'
   import '../static/favicons/mstile-150x150.png'
-  import '../static/favicons/manifest.json'
   import '../node_modules/vuetify/dist/vuetify.min.css'
   import MTBVAFooter from './components/MTBVAFooter.vue'
 
