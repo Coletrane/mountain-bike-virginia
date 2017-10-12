@@ -1,4 +1,15 @@
+<head>
+  <!-- made by www.metatags.org -->
+  <meta name="description" content="Results from races sanctioned by The Virginia Championship Commission" />
+  <meta name="keywords" content="mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, " />
+  <meta name="author" content="metatags generator">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="3 month">
+  <title>Results</title>
+  <!-- results, race, races -->
+</head>
 <template>
+
   <div id="results">
     <m-t-b-v-a-header
       v-bind:header-height="480"

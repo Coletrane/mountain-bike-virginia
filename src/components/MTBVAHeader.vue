@@ -1,6 +1,7 @@
 <template>
   <v-parallax v-bind:src="image"
-              v-bind:height="headerHeight">
+              v-bind:height="headerHeight"
+              class="header-wrapper">
     <v-toolbar extended absolute class="toolbar">
       <router-link to="home" class="nav-link">
         <img class="mtbva" src="../../static/img/mtbva.png">
@@ -58,6 +59,9 @@
   /*opacity: 0.25 !important;*/
   /*}*/
 
+  .header-wrapper {
+    background-color: black;
+  }
   .toolbar {
     background-color: transparent !important;
     margin-bottom: 32rem;

@@ -1,3 +1,14 @@
+<head>
+  <!-- made by www.metatags.org -->
+  <meta name="description" content="Results and pictures from the second annual 44mile XXC race. " />
+  <meta name="keywords" content="mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove" />
+  <meta name="author" content="metatags generator">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="3 month">
+  <title>Creature from Carvin's Cove 2017</title>
+  <!-- creature, carvins, cove -->
+</head>
+
 <template>
   <div id="creature-2017">
     <blog-post

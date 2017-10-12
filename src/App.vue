@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import * as favicons from '../static/favicons'
   import '../node_modules/vuetify/dist/vuetify.min.css'
   import MTBVAFooter from './components/MTBVAFooter.vue'
 
