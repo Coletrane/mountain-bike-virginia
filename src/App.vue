@@ -12,13 +12,29 @@
 </template>
 
 <script>
-  import * as favicons from '../static/favicons'
+  import '../static/favicons/android-chrome-192x192.png'
+  import '../static/favicons/android-chrome-384x384.png'
+  import '../static/favicons/apple-touch-icon.png'
+  import '../static/favicons/safari-pinned-tab.svg'
+  import '../static/favicons/favicon.ico'
+  import '../static/favicons/favicon-16x16.png'
+  import '../static/favicons/favicon-32x32.png'
+  import '../static/favicons/mstile-150x150.png'
+  import '../static/favicons/manifest.json'
   import '../node_modules/vuetify/dist/vuetify.min.css'
   import MTBVAFooter from './components/MTBVAFooter.vue'
 
   export default {
     components: {MTBVAFooter},
-    name: 'app'
+    name: 'app',
+    metaInfo: {
+      title: 'Mountain Bike Virginia',
+      meta: [
+        {charset: 'utf-8'},
+        {description: 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'},
+        {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
+      ]
+    }
   }
 </script>
 
