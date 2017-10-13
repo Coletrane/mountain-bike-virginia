@@ -15,11 +15,13 @@ app.use(history());
 
 app.use(express.static(root));
 app.use(favicon(root + '/favicon.ico'));
-app.use('/robots.txt', express.static(root + '/robots.txt'))
-app.use('/manifest.json', express.static(root + '/manifest.json'))
+app.use('*/favicon-16x16.png', express.static(root + '/favicon-16x16.png'));
+app.use('*/favicon-32x32.png', express.static(root + '/favicon-32x32.png'));
+app.use('/robots.txt', express.static(root + '/robots.txt'));
+app.use('/manifest.json', express.static(root + '/manifest.json'));
 app.get('/sitemap.xml', (req, res) => {
-  res.setHeader("Content-Type", "text/xml")
-  res.sendFile(resolve(root + '/sitemap.xml'))
+  res.setHeader("Content-Type", "text/xml");
+  res.sendFile(resolve(root + '/sitemap.xml'));
 })
 
 app.listen(process.env.PORT || PORT, function() {

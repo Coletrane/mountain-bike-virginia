@@ -6,15 +6,15 @@ import App from './App.vue'
 import Vuetify from 'vuetify'
 import Meta from 'vue-meta'
 
-Vue.use(Router)
-Vue.use(Meta)
-Vue.use(Vuetify)
-
 // Regular server stuff
 import '../static/robots.txt'
 import '../static/sitemap.xml'
 import '../static/favicons/manifest.json'
 
+
+Vue.use(Router)
+Vue.use(Meta)
+Vue.use(Vuetify)
 
 import routePaths from '../routes.js'
 

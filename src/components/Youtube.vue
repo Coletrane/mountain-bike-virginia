@@ -1,7 +1,7 @@
 <template>
   <div class="yt-wrapper">
     <iframe width="100%"
-            :src="src"
+            :data-src="src"
             frameborder="0"
             allowfullscreen>
     </iframe>
