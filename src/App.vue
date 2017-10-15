@@ -45,8 +45,8 @@
 
   @media screen and (max-width: 599px) {
     .container {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
