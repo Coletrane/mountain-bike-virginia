@@ -16,7 +16,6 @@
   import Switchblades from './img/IMG_3009.jpg'
   import Switchblade27 from './img/IMG_3005.jpg'
   import Switchblade29 from './img/IMG_3011.jpg'
-  import Trail from './img/IMG_7380.jpg'
 
   const post = posts[3]
 
@@ -34,7 +33,7 @@
     },
     data() {
       return {
-        headerHeight: 500,
+        headerHeight: 700,
         image: Switchblades,
         post: post,
         content: [
