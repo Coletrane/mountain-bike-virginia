@@ -21,6 +21,7 @@
   import '../static/favicons/favicon-32x32.png'
   import '../static/favicons/mstile-150x150.png'
   import '../node_modules/vuetify/dist/vuetify.min.css'
+
   import MTBVAFooter from './components/MTBVAFooter.vue'
 
   export default {
@@ -44,13 +45,13 @@
 
   @media screen and (max-width: 599px) {
     .container {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
   .content {
-    background-color: #211906 !important;
+    background-color: rgba(32, 23, 2, 0.68) !important;
     background-image: url("../static/img/asfalt-light.png") !important;
     background-repeat: repeat !important;
   }

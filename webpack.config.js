@@ -86,7 +86,7 @@ module.exports = {
         loaders: imageLoaders,
       },
       {
-        test: /\.(ttf|eot|svg|otf|txt|xml|json)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        test: /\.(ttf|eot|svg|otf|txt|xml|json|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'

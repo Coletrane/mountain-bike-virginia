@@ -6,15 +6,15 @@ import App from './App.vue'
 import Vuetify from 'vuetify'
 import Meta from 'vue-meta'
 
-Vue.use(Router)
-Vue.use(Meta)
-Vue.use(Vuetify)
-
 // Regular server stuff
 import '../static/robots.txt'
 import '../static/sitemap.xml'
 import '../static/favicons/manifest.json'
 
+
+Vue.use(Router)
+Vue.use(Meta)
+Vue.use(Vuetify)
 
 import routePaths from '../routes.js'
 
@@ -22,7 +22,7 @@ const Blog = () => import('./pages/Blog.vue')
 const Results = () => import('./pages/results/Results.vue')
 const Relaunch = () => import('./pages/relaunch/Relaunch.vue')
 const Creature2017 = () => import('./pages/creature2017recap/Creature2017Recap.vue')
-
+const PivotSwitchblade = () => import('./pages/pivot-switchblade-review/PivotSwitchbladeReview.vue')
 let routes = [
   {
     path: '*',
@@ -43,6 +43,10 @@ let routes = [
   {
     name: 'creature2017recap',
     component: Creature2017
+  },
+  {
+    name: 'pivot-switchblade-review',
+    component: PivotSwitchblade
   }
 ]
 routePaths.forEach((path, i, arr) => {
