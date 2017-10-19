@@ -1,7 +1,19 @@
 // This is ES5 MFs
 const pirates = require('./relaunch/img/rockymthi8.jpg');
+const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg');
 
 module.exports = [
+  {
+    title: "Review: Pivot Switchblade",
+    subtitle: "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
+    promoParagraph: [
+      {
+      words: "With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly."
+      }
+    ],
+    img: switchblade,
+    href: "/pivot-switchblade-review"
+  },
   {
     title: "Virginia's Blue Ridge Creature from Carvins Cove",
     subtitle: "Oct 1st, 2017",

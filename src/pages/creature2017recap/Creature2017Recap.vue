@@ -1,10 +1,10 @@
 <template>
   <div id="creature-2017">
     <blog-post
-      v-bind:header-height="headerHeight"
-      v-bind:image="image"
-      v-bind:post="post"
-      v-bind:content="content">
+      :header-height="headerHeight"
+      :image="image"
+      :post="post"
+      :content="content">
     </blog-post>
   </div>
 </template>
