@@ -24,12 +24,12 @@ if (process.env.NODE_ENV === 'production' && !process.env.NO_IMG) {
         optimizationLevel: 7,
       },
       pngquant: {
-        quality: '65-90',
+        quality: '80',
         speed: 4
       },
       mozjpeg: {
         progressive: true,
-        quality: 65
+        quality: 80
       }
     }
   });
