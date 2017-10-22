@@ -34,6 +34,8 @@
   import OneOff from './img/oneoff.jpg'
   import WoodsSign from './img/woods-sign.jpg'
 
+  import meta from '../../../metas'
+
   const post = posts[2]
 
   export default {
@@ -41,13 +43,7 @@
     components: {
       BlogPost
     },
-    metaInfo: {
-      title: "Creature from Carvin's Cove 2017",
-      meta: [
-        {description: "Results and pictures from the second annual race in Roanoke's fine Carvin's Cove"},
-        {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove'}
-      ]
-    },
+    metaInfo: meta['creature2017recap'],
     data() {
       return {
         headerHeight: 480,

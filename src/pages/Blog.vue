@@ -66,6 +66,8 @@
   import posts from './posts'
   import VPagination from "vuetify/es5/components/VPagination/VPagination";
 
+  import metas from '../../metas'
+
   export default {
     name: 'blog',
     components: {
@@ -75,6 +77,7 @@
       Youtube,
       SocialActions
     },
+    metaInfo: metas['/'],
     data() {
       return {
         posts: posts,

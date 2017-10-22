@@ -32,6 +32,7 @@
               </v-data-table>
             </div>
           </v-card>
+        <!--</v-layout>-->
       </v-container>
     </v-content>
 
@@ -43,20 +44,16 @@
   import Podium from './img/podium.png'
   import results from './results'
 
+  import metas from '../../../metas'
+
   export default {
     name: 'results',
     components: {
       MTBVAHeader
     },
-    metaInfo: {
-      title: 'Results',
-      meta: [
-        {description: 'Results from races sanctioned by The Virginia Championship Commission'},
-        {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, '},
-        {}
-      ]
-    },
+    metaInfo: metas['/results'],
     data() {
+      console.log(metas)
       return {
         image: Podium,
         races: this.initRaces().reverse(),

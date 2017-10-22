@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
+
 const routes = require('./routes.js');
 
 var imageLoaders = [{

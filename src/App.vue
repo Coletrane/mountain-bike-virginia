@@ -27,14 +27,6 @@
   export default {
     components: {MTBVAFooter},
     name: 'app',
-    metaInfo: {
-      title: 'Mountain Bike Virginia',
-      meta: [
-        {charset: 'utf-8'},
-        {description: 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'},
-        {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
-      ]
-    },
     data() {
       return {
         showFooter: false
@@ -61,7 +53,7 @@
   }
   @media screen and (min-width: 600px) {
     .container {
-      max-width: 793px !important;
+      max-width: 793px !important;;
     }
   }
 

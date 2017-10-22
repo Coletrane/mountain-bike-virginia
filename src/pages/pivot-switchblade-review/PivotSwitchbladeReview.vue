@@ -17,6 +17,8 @@
   import Switchblade27 from './img/IMG_3005.jpg'
   import Switchblade29 from './img/IMG_3011.jpg'
 
+  import metas from '../../../metas'
+
   const post = posts[3]
 
   export default {
@@ -24,13 +26,7 @@
     components: {
       BlogPost
     },
-    metaInfo: {
-      title: "Review: Pivot Switchblade",
-      meta: [
-        {description: "Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue"},
-        {keywords: 'mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail'}
-      ]
-    },
+    metaInfo: metas['/pivot-switchblade-review'],
     data() {
       return {
         headerHeight: 700,
