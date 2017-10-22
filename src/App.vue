@@ -2,11 +2,11 @@
   <v-app>
     <div id="app">
 
-      <transition mode="out-in">
+      <transition name="fade">
         <router-view></router-view>
       </transition>
 
-      <m-t-b-v-a-footer></m-t-b-v-a-footer>
+      <m-t-b-v-a-footer v-if="showFooter"></m-t-b-v-a-footer>
     </div>
   </v-app>
 </template>
@@ -34,6 +34,16 @@
         {description: 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'},
         {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
       ]
+    },
+    data() {
+      return {
+        showFooter: false
+      }
+    },
+    mounted() {
+      setTimeout(() => {
+        this.showFooter = true
+      }, 1000)
     }
   }
 </script>
@@ -49,6 +59,11 @@
       padding-right: 0 !important;
     }
   }
+  @media screen and (min-width: 600px) {
+    .container {
+      max-width: 793px !important;
+    }
+  }
 
   .content {
     background-color: rgba(32, 23, 2, 0.68) !important;
@@ -56,4 +71,11 @@
     background-repeat: repeat !important;
   }
 
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0
+  }
 </style>

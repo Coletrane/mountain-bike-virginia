@@ -7,7 +7,6 @@
 
     <v-content>
       <v-container>
-        <v-layout row wrap align-center>
           <v-card class="post">
             <v-select
               v-bind:items="races"
@@ -33,7 +32,6 @@
               </v-data-table>
             </div>
           </v-card>
-        </v-layout>
       </v-container>
     </v-content>
 

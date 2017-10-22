@@ -12,7 +12,7 @@
     <v-content>
       <v-container>
         <v-layout row wrap align-center>
-          <div v-for="post in posts" class="post-card">
+          <div v-for="post in postsPage" class="post-card">
             <v-card hover
                     ripple
                     v-bind:href="post.href"
@@ -45,6 +45,11 @@
 
             </v-card>
           </div>
+
+          <v-pagination :length="postsPages.length"
+                        v-model="page">
+          </v-pagination>
+
         </v-layout>
       </v-container>
     </v-content>
@@ -59,10 +64,12 @@
   import ParagraphWithLinks from "../components/ParagraphWithLinks.vue"
   import SocialActions from '../components/SocialActions.vue'
   import posts from './posts'
+  import VPagination from "vuetify/es5/components/VPagination/VPagination";
 
   export default {
     name: 'blog',
     components: {
+      VPagination,
       ParagraphWithLinks,
       MTBVAHeader,
       Youtube,
@@ -70,13 +77,34 @@
     },
     data() {
       return {
-        posts: posts.reverse()
+        posts: posts,
+        page: parseInt(this.$route.name) || 1,
       }
     },
     computed: {
       image() {
         return Foliage
       },
+      postsPages() {
+        console.log(this.page)
+        let count = 0
+        let postsGroup = 0
+        let result = [[]]
+        this.posts.forEach(post => {
+          console.log(post)
+          if (count < 5) {
+            result[postsGroup][count] = post
+            count += 1
+          } else {
+            count = 0
+            postsGroup += 1
+          }
+        })
+        return result
+      },
+      postsPage() {
+        return this.postsPages[this.page - 1]
+      }
     },
   }
 </script>
@@ -91,5 +119,11 @@
   }
   .post-img {
     width: 100%;
+  }
+  .pagination {
+    margin: auto
+  }
+  .application--light .pagination__item--active {
+    background: rgba(80, 97, 111, 0.82) !important;
   }
 </style>

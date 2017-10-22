@@ -3,10 +3,10 @@
               v-bind:height="headerHeight"
               class="header-wrapper">
     <v-toolbar extended absolute class="toolbar">
-      <router-link to="home" class="nav-link">
+      <router-link to="/" class="nav-link">
         <img class="mtbva" src="../../static/img/mtbva.png">
       </router-link>
-      <router-link to="home" class="xxcva-link nav-link">
+      <router-link to="/" class="xxcva-link nav-link">
         <img class="xxcva" src="../../static/img/XXCVA.jpg" alt="XXCVA">
       </router-link>
 
