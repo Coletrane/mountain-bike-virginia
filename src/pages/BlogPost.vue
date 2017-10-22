@@ -70,6 +70,13 @@
 </script>
 
 <style>
+  @media screen and (min-width: 600px) {
+    .container {
+      max-width: 1350px !important;;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
   .blog-img {
     width: 100% !important;
   }

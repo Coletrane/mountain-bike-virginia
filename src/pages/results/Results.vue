@@ -109,6 +109,12 @@
 </script>
 
 <style>
+  @media screen and (min-width: 960px) {
+    .container {
+      max-width: 700px !important;
+    }
+  }
+
   .clazz {
     margin-bottom: 0 !important;
     margin-top: 1rem;

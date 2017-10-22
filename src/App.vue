@@ -51,11 +51,6 @@
       padding-right: 0 !important;
     }
   }
-  @media screen and (min-width: 600px) {
-    .container {
-      max-width: 793px !important;;
-    }
-  }
 
   .content {
     background-color: rgba(32, 23, 2, 0.68) !important;
