@@ -86,12 +86,10 @@
         return Foliage
       },
       postsPages() {
-        console.log(this.page)
         let count = 0
         let postsGroup = 0
         let result = [[]]
         this.posts.forEach(post => {
-          console.log(post)
           if (count < 5) {
             result[postsGroup][count] = post
             count += 1

@@ -3,9 +3,33 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const history = require('connect-history-api-fallback');
-const favicon = require('serve-favicon')
+const favicon = require('serve-favicon');
+const sitemap = require('sitemap');
+const routes = require('./routes');
 
-const app = express();
+let urls = []
+routes.forEach(route => {
+  let priority
+  if (route === '/') {
+    priority = 1.0
+  } else {
+    priority = 0.8
+  }
+
+  urls.push({
+    url: route,
+    changefreq: 'weekly',
+    priority: priority
+  });
+});
+
+const app = express()
+  , sm = sitemap.createSitemap({
+      hostname: 'http://bikeva.com',
+      cacheTime: 600000,
+      urls: urls
+})
+
 const PORT = 9002;
 
 const root = path.join(__dirname, './dist');
@@ -20,9 +44,14 @@ app.use('*/favicon-32x32.png', express.static(root + '/favicon-32x32.png'));
 app.use('/robots.txt', express.static(root + '/robots.txt'));
 app.use('/manifest.json', express.static(root + '/manifest.json'));
 app.get('/sitemap.xml', (req, res) => {
-  res.setHeader("Content-Type", "text/xml");
-  res.sendFile(resolve(root + '/sitemap.xml'));
-})
+  sm.toXML((err, xml) => {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+});
 
 app.listen(process.env.PORT || PORT, function() {
   console.log('Environment: ', process.env.NODE_ENV);
