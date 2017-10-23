@@ -1,5 +1,5 @@
 <template>
-  <iframe v-bind:src="url"
+  <iframe :src="url"
           style='width: 1px; min-width: 100%; border: none;' scrolling='no'>
   </iframe>
 </template>

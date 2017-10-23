@@ -1,6 +1,6 @@
 <template>
-  <v-parallax v-bind:src="image"
-              v-bind:height="headerHeight"
+  <v-parallax :src="image"
+              :height="headerHeight"
               class="header-wrapper">
     <v-toolbar extended absolute class="toolbar">
       <router-link to="/" class="nav-link">
@@ -27,7 +27,7 @@
       <h5 class="white--text mtbva-title">{{subtitle}}</h5>
       <v-btn raised
              v-if="buttonLink"
-             v-bind:href="buttonLink"
+             :href="buttonLink"
              class="header-button">
         {{button}}
       </v-btn>

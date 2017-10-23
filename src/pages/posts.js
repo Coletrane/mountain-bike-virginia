@@ -4,37 +4,6 @@ const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg');
 
 module.exports = [
   {
-    title: "Review: Pivot Switchblade",
-    subtitle: "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
-    promoParagraph: [
-      {
-      words: "With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly."
-      }
-    ],
-    img: switchblade,
-    href: "/pivot-switchblade-review"
-  },
-  {
-    title: "Virginia's Blue Ridge Creature from Carvins Cove",
-    subtitle: "Oct 1st, 2017",
-    promoParagraph: [
-      {
-        words: "Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.",
-      }
-    ],
-    altUrl: "/results",
-    altText: "View the Results.",
-    resultsIdx: 0,
-    youtubeSrc: "https://www.youtube.com/embed/uO44Tt0woT8",
-    href: "/creature2017recap",
-  },
-  {
-    title: "Full Site Relaunch!",
-    subtitle: "The same pirates are still at it.",
-    img: pirates,
-    href: "/relaunch"
-  },
-  {
     title: "Virginia's Blue Ridge Creature from Carvins Cove",
     subtitle: "Oct 2nd, 2016",
     promoParagraph: [
@@ -55,5 +24,36 @@ module.exports = [
     resultsIdx: 1,
     youtubeSrc: "https://www.youtube.com/embed/i5Lxb4wtuCs",
     href: "/creature2016",
+  },
+  {
+    title: "Full Site Relaunch!",
+    subtitle: "The same pirates are still at it.",
+    img: pirates,
+    href: "/relaunch"
+  },
+  {
+    title: "Virginia's Blue Ridge Creature from Carvins Cove",
+    subtitle: "Oct 1st, 2017",
+    promoParagraph: [
+      {
+        words: "Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.",
+      }
+    ],
+    altUrl: "/results",
+    altText: "View the Results.",
+    resultsIdx: 0,
+    youtubeSrc: "https://www.youtube.com/embed/uO44Tt0woT8",
+    href: "/creature2017recap",
+  },
+  {
+    title: "Review: Pivot Switchblade",
+    subtitle: "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
+    promoParagraph: [
+      {
+        words: "With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly."
+      }
+    ],
+    img: switchblade,
+    href: "/pivot-switchblade-review"
   },
 ]

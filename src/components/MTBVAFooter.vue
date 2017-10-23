@@ -3,9 +3,9 @@
     <div class="sponsors-container">
       <v-layout row wrap>
         <v-flex xs4 v-for="sponsor in sponsors">
-              <a v-bind:href="sponsor.url">
-              <img v-bind:src="sponsor.img"
-                   v-bind:class="sponsor.class"
+              <a :href="sponsor.url">
+              <img :src="sponsor.img"
+                   :class="sponsor.class"
                           class="sponsor">
                 </a>
         </v-flex>

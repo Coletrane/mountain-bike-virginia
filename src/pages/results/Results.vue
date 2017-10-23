@@ -1,18 +1,18 @@
 <template>
   <div id="results">
     <m-t-b-v-a-header
-      v-bind:header-height="480"
-      v-bind:image="image">
+      :header-height="480"
+      :image="image">
     </m-t-b-v-a-header>
 
     <v-content>
       <v-container>
           <v-card class="post">
             <v-select
-              v-bind:items="races"
+              :items="races"
               item-text="race"
               v-model="currentRace"
-              v-bind:placeholder="currentRace.race"
+              :placeholder="currentRace.race"
               label="Select"
               bottom
             ></v-select>
@@ -20,7 +20,7 @@
             <div v-for="clazz in currentRace.results.classes">
               <h5 class="center clazz">{{clazz.name}}</h5>
               <v-data-table
-                v-bind:headers="headers"
+                :headers="headers"
                 :items="clazz.riders"
                 hide-actions>
 
@@ -53,7 +53,6 @@
     },
     metaInfo: metas['/results'],
     data() {
-      console.log(metas)
       return {
         image: Podium,
         races: this.initRaces().reverse(),

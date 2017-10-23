@@ -1,9 +1,9 @@
 <template>
   <div id="blog-post">
     <m-t-b-v-a-header
-      v-bind:header-height="headerHeight"
-      v-bind:image="image"
-      v-bind:title="post.title">
+      :header-height="headerHeight"
+      :image="image"
+      :title="post.title">
     </m-t-b-v-a-header>
 
     <v-content>
@@ -11,7 +11,7 @@
         <v-layout row wrap align-center>
           <v-card>
             <div class="blog-p subheading">
-              <span>{{post.subtitle}}</span>
+              <h6>{{post.subtitle}}</h6>
 
               <social-actions :post="post">
               </social-actions>
@@ -25,7 +25,7 @@
 
               <paragraph-with-links
                 v-if="section.p"
-                v-bind:paragraph="section.p"
+                :paragraph="section.p"
                 class="blog-p">
               </paragraph-with-links>
 

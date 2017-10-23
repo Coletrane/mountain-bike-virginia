@@ -2,7 +2,7 @@
   <div id="blog">
     <m-t-b-v-a-header
       header-height="800"
-      v-bind:image="image"
+      :image="image"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
       button="Ride or Race with us"
@@ -15,7 +15,7 @@
           <div v-for="post in postsPage" class="post-card">
             <v-card hover
                     ripple
-                    v-bind:href="post.href"
+                    :href="post.href"
                     class="post">
 
               <v-card-text>
@@ -25,11 +25,11 @@
                 <h6>{{post.subtitle}}</h6>
 
                 <paragraph-with-links
-                  v-bind:paragraph="post.promoParagraph">
+                  :paragraph="post.promoParagraph">
                 </paragraph-with-links>
 
                 <div v-if="post.altUrl">
-                  <router-link v-bind:to="post.altUrl">
+                  <router-link :to="post.altUrl">
                   {{post.altText}}
                 </router-link>
                 </div>
@@ -80,7 +80,7 @@
     metaInfo: metas['/'],
     data() {
       return {
-        posts: posts,
+        posts: JSON.parse(JSON.stringify(posts)).reverse(),
         page: parseInt(this.$route.name) || 1,
       }
     },
@@ -113,7 +113,7 @@
 <style>
   @media screen and (min-width: 600px) {
     .container {
-      max-width: 1350px !important;;
+      max-width: 1200px !important;;
       padding-left: 30px;
       padding-right: 30px;
     }
