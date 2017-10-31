@@ -8,7 +8,7 @@ const sitemap = require('sitemap');
 const routes = require('./routes');
 
 let urls = []
-routes.forEach(route => {
+routes.appRoutes.forEach(route => {
   let priority
   if (route === '/') {
     priority = 1.0

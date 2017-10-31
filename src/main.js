@@ -8,7 +8,6 @@ import Meta from 'vue-meta'
 
 // Regular server stuff
 import '../static/robots.txt'
-// import '../static/sitemap.xml'
 import '../static/favicons/manifest.json'
 
 

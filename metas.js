@@ -1,12 +1,11 @@
 const routes = require('./routes');
 
-var metas = {}
-const initRoutesObject = function() {
-  for (var i = 0; i < routes.length; i++) {
-    metas[routes[i]] = {}
-  }
-}
-initRoutesObject();
+const baseUrl = "http://bikeva.com"
+
+let metas = {}
+routes.appRoutes.forEach((route, i, arr) => {
+  metas[route] = {}
+})
 
 metas['/'] = {
   title: 'Mountain Bike Virginia',
@@ -14,6 +13,10 @@ metas['/'] = {
     {charset: 'utf-8'},
     {description: 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'},
     {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
+    {property: 'og:url', content: baseUrl + routes['/']},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:title', content: metas['/'].title},
+    {property: 'og:image', content: routes.imgRoutes['/']}
   ]
 }
 
@@ -41,7 +44,7 @@ metas['/pivot-switchblade-review'] = {
     {description: "Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue"},
     {keywords: 'mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail'}
   ]
-}
+};
 
 module.exports = metas;
 
