@@ -15,27 +15,7 @@
                             <h6>{{post.subtitle}}</h6>
                             <author :author="post.author"></author>
 
-                            <div v-for="section in content">
-
-                                <img v-if="section.img"
-                                     :src="section.img"
-                                     class="blog-img">
-
-                                <paragraph-with-links
-                                        v-if="section.p"
-                                        :paragraph="section.p"
-                                        class="blog-p">
-                                </paragraph-with-links>
-
-                                <youtube v-if="section.youtubeSrc"
-                                         :src="section.youtubeSrc">
-                                </youtube>
-
-                                <ride-with-gps v-if="section.rwgps"
-                                               :src="section.rwgpsSrc">
-                                </ride-with-gps>
-
-                            </div>
+                            <slot name="content"></slot>
 
                             <div>
                                 <social-actions :post="post"></social-actions>
@@ -54,7 +34,6 @@
   import Youtube from '../components/Youtube.vue';
   import RideWithGps from '../components/RideWithGps.vue';
   import SocialActions from '../components/SocialActions.vue';
-  import ParagraphWithLinks from '../components/ParagraphWithLinks.vue';
   import Author from '../components/Author.vue';
 
   export default {
@@ -64,14 +43,12 @@
       Youtube,
       RideWithGps,
       SocialActions,
-      ParagraphWithLinks,
       Author
     },
     props: [
       'headerHeight',
       'image',
-      'post',
-      'content'
+      'post'
     ]
   };
 </script>

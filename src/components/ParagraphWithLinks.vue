@@ -1,5 +1,5 @@
 <template>
-  <div class="paragraph-with-links">
+    <div class="paragraph-with-links">
     <span v-for="words in paragraph">
       <a v-if="words.url" :href="words.url">
         {{words.words}}
@@ -8,7 +8,7 @@
         {{words.words}}
       </span>
     </span>
-  </div>
+    </div>
 </template>
 
 <script>
