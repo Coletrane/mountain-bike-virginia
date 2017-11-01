@@ -21,8 +21,6 @@ metas['/results'] = {
   meta: [
     {description: 'Results from races sanctioned by The Virginia Championship Commission'},
     {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, '},
-    {property: 'og:type', content: 'website'},
-    {property: 'og:image', content: routes.imgRoutes['/']},
   ]
 }
 
@@ -55,14 +53,17 @@ metas['/pivot-switchblade-review'] = {
 for (let key in metas) {
   if (metas.hasOwnProperty(key)) {
     metas[key].meta.push({property: 'og:type', content: 'website'})
-    metas[key].meta.push({property: 'og:url', content: baseUrl + routes[key]})
-    metas[key].meta.push({property: 'og:image', content: routes.imgRoutes[key]})
+    metas[key].meta.push({property: 'og:url', content: baseUrl + routes.appRoutesObj[key]})
+    metas[key].meta.push({property: 'og:image', content: baseUrl + routes.imgRoutes[key]})
     metas[key].meta.push({property: 'og:title', content: metas[key].title})
-    metas[key].meta.push({property: 'og:description', content: metas[key].description})
     metas[key].meta.push({property: 'fb:app_id', content: '1426359417419881'})
+    metas[key].meta.forEach(meta => {
+      if (meta.description) {
+        metas[key].meta.push({property: 'og:description', content: meta.description})
+
+      }
+    })
   }
 }
 
 module.exports = metas;
-
-
