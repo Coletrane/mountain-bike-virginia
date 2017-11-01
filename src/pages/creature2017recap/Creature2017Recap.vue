@@ -55,7 +55,9 @@
               {
                 words: "The view of Carvins Cove’s backside from Hollins University. Outdoor Trails, a terrific outdoor store in Daleville and Lynchburg, sponsored the free Saturday camping along with Hollins."
               }
-            ],
+            ]
+          },
+          {
             img: Fence
           },
           {

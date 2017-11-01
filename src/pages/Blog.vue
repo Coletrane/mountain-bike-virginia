@@ -20,7 +20,6 @@
 
               <v-card-text>
                 <h4>{{post.title}}</h4>
-                <social-actions :post="post"></social-actions>
 
                 <h6>{{post.subtitle}}</h6>
 
@@ -43,6 +42,9 @@
                    :src="post.img"
                    class="post-img">
 
+              <div class="post-card">
+                <social-actions :post="post"></social-actions>
+              </div>
             </v-card>
           </div>
 

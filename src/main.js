@@ -48,7 +48,7 @@ let routes = [
     component: PivotSwitchblade
   }
 ]
-routePaths.forEach((path, i, arr) => {
+routePaths.appRoutes.forEach((path, i, arr) => {
   routes[i + 1].path = path
 })
 

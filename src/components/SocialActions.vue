@@ -54,7 +54,6 @@
 
   }
   .social-right {
-    margin-top: -1rem;
-    float: right;
+    margin-top: -.5rem;
   }
 </style>

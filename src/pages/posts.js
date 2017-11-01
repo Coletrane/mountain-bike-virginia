@@ -1,6 +1,18 @@
-// This is ES5 MFs
-const pirates = require('./relaunch/img/rockymthi8.jpg');
-const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg');
+const pirates = require('./relaunch/img/rockymthi8.jpg')
+const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg')
+
+const cole = {
+  name: 'Cole Inman',
+  imgUrl: require('../../static/img/cole.jpg'),
+  fbUrl: 'https://www.facebook.com/uhmcole'
+}
+
+const kyle = {
+  name: 'Kyle Inman',
+  imgUrl: require('../../static/img/kyle.jpg'),
+  fbUrl: 'https://www.facebook.com/kylnman'
+}
+
 
 module.exports = [
   {
@@ -24,12 +36,14 @@ module.exports = [
     resultsIdx: 1,
     youtubeSrc: "https://www.youtube.com/embed/i5Lxb4wtuCs",
     href: "/creature2016",
+    author: kyle
   },
   {
     title: "Full Site Relaunch!",
     subtitle: "The same pirates are still at it.",
     img: pirates,
-    href: "/relaunch"
+    href: "/relaunch",
+    author: cole
   },
   {
     title: "Virginia's Blue Ridge Creature from Carvins Cove",
@@ -44,6 +58,7 @@ module.exports = [
     resultsIdx: 0,
     youtubeSrc: "https://www.youtube.com/embed/uO44Tt0woT8",
     href: "/creature2017recap",
+    author: kyle
   },
   {
     title: "Review: Pivot Switchblade",
@@ -54,6 +69,7 @@ module.exports = [
       }
     ],
     img: switchblade,
-    href: "/pivot-switchblade-review"
+    href: "/pivot-switchblade-review",
+    author: cole
   },
 ]

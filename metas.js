@@ -13,10 +13,6 @@ metas['/'] = {
     {charset: 'utf-8'},
     {description: 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'},
     {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
-    {property: 'og:url', content: baseUrl + routes['/']},
-    {property: 'og:type', content: 'website'},
-    {property: 'og:title', content: metas['/'].title},
-    {property: 'og:image', content: routes.imgRoutes['/']}
   ]
 }
 
@@ -24,11 +20,20 @@ metas['/results'] = {
   title: 'Results',
   meta: [
     {description: 'Results from races sanctioned by The Virginia Championship Commission'},
-    {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, '}
+    {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, '},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:image', content: routes.imgRoutes['/']},
   ]
 }
 
-metas['/relaunch'] = {}
+metas['/relaunch'] = {
+  title: "Mountain Bike Virginia Site Relaunch",
+  meta: [
+    {
+
+    }
+  ]
+}
 
 metas['/creature2017recap'] = {
   title: "Creature from Carvin's Cove 2017",
@@ -45,6 +50,18 @@ metas['/pivot-switchblade-review'] = {
     {keywords: 'mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail'}
   ]
 };
+
+// Properties for crawlers
+for (let key in metas) {
+  if (metas.hasOwnProperty(key)) {
+    metas[key].meta.push({property: 'og:type', content: 'website'})
+    metas[key].meta.push({property: 'og:url', content: baseUrl + routes[key]})
+    metas[key].meta.push({property: 'og:image', content: routes.imgRoutes[key]})
+    metas[key].meta.push({property: 'og:title', content: metas[key].title})
+    metas[key].meta.push({property: 'og:description', content: metas[key].description})
+    metas[key].meta.push({property: 'fb:app_id', content: '1426359417419881'})
+  }
+}
 
 module.exports = metas;
 
