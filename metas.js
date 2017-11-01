@@ -51,6 +51,14 @@ metas['/pivot-switchblade-review'] = {
   ]
 };
 
+metas['/spec-mines-oct-29-2017'] = {
+  title: "Two Different Climates, Separated by 1000 Vertical Feet",
+  meta: [
+    {description: "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet"},
+    {keywords: 'mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall'}
+  ]
+}
+
 // Properties for crawlers
 for (let key in metas) {
   if (metas.hasOwnProperty(key)) {

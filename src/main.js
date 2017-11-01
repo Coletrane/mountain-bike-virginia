@@ -22,6 +22,7 @@ const Results = () => import('./pages/results/Results.vue')
 const Relaunch = () => import('./pages/relaunch/Relaunch.vue')
 const Creature2017 = () => import('./pages/creature2017recap/Creature2017Recap.vue')
 const PivotSwitchblade = () => import('./pages/pivot-switchblade-review/PivotSwitchbladeReview.vue')
+const SpecMinesOct292017 = () => import('./pages/spec-mines-oct-29-2017/SpecMinesOct292017.vue')
 let routes = [
   {
     path: '*',
@@ -46,6 +47,10 @@ let routes = [
   {
     name: 'pivot-switchblade-review',
     component: PivotSwitchblade
+  },
+  {
+    name: 'spec-mines-oct-29-2017',
+    component: SpecMinesOct292017
   }
 ]
 routePaths.appRoutes.forEach((path, i, arr) => {

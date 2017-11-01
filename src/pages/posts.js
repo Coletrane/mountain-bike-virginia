@@ -1,6 +1,6 @@
 const pirates = require('./relaunch/img/rockymthi8.jpg')
 const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg')
-
+const ironMt = require('./spec-mines-oct-29-2017/img/IMG_3089.jpg')
 const cole = {
   name: 'Cole Inman',
   imgUrl: require('../../static/img/cole.jpg'),
@@ -72,4 +72,11 @@ module.exports = [
     href: "/pivot-switchblade-review",
     author: cole
   },
+  {
+    title: "Blue Ridge Parkway tuckaway into Spec Mines",
+    subtitle: "Wind, Rain, Cold. Pick Two.",
+    img: ironMt,
+    href: "/spec-mines-oct-29-2017",
+    author: cole
+  }
 ]
