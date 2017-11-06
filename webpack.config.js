@@ -144,7 +144,13 @@ if (process.env.NODE_ENV === 'production') {
     new PrerenderSpaPlugin(
       // Absolute path to compiled SPA
       path.join(__dirname, './dist'),
-      routes.appRoutes
+      routes.appRoutes,
+      {
+        phantomPageSettings: {
+          javascriptEnabled: true,
+          loadImages: true
+        }
+      }
     )
   ]);
 }
