@@ -37,6 +37,7 @@
   export default {
     data() {
       return {
+        img: img,
         sponsors: [
           {
             img: img + 'va-blueridge.png',
