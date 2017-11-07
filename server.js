@@ -5,6 +5,15 @@ const history = require('connect-history-api-fallback')
 const favicon = require('serve-favicon')
 const sitemap = require('sitemap')
 const routes = require('./routes')
+const fs = require('fs')
+
+const PORT = 9002
+
+const root = path.join(__dirname, './dist')
+
+// const server = fs.readFileSync(root + '/server.js')
+const index = fs.readFileSync(root + '/index.html')
+const renderer = require('vue-server-renderer').createBundleRenderer(index)
 
 let urls = []
 routes.appRoutes.forEach(route => {
@@ -29,10 +38,6 @@ const app = express()
       urls: urls
 })
 
-const PORT = 9002
-
-const root = path.join(__dirname, './dist')
-
 app.use(compression())
 app.use(history())
 
@@ -54,6 +59,19 @@ for (let img in routes.imgRoutes) {
     })
   }
 }
+
+app.get('*', (req, res) => {
+  renderer.renderToString(
+    { url: req.url },
+    (err, html) => {
+      if (err) {
+        console.log(err)
+        return res.sendStatus(500)
+      }
+      res.send(index)
+    }
+  )
+})
 
 
 app.listen(process.env.PORT || PORT, function() {
