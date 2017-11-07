@@ -7,7 +7,7 @@
         <img class="mtbva" :src="img + 'mtbva.png'">
       </router-link>
       <router-link to="/" class="xxcva-link nav-link">
-        <img class="xxcva" src="img + 'XXCVA.jpg'" alt="XXCVA">
+        <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
       </router-link>
 
       <v-spacer></v-spacer>
