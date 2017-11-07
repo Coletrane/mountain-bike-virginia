@@ -37,11 +37,6 @@ app.use(compression())
 app.use(history())
 
 app.use(express.static(root))
-app.use(favicon(root + '/favicon.ico'))
-app.use('*/favicon-16x16.png', express.static(root + '/favicon-16x16.png'))
-app.use('*/favicon-32x32.png', express.static(root + '/favicon-32x32.png'))
-app.use('/robots.txt', express.static(root + '/robots.txt'))
-app.use('/manifest.json', express.static(root + '/manifest.json'))
 app.get('/sitemap.xml', (req, res) => {
   sm.toXML((err, xml) => {
     if (err) {
