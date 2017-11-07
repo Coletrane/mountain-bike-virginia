@@ -4,10 +4,10 @@
               class="header-wrapper">
     <v-toolbar extended absolute class="toolbar">
       <router-link to="/" class="nav-link">
-        <img class="mtbva" src="../../static/img/mtbva.png">
+        <img class="mtbva" :src="img + 'mtbva.png'">
       </router-link>
       <router-link to="/" class="xxcva-link nav-link">
-        <img class="xxcva" src="../../static/img/XXCVA.jpg" alt="XXCVA">
+        <img class="xxcva" src="img + 'XXCVA.jpg'" alt="XXCVA">
       </router-link>
 
       <v-spacer></v-spacer>
@@ -17,7 +17,7 @@
       </router-link>
       <a class="nav-link"
          href="https://www.facebook.com/xxcva/">
-        <img src="../../static/img/fb.svg"
+        <img :src="img + 'fb.svg'"
              class="fb">
       </a>
     </v-toolbar>
@@ -46,6 +46,11 @@
       'button',
       'buttonLink'
     ],
+    data: function() {
+      return {
+        img: this.s3 + '/static/img/'
+      }
+    }
   }
 </script>
 

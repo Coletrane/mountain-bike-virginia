@@ -7,46 +7,11 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 const routes = require('./routes.js');
 
-var imageLoaders = [{
-  loader: 'url-loader',
-  options: {
-    limit: 10000,
-    name: '[name].[ext]'
-  }
-}];
-if (process.env.NODE_ENV === 'production' && !process.env.NO_IMG) {
-  imageLoaders.push({
-    loader: 'image-webpack-loader',
-    options: {
-      gifsicle: {
-        interlaced: false,
-      },
-      optipng: {
-        optimizationLevel: 7,
-      },
-      pngquant: {
-        quality: '100',
-        speed: 4
-      },
-      mozjpeg: {
-        progressive: true,
-        quality: 100
-      }
-    }
-  });
-}
-
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'build.js',
-  },
-  resolve: {
-    extensions: ['*', '.jpg', '.png', '.gif', '.json'],
-    alias: {
-      'static': path.resolve(__dirname, './static')
-    }
   },
   module: {
     rules: [
@@ -83,10 +48,6 @@ module.exports = {
         loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/'
       },
       {
-        test: /\.(png|gif|jpg|cur|ico)$/i,
-        loaders: imageLoaders,
-      },
-      {
         test: /\.(ttf|eot|svg|otf|txt|xml|json|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         loader: 'file-loader',
         options: {
@@ -118,8 +79,6 @@ if (process.env.NODE_ENV === 'production') {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: 'head',
-      chunksSortMode: 'dependency',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -133,24 +92,15 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,
-      compress: {
-        warnings: false
+      extractComments: true,
+      uglifyOptions: {
+        compress: {},
+        mangle: {}
       },
       mangle: true
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.join(__dirname, './dist'),
-      routes.appRoutes,
-      {
-        phantomPageSettings: {
-          javascriptEnabled: true,
-          loadImages: true
-        }
-      }
-    )
+    })
   ]);
 }

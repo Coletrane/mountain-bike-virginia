@@ -21,7 +21,7 @@
       </div>
       <div>
         <a class="icon" href="https://github.com/coletrane">
-          <img src="../../static/img/github.svg"
+          <img :src="img + 'github.svg'"
                class="github">
         </a>
       </div>
@@ -30,80 +30,70 @@
 </template>
 
 <script>
-  import Blueridge from '../../static/img/va-blueridge.png'
-  import Starlight from '../../static/img/starlight.gif'
-  import Alleghany from '../../static/img/alleghany.jpg'
-  import Blackwater from '../../static/img/blackwater.jpg'
-  import JTRIG from '../../static/img/jtrg.jpg'
-  import Parkway from '../../static/img/parkway.png'
-  import OutdoorTrails from '../../static/img/outdoortrails.jpg'
-  import Woods from '../../static/img/woods.png'
-  import Bath from '../../static/img/bath.jpg'
-  import SBC from '../../static/img/sbc.gif'
-  import EastCoasters from '../../static/img/east-coasters.jpg'
-  import Tavern from '../../static/img/tavern.gif'
+  import routes from '../../routes'
 
+  const img = routes.s3Root + '/static/img/'
 
   export default {
     data() {
       return {
         sponsors: [
           {
-            img: Blueridge,
+            img: img + 'va-blueridge.png',
             class: 'blueridge',
             url: '',
           },
           {
-            img: Parkway,
+            img: img + 'parkway.png',
             class: 'parkway',
             url: '',
           },
           {
-            img: Starlight,
+            img: img + 'starlight.gif',
             class: 'starlight',
             url: '',
           },
           {
-            img: SBC,
+            img: img + 'sbc.gif',
             class: 'sbc',
             url: '',
           },
           {
-            img: JTRIG,
+            img: img + 'jtrg.jpg',
             class: 'jtrig',
             url: '',
           },
           {
-            img: EastCoasters,
+            img: img + 'east-coasters.jpg',
             class: 'east-coasters',
             url: '',
           },
           {
-            img: Alleghany,
+            img: img + 'alleghany.jpg',
             class: 'alleghany',
             url: '',
           },
           {
-            img: Blackwater,
+            img: img + 'blackwater.jpg',
             class: 'blackwater',
             url: '',
           },
           {
-            img: OutdoorTrails,
+            img: img + 'outdoortrails.jpg',
             class: 'outdoor-trails',
             url: '',
           },
           {
-            img: Woods,
+            img: img + 'woods.png',
             class: 'woods',
             url: '',
           },{
-            img: Bath,
+            img: img + 'bath.jpg',
             class: 'bath',
             url: '',
           },
           {
-            img: Tavern,
+            img: img + 'tavern.gif',
             class: 'tavern',
             url: '',
           },
@@ -116,7 +106,7 @@
 <style>
   .mtbva-footer {
     padding-top: 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('../../static/img/blue_ridge_mountains.jpg') !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://s3.amazonaws.com/mtbva/static/img/blue_ridge_mountains.jpg') !important;
     background-position-x: center !important;
     background-position-y: top !important;
     background-repeat: no-repeat !important;

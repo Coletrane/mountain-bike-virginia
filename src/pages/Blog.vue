@@ -2,7 +2,7 @@
   <div id="blog">
     <m-t-b-v-a-header
       header-height="800"
-      :image="image"
+      :image="img + 'foliage.png'"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
       button="Ride or Race with us"
@@ -60,7 +60,6 @@
 </template>
 
 <script>
-  import Foliage from '../../static/img/foliage.png'
   import MTBVAHeader from '../components/MTBVAHeader.vue'
   import Youtube from '../components/Youtube.vue'
   import ParagraphWithLinks from "../components/ParagraphWithLinks.vue"
@@ -82,14 +81,12 @@
     metaInfo: metas['/'],
     data() {
       return {
+        img: this.s3 + '/static/img/',
         posts: JSON.parse(JSON.stringify(posts)).reverse(),
         page: parseInt(this.$route.name) || 1,
       }
     },
     computed: {
-      image() {
-        return Foliage
-      },
       postsPages() {
         let count = 0
         let postsGroup = 0

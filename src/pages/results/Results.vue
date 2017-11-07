@@ -41,7 +41,6 @@
 
 <script>
   import MTBVAHeader from '../../components/MTBVAHeader.vue'
-  import Podium from './img/podium.png'
   import results from './results'
 
   import metas from '../../../metas'
@@ -54,7 +53,7 @@
     metaInfo: metas['/results'],
     data() {
       return {
-        image: Podium,
+        image: this.s3 + '/pages/results/podium.png',
         races: this.initRaces().reverse(),
         currentRace:  this.initRaces().reverse()[0],
         headers: [

@@ -1,15 +1,14 @@
-const pirates = require('./relaunch/img/rockymthi8.jpg')
-const switchblade = require('./pivot-switchblade-review/img/IMG_3009.jpg')
-const ironMt = require('./spec-mines-oct-29-2017/img/IMG_3089.jpg')
+const s3 = require('../../routes').s3Root
+
 const cole = {
   name: 'Cole Inman',
-  imgUrl: require('../../static/img/cole.jpg'),
+  imgUrl: s3 + '/static/img/cole.jpg',
   fbUrl: 'https://www.facebook.com/uhmcole'
 }
 
 const kyle = {
   name: 'Kyle Inman',
-  imgUrl: require('../../static/img/kyle.jpg'),
+  imgUrl: s3 + '/static/img/kyle.jpg',
   fbUrl: 'https://www.facebook.com/kylnman'
 }
 
@@ -41,7 +40,7 @@ module.exports = [
   {
     title: "Full Site Relaunch!",
     subtitle: "The same pirates are still at it.",
-    img: pirates,
+    img: s3 + '/pages/relaunch/rockymthi8.jpg',
     href: "/relaunch",
     author: cole
   },
@@ -68,14 +67,14 @@ module.exports = [
         words: "With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly."
       }
     ],
-    img: switchblade,
+    img: s3 + '/pages/pivot-switchblade-review/IMG_3009.jpg',
     href: "/pivot-switchblade-review",
     author: cole
   },
   {
     title: "Blue Ridge Parkway tuckaway into Spec Mines",
     subtitle: "Wind, Rain, Cold. Pick Two.",
-    img: ironMt,
+    img: s3 + '/pages/spec-mines-oct-29-2017/IMG_3089.jpg',
     href: "/spec-mines-oct-29-2017",
     author: cole
   }

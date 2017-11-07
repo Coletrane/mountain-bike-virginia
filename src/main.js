@@ -7,9 +7,7 @@ import Vuetify from 'vuetify'
 import Meta from 'vue-meta'
 
 // Regular server stuff
-import '../static/robots.txt'
-import '../static/favicons/manifest.json'
-
+import '../robots.txt'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -17,12 +15,12 @@ Vue.use(Vuetify)
 
 import routePaths from '../routes.js'
 
-const Blog = () => import('./pages/Blog.vue')
-const Results = () => import('./pages/results/Results.vue')
-const Relaunch = () => import('./pages/relaunch/Relaunch.vue')
-const Creature2017 = () => import('./pages/creature2017recap/Creature2017Recap.vue')
-const PivotSwitchblade = () => import('./pages/pivot-switchblade-review/PivotSwitchbladeReview.vue')
-const SpecMinesOct292017 = () => import('./pages/spec-mines-oct-29-2017/SpecMinesOct292017.vue')
+import Blog from './pages/Blog.vue'
+import Results from './pages/results/Results.vue'
+import Relaunch from './pages/relaunch/Relaunch.vue'
+import Creature2017 from './pages/creature2017recap/Creature2017Recap.vue'
+import PivotSwitchblade from './pages/pivot-switchblade-review/PivotSwitchbladeReview.vue'
+import SpecMinesOct292017 from './pages/spec-mines-oct-29-2017/SpecMinesOct292017.vue'
 let routes = [
   {
     path: '*',
@@ -65,12 +63,11 @@ const router = new Router({
   }
 })
 
-var root = new Vue({
+Vue.prototype.s3 = routePaths.s3Root
+
+new Vue({
   el: '#app',
   router,
   render: h => h(App)
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-  root.$mount('#app')
-})
