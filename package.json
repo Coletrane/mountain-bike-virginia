@@ -59,6 +59,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "build-check": "nuxt build --analyze",
+    "generate": "nuxt generate",
     "start": "NODE_ENV=production node start.js"
   },
   "main": "dist/app.bundle.js"
