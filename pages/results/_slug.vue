@@ -43,14 +43,27 @@
   import MTBVAHeader from '../../components/MTBVAHeader.vue'
   import results from '../../assets/results'
 
-  import metas from '../../metas'
-
   export default {
     name: 'results',
     components: {
       MTBVAHeader
     },
-    metaInfo: metas['/results'],
+    head() {
+      const title = "Results"
+      const desc = "Results from races sanctioned by The Virginia Championship Commission"
+      return {
+        title: title,
+        meta: [
+          {name: 'description', content: desc},
+          {name: 'og:title', content: title},
+          {name: 'og:description', content: desc},
+          {name: 'og:type', content: 'website'},
+          {name: 'og:url', content: process.env.baseUrl + '/results'},
+          {name: 'og:image', content: process.env.s3 + '/pages/results/podium.png'},
+          {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, '},
+        ]
+      }
+    },
     data() {
       return {
         image: process.env.s3 + '/pages/results/podium.png',

@@ -1,4 +1,7 @@
-const path = require('path')
+require('newrelic')
+const { existsSync } = require('fs')
+const { resolve } = require('path')
+const { Nuxt } = require('nuxt')
 const express = require('express')
 const compression = require('compression')
 const history = require('connect-history-api-fallback')
@@ -6,6 +9,35 @@ const favicon = require('serve-favicon')
 const sitemap = require('sitemap')
 const routes = require('./routes')
 
+const options = require('./nuxt.config')
+const PORT = 9002
+const staticRoot = resolve(__dirname, './dist')
+
+const nuxt = new Nuxt(options)
+
+
+
+const app = express()
+  , sm = sitemap.createSitemap({
+      hostname: 'http://bikeva.com',
+      cacheTime: 600000,
+      urls: urls
+})
+
+app.use(compression())
+
+// Check if project is built for production
+const distDir = resolve(nuxt.options.rootDir, nuxt.options.buildDir || '.nuxt', 'dist')
+if (!existsSync(distDir)) {
+  console.error('> No build files found, please run `nuxt build` before launching `npm start`') // eslint-disable-line no-console
+  process.exit(1)
+}
+
+// app.use(history())
+
+// app.use(express.static(root))
+
+// Sitemap generation
 let urls = []
 routes.appRoutes.forEach(route => {
   let priority
@@ -21,22 +53,6 @@ routes.appRoutes.forEach(route => {
     priority: priority
   })
 })
-
-const app = express()
-  , sm = sitemap.createSitemap({
-      hostname: 'http://bikeva.com',
-      cacheTime: 600000,
-      urls: urls
-})
-
-const PORT = 9002
-
-const root = path.join(__dirname, './dist')
-
-app.use(compression())
-app.use(history())
-
-app.use(express.static(root))
 app.get('/sitemap.xml', (req, res) => {
   sm.toXML((err, xml) => {
     if (err) {
@@ -47,16 +63,8 @@ app.get('/sitemap.xml', (req, res) => {
   })
 })
 
-for (let img in routes.imgRoutes) {
-  if (routes.imgRoutes.hasOwnProperty(img)) {
-    app.get(img, (req, res) => {
-      res.sendFile(img)
-    })
-  }
-}
-
-
-app.listen(process.env.PORT || PORT, function() {
-  console.log('Environment: ', process.env.NODE_ENV)
-  console.log('Mountain Bike Virginia running on port', PORT)
-})
+nuxt.listen(process.env.PORT || PORT)
+// app.listen(process.env.PORT || PORT, function() {
+//   console.log('Environment: ', process.env.NODE_ENV)
+//   console.log('Mountain Bike Virginia running on port', PORT)
+// })

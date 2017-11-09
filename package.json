@@ -11,6 +11,7 @@
     "compression": "^1.7.0",
     "connect-history-api-fallback": "^1.3.0",
     "express": "^4.16.2",
+    "newrelic": "^2.3.2",
     "nuxt": "^1.0.0-rc11",
     "serve-favicon": "^2.4.5",
     "sitemap": "^1.13.0",

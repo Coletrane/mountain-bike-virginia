@@ -4,7 +4,8 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content:'index, follow'},
-      { name: 'revisit-after', content: '3 month'}
+      { name: 'revisit-after', content: '3 month'},
+      { name: 'fb:app_id', content: '1426359417419881'}
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
@@ -23,6 +24,7 @@ module.exports = {
     extractCss: true
   },
   env: {
-    s3: 'https://s3.amazonaws.com/mtbva'
+    s3: 'https://s3.amazonaws.com/mtbva',
+    baseUrl: 'http://bikeva.com'
   }
 }

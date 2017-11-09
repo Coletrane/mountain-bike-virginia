@@ -34,14 +34,14 @@ const posts = [
     altText: "View the Results.",
     resultsIdx: 1,
     youtubeSrc: "https://www.youtube.com/embed/i5Lxb4wtuCs",
-    href: "/creature2016",
+    route: "/",
     author: kyle
   },
   {
     title: "Full Site Relaunch!",
     subtitle: "The same pirates are still at it.",
     img: s3 + '/pages/relaunch/rockymthi8.jpg',
-    href: "/relaunch",
+    route: "relaunch",
     author: cole
   },
   {
@@ -56,7 +56,7 @@ const posts = [
     altText: "View the Results.",
     resultsIdx: 0,
     youtubeSrc: "https://www.youtube.com/embed/uO44Tt0woT8",
-    href: "/creature2017recap",
+    route: "creature-2017-recap",
     author: kyle
   },
   {
@@ -68,20 +68,21 @@ const posts = [
       }
     ],
     img: s3 + '/pages/pivot-switchblade-review/IMG_3009.jpg',
-    href: "/pivot-switchblade-review",
+    route: "pivot-switchblade-review",
     author: cole
   },
   {
     title: "Blue Ridge Parkway tuckaway into Spec Mines",
     subtitle: "Wind, Rain, Cold. Pick Two.",
     img: s3 + '/pages/spec-mines-oct-29-2017/IMG_3089.jpg',
-    href: "/spec-mines-oct-29-2017",
+    route: "spec-mines-oct-29-2017",
     author: cole
   }
 ]
 
 
-const postsRev = JSON.parse(JSON.stringify(posts.reverse()))
+let postsRev = JSON.parse(JSON.stringify(posts))
+postsRev.reverse()
 
 function oneDtoTwoD(arr) {
   let count = 0
@@ -102,9 +103,6 @@ function oneDtoTwoD(arr) {
 }
 
 const postsPages = oneDtoTwoD(postsRev)
-
-console.log(postsPages)
-
 
 export {
   posts,

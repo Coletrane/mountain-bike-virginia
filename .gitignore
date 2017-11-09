@@ -30,3 +30,5 @@ newrelic_agent.log
 npm_debug.log
 
 .nuxt
+.nuxt/
+.nuxt/*

@@ -27,9 +27,7 @@
 
 <script>
   import BlogPost from '../../components/BlogPost.vue'
-  import posts from '../../assets/posts'
-
-  import metas from '../../metas'
+  import { posts } from '../../assets/posts'
 
   const post = posts[3]
 
@@ -38,7 +36,22 @@
     components: {
       BlogPost
     },
-    metaInfo: metas['/pivot-switchblade-review'],
+    head() {
+      const title = "Review: Pivot Switchblade"
+      const desc = "Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue"
+      return {
+        title: title,
+        meta: [
+          {name: 'description', content: desc},
+          {name: 'og:title', content: title},
+          {name: 'og:description', content: desc},
+          {name: 'og:type', content: 'website'},
+          {name: 'og:url', content: process.env.baseUrl + '/pivot-switchblade-review'},
+          {name: 'og:image', content: process.env.s3 + '/pages/pivot-switchblade-review/IMG_3009.jpg'},
+          {keywords: 'mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail'},
+        ]
+      }
+    },
     data() {
       return {
         headerHeight: 700,

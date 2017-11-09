@@ -28,9 +28,7 @@
 
 <script>
     import BlogPost from '../../components/BlogPost.vue'
-    import posts from '../../assets/posts'
-
-    import meta from '../../metas'
+    import { posts } from '../../assets/posts'
 
     const post = posts[4]
 
@@ -39,8 +37,24 @@
       components: {
         BlogPost
       },
-      metaInfo: meta['/spec-mines-oct-29-2017'],
+      head() {
+        const title = "Spec Mines to Blackhorse Gap"
+        const desc = "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet"
+        return {
+          title: title,
+          meta: [
+            {name: 'description', content: desc},
+            {name: 'og:title', content: title},
+            {name: 'og:description', content: desc},
+            {name: 'og:type', content: 'website'},
+            {name: 'og:url', content: process.env.baseUrl + '/spec-mines-oct-29-2017'},
+            {name: 'og:image', content: process.env.s3 + '/pages/spec-mines-oct-29-2017/IMG_3794.jpg'},
+            {keywords: 'mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt'},
+          ]
+        }
+      },
       data() {
+        console.log(posts)
         return {
           headerHeight: 800,
           img: process.env.s3 + '/pages/spec-mines-oct-29-2017/',

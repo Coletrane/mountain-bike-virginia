@@ -13,39 +13,38 @@
       <v-container>
         <v-layout row wrap align-center>
           <div v-for="post in postsPage" class="post-card">
-            <v-card hover
-                    ripple
-                    :href="post.href || ''"
-                    class="post">
+            <div class="post-card">
+              <a :href="post.route" class="post card card--hover">
 
-              <v-card-text>
-                <h4>{{post.title}}</h4>
+                  <div class="card__text">
+                      <h4>{{post.title}}</h4>
 
-                <h6>{{post.subtitle}}</h6>
+                      <h6>{{post.subtitle}}</h6>
 
-                <paragraph-with-links
-                  :paragraph="post.promoParagraph">
-                </paragraph-with-links>
+                      <paragraph-with-links
+                              :paragraph="post.promoParagraph">
+                      </paragraph-with-links>
 
-                <div v-if="post.altUrl">
-                  <router-link :to="post.altUrl">
-                  {{post.altText}}
-                </router-link>
-                </div>
-              </v-card-text>
+                      <div v-if="post.altUrl">
+                          <router-link :to="post.altUrl">
+                              {{post.altText}}
+                          </router-link>
+                      </div>
+                  </div>
 
-              <youtube v-if="post.youtubeSrc"
-                       :src="post.youtubeSrc">
-              </youtube>
+                  <youtube v-if="post.youtubeSrc"
+                           :src="post.youtubeSrc">
+                  </youtube>
 
-              <img v-if="post.img"
-                   :src="post.img"
-                   class="post-img">
+                  <img v-if="post.img"
+                       :src="post.img"
+                       class="post-img">
 
-              <div class="post-card">
-                <social-actions :post="post"></social-actions>
-              </div>
-            </v-card>
+                  <div class="post-card">
+                      <social-actions :post="post"></social-actions>
+                  </div>
+              </a>
+            </div>
           </div>
 
           <v-pagination :length="1"
@@ -66,8 +65,6 @@
   import SocialActions from '../components/SocialActions.vue'
   import { postsPages } from '../assets/posts'
 
-  import metas from '../metas'
-
   export default {
     name: 'blog',
     components: {
@@ -76,7 +73,22 @@
       Youtube,
       SocialActions
     },
-    metaInfo: metas['/'],
+    head() {
+      const title = 'Mountain Bike Virginia'
+      const desc = 'Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.'
+      return {
+        title: title,
+        meta: [
+          {name: 'description', content: desc},
+          {name: 'og:title', content: title},
+          {name: 'og:description', content: desc},
+          {name: 'og:type', content: 'website'},
+          {name: 'og:url', content: process.env.baseUrl},
+          {name: 'og:image', content: process.env.s3 + '/static/img/foliage.png'},
+          {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails'},
+        ]
+      }
+    },
     data() {
       const page =  parseInt(this.$route.name) || 1
 
@@ -86,18 +98,6 @@
         posts: postsPages[page - 1],
         page: page,
       }
-    },
-    computed: {
-//      postsPages() {
-//        let count = 0
-//        let postsGroup = 0
-//        let result = [[]]
-//
-//        return result
-//      },
-//      postsPage() {
-//        return this.postsPages[this.page - 1]
-//      }
     },
   }
 </script>

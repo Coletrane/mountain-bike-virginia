@@ -91,9 +91,7 @@
 <script>
   import BlogPost from '../../components/BlogPost.vue'
   import Youtube from '../../components/Youtube.vue'
-  import posts from '../../assets/posts'
-
-  import meta from '../../metas'
+  import { posts } from '../../assets/posts'
 
   const post = posts[2]
 
@@ -103,11 +101,26 @@
       BlogPost,
       Youtube
     },
-    metaInfo: meta['creature-2017-recap'],
+    head() {
+      const title = "Creature from Carvin's Cove 2017"
+      const desc = "Results and pictures from the second annual race in Roanoke's fine Carvin's Cove"
+      return {
+        title: title,
+        meta: [
+          {name: 'description', content: desc},
+          {name: 'og:title', content: title},
+          {name: 'og:description', content: desc},
+          {name: 'og:type', content: 'website'},
+          {name: 'og:url', content: process.env.baseUrl + '/creature-2017-recap'},
+          {name: 'og:image', content: process.env.s3 + '/pages/creature-2017-recap/lumberjack.jpg'},
+          {keywords: 'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove'},
+        ]
+      }
+    },
     data() {
       return {
         headerHeight: 480,
-        img: '/pages/creature-2017-recap/',
+        img: process.env.s3 + '/pages/creature-2017-recap/',
         post: post,
       }
     }
