@@ -15,29 +15,29 @@ const staticRoot = resolve(__dirname, './dist')
 
 const nuxt = new Nuxt(options)
 
-// let urls = []
-// routes.appRoutes.forEach(route => {
-//   let priority
-//   if (route === '/') {
-//     priority = 1.0
-//   } else {
-//     priority = 0.8
-//   }
-//
-//   urls.push({
-//     url: route,
-//     changefreq: 'weekly',
-//     priority: priority
-//   })
-// })
-// const app = express()
-//   , sm = sitemap.createSitemap({
-//       hostname: 'http://bikeva.com',
-//       cacheTime: 600000,
-//       urls: urls
-// })
-//
-// app.use(compression())
+let urls = []
+routes.appRoutes.forEach(route => {
+  let priority
+  if (route === '/') {
+    priority = 1.0
+  } else {
+    priority = 0.8
+  }
+
+  urls.push({
+    url: route,
+    changefreq: 'weekly',
+    priority: priority
+  })
+})
+const app = express()
+  , sm = sitemap.createSitemap({
+      hostname: 'http://bikeva.com',
+      cacheTime: 600000,
+      urls: urls
+})
+
+app.use(compression())
 
 // Check if project is built for production
 const distDir = resolve(nuxt.options.rootDir, nuxt.options.buildDir || '.nuxt', 'dist')
@@ -48,7 +48,7 @@ if (!existsSync(distDir)) {
 
 // app.use(history())
 
-// app.use(express.static(root))
+app.use(express.static(staticRoot))
 
 
 // app.get('/sitemap.xml', (req, res) => {
@@ -61,10 +61,10 @@ if (!existsSync(distDir)) {
 //   })
 // })
 
-nuxt.listen(process.env.PORT || PORT, function() {
-  console.log('Mountain Bike Virginia running on port', PORT)
-})
-// app.listen(process.env.PORT || PORT, function() {
-//   console.log('Environment: ', process.env.NODE_ENV)
+// nuxt.listen(process.env.PORT || PORT, function() {
 //   console.log('Mountain Bike Virginia running on port', PORT)
 // })
+app.listen(process.env.PORT || PORT, function() {
+  console.log('Environment: ', process.env.NODE_ENV)
+  console.log('Mountain Bike Virginia running on port', PORT)
+})

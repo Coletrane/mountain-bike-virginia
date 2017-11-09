@@ -3,12 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _5ba4c862 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _0aea320e = () => import('../pages/spec-mines-oct-29-2017/_slug.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/_slug" */).then(m => m.default || m)
-const _39977f01 = () => import('../pages/relaunch/_slug.vue' /* webpackChunkName: "pages/relaunch/_slug" */).then(m => m.default || m)
-const _6dd3a3af = () => import('../pages/creature-2017-recap/_slug.vue' /* webpackChunkName: "pages/creature-2017-recap/_slug" */).then(m => m.default || m)
-const _885e61b2 = () => import('../pages/pivot-switchblade-review/_slug.vue' /* webpackChunkName: "pages/pivot-switchblade-review/_slug" */).then(m => m.default || m)
-const _aa3c977e = () => import('../pages/results/_slug.vue' /* webpackChunkName: "pages/results/_slug" */).then(m => m.default || m)
+const _0d6fbade = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _6f50e8fd = () => import('../pages/spec-mines-oct-29-2017/_slug.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/_slug" */).then(m => m.default || m)
+const _a8e0cff6 = () => import('../pages/relaunch/_slug.vue' /* webpackChunkName: "pages/relaunch/_slug" */).then(m => m.default || m)
+const _08c8802b = () => import('../pages/creature-2017-recap/_slug.vue' /* webpackChunkName: "pages/creature-2017-recap/_slug" */).then(m => m.default || m)
+const _171e602b = () => import('../pages/pivot-switchblade-review/_slug.vue' /* webpackChunkName: "pages/pivot-switchblade-review/_slug" */).then(m => m.default || m)
+const _74c06abd = () => import('../pages/results/_slug.vue' /* webpackChunkName: "pages/results/_slug" */).then(m => m.default || m)
 
 
 
@@ -46,32 +46,32 @@ export function createRouter () {
     routes: [
 		{
 			path: "/",
-			component: _5ba4c862,
+			component: _0d6fbade,
 			name: "index"
 		},
 		{
 			path: "/spec-mines-oct-29-2017/:slug?",
-			component: _0aea320e,
+			component: _6f50e8fd,
 			name: "spec-mines-oct-29-2017-slug"
 		},
 		{
 			path: "/relaunch/:slug?",
-			component: _39977f01,
+			component: _a8e0cff6,
 			name: "relaunch-slug"
 		},
 		{
 			path: "/creature-2017-recap/:slug?",
-			component: _6dd3a3af,
+			component: _08c8802b,
 			name: "creature-2017-recap-slug"
 		},
 		{
 			path: "/pivot-switchblade-review/:slug?",
-			component: _885e61b2,
+			component: _171e602b,
 			name: "pivot-switchblade-review-slug"
 		},
 		{
 			path: "/results/:slug?",
-			component: _aa3c977e,
+			component: _74c06abd,
 			name: "results-slug"
 		}
     ],
