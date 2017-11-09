@@ -27,9 +27,7 @@ metas['/results'] = {
 metas['/relaunch'] = {
   title: "Mountain Bike Virginia Site Relaunch",
   meta: [
-    {
-
-    }
+    {description: "Relaunch"}
   ]
 }
 
@@ -57,21 +55,21 @@ metas['/spec-mines-oct-29-2017'] = {
   ]
 }
 
-// Properties for crawlers
-for (let key in metas) {
-  if (metas.hasOwnProperty(key)) {
-    metas[key].meta.push({property: 'og:type', content: 'website'})
-    metas[key].meta.push({property: 'og:url', content: baseUrl + routes.appRoutesObj[key]})
-    metas[key].meta.push({property: 'og:image', content: baseUrl + routes.imgRoutes[key]})
-    metas[key].meta.push({property: 'og:title', content: metas[key].title})
-    metas[key].meta.push({property: 'fb:app_id', content: '1426359417419881'})
-    metas[key].meta.forEach(meta => {
-      if (meta.description) {
-        metas[key].meta.push({property: 'og:description', content: meta.description})
-
-      }
-    })
-  }
-}
+// // Properties for crawlers
+// for (let key in metas) {
+//   if (metas.hasOwnProperty(key)) {
+//     metas[key].meta.push({property: 'og:type', content: 'website'})
+//     metas[key].meta.push({property: 'og:url', content: baseUrl + routes.appRoutesObj[key]})
+//     metas[key].meta.push({property: 'og:image', content: baseUrl + routes.imgRoutes[key]})
+//     metas[key].meta.push({property: 'og:title', content: metas[key].title})
+//     metas[key].meta.push({property: 'fb:app_id', content: '1426359417419881'})
+//     metas[key].meta.forEach(meta => {
+//       if (meta.description) {
+//         metas[key].meta.push({property: 'og:description', content: meta.description})
+//
+//       }
+//     })
+//   }
+// }
 
 module.exports = metas;

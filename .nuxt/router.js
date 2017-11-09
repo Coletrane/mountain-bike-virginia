@@ -3,14 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _b6eda334 = () => import('../pages/Blog.vue' /* webpackChunkName: "pages/Blog" */).then(m => m.default || m)
-const _832a1ce6 = () => import('../pages/App.vue' /* webpackChunkName: "pages/App" */).then(m => m.default || m)
-const _1cfc4426 = () => import('../pages/BlogPost.vue' /* webpackChunkName: "pages/BlogPost" */).then(m => m.default || m)
-const _e8eb02fa = () => import('../pages/spec-mines-oct-29-2017/SpecMinesOct292017.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/SpecMinesOct292017" */).then(m => m.default || m)
-const _63f09d9b = () => import('../pages/relaunch/Relaunch.vue' /* webpackChunkName: "pages/relaunch/Relaunch" */).then(m => m.default || m)
-const _678ce1f5 = () => import('../pages/creature2017recap/Creature2017Recap.vue' /* webpackChunkName: "pages/creature2017recap/Creature2017Recap" */).then(m => m.default || m)
-const _205ed0ee = () => import('../pages/pivot-switchblade-review/PivotSwitchbladeReview.vue' /* webpackChunkName: "pages/pivot-switchblade-review/PivotSwitchbladeReview" */).then(m => m.default || m)
-const _2f92cb6e = () => import('../pages/results/Results.vue' /* webpackChunkName: "pages/results/Results" */).then(m => m.default || m)
+const _5ba4c862 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _0aea320e = () => import('../pages/spec-mines-oct-29-2017/_slug.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/_slug" */).then(m => m.default || m)
+const _39977f01 = () => import('../pages/relaunch/_slug.vue' /* webpackChunkName: "pages/relaunch/_slug" */).then(m => m.default || m)
+const _6dd3a3af = () => import('../pages/creature-2017-recap/_slug.vue' /* webpackChunkName: "pages/creature-2017-recap/_slug" */).then(m => m.default || m)
+const _885e61b2 = () => import('../pages/pivot-switchblade-review/_slug.vue' /* webpackChunkName: "pages/pivot-switchblade-review/_slug" */).then(m => m.default || m)
+const _aa3c977e = () => import('../pages/results/_slug.vue' /* webpackChunkName: "pages/results/_slug" */).then(m => m.default || m)
 
 
 
@@ -47,44 +45,34 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/Blog",
-			component: _b6eda334,
-			name: "Blog"
+			path: "/",
+			component: _5ba4c862,
+			name: "index"
 		},
 		{
-			path: "/App",
-			component: _832a1ce6,
-			name: "App"
+			path: "/spec-mines-oct-29-2017/:slug?",
+			component: _0aea320e,
+			name: "spec-mines-oct-29-2017-slug"
 		},
 		{
-			path: "/BlogPost",
-			component: _1cfc4426,
-			name: "BlogPost"
+			path: "/relaunch/:slug?",
+			component: _39977f01,
+			name: "relaunch-slug"
 		},
 		{
-			path: "/spec-mines-oct-29-2017/SpecMinesOct292017",
-			component: _e8eb02fa,
-			name: "spec-mines-oct-29-2017-SpecMinesOct292017"
+			path: "/creature-2017-recap/:slug?",
+			component: _6dd3a3af,
+			name: "creature-2017-recap-slug"
 		},
 		{
-			path: "/relaunch/Relaunch",
-			component: _63f09d9b,
-			name: "relaunch-Relaunch"
+			path: "/pivot-switchblade-review/:slug?",
+			component: _885e61b2,
+			name: "pivot-switchblade-review-slug"
 		},
 		{
-			path: "/creature2017recap/Creature2017Recap",
-			component: _678ce1f5,
-			name: "creature2017recap-Creature2017Recap"
-		},
-		{
-			path: "/pivot-switchblade-review/PivotSwitchbladeReview",
-			component: _205ed0ee,
-			name: "pivot-switchblade-review-PivotSwitchbladeReview"
-		},
-		{
-			path: "/results/Results",
-			component: _2f92cb6e,
-			name: "results-Results"
+			path: "/results/:slug?",
+			component: _aa3c977e,
+			name: "results-slug"
 		}
     ],
     fallback: false

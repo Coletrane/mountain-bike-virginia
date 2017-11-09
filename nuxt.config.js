@@ -15,5 +15,14 @@ module.exports = {
   },
   plugins: [
     { src: '~/plugins/vuetify.js', ssr: true }
-  ]
+  ],
+  css: [
+    'vuetify/dist/vuetify.min.css'
+  ],
+  build: {
+    extractCss: true
+  },
+  env: {
+    s3: 'https://s3.amazonaws.com/mtbva'
+  }
 }

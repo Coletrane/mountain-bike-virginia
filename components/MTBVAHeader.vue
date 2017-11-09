@@ -48,7 +48,7 @@
     ],
     data: function() {
       return {
-        img: this.s3 + '/static/img/'
+        img: process.env.s3 + '/static/img/'
       }
     }
   }

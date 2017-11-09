@@ -1,2 +1,0 @@
-webpackJsonp([7],{"4QTC":function(e,n,t){"use strict";var r=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div")},u=[],a={render:r,staticRenderFns:u};n.a=a},"BU/Q":function(e,n,t){"use strict";n.a={name:"relaunch"}},J7IB:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t("BU/Q"),u=t("4QTC"),a=t("VU/8"),c=a(r.a,u.a,null,null,null);n.default=c.exports}});
-//# sourceMappingURL=Relaunch.f926bf76f74cb474a9e8.js.map
