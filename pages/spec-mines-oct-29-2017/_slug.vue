@@ -54,7 +54,6 @@
         }
       },
       data() {
-        console.log(posts)
         return {
           headerHeight: 800,
           img: process.env.s3 + '/pages/spec-mines-oct-29-2017/',
