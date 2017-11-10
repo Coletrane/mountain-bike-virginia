@@ -1,7 +1,7 @@
 require('newrelic')
 const { existsSync } = require('fs')
 const { resolve } = require('path')
-const { Nuxt } = require('nuxt')
+// const { Nuxt } = require('nuxt')
 const express = require('express')
 const compression = require('compression')
 const history = require('connect-history-api-fallback')
@@ -9,7 +9,7 @@ const favicon = require('serve-favicon')
 const sitemap = require('sitemap')
 const routes = require('./routes')
 
-const options = require('./nuxt.config')
+// const options = require('./nuxt.config')
 const PORT = 9002
 const staticRoot = resolve(__dirname, './dist')
 
