@@ -13,8 +13,6 @@ const options = require('./nuxt.config')
 const PORT = 9002
 const staticRoot = resolve(__dirname, './dist')
 
-const nuxt = new Nuxt(options)
-
 let urls = []
 routes.appRoutes.forEach(route => {
   let priority
@@ -39,27 +37,19 @@ const app = express()
 
 app.use(compression())
 
-// Check if project is built for production
-const distDir = resolve(nuxt.options.rootDir, nuxt.options.buildDir || '.nuxt', 'dist')
-if (!existsSync(distDir)) {
-  console.error('> No build files found, please run `nuxt build` before launching `npm start`') // eslint-disable-line no-console
-  process.exit(1)
-}
-
-// app.use(history())
-
+app.use(history())
 app.use(express.static(staticRoot))
 
 
-// app.get('/sitemap.xml', (req, res) => {
-//   sm.toXML((err, xml) => {
-//     if (err) {
-//       return res.status(500).end()
-//     }
-//     res.header('Content-Type', 'application/xml')
-//     res.send(xml)
-//   })
-// })
+app.get('/sitemap.xml', (req, res) => {
+  sm.toXML((err, xml) => {
+    if (err) {
+      return res.status(500).end()
+    }
+    res.header('Content-Type', 'application/xml')
+    res.send(xml)
+  })
+})
 
 // nuxt.listen(process.env.PORT || PORT, function() {
 //   console.log('Mountain Bike Virginia running on port', PORT)
