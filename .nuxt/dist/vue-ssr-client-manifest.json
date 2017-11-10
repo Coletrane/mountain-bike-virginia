@@ -1,43 +1,43 @@
 {
   "publicPath": "/_nuxt/",
   "all": [
-    "pages/spec-mines-oct-29-2017/_slug.b5f6a94b848aa4396025.js.map",
-    "pages/spec-mines-oct-29-2017/_slug.b5f6a94b848aa4396025.js",
-    "pages/creature-2017-recap/_slug.c825f7a58398a206271a.js",
-    "pages/index.ac227c3355729c731eed.js",
-    "layouts/default.545c3ed577351e27586f.js",
-    "pages/results/_slug.eb147ef60a6102a260df.js",
+    "pages/spec-mines-oct-29-2017/_slug.1196c3e6d2b56783cc5d.js.map",
+    "pages/spec-mines-oct-29-2017/_slug.1196c3e6d2b56783cc5d.js",
+    "pages/creature-2017-recap/_slug.5cb4ecb9521f3bc5f932.js",
+    "pages/index.2c8814459f68135cc9e8.js",
+    "layouts/default.4a06955649676c178248.js",
+    "pages/results/_slug.1f3ba81200a3f15c9224.js",
     "pages/relaunch/_slug.163e4a1fc9896459a247.js",
     "common.7c8d535367315db4dd23.js",
-    "app.b2ae159950089d6c88c8.js",
-    "manifest.1c45f9eede84435b521f.js",
+    "app.3f5fdb534d6d52bcc07d.js",
+    "manifest.5b4d67c98e9072115260.js",
     "LICENSES",
-    "pages/pivot-switchblade-review/_slug.c3016faaad30789bdc21.js",
-    "pages/pivot-switchblade-review/_slug.c3016faaad30789bdc21.js.map",
-    "pages/creature-2017-recap/_slug.c825f7a58398a206271a.js.map",
-    "pages/index.ac227c3355729c731eed.js.map",
-    "layouts/default.545c3ed577351e27586f.js.map",
-    "pages/results/_slug.eb147ef60a6102a260df.js.map",
+    "pages/pivot-switchblade-review/_slug.f0b0a8a51a1d1d0c81e8.js",
+    "pages/pivot-switchblade-review/_slug.f0b0a8a51a1d1d0c81e8.js.map",
+    "pages/creature-2017-recap/_slug.5cb4ecb9521f3bc5f932.js.map",
+    "pages/index.2c8814459f68135cc9e8.js.map",
+    "layouts/default.4a06955649676c178248.js.map",
+    "pages/results/_slug.1f3ba81200a3f15c9224.js.map",
     "pages/relaunch/_slug.163e4a1fc9896459a247.js.map",
     "common.7c8d535367315db4dd23.js.map",
-    "app.b2ae159950089d6c88c8.js.map",
-    "manifest.1c45f9eede84435b521f.js.map",
+    "app.3f5fdb534d6d52bcc07d.js.map",
+    "manifest.5b4d67c98e9072115260.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.1c45f9eede84435b521f.js",
+    "manifest.5b4d67c98e9072115260.js",
     "common.7c8d535367315db4dd23.js",
-    "app.b2ae159950089d6c88c8.js"
+    "app.3f5fdb534d6d52bcc07d.js"
   ],
   "async": [
-    "pages/spec-mines-oct-29-2017/_slug.b5f6a94b848aa4396025.js",
-    "pages/creature-2017-recap/_slug.c825f7a58398a206271a.js",
-    "pages/index.ac227c3355729c731eed.js",
-    "layouts/default.545c3ed577351e27586f.js",
-    "pages/results/_slug.eb147ef60a6102a260df.js",
+    "pages/spec-mines-oct-29-2017/_slug.1196c3e6d2b56783cc5d.js",
+    "pages/creature-2017-recap/_slug.5cb4ecb9521f3bc5f932.js",
+    "pages/index.2c8814459f68135cc9e8.js",
+    "layouts/default.4a06955649676c178248.js",
+    "pages/results/_slug.1f3ba81200a3f15c9224.js",
     "pages/relaunch/_slug.163e4a1fc9896459a247.js",
-    "pages/pivot-switchblade-review/_slug.c3016faaad30789bdc21.js"
+    "pages/pivot-switchblade-review/_slug.f0b0a8a51a1d1d0c81e8.js"
   ],
   "modules": {
     "68037880": [
@@ -127,10 +127,6 @@
     "2dea60c1": [
       7,
       18
-    ],
-    "8c1d0bb6": [
-      8,
-      19
     ],
     "20af5889": [
       5,
@@ -357,6 +353,10 @@
       18
     ],
     "f22857f6": [
+      8,
+      19
+    ],
+    "3994e4f2": [
       8,
       19
     ],
@@ -744,10 +744,6 @@
       11,
       12
     ],
-    "2ea586e5": [
-      7,
-      18
-    ],
     "221cc61c": [
       7,
       18
@@ -765,6 +761,10 @@
       18
     ],
     "22e79ca1": [
+      7,
+      18
+    ],
+    "2ea586e5": [
       7,
       18
     ],

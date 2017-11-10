@@ -51,9 +51,7 @@ app.get('/sitemap.xml', (req, res) => {
   })
 })
 
-// nuxt.listen(process.env.PORT || PORT, function() {
-//   console.log('Mountain Bike Virginia running on port', PORT)
-// })
+
 app.listen(process.env.PORT || PORT, function() {
   console.log('Environment: ', process.env.NODE_ENV)
   console.log('Mountain Bike Virginia running on port', PORT)
