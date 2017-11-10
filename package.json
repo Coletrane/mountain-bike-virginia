@@ -56,7 +56,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && nuxt generate",
+    "build": "rimraf ./dist && rimraf ./.nuxt && nuxt build && nuxt generate",
     "start": "NODE_ENV=production node server.js"
   },
   "main": "dist/app.bundle.js"

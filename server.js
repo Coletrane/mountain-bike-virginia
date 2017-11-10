@@ -51,6 +51,10 @@ app.get('/sitemap.xml', (req, res) => {
   })
 })
 
+// app.get('/creature2017recap', (req, res) => {
+//   res.send('./dist/)
+// })
+
 
 app.listen(process.env.PORT || PORT, function() {
   console.log('Environment: ', process.env.NODE_ENV)

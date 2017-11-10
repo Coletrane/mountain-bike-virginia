@@ -3,7 +3,7 @@
     <div id="app">
 
       <transition name="fade">
-        <router-view></router-view>
+        <nuxt />
       </transition>
 
       <m-t-b-v-a-footer v-if="showFooter"></m-t-b-v-a-footer>

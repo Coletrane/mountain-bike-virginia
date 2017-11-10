@@ -1,3 +1,5 @@
+const { appRoutes } = require('./routes')
+
 module.exports = {
   head: {
     meta: [
@@ -26,5 +28,8 @@ module.exports = {
   env: {
     s3: 'https://s3.amazonaws.com/mtbva',
     baseUrl: 'http://bikeva.com'
+  },
+  generate: {
+    routes: appRoutes
   }
 }
