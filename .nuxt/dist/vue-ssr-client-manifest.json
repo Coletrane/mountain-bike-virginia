@@ -9,8 +9,8 @@
     "pages/results/_slug.eb147ef60a6102a260df.js",
     "pages/relaunch/_slug.163e4a1fc9896459a247.js",
     "common.7c8d535367315db4dd23.js",
-    "app.78883d89f5d2cd50bc0f.js",
-    "manifest.dc383e6839ce468aaf18.js",
+    "app.b2ae159950089d6c88c8.js",
+    "manifest.1c45f9eede84435b521f.js",
     "LICENSES",
     "pages/pivot-switchblade-review/_slug.c3016faaad30789bdc21.js",
     "pages/pivot-switchblade-review/_slug.c3016faaad30789bdc21.js.map",
@@ -20,15 +20,15 @@
     "pages/results/_slug.eb147ef60a6102a260df.js.map",
     "pages/relaunch/_slug.163e4a1fc9896459a247.js.map",
     "common.7c8d535367315db4dd23.js.map",
-    "app.78883d89f5d2cd50bc0f.js.map",
-    "manifest.dc383e6839ce468aaf18.js.map",
+    "app.b2ae159950089d6c88c8.js.map",
+    "manifest.1c45f9eede84435b521f.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.dc383e6839ce468aaf18.js",
+    "manifest.1c45f9eede84435b521f.js",
     "common.7c8d535367315db4dd23.js",
-    "app.78883d89f5d2cd50bc0f.js"
+    "app.b2ae159950089d6c88c8.js"
   ],
   "async": [
     "pages/spec-mines-oct-29-2017/_slug.b5f6a94b848aa4396025.js",

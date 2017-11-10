@@ -15,7 +15,7 @@
     "nuxt": "^1.0.0-rc11",
     "serve-favicon": "^2.4.5",
     "sitemap": "^1.13.0",
-    "vuetify": "0.16.4"
+    "vuetify": "^0.16.9"
   },
   "peerDependencies": {},
   "devDependencies": {
