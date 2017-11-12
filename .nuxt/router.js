@@ -4,11 +4,11 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _5ba4c862 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _0aea320e = () => import('../pages/spec-mines-oct-29-2017/_slug.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/_slug" */).then(m => m.default || m)
-const _39977f01 = () => import('../pages/relaunch/_slug.vue' /* webpackChunkName: "pages/relaunch/_slug" */).then(m => m.default || m)
-const _6dd3a3af = () => import('../pages/creature-2017-recap/_slug.vue' /* webpackChunkName: "pages/creature-2017-recap/_slug" */).then(m => m.default || m)
-const _885e61b2 = () => import('../pages/pivot-switchblade-review/_slug.vue' /* webpackChunkName: "pages/pivot-switchblade-review/_slug" */).then(m => m.default || m)
-const _aa3c977e = () => import('../pages/results/_slug.vue' /* webpackChunkName: "pages/results/_slug" */).then(m => m.default || m)
+const _077cef7e = () => import('../pages/spec-mines-oct-29-2017/index.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/index" */).then(m => m.default || m)
+const _3b4e2049 = () => import('../pages/relaunch/index.vue' /* webpackChunkName: "pages/relaunch/index" */).then(m => m.default || m)
+const _6f8a44f7 = () => import('../pages/creature-2017-recap/index.vue' /* webpackChunkName: "pages/creature-2017-recap/index" */).then(m => m.default || m)
+const _84f11f22 = () => import('../pages/pivot-switchblade-review/index.vue' /* webpackChunkName: "pages/pivot-switchblade-review/index" */).then(m => m.default || m)
+const _a6cf54ee = () => import('../pages/results/index.vue' /* webpackChunkName: "pages/results/index" */).then(m => m.default || m)
 
 
 
@@ -50,29 +50,29 @@ export function createRouter () {
 			name: "index"
 		},
 		{
-			path: "/spec-mines-oct-29-2017/:slug?",
-			component: _0aea320e,
-			name: "spec-mines-oct-29-2017-slug"
+			path: "/spec-mines-oct-29-2017",
+			component: _077cef7e,
+			name: "spec-mines-oct-29-2017"
 		},
 		{
-			path: "/relaunch/:slug?",
-			component: _39977f01,
-			name: "relaunch-slug"
+			path: "/relaunch",
+			component: _3b4e2049,
+			name: "relaunch"
 		},
 		{
-			path: "/creature-2017-recap/:slug?",
-			component: _6dd3a3af,
-			name: "creature-2017-recap-slug"
+			path: "/creature-2017-recap",
+			component: _6f8a44f7,
+			name: "creature-2017-recap"
 		},
 		{
-			path: "/pivot-switchblade-review/:slug?",
-			component: _885e61b2,
-			name: "pivot-switchblade-review-slug"
+			path: "/pivot-switchblade-review",
+			component: _84f11f22,
+			name: "pivot-switchblade-review"
 		},
 		{
-			path: "/results/:slug?",
-			component: _aa3c977e,
-			name: "results-slug"
+			path: "/results",
+			component: _a6cf54ee,
+			name: "results"
 		}
     ],
     fallback: false

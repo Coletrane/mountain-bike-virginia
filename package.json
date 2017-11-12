@@ -60,9 +60,10 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "npm run clean && nuxt build && nuxt generate",
     "build-check": "nuxt build --analyze",
     "generate": "nuxt generate",
+    "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node server.js"
   },
   "main": "dist/app.bundle.js"

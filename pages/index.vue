@@ -1,7 +1,7 @@
 <template>
-  <div id="blog">
+  <div class="blog">
     <m-t-b-v-a-header
-      header-height="800"
+      :header-height="800"
       :image="img + 'foliage.png'"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
@@ -12,39 +12,88 @@
     <v-content>
       <v-container>
         <v-layout row wrap align-center>
-          <div v-for="post in postsPage" class="post-card">
-            <div class="post-card">
-              <a :href="post.route" class="post card card--hover">
 
-                  <div class="card__text">
-                      <h4>{{post.title}}</h4>
+          <div v-if="page === 1 && $route.path === '/'">
 
-                      <h6>{{post.subtitle}}</h6>
-
-                      <paragraph-with-links
-                              :paragraph="post.promoParagraph">
-                      </paragraph-with-links>
-
-                      <div v-if="post.altUrl">
-                          <router-link :to="post.altUrl">
-                              {{post.altText}}
-                          </router-link>
-                      </div>
-                  </div>
-
-                  <youtube v-if="post.youtubeSrc"
-                           :src="post.youtubeSrc">
-                  </youtube>
-
-                  <img v-if="post.img"
-                       :src="post.img"
-                       class="post-img">
-
-                  <div class="post-card">
-                      <social-actions :post="post"></social-actions>
-                  </div>
-              </a>
+          <post-card
+            :post="spec"
+            :isLink="true">
+            <div slot="top">
+              <post-header :post="spec"></post-header>
             </div>
+
+            <div slot="middle">
+              <img :src="spec.img">
+            </div>
+          </post-card>
+
+            <post-card
+              :post="swbl"
+              :isLink="true">
+              <div slot="top">
+                <post-header :post="swbl"></post-header>
+                <div class="promo">
+                  With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
+                </div>
+              </div>
+
+              <div slot="middle">
+                <img :src="swbl.img">
+              </div>
+            </post-card>
+
+            <post-card
+              :post="cr17"
+              isLink="true">
+              <div slot="top">
+                <post-header :post="cr17"></post-header>
+                <div class="promo">
+                  Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.
+                </div>
+                <div class="promo">
+                  <nuxt-link :to="'results'">
+                    View the results here.
+                  </nuxt-link>
+                </div>
+              </div>
+              <div slot="middle">
+                <youtube :src="cr17.ytSrc"></youtube>
+              </div>
+            </post-card>
+
+            <post-card
+              :post="re"
+              isLink="true">
+              <div slot="top">
+                <post-header :post="re"></post-header>
+              </div>
+              <div slot="middle">
+                <img :src="re.img">
+              </div>
+            </post-card>
+
+            <post-card
+              :post="cr16"
+              isLink="true">
+              <div slot="top">
+                <post-header :post="cr16"></post-header>
+                <div class="promo">
+                  The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take first despite starting 3 minutes late.
+                </div>
+                <div class="promo">
+                  <nuxt-link :to="'results'">
+                    View the results here.
+                  </nuxt-link>
+                </div>
+              </div>
+              <div slot="middle">
+                <youtube :src="cr16.ytSrc"></youtube>
+              </div>
+            </post-card>
+
+          </div>
+
+          <div v-if="page === 2">
           </div>
 
           <v-pagination :length="1"
@@ -60,18 +109,19 @@
 
 <script>
   import MTBVAHeader from '../components/MTBVAHeader.vue'
+  import PostHeader from '../components/PostHeader.vue'
+  import PostCard from '../components/PostCard.vue'
   import Youtube from '../components/Youtube.vue'
-  import ParagraphWithLinks from "../components/ParagraphWithLinks.vue"
-  import SocialActions from '../components/SocialActions.vue'
-  import { postsPages } from '../assets/posts'
+
+  import posts from '../assets/posts'
 
   export default {
     name: 'blog',
     components: {
-      ParagraphWithLinks,
       MTBVAHeader,
+      PostHeader,
+      PostCard,
       Youtube,
-      SocialActions
     },
     head() {
       const title = 'Mountain Bike Virginia'
@@ -90,15 +140,24 @@
       }
     },
     data() {
-      const page =  parseInt(this.$route.name) || 1
-
       return {
         img: process.env.s3 + '/static/img/',
-        postsPage: postsPages[page - 1],
-        posts: postsPages[page - 1],
-        page: page,
+        spec: posts['spec-mines-oct-29-2017'],
+        swbl: posts['pivot-switchblade-review'],
+        cr17: posts['creature-2017-recap'],
+        re: posts['relaunch'],
+        cr16: posts['creature-2016']
       }
     },
+    computed: {
+      page() {
+        return parseInt(this.$route.name) || 1
+      },
+      posts() {
+        return postsPages[this.page - 1]
+      }
+    }
+
   }
 </script>
 
@@ -114,16 +173,18 @@
   .post-card {
     width: 100%
   }
+
   .post {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  .post-img {
-    width: 100%;
-  }
+
+
+
   .pagination {
     margin: auto
   }
+
   .application--light .pagination__item--active {
     background: rgba(80, 97, 111, 0.82) !important;
   }

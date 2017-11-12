@@ -1,15 +1,15 @@
 <template>
-  <div class="social-right">
+  <div class="social">
     <v-btn icon class="blue--text text--darken-4 social-button"
-           :href="facebookLink(post)">
+           :href="facebookLink">
       <v-icon medium>fa-facebook</v-icon>
     </v-btn>
     <v-btn icon class="red--text social-button"
-           :href="redditLink(post)">
+           :href="redditLink">
       <v-icon medium>fa-reddit</v-icon>
     </v-btn>
     <v-btn icon class="light-blue--text social-button"
-           :href="twitterLink(post)">
+           :href="twitterLink">
       <v-icon medium>fa-twitter</v-icon>
     </v-btn>
   </div>
@@ -19,26 +19,21 @@
   export default {
     name: 'social-actions',
     props: ['post'],
-    data() {
-      return {
-        baseUrl: "http://bikeva.com"
+    computed: {
+      facebookLink() {
+        return "http://www.facebook.com/share.php?u=" +
+          process.env.baseUrl + '/' + this.post.route
+      },
+      redditLink() {
+        return "http://www.reddit.com/submit?url=" +
+          process.env.baseUrl + '/' + this.post.route
+      },
+      twitterLink() {
+        return "http://twitter.com/home?status=" +
+          this.post.title + " " +
+          this.baseUrl + '/' + this.post.route
       }
     },
-    methods: {
-      facebookLink(post) {
-        return "http://www.facebook.com/share.php?u=" +
-          this.baseUrl + post.href
-      },
-      redditLink(post) {
-        return "http://www.reddit.com/submit?url=" +
-          this.baseUrl + post.href
-      },
-      twitterLink(post) {
-        return "http://twitter.com/home?status=" +
-          post.title + " " +
-          this.baseUrl + post.href
-      }
-    }
   }
   </script>
 
@@ -53,7 +48,7 @@
     }
 
   }
-  .social-right {
+  .social {
     margin-top: -.5rem;
   }
 </style>

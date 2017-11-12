@@ -1,12 +1,11 @@
 <template>
   <v-app>
-    <div id="app">
-
+    <div>
       <transition name="fade">
-        <router-view></router-view>
+        <nuxt/>
       </transition>
 
-      <m-t-b-v-a-footer v-if="showFooter"></m-t-b-v-a-footer>
+      <m-t-b-v-a-footer></m-t-b-v-a-footer>
     </div>
   </v-app>
 </template>
@@ -16,17 +15,7 @@
 
   export default {
     components: {MTBVAFooter},
-    name: 'app',
-    data() {
-      return {
-        showFooter: false
-      }
-    },
-    mounted() {
-      setTimeout(() => {
-        this.showFooter = true
-      }, 1000)
-    }
+    name: 'app'
   }
 </script>
 
@@ -48,10 +37,10 @@
     background-repeat: repeat !important;
   }
 
-
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
   }
+
   .fade-enter, .fade-leave-to {
     opacity: 0
   }

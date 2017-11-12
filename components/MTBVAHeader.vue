@@ -3,18 +3,18 @@
               :height="headerHeight"
               class="header-wrapper">
     <v-toolbar extended absolute class="toolbar">
-      <router-link to="/" class="nav-link">
+      <nuxt-link to="/" class="nav-link">
         <img class="mtbva" :src="img + 'mtbva.png'">
-      </router-link>
-      <router-link to="/" class="xxcva-link nav-link">
+      </nuxt-link>
+      <nuxt-link to="/" class="xxcva-link nav-link">
         <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
-      </router-link>
+      </nuxt-link>
 
       <v-spacer></v-spacer>
 
-      <router-link to="/results" class="nav-text">
+      <nuxt-link to="/results" class="nav-text">
           Results
-      </router-link>
+      </nuxt-link>
       <a class="nav-link"
          href="https://www.facebook.com/xxcva/">
         <img :src="img + 'fb.svg'"
@@ -46,7 +46,7 @@
       'button',
       'buttonLink'
     ],
-    data: function() {
+    data() {
       return {
         img: process.env.s3 + '/static/img/'
       }
