@@ -8,7 +8,6 @@
 
     <v-content>
       <v-container>
-        <v-layout row wrap align-center>
           <post-card :post="post">
 
             <div slot="top">
@@ -23,7 +22,6 @@
             </div>
 
             </post-card>
-        </v-layout>
       </v-container>
     </v-content>
   </div>

@@ -1,13 +1,17 @@
 <template>
-  <v-app>
-    <div>
-      <transition name="fade">
-        <nuxt/>
-      </transition>
+  <div>
+    <v-app>
+      <div>
+        <transition name="fade">
+          <nuxt/>
+        </transition>
+      </div>
 
-      <m-t-b-v-a-footer></m-t-b-v-a-footer>
-    </div>
-  </v-app>
+      <div>
+        <m-t-b-v-a-footer></m-t-b-v-a-footer>
+      </div>
+    </v-app>
+  </div>
 </template>
 
 <script>

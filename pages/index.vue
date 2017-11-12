@@ -11,7 +11,6 @@
 
     <v-content>
       <v-container>
-        <v-layout row wrap align-center>
 
           <div v-if="page === 1 && $route.path === '/'">
 
@@ -100,7 +99,6 @@
                         v-model="page">
           </v-pagination>
 
-        </v-layout>
       </v-container>
     </v-content>
 
