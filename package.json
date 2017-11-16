@@ -13,6 +13,7 @@
     "express": "^4.16.2",
     "newrelic": "^2.3.2",
     "nuxt": "^1.0.0-rc11",
+    "pm2": "^2.7.2",
     "serve-favicon": "^2.4.5",
     "sitemap": "^1.13.0",
     "vuetify": "0.16.4"
