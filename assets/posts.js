@@ -13,6 +13,12 @@ const kyle = {
 }
 
 module.exports = {
+  'dody-ridge-run-fall-2017': {
+    title: "Video: Dody Ridge Run, Fall 2017",
+    subtitle: "Don't call her Doddie.",
+    ytSrc: '', // TODO
+    author: cole
+  },
   'spec-mines-oct-29-2017': {
     title: "Blue Ridge Parkway tuckaway into Spec Mines",
     subtitle: "Wind, Rain, Cold. Pick Two.",

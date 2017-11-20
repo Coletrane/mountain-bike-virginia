@@ -4,7 +4,8 @@ const appRoutes = [
   '/relaunch',
   '/creature-2017-recap',
   '/pivot-switchblade-review',
-  '/spec-mines-oct-29-2017'
+  '/spec-mines-oct-29-2017',
+  '/dody-ridge-run-fall-2017'
 ]
 
 let appRoutesObj = {}
