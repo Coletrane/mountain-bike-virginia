@@ -11,7 +11,15 @@
 <script>
   export default {
     name: 'youtube',
-    props: ['src']
+    props: ['src'],
+    data() {
+      return {
+        url: ''
+      }
+    },
+    mounted() {
+      this.url = this.src
+    }
   }
 </script>
 

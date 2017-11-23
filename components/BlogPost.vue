@@ -8,20 +8,32 @@
 
     <v-content>
       <v-container>
-          <post-card :post="post">
+        <post-card :post="post">
 
-            <div slot="top">
-              <div class="blog-p subheading">
+          <div slot="top">
+            <div class="blog-p subheading">
+              <div v-if="inlineAuthor">
                 <h6>{{post.subtitle}}</h6>
-                <author :author="post.author"></author>
+                <author
+                  :author="post.author"
+                  :inline="inlineAuthor">
+                </author>
+              </div>
+              <div v-else>
+                <h6>{{post.subtitle}}</h6>
+                <author
+                  :author="post.author"
+                  :inline="inlineAuthor">
+                </author>
               </div>
             </div>
+          </div>
 
-            <div slot="middle">
-              <slot name="content"></slot>
-            </div>
+          <div slot="middle">
+            <slot name="content"></slot>
+          </div>
 
-            </post-card>
+        </post-card>
       </v-container>
     </v-content>
   </div>
@@ -48,7 +60,8 @@
     props: [
       'headerHeight',
       'image',
-      'post'
+      'post',
+      'inlineAuthor'
     ],
   };
 </script>

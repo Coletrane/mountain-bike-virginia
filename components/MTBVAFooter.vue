@@ -107,18 +107,28 @@
 <style>
   .mtbva-footer {
     padding-top: 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('https://s3.amazonaws.com/mtbva/static/img/blue_ridge_mountains.jpg') !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg') !important;
     background-position-x: center !important;
     background-position-y: top !important;
     background-repeat: no-repeat !important;
     background-color: rgb(0, 15, 24) !important;
+    background-size: contain;
   }
 
   .sponsors-container {
     background-color: white;
     display: block;
-    width: 70%;
     margin: auto;
+  }
+  @media screen and (min-width: 1064px) {
+    .sponsors-container {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 1064px) {
+    .sponsors-container {
+      width: 70%;
+    }
   }
 
   .sponsor {

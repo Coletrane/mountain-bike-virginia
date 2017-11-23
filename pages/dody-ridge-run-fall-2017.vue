@@ -1,9 +1,10 @@
 <template>
   <div>
     <blog-post
-      :header-height="600"
+      :header-height="700"
       :image="img + 'iron-mine.jpg'"
-      :post="post">
+      :post="post"
+      :inlineAuthor="true">
 
       <div slot="content">
         <youtube :src="post.ytSrc"></youtube>
@@ -43,7 +44,7 @@
     },
     data() {
       return {
-        img: process.env.s3 + '/pages/dody-ridge-run-fall-2017',
+        img: process.env.s3 + '/pages/dody-ridge-run-fall-2017/',
         post: posts['dody-ridge-run-fall-2017']
       }
     }

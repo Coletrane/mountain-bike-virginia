@@ -37,7 +37,7 @@
 
   .content {
     background-color: rgba(32, 23, 2, 0.68) !important;
-    background-image: url("https://s3.amazonaws.com/mtbva/static/img/asfalt-light.png") !important;
+    background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png") !important;
     background-repeat: repeat !important;
   }
 

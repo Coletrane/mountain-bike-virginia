@@ -1,22 +1,19 @@
 <template>
   <div class="post-card">
     <div class="post card card--hover">
-      <div v-on:click="goToRoute()"
-           :class="isLink ? 'link' : ''">
-        <div class="card__text">
-          <slot name="top"></slot>
-        </div>
-
-        <slot name="middle"></slot>
-
-        <div>
-          <slot name="bottom"></slot>
-        </div>
-
-        <social-actions v-if="post"
-                        :post="post">
-        </social-actions>
+      <div class="card__text">
+        <slot name="top"></slot>
       </div>
+
+      <slot name="middle"></slot>
+
+      <div>
+        <slot name="bottom"></slot>
+      </div>
+
+      <social-actions v-if="post"
+                      :post="post">
+      </social-actions>
     </div>
   </div>
 </template>
@@ -26,28 +23,9 @@
 
   export default {
     name: 'post-card',
-    props: {
-      post: {
-        default: null
-      },
-      isLink: {
-        default: false
-      }
-    },
+    props: ['post'],
     components: {
       SocialActions
-    },
-    methods: {
-      goToRoute() {
-        if ( this.isLink
-          && this.post) {
-          if (this.post.route) {
-            this.$router.push(this.post.route)
-          } else {
-            this.$router.push('/')
-          }
-        }
-      }
     }
   }
 </script>
@@ -56,6 +34,7 @@
   img {
     width: 100%;
   }
+
   .link {
     cursor: pointer
   }

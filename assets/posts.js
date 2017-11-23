@@ -16,7 +16,8 @@ module.exports = {
   'dody-ridge-run-fall-2017': {
     title: "Video: Dody Ridge Run, Fall 2017",
     subtitle: "Don't call her Doddie.",
-    ytSrc: '', // TODO
+    ytSrc: 'https://www.youtube.com/embed/5cIs1e8Sos4',
+    route: 'dody-ridge-run-fall-2017',
     author: cole
   },
   'spec-mines-oct-29-2017': {
@@ -45,7 +46,7 @@ module.exports = {
     title: "Full Site Relaunch!",
     subtitle: "The same pirates are still at it.",
     img: s3 + '/pages/relaunch/rockymthi8.jpg',
-    // route: "relaunch",
+    route: "/",
     author: cole
   },
   'creature-2016': {

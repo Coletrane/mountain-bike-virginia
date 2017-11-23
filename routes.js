@@ -26,7 +26,7 @@ imgRoutes['/creature-2017-recap'] = '/lumberjack.jpg'
 imgRoutes['/pivot-switchblade-review'] = '/IMG_3009.jpg'
 imgRoutes['/spec-mines-oct-29-2017'] = './IMG_2795.jpg'
 
-const s3Root = 'https://s3.amazonaws.com/mtbva'
+const s3Root = 'http://d2i660bt0ywr9a.cloudfront.net'
 
 module.exports = {
   appRoutes,

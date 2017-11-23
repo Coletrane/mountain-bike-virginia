@@ -1,3 +1,13 @@
+const routes = require('./routes')
+const sitemapRoutes = routes.appRoutes.map(route => {
+  return {
+    url: route,
+    changefreq: 'daily',
+    priority: 1,
+    lastmodISO: new Date().toISOString()
+  }
+})
+
 module.exports = {
   head: {
     meta: [
@@ -24,7 +34,18 @@ module.exports = {
     extractCss: true
   },
   env: {
-    s3: 'https://s3.amazonaws.com/mtbva',
+    s3: 'http://d2i660bt0ywr9a.cloudfront.net',
     baseUrl: 'http://bikeva.com'
+  },
+  modules: [
+    '@nuxtjs/sitemap'
+  ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'http://bikeva.com',
+    cacheTime: 1000 * 60 * 15,
+    generate: false, // Enable me when using nuxt generate,
+    exclude: routes.appRoutes,
+    routes: sitemapRoutes
   }
 }

@@ -14,6 +14,7 @@ options.dev = false
 const nuxt = new Nuxt(options)
 // Check if project is built for production
 const distDir = resolve(nuxt.options.rootDir, nuxt.options.buildDir || '.nuxt', 'dist')
+
 if (!existsSync(distDir)) {
   console.error('> No build files found, please run `nuxt build` before launching `npm start`') // eslint-disable-line no-console
   process.exit(1)

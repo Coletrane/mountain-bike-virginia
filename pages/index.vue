@@ -12,11 +12,10 @@
     <v-content>
       <v-container>
 
-        <div v-if="page === 1">
+        <div v-show="page === 1">
 
           <post-card
-            :post="dody",
-            :isLink="true">
+            :post="dody">
             <div slot="top">
               <post-header :post="dody"></post-header>
             </div>
@@ -27,45 +26,45 @@
           </post-card>
 
           <post-card
-            :post="spec"
-            :isLink="true">
+            :post="spec">
             <div slot="top">
               <post-header :post="spec"></post-header>
             </div>
 
             <div slot="middle">
-              <img :src="spec.img">
+              <image-link :post="spec"></image-link>
             </div>
           </post-card>
 
           <post-card
-            :post="swbl"
-            :isLink="true">
+            :post="swbl">
             <div slot="top">
               <post-header :post="swbl"></post-header>
               <div class="promo">
                 With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
 
+
               </div>
             </div>
 
             <div slot="middle">
-              <img :src="swbl.img">
+              <image-link :post="swbl"></image-link>
             </div>
           </post-card>
 
           <post-card
-            :post="cr17"
-            isLink="true">
+            :post="cr17">
             <div slot="top">
               <post-header :post="cr17"></post-header>
               <div class="promo">
                 Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.
 
+
               </div>
               <div class="promo">
                 <nuxt-link :to="'results'">
                   View the results here.
+
 
                 </nuxt-link>
               </div>
@@ -76,32 +75,31 @@
           </post-card>
 
           <post-card
-            :post="re"
-            isLink="true">
+            :post="re">
             <div slot="top">
               <post-header :post="re"></post-header>
             </div>
             <div slot="middle">
-              <img :src="re.img">
+              <image-link :post="re"></image-link>
             </div>
           </post-card>
         </div>
 
         <div v-if="page === 2">
-
           <post-card
-            :post="cr16"
-            isLink="true">
+            :post="cr16">
             <div slot="top">
               <post-header :post="cr16"></post-header>
               <div class="promo">
                 The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a
                 href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take first despite starting 3 minutes late.
 
+
               </div>
               <div class="promo">
                 <nuxt-link :to="'results'">
                   View the results here.
+
 
                 </nuxt-link>
               </div>
@@ -113,9 +111,12 @@
 
         </div>
 
-        <v-pagination :length="1"
-                      v-model="page">
-        </v-pagination>
+        <div class="mtbva-pagination">
+          <v-pagination :length="2"
+                        v-model="page"
+                        circle>
+          </v-pagination>
+        </div>
 
       </v-container>
     </v-content>
@@ -128,6 +129,7 @@
   import PostHeader from '../components/PostHeader.vue'
   import PostCard from '../components/PostCard.vue'
   import Youtube from '../components/Youtube.vue'
+  import ImageLink from '../components/ImageLink.vue'
 
   import posts from '../assets/posts'
 
@@ -138,6 +140,7 @@
       PostHeader,
       PostCard,
       Youtube,
+      ImageLink
     },
     head() {
       const title = 'Mountain Bike Virginia'
@@ -163,18 +166,10 @@
         swbl: posts['pivot-switchblade-review'],
         cr17: posts['creature-2017-recap'],
         re: posts['relaunch'],
-        cr16: posts['creature-2016']
+        cr16: posts['creature-2016'],
+        page: 1,
       }
     },
-    computed: {
-      page() {
-        return parseInt(this.$route.name) || 1
-      },
-      posts() {
-        return postsPages[this.page - 1]
-      }
-    }
-
   }
 </script>
 
@@ -182,8 +177,8 @@
   @media screen and (min-width: 600px) {
     .container {
       max-width: 1200px !important;;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 5%;
+      padding-right: 5%;
     }
   }
 
@@ -196,11 +191,11 @@
     margin-bottom: 1.5rem;
   }
 
-  .pagination {
-    margin: auto
+  .mtbva-pagination {
+    text-align: center;
   }
 
   .application--light .pagination__item--active {
-    background: rgba(80, 97, 111, 0.82) !important;
+    background: rgb(7, 53, 82)!important;
   }
 </style>
