@@ -9,115 +9,122 @@
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
 
-    <v-content>
+    <v-content id="main-content">
       <v-container>
+        <transition-group name="fade">
+          <div v-show="page === 1"
+               :key="1">
 
-        <div v-show="page === 1">
-
-          <post-card
-            :post="dody">
-            <div slot="top">
-              <post-header :post="dody"></post-header>
-            </div>
-
-            <div slot="middle">
-              <youtube :src="dody.ytSrc"></youtube>
-            </div>
-          </post-card>
-
-          <post-card
-            :post="spec">
-            <div slot="top">
-              <post-header :post="spec"></post-header>
-            </div>
-
-            <div slot="middle">
-              <image-link :post="spec"></image-link>
-            </div>
-          </post-card>
-
-          <post-card
-            :post="swbl">
-            <div slot="top">
-              <post-header :post="swbl"></post-header>
-              <div class="promo">
-                With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
-
-
+            <post-card
+              :post="dody">
+              <div slot="top">
+                <post-header :post="dody"></post-header>
               </div>
-            </div>
 
-            <div slot="middle">
-              <image-link :post="swbl"></image-link>
-            </div>
-          </post-card>
-
-          <post-card
-            :post="cr17">
-            <div slot="top">
-              <post-header :post="cr17"></post-header>
-              <div class="promo">
-                Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.
-
-
+              <div slot="middle">
+                <youtube :src="dody.ytSrc"></youtube>
               </div>
-              <div class="promo">
-                <nuxt-link :to="'results'">
-                  View the results here.
+            </post-card>
 
-
-                </nuxt-link>
+            <post-card
+              :post="spec">
+              <div slot="top">
+                <post-header :post="spec"></post-header>
               </div>
-            </div>
-            <div slot="middle">
-              <youtube :src="cr17.ytSrc"></youtube>
-            </div>
-          </post-card>
 
-          <post-card
-            :post="re">
-            <div slot="top">
-              <post-header :post="re"></post-header>
-            </div>
-            <div slot="middle">
-              <image-link :post="re"></image-link>
-            </div>
-          </post-card>
-        </div>
-
-        <div v-if="page === 2">
-          <post-card
-            :post="cr16">
-            <div slot="top">
-              <post-header :post="cr16"></post-header>
-              <div class="promo">
-                The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a
-                href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take first despite starting 3 minutes late.
-
-
+              <div slot="middle">
+                <image-link :post="spec"></image-link>
               </div>
-              <div class="promo">
-                <nuxt-link :to="'results'">
-                  View the results here.
+            </post-card>
+
+            <post-card
+              :post="swbl">
+              <div slot="top">
+                <post-header :post="swbl"></post-header>
+                <div class="promo">
+                  With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
 
 
-                </nuxt-link>
+
+                </div>
               </div>
-            </div>
-            <div slot="middle">
-              <youtube :src="cr16.ytSrc"></youtube>
-            </div>
-          </post-card>
 
-        </div>
+              <div slot="middle">
+                <image-link :post="swbl"></image-link>
+              </div>
+            </post-card>
+
+            <post-card
+              :post="cr17">
+              <div slot="top">
+                <post-header :post="cr17"></post-header>
+                <div class="promo">
+                  Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature come alive.
+
+
+
+                </div>
+                <div class="promo">
+                  <nuxt-link :to="'results'">
+                    View the results here.
+
+
+
+                  </nuxt-link>
+                </div>
+              </div>
+              <div slot="middle">
+                <youtube :src="cr17.ytSrc"></youtube>
+              </div>
+            </post-card>
+
+            <post-card
+              :post="re">
+              <div slot="top">
+                <post-header :post="re"></post-header>
+              </div>
+              <div slot="middle">
+                <image-link :post="re"></image-link>
+              </div>
+            </post-card>
+          </div>
+
+          <div v-if="page === 2"
+               :key="2">
+            <post-card
+              :post="cr16">
+              <div slot="top">
+                <post-header :post="cr16"></post-header>
+                <div class="promo">
+                  The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were even graced by the presence of the fantastic Mr. <a
+                  href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take first despite starting 3 minutes late.
+
+
+
+                </div>
+                <div class="promo">
+                  <nuxt-link :to="'results'">
+                    View the results here.
+
+
+
+                  </nuxt-link>
+                </div>
+              </div>
+              <div slot="middle">
+                <youtube :src="cr16.ytSrc"></youtube>
+              </div>
+            </post-card>
+
+          </div>
+        </transition-group>
 
         <div class="mtbva-pagination">
-          <v-pagination :length="2"
-                        v-model="page"
-                        circle>
-          </v-pagination>
-        </div>
-
+            <v-pagination :length="2"
+                          v-model="page"
+                          circle>
+            </v-pagination>
+          </div>
       </v-container>
     </v-content>
 
@@ -170,6 +177,17 @@
         page: 1,
       }
     },
+    watch: {
+      page() {
+        if (process.browser) {
+          this.$scrollTo(
+            document.getElementById('main-content'),
+            1000,
+            {}
+          )
+        }
+      }
+    }
   }
 </script>
 
@@ -196,6 +214,6 @@
   }
 
   .application--light .pagination__item--active {
-    background: rgb(7, 53, 82)!important;
+    background: rgb(7, 53, 82) !important;
   }
 </style>

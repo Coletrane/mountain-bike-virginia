@@ -1,46 +1,46 @@
 {
   "publicPath": "/_nuxt/",
   "all": [
-    "pages/spec-mines-oct-29-2017.22ea3ede5eb27c7cb429.js.map",
-    "pages/spec-mines-oct-29-2017.22ea3ede5eb27c7cb429.js",
-    "pages/dody-ridge-run-fall-2017.84706209b33693997394.js",
-    "pages/creature-2017-recap.a93bb47a2dd3c7ee8371.js",
-    "pages/index.1d23f33a96874fc99855.js",
-    "pages/results.63ed0dfb476ee31c2733.js",
-    "layouts/default.50548af2d3d62de603f9.js",
+    "pages/spec-mines-oct-29-2017.ccf373fbf9a4f24857d5.js.map",
+    "pages/spec-mines-oct-29-2017.ccf373fbf9a4f24857d5.js",
+    "pages/dody-ridge-run-fall-2017.c58e2e3cdb4b44f5d2cb.js",
+    "pages/creature-2017-recap.aad42284d1df1c335557.js",
+    "pages/index.75e57901849df7151dd6.js",
+    "pages/results.3963dd95e571ce31815c.js",
+    "layouts/default.ff07d6146b37247e411c.js",
     "pages/relaunch.77051ae366c8dbb2cd75.js",
-    "common.fffc7d0035650463b896.js",
-    "app.a14e09495e7681124fe9.js",
-    "manifest.ed1fd81300be71832092.js",
+    "common.536c25b0a90e8a1d722c.js",
+    "app.9decc966c6cef956ffde.js",
+    "manifest.3cc2ea7382d5a1d198a4.js",
     "LICENSES",
-    "pages/pivot-switchblade-review.255d1fd5aa2ded552bae.js",
-    "pages/pivot-switchblade-review.255d1fd5aa2ded552bae.js.map",
-    "pages/dody-ridge-run-fall-2017.84706209b33693997394.js.map",
-    "pages/creature-2017-recap.a93bb47a2dd3c7ee8371.js.map",
-    "pages/index.1d23f33a96874fc99855.js.map",
-    "pages/results.63ed0dfb476ee31c2733.js.map",
-    "layouts/default.50548af2d3d62de603f9.js.map",
+    "pages/pivot-switchblade-review.181fd7745142aa161434.js",
+    "pages/pivot-switchblade-review.181fd7745142aa161434.js.map",
+    "pages/dody-ridge-run-fall-2017.c58e2e3cdb4b44f5d2cb.js.map",
+    "pages/creature-2017-recap.aad42284d1df1c335557.js.map",
+    "pages/index.75e57901849df7151dd6.js.map",
+    "pages/results.3963dd95e571ce31815c.js.map",
+    "layouts/default.ff07d6146b37247e411c.js.map",
     "pages/relaunch.77051ae366c8dbb2cd75.js.map",
-    "common.fffc7d0035650463b896.js.map",
-    "app.a14e09495e7681124fe9.js.map",
-    "manifest.ed1fd81300be71832092.js.map",
+    "common.536c25b0a90e8a1d722c.js.map",
+    "app.9decc966c6cef956ffde.js.map",
+    "manifest.3cc2ea7382d5a1d198a4.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.ed1fd81300be71832092.js",
-    "common.fffc7d0035650463b896.js",
-    "app.a14e09495e7681124fe9.js"
+    "manifest.3cc2ea7382d5a1d198a4.js",
+    "common.536c25b0a90e8a1d722c.js",
+    "app.9decc966c6cef956ffde.js"
   ],
   "async": [
-    "pages/spec-mines-oct-29-2017.22ea3ede5eb27c7cb429.js",
-    "pages/dody-ridge-run-fall-2017.84706209b33693997394.js",
-    "pages/creature-2017-recap.a93bb47a2dd3c7ee8371.js",
-    "pages/index.1d23f33a96874fc99855.js",
-    "pages/results.63ed0dfb476ee31c2733.js",
-    "layouts/default.50548af2d3d62de603f9.js",
+    "pages/spec-mines-oct-29-2017.ccf373fbf9a4f24857d5.js",
+    "pages/dody-ridge-run-fall-2017.c58e2e3cdb4b44f5d2cb.js",
+    "pages/creature-2017-recap.aad42284d1df1c335557.js",
+    "pages/index.75e57901849df7151dd6.js",
+    "pages/results.3963dd95e571ce31815c.js",
+    "layouts/default.ff07d6146b37247e411c.js",
     "pages/relaunch.77051ae366c8dbb2cd75.js",
-    "pages/pivot-switchblade-review.255d1fd5aa2ded552bae.js"
+    "pages/pivot-switchblade-review.181fd7745142aa161434.js"
   ],
   "modules": {
     "68037880": [
@@ -120,8 +120,8 @@
       20
     ],
     "c2e5706e": [
-      9,
-      21
+      8,
+      20
     ],
     "2992a5aa": [
       8,
@@ -134,10 +134,6 @@
     "2dea60c1": [
       8,
       20
-    ],
-    "8c1d0bb6": [
-      9,
-      21
     ],
     "1880044b": [
       8,
@@ -168,14 +164,6 @@
       14
     ],
     "cafd8ade": [
-      8,
-      20
-    ],
-    "17f2e628": [
-      8,
-      20
-    ],
-    "2ea586e5": [
       8,
       20
     ],
@@ -210,6 +198,10 @@
     "d2f71534": [
       8,
       20
+    ],
+    "0ea4f949": [
+      9,
+      21
     ],
     "ccafb3ee": [
       8,
@@ -311,6 +303,10 @@
       5,
       17
     ],
+    "17f2e628": [
+      8,
+      20
+    ],
     "cb81faac": [
       4,
       16
@@ -398,6 +394,10 @@
     "aadf7676": [
       12,
       13
+    ],
+    "3994e4f2": [
+      9,
+      21
     ],
     "420d2442": [
       8,
@@ -548,6 +548,10 @@
       20
     ],
     "7495bc89": [
+      8,
+      20
+    ],
+    "1929cbf0": [
       8,
       20
     ],
@@ -770,6 +774,10 @@
     "b9364bfe": [
       9,
       21
+    ],
+    "76cd1f1c": [
+      8,
+      20
     ],
     "51b49532": [
       4,

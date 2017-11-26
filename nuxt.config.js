@@ -25,13 +25,18 @@ module.exports = {
     ]
   },
   plugins: [
-    { src: '~/plugins/vuetify.js', ssr: true }
+    { src: '~/plugins/vuetify', ssr: true },
+    { src: '~/plugins/vue-scrollto', ssr: false}
   ],
   css: [
     'vuetify/dist/vuetify.min.css'
   ],
   build: {
-    extractCss: true
+    extractCss: true,
+    vendor: [
+      'vuetify',
+      'vue-scrollto'
+    ]
   },
   env: {
     s3: 'http://d2i660bt0ywr9a.cloudfront.net',

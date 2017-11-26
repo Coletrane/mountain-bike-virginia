@@ -53,6 +53,7 @@
     "url-loader": "0.5.8",
     "vue-loader": "^13.0.5",
     "vue-meta": "^1.2.0",
+    "vue-scrollto": "^2.8.0",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
