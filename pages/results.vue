@@ -1,5 +1,5 @@
 <template>
-  <div id="results">
+  <div>
     <m-t-b-v-a-header
       :header-height="480"
       :image="image">
@@ -7,32 +7,33 @@
 
     <v-content>
       <v-container>
-          <v-card class="post">
-            <v-select
-              :items="races"
-              item-text="race"
-              v-model="currentRace"
-              :placeholder="currentRace.race"
-              label="Select"
-              bottom
-            ></v-select>
+          <post-card>
+            <div slot="top">
+              <v-select
+                :items="races"
+                item-text="race"
+                v-model="currentRace"
+                :placeholder="currentRace.race"
+                label="Select"
+                bottom
+              ></v-select>
 
-            <div v-for="clazz in currentRace.results.classes">
-              <h5 class="center clazz">{{clazz.name}}</h5>
-              <v-data-table
-                :headers="headers"
-                :items="clazz.riders"
-                hide-actions>
+              <div v-for="clazz in currentRace.results.classes">
+                <h5 class="center clazz">{{clazz.name}}</h5>
+                <v-data-table
+                  :headers="headers"
+                  :items="clazz.riders"
+                  hide-actions>
 
-                <template slot="items" scope="props">
-                  <td class="center">{{props.item.position}}</td>
-                  <td class="center">{{props.item.name}}</td>
-                  <td class="center">{{props.item.time}}</td>
-                </template>
-              </v-data-table>
+                  <template slot="items" scope="props">
+                    <td class="center">{{props.item.position}}</td>
+                    <td class="center">{{props.item.name}}</td>
+                    <td class="center">{{props.item.time}}</td>
+                  </template>
+                </v-data-table>
+              </div>
             </div>
-          </v-card>
-        <!--</v-layout>-->
+          </post-card>
       </v-container>
     </v-content>
 
@@ -40,13 +41,16 @@
 </template>
 
 <script>
-  import MTBVAHeader from '../../components/MTBVAHeader.vue'
-  import results from '../../assets/results'
+  import MTBVAHeader from '../components/MTBVAHeader.vue'
+  import PostCard from '../components/PostCard.vue'
+
+  import results from '../assets/results'
 
   export default {
     name: 'results',
     components: {
-      MTBVAHeader
+      MTBVAHeader,
+      PostCard
     },
     head() {
       const title = "Results"
@@ -68,7 +72,7 @@
       return {
         image: process.env.s3 + '/pages/results/podium.png',
         races: this.initRaces().reverse(),
-        currentRace:  this.initRaces().reverse()[0],
+        currentRace: this.initRaces().reverse()[0],
         headers: [
           {
             text: 'Position',
@@ -137,6 +141,7 @@
   .center {
     text-align: center;
   }
+
   .results-container {
     padding: 1rem;
     background-color: white;

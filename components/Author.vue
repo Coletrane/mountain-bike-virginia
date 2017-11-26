@@ -1,5 +1,6 @@
 <template>
-    <div class="author-container">
+    <div class="author-container"
+         :class="inline ? '' : 'float'">
         <a :href="author.fbUrl">
             <img class="author-img" :src=author.imgUrl alt="author">
             <div>{{author.name}}</div>
@@ -10,7 +11,10 @@
 <script>
     export default {
       name: 'author',
-      props: ['author']
+      props: [
+        'author',
+        'inline'
+      ]
     }
 </script>
 
@@ -18,9 +22,12 @@
     .author-container {
         width: 40%;
         text-align: center;
-        float: left;
         padding-top: 1.2rem;
         max-width: 180px;
+    }
+
+    .float {
+        float: left;
     }
 
     .author-img {

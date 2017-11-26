@@ -82,7 +82,7 @@ export function getContext (context, app) {
     payload: context.payload,
     error: context.error,
     base: '/',
-    env: {"s3":"https://s3.amazonaws.com/mtbva","baseUrl":"http://bikeva.com"}
+    env: {"s3":"http://d2i660bt0ywr9a.cloudfront.net","baseUrl":"http://bikeva.com"}
   }
   const next = context.next
   ctx.params = ctx.route.params || {}

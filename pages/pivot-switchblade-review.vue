@@ -1,7 +1,7 @@
 <template>
-  <div id="creature-2017">
+  <div>
     <blog-post
-      :header-height="headerHeight"
+      :header-height="700"
       :image="img + 'IMG_3009.jpg'"
       :post="post">
 
@@ -26,10 +26,9 @@
 </template>
 
 <script>
-  import BlogPost from '../../components/BlogPost.vue'
-  import { posts } from '../../assets/posts'
+  import BlogPost from '../components/BlogPost.vue'
 
-  const post = posts[3]
+  import  posts  from '../assets/posts'
 
   export default {
     name: 'pivot-switchblade-review',
@@ -54,10 +53,8 @@
     },
     data() {
       return {
-        headerHeight: 700,
         img: process.env.s3 + '/pages/pivot-switchblade-review/',
-        post: post,
-
+        post: posts['pivot-switchblade-review'],
       }
     }
   }

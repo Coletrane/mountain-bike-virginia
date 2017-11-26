@@ -1,6 +1,6 @@
 <template>
     <blog-post
-            :header-height="headerHeight"
+            :header-height="800"
             :image="img + 'IMG_3794.jpg'"
             :post="post">
         <div slot="content">
@@ -27,10 +27,9 @@
 </template>
 
 <script>
-    import BlogPost from '../../components/BlogPost.vue'
-    import { posts } from '../../assets/posts'
+    import BlogPost from '../components/BlogPost.vue'
 
-    const post = posts[4]
+    import  posts  from '../assets/posts'
 
     export default {
       name: 'spec-mines-oct-29-2017',
@@ -55,10 +54,9 @@
       },
       data() {
         return {
-          headerHeight: 800,
           img: process.env.s3 + '/pages/spec-mines-oct-29-2017/',
           image: '',
-          post: post
+          post: posts['spec-mines-oct-29-2017']
         }
       }
     }

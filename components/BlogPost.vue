@@ -1,37 +1,48 @@
 <template>
-    <div id="blog-post">
-        <m-t-b-v-a-header
-                :header-height="headerHeight"
-                :image="image"
-                :title="post.title">
-        </m-t-b-v-a-header>
+  <div class="blog-post">
+    <m-t-b-v-a-header
+      :header-height="headerHeight"
+      :image="image"
+      :title="post.title">
+    </m-t-b-v-a-header>
 
-        <v-content>
-            <v-container>
-                <v-layout row wrap align-center>
-                    <v-card>
+    <v-content>
+      <v-container>
+        <post-card :post="post">
 
-                        <div class="blog-p subheading">
-                            <h6>{{post.subtitle}}</h6>
-                            <author :author="post.author"></author>
+          <div slot="top">
+            <div class="blog-p subheading">
+              <div v-if="inlineAuthor">
+                <h6>{{post.subtitle}}</h6>
+                <author
+                  :author="post.author"
+                  :inline="inlineAuthor">
+                </author>
+              </div>
+              <div v-else>
+                <h6>{{post.subtitle}}</h6>
+                <author
+                  :author="post.author"
+                  :inline="inlineAuthor">
+                </author>
+              </div>
+            </div>
+          </div>
 
-                            <slot name="content"></slot>
+          <div slot="middle">
+            <slot name="content"></slot>
+          </div>
 
-                            <div>
-                                <social-actions :post="post"></social-actions>
-                            </div>
-                        </div>
-
-                    </v-card>
-                </v-layout>
-            </v-container>
-        </v-content>
-    </div>
+        </post-card>
+      </v-container>
+    </v-content>
+  </div>
 </template>
 
 <script>
   import MTBVAHeader from './MTBVAHeader.vue';
   import Youtube from './Youtube.vue';
+  import PostCard from './PostCard';
   import RideWithGps from './RideWithGps.vue';
   import SocialActions from './SocialActions.vue';
   import Author from './Author.vue';
@@ -41,6 +52,7 @@
     components: {
       MTBVAHeader,
       Youtube,
+      PostCard,
       RideWithGps,
       SocialActions,
       Author
@@ -48,32 +60,33 @@
     props: [
       'headerHeight',
       'image',
-      'post'
-    ]
+      'post',
+      'inlineAuthor'
+    ],
   };
 </script>
 
 <style>
-    @media screen and (min-width: 600px) {
-        .container {
-            max-width: 1350px !important;;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
+  @media screen and (min-width: 600px) {
+    .container {
+      max-width: 1350px !important;;
+      padding-left: 30px;
+      padding-right: 30px;
     }
+  }
 
-    @media screen and (max-width: 600px) {
-        h6 {
-            font-size: 20px !important;
-        }
+  @media screen and (max-width: 600px) {
+    h6 {
+      font-size: 20px !important;
     }
+  }
 
-    .blog-img {
-        width: 100% !important;
-    }
+  .blog-img {
+    width: 100% !important;
+  }
 
-    .blog-p {
-        padding: 1rem;
-    }
+  .blog-p {
+    padding: 1rem;
+  }
 
 </style>

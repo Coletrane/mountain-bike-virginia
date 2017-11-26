@@ -4,11 +4,12 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _5ba4c862 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _077cef7e = () => import('../pages/spec-mines-oct-29-2017/index.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017/index" */).then(m => m.default || m)
-const _3b4e2049 = () => import('../pages/relaunch/index.vue' /* webpackChunkName: "pages/relaunch/index" */).then(m => m.default || m)
-const _6f8a44f7 = () => import('../pages/creature-2017-recap/index.vue' /* webpackChunkName: "pages/creature-2017-recap/index" */).then(m => m.default || m)
-const _84f11f22 = () => import('../pages/pivot-switchblade-review/index.vue' /* webpackChunkName: "pages/pivot-switchblade-review/index" */).then(m => m.default || m)
-const _a6cf54ee = () => import('../pages/results/index.vue' /* webpackChunkName: "pages/results/index" */).then(m => m.default || m)
+const _c45eaf84 = () => import('../pages/spec-mines-oct-29-2017.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017" */).then(m => m.default || m)
+const _2fdc3374 = () => import('../pages/relaunch.vue' /* webpackChunkName: "pages/relaunch" */).then(m => m.default || m)
+const _72baa574 = () => import('../pages/creature-2017-recap.vue' /* webpackChunkName: "pages/creature-2017-recap" */).then(m => m.default || m)
+const _f2acc076 = () => import('../pages/dody-ridge-run-fall-2017.vue' /* webpackChunkName: "pages/dody-ridge-run-fall-2017" */).then(m => m.default || m)
+const _ba086a28 = () => import('../pages/pivot-switchblade-review.vue' /* webpackChunkName: "pages/pivot-switchblade-review" */).then(m => m.default || m)
+const _5505e8f4 = () => import('../pages/results.vue' /* webpackChunkName: "pages/results" */).then(m => m.default || m)
 
 
 
@@ -51,27 +52,32 @@ export function createRouter () {
 		},
 		{
 			path: "/spec-mines-oct-29-2017",
-			component: _077cef7e,
+			component: _c45eaf84,
 			name: "spec-mines-oct-29-2017"
 		},
 		{
 			path: "/relaunch",
-			component: _3b4e2049,
+			component: _2fdc3374,
 			name: "relaunch"
 		},
 		{
 			path: "/creature-2017-recap",
-			component: _6f8a44f7,
+			component: _72baa574,
 			name: "creature-2017-recap"
 		},
 		{
+			path: "/dody-ridge-run-fall-2017",
+			component: _f2acc076,
+			name: "dody-ridge-run-fall-2017"
+		},
+		{
 			path: "/pivot-switchblade-review",
-			component: _84f11f22,
+			component: _ba086a28,
 			name: "pivot-switchblade-review"
 		},
 		{
 			path: "/results",
-			component: _a6cf54ee,
+			component: _5505e8f4,
 			name: "results"
 		}
     ],
