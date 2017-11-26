@@ -27,7 +27,7 @@
     },
     methods: {
       handleScroll() {
-        if (window.scrollY > 1500) {
+        if (window.scrollY > 500) {
           this.showFooter = true
         }
       }
