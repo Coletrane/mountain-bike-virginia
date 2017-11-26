@@ -7,7 +7,7 @@
         </transition>
       </div>
 
-      <div>
+      <div v-if="showFooter">
         <m-t-b-v-a-footer></m-t-b-v-a-footer>
       </div>
     </v-app>
@@ -19,7 +19,31 @@
 
   export default {
     components: {MTBVAFooter},
-    name: 'app'
+    name: 'app',
+    data() {
+      return {
+        showFooter: false
+      }
+    },
+    methods: {
+      handleScroll() {
+        if (window.scrollY > 1500) {
+          this.showFooter = true
+        }
+      }
+    },
+    created() {
+      // Check if we are on client side since server doesn't have window
+      if (process.browser) {
+        //not having this.handleScroll() is important for the method to be called over and over
+        window.addEventListener('scroll', this.handleScroll)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('scroll', this.handleScroll)
+      }
+    }
   }
 </script>
 
