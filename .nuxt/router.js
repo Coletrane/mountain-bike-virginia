@@ -6,8 +6,9 @@ Vue.use(Router)
 const _5ba4c862 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 const _c45eaf84 = () => import('../pages/spec-mines-oct-29-2017.vue' /* webpackChunkName: "pages/spec-mines-oct-29-2017" */).then(m => m.default || m)
 const _2fdc3374 = () => import('../pages/relaunch.vue' /* webpackChunkName: "pages/relaunch" */).then(m => m.default || m)
-const _72baa574 = () => import('../pages/creature-2017-recap.vue' /* webpackChunkName: "pages/creature-2017-recap" */).then(m => m.default || m)
 const _f2acc076 = () => import('../pages/dody-ridge-run-fall-2017.vue' /* webpackChunkName: "pages/dody-ridge-run-fall-2017" */).then(m => m.default || m)
+const _72baa574 = () => import('../pages/creature-2017-recap.vue' /* webpackChunkName: "pages/creature-2017-recap" */).then(m => m.default || m)
+const _51a33dcd = () => import('../pages/first-ride-2018.vue' /* webpackChunkName: "pages/first-ride-2018" */).then(m => m.default || m)
 const _ba086a28 = () => import('../pages/pivot-switchblade-review.vue' /* webpackChunkName: "pages/pivot-switchblade-review" */).then(m => m.default || m)
 const _5505e8f4 = () => import('../pages/results.vue' /* webpackChunkName: "pages/results" */).then(m => m.default || m)
 
@@ -61,14 +62,19 @@ export function createRouter () {
 			name: "relaunch"
 		},
 		{
+			path: "/dody-ridge-run-fall-2017",
+			component: _f2acc076,
+			name: "dody-ridge-run-fall-2017"
+		},
+		{
 			path: "/creature-2017-recap",
 			component: _72baa574,
 			name: "creature-2017-recap"
 		},
 		{
-			path: "/dody-ridge-run-fall-2017",
-			component: _f2acc076,
-			name: "dody-ridge-run-fall-2017"
+			path: "/first-ride-2018",
+			component: _51a33dcd,
+			name: "first-ride-2018"
 		},
 		{
 			path: "/pivot-switchblade-review",

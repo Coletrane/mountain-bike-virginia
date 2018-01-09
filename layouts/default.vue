@@ -6,20 +6,18 @@
           <nuxt/>
         </transition>
       </div>
-
       <div v-if="showFooter">
         <m-t-b-v-a-footer></m-t-b-v-a-footer>
       </div>
     </v-app>
   </div>
 </template>
-
 <script>
-  import MTBVAFooter from '../components/MTBVAFooter.vue'
+  import MTBVAFooter from "../components/MTBVAFooter.vue"
 
   export default {
     components: {MTBVAFooter},
-    name: 'app',
+    name: "app",
     data() {
       return {
         showFooter: false
@@ -36,17 +34,16 @@
       // Check if we are on client side since server doesn't have window
       if (process.browser) {
         //not having this.handleScroll() is important for the method to be called over and over
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener("scroll", this.handleScroll)
       }
     },
     destroyed() {
       if (process.browser) {
-        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener("scroll", this.handleScroll)
       }
     }
   }
 </script>
-
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

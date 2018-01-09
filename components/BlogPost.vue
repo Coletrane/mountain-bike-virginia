@@ -5,11 +5,9 @@
       :image="image"
       :title="post.title">
     </m-t-b-v-a-header>
-
     <v-content>
       <v-container>
         <post-card :post="post">
-
           <div slot="top">
             <div class="blog-p subheading">
               <div v-if="inlineAuthor">
@@ -28,27 +26,24 @@
               </div>
             </div>
           </div>
-
           <div slot="middle">
             <slot name="content"></slot>
           </div>
-
         </post-card>
       </v-container>
     </v-content>
   </div>
 </template>
-
 <script>
-  import MTBVAHeader from './MTBVAHeader.vue';
-  import Youtube from './Youtube.vue';
-  import PostCard from './PostCard';
-  import RideWithGps from './RideWithGps.vue';
-  import SocialActions from './SocialActions.vue';
-  import Author from './Author.vue';
+  import MTBVAHeader from "./MTBVAHeader.vue"
+  import Youtube from "./Youtube.vue"
+  import PostCard from "./PostCard"
+  import RideWithGps from "./RideWithGps.vue"
+  import SocialActions from "./SocialActions.vue"
+  import Author from "./Author.vue"
 
   export default {
-    name: 'blog-post',
+    name: "blog-post",
     components: {
       MTBVAHeader,
       Youtube,
@@ -58,14 +53,13 @@
       Author
     },
     props: [
-      'headerHeight',
-      'image',
-      'post',
-      'inlineAuthor'
-    ],
-  };
+      "headerHeight",
+      "image",
+      "post",
+      "inlineAuthor"
+    ]
+  }
 </script>
-
 <style>
   @media screen and (min-width: 600px) {
     .container {
@@ -85,8 +79,13 @@
     width: 100% !important;
   }
 
+  .blog-img-portrait {
+    width: 50% !important;
+    display: block;
+    margin: auto;
+  }
+
   .blog-p {
     padding: 1rem;
   }
-
 </style>

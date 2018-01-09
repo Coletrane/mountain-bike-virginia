@@ -1,4 +1,4 @@
-module.exports = [
+export const results = [
   {
     race: "Creature From Carvins Cove 2017",
     results: {
@@ -90,7 +90,7 @@ module.exports = [
             {
               name: "Phillip Mitchell",
               time: "7:42"
-            },
+            }
           ]
         },
         {
@@ -167,7 +167,7 @@ module.exports = [
             {
               name: "Jeff Baker",
               time: "7:08"
-            },
+            }
           ]
         },
         {
@@ -176,7 +176,7 @@ module.exports = [
             {
               name: "David Lanchlet",
               time: "5:49"
-            },
+            }
           ]
         },
         {
@@ -197,7 +197,7 @@ module.exports = [
             {
               name: "Natalie Morris",
               time: "6:34"
-            },
+            }
           ]
         },
         {
@@ -238,7 +238,7 @@ module.exports = [
             {
               name: "Gabor Szilagyi",
               time: "5:25"
-            },
+            }
           ]
         }
       ]

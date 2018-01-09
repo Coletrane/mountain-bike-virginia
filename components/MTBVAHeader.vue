@@ -9,11 +9,9 @@
       <nuxt-link to="/" class="xxcva-link nav-link">
         <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
       </nuxt-link>
-
       <v-spacer></v-spacer>
-
       <nuxt-link to="/results" class="nav-text">
-          Results
+        Results
       </nuxt-link>
       <a class="nav-link"
          href="https://www.facebook.com/xxcva/">
@@ -21,7 +19,6 @@
              class="fb">
       </a>
     </v-toolbar>
-
     <v-layout column align-center justify-center>
       <h3 class="white--text mtbva-title">{{title}}</h3>
       <h5 class="white--text mtbva-title">{{subtitle}}</h5>
@@ -34,26 +31,34 @@
     </v-layout>
   </v-parallax>
 </template>
-
 <script>
+  import * as routes from "../routes"
+
   export default {
-    name: 'mtbva-header',
+    name: "mtbva-header",
     props: [
-      'header-height',
-      'image',
-      'title',
-      'subtitle',
-      'button',
-      'buttonLink'
+      "header-height",
+      "image",
+      "title",
+      "subtitle",
+      "button",
+      "buttonLink"
     ],
     data() {
       return {
-        img: process.env.s3 + '/static/img/'
+        img: `${routes.s3}${routes.s3StaticImg}`
+      }
+    },
+    computed: {
+      parallaxStyle() {
+        return `
+          background-image: url(${this.image});
+          height: ${this.headerHeight}px;
+        `
       }
     }
   }
 </script>
-
 <style>
   /*.parallax__image-container {*/
   /*z-index: -1;*/
@@ -67,27 +72,34 @@
   .header-wrapper {
     background-color: black;
   }
+
   .toolbar {
     background-color: transparent !important;
     margin-bottom: 32rem;
   }
+
   @media screen and (max-width: 480px) {
     .xxcva {
       display: none;
     }
   }
+
   .xxcva {
     width: 12rem;
   }
+
   .mtbva {
     width: 8rem;
   }
+
   .xxcva-link {
     margin-left: 1rem;
   }
+
   .fb {
     width: 2.5rem;
   }
+
   .nav-text {
     margin-top: 4.5rem !important;
     color: white !important;
@@ -96,6 +108,7 @@
     text-decoration: none;
     font-size: 1.5rem;
   }
+
   .nav-link {
     margin-top: 4.5rem;
   }
@@ -103,9 +116,10 @@
   .mtbva-title {
     text-align: center;
   }
+
   .header-button {
     background-color: transparent !important;
     border: 2px solid white !important;
     color: white !important;
   }
-  </style>
+</style>

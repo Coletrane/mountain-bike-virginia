@@ -6,15 +6,12 @@
     </nuxt-link>
   </div>
 </template>
-
 <script>
-
   export default {
-    name: 'post-header',
-    props: ['post']
+    name: "post-header",
+    props: ["post"]
   }
 </script>
-
 <style scoped>
   a {
     color: black;

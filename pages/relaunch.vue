@@ -1,9 +1,7 @@
 <template>
-
 </template>
-
 <script>
   export default {
-    name: 'relaunch'
+    name: "relaunch"
   }
 </script>

@@ -14,40 +14,40 @@
     </v-btn>
   </div>
 </template>
-
 <script>
   export default {
-    name: 'social-actions',
-    props: ['post'],
+    name: "social-actions",
+    props: ["post"],
     computed: {
       facebookLink() {
         return "http://www.facebook.com/share.php?u=" +
-          process.env.baseUrl + '/' + this.post.route
+          process.env.baseUrl + "/" + this.post.route
       },
       redditLink() {
         return "http://www.reddit.com/submit?url=" +
-          process.env.baseUrl + '/' + this.post.route
+          process.env.baseUrl + "/" + this.post.route
       },
       twitterLink() {
         return "http://twitter.com/home?status=" +
           this.post.title + " " +
-          this.baseUrl + '/' + this.post.route
+          this.baseUrl + "/" + this.post.route
       }
-    },
+    }
   }
-  </script>
-
+</script>
 <style>
   @media screen and (max-width: 600px) {
     .social-button {
       margin: 0 !important;
       width: 2rem !important;
     }
+
     .icon {
       font-size: 1.5rem !important;
     }
 
   }
+
   .social {
   }
 </style>

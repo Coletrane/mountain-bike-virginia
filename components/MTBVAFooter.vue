@@ -3,15 +3,14 @@
     <div class="sponsors-container">
       <v-layout row wrap>
         <v-flex xs4 v-for="sponsor in sponsors">
-              <a :href="sponsor.url">
-              <img :src="sponsor.img"
-                   :class="sponsor.class"
-                          class="sponsor">
-                </a>
+          <a :href="sponsor.url">
+            <img :src="sponsor.img"
+                 :class="sponsor.class"
+                 class="sponsor">
+          </a>
         </v-flex>
       </v-layout>
     </div>
-
     <div class="copyright">
       <div>
         © 2017 Virginia Championship Commission, Inc.
@@ -28,11 +27,10 @@
     </div>
   </div>
 </template>
-
 <script>
-  import routes from '../routes'
+  import routes from "../routes"
 
-  const img = routes.s3Root + '/static/img/'
+  const img = routes.s3 + "/static/img/"
 
   export default {
     data() {
@@ -40,70 +38,69 @@
         img: img,
         sponsors: [
           {
-            img: img + 'va-blueridge.png',
-            class: 'blueridge',
-            url: '',
+            img: img + "va-blueridge.png",
+            class: "blueridge",
+            url: ""
           },
           {
-            img: img + 'parkway.png',
-            class: 'parkway',
-            url: '',
+            img: img + "parkway.png",
+            class: "parkway",
+            url: ""
           },
           {
-            img: img + 'starlight.gif',
-            class: 'starlight',
-            url: '',
+            img: img + "starlight.gif",
+            class: "starlight",
+            url: ""
           },
           {
-            img: img + 'sbc.gif',
-            class: 'sbc',
-            url: '',
+            img: img + "sbc.gif",
+            class: "sbc",
+            url: ""
           },
           {
-            img: img + 'jtrg.jpg',
-            class: 'jtrig',
-            url: '',
+            img: img + "jtrg.jpg",
+            class: "jtrig",
+            url: ""
           },
           {
-            img: img + 'east-coasters.jpg',
-            class: 'east-coasters',
-            url: '',
+            img: img + "east-coasters.jpg",
+            class: "east-coasters",
+            url: ""
           },
           {
-            img: img + 'alleghany.jpg',
-            class: 'alleghany',
-            url: '',
+            img: img + "alleghany.jpg",
+            class: "alleghany",
+            url: ""
           },
           {
-            img: img + 'blackwater.jpg',
-            class: 'blackwater',
-            url: '',
+            img: img + "blackwater.jpg",
+            class: "blackwater",
+            url: ""
           },
           {
-            img: img + 'outdoortrails.jpg',
-            class: 'outdoor-trails',
-            url: '',
+            img: img + "outdoortrails.jpg",
+            class: "outdoor-trails",
+            url: ""
           },
           {
-            img: img + 'woods.png',
-            class: 'woods',
-            url: '',
-          },{
-            img: img + 'bath.jpg',
-            class: 'bath',
-            url: '',
+            img: img + "woods.png",
+            class: "woods",
+            url: ""
+          }, {
+            img: img + "bath.jpg",
+            class: "bath",
+            url: ""
           },
           {
-            img: img + 'tavern.gif',
-            class: 'tavern',
-            url: '',
-          },
+            img: img + "tavern.gif",
+            class: "tavern",
+            url: ""
+          }
         ]
       }
     }
   }
 </script>
-
 <style>
   .mtbva-footer {
     padding-top: 4rem;
@@ -120,41 +117,50 @@
     display: block;
     margin: auto;
   }
+
   @media screen and (min-width: 1064px) {
     .sponsors-container {
       width: 50%;
     }
   }
+
   @media screen and (max-width: 1064px) {
     .sponsors-container {
-      width: 70%;
+      width: 85%;
     }
   }
 
   .sponsor {
     width: 90%;
   }
+
   .parkway {
     margin-top: 1rem;
   }
+
   .blueridge {
     margin-top: 2rem;
     margin-left: 1rem;
   }
+
   .starlight {
     margin-top: 2rem;
   }
+
   .jtrig {
     padding-left: 1rem;
     margin-top: 2rem;
   }
+
   .sbc {
     margin-top: .7rem;
   }
+
   .woods {
     margin-left: 1rem;
     margin-top: 2rem;
   }
+
   .outdoor-trails {
     margin-top: 1.5rem;
   }
@@ -164,9 +170,9 @@
     text-align: center;
     color: white;
   }
+
   .github {
     width: 2rem;
     padding-bottom: 1rem;
   }
-
 </style>
