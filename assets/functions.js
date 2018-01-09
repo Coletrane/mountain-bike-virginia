@@ -13,11 +13,18 @@ export const headTags = (title, desc, keywords, post) => {
       name: "og:url", content: `${routes.baseUrl}/${post.route}`
     })
   }
-  if (post.imgSrc) {
-    metas.push({
-      name: "og:image",
-      content: `${routes.s3}/${post.imgSrc}`
-    })
+  if (post.imgSrc || post.img) {
+    let fbImg = {
+      name: "og:image"
+    }
+
+    if (post.imgSrc) {
+      fbImg.content = `${routes.s3}/${post.imgSrc}`
+    } else if (post.img) {
+      fbImg.content = post.img
+    }
+
+    metas.push(fbImg)
   }
 
   return {
