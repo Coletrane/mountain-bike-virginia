@@ -53,6 +53,7 @@
     "uglify-js": "^3.0.19",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "0.5.8",
+    "vue-lazyload": "^1.1.4",
     "vue-loader": "^13.0.5",
     "vue-meta": "^1.2.0",
     "vue-scrollto": "^2.8.0",

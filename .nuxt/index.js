@@ -12,7 +12,7 @@ import { setContext, getLocation, getRouteData } from './utils'
 
 
 /* Plugins */
-import nuxt_plugin_googleanalytics_0a4648ba from 'nuxt_plugin_googleanalytics_0a4648ba' // Source: ./google-analytics.js (ssr: false)
+import nuxt_plugin_googleanalytics_c04279b4 from 'nuxt_plugin_googleanalytics_c04279b4' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_vuetify_165b1c58 from 'nuxt_plugin_vuetify_165b1c58' // Source: ../plugins/vuetify
 import nuxt_plugin_vuescrollto_53dc20e5 from 'nuxt_plugin_vuescrollto_53dc20e5' // Source: ../plugins/vue-scrollto (ssr: false)
 
@@ -139,7 +139,7 @@ async function createApp (ssrContext) {
   if (typeof nuxt_plugin_vuetify_165b1c58 === 'function') await nuxt_plugin_vuetify_165b1c58(app.context, inject)
   
   if (process.browser) { 
-    if (typeof nuxt_plugin_googleanalytics_0a4648ba === 'function') await nuxt_plugin_googleanalytics_0a4648ba(app.context, inject)
+    if (typeof nuxt_plugin_googleanalytics_c04279b4 === 'function') await nuxt_plugin_googleanalytics_c04279b4(app.context, inject)
     if (typeof nuxt_plugin_vuescrollto_53dc20e5 === 'function') await nuxt_plugin_vuescrollto_53dc20e5(app.context, inject)
   }
 
