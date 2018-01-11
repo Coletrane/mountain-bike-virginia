@@ -1,2 +1,0 @@
-webpackJsonp([8],{"2eWI":function(e,n,t){"use strict";n.a={name:"relaunch"}},abqR:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t("2eWI"),a=t("qTxx"),u=t("VU/8"),c=u(r.a,a.a,null,null,null);n.default=c.exports},qTxx:function(e,n,t){"use strict";var r=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div")},a=[],u={render:r,staticRenderFns:a};n.a=u}});
-//# sourceMappingURL=relaunch.5582519d971c1181f707.js.map

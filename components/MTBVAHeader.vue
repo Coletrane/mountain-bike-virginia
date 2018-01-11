@@ -2,7 +2,11 @@
   <v-parallax :src="image"
               :height="headerHeight"
               class="header-wrapper">
-    <v-toolbar extended absolute class="toolbar">
+    <v-toolbar extended
+               absolute
+               class="toolbar"
+               scroll-off-screen
+               scroll-target="#main-content">
       <nuxt-link to="/" class="nav-link">
         <img class="mtbva" :src="img + 'mtbva.png'">
       </nuxt-link>
@@ -60,14 +64,6 @@
   }
 </script>
 <style>
-  /*.parallax__image-container {*/
-  /*z-index: -1;*/
-  /*background: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69));*/
-  /*}*/
-  /*.parallax__image {*/
-  /*z-index: -1;*/
-  /*opacity: 0.25 !important;*/
-  /*}*/
 
   .header-wrapper {
     background-color: black;
@@ -76,6 +72,12 @@
   .toolbar {
     background-color: transparent !important;
     margin-bottom: 32rem;
+  }
+
+  .toolbar-solid {
+    background-color: white !important;
+    opacity: 0.8;
+
   }
 
   @media screen and (max-width: 480px) {

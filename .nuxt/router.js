@@ -87,6 +87,8 @@ export function createRouter () {
 			name: "results"
 		}
     ],
+    
+    
     fallback: false
   })
 }

@@ -1,11 +1,3 @@
-<template>
-  <div id="__nuxt">
-    <nuxt-loading ref="loading"></nuxt-loading>
-    <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout"></component>
-  </div>
-</template>
-
-<script>
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
@@ -21,13 +13,39 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"robots","content":"index, follow"},{"name":"revisit-after","content":"3 month"},{"name":"fb:app_id","content":"1426359417419881"}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/icon?family=Material+Icons"},{"rel":"stylesheet","href":"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css","integrity":"sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN","crossorigin":"anonymous"},{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[]},
+  head: {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"robots","content":"index, follow"},{"name":"revisit-after","content":"3 month"},{"name":"fb:app_id","content":"1426359417419881"}],"link":[{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Ficon?family=Material+Icons"},{"rel":"stylesheet","href":"https:\u002F\u002Fmaxcdn.bootstrapcdn.com\u002Ffont-awesome\u002F4.7.0\u002Fcss\u002Ffont-awesome.min.css","integrity":"sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN","crossorigin":"anonymous"},{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  render(h, props) {
+    const loadingEl = h('nuxt-loading', { ref: 'loading' })
+    const layoutEl = h(this.layout || 'nuxt')
+    const templateEl = h('div', {
+      domProps: {
+        id: '__layout'
+      },
+      key: this.layoutName
+    }, [ layoutEl ])
+
+    const transitionEl = h('transition', {
+      props: {
+        name: 'layout',
+        mode: 'out-in'
+      }
+    }, [ templateEl ])
+
+    return h('div',{
+      domProps: {
+        id: '__nuxt'
+      }
+    }, [
+      loadingEl,
+      transitionEl
+    ])
+  },
   data: () => ({
     layout: null,
     layoutName: ''
   }),
   beforeCreate () {
-    Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
+    Vue.util.defineReactive(this, 'nuxt', this.$options.nuxt)
   },
   created () {
     // Add this.$nuxt in child instances
@@ -86,5 +104,4 @@ export default {
     NuxtLoading
   }
 }
-</script>
 
