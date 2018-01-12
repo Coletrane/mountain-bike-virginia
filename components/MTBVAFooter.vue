@@ -40,61 +40,61 @@
           {
             img: img + "va-blueridge.png",
             class: "blueridge",
-            url: ""
+            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
             img: img + "parkway.png",
             class: "parkway",
-            url: ""
+            url: "http://parkwaybrewing.com/"
           },
           {
             img: img + "starlight.gif",
             class: "starlight",
-            url: ""
+            url: "https://www.starlightapparel.com/"
           },
           {
             img: img + "sbc.gif",
             class: "sbc",
-            url: ""
+            url: "http://www.shenandoahbicycle.com/"
           },
           {
             img: img + "jtrg.jpg",
             class: "jtrig",
-            url: ""
+            url: "http://justtherightgear.com/"
           },
           {
             img: img + "east-coasters.jpg",
             class: "east-coasters",
-            url: ""
+            url: "https://eastcoasters.com/"
           },
           {
             img: img + "alleghany.jpg",
             class: "alleghany",
-            url: ""
+            url: "http://www.visitalleghanyhighlands.com/main/index.php"
           },
           {
             img: img + "blackwater.jpg",
             class: "blackwater",
-            url: ""
+            url: "http://www.blackwaterbikeshop.com/"
           },
           {
             img: img + "outdoortrails.jpg",
             class: "outdoor-trails",
-            url: ""
+            url: "http://www.outdoortrails.com/"
           },
           {
             img: img + "woods.png",
             class: "woods",
-            url: ""
+            url: "http://woodsac.com/"
           }, {
             img: img + "bath.jpg",
             class: "bath",
-            url: ""
+            url: "http://discoverbath.com/"
           },
           {
             img: img + "tavern.gif",
             class: "tavern",
-            url: ""
+            url: "http://jackmasonstavern.com/"
           }
         ]
       }
@@ -116,6 +116,7 @@
     background-color: white;
     display: block;
     margin: auto;
+    opacity: .8;
   }
 
   @media screen and (min-width: 1064px) {

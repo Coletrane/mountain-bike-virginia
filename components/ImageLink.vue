@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="post.route">
-    <img :v-lazy="post.img">
+    <img :src="post.img">
   </nuxt-link>
 </template>
 <script>
