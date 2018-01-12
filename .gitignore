@@ -28,3 +28,11 @@ scripts
 
 newrelic_agent.log
 npm_debug.log
+
+.idea/*
+!.idea/codeStyleSettings.xml
+!.idea/codeStyles/
+!.idea/cole-inman.iml
+!.idea/inspectionProfiles/
+
+.nuxt/
