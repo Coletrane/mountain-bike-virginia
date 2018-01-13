@@ -66,7 +66,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "npm run clean && nuxt build && nuxt generate",
+    "build": "npm run clean && nuxt build && nuxt generate && zip -r mtbva.zip ./dist",
     "build-check": "nuxt build --analyze",
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",
