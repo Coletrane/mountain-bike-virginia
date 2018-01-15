@@ -36,7 +36,7 @@
   </v-parallax>
 </template>
 <script>
-  import * as routes from "../routes"
+  import {s3, s3StaticImg} from "../routes"
 
   export default {
     name: "mtbva-header",
@@ -50,7 +50,7 @@
     ],
     data() {
       return {
-        img: `${routes.s3}${routes.s3StaticImg}`
+        img: `${s3}${s3StaticImg}`
       }
     },
     computed: {

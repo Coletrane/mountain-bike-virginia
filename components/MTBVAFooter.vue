@@ -107,9 +107,8 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg') !important;
     background-position-x: center !important;
     background-position-y: top !important;
-    background-repeat: no-repeat !important;
-    background-color: rgb(0, 15, 24) !important;
-    background-size: contain;
+    background-repeat: repeat-y !important;
+    background-color: #063655 !important;
   }
 
   .sponsors-container {
@@ -121,7 +120,7 @@
 
   @media screen and (min-width: 1064px) {
     .sponsors-container {
-      width: 50%;
+      width: 75%;
     }
   }
 

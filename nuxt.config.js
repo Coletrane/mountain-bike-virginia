@@ -31,7 +31,8 @@ module.exports = {
   },
   plugins: [
     {src: "~/plugins/vuetify", ssr: true},
-    {src: "~/plugins/vue-scrollto", ssr: false}
+    {src: "~/plugins/vue-scrollto", ssr: false},
+    {src: "~/plugins/vue-lazyload", ssr: true}
   ],
   css: [
     "vuetify/dist/vuetify.min.css"
@@ -40,7 +41,8 @@ module.exports = {
     extractCss: true,
     vendor: [
       "vuetify",
-      "vue-scrollto"
+      "vue-scrollto",
+      "vue-lazyload"
     ]
   },
   modules: [
@@ -58,5 +60,10 @@ module.exports = {
     generate: false, // Enable me when using nuxt generate,
     exclude: routes.appRoutes,
     routes: sitemapRoutes
+  },
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
   }
 }

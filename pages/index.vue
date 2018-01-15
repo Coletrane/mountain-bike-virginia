@@ -5,7 +5,7 @@
       :image="img"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
-      button="Ride or Race with us"
+      button="Events"
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
     <v-content id="main-content">
