@@ -36,3 +36,4 @@ npm_debug.log
 !.idea/inspectionProfiles/
 
 .nuxt/
+dist
