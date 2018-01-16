@@ -11,14 +11,14 @@
           <div slot="top">
             <div class="blog-p subheading">
               <div v-if="inlineAuthor">
-                <h6>{{post.subtitle}}</h6>
+                <h3>{{post.subtitle}}</h3>
                 <author
                   :author="post.author"
                   :inline="inlineAuthor">
                 </author>
               </div>
               <div v-else>
-                <h6>{{post.subtitle}}</h6>
+                <h3>{{post.subtitle}}</h3>
                 <author
                   :author="post.author"
                   :inline="inlineAuthor">

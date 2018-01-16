@@ -18,6 +18,7 @@
   export default {
     components: {MTBVAFooter},
     name: "app",
+    scrollToTop: true,
     data() {
       return {
         showFooter: false

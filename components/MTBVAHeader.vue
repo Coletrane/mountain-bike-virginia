@@ -28,15 +28,15 @@
         <transition appear
                     name="title"
                     v-on:enter="titleEntered">
-          <h3 class="white--text mtbva-title">{{title}}</h3>
+          <h1 class="white--text mtbva-title">{{title}}</h1>
         </transition>
         <transition appear
                     name="subtitle"
                     v-on:enter="subtitleEntered">
-          <h5 class="white--text mtbva-title"
+          <h3 class="white--text mtbva-title"
               v-if="showSubtitle">
             {{subtitle}}
-          </h5>
+          </h3>
         </transition>
         <transition appear
                     name="hero-button">

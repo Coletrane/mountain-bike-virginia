@@ -1,22 +1,24 @@
 <template>
-  <div class="yt-wrapper">
-    <iframe width="100%"
-            :src="src"
-            frameborder="0"
-            allowfullscreen>
-    </iframe>
-  </div>
+    <div class="yt-wrapper">
+      <iframe width="100%"
+              :src="src"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 </template>
 <script>
   export default {
     name: "youtube",
     props: ["src"],
+
     data() {
       return {
-        url: ""
+        url: "",
+        show: false
       }
     },
-    mounted() {
+    attached() {
       this.url = this.src
     }
   }
