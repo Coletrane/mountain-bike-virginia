@@ -15,11 +15,10 @@
     "express": "^4.16.2",
     "newrelic": "^2.3.2",
     "nuxt": "^1.0.0",
-    "pm2": "^2.7.2",
     "serve-favicon": "^2.4.5",
     "sitemap": "^1.13.0",
-    "vue-styled-components": "^1.2.1",
-    "vuetify": "^0.17.6"
+    "vuetify": "^1.0.0-beta.4",
+    "vue-lazyload": "^1.1.4"
   },
   "peerDependencies": {},
   "devDependencies": {
@@ -52,7 +51,6 @@
     "uglify-js": "^3.0.19",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "0.5.8",
-    "vue-lazyload": "^1.1.4",
     "vue-loader": "^13.0.5",
     "vue-meta": "^1.2.0",
     "vue-scrollto": "^2.8.0",

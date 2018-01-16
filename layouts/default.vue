@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-app>
-      <div>
-        <transition name="fade">
+      <div class="app-fade-wrapper">
+        <transition name="app-fade">
           <nuxt/>
         </transition>
       </div>
@@ -57,16 +57,20 @@
   }
 
   .content {
-    background-color: rgba(32, 23, 2, 0.68) !important;
+    background-color: rgb(78, 69, 49) !important;
     background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png") !important;
     background-repeat: repeat !important;
   }
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
+  .app-fade-wrapper {
+    background-color: black;
   }
 
-  .fade-enter, .fade-leave-to {
-    opacity: 0
+  .app-fade-enter-active {
+    transition: opacity 1s;
+  }
+
+  .app-fade-enter {
+    opacity: 0;
   }
 </style>

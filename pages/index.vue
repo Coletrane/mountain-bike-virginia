@@ -10,8 +10,7 @@
     </m-t-b-v-a-header>
     <v-content id="main-content">
       <v-container>
-        <transition-group name="fade">
-          <div v-show="page === 1"
+          <div v-if="page === 1"
                :key="1">
             <post-card :post="posts.firstRide2018">
               <div slot="top">
@@ -26,85 +25,88 @@
                 <image-link :post="posts.firstRide2018"></image-link>
               </div>
             </post-card>
-            <post-card :post="posts.dodyRidgeRunFall2017">
-              <div slot="top">
-                <post-header :post="posts.dodyRidgeRunFall2017"></post-header>
-              </div>
-              <div slot="middle">
-                <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"></youtube>
-              </div>
-            </post-card>
-            <post-card
-              :post="posts.pivotSwitchbladeReview">
-              <div slot="top">
-                <post-header :post="posts.pivotSwitchbladeReview"></post-header>
-                <div class="promo">
-                  With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's not
-                  trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
+            <div v-if="attachPosts">
+              <post-card :post="posts.dodyRidgeRunFall2017">
+                <div slot="top">
+                  <post-header :post="posts.dodyRidgeRunFall2017"></post-header>
                 </div>
-              </div>
-              <div slot="middle">
-                <image-link :post="posts.pivotSwitchbladeReview"></image-link>
-              </div>
-            </post-card>
-            <post-card :post="posts.creature2017Recap">
-              <div slot="top">
-                <post-header :post="posts.creature2017Recap"></post-header>
-                <div class="promo">
-                  Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks
-                  to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature
-                  come alive.
+                <div slot="middle">
+                  <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"></youtube>
                 </div>
-                <div class="promo">
-                  <nuxt-link :to="'results'">
-                    View the results here.
-                  </nuxt-link>
+              </post-card>
+              <post-card
+                :post="posts.pivotSwitchbladeReview">
+                <div slot="top">
+                  <post-header :post="posts.pivotSwitchbladeReview"></post-header>
+                  <div class="promo">
+                    With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's
+                    not
+                    trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
+                  </div>
                 </div>
-              </div>
-              <div slot="middle">
-                <youtube :src="posts.creature2017Recap.ytSrc"></youtube>
-              </div>
-            </post-card>
-            <post-card :post="posts.relaunch">
-              <div slot="top">
-                <post-header :post="posts.relaunch"></post-header>
-              </div>
-              <div slot="middle">
-                <image-link :post="posts.relaunch"></image-link>
-              </div>
-            </post-card>
+                <div slot="middle">
+                  <image-link :post="posts.pivotSwitchbladeReview"></image-link>
+                </div>
+              </post-card>
+              <post-card :post="posts.creature2017Recap">
+                <div slot="top">
+                  <post-header :post="posts.creature2017Recap"></post-header>
+                  <div class="promo">
+                    Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks
+                    to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature
+                    come alive.
+                  </div>
+                  <div class="promo">
+                    <nuxt-link :to="'results'">
+                      View the results here.
+                    </nuxt-link>
+                  </div>
+                </div>
+                <div slot="middle">
+                  <youtube :src="posts.creature2017Recap.ytSrc"></youtube>
+                </div>
+              </post-card>
+              <post-card :post="posts.relaunch">
+                <div slot="top">
+                  <post-header :post="posts.relaunch"></post-header>
+                </div>
+                <div slot="middle">
+                  <image-link :post="posts.relaunch"></image-link>
+                </div>
+              </post-card>
+            </div>
+            <div v-if="page === 2"
+                 :key="2">
+              <post-card :post="posts.specMines29Oct17">
+                <div slot="top">
+                  <post-header :post="posts.specMines29Oct17"></post-header>
+                </div>
+                <div slot="middle">
+                  <image-link :post="posts.specMines29Oct17"></image-link>
+                </div>
+              </post-card>
+              <post-card :post="posts.creature2016">
+                <div slot="top">
+                  <post-header :post="posts.creature2016"></post-header>
+                  <div class="promo">
+                    The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We
+                    were
+                    even graced by the presence of the fantastic Mr. <a
+                    href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take
+                    first despite starting 3 minutes late.
+                  </div>
+                  <div class="promo">
+                    <nuxt-link :to="'results'">
+                      View the results here.
+                    </nuxt-link>
+                  </div>
+                </div>
+                <div slot="middle">
+                  <youtube :src="posts.creature2016.ytSrc"></youtube>
+                </div>
+              </post-card>
+            </div>
           </div>
-          <div v-if="page === 2"
-               :key="2">
-            <post-card :post="posts.specMines29Oct17">
-              <div slot="top">
-                <post-header :post="posts.specMines29Oct17"></post-header>
-              </div>
-              <div slot="middle">
-                <image-link :post="posts.specMines29Oct17"></image-link>
-              </div>
-            </post-card>
-            <post-card :post="posts.creature2016">
-              <div slot="top">
-                <post-header :post="posts.creature2016"></post-header>
-                <div class="promo">
-                  The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We were
-                  even graced by the presence of the fantastic Mr. <a
-                  href="https://en.wikipedia.org/wiki/Jeremiah_Bishop">Jeremiah Bishop</a> who still managed to take
-                  first despite starting 3 minutes late.
-                </div>
-                <div class="promo">
-                  <nuxt-link :to="'results'">
-                    View the results here.
-                  </nuxt-link>
-                </div>
-              </div>
-              <div slot="middle">
-                <youtube :src="posts.creature2016.ytSrc"></youtube>
-              </div>
-            </post-card>
-          </div>
-        </transition-group>
         <div class="mtbva-pagination">
           <v-pagination :length="2"
                         v-model="page"
@@ -150,6 +152,7 @@
     data() {
       return {
         img: foliage,
+        attachPosts: false,
         posts: posts,
         page: 1
       }
@@ -163,6 +166,23 @@
             {}
           )
         }
+      }
+    },
+    methods: {
+      handleScroll() {
+        if (window.scrollY > 30) {
+          this.attachPosts = true
+        }
+      }
+    },
+    created() {
+      if (process.browser) {
+        window.addEventListener("scroll", this.handleScroll)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener("scroll", this.handleScroll)
       }
     }
   }

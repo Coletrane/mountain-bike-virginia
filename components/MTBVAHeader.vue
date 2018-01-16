@@ -2,36 +2,54 @@
   <v-parallax :src="image"
               :height="headerHeight"
               class="header-wrapper">
-    <v-toolbar extended
-               absolute
-               class="toolbar"
-               scroll-off-screen
-               scroll-target="#main-content">
-      <nuxt-link to="/" class="nav-link">
-        <img class="mtbva" :src="img + 'mtbva.png'">
-      </nuxt-link>
-      <nuxt-link to="/" class="xxcva-link nav-link">
-        <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
-      </nuxt-link>
-      <v-spacer></v-spacer>
-      <nuxt-link to="/results" class="nav-text">
-        Results
-      </nuxt-link>
-      <a class="nav-link"
-         href="https://www.facebook.com/xxcva/">
-        <img :src="img + 'fb.svg'"
-             class="fb">
-      </a>
-    </v-toolbar>
+    <nav class="toolbar toolbar toolbar--absolute toolbar--extended"
+         style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);" data-booted="true">
+      <div class="toolbar__content" style="height: 64px;">
+        <nuxt-link to="/" class="nav-link">
+          <img class="mtbva" :src="img + 'mtbva.png'">
+        </nuxt-link>
+        <nuxt-link to="/" class="xxcva-link nav-link">
+          <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
+        </nuxt-link>
+        <v-spacer></v-spacer>
+        <nuxt-link to="/results" class="nav-text">
+          Results
+        </nuxt-link>
+        <a class="nav-link"
+           href="https://www.facebook.com/xxcva/">
+          <img :src="img + 'fb.svg'"
+               class="fb">
+        </a>
+        <div class="toolbar__extension" style="height: 64px;"></div>
+      </div>
+    </nav>
     <v-layout column align-center justify-center>
-      <h3 class="white--text mtbva-title">{{title}}</h3>
-      <h5 class="white--text mtbva-title">{{subtitle}}</h5>
-      <v-btn raised
-             v-if="buttonLink"
+      <div class="hero-content-container">
+        <transition appear
+                    name="title"
+                    v-on:enter="titleEntered">
+          <h3 class="white--text mtbva-title">{{title}}</h3>
+        </transition>
+        <transition appear
+                    name="subtitle"
+                    v-on:enter="subtitleEntered">
+          <h5 class="white--text mtbva-title"
+              v-if="showSubtitle">
+            {{subtitle}}
+          </h5>
+        </transition>
+        <transition appear
+                    name="hero-button">
+          <a v-if="buttonLink && showHeroButton"
              :href="buttonLink"
-             class="header-button">
-        {{button}}
-      </v-btn>
+             class="header-button btn hero-button"
+             data-ripple="true">
+            <div class="btn__content">
+              {{button}}
+            </div>
+          </a>
+        </transition>
+      </div>
     </v-layout>
   </v-parallax>
 </template>
@@ -50,21 +68,26 @@
     ],
     data() {
       return {
-        img: `${s3}${s3StaticImg}`
+        img: `${s3}${s3StaticImg}`,
+        showSubtitle: false,
+        showHeroButton: false
       }
     },
-    computed: {
-      parallaxStyle() {
-        return `
-          background-image: url(${this.image});
-          height: ${this.headerHeight}px;
-        `
+    methods: {
+      titleEntered: function (el, done) {
+        setTimeout(() => {
+          this.showSubtitle = true
+        }, 1000)
+      },
+      subtitleEntered: function (el, done) {
+        setTimeout(() => {
+          this.showHeroButton = true
+        }, 1000)
       }
     }
   }
 </script>
 <style>
-
   .header-wrapper {
     background-color: black;
   }
@@ -72,6 +95,7 @@
   .toolbar {
     background-color: transparent !important;
     margin-bottom: 32rem;
+    height: 130px;
   }
 
   .toolbar-solid {
@@ -113,6 +137,40 @@
 
   .nav-link {
     margin-top: 4.5rem;
+  }
+
+  .hero-button {
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .hero-content-container {
+    height: 150px;
+  }
+
+  .title-enter-to {
+    transition: opacity 2s;
+  }
+
+  .title-enter {
+    opacity: 0;
+  }
+
+  .subtitle-enter-to {
+    transition: opacity 2s;
+  }
+
+  .subtitle-enter {
+    opacity: 0;
+  }
+
+  .hero-button-enter-to {
+    transition: opacity 2s;
+  }
+
+  .hero-button-enter {
+    opacity: 0;
   }
 
   .mtbva-title {

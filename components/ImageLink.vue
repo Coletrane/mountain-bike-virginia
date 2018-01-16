@@ -26,7 +26,7 @@
     width: 100%;
   }
   img[lazy=loading] {
-    width: 10%;
+    width: 20%;
     height: auto;
     display: block;
     margin-left: auto;
