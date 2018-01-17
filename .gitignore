@@ -35,5 +35,5 @@ npm_debug.log
 !.idea/cole-inman.iml
 !.idea/inspectionProfiles/
 
-.nuxt/
+.nuxt
 dist

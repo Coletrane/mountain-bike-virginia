@@ -34,5 +34,4 @@
     margin-top: 25%;
     margin-bottom: 25%;
   }
-
 </style>

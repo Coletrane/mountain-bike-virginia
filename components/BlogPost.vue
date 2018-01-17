@@ -11,14 +11,14 @@
           <div slot="top">
             <div class="blog-p subheading">
               <div v-if="inlineAuthor">
-                <h3>{{post.subtitle}}</h3>
+                <h3 class="subheading">{{post.subtitle}}</h3>
                 <author
                   :author="post.author"
                   :inline="inlineAuthor">
                 </author>
               </div>
               <div v-else>
-                <h3>{{post.subtitle}}</h3>
+                <h3 class="subheading">{{post.subtitle}}</h3>
                 <author
                   :author="post.author"
                   :inline="inlineAuthor">
@@ -75,17 +75,11 @@
     }
   }
 
-  .blog-img {
-    width: 100% !important;
-  }
-
-  .blog-img-portrait {
-    width: 50% !important;
-    display: block;
-    margin: auto;
-  }
-
   .blog-p {
     padding: 1rem;
+  }
+
+  .mtbva-title {
+    text-shadow: 0px 10px 20px rgb(0, 0, 0);
   }
 </style>

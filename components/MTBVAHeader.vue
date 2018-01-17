@@ -24,19 +24,22 @@
       </div>
     </nav>
     <v-layout column align-center justify-center>
-      <div class="hero-content-container">
+      <div class="hero-content-container mtbva-title">
         <transition appear
                     name="title"
                     v-on:enter="titleEntered">
-          <h1 class="white--text mtbva-title">{{title}}</h1>
+          <h1 v-if="showTitle"
+              class="white--text display-2">
+            {{title}}
+          </h1>
         </transition>
         <transition appear
                     name="subtitle"
                     v-on:enter="subtitleEntered">
-          <h3 class="white--text mtbva-title"
+          <h2 class="white--text headline"
               v-if="showSubtitle">
             {{subtitle}}
-          </h3>
+          </h2>
         </transition>
         <transition appear
                     name="hero-button">
@@ -69,9 +72,13 @@
     data() {
       return {
         img: `${s3}${s3StaticImg}`,
+        showTitle: false,
         showSubtitle: false,
         showHeroButton: false
       }
+    },
+    mounted() {
+      this.showTitle = true
     },
     methods: {
       titleEntered: function (el, done) {

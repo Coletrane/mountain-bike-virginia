@@ -24,7 +24,7 @@
           crashing down, and not even 2.8 inches of Maxxis Rekon knobby rubber could save me. I promptly return the bike
           with the XTR derailleur shifting just as when I received it.
         </div>
-        <img class="blog-img" :src="img + 'IMG_3005.jpg'">
+        <blog-image :src="img + 'IMG_3005.jpg'"/>
         <div class="blog-p">
           Brendan, or as I call him, Pivot Jesus, promptly switches the 27.5 plus wheels for 29s. This is possible by
           some foreign technology Pivot Jesus calls "Super Boost" which is actually just downhill spacing, and another
@@ -36,7 +36,7 @@
           Float shock is plush, yet climbs well. I never even thought about the lockout switch. I suspect the DW Link is
           to blame here as the Pivot 429 Trail and my own Turner Sultan (with a Cane Creek DB Air) climb just as well.
         </div>
-        <img class="blog-img" :src="img + 'IMG_3011.jpg'">
+        <blog-image :src="img + 'IMG_3011.jpg'"/>
         <div class="blog-p">
           The Pivot Switchblade marks a convergence on the map of the discipline captivated mountain bike industry. It
           can run any tires you want, climb anything you want, and give you PRs on any type of descent. It is neither a
@@ -50,6 +50,7 @@
 </template>
 <script>
   import BlogPost from "../components/BlogPost.vue"
+  import BlogImage from "../components/BlogImage"
 
   import * as routes from '../routes'
   import {posts} from "../assets/posts"
@@ -60,7 +61,8 @@
   export default {
     name: "pivot-switchblade-review",
     components: {
-      BlogPost
+      BlogPost,
+      BlogImage
     },
     head() {
       return headTags(
@@ -78,8 +80,3 @@
     }
   }
 </script>
-<style>
-  .mtbva-title {
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
-  }
-</style>

@@ -14,7 +14,7 @@
         Baselayer. Thermal jersey. Puffy jacket. Tights. Thermal tights. Wool socks. Winter riding boots. Boot covers.
         Balaclava. Liner gloves. Winter gloves. Pretty sure our gear weighed more than some of our bikes!
       </div>
-      <img class="blog-img-portrait" :src="img + 'corey-special-forces.jpg'">
+      <blog-image portrait :src="img + 'corey-special-forces.jpg'"/>
       <div class="blog-p center">
         All bundled up and ready to roll!
       </div>
@@ -29,7 +29,7 @@
         you put those things right out front and center while you barrel down the fire road, and the wind chill just
         sucks away the heat!
       </div>
-      <img class="blog-img" :src="img + 'corey-frozen-creek.jpg'">
+      <blog-image :src="img + 'corey-frozen-creek.jpg'"/>
       <div class="blog-p center">
         Definitely not splashing across that creek...well, unless the ice doesn’t hold!
       </div>
@@ -38,8 +38,8 @@
         From here, a few us decided to head back and call it a day, while the more (fool)hardy of us took to the climbs
         and headed up the mountain.
       </div>
-      <img class="blog-img" :src="img + 'corey-little-bell.jpg'">
-      <img class="blog-img" :src="img + 'little-bell.jpg'">
+      <blog-image :src="img + 'corey-little-bell.jpg'"/>
+      <blog-image :src="img + 'little-bell.jpg'"/>
       <div class="blog-p center">
         You got the proof we did this? Time to head back?
       </div>
@@ -49,9 +49,9 @@
         down (who goes UP Hemlock??), so he checked that off his bucket list, and I’d never actually had frostnip, so,
         yeah...well, that happened!
       </div>
-      <img class="blog-img" :src="img + 'cole-clownhead.jpg'">
-      <img class="blog-img" :src="img + 'andrew.jpg'">
-      <img class="blog-img-portrait" :src="img + 'corey-toes.jpg'">
+      <blog-image :src="img + 'cole-clownhead.jpg'"/>
+      <blog-image :src="img + 'andrew.jpg'"/>
+      <blog-image portrait :src="img + 'corey-toes.jpg'"/>
       <div class="blog-p">
         Here’s to a balmier 29th Annual First Ride of the New Year!
       </div>
@@ -60,19 +60,19 @@
 </template>
 <script>
   import BlogPost from "../components/BlogPost"
+  import BlogImage from "../components/BlogImage"
 
   import * as routes from "../routes"
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
-  import Blog from "./index"
 
   const post = posts.firstRide2018
 
   export default {
     name: routes.firstRide2018,
     components: {
-      Blog,
-      BlogPost
+      BlogPost,
+      BlogImage
     },
     head() {
       return headTags(
