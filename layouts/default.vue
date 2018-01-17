@@ -50,7 +50,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
     .container {
       padding-left: 0 !important;
       padding-right: 0 !important;

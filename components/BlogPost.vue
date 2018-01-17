@@ -61,7 +61,7 @@
   }
 </script>
 <style>
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 601px) {
     .container {
       max-width: 1350px !important;;
       padding-left: 30px;

@@ -5,20 +5,24 @@
     <nav class="toolbar toolbar toolbar--absolute toolbar--extended"
          style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);" data-booted="true">
       <div class="toolbar__content" style="height: 64px;">
-        <nuxt-link to="/" class="nav-link">
+        <nuxt-link to="/"
+                   class="nav-link"
+                   key="mtbva">
           <img class="mtbva" :src="img + 'mtbva.png'">
         </nuxt-link>
-        <nuxt-link to="/" class="xxcva-link nav-link">
+        <nuxt-link to="/"
+                   class="xxcva-link nav-link"
+                   key="xxcva">
           <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
         </nuxt-link>
-        <v-spacer></v-spacer>
+        <v-spacer/>
         <nuxt-link to="/results" class="nav-text">
           Results
         </nuxt-link>
         <a class="nav-link"
            href="https://www.facebook.com/xxcva/">
           <img :src="img + 'fb.svg'"
-               class="fb">
+               class="fb"/>
         </a>
         <div class="toolbar__extension" style="height: 64px;"></div>
       </div>
@@ -26,7 +30,7 @@
     <v-layout column align-center justify-center>
       <div class="hero-content-container mtbva-title">
         <transition appear
-                    name="title"
+                    name="two-sec-fade"
                     v-on:enter="titleEntered">
           <h1 v-if="showTitle"
               class="white--text display-2">
@@ -34,7 +38,7 @@
           </h1>
         </transition>
         <transition appear
-                    name="subtitle"
+                    name="two-sec-fade"
                     v-on:enter="subtitleEntered">
           <h2 class="white--text headline"
               v-if="showSubtitle">
@@ -42,7 +46,7 @@
           </h2>
         </transition>
         <transition appear
-                    name="hero-button">
+                    name="two-sec-fade">
           <a v-if="buttonLink && showHeroButton"
              :href="buttonLink"
              class="header-button btn hero-button"
@@ -61,14 +65,33 @@
 
   export default {
     name: "mtbva-header",
-    props: [
-      "header-height",
-      "image",
-      "title",
-      "subtitle",
-      "button",
-      "buttonLink"
-    ],
+    props: {
+      headerHeight: {
+        type: Number,
+        required: false,
+        default: 600
+      },
+      image: {
+        type: String,
+        required: true
+      },
+      title: {
+        type: String,
+        required: false
+      },
+      subtitle: {
+        type: String,
+        required: false
+      },
+      button: {
+        type: String,
+        required: false
+      },
+      buttonLink: {
+        type: String,
+        required: false
+      }
+    },
     data() {
       return {
         img: `${s3}${s3StaticImg}`,
@@ -156,27 +179,11 @@
     height: 150px;
   }
 
-  .title-enter-to {
+  .two-sec-fade-enter-to {
     transition: opacity 2s;
   }
 
-  .title-enter {
-    opacity: 0;
-  }
-
-  .subtitle-enter-to {
-    transition: opacity 2s;
-  }
-
-  .subtitle-enter {
-    opacity: 0;
-  }
-
-  .hero-button-enter-to {
-    transition: opacity 2s;
-  }
-
-  .hero-button-enter {
+  .two-sec-fade-enter {
     opacity: 0;
   }
 

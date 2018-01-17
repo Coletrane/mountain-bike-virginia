@@ -39,5 +39,6 @@
     margin: 0 !important;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    opacity: 0.95;
   }
 </style>
