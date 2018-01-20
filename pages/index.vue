@@ -152,7 +152,16 @@
         img: foliage,
         attachPosts: false,
         posts: posts,
-        page: 1
+      }
+    },
+    computed: {
+      page: {
+        get() {
+          return this.$store.state.page
+        },
+        set(value) {
+          this.$store.commit('changePage', value)
+        }
       }
     },
     watch: {

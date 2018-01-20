@@ -49,7 +49,7 @@ imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = "IMG_3009.jpg"
 imgRoutes[appRoutesObj[specMines29Oct17]] = "IMG_2795.jpg"
 imgRoutes[appRoutesObj[firstRide2018]] = "classic-shot-2018.jpg"
 
-const s3 = "http://d2i660bt0ywr9a.cloudfront.net"
+const s3 = "http://d2i660bt0ywr9a.cloudfront.net111"
 const s3StaticImg = "/static/img/"
 const s3Pages = "/pages/"
 const baseUrl = "http://bikeva.com"
