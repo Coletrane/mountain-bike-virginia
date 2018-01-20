@@ -10,7 +10,7 @@
     </m-t-b-v-a-header>
     <v-content id="main-content">
       <v-container>
-        <div v-show="page === 1"
+        <div v-if="page >= 1"
              :key="1">
           <post-card :post="posts.firstRide2018">
             <div slot="top">
@@ -74,7 +74,7 @@
             </div>
           </post-card>
         </div>
-        <div v-show="page === 2"
+        <div v-if="page >= 2"
              :key="2">
           <post-card :post="posts.specMines29Oct17">
             <div slot="top">
@@ -105,11 +105,15 @@
             </div>
           </post-card>
         </div>
-        <div class="mtbva-pagination">
-          <v-pagination :length="2"
-                        v-model="page"
-                        circle>
-          </v-pagination>
+        <div class="mtbva-load-more"
+             v-if="page < maxPage">
+          <a data-ripple="true"
+             class="header-button btn"
+             @click="loadMore()">
+            <div class="btn__content">
+               Keep on Riding!
+            </div>
+          </a>
         </div>
       </v-container>
     </v-content>
@@ -152,27 +156,12 @@
         img: foliage,
         attachPosts: false,
         posts: posts,
+        maxPage: 2
       }
     },
     computed: {
-      page: {
-        get() {
-          return this.$store.state.page
-        },
-        set(value) {
-          this.$store.commit('changePage', value)
-        }
-      }
-    },
-    watch: {
       page() {
-        if (process.browser) {
-          this.$scrollTo(
-            document.getElementById("main-content"),
-            1000,
-            {}
-          )
-        }
+        return this.$store.state.page
       }
     },
     methods: {
@@ -180,6 +169,10 @@
         if (window.scrollY > 30) {
           this.attachPosts = true
         }
+      },
+      loadMore() {
+        const newPage = this.page + 1
+        this.$store.commit('changePage', newPage)
       }
     },
     created() {
@@ -213,7 +206,7 @@
     padding: 0 !important;
   }
 
-  .mtbva-pagination {
+  .mtbva-load-more {
     text-align: center;
   }
 
