@@ -1,7 +1,7 @@
 <template>
     <div class="yt-wrapper">
       <iframe width="100%"
-              :src="url"
+              :src="src"
               frameborder="0"
               allowfullscreen>
       </iframe>
@@ -10,29 +10,7 @@
 <script>
   export default {
     name: "youtube",
-    props: ["src"],
-    data() {
-      return {
-        url: ""
-      }
-    },
-    methods: {
-      attachSrc: function() {
-        this.url = this.src
-      }
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener("load", this.attachSrc)
-      } else {
-        this.attachSrc()
-      }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener("load", this.attachSrc)
-      }
-    }
+    props: ["src"]
   }
 </script>
 <style>
