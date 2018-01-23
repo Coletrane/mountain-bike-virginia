@@ -1,17 +1,23 @@
 <template>
   <div class="social">
-    <v-btn icon class="blue--text text--darken-4 social-button"
-           :href="facebookLink">
-      <v-icon medium>fa-facebook</v-icon>
-    </v-btn>
-    <v-btn icon class="red--text social-button"
-           :href="redditLink">
-      <v-icon medium>fa-reddit</v-icon>
-    </v-btn>
-    <v-btn icon class="light-blue--text social-button"
-           :href="twitterLink">
-      <v-icon medium>fa-twitter</v-icon>
-    </v-btn>
+    <span>
+      <a :href="facebookLink">
+        <i class="fa fa-facebook"
+           aria-hidden="true"></i>
+      </a>
+    </span>
+    <span>
+      <a :href="redditLink">
+        <i class="fa fa-reddit"
+           aria-hidden="true"></i>
+      </a>
+    </span>
+    <span>
+      <a :href="twitterLink">
+        <i class="fa fa-twitter"
+           aria-hidden="true"></i>
+      </a>
+    </span>
   </div>
 </template>
 <script>
@@ -35,19 +41,29 @@
     }
   }
 </script>
-<style>
-  @media screen and (max-width: 600px) {
-    .social-button {
-      margin: 0 !important;
-      width: 2rem !important;
-    }
-
-    .icon {
-      font-size: 1.5rem !important;
-    }
-
+<style scoped>
+  .social {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  span {
+    padding: 1rem;
   }
 
-  .social {
+  a {
+    color: transparent;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+  i.fa-facebook {
+    color: #3B5998;
+  }
+  i.fa-reddit {
+    color: #FF5700;
+  }
+  i.fa-twitter {
+    color: #1DA1F2;
   }
 </style>

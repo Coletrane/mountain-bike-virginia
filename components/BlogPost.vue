@@ -5,8 +5,7 @@
       :image="image"
       :title="post.title">
     </m-t-b-v-a-header>
-    <v-content>
-      <v-container>
+    <div>
         <post-card :post="post">
           <div slot="top">
             <div class="blog-p subheading">
@@ -30,8 +29,7 @@
             <slot name="content"></slot>
           </div>
         </post-card>
-      </v-container>
-    </v-content>
+    </div>
   </div>
 </template>
 <script>

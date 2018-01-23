@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-app>
       <div class="app-fade-wrapper">
         <transition name="app-fade">
           <nuxt/>
@@ -9,7 +8,6 @@
       <div v-if="showFooter">
         <m-t-b-v-a-footer></m-t-b-v-a-footer>
       </div>
-    </v-app>
   </div>
 </template>
 <script>

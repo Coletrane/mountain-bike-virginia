@@ -1,15 +1,13 @@
 <template>
   <div class="mtbva-footer">
     <div class="sponsors-container">
-      <v-layout row wrap>
-        <v-flex xs4 v-for="sponsor in sponsors">
+        <div v-for="sponsor in sponsors">
           <a :href="sponsor.url">
             <img :src="sponsor.img"
                  :class="sponsor.class"
                  class="sponsor">
           </a>
-        </v-flex>
-      </v-layout>
+        </div>
     </div>
     <div class="copyright">
       <div>

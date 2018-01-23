@@ -4,21 +4,20 @@
       :header-height="480"
       :image="image">
     </m-t-b-v-a-header>
-    <v-content>
-      <v-container>
+    <div>
         <post-card>
           <div slot="top">
-            <v-select
+            <select
               :items="races"
               item-text="race"
               v-model="currentRace"
               :placeholder="currentRace.race"
               label="Select"
               bottom
-            ></v-select>
+            ></select>
             <div v-for="clazz in currentRace.results.classes">
               <h5 class="center clazz">{{clazz.name}}</h5>
-              <v-data-table
+              <table
                 :headers="headers"
                 :items="clazz.riders"
                 hide-actions>
@@ -27,12 +26,11 @@
                   <td class="center">{{props.item.name}}</td>
                   <td class="center">{{props.item.time}}</td>
                 </template>
-              </v-data-table>
+              </table>
             </div>
           </div>
         </post-card>
-      </v-container>
-    </v-content>
+    </div>
   </div>
 </template>
 <script>

@@ -25,21 +25,21 @@ module.exports = {
         integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
         crossorigin: "anonymous"
       },
-      // { rel: 'apple-touch-icon'}
+      {
+        rel: "stylesheet",
+        href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+        integrity: "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",
+        crossorigin: "anonymous"
+      },
       {rel: "icon", type: "image/x-icon", href: "/favicon.ico"}
     ]
   },
   plugins: [
-    {src: "~/plugins/vuetify", ssr: true},
     {src: "~/plugins/vue-lazyload", ssr: false}
-  ],
-  css: [
-    "vuetify/dist/vuetify.min.css"
   ],
   build: {
     extractCss: true,
     vendor: [
-      "vuetify",
       "vue-lazyload"
     ]
   },

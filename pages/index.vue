@@ -8,8 +8,7 @@
       button="Events"
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
-    <v-content id="main-content">
-      <v-container>
+    <div id="main-content">
         <div v-if="page >= 1"
              :key="1">
           <post-card :post="posts.firstRide2018">
@@ -115,8 +114,7 @@
             </div>
           </a>
         </div>
-      </v-container>
-    </v-content>
+    </div>
   </div>
 </template>
 <script>

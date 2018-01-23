@@ -2,9 +2,7 @@
   <m-t-b-v-a-parallax :src="image"
               :height="headerHeight">
     <div slot="nav">
-    <nav class="toolbar toolbar toolbar--absolute toolbar--extended"
-         style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);" data-booted="true">
-      <div class="toolbar__content" style="height: 64px;">
+    <nav>
         <nuxt-link to="/"
                    class="nav-link"
                    key="mtbva">
@@ -15,7 +13,6 @@
                    key="xxcva">
           <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
         </nuxt-link>
-        <v-spacer/>
         <nuxt-link to="/results" class="nav-text">
           Results
         </nuxt-link>
@@ -24,10 +21,7 @@
           <img :src="img + 'fb.svg'"
                class="fb"/>
         </a>
-        <div class="toolbar__extension" style="height: 64px;"></div>
-      </div>
     </nav>
-    <v-layout column align-center justify-center>
       <div class="hero-content-container mtbva-title">
         <transition appear
                     name="two-sec-fade"
@@ -51,13 +45,12 @@
              :href="buttonLink"
              class="header-button btn hero-button"
              data-ripple="true">
-            <div class="btn__content">
+            <div class="btn">
               {{button}}
             </div>
           </a>
         </transition>
       </div>
-    </v-layout>
     </div>
   </m-t-b-v-a-parallax>
 </template>
