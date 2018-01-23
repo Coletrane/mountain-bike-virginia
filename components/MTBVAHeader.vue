@@ -1,7 +1,7 @@
 <template>
-  <v-parallax :src="image"
-              :height="headerHeight"
-              class="header-wrapper">
+  <m-t-b-v-a-parallax :src="image"
+              :height="headerHeight">
+    <div slot="nav">
     <nav class="toolbar toolbar toolbar--absolute toolbar--extended"
          style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);" data-booted="true">
       <div class="toolbar__content" style="height: 64px;">
@@ -58,13 +58,18 @@
         </transition>
       </div>
     </v-layout>
-  </v-parallax>
+    </div>
+  </m-t-b-v-a-parallax>
 </template>
 <script>
+  import MTBVAParallax from './MTBVAParallax'
   import {s3, s3StaticImg} from "../routes"
 
   export default {
     name: "mtbva-header",
+    components: {
+      MTBVAParallax
+    },
     props: {
       headerHeight: {
         type: Number,

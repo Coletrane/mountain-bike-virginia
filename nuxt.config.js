@@ -31,7 +31,6 @@ module.exports = {
   },
   plugins: [
     {src: "~/plugins/vuetify", ssr: true},
-    {src: "~/plugins/vue-scrollto", ssr: false},
     {src: "~/plugins/vue-lazyload", ssr: false}
   ],
   css: [
@@ -41,7 +40,6 @@ module.exports = {
     extractCss: true,
     vendor: [
       "vuetify",
-      "vue-scrollto",
       "vue-lazyload"
     ]
   },
