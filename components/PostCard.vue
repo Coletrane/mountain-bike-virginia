@@ -1,29 +1,27 @@
 <template>
-  <div class="post-card-container">
-    <div class="post-card"
-         :style="postCardStyle">
-      <div class="words">
-        <div class="headline-cols">
-          <nuxt-link :to="post.route">
-            <h2 class="headline">{{post.title}}</h2>
-          </nuxt-link>
-          <social-actions :post="post"
-                          class="social-right"/>
-        </div>
+  <card>
+    <div class="words"
+         slot="content">
+      <div class="headline-cols">
         <nuxt-link :to="post.route">
-          <h4 class="subheading">{{post.subtitle}}</h4>
+          <h2 class="headline">{{post.title}}</h2>
         </nuxt-link>
-        <div class="promo">
-        <slot name="words"/>
-        </div>
+        <social-actions :post="post"
+                        class="social-right"/>
       </div>
-      <slot name="media"/>
+      <nuxt-link :to="post.route">
+        <h4 class="subheading">{{post.subtitle}}</h4>
+      </nuxt-link>
+      <div class="promo">
+        <slot name="words"/>
+      </div>
     </div>
-  </div>
+    <slot name="media"/>
+  </card>
 </template>
 <script>
-  import SocialActions from "./SocialActions.vue"
-  import {boxShadow} from "../assets/styles"
+  import Card from "./Card"
+  import SocialActions from "./SocialActions"
 
   export default {
     name: "post-card",
@@ -33,14 +31,8 @@
       }
     },
     components: {
+      Card,
       SocialActions
-    },
-    data() {
-      return {
-        postCardStyle: {
-          boxShadow: boxShadow
-        }
-      }
     }
   }
 </script>
@@ -49,6 +41,7 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
   @media (max-width: 900px) {
     i.fa-facebook {
       padding-right: 1rem;
@@ -59,10 +52,6 @@
   a {
     color: black;
     text-decoration: none;
-  }
-
-  .post-card {
-    background-color: rgba(255, 255, 255, .85);
   }
 
   .words {

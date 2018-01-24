@@ -5,7 +5,7 @@
       :image="image">
     </m-t-b-v-a-header>
     <div>
-        <post-card>
+        <card>
           <div slot="top">
             <select
               :items="races"
@@ -28,14 +28,27 @@
                 </template>
               </table>
             </div>
+            <!--<div v-for="clazz in currentRace.results.classes">-->
+              <!--<h5 class="center clazz">{{clazz.name}}</h5>-->
+              <!--<table-->
+                <!--:headers="headers"-->
+                <!--:items="clazz.riders"-->
+                <!--hide-actions>-->
+                <!--<template slot="items" scope="props">-->
+                  <!--<td class="center">{{props.item.position}}</td>-->
+                  <!--<td class="center">{{props.item.name}}</td>-->
+                  <!--<td class="center">{{props.item.time}}</td>-->
+                <!--</template>-->
+              <!--</table>-->
+            <!--</div>-->
           </div>
-        </post-card>
+        </card>
     </div>
   </div>
 </template>
 <script>
-  import MTBVAHeader from "../components/MTBVAHeader.vue"
-  import PostCard from "../components/PostCard.vue"
+  import MTBVAHeader from "../components/MTBVAHeader"
+  import Card from "../components/Card"
 
   import * as routes from '../routes'
   import {results} from "../assets/results"
@@ -47,7 +60,7 @@
     name: "results",
     components: {
       MTBVAHeader,
-      PostCard
+      Card,
     },
     head() {
       return headTags(
@@ -86,6 +99,9 @@
         ]
       }
     },
+    computed: {
+
+    },
     methods: {
       initRaces() {
         // Deep copy
@@ -97,7 +113,12 @@
               rider.value = false
             })
           })
+
+          // v-select specific stuff
+          race.label = race.race
+          race.value = race.results;
         })
+
         return resultsWithPos
       },
       divide(classes) {
@@ -108,11 +129,23 @@
         }
 
         return result
+      },
+      selectRace(race) {
+        this.currentRace = race
       }
     }
   }
 </script>
 <style>
+  .main-content {
+    padding: 4rem;
+  }
+
+  select {
+    display: block;
+    margin: auto;
+  }
+
   .clazz {
     margin-bottom: 0 !important;
     margin-top: 1rem;

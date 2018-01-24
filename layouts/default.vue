@@ -80,4 +80,10 @@
   .app-fade-enter {
     opacity: 0;
   }
+
+  .main-content {
+    background-color: rgb(78, 69, 49);
+    background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png");
+    background-repeat: repeat;
+  }
 </style>
