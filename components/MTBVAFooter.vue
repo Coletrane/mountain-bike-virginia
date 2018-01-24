@@ -1,9 +1,9 @@
 <template>
   <div class="mtbva-footer">
-    <div class="sponsors-container">
-      <div v-for="group in sponsorGroups">
-        <div :class="group.length === 3 ? 'sponsor-grid-three' : 'sponsor-grid-two'"
-             class="sponsor-grid">
+    <div class="sponsors-container container">
+      <div v-for="group in sponsorGroups"
+           class="row">
+        <div class="sponsor-grid col-">
           <div v-for="sponsor in group">
             <a :href="sponsor.url">
               <img :src="sponsor.img"
@@ -138,20 +138,8 @@
     }
   }
 
-  .sponsor-grid {
-    display: grid;
-  }
-
   .sponsor {
     width: 90%;
-  }
-
-  .sponsor-grid-two {
-    grid-template-columns: 50% 50%
-  }
-
-  .sponsor-grid-three {
-    grid-template-columns: 33.3% 33.3% 33.3%;
   }
 
   .parkway {

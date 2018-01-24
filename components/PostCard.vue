@@ -2,12 +2,13 @@
   <card>
     <div class="words"
          slot="content">
-      <div class="headline-cols">
-        <nuxt-link :to="post.route">
+      <div class="row">
+        <nuxt-link :to="post.route"
+                   class="col- headline-container">
           <h2 class="headline">{{post.title}}</h2>
         </nuxt-link>
         <social-actions :post="post"
-                        class="social-right"/>
+                        class="col- social-right"/>
       </div>
       <nuxt-link :to="post.route">
         <h4 class="subheading">{{post.subtitle}}</h4>
@@ -58,12 +59,12 @@
     padding: 1rem;
   }
 
-  .headline-cols {
-    display: grid;
-    grid-template-columns: 75% 25%;
+  .headline-container {
+    width: 75%;
   }
-
+  
   .social-right {
+    width: 25%;
     text-align: right;
   }
 
