@@ -1,11 +1,9 @@
 <template>
-  <img v-lazy="image"
+  <img v-lazy="src"
        :class="portrait ? 'portrait' : 'landscape'">
 </template>
 
 <script>
-  import {s3, s3StaticImg} from '../routes'
-
   export default {
     name: "blog-image",
     props: {
@@ -17,15 +15,6 @@
         type: Boolean,
         required: false,
         default: false
-      }
-    },
-    computed: {
-      image: function() {
-        return {
-          src: this.src,
-          error: `${s3}${s3StaticImg}error.png`,
-          loading: `${s3}${s3StaticImg}loading.gif`
-        }
       }
     }
   }

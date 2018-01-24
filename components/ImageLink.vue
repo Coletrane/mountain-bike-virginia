@@ -1,24 +1,13 @@
 <template>
   <nuxt-link
     :to="post.route">
-    <img v-lazy="image">
+    <img v-lazy="src">
   </nuxt-link>
 </template>
 <script>
-  import {s3, s3StaticImg} from "../routes"
-
   export default {
     name: "image-link",
-    props: ["post"],
-    computed: {
-      image: function() {
-        return {
-          src: this.post.img,
-          error: `${s3}${s3StaticImg}error.png`,
-          loading: `${s3}${s3StaticImg}loading.gif`
-        }
-      }
-    }
+    props: ["post"]
   }
 </script>
 <style scoped>
