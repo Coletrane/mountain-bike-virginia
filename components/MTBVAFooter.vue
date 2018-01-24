@@ -1,13 +1,18 @@
 <template>
   <div class="mtbva-footer">
     <div class="sponsors-container">
-        <div v-for="sponsor in sponsors">
-          <a :href="sponsor.url">
-            <img :src="sponsor.img"
-                 :class="sponsor.class"
-                 class="sponsor">
-          </a>
+      <div v-for="group in sponsorGroups">
+        <div class="sponsor-grid">
+          <div v-for="sponsor in group"
+               :class="group.length === 3 ? 'sponsor-grid-three' : 'sponsor-grid-two'">
+            <a :href="sponsor.url">
+              <img :src="sponsor.img"
+                   :class="sponsor.class"
+                   class="sponsor"/>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
     <div class="copyright">
       <div>
@@ -27,10 +32,16 @@
 </template>
 <script>
   import routes from "../routes"
+  import {makeTwoDimensional} from "../assets/functions"
 
   const img = routes.s3 + "/static/img/"
 
   export default {
+    computed: {
+      sponsorGroups() {
+        return makeTwoDimensional(3, this.sponsors)
+      }
+    },
     data() {
       return {
         img: img,
@@ -102,34 +113,44 @@
 <style>
   .mtbva-footer {
     padding-top: 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg') !important;
-    background-position-x: center !important;
-    background-position-y: top !important;
-    background-repeat: repeat-y !important;
-    background-color: #063655 !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg');
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: repeat-y;
   }
 
   .sponsors-container {
     background-color: white;
-    display: block;
     margin: auto;
-    opacity: .8;
+    opacity: .9;
   }
 
-  @media screen and (min-width: 1064px) {
+  @media screen and (max-width: 99999px) {
     .sponsors-container {
       width: 75%;
     }
   }
 
-  @media screen and (max-width: 1064px) {
+  @media screen and (max-width: 1000px) {
     .sponsors-container {
       width: 85%;
     }
   }
 
+  .sponsor-grid {
+    display: grid;
+  }
+
   .sponsor {
     width: 90%;
+  }
+
+  .sponsor-grid-two {
+    grid-template-columns: 50% 50%
+  }
+
+  .sponsor-grid-three {
+    grid-template-columns: 33.3% 33.3% 33.3%;
   }
 
   .parkway {

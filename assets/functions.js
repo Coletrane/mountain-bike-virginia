@@ -32,3 +32,19 @@ export const headTags = (title, desc, keywords, post) => {
     meta: metas
   }
 }
+
+export const makeTwoDimensional = (elementsPerDimension, elements) => {
+  let result = []
+
+  elements.forEach((elem, i, arr) => {
+    if (i % elementsPerDimension === 0) {
+      result.push([
+        elements[i],
+        elements[i+1],
+        elements[i+2]
+      ])
+    }
+  })
+
+  return result
+}
