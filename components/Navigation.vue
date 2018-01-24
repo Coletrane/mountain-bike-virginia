@@ -89,6 +89,9 @@
     .nav-text {
       font-size: 1.5rem;
     }
+    .fb {
+      width: 2.5rem;
+    }
   }
 
   @media (max-width: 575px) {
@@ -100,6 +103,9 @@
     }
     .xxcva {
       width: 130px;
+    }
+    .fb {
+      width: 2rem;
     }
   }
 
@@ -116,14 +122,16 @@
     .nav-text {
       font-size: 1.2rem;
     }
+    .flex-outer {
+      padding-left: 1rem;
+    }
   }
+
   .nav-text {
     text-decoration: none;
     color: white;
   }
-  .fb {
-    width: 2rem;
-  }
+
 
 
 </style>

@@ -3,8 +3,9 @@
     <navigation/>
     <parallax :src="image"
               :height="headerHeight">
-      <div slot="hero">
-        <div class="hero-content-container mtbva-title">
+      <div slot="hero"
+           class="hero-container">
+        <div class="hero-content">
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
@@ -24,12 +25,10 @@
           <transition appear
                       name="two-sec-fade">
             <a v-if="buttonLink && showHeroButton"
-               :href="buttonLink"
-               class="header-button btn hero-button"
-               data-ripple="true">
-              <div class="btn">
-                {{button}}
-              </div>
+               :href="buttonLink">
+              <button class="btn btn-outline-primary white-btn">
+                  {{button}}
+              </button>
             </a>
           </transition>
         </div>
@@ -101,15 +100,52 @@
   }
 </script>
 <style scoped>
+  .hero-container {
+
+  }
+  .hero-content {
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width: 100%;
+    height: 500px;
+    transform: translate(-50%,-50%);
+  }
+
+  @media (max-width: 575px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .white-btn {
+    font-family: 'Julius Sans One', sans-serif;
+    color: white;
+    border-color: white;
+    width: 200px;
+    font-size: 2rem;
+  }
+
   .two-sec-fade-enter-to {
     transition: opacity 2s;
   }
 
   .two-sec-fade-enter {
     opacity: 0;
-  }
-
-  .mtbva-title {
-    text-align: center;
   }
 </style>

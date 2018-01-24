@@ -26,6 +26,7 @@
       handleScroll() {
         if (window.scrollY > 500) {
           this.showFooter = true
+          window.removeEventListener("scroll", this.handleScroll)
         }
       }
     },
@@ -44,18 +45,15 @@
   }
 </script>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  h1, h2, h3, h4 {
+    font-family: 'Julius Sans One', sans-serif;
   }
 
-  @media screen and (max-width: 600px) {
-    .container {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
+  span, div, p {
+    font-family: 'Lato', sans-serif;
   }
 
-  .content {
+  .main-content {
     background-color: rgb(78, 69, 49) !important;
     background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png") !important;
     background-repeat: repeat !important;
