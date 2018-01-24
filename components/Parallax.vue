@@ -1,8 +1,7 @@
 <template>
   <div class="parallax"
        :style="styles">
-    <div class="hero"
-         :style="backgroundImage">
+    <div class="hero">
       <slot name="hero"/>
     </div>
   </div>
