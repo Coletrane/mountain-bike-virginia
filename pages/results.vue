@@ -5,52 +5,28 @@
       :image="image">
     </m-t-b-v-a-header>
     <div>
-        <card>
-          <div slot="top">
-            <select
-              :items="races"
-              item-text="race"
-              v-model="currentRace"
-              :placeholder="currentRace.race"
-              label="Select"
-              bottom
-            ></select>
-            <div v-for="clazz in currentRace.results.classes">
-              <h5 class="center clazz">{{clazz.name}}</h5>
-              <table
-                :headers="headers"
-                :items="clazz.riders"
-                hide-actions>
-                <template slot="items" scope="props">
-                  <td class="center">{{props.item.position}}</td>
-                  <td class="center">{{props.item.name}}</td>
-                  <td class="center">{{props.item.time}}</td>
-                </template>
-              </table>
+      <card>
+        <div slot="top">
+          <dropdown :current-item="currentRace"
+                    :items="races"/>
+          <div v-for="race in races">
+            <div v-for="clazz in race.results.classes">
+              <h4>{{clazz.name}}</h4>
+              <class-table :items="clazz.riders"/>
             </div>
-            <!--<div v-for="clazz in currentRace.results.classes">-->
-              <!--<h5 class="center clazz">{{clazz.name}}</h5>-->
-              <!--<table-->
-                <!--:headers="headers"-->
-                <!--:items="clazz.riders"-->
-                <!--hide-actions>-->
-                <!--<template slot="items" scope="props">-->
-                  <!--<td class="center">{{props.item.position}}</td>-->
-                  <!--<td class="center">{{props.item.name}}</td>-->
-                  <!--<td class="center">{{props.item.time}}</td>-->
-                <!--</template>-->
-              <!--</table>-->
-            <!--</div>-->
           </div>
-        </card>
+        </div>
+      </card>
     </div>
   </div>
 </template>
 <script>
   import MTBVAHeader from "../components/MTBVAHeader"
   import Card from "../components/Card"
+  import Dropdown from "../components/Dropdown"
+  import ClassTable from "../components/ClassTable"
 
-  import * as routes from '../routes'
+  import * as routes from "../routes"
   import {results} from "../assets/results"
   import {headTags} from "../assets/functions"
 
@@ -61,6 +37,8 @@
     components: {
       MTBVAHeader,
       Card,
+      Dropdown,
+      ClassTable
     },
     head() {
       return headTags(
@@ -99,9 +77,7 @@
         ]
       }
     },
-    computed: {
-
-    },
+    computed: {},
     methods: {
       initRaces() {
         // Deep copy
@@ -113,10 +89,6 @@
               rider.value = false
             })
           })
-
-          // v-select specific stuff
-          race.label = race.race
-          race.value = race.results;
         })
 
         return resultsWithPos
@@ -139,32 +111,5 @@
 <style>
   .main-content {
     padding: 4rem;
-  }
-
-  select {
-    display: block;
-    margin: auto;
-  }
-
-  .clazz {
-    margin-bottom: 0 !important;
-    margin-top: 1rem;
-    padding-left: 6%;
-  }
-
-  .post {
-    margin: auto;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .results-container {
-    padding: 1rem;
-    background-color: white;
   }
 </style>
