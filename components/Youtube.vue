@@ -3,7 +3,8 @@
       <iframe width="100%"
               :src="src"
               frameborder="0"
-              allowfullscreen>
+              allowfullscreen
+              class="yt-iframe">
       </iframe>
     </div>
 </template>

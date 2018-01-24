@@ -53,7 +53,8 @@ module.exports = {
       {
         id: "UA-107968765-1"
       }
-    ]
+    ],
+    "~/assets/defer-youtube.js"
   ],
   sitemap: {
     path: "/sitemap.xml",
