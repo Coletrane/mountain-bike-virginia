@@ -1,61 +1,44 @@
 <template>
-  <m-t-b-v-a-parallax :src="image"
+  <div>
+    <parallax :src="image"
               :height="headerHeight">
-    <div slot="nav">
-    <nav>
-        <nuxt-link to="/"
-                   class="nav-link"
-                   key="mtbva">
-          <img class="mtbva" :src="img + 'mtbva.png'">
-        </nuxt-link>
-        <nuxt-link to="/"
-                   class="xxcva-link nav-link"
-                   key="xxcva">
-          <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
-        </nuxt-link>
-        <nuxt-link to="/results" class="nav-text">
-          Results
-        </nuxt-link>
-        <a class="nav-link"
-           href="https://www.facebook.com/xxcva/">
-          <img :src="img + 'fb.svg'"
-               class="fb"/>
-        </a>
-    </nav>
-      <div class="hero-content-container mtbva-title">
-        <transition appear
-                    name="two-sec-fade"
-                    v-on:enter="titleEntered">
-          <h1 v-if="showTitle"
-              class="white--text display-2">
-            {{title}}
-          </h1>
-        </transition>
-        <transition appear
-                    name="two-sec-fade"
-                    v-on:enter="subtitleEntered">
-          <h2 class="white--text headline"
-              v-if="showSubtitle">
-            {{subtitle}}
-          </h2>
-        </transition>
-        <transition appear
-                    name="two-sec-fade">
-          <a v-if="buttonLink && showHeroButton"
-             :href="buttonLink"
-             class="header-button btn hero-button"
-             data-ripple="true">
-            <div class="btn">
-              {{button}}
-            </div>
-          </a>
-        </transition>
+      <div slot="hero">
+        <div class="hero-content-container mtbva-title">
+          <transition appear
+                      name="two-sec-fade"
+                      v-on:enter="titleEntered">
+            <h1 v-if="showTitle"
+                class="white--text display-2">
+              {{title}}
+            </h1>
+          </transition>
+          <transition appear
+                      name="two-sec-fade"
+                      v-on:enter="subtitleEntered">
+            <h2 class="white--text headline"
+                v-if="showSubtitle">
+              {{subtitle}}
+            </h2>
+          </transition>
+          <transition appear
+                      name="two-sec-fade">
+            <a v-if="buttonLink && showHeroButton"
+               :href="buttonLink"
+               class="header-button btn hero-button"
+               data-ripple="true">
+              <div class="btn">
+                {{button}}
+              </div>
+            </a>
+          </transition>
+        </div>
       </div>
-    </div>
-  </m-t-b-v-a-parallax>
+    </parallax>
+  </div>
 </template>
 <script>
-  import MTBVAParallax from './MTBVAParallax'
+  import Navigation from "./Navigation"
+  import MTBVAParallax from "./Parallax"
   import {s3, s3StaticImg} from "../routes"
 
   export default {
@@ -115,68 +98,7 @@
     }
   }
 </script>
-<style>
-  .header-wrapper {
-    background-color: black;
-  }
-
-  .toolbar {
-    background-color: transparent !important;
-    margin-bottom: 32rem;
-    height: 130px;
-  }
-
-  .toolbar-solid {
-    background-color: white !important;
-    opacity: 0.8;
-
-  }
-
-  @media screen and (max-width: 480px) {
-    .xxcva {
-      display: none;
-    }
-  }
-
-  .xxcva {
-    width: 12rem;
-  }
-
-  .mtbva {
-    width: 8rem;
-  }
-
-  .xxcva-link {
-    margin-left: 1rem;
-  }
-
-  .fb {
-    width: 2.5rem;
-  }
-
-  .nav-text {
-    margin-top: 4.5rem !important;
-    color: white !important;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-
-  .nav-link {
-    margin-top: 4.5rem;
-  }
-
-  .hero-button {
-    display: block;
-    margin-left: 25%;
-    margin-right: 25%;
-  }
-
-  .hero-content-container {
-    height: 150px;
-  }
-
+<style scoped>
   .two-sec-fade-enter-to {
     transition: opacity 2s;
   }
@@ -187,11 +109,5 @@
 
   .mtbva-title {
     text-align: center;
-  }
-
-  .header-button {
-    background-color: transparent !important;
-    border: 2px solid white !important;
-    color: white !important;
   }
 </style>

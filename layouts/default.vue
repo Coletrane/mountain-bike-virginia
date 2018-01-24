@@ -6,7 +6,7 @@
         </transition>
       </div>
       <div v-if="showFooter">
-        <m-t-b-v-a-footer></m-t-b-v-a-footer>
+        <m-t-b-v-a-footer/>
       </div>
   </div>
 </template>

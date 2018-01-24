@@ -3,14 +3,14 @@
        :style="styles">
     <div class="hero"
          :style="backgroundImage">
-      <slot name="nav"/>
+      <slot name="hero"/>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mtbva-parallax',
+    name: 'parallax',
     props: {
       alt: String,
       height: {
