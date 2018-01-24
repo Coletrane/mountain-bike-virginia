@@ -1,23 +1,17 @@
 <template>
   <div class="social">
-    <span>
-      <a :href="facebookLink">
-        <i class="fa fa-facebook"
-           aria-hidden="true"></i>
-      </a>
-    </span>
-    <span>
-      <a :href="redditLink">
-        <i class="fa fa-reddit"
-           aria-hidden="true"></i>
-      </a>
-    </span>
-    <span style="padding-left: .5rem;">
-      <a :href="twitterLink">
-        <i class="fa fa-twitter"
-           aria-hidden="true"></i>
-      </a>
-    </span>
+    <a :href="facebookLink">
+      <i class="fa fa-facebook"
+         aria-hidden="true"></i>
+    </a>
+    <a :href="redditLink">
+      <i class="fa fa-reddit"
+         aria-hidden="true"></i>
+    </a>
+    <a :href="twitterLink">
+      <i class="fa fa-twitter"
+         aria-hidden="true"></i>
+    </a>
   </div>
 </template>
 <script>
@@ -45,10 +39,12 @@
     }
   }
 </script>
-<style scoped>
-  span {
-    padding: 1rem;
+<style>
+  i {
+    padding: .7rem;
   }
+  </style>
+<style scoped>
 
   a {
     color: transparent;
@@ -57,12 +53,15 @@
   i {
     font-size: 2rem;
   }
+
   i.fa-facebook {
     color: #3B5998;
   }
+
   i.fa-reddit {
     color: #FF5700;
   }
+
   i.fa-twitter {
     color: #1DA1F2;
   }

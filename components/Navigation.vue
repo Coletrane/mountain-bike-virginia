@@ -78,7 +78,7 @@
 
   @media (max-width: 99999px) {
     nav {
-      height: 170px;
+      height: 150px;
     }
     .mtbva {
       width: 130px;

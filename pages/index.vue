@@ -163,6 +163,13 @@
     padding-bottom: 2rem;
   }
 
+  @media (max-width: 575px) {
+    .main-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   .load-more {
     text-align: center;
   }

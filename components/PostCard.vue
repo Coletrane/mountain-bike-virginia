@@ -49,6 +49,11 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+  @media (max-width: 900px) {
+    i.fa-facebook {
+      padding-right: 1rem;
+    }
+  }
 </style>
 <style scoped>
   a {
