@@ -4,11 +4,11 @@
          slot="content">
       <div class="row">
         <nuxt-link :to="post.route"
-                   class="col- headline-container">
+                   class="col-9">
           <h2 class="headline">{{post.title}}</h2>
         </nuxt-link>
         <social-actions :post="post"
-                        class="col- social-right"/>
+                        class="col-3 social-right"/>
       </div>
       <nuxt-link :to="post.route">
         <h4 class="subheading">{{post.subtitle}}</h4>
@@ -59,12 +59,7 @@
     padding: 1rem;
   }
 
-  .headline-container {
-    width: 75%;
-  }
-  
   .social-right {
-    width: 25%;
     text-align: right;
   }
 
