@@ -2,9 +2,9 @@
   <div class="mtbva-footer">
     <div class="sponsors-container">
       <div v-for="group in sponsorGroups">
-        <div class="sponsor-grid">
-          <div v-for="sponsor in group"
-               :class="group.length === 3 ? 'sponsor-grid-three' : 'sponsor-grid-two'">
+        <div :class="group.length === 3 ? 'sponsor-grid-three' : 'sponsor-grid-two'"
+             class="sponsor-grid">
+          <div v-for="sponsor in group">
             <a :href="sponsor.url">
               <img :src="sponsor.img"
                    :class="sponsor.class"
@@ -122,7 +122,8 @@
   .sponsors-container {
     background-color: white;
     margin: auto;
-    opacity: .9;
+    opacity: .85;
+    padding: .5rem;
   }
 
   @media screen and (max-width: 99999px) {
