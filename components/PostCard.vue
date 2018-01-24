@@ -36,9 +36,8 @@
 </style>
 <style>
   .post-card {
-    margin: 0 !important;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     opacity: 0.95;
   }
 </style>

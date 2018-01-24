@@ -44,6 +44,7 @@
     }
   }
 </script>
+<!--Global styles here, all others are scoped-->
 <style>
   h1, h2, h3, h4 {
     font-family: 'Julius Sans One', sans-serif;
@@ -53,10 +54,15 @@
     font-family: 'Lato', sans-serif;
   }
 
-  .main-content {
-    background-color: rgb(78, 69, 49) !important;
-    background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png") !important;
-    background-repeat: repeat !important;
+  button {
+    cursor: pointer;
+  }
+
+  .white-btn {
+    font-family: 'Julius Sans One', sans-serif;
+    color: white;
+    border-color: white;
+    font-size: 2rem;
   }
 
   .app-fade-wrapper {

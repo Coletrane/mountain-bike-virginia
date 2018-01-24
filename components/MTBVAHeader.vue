@@ -134,11 +134,7 @@
   }
 
   .white-btn {
-    font-family: 'Julius Sans One', sans-serif;
-    color: white;
-    border-color: white;
     width: 200px;
-    font-size: 2rem;
   }
 
   .two-sec-fade-enter-to {
