@@ -1,8 +1,7 @@
 <template>
   <div>
     <nuxt-link :to="post.route">
-      <h2 class="headline">{{post.title}}</h2>
-      <h3 class="subheading">{{post.subtitle}}</h3>
+
     </nuxt-link>
   </div>
 </template>
@@ -17,4 +16,6 @@
     color: black;
     text-decoration: none;
   }
+
+
 </style>

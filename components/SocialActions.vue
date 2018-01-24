@@ -12,7 +12,7 @@
            aria-hidden="true"></i>
       </a>
     </span>
-    <span>
+    <span style="padding-left: .5rem;">
       <a :href="twitterLink">
         <i class="fa fa-twitter"
            aria-hidden="true"></i>
@@ -23,7 +23,11 @@
 <script>
   export default {
     name: "social-actions",
-    props: ["post"],
+    props: {
+      post: {
+        required: true
+      }
+    },
     computed: {
       facebookLink() {
         return "http://www.facebook.com/share.php?u=" +
@@ -42,10 +46,6 @@
   }
 </script>
 <style scoped>
-  .social {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
   span {
     padding: 1rem;
   }

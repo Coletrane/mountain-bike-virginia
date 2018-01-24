@@ -12,43 +12,37 @@
       <div v-if="page >= 1"
            :key="1">
         <post-card :post="posts.firstRide2018">
-          <div slot="top">
-            <post-header :post="posts.firstRide2018"></post-header>
+          <div slot="words">
             <div class="promo">
               For the 28th consecutive year the the first ride of the new year was a roaring (shivering) success.
               Thank you to everyone who turned out and cranked out some of the most frigid miles they'll have all
               year.
             </div>
           </div>
-          <div slot="middle">
-            <image-link :post="posts.firstRide2018"></image-link>
+          <div slot="media">
+            <image-link :post="posts.firstRide2018"/>
           </div>
         </post-card>
         <post-card :post="posts.dodyRidgeRunFall2017">
-          <div slot="top">
-            <post-header :post="posts.dodyRidgeRunFall2017"></post-header>
-          </div>
-          <div slot="middle">
-            <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"></youtube>
+          <div slot="media">
+            <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"/>
           </div>
         </post-card>
         <post-card
           :post="posts.pivotSwitchbladeReview">
-          <div slot="top">
-            <post-header :post="posts.pivotSwitchbladeReview"></post-header>
+          <div slot="words">
             <div class="promo">
               With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not enduro, it's
               not
               trail. Perhaps they should have called it the Swiss Army. No, that would never fly.
             </div>
           </div>
-          <div slot="middle">
-            <image-link :post="posts.pivotSwitchbladeReview"></image-link>
+          <div slot="media">
+            <image-link :post="posts.pivotSwitchbladeReview"/>
           </div>
         </post-card>
         <post-card :post="posts.creature2017Recap">
-          <div slot="top">
-            <post-header :post="posts.creature2017Recap"></post-header>
+          <div slot="words">
             <div class="promo">
               Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success. Special thanks
               to Debbie Inman, Renee Powers, Chris Lee, and all the wonderful staff who helped make the Creature
@@ -60,32 +54,25 @@
               </nuxt-link>
             </div>
           </div>
-          <div slot="middle">
-            <youtube :src="posts.creature2017Recap.ytSrc"></youtube>
+          <div slot="media">
+            <youtube :src="posts.creature2017Recap.ytSrc"/>
           </div>
         </post-card>
         <post-card :post="posts.relaunch">
-          <div slot="top">
-            <post-header :post="posts.relaunch"></post-header>
-          </div>
-          <div slot="middle">
-            <image-link :post="posts.relaunch"></image-link>
+          <div slot="media">
+            <image-link :post="posts.relaunch"/>
           </div>
         </post-card>
       </div>
       <div v-if="page >= 2"
            :key="2">
         <post-card :post="posts.specMines29Oct17">
-          <div slot="top">
-            <post-header :post="posts.specMines29Oct17"></post-header>
-          </div>
-          <div slot="middle">
-            <image-link :post="posts.specMines29Oct17"></image-link>
+          <div slot="media">
+            <image-link :post="posts.specMines29Oct17"/>
           </div>
         </post-card>
         <post-card :post="posts.creature2016">
-          <div slot="top">
-            <post-header :post="posts.creature2016"></post-header>
+          <div slot="words">
             <div class="promo">
               The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing success. We
               were
@@ -99,8 +86,8 @@
               </nuxt-link>
             </div>
           </div>
-          <div slot="middle">
-            <youtube :src="posts.creature2016.ytSrc"></youtube>
+          <div slot="media">
+            <youtube :src="posts.creature2016.ytSrc"/>
           </div>
         </post-card>
       </div>
@@ -116,7 +103,6 @@
 </template>
 <script>
   import MTBVAHeader from "../components/MTBVAHeader.vue"
-  import PostHeader from "../components/PostHeader.vue"
   import PostCard from "../components/PostCard.vue"
   import Youtube from "../components/Youtube.vue"
   import ImageLink from "../components/ImageLink.vue"
@@ -131,7 +117,6 @@
     name: "blog",
     components: {
       MTBVAHeader,
-      PostHeader,
       PostCard,
       Youtube,
       ImageLink

@@ -64,6 +64,10 @@
     border-color: white;
     font-size: 2rem;
   }
+  .white-btn:hover {
+    background-color: rgba(0,0,0, 0.75);
+    border-color: white;
+  }
 
   .app-fade-wrapper {
     background-color: black;

@@ -25,7 +25,8 @@
           <transition appear
                       name="two-sec-fade">
             <a v-if="buttonLink && showHeroButton"
-               :href="buttonLink">
+               :href="buttonLink"
+               class="button-link">
               <button class="btn btn-outline-primary white-btn">
                   {{button}}
               </button>
@@ -133,6 +134,9 @@
     }
   }
 
+  .button-link {
+    color: transparent;
+  }
   .white-btn {
     width: 200px;
   }
