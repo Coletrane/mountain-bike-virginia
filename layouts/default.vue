@@ -68,6 +68,10 @@
     background-color: rgba(0,0,0, 0.75);
     border-color: white;
   }
+  .white-btn:active {
+    background-color: #3d7635 !important;
+    border-color: white !important;
+  }
 
   .app-fade-wrapper {
     background-color: black;

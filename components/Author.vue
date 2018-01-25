@@ -1,6 +1,5 @@
 <template>
-  <div class="author-container"
-       :class="inline ? '' : 'float'">
+  <div class="author-container">
     <a :href="author.fbUrl">
       <img class="author-pic"
            :src=author.imgUrl
@@ -43,21 +42,14 @@
   .author-container {
     width: 40%;
     text-align: center;
-    padding-top: 3.2rem;
+    padding-top: 1.2rem;
     max-width: 180px;
-  }
-
-  .float {
     float: left;
   }
 
   .author-pic {
     border-radius: 50%;
     width: 50%;
-  }
-
-  .name-container {
-    padding-bottom: 1rem;
   }
 
   .name {

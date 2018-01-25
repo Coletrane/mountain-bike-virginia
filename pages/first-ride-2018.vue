@@ -15,7 +15,7 @@
         Balaclava. Liner gloves. Winter gloves. Pretty sure our gear weighed more than some of our bikes!
       </div>
       <blog-image portrait :src="img + 'corey-special-forces.jpg'"/>
-      <div class="blog-p center">
+      <div class="blog-p center caption">
         All bundled up and ready to roll!
       </div>
       <div class="blog-p">
@@ -30,7 +30,7 @@
         sucks away the heat!
       </div>
       <blog-image :src="img + 'corey-frozen-creek.jpg'"/>
-      <div class="blog-p center">
+      <div class="blog-p center caption">
         Definitely not splashing across that creek...well, unless the ice doesn’t hold!
       </div>
       <div class="blog-p">
@@ -40,7 +40,7 @@
       </div>
       <blog-image :src="img + 'corey-little-bell.jpg'"/>
       <blog-image :src="img + 'little-bell.jpg'"/>
-      <div class="blog-p center">
+      <div class="blog-p center caption">
         You got the proof we did this? Time to head back?
       </div>
       <div class="blog-p">
@@ -52,7 +52,7 @@
       <blog-image :src="img + 'cole-clownhead.jpg'"/>
       <blog-image :src="img + 'andrew.jpg'"/>
       <blog-image portrait :src="img + 'corey-toes.jpg'"/>
-      <div class="blog-p-center">
+      <div class="blog-p center">
         Here’s to a balmier 29th Annual First Ride of the New Year!
       </div>
     </div>

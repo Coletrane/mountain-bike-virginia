@@ -45,7 +45,7 @@
 </script>
 <style>
   h1 {
-    text-shadow: 0px 10px 20px rgb(0, 0, 0);
+    text-shadow: 0px 5px 5px rgb(0, 0, 0);
     font-size: 4rem !important;
   }
 
@@ -55,10 +55,16 @@
 
   .blog-p {
     padding: 1rem;
+    font-size: 1.2rem;
   }
 
   .center {
     text-align: center;
+  }
+
+  .caption {
+    font-size: 1rem;
+    color: #5c5e5c;
   }
 
 </style>
