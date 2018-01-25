@@ -3,7 +3,7 @@
       <iframe width="100%"
               frameborder="0"
               allowfullscreen
-              :id="src">
+              :url="src">
       </iframe>
     </div>
 </template>
@@ -14,12 +14,6 @@
       src: {
         required: true,
         type: String
-      }
-    },
-    mounted() {
-      if (process.browser) {
-        let element = document.getElementById(this.src)
-        element.setAttribute("src", this.src)
       }
     }
   }

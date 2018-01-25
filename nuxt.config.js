@@ -61,7 +61,8 @@ module.exports = {
     ]
   },
   plugins: [
-    {src: "~/plugins/vue-lazyload", ssr: false}
+    {src: "~/plugins/vue-lazyload", ssr: false},
+    {src: "~/assets/defer-iframes", ssr: false}
   ],
   build: {
     extractCss: true,
@@ -81,7 +82,7 @@ module.exports = {
     path: "/sitemap.xml",
     hostname: "http://bikeva.com",
     cacheTime: 1000 * 60 * 15,
-    generate: false, // Enable me when using nuxt generate,
+    generate: true,
     exclude: routes.appRoutes,
     routes: sitemapRoutes
   },
