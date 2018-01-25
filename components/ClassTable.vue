@@ -8,28 +8,35 @@
       </tr>
     </thead>
     <tbody>
-      <span v-for="(item, i) in items">
-      <th scope="row">{{i + 1}}</th>
-        <td>item.name</td>
-        <td>item.time</td>
-      </span>
+      <tr v-for="(item, i) in items">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.time}}</td>
+      </tr>
     </tbody>
   </table>
 </template>
-
 <script>
-
   export default {
     name: "class-table",
     props: {
       items: {
         required: true,
-        type: Object
+        type: Array
       }
     }
   }
-  </script>
+</script>
+<style scoped>
+  table {
 
-<style>
+  }
 
-  </style>
+  th, td {
+    border-bottom: 1px solid #b3b3b3;
+    padding-right: 3rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+
+</style>

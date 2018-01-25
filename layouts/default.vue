@@ -85,5 +85,18 @@
     background-color: rgb(78, 69, 49);
     background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png");
     background-repeat: repeat;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: 575px) {
+    .main-content {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
   }
 </style>

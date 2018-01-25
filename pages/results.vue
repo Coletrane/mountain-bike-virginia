@@ -1,20 +1,19 @@
 <template>
   <div>
     <m-t-b-v-a-header
-      :header-height="480"
+      :header-height="700"
       :image="image">
     </m-t-b-v-a-header>
-    <div>
+    <div class="main-content main-content-mobile">
       <card>
-        <div slot="top">
-          <dropdown :current-item="currentRace"
-                    :items="races"/>
-          <div v-for="race in races">
-            <div v-for="clazz in race.results.classes">
+        <div slot="content">
+          <dropdown :current-item="currentRace.race"
+                    :items="races"
+                    :select-race="selectRace"/>
+            <div v-for="clazz in currentRace.results.classes">
               <h4>{{clazz.name}}</h4>
               <class-table :items="clazz.riders"/>
             </div>
-          </div>
         </div>
       </card>
     </div>
@@ -77,7 +76,6 @@
         ]
       }
     },
-    computed: {},
     methods: {
       initRaces() {
         // Deep copy
@@ -102,14 +100,16 @@
 
         return result
       },
-      selectRace(race) {
+      selectRace: function(race) {
+        console.log(race)
         this.currentRace = race
       }
     }
   }
 </script>
-<style>
+<style scoped>
+  /*Livin on the edge*/
   .main-content {
-    padding: 4rem;
+    text-align: center;
   }
 </style>

@@ -8,7 +8,7 @@
       button="Events"
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
-    <div class="main-content">
+    <div class="main-content main-content-mobile">
       <div v-if="page >= 1"
            :key="1">
         <post-card :post="posts.firstRide2018">
@@ -154,17 +154,7 @@
 </script>
 <style scoped>
   .main-content {
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
 
-  @media (max-width: 575px) {
-    .main-content {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 
   .load-more {

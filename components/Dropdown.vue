@@ -1,43 +1,56 @@
 <template>
   <div class="dropdown">
-    <button class="btn btn-primary white-btn dropdown-toggle"
+    <button class="btn btn-primary dropdown-toggle mtbva-dropdown"
             type="button"
             id="dropdownMenuButton"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
-      {{currentRace}}
+      {{currentItem}}
     </button>
     <div class="dropdown-menu"
          aria-labelledby="dropdownMenuButton">
-      <a v-for="race in races"
+      <a v-for="item in items"
          class="dropdown-item"
-         @click="selectRace()">
-        {{race.race}}
+         @click="selectRace(item)">
+        {{item.race}}
       </a>
     </div>
   </div>
 </template>
 <script>
-  import {scripts} from "../assets/scripts"
-
   export default {
     name: "dropdown",
     props: {
       currentItem: {
         required: true,
-        type: Object
+        type: String
       },
       items: {
         required: true,
         type: Array
+      },
+      selectRace: {
+        required: true,
+        type: Function
       }
-    },
-    metaInfo: {
-      script: scripts
-    },
+    }
   }
 </script>
 <style>
-
+  .mtbva-dropdown {
+    background-color: transparent;
+    border-color: #000000;
+    color: #000000;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .mtbva-dropdown:active {
+    background-color: rgba(0,0,0, .5) !important;
+    border-color: #000000 !important;
+  }
+  .mtbva-dropdown:focus {
+    background-color: rgba(0,0,0, .5) !important;
+    border-color: #000000 !important;
+  }
 </style>

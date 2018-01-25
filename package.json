@@ -10,8 +10,11 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "0.0.3",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
     "modernizr": "^3.5.0",
     "nuxt": "^1.0.0",
+    "popper.js": "^1.12.9",
     "vue-lazyload": "^1.1.4",
     "vue-select": "^2.4.0"
   },
