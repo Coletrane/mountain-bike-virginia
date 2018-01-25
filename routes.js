@@ -51,9 +51,10 @@ imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = "IMG_3009.jpg"
 imgRoutes[appRoutesObj[specMines29Oct17]] = "IMG_2795.jpg"
 imgRoutes[appRoutesObj[firstRide2018]] = "classic-shot-2018.jpg"
 imgRoutes[appRoutesObj[middleMtMomma2018]] = "mmm.gif"
+
 const s3 = "http://d2i660bt0ywr9a.cloudfront.net"
-const s3StaticImg = "/static/img/"
-const s3Pages = "/pages/"
+const s3StaticImg = s3 + "/static/img/"
+const s3Pages = s3 + "/pages/"
 const baseUrl = "http://bikeva.com"
 
 module.exports = {

@@ -1,20 +1,20 @@
-import * as routes from "../routes"
+import {s3StaticImg, s3Pages} from "../routes"
 
 const cole = {
   name: "Cole Inman",
-  imgUrl: routes.s3 + "/static/img/cole.jpg",
+  imgUrl: `${s3StaticImg}cole.jpg`,
   fbUrl: "https://www.facebook.com/uhmcole"
 }
 
 const kyle = {
   name: "Kyle Inman",
-  imgUrl: routes.s3 + "/static/img/kyle.jpg",
+  imgUrl: `${s3StaticImg}kyle.jpg`,
   fbUrl: "https://www.facebook.com/kylnman"
 }
 
 const corey = {
   name: "Corey Heitz",
-  imgUrl: routes.s3 + "/static/img/corey.jpg",
+  imgUrl: `${s3StaticImg}corey.jpg`,
   fbUrl: "https://www.facebook.com/corey.heitz"
 }
 
@@ -23,14 +23,20 @@ export const posts = {}
 posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
   subtitle: "Just 40 more miles.",
-  img: `${routes.s3}${routes.s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
+  img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
   route: '/',
-  author: cole
+  author: cole,
+  rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26768416&sampleGraph=true",
+  extraImgs: {
+    logo: `${s3StaticImg}mmm.gif`,
+    start: `${s3StaticImg}mmm-start.gif`
+  }
 }
+
 posts.firstRide2018 = {
   title: "28th Annual First Ride O' The New Year",
   subtitle: "The coldest year on record.",
-  img: routes.s3 + "/pages/first-ride-2018/classic-shot-2018.jpg",
+  img: `${s3Pages}first-ride-2018/classic-shot-2018.jpg`,
   route: routes.firstRide2018,
   author: corey
 }
@@ -46,7 +52,7 @@ posts.dodyRidgeRunFall2017 = {
 posts.specMines29Oct17 = {
   title: "Blue Ridge Parkway tuckaway into Spec Mines",
   subtitle: "Wind, Rain, Cold. Pick Two.",
-  img: routes.s3 + "/pages/spec-mines-oct-29-2017/IMG_3089.jpg",
+  img: `${s3Pages}spec-mines-oct-29-2017/IMG_3089.jpg`,
   route: routes.specMines29Oct17,
   author: cole
 }
@@ -54,7 +60,7 @@ posts.specMines29Oct17 = {
 posts.pivotSwitchbladeReview = {
   title: "Review: Pivot Switchblade",
   subtitle: "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
-  img: routes.s3 + "/pages/pivot-switchblade-review/IMG_3009.jpg",
+  img: `${s3Pages}pivot-switchblade-review/IMG_3009.jpg`,
   route: routes.pivotSwitchbladeReview,
   author: cole
 }
@@ -71,7 +77,7 @@ posts.creature2017Recap = {
 posts.relaunch = {
   title: "Full Site Relaunch!",
   subtitle: "The same pirates are still at it.",
-  img: routes.s3 + "/pages/relaunch/rockymthi8.jpg",
+  img: `${s3Pages}relaunch/rockymthi8.jpg`,
   route: "/",
   author: cole
 }

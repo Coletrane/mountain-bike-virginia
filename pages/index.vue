@@ -38,12 +38,13 @@
             <div slot="media">
               <div class="row">
               <image-link :post="posts.middleMtMomma2018"
-                          :href="mmmFb"
-                          :src="s3Pages + 'mmm.gif'"/>
+                          :href="posts.middleMtMomma2018.extraImgs.logo"
+                          :src=""/>
               <image-link :post="posts.middleMtMomma2018"
-                          :href="mmmFb"
+                          :href="posts.middleMtMomma2018.extraImgs.start"
                           :src="s3Pages + 'mmm-start.gif'"/>
               </div>
+              <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
             </div>
           </div>
         </post-card>
@@ -146,12 +147,14 @@
   import {posts} from "../assets/posts"
   import * as routes from "../routes"
   import {headTags} from "../assets/functions"
+  import RideWithGps from "../components/RideWithGps"
 
   const foliage = routes.s3 + routes.s3StaticImg + routes.imgRoutes["/"]
 
   export default {
     name: "blog",
     components: {
+      RideWithGps,
       MTBVAHeader,
       PostCard,
       Youtube,
