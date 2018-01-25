@@ -3,15 +3,14 @@
     <div class="sponsors-container container">
       <div v-for="group in sponsorGroups"
            class="row">
-        <div class="sponsor-grid col-">
-          <div v-for="sponsor in group">
+          <div v-for="sponsor in group"
+               class="col-4">
             <a :href="sponsor.url">
               <img :src="sponsor.img"
                    :class="sponsor.class"
                    class="sponsor"/>
             </a>
           </div>
-        </div>
       </div>
     </div>
     <div class="copyright">

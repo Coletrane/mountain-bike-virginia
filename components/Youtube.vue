@@ -1,17 +1,27 @@
 <template>
     <div class="yt-wrapper">
       <iframe width="100%"
-              :src="src"
               frameborder="0"
               allowfullscreen
-              class="yt-iframe">
+              :id="src">
       </iframe>
     </div>
 </template>
 <script>
   export default {
     name: "youtube",
-    props: ["src"]
+    props: {
+      src: {
+        required: true,
+        type: String
+      }
+    },
+    mounted() {
+      if (process.browser) {
+        let element = document.getElementById(this.src)
+        element.setAttribute("src", this.src)
+      }
+    }
   }
 </script>
 <style>

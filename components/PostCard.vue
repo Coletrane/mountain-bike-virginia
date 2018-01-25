@@ -1,23 +1,22 @@
 <template>
   <card>
-    <div class="words"
-         slot="content">
+    <div slot="content">
+    <div class="words">
       <div class="row">
         <nuxt-link :to="post.route"
-                   class="col-9">
+                   class="col-8">
           <h2 class="headline">{{post.title}}</h2>
+          <h4 class="subheading">{{post.subtitle}}</h4>
         </nuxt-link>
         <social-actions :post="post"
-                        class="col-3 social-right"/>
+                        class="col-4 social-right"/>
       </div>
-      <nuxt-link :to="post.route">
-        <h4 class="subheading">{{post.subtitle}}</h4>
-      </nuxt-link>
       <div class="promo">
         <slot name="words"/>
       </div>
     </div>
     <slot name="media"/>
+    </div>
   </card>
 </template>
 <script>

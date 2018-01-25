@@ -1,13 +1,21 @@
 <template>
   <nuxt-link
     :to="post.route">
-    <img v-lazy="src">
+    <img v-lazy="post.img">
   </nuxt-link>
 </template>
 <script>
   export default {
     name: "image-link",
-    props: ["post"]
+    props: {
+      post: {
+        required: true,
+        type: Object
+      }
+    },
+    created() {
+      console.log(this.post)
+    }
   }
 </script>
 <style scoped>
