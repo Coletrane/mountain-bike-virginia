@@ -52,7 +52,7 @@
       <blog-image :src="img + 'cole-clownhead.jpg'"/>
       <blog-image :src="img + 'andrew.jpg'"/>
       <blog-image portrait :src="img + 'corey-toes.jpg'"/>
-      <div class="blog-p">
+      <div class="blog-p-center">
         Here’s to a balmier 29th Annual First Ride of the New Year!
       </div>
     </div>
@@ -90,12 +90,3 @@
     }
   }
 </script>
-<style>
-  .mtbva-title {
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
-  }
-  .center {
-    text-align: center;
-  }
-</style>
-

@@ -101,7 +101,6 @@
         return result
       },
       selectRace: function(race) {
-        console.log(race)
         this.currentRace = race
       }
     }

@@ -9,8 +9,7 @@
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
-            <h1 v-if="showTitle"
-                class="white--text display-2">
+            <h1 v-if="showTitle">
               {{title}}
             </h1>
           </transition>
@@ -112,6 +111,10 @@
     width: 100%;
     height: 500px;
     transform: translate(-50%,-50%);
+  }
+
+  h1 {
+    font-size: 6rem;
   }
 
   @media (max-width: 575px) {

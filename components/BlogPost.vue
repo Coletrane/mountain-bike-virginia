@@ -5,28 +5,13 @@
       :image="image"
       :title="post.title">
     </m-t-b-v-a-header>
-    <div>
+    <div class="main-content">
         <post-card :post="post">
-          <div slot="top">
-            <div class="blog-p subheading">
-              <div v-if="inlineAuthor">
-                <h3 class="subheading">{{post.subtitle}}</h3>
-                <author
-                  :author="post.author"
-                  :inline="inlineAuthor">
-                </author>
-              </div>
-              <div v-else>
-                <h3 class="subheading">{{post.subtitle}}</h3>
-                <author
-                  :author="post.author"
-                  :inline="inlineAuthor">
-                </author>
-              </div>
-            </div>
+          <div slot="author">
           </div>
-          <div slot="middle">
-            <slot name="content"></slot>
+          <div slot="media">
+            <author :author="post.author"/>
+            <slot name="content"/>
           </div>
         </post-card>
     </div>
@@ -59,25 +44,21 @@
   }
 </script>
 <style>
-  @media screen and (min-width: 601px) {
-    .container {
-      max-width: 1350px !important;;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+  h1 {
+    text-shadow: 0px 10px 20px rgb(0, 0, 0);
+    font-size: 4rem !important;
   }
 
-  @media screen and (max-width: 600px) {
-    h6 {
-      font-size: 20px !important;
-    }
+  .words {
+    padding: 0;
   }
 
   .blog-p {
     padding: 1rem;
   }
 
-  .mtbva-title {
-    text-shadow: 0px 10px 20px rgb(0, 0, 0);
+  .center {
+    text-align: center;
   }
+
 </style>

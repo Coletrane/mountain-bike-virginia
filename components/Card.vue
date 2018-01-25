@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <div class="card"
+    <div class="mtbva-card"
          :style="postCardStyle">
       <slot name="content"/>
     </div>
@@ -23,7 +23,7 @@
 </script>
 
 <style>
-  .card {
+  .mtbva-card {
     background-color: rgba(255, 255, 255, .85);
   }
 </style>

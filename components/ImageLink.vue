@@ -12,9 +12,6 @@
         required: true,
         type: Object
       }
-    },
-    created() {
-      console.log(this.post)
     }
   }
 </script>

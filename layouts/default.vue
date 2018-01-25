@@ -91,6 +91,12 @@
     padding-bottom: 2rem;
   }
 
+  @media (max-width: 750px) {
+    .main-content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
   @media (max-width: 575px) {
     .main-content {
       padding-left: 0;
@@ -99,4 +105,5 @@
       padding-bottom: 4rem;
     }
   }
+
 </style>
