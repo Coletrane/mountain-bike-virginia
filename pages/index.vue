@@ -11,6 +11,42 @@
     <div class="main-content main-content-mobile">
       <div v-if="page >= 1"
            :key="1">
+        <post-card :post="posts.middleMtMomma2018">
+          <div slot="words">
+            <div class="promo">
+              21st annual Middle Mountain Momma at the gorgeous <a href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat State Park.</a> The first race in the XXC VA series!
+              <div>
+                Classes:
+              <ul>
+                <li>Youth: 7mi</li>
+                <li>Junior: 11mi</li>
+                <li>Classic: 21mi</li>
+                <li>XXC: 44mi</li>
+              </ul>
+              </div>
+              <div>
+              <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">Register on BikeReg</a>
+              </div>
+              <div>
+              <a href="">
+                <img class="fb-icon"
+                     :src="fbIcon"/>
+                Event
+              </a>
+              </div>
+            </div>
+            <div slot="media">
+              <div class="row">
+              <image-link :post="posts.middleMtMomma2018"
+                          :href="mmmFb"
+                          :src="s3Pages + 'mmm.gif'"/>
+              <image-link :post="posts.middleMtMomma2018"
+                          :href="mmmFb"
+                          :src="s3Pages + 'mmm-start.gif'"/>
+              </div>
+            </div>
+          </div>
+        </post-card>
         <post-card :post="posts.firstRide2018">
           <div slot="words">
             <div class="promo">
@@ -58,14 +94,14 @@
             <youtube :src="posts.creature2017Recap.ytSrc"/>
           </div>
         </post-card>
+      </div>
+      <div v-if="page >= 2"
+           :key="2">
         <post-card :post="posts.relaunch">
           <div slot="media">
             <image-link :post="posts.relaunch"/>
           </div>
         </post-card>
-      </div>
-      <div v-if="page >= 2"
-           :key="2">
         <post-card :post="posts.specMines29Oct17">
           <div slot="media">
             <image-link :post="posts.specMines29Oct17"/>
@@ -136,7 +172,10 @@
         img: foliage,
         attachPosts: false,
         posts: posts,
-        maxPage: 2
+        maxPage: 2,
+        fbIcon: `${routes.s3}${routes.s3StaticImg}fb-black.svg`,
+        mmmFb: "https://www.facebook.com/events/371981453213164/",
+        s3Pages: `${routes.s3}${routes.s3Pages}`
       }
     },
     computed: {

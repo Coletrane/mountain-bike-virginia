@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
-    :to="post.route">
-    <img v-lazy="post.img">
+    :to="href ? href : post.route">
+    <img v-lazy="src ? src : post.img">
   </nuxt-link>
 </template>
 <script>
@@ -11,6 +11,12 @@
       post: {
         required: true,
         type: Object
+      },
+      href: {
+        type: String
+      },
+      src: {
+        type: String
       }
     }
   }

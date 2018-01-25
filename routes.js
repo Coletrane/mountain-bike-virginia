@@ -1,4 +1,5 @@
 const results = "results"
+const middleMtMomma2018 = "middle-mt-momma-2018"
 const firstRide2018 = "first-ride-2018"
 const dodyRidgeRunFall2017 = "dody-ridge-run-fall-2017"
 const specMines29Oct17 = "spec-mines-oct-29-2017"
@@ -11,6 +12,7 @@ const creature2016 = "creature-2016"
 // Keep non blog post routes at the top
 const appRoutes = [
   results,
+  middleMtMomma2018,
   firstRide2018,
   dodyRidgeRunFall2017,
   specMines29Oct17,
@@ -48,7 +50,7 @@ imgRoutes[appRoutesObj[creature2017Recap]] = "lumberjack.jpg"
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = "IMG_3009.jpg"
 imgRoutes[appRoutesObj[specMines29Oct17]] = "IMG_2795.jpg"
 imgRoutes[appRoutesObj[firstRide2018]] = "classic-shot-2018.jpg"
-
+imgRoutes[appRoutesObj[middleMtMomma2018]] = "mmm.gif"
 const s3 = "http://d2i660bt0ywr9a.cloudfront.net"
 const s3StaticImg = "/static/img/"
 const s3Pages = "/pages/"
@@ -56,6 +58,7 @@ const baseUrl = "http://bikeva.com"
 
 module.exports = {
   results,
+  middleMtMomma2018,
   firstRide2018,
   dodyRidgeRunFall2017,
   specMines29Oct17,

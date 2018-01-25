@@ -20,6 +20,13 @@ const corey = {
 
 export const posts = {}
 
+posts.middleMtMomma2018 = {
+  title: "Counties of Bath and Alleghany Middle Mountain Momma",
+  subtitle: "Just 40 more miles.",
+  img: `${routes.s3}${routes.s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
+  route: '/',
+  author: cole
+}
 posts.firstRide2018 = {
   title: "28th Annual First Ride O' The New Year",
   subtitle: "The coldest year on record.",
