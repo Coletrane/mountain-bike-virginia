@@ -25,7 +25,7 @@
               </div>
             </div>
           </div>
-            <div slot="media" style="margin-top: -50px">
+            <div slot="media" class="mmm">
               <image-link :post="posts.middleMtMomma2018"
                           :href="posts.middleMtMomma2018.extraImgs.logo"
                           :src="s3Pages + posts.middleMtMomma2018.route + '/mmm.gif'"/>
@@ -198,5 +198,14 @@
 
   .promo {
     font-size: 1rem;
+  }
+
+  .mmm {
+    margin-top: -50px
+  }
+  @media (max-width: 576px) {
+    .mmm {
+      margin-top: 0;
+    }
   }
 </style>

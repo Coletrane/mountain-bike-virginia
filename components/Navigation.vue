@@ -28,8 +28,8 @@
   </nav>
 </template>
 <script>
-  import {boxShadow, mediaQuery, sizes} from "../assets/styles"
-  import {s3, s3StaticImg} from "../routes"
+  import {boxShadow} from "../assets/styles"
+  import {s3StaticImg} from "../routes"
 
   export default {
     name: "navigation",
@@ -76,7 +76,6 @@
     text-align: right;
   }
 
-  @media (max-width: 99999px) {
     nav {
       height: 150px;
     }
@@ -92,7 +91,6 @@
     .fb {
       width: 2.5rem;
     }
-  }
 
   @media (max-width: 575px) {
     nav {
@@ -111,19 +109,16 @@
 
   @media (max-width: 450px) {
     nav {
-      height: 80px;
+      height: 75px;
     }
     .mtbva {
-      width: 65px;
+      width: 60px;
     }
     .xxcva {
-      width: 85px;
+      width: 70px;
     }
     .nav-text {
       font-size: 1.2rem;
-    }
-    .flex-outer {
-      padding-left: 1rem;
     }
   }
 
