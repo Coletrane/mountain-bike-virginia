@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import {s3, s3StaticImg} from "../routes"
+  import {s3StaticImg} from "../routes"
 
   export default {
     name: "author",
@@ -33,7 +33,7 @@
     },
     data() {
       return {
-        fbIconSrc: `${s3}${s3StaticImg}fb-black.svg`
+        fbIconSrc: `${s3StaticImg}fb-black.svg`
       }
     }
   }

@@ -76,7 +76,7 @@
     },
     data() {
       return {
-        img: `${s3}${s3StaticImg}`,
+        img: `${s3StaticImg}`,
         showTitle: false,
         showSubtitle: false,
         showHeroButton: false

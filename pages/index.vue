@@ -14,38 +14,25 @@
         <post-card :post="posts.middleMtMomma2018">
           <div slot="words">
             <div class="promo">
-              21st annual Middle Mountain Momma at the gorgeous <a href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat State Park.</a> The first race in the XXC VA series!
+              21st annual Middle Mountain Momma at the gorgeous <a
+              href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat State Park.</a> The
+              first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC: 44mi.
               <div>
-                Classes:
-              <ul>
-                <li>Youth: 7mi</li>
-                <li>Junior: 11mi</li>
-                <li>Classic: 21mi</li>
-                <li>XXC: 44mi</li>
-              </ul>
+                <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">Register on BikeReg. </a>
               </div>
               <div>
-              <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">Register on BikeReg</a>
-              </div>
-              <div>
-              <a href="">
-                <img class="fb-icon"
-                     :src="fbIcon"/>
-                Event
-              </a>
+                <a href="">Facebook Event <img :src="s3StaticImg + 'fb-black.svg'"></a>
               </div>
             </div>
-            <div slot="media">
-              <div class="row">
+          </div>
+            <div slot="media" style="margin-top: -50px">
               <image-link :post="posts.middleMtMomma2018"
                           :href="posts.middleMtMomma2018.extraImgs.logo"
-                          :src=""/>
+                          :src="s3Pages + posts.middleMtMomma2018.route + '/mmm.gif'"/>
               <image-link :post="posts.middleMtMomma2018"
                           :href="posts.middleMtMomma2018.extraImgs.start"
-                          :src="s3Pages + 'mmm-start.gif'"/>
-              </div>
-              <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
-            </div>
+                          :src="s3Pages + posts.middleMtMomma2018.route +  '/mmm-start.gif'"/>
+            <!--<ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>-->
           </div>
         </post-card>
         <post-card :post="posts.firstRide2018">
@@ -132,7 +119,7 @@
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
                 @click="loadMore()">
-            Keep on Riding!
+          Keep on Riding!
         </button>
       </div>
     </div>
@@ -145,11 +132,11 @@
   import ImageLink from "../components/ImageLink.vue"
 
   import {posts} from "../assets/posts"
-  import * as routes from "../routes"
+  import {s3StaticImg, s3Pages, imgRoutes} from "../routes"
   import {headTags} from "../assets/functions"
   import RideWithGps from "../components/RideWithGps"
 
-  const foliage = routes.s3 + routes.s3StaticImg + routes.imgRoutes["/"]
+  const foliage = `${s3StaticImg}${imgRoutes["/"]}`
 
   export default {
     name: "blog",
@@ -176,9 +163,10 @@
         attachPosts: false,
         posts: posts,
         maxPage: 2,
-        fbIcon: `${routes.s3}${routes.s3StaticImg}fb-black.svg`,
+        fbIcon: `${s3StaticImg}fb-black.svg`,
         mmmFb: "https://www.facebook.com/events/371981453213164/",
-        s3Pages: `${routes.s3}${routes.s3Pages}`
+        s3Pages: s3Pages,
+        s3StaticImg: s3StaticImg
       }
     },
     computed: {

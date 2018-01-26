@@ -1,4 +1,5 @@
 import {s3StaticImg, s3Pages} from "../routes"
+import * as routes from "../routes"
 
 const cole = {
   name: "Cole Inman",
@@ -24,7 +25,7 @@ posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
   subtitle: "Just 40 more miles.",
   img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
-  route: '/',
+  route: routes.middleMtMomma2018,
   author: cole,
   rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26768416&sampleGraph=true",
   extraImgs: {

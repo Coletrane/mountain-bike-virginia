@@ -37,11 +37,11 @@
   import BlogPost from "../components/BlogPost.vue"
   import BlogImage from "../components/BlogImage"
 
-  import * as routes from '../routes'
+  import {s3Pages} from "../routes"
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post= posts.specMines29Oct17
+  const post = posts.specMines29Oct17
 
   export default {
     name: routes.specMines29Oct17,
@@ -59,7 +59,7 @@
     },
     data() {
       return {
-        img: `${routes.s3}${routes.s3Pages}${post.route}/`,
+        img:  `${s3Pages}${post.route}/`,
         post: post
       }
     }

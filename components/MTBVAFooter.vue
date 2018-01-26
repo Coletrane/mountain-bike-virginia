@@ -30,11 +30,9 @@
   </div>
 </template>
 <script>
-  import routes from "../routes"
+  import {s3StaticImg} from "../routes"
   import {makeTwoDimensional} from "../assets/functions"
-
-  const img = routes.s3 + "/static/img/"
-
+  
   export default {
     computed: {
       sponsorGroups() {
@@ -43,64 +41,64 @@
     },
     data() {
       return {
-        img: img,
+        img: s3StaticImg,
         sponsors: [
           {
-            img: img + "va-blueridge.png",
+            img: `${s3StaticImg}va-blueridge.png`,
             class: "blueridge",
             url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
-            img: img + "parkway.png",
+            img: `${s3StaticImg}parkway.png`,
             class: "parkway",
             url: "http://parkwaybrewing.com/"
           },
           {
-            img: img + "starlight.gif",
+            img: `${s3StaticImg}starlight.gif`,
             class: "starlight",
             url: "https://www.starlightapparel.com/"
           },
           {
-            img: img + "sbc.gif",
+            img: `${s3StaticImg}sbc.gif`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
           },
           {
-            img: img + "jtrg.jpg",
+            img: `${s3StaticImg}jtrg.jpg`,
             class: "jtrig",
             url: "http://justtherightgear.com/"
           },
           {
-            img: img + "east-coasters.jpg",
+            img: `${s3StaticImg}east-coasters.jpg`,
             class: "east-coasters",
             url: "https://eastcoasters.com/"
           },
           {
-            img: img + "alleghany.jpg",
+            img: `${s3StaticImg}alleghany.jpg`,
             class: "alleghany",
             url: "http://www.visitalleghanyhighlands.com/main/index.php"
           },
           {
-            img: img + "blackwater.jpg",
+            img: `${s3StaticImg}blackwater.jpg`,
             class: "blackwater",
             url: "http://www.blackwaterbikeshop.com/"
           },
           {
-            img: img + "outdoortrails.jpg",
+            img: `${s3StaticImg}outdoortrails.jpg`,
             class: "outdoor-trails",
             url: "http://www.outdoortrails.com/"
           },
           {
-            img: img + "woods.png",
+            img: `${s3StaticImg}woods.png`,
             class: "woods",
             url: "http://woodsac.com/"
           }, {
-            img: img + "bath.jpg",
+            img: `${s3StaticImg}bath.jpg`,
             class: "bath",
             url: "http://discoverbath.com/"
           },
           {
-            img: img + "tavern.gif",
+            img: `${s3StaticImg}tavern.gif`,
             class: "tavern",
             url: "http://jackmasonstavern.com/"
           }

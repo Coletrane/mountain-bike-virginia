@@ -10,10 +10,10 @@
           <dropdown :current-item="currentRace.race"
                     :items="races"
                     :select-race="selectRace"/>
-            <div v-for="clazz in currentRace.results.classes">
-              <h4>{{clazz.name}}</h4>
-              <class-table :items="clazz.riders"/>
-            </div>
+          <div v-for="clazz in currentRace.results.classes">
+            <h4>{{clazz.name}}</h4>
+            <class-table :items="clazz.riders"/>
+          </div>
         </div>
       </card>
     </div>
@@ -25,7 +25,7 @@
   import Dropdown from "../components/Dropdown"
   import ClassTable from "../components/ClassTable"
 
-  import * as routes from "../routes"
+  import {s3Pages} from "../routes"
   import {results} from "../assets/results"
   import {headTags} from "../assets/functions"
 
@@ -100,7 +100,7 @@
 
         return result
       },
-      selectRace: function(race) {
+      selectRace: function (race) {
         this.currentRace = race
       }
     }

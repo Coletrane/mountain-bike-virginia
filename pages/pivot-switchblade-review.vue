@@ -52,7 +52,7 @@
   import BlogPost from "../components/BlogPost.vue"
   import BlogImage from "../components/BlogImage"
 
-  import * as routes from '../routes'
+  import {s3Pages} from "../routes"
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
@@ -74,7 +74,7 @@
     },
     data() {
       return {
-        img: `${routes.s3}${routes.s3Pages}${post.route}/`,
+        img:  `${s3Pages}${post.route}/`,
         post: post
       }
     }
