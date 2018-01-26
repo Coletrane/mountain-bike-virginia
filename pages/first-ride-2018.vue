@@ -69,7 +69,7 @@
   const post = posts.firstRide2018
 
   export default {
-    name: routes.firstRide2018,
+    name: post.route,
     components: {
       BlogPost,
       BlogImage

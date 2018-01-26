@@ -46,7 +46,7 @@
 <style>
   h1 {
     text-shadow: 0px 5px 5px rgb(0, 0, 0);
-    font-size: 4rem !important;
+    font-size: 4rem;
   }
 
   .words {

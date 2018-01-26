@@ -59,7 +59,7 @@
   const post = posts.pivotSwitchbladeReview
 
   export default {
-    name: "pivot-switchblade-review",
+    name: post.route,
     components: {
       BlogPost,
       BlogImage

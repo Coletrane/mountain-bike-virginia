@@ -22,7 +22,7 @@
   const post = posts.dodyRidgeRunFall2017
 
   export default {
-    name: "dody-ridge-run-fall-2017",
+    name: post.route,
     components: {
       BlogPost,
       Youtube

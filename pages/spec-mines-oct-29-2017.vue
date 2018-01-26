@@ -44,7 +44,7 @@
   const post = posts.specMines29Oct17
 
   export default {
-    name: routes.specMines29Oct17,
+    name: post.route,
     components: {
       BlogPost,
       BlogImage

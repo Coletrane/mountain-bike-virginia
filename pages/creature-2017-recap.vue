@@ -112,7 +112,7 @@
   const post = posts.creature2017Recap
 
   export default {
-    name: "creature-2017-recap",
+    name: post.route,
     components: {
       BlogPost,
       Youtube,
