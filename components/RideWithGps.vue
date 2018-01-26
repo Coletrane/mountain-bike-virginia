@@ -22,4 +22,10 @@
     border: none;
     height: 600px;
   }
+
+  @media (min-width: 992px) {
+    iframe {
+      height: 800px;
+    }
+  }
   </style>
