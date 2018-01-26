@@ -113,7 +113,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg');
     background-position-x: center;
     background-position-y: top;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
   }
 
   .sponsors-container {
@@ -126,11 +126,11 @@
 
   @media screen and (max-width: 99999px) {
     .sponsors-container {
-      width: 80%;
+      width: 65%;
     }
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 992px) {
     .sponsors-container {
       width: 90%;
     }

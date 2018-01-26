@@ -1,4 +1,4 @@
-export const results = [
+export const resultsData = [
   {
     race: "Creature From Carvins Cove 2017",
     results: {

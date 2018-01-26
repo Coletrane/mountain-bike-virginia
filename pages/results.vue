@@ -25,11 +25,11 @@
   import Dropdown from "../components/Dropdown"
   import ClassTable from "../components/ClassTable"
 
-  import {s3Pages} from "../routes"
-  import {results} from "../assets/results"
+  import {s3Pages, results} from "../routes"
+  import {resultsData} from "../assets/results"
   import {headTags} from "../assets/functions"
 
-  const podium = `${routes.s3}${routes.s3Pages}${routes.results}/podium.png`
+  const podium = `${s3Pages}${results}/podium.png`
 
   export default {
     name: "results",
@@ -79,7 +79,7 @@
     methods: {
       initRaces() {
         // Deep copy
-        let resultsWithPos = JSON.parse(JSON.stringify(results))
+        let resultsWithPos = JSON.parse(JSON.stringify(resultsData))
         resultsWithPos.forEach(race => {
           race.results.classes.forEach(clazz => {
             clazz.riders.forEach((rider, i, arr) => {

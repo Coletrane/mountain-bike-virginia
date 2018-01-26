@@ -1,8 +1,10 @@
 <template>
+  <div>
   <nuxt-link
     :to="href ? href : post.route">
     <img v-lazy="src ? src : post.img">
   </nuxt-link>
+  </div>
 </template>
 <script>
   export default {
@@ -22,6 +24,9 @@
   }
 </script>
 <style scoped>
+  div {
+    min-height: 400px;
+  }
   img {
     width: 100%;
   }

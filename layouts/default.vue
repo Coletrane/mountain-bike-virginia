@@ -95,6 +95,15 @@
     padding-bottom: 2rem;
   }
 
+  @media (min-width: 1200px) {
+    .main-content {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+  }
+
   @media (max-width: 750px) {
     .main-content {
       padding-left: 2rem;
@@ -111,13 +120,14 @@
   }
 
   img[lazy=loading] {
-    width: 20% !important;
+    width: 50% !important;
     height: auto !important;
     display: block !important;
-    margin-left: auto !important;
+    margin-left: 30% !important;
     margin-right: auto !important;
     margin-top: 25% !important;
     margin-bottom: 25% !important;
+    background-color: #FFFFFF !important;
   }
 
 </style>

@@ -101,9 +101,9 @@
 </script>
 <style scoped>
   .hero-container {
-
   }
   .hero-content {
+    padding: 1rem;
     text-align: center;
     position: absolute;
     top: 75%;
