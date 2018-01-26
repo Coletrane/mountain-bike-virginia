@@ -5,14 +5,16 @@
             id="dropdownMenuButton"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false">
+            aria-expanded="false"
+            @click="toggleDropdown()">
       {{currentItem}}
     </button>
     <div class="dropdown-menu"
+         :class="expanded ? 'mtbva-dropdown-menu-show' : ''"
          aria-labelledby="dropdownMenuButton">
       <a v-for="item in items"
          class="dropdown-item"
-         @click="selectRace(item)">
+         @click="select(item)">
         {{item.race}}
       </a>
     </div>
@@ -34,6 +36,20 @@
         required: true,
         type: Function
       }
+    },
+    data() {
+      return {
+        expanded: false
+      }
+    },
+    methods: {
+      toggleDropdown() {
+        this.expanded = !this.expanded
+      },
+      select(item) {
+        this.selectRace(item)
+        this.toggleDropdown()
+      }
     }
   }
 </script>
@@ -45,12 +61,20 @@
     margin: 1rem;
     padding: 1rem;
   }
-  .mtbva-dropdown:active {
-    background-color: rgba(0,0,0, .5) !important;
+  .mtbva-dropdown:hover {
+    background-color: rgba(0,0,0, .25) !important;
     border-color: #000000 !important;
   }
+  .mtbva-dropdown:active .mtbva-dropdown.active {
+    background-color: #3d7635 !important;
+    border-color: #3d7635 !important;
+  }
   .mtbva-dropdown:focus {
-    background-color: rgba(0,0,0, .5) !important;
+    background-color: rgba(0,0,0, .25) !important;
     border-color: #000000 !important;
+  }
+
+  .mtbva-dropdown-menu-show {
+    display: block !important;
   }
 </style>

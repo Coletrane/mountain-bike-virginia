@@ -28,7 +28,7 @@
   import {s3Pages, results} from "../routes"
   import {resultsData} from "../assets/results"
   import {headTags} from "../assets/functions"
-
+  import {bootstrapScripts} from "../assets/scripts"
   const podium = `${s3Pages}${results}/podium.png`
 
   export default {
@@ -40,14 +40,16 @@
       ClassTable
     },
     head() {
-      return headTags(
-        "Race Results",
-        "Results from races sanctioned by The Virginia Championship Commission",
-        "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, ",
-        {
-          imgSrc: podium
-        }
-      )
+      return {
+        ...headTags(
+          "Race Results",
+          "Results from races sanctioned by The Virginia Championship Commission",
+          "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, ",
+          {
+            imgSrc: podium
+          }
+        )
+      }
     },
     data() {
       return {
