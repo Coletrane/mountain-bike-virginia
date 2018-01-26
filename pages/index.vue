@@ -12,6 +12,14 @@
       <div v-if="page >= 1"
            :key="1">
         <post-card :post="posts.middleMtMomma2018">
+          <div slot="author">
+            <h4 class="subheading">
+              A week before Mother's day, its
+              <span style="font-weight: 800;">
+                MOMMA'S DAY.
+              </span>
+            </h4>
+          </div>
           <div slot="words">
             <div class="promo">
               21st annual Middle Mountain Momma at the gorgeous <a
@@ -32,7 +40,7 @@
             </div>
           </div>
             <div slot="media"
-                 style="margin-top: -2rem;">
+                 style="margin-top: -4rem;">
               <a :href="posts.middleMtMomma2018.fbEvent">
                 <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
                      class="image-smaller">

@@ -46,6 +46,10 @@
       padding-right: 1rem;
     }
   }
+
+  .subheading {
+    font-family: 'Lato', sans-serif;
+  }
 </style>
 <style scoped>
   a {
@@ -63,10 +67,6 @@
 
   img {
     width: 100%;
-  }
-
-  h4 {
-    font-family: 'Lato', sans-serif;
   }
 
 </style>

@@ -23,7 +23,7 @@ export const posts = {}
 
 posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
-  subtitle: "Just 40 more miles.",
+  subtitle: "May 6, 2018",
   img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
   route: "/",
   author: cole,
