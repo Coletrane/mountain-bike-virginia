@@ -25,12 +25,13 @@ posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
   subtitle: "Just 40 more miles.",
   img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
-  route: routes.middleMtMomma2018,
+  route: "/",
   author: cole,
   rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26768416&sampleGraph=true",
+  fbEvent: "https://www.facebook.com/events/371981453213164/",
   extraImgs: {
-    logo: `${s3StaticImg}mmm.gif`,
-    start: `${s3StaticImg}mmm-start.gif`
+    logo: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
+    start: `${s3Pages}${routes.middleMtMomma2018}/mmm-start.gif`
   }
 }
 

@@ -3,7 +3,7 @@
       <iframe width="100%"
               frameborder="0"
               allowfullscreen
-              :url="src">
+              :src="src">
       </iframe>
     </div>
 </template>

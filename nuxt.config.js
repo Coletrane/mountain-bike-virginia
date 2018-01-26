@@ -62,7 +62,6 @@ module.exports = {
   },
   plugins: [
     {src: "~/plugins/vue-lazyload", ssr: false},
-    {src: "~/assets/defer-iframes", ssr: false}
   ],
   build: {
     extractCss: true,

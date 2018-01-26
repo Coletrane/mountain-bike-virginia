@@ -18,21 +18,29 @@
               href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat State Park.</a> The
               first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC: 44mi.
               <div>
-                <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">Register on BikeReg. </a>
+                <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
+                  Register on BikeReg.
+                </a>
               </div>
               <div>
-                <a href="">Facebook Event <img :src="s3StaticImg + 'fb-black.svg'"></a>
+                <a :href="posts.middleMtMomma2018.fbEvent">
+                  Details
+                  <img :src="s3StaticImg + 'fb-link.svg'"
+                       style="width: 1.2rem; padding-bottom: .3rem;">
+                </a>
               </div>
             </div>
           </div>
-            <div slot="media" class="mmm">
+            <div slot="media"
+                 style="margin-top: -2rem;">
+              <a :href="posts.middleMtMomma2018.fbEvent">
+                <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
+                     class="image-smaller">
+              </a>
               <image-link :post="posts.middleMtMomma2018"
-                          :href="posts.middleMtMomma2018.extraImgs.logo"
-                          :src="s3Pages + posts.middleMtMomma2018.route + '/mmm.gif'"/>
-              <image-link :post="posts.middleMtMomma2018"
-                          :href="posts.middleMtMomma2018.extraImgs.start"
-                          :src="s3Pages + posts.middleMtMomma2018.route +  '/mmm-start.gif'"/>
-            <!--<ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>-->
+                          :href="posts.middleMtMomma2018.fbEvent"
+                          :src="posts.middleMtMomma2018.extraImgs.start"/>
+            <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
           </div>
         </post-card>
         <post-card :post="posts.firstRide2018">
@@ -182,6 +190,7 @@
     }
   }
 </script>
+
 <style scoped>
   .main-content {
 
@@ -200,12 +209,15 @@
     font-size: 1rem;
   }
 
-  .mmm {
-    margin-top: -50px
+  .image-smaller {
+    width: 60%;
+    display: block;
+    margin: auto;
   }
-  @media (max-width: 576px) {
-    .mmm {
-      margin-top: 0;
+  @media (max-width: 720px) {
+    .image-smaller {
+      width: 100%;
     }
   }
+
 </style>

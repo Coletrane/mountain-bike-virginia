@@ -42,6 +42,12 @@
     background-size: cover;
   }
 
+  @media (max-width: 720px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+
   .hero {
     color: #FFFFFF;
     height: 100%;

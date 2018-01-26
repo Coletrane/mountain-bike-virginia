@@ -1,6 +1,6 @@
 <template>
-  <iframe :url="url"
-          style='width: 1px; min-width: 100%; border: none;' scrolling='no'>
+  <iframe :src="url"
+          scrolling='no'>
   </iframe>
 </template>
 <script>
@@ -14,3 +14,12 @@
     }
   }
 </script>
+
+<style scoped>
+  iframe {
+    width: 1px;
+    min-width: 100%;
+    border: none;
+    height: 600px;
+  }
+  </style>

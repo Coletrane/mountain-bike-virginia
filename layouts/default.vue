@@ -110,4 +110,14 @@
     }
   }
 
+  img[lazy=loading] {
+    width: 20% !important;
+    height: auto !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 25% !important;
+    margin-bottom: 25% !important;
+  }
+
 </style>
