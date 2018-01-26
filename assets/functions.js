@@ -33,15 +33,14 @@ export const headTags = (title, desc, keywords, post) => {
   }
 }
 
-export const makeTwoDimensional = (elementsPerDimension, elements) => {
+export const makeTwoDimensional = (elements) => {
   let result = []
 
   elements.forEach((elem, i, arr) => {
-    if (i % elementsPerDimension === 0) {
+    if (i % 2 === 0) {
       result.push([
         elements[i],
         elements[i+1],
-        elements[i+2]
       ])
     }
   })

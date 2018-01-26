@@ -1,12 +1,12 @@
 // big shortcoming of Vue here, I'm unable to use these sizes or media queries
 // without an external library or passing css strings around
+// Most of these are taken from bootstrap
 export const sizes = {
   ceiling: 99999,
-  desktop: 1200,
-  dablet: 1000,
-  tablet: 750,
-  phablet: 575,
-  phone: 450
+  extraLarge: 1200,
+  large: 992,
+  medium: 720,
+  small: 576
 }
 
 export const mediaQuery = (size, css) => {

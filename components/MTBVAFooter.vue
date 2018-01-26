@@ -1,10 +1,10 @@
 <template>
   <div class="mtbva-footer">
-    <div class="sponsors-container container">
+    <div class="sponsors-container">
       <div v-for="group in sponsorGroups"
            class="row">
           <div v-for="sponsor in group"
-               class="col-4">
+               class="col-6">
             <a :href="sponsor.url">
               <img :src="sponsor.img"
                    :class="sponsor.class"
@@ -36,7 +36,7 @@
   export default {
     computed: {
       sponsorGroups() {
-        return makeTwoDimensional(3, this.sponsors)
+        return makeTwoDimensional(this.sponsors)
       }
     },
     data() {
@@ -44,14 +44,19 @@
         img: s3StaticImg,
         sponsors: [
           {
-            img: `${s3StaticImg}va-blueridge.png`,
-            class: "blueridge",
-            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
+            img: `${s3StaticImg}jtrg.jpg`,
+            class: "jtrig",
+            url: "http://justtherightgear.com/"
           },
           {
             img: `${s3StaticImg}parkway.png`,
             class: "parkway",
             url: "http://parkwaybrewing.com/"
+          },
+          {
+            img: `${s3StaticImg}va-blueridge.png`,
+            class: "blueridge",
+            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
             img: `${s3StaticImg}starlight.gif`,
@@ -62,11 +67,6 @@
             img: `${s3StaticImg}sbc.gif`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
-          },
-          {
-            img: `${s3StaticImg}jtrg.jpg`,
-            class: "jtrig",
-            url: "http://justtherightgear.com/"
           },
           {
             img: `${s3StaticImg}east-coasters.jpg`,
@@ -121,17 +121,18 @@
     margin: auto;
     opacity: .85;
     padding: .5rem;
+    text-align: center;
   }
 
   @media screen and (max-width: 99999px) {
     .sponsors-container {
-      width: 75%;
+      width: 80%;
     }
   }
 
   @media screen and (max-width: 1000px) {
     .sponsors-container {
-      width: 85%;
+      width: 90%;
     }
   }
 
@@ -140,7 +141,7 @@
   }
 
   .parkway {
-    margin-top: 1rem;
+    margin-top: 2.7rem;
   }
 
   .blueridge {
@@ -158,12 +159,20 @@
   }
 
   .sbc {
-    margin-top: .7rem;
+    margin-top: 1rem;
   }
 
   .woods {
     margin-left: 1rem;
     margin-top: 2rem;
+  }
+
+  .bath {
+    margin-left: 1rem;
+  }
+
+  .tavern {
+    margin-left: 1rem;
   }
 
   .outdoor-trails {
