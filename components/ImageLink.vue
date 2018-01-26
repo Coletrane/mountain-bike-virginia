@@ -27,6 +27,12 @@
   div {
     min-height: 400px;
   }
+  @media (max-width: 576px) {
+    div {
+      min-height: 200px;
+    }
+  }
+
   img {
     width: 100%;
   }

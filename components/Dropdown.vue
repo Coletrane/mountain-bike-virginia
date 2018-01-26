@@ -13,7 +13,7 @@
          :class="expanded ? 'mtbva-dropdown-menu-show' : ''"
          aria-labelledby="dropdownMenuButton">
       <a v-for="item in items"
-         class="dropdown-item"
+         class="dropdown-item mtbva-dropdown-item"
          @click="select(item)">
         {{item.race}}
       </a>
@@ -65,7 +65,7 @@
     background-color: rgba(0,0,0, .25) !important;
     border-color: #000000 !important;
   }
-  .mtbva-dropdown:active .mtbva-dropdown.active {
+  .mtbva-dropdown:active, .mtbva-dropdown.active, .mtbva-dropdown-item:active, .mtbva-dropdown-item.active {
     background-color: #3d7635 !important;
     border-color: #3d7635 !important;
   }
@@ -77,4 +77,9 @@
   .mtbva-dropdown-menu-show {
     display: block !important;
   }
+
+  .mtbva-dropdown-item:active {
+    color: white !important;
+  }
+
 </style>
