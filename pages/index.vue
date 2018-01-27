@@ -176,7 +176,7 @@
     head() {
       return headTags(
         "Mountain Bike Virginia",
-        "Rides, Races, and Reviews. XXC VA race series. Just 40 more miles.",
+        "Rides and Races in the goldmine of biking that is Virginia. XXC VA race series blog and results postings. Bringing you the best trails, and rides in Virginia and beyond. Just 40 more miles. We cover all types of cycling from road, to gravel, to cross, and of course Mountain Bikes!",
         "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails",
         {
           imgSrc: foliage

@@ -15,7 +15,7 @@ module.exports = {
       {charset: "utf-8"},
       {name: "viewport", content: "width=device-width, initial-scale=1"},
       {name: "robots", content: "index, follow"},
-      {name: "revisit-after", content: "3 month"},
+      {name: "revisit-after", content: "1 month"},
       {name: "fb:app_id", content: "1426359417419881"}
     ],
     link: [
@@ -38,6 +38,10 @@ module.exports = {
       {rel: "icon", type: "image/x-icon", href: "/favicon.ico"}
     ],
     script: [
+      {
+        src: "/alter-meta.js",
+        type: "text/javascript"
+      },
       {
         src: "https://code.jquery.com/jquery-3.2.1.slim.min.js",
         integrity: "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN",
