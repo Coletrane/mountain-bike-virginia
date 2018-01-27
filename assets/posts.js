@@ -24,7 +24,7 @@ export const posts = {}
 posts.gravelocity2018 = {
   title: "Gravelocity 2018",
   subtitle: "From Gravel Dr. to the top of the Blue Ridge Parkway",
-  img: `${s3Pages}${routes.gravelocity2018}/`,
+  img: `${s3Pages}${routes.gravelocity2018}/bigfinish.jpg`,
   route: routes.gravelocity2018,
   author: cole
 }

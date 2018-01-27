@@ -17,7 +17,7 @@
         was none other than the great Wes Wilmer's house. Wilmer is a carbon Y-Bike riding, stud who eats centuries for
         breakfast, and we thank him for that. Oh and for letting us park at his house too.
       </div>
-      <blog-image :src="img +_'parking.jpg'"/>
+      <blog-image :src="img + 'parking.jpg'"/>
       <blog-image :src="img + 'wilmer-way.jpg'"/>
       <blog-image :src="img + 'wilmer.jpg'"/>
 
@@ -33,7 +33,7 @@
         elected to go down the other side, a crime in my mind considering that both sides of Boblett's gap have
         fantastic rolling humps that provide plenty of hangtime. Not fancying cracking my chainstays by catching air on
         a road (adventure) bike, we elected to go further north up The Parkway and descend Goose Creek Valley. If one
-        could be so bold as to call a section <i>Road Singletrack</i> Goose Creek Valley is it.
+        could be so bold as to call a section<i>Road Singletrack</i>Goose Creek Valley is it.
       </div>
       <blog-image :src="img + 'bobletts-bridge.jpg'"/>
       <div class="blog-p center caption">
@@ -41,10 +41,22 @@
       </div>
       <blog-image :src="img + 'top-of-bobletts.jpg'"/>
       <blog-image :src="img + 'bobletts-climb.jpg'"/>
-      <div class="blog-p center caption">
-        On the climb up these two nice blokes from Staunton and Fredricksburg asked me where the mountain bike trails
-        are in Roanoke. "Right here!" I said. All these gravel roads connect great trails like Spec Mines, Dody Ridge,
-        Glenwood Horse Trail, and we even passed Mineshaft on the way up Bobletts. At the top I pointed right and said:
+      <div class="blog-p">
+        On the climb up these two nice blokes, father and son, from Staunton and Fredricksburg asked me where the mountain bike trails
+        are in Roanoke. "Right here!" I said. All these gravel roads connect great trails like
+        <a href="https://www.strava.com/segments/2281160">
+          Spec Mines
+        </a>,
+        <a href="https://www.strava.com/segments/8886709">
+          Dody Ridge
+        </a>,
+        <a href="https://www.mtbproject.com/trail/7026114/glenwood-horse-trail-3004e-day-creek-to-bobletts-gap-rd">
+           The Glenwood Horse Trail
+          </a>, and we even passed
+        <a href="https://www.mtbproject.com/trail/7011050/mineshaft-trail-via-bobblets-gap">
+           Mineshaft
+        </a>
+        on the way up Bobletts. At the top I pointed right and said:
         "Oh by the way, thats the Appalacian Trail right there."
       </div>
       <blog-image :src="img + 'off-to-goosecreek.jpg'"/>
@@ -65,6 +77,7 @@
         At the top I met up with <a href="https://www.facebook.com/carlomcdy">Carlo Dy</a> and his gang of vandals from
         Roaonoke and Virginia Beach. We continued on to our target: Salt Pond Road.
       </div>
+      <blog-image :src="img + 'vandals.jpg'"/>
       <blog-image :src="img + 'great-valley.jpg'"/>
       <div class="blog-p center caption">
         Squad.
