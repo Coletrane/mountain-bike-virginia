@@ -124,15 +124,22 @@
     text-align: center;
   }
 
-  @media screen and (max-width: 99999px) {
+  .sponsors-container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  @media (min-width: 1200px) {
     .sponsors-container {
-      width: 65%;
+      margin-left: 8rem;
+      margin-right: 8rem;
     }
   }
 
-  @media screen and (max-width: 992px) {
+  @media (max-width: 575px) {
     .sponsors-container {
-      width: 90%;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
   }
 

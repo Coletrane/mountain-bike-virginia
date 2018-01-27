@@ -27,7 +27,7 @@ posts.middleMtMomma2018 = {
   img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
   route: "/",
   author: cole,
-  rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26768416&sampleGraph=true",
+  rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true",
   fbEvent: "https://www.facebook.com/events/371981453213164/",
   extraImgs: {
     logo: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,

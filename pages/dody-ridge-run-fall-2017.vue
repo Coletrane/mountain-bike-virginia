@@ -43,3 +43,11 @@
     }
   }
 </script>
+
+<style>
+  .author-container {
+    padding-top: 0 !important;
+    float: none !important;
+  }
+
+  </style>
