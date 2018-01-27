@@ -51,6 +51,16 @@
             <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
           </div>
         </post-card>
+        <post-card :post="posts.gravelocity2018">
+          <div slot="words">
+            <div class="promo">
+              Who wants to do a gravel ride? Okay how about a 54 mile one? Okay how about 20 degrees? Perfect. Let's ride. Once again Gravelocity had a great turnout with people coming from Fredricsburg, Virginia Beach, and even Cincinnati!
+            </div>
+          </div>
+          <div slot="media">
+            <image-link :post="posts.gravelocity2018"/>
+          </div>
+        </post-card>
         <post-card :post="posts.firstRide2018">
           <div slot="words">
             <div class="promo">

@@ -21,6 +21,14 @@ const corey = {
 
 export const posts = {}
 
+posts.gravelocity2018 = {
+  title: "Gravelocity 2018",
+  subtitle: "From Gravel Dr. to the top of the Blue Ridge Parkway",
+  img: `${s3Pages}${routes.gravelocity2018}/`,
+  route: routes.gravelocity2018,
+  author: cole
+}
+
 posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
   subtitle: "May 6, 2018",
