@@ -4,7 +4,12 @@ import {s3StaticImg} from '../routes'
 
 Vue.use(VueLazyload,{
   error: `${s3StaticImg}error.png`,
-  loading: `${s3StaticImg}loading.gif`
+  loading: `${s3StaticImg}loading.gif`,
+  observer: true,
+  observerOptions: {
+    rootMargin: '1000px',
+    threshold: 0
+  }
 })
 
 Vue.use(VueLazyload)
