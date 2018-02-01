@@ -13,13 +13,36 @@ const supportedImgFormats = [
   '.gif'
 ]
 
+// helpers for extracting filenames
+const noExtension = async (file) => {
+  let filename
+  await supportedImgFormats.forEach(async (format) => {
+    if (file.endsWith(format)) {
+      filename = await file.split(format)[0]
+    }
+  })
+
+  return filename
+}
+
+const justExtension = async (file) => {
+  let extension
+  await supportedImgFormats.forEach(async (format) => {
+    if (file.endsWith(format)) {
+        const extensionStart = file.indexOf(format)
+        extension = await file.slice(extensionStart)
+    }
+  })
+
+  return extension
+}
+
 let allFiles = []
 let imgFiles = []
 // Get all files in the S3 bucket
 allFiles = glob.sync(`${s3BucketDir}/**/*`)
 
 // Filter files out by our supported image filetypes
-// TODO: check if responsive sizes already exist
 allFiles.forEach(async (file) => {
     supportedImgFormats.forEach(async (format) => {
         if (file.endsWith(format)) {
@@ -27,6 +50,31 @@ allFiles.forEach(async (file) => {
         }
     })
 })
+
+// Filter files out if they already have their responsive counterparts
+const filterResponsive = async () => {
+  await imgFiles.forEach(async (file, i, arr) => {
+    let filename = await noExtension(file)
+    let extension = await justExtension(file)
+
+    // Check if its the base file
+    if (!file.includes('-480px') && !file.includes('-700px')) {
+      let mobile = imgFiles.findIndex((file) => file === `${filename}-480px${extension}`)
+      let desktop = imgFiles.findIndex((file) => file === `${filename}-700px${extension}`)
+
+      if (mobile > 0) {
+        await imgFiles.splice(mobile, 1)
+      }
+      if (desktop > 0) {
+        await imgFiles.splice(desktop, 1)
+      }
+      if (mobile > 0 && desktop > 0) {
+        await imgFiles.splice(i, 1)
+      }
+    }
+  })
+}
+
 
 // TODO: figure out what to do with GIFS
 // Resize and save as 480px and 700px
@@ -49,10 +97,10 @@ imgFiles.forEach(async (file) => {
           extension = await noPaths.split(".")[1]
         }
       })
-      newFile.resize(480, jimp.AUTO)
-        .write(`${noExtension}-480px.${extension}`)
-      newFile.resize(700, jimp.AUTO)
-        .write(`${noExtension}-700px.${extension}`)
+      // newFile.resize(480, jimp.AUTO)
+      //   .write(`${noExtension}-480px.${extension}`)
+      // newFile.resize(700, jimp.AUTO)
+      //   .write(`${noExtension}-700px.${extension}`)
     }
   })
 })
