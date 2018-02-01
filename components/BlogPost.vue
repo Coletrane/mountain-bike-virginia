@@ -6,7 +6,8 @@
       :title="post.title">
     </m-t-b-v-a-header>
     <div class="main-content">
-        <post-card :post="post">
+        <post-card :post="post"
+                   :links="false">
           <div slot="author">
           </div>
           <div slot="media">
@@ -35,12 +36,18 @@
       SocialActions,
       Author
     },
-    props: [
-      "headerHeight",
-      "image",
-      "post",
-      "inlineAuthor"
-    ]
+    props: {
+      headerHeight: {
+        type: Number
+      },
+      image: {
+        type: String,
+        required: true
+      },
+      post: {
+        required: true
+      }
+    }
   }
 </script>
 <style>

@@ -1,20 +1,26 @@
 <template>
   <card>
     <div slot="content">
-    <div class="words">
-      <div class="row">
-        <nuxt-link :to="post.route"
-                   class="col-9">
-          <h2 class="headline">{{post.title}}</h2>
-          <h4 class="subheading">{{post.subtitle}}</h4>
-          <slot name="author"/>
-        </nuxt-link>
-        <social-actions :post="post"
-                        class="col-3 social-right"/>
+      <div class="words">
+        <div class="row">
+          <div class="col-9">
+            <nuxt-link v-if="links"
+                       :to="post.route">
+              <h2 class="headline">{{post.title}}</h2>
+              <h4 class="subheading">{{post.subtitle}}</h4>
+              <slot name="author"/>
+            </nuxt-link>
+            <div v-else>
+              <h2 class="headline">{{post.title}}</h2>
+              <h4 class="subheading">{{post.subtitle}}</h4>
+            </div>
+          </div>
+          <social-actions :post="post"
+                          class="col-3 social-right"/>
+        </div>
+        <slot name="words"/>
       </div>
-      <slot name="words"/>
-    </div>
-    <slot name="media"/>
+      <slot name="media"/>
     </div>
   </card>
 </template>
@@ -27,6 +33,10 @@
     props: {
       post: {
         required: true
+      },
+      links: {
+        required: false,
+        default: true
       }
     },
     components: {
@@ -68,6 +78,5 @@
   img {
     width: 100%;
   }
-
 </style>
 
