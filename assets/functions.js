@@ -1,5 +1,6 @@
 import * as routes from '../routes'
-import * as resImg from '../responsive-imgs.config'
+// not sure why I have to require this, but can import routes.js
+const resImg = require('../responsive-imgs.config')
 
 export const headTags = (title, desc, keywords, post) => {
   let metas = [
