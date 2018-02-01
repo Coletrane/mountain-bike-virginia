@@ -1,21 +1,22 @@
-import * as routes from "../routes"
+import * as routes from '../routes'
+import * as resImg from '../responsive-imgs.config'
 
 export const headTags = (title, desc, keywords, post) => {
   let metas = [
-    {name: "description", content: desc},
-    {name: "keywords", content: keywords},
-    {name: "og:title", content: title},
-    {name: "og:description", content: desc},
-    {name: "og:type", content: "website"}
+    {name: 'description', content: desc},
+    {name: 'keywords', content: keywords},
+    {name: 'og:title', content: title},
+    {name: 'og:description', content: desc},
+    {name: 'og:type', content: 'website'}
   ]
   if (post.route) {
     metas.push({
-      name: "og:url", content: `${routes.baseUrl}/${post.route}`
+      name: 'og:url', content: `${routes.baseUrl}/${post.route}`
     })
   }
   if (post.imgSrc || post.img) {
     let fbImg = {
-      name: "og:image"
+      name: 'og:image'
     }
 
     if (post.imgSrc) {
@@ -40,10 +41,20 @@ export const makeTwoDimensional = (elements) => {
     if (i % 2 === 0) {
       result.push([
         elements[i],
-        elements[i+1],
+        elements[i + 1]
       ])
     }
   })
 
   return result
+}
+
+export const srcset = (src) => {
+  resImg.supportedImgFormats.forEach((format) => {
+    let filename = resImg.noExtension(src)
+    if (resImg.justExtension(src) === format) {
+      return `${filename}-${resImg.phone}${format} ${parseInt(resImg.phone)}w` +
+                `${filename}-${resImg.tablet}${format} ${parseInt(resImg.tablet)}w`
+    }
+  })
 }

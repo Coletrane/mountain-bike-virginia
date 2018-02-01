@@ -9,9 +9,11 @@
   "license": "MIT",
   "dependencies": {
     "@nuxtjs/bootstrap-vue": "^2.0.4",
+    "@nuxtjs/bulma": "^1.1.0",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "0.0.3",
     "bootstrap-vue": "^2.0.0-rc.1",
+    "fs": "0.0.1-security",
     "jquery": "^3.3.1",
     "modernizr": "^3.5.0",
     "nuxt": "^1.0.0",

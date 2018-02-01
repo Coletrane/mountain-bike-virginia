@@ -1,49 +1,17 @@
 const glob = require('glob')
 const jimp = require('jimp')
+const config = require('./responsive-imgs.config')
 
-// TODO: make this an npm package with readline
-let s3BucketDir = '../imgs'
-
-const supportedImgFormats = [
-  '.jpg',
-  '.jpeg',
-  '.png',
-  '.gif'
-]
-
-// helpers for extracting filenames
-const noExtension = async (file) => {
-  let filename
-  await supportedImgFormats.forEach(async (format) => {
-    if (file.endsWith(format)) {
-      filename = await file.split(format)[0]
-    }
-  })
-
-  return filename
-}
-
-const justExtension = async (file) => {
-  let extension
-  await supportedImgFormats.forEach(async (format) => {
-    if (file.endsWith(format)) {
-      const extensionStart = file.indexOf(format)
-      extension = await file.slice(extensionStart)
-    }
-  })
-
-  return extension
-}
-
+// Resize and rename images pipeline
 const getFiles = async () => {
 // Get all files in the S3 bucket
   let allFiles = []
-  allFiles = glob.sync(`${s3BucketDir}/**/*`)
+  allFiles = glob.sync(`${config.s3BucketDir}/**/*`)
 
   // Filter files out by our supported image filetypes
   let imgFiles = []
   allFiles.forEach(async (file) => {
-    supportedImgFormats.forEach(async (format) => {
+    config.supportedImgFormats.forEach(async (format) => {
       if (file.endsWith(format)) {
         await imgFiles.push(file)
       }
@@ -56,22 +24,22 @@ const getFiles = async () => {
 // Filter files out if they already have their responsive counterparts
 let filteredImgFiles = []
 const filterFiles = async (files) => {
-  for (const [i, file] of files.entries()) {
-    let filename = await noExtension(file)
-    let extension = await justExtension(file)
+  for (let file of files) {
+    let filename = await config.noExtension(file)
+    let extension = await config.justExtension(file)
 
     // Check if its the base file
-    if (!file.includes('-480px') && !file.includes('-700px')) {
-      let mobile = await files.findIndex((file) => {
-        return file === `${filename}-480px${extension}`
+    if (!file.includes(`-${config.phone}`) && !file.includes(`-${config.tablet}`)) {
+      let hasPhone = await files.findIndex((file) => {
+        return file === `${filename}-${config.phone}${extension}`
       })
-      let tablet = await files.findIndex((file) => {
-        return file === `${filename}-700px${extension}`
+      let hasTablet = await files.findIndex((file) => {
+        return file === `${filename}-${config.tablet}${extension}`
       })
 
-      if (mobile === -1 ||
-        tablet === -1 ||
-        (mobile === -1 && tablet === -1)) {
+      if (hasPhone === -1 ||
+          hasTablet === -1 ||
+        (hasPhone === -1 && hasTablet === -1)) {
         await filteredImgFiles.push(file)
       }
     }
@@ -91,7 +59,7 @@ const resizeImages = (files) => {
         // Remove the file extension
         let noExtension
         let extension
-        await supportedImgFormats.forEach(async (format) => {
+        await config.supportedImgFormats.forEach(async (format) => {
           if (file.endsWith(format)) {
             // Split the path/filename with no extension
             noExtension = file.split(format)[0]
@@ -102,17 +70,17 @@ const resizeImages = (files) => {
             extension = await noPaths.split('.')[1]
           }
         })
-        newFile.resize(480, jimp.AUTO)
-          .write(`${noExtension}-480px.${extension}`)
-        newFile.resize(700, jimp.AUTO)
-          .write(`${noExtension}-700px.${extension}`)
+        newFile.resize(parseInt(config.phone), jimp.AUTO)
+          .write(`${noExtension}-${config.phone}.${extension}`)
+        newFile.resize(parseInt(config.tablet), jimp.AUTO)
+          .write(`${noExtension}-${config.tablet}.${extension}`)
       }
     })
   })
 }
 
 const main = async () => {
-  console.log(`Generating responsive images in directory: ${s3BucketDir}`)
+  console.log(`Generating responsive images in directory: ${config.s3BucketDir}`)
   const imgFiles = await getFiles()
   console.log(`${imgFiles.length} images found`)
   console.log('Filtering out files that already have responsive counterparts')
@@ -124,5 +92,3 @@ const main = async () => {
   console.log('Done!')
 }
 main()
-
-module.exports = supportedImgFormats
