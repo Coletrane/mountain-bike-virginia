@@ -1,6 +1,4 @@
 const glob = require('glob')
-const fs = require('fs')
-const cp = require('cp')
 const jimp = require('jimp')
 
 // TODO: make this an npm package with readline
@@ -29,8 +27,8 @@ const justExtension = async (file) => {
   let extension
   await supportedImgFormats.forEach(async (format) => {
     if (file.endsWith(format)) {
-        const extensionStart = file.indexOf(format)
-        extension = await file.slice(extensionStart)
+      const extensionStart = file.indexOf(format)
+      extension = await file.slice(extensionStart)
     }
   })
 
@@ -42,7 +40,7 @@ const getFiles = async () => {
   let allFiles = []
   allFiles = glob.sync(`${s3BucketDir}/**/*`)
 
-// Filter files out by our supported image filetypes
+  // Filter files out by our supported image filetypes
   let imgFiles = []
   allFiles.forEach(async (file) => {
     supportedImgFormats.forEach(async (format) => {
@@ -65,15 +63,15 @@ const filterFiles = async (files) => {
     // Check if its the base file
     if (!file.includes('-480px') && !file.includes('-700px')) {
       let mobile = await files.findIndex((file) => {
-        file === `${filename}-480px${extension}`
+        return file === `${filename}-480px${extension}`
       })
       let tablet = await files.findIndex((file) => {
-        file === `${filename}-700px${extension}`
+        return file === `${filename}-700px${extension}`
       })
 
-      if (mobile === -1
-        || tablet === -1
-        || (mobile === -1 && tablet === -1)) {
+      if (mobile === -1 ||
+        tablet === -1 ||
+        (mobile === -1 && tablet === -1)) {
         await filteredImgFiles.push(file)
       }
     }
@@ -88,7 +86,7 @@ const resizeImages = (files) => {
   files.forEach(async (file) => {
     jimp.read(file, async (err, newFile) => {
       if (err) {
-        throw err;
+        throw err
       } else {
         // Remove the file extension
         let noExtension
@@ -101,7 +99,7 @@ const resizeImages = (files) => {
             // Strip out the path and get just the file extension
             let noPaths = file.split('/')
             noPaths = noPaths[noPaths.length - 1]
-            extension = await noPaths.split(".")[1]
+            extension = await noPaths.split('.')[1]
           }
         })
         newFile.resize(480, jimp.AUTO)
@@ -126,6 +124,5 @@ const main = async () => {
   console.log('Done!')
 }
 main()
-
 
 module.exports = supportedImgFormats
