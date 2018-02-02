@@ -27,7 +27,7 @@
             <a v-if="buttonLink && showHeroButton"
                :href="buttonLink"
                class="button-link">
-              <button class="btn btn-outline-primary white-btn">
+              <button class="button white-btn">
                   {{button}}
               </button>
             </a>
@@ -40,7 +40,7 @@
 <script>
   import Navigation from "./Navigation"
   import Parallax from "./Parallax"
-  import {s3, s3StaticImg} from "../routes"
+  import {s3StaticImg} from "../routes"
 
   export default {
     name: "mtbva-header",
@@ -112,7 +112,7 @@
     padding: 1rem;
     text-align: center;
     position: absolute;
-    top: 75%;
+    top: 65%;
     left: 50%;
     width: 100%;
     height: 500px;
@@ -127,9 +127,13 @@
 
   .mtbva-title {
     font-size: 6rem;
+
+  }
+  .mtbva-subtitle{
+    font-size: 2rem;
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 700px) {
     .mtbva-title {
       font-size: 4rem;
     }

@@ -31,10 +31,11 @@
                 </a>
               </div>
               <div>
-                <a :href="posts.middleMtMomma2018.fbEvent">
+                <a :href="posts.middleMtMomma2018.fbEvent"
+                   class="facebook-details">
                   Details
                   <img :src="s3StaticImg + 'fb-link.svg'"
-                       style="width: 1.2rem; padding-bottom: .3rem;">
+                       class="facebook-logo">
                 </a>
               </div>
             </div>
@@ -143,7 +144,7 @@
       </div>
       <div v-if="page < maxPage"
            class="load-more">
-        <button class="btn btn-outline-primary white-btn"
+        <button class="button white-btn"
                 @click="loadMore()">
           Keep on Riding!
         </button>
@@ -238,4 +239,14 @@
     }
   }
 
+  .facebook-details {
+    position: relative;
+  }
+
+  .facebook-logo {
+    position: absolute;
+    top: 0;
+    left: 3.2rem;
+    width: 1.3rem;
+  }
 </style>

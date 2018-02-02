@@ -44,8 +44,11 @@
     }
   }
 </script>
-<!--Global styles here, all others are scoped-->
+
 <style>
+  body {
+      line-height: 1.3
+  }
   h1, h2, h3, h4 {
     font-family: 'Julius Sans One', sans-serif;
   }
@@ -60,17 +63,15 @@
 
   .white-btn {
     font-family: 'Julius Sans One', sans-serif;
+    background-color: transparent;
     color: white;
     border-color: white;
     font-size: 2rem;
   }
   .white-btn:hover {
-    background-color: rgba(0,0,0, 0.75);
+    background-color: rgba(0,0,0, 0.50);
     border-color: white;
-  }
-  .white-btn:active {
-    background-color: #3d7635 !important;
-    border-color: white !important;
+    color: white;
   }
 
   .app-fade-wrapper {

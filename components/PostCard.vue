@@ -3,8 +3,7 @@
     <div slot="content">
       <div class="words">
         <div class="columns is-mobile">
-          <div class="column
-                      is-9">
+          <div class="column is-10">
             <nuxt-link v-if="links"
                        :to="post.route">
               <h2 class="headline">{{post.title}}</h2>
@@ -17,13 +16,13 @@
             </div>
           </div>
           <social-actions :post="post"
-                          class="column
-                                 is-3
-                                 social-right"/>
+                          class="column is-2 social-right"/>
         </div>
         <slot name="words"/>
       </div>
-      <slot name="media"/>
+      <div class="media">
+        <slot name="media"/>
+      </div>
     </div>
   </card>
 </template>
@@ -60,14 +59,15 @@
     }
   }
 
+  .headline {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
   .subheading {
     font-family: 'Lato', sans-serif;
-  }
-</style>
-<style scoped>
-  a {
-    color: black;
-    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
   }
 
   .words {
@@ -77,6 +77,18 @@
   .social-right {
     text-align: right;
   }
+
+  .media {
+    line-height: 0;
+  }
+</style>
+<style scoped>
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+
 
   img {
     width: 100%;
