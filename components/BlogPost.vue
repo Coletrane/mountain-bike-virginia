@@ -3,8 +3,8 @@
     <m-t-b-v-a-header
       :header-height="headerHeight"
       :image="image"
-      :title="post.title">
-    </m-t-b-v-a-header>
+      :title="post.title"
+      subpage/>
     <div class="main-content">
         <post-card :post="post"
                    :links="false">
@@ -50,12 +50,7 @@
     }
   }
 </script>
-<style>
-  h1 {
-    text-shadow: 0px 5px 5px rgb(0, 0, 0);
-    font-size: 4rem;
-  }
-
+<style scoped>
   .words {
     padding: 0;
   }

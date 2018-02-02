@@ -40,7 +40,7 @@
             </div>
           </div>
             <div slot="media"
-                 style="margin-top: -4rem;">
+                 style="margin-top: -2.8rem;">
               <a :href="posts.middleMtMomma2018.fbEvent">
                 <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
                      class="image-smaller">

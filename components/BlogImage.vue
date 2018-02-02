@@ -1,6 +1,6 @@
 <template>
   <responsive-img :src="src"
-                  :class="portrait ? 'portrait' : 'landscape'"/>
+                  :portrait="portrait"/>
 </template>
 <script>
   import ResponsiveImg from "./ResponsiveImg"
@@ -23,14 +23,3 @@
     }
   }
 </script>
-<style scoped>
-  .landscape[lazy=loaded] {
-    width: 100% !important;
-  }
-
-  .portrait[lazy=loaded] {
-    width: 50% !important;
-    display: block;
-    margin: auto;
-  }
-</style>

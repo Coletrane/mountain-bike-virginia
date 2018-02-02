@@ -9,14 +9,15 @@
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
-            <h1 v-if="showTitle">
+            <h1 v-if="showTitle"
+                :class="subpage ? 'subpage-title' : 'mtbva-title'">
               {{title}}
             </h1>
           </transition>
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="subtitleEntered">
-            <h2 class="white--text headline"
+            <h2 class="white--text headline mtbva-subtitle"
                 v-if="showSubtitle">
               {{subtitle}}
             </h2>
@@ -60,6 +61,11 @@
       title: {
         type: String,
         required: false
+      },
+      subpage : {
+        type: Boolean,
+        required: false,
+        default: false
       },
       subtitle: {
         type: String,
@@ -113,27 +119,43 @@
     transform: translate(-50%,-50%);
   }
 
-  h1 {
+  @media (max-width: 575px) {
+    .hero-content {
+      top: 60%;
+    }
+  }
+
+  .mtbva-title {
     font-size: 6rem;
   }
 
   @media (max-width: 575px) {
-    h1 {
+    .mtbva-title {
       font-size: 4rem;
     }
 
-    h2 {
+    .mtbva-subtitle {
       font-size: 1.5rem;
     }
   }
 
   @media (max-width: 450px) {
-    h1 {
+    .mtbva-title {
       font-size: 3rem;
     }
 
-    h2 {
+    .mtbva-subtitle {
       font-size: 1rem;
+    }
+  }
+
+  .subpage-title {
+    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    font-size: 4rem;
+  }
+  @media (max-width: 450px) {
+    .subpage-title {
+      font-size: 2.8rem;
     }
   }
 

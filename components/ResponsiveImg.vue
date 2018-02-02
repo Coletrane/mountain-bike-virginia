@@ -1,5 +1,6 @@
 <template>
-  <img v-lazy="url"/>
+  <img v-lazy="url"
+       :class="portrait ? 'portrait' : 'landscape'"/>
 </template>
 <script>
   import {
@@ -13,6 +14,9 @@
       src: {
         type: String,
         required: true
+      },
+      portrait: {
+        default: false
       }
     },
     computed: {
@@ -50,4 +54,22 @@
     margin-top: 25%;
     margin-bottom: 25%;
   }
+
+  .landscape[lazy=loaded] {
+    width: 100% !important;
+  }
+
+  .portrait[lazy=loaded] {
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  @media (max-width: 450px) {
+    .portrait[lazy=loaded] {
+      width: 100%;
+    }
+  }
+
+
 </style>
