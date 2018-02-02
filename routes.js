@@ -52,7 +52,7 @@ imgRoutes[appRoutesObj[creature2017Recap]] = "lumberjack.jpg"
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = "IMG_3009.jpg"
 imgRoutes[appRoutesObj[specMines29Oct17]] = "IMG_2795.jpg"
 imgRoutes[appRoutesObj[firstRide2018]] = "classic-shot-2018.jpg"
-imgRoutes[appRoutesObj[middleMtMomma2018]] = "mmm.jpg"
+imgRoutes[appRoutesObj[middleMtMomma2018]] = "mmm.png"
 imgRoutes[appRoutesObj[gravelocity2018]] = "bigfinish.jpg"
 
 const s3 = "http://d2i660bt0ywr9a.cloudfront.net"
