@@ -77,13 +77,13 @@
   }
 
     nav {
-      height: 150px;
+      height: 120px;
     }
     .mtbva {
-      width: 130px;
+      width: 110px;
     }
     .xxcva {
-      width: 170px;
+      width: 160px;
     }
     .nav-text {
       font-size: 1.5rem;
