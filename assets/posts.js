@@ -32,13 +32,13 @@ posts.gravelocity2018 = {
 posts.middleMtMomma2018 = {
   title: "Counties of Bath and Alleghany Middle Mountain Momma",
   subtitle: "May 6, 2018",
-  img: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
+  img: `${s3Pages}${routes.middleMtMomma2018}/mmm.jpg`,
   route: "/",
   author: cole,
   rwGps: "https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true",
   fbEvent: "https://www.facebook.com/events/371981453213164/",
   extraImgs: {
-    logo: `${s3Pages}${routes.middleMtMomma2018}/mmm.gif`,
+    logo: `${s3Pages}${routes.middleMtMomma2018}/mmm.jpg`,
     start: `${s3Pages}${routes.middleMtMomma2018}/mmm-start.gif`
   }
 }

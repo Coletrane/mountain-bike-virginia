@@ -9,7 +9,7 @@
     <span class="flex-inner inner-left">
       <nuxt-link to="/"
                  key="xxcva">
-        <img class="xxcva" :src="img + 'XXCVA.jpg'" alt="XXCVA">
+        <img class="xxcva" :src="img + 'xxcva.jpg'" alt="XXCVA">
       </nuxt-link>
     </span>
     <span class="flex-inner inner-right">

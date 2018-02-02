@@ -1,16 +1,14 @@
 <template>
-  <div>
   <nuxt-link
     :to="href ? href : post.route">
-    <img v-lazy="src ? src : post.img"
-         :data-srcset="srcset()"/>
+    <responsive-img :src="img"/>
   </nuxt-link>
-  </div>
 </template>
 <script>
-  import {srcset} from "../assets/functions";
+  import ResponsiveImg from "./ResponsiveImg"
 
   export default {
+    components: {ResponsiveImg},
     name: "image-link",
     props: {
       post: {
@@ -24,14 +22,12 @@
         type: String
       }
     },
+    components: {
+      ResponsiveImg
+    },
     computed: {
       img() {
         return this.src ? this.src : this.post.img
-      }
-    },
-    methods: {
-      srcset() {
-        console.log(srcset(this.img))
       }
     }
   }
@@ -40,6 +36,7 @@
   div {
     min-height: 400px;
   }
+
   @media (max-width: 576px) {
     div {
       min-height: 200px;

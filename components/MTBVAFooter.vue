@@ -59,12 +59,12 @@
             url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
-            img: `${s3StaticImg}starlight.gif`,
+            img: `${s3StaticImg}starlight.jpg`,
             class: "starlight",
             url: "https://www.starlightapparel.com/"
           },
           {
-            img: `${s3StaticImg}sbc.gif`,
+            img: `${s3StaticImg}sbc.jpg`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
           },
@@ -98,7 +98,7 @@
             url: "http://discoverbath.com/"
           },
           {
-            img: `${s3StaticImg}tavern.gif`,
+            img: `${s3StaticImg}tavern.jpg`,
             class: "tavern",
             url: "http://jackmasonstavern.com/"
           }

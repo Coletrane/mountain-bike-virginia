@@ -1,9 +1,10 @@
 <template>
-  <img v-lazy="src"
-       :class="portrait ? 'portrait' : 'landscape'">
+  <responsive-img :src="src"
+                  :class="portrait ? 'portrait' : 'landscape'"/>
 </template>
-
 <script>
+  import ResponsiveImg from "./ResponsiveImg"
+
   export default {
     name: "blog-image",
     props: {
@@ -16,6 +17,9 @@
         required: false,
         default: false
       }
+    },
+    components: {
+      ResponsiveImg
     }
   }
 </script>
@@ -28,15 +32,5 @@
     width: 50% !important;
     display: block;
     margin: auto;
-  }
-
-  img[lazy=loading] {
-    width: 20%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25%;
-    margin-bottom: 25%;
   }
 </style>

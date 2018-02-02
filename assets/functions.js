@@ -1,6 +1,5 @@
 import * as routes from '../routes'
-// not sure why I have to require this, but can import routes.js
-const resImg = require('../responsive-imgs.config')
+import * as resImg from '../responsive-imgs.config'
 
 export const headTags = (title, desc, keywords, post) => {
   let metas = [
@@ -50,12 +49,27 @@ export const makeTwoDimensional = (elements) => {
   return result
 }
 
-export const srcset = (src) => {
+// helpers for extracting filenamesn
+export const noExtension = (file) => {
+  let filename
   resImg.supportedImgFormats.forEach((format) => {
-    let filename = resImg.noExtension(src)
-    if (resImg.justExtension(src) === format) {
-      return `${filename}-${resImg.phone}${format} ${parseInt(resImg.phone)}w` +
-                `${filename}-${resImg.tablet}${format} ${parseInt(resImg.tablet)}w`
+    if (file.endsWith(format)) {
+      filename = file.split(format)[0]
     }
   })
+
+  return filename
 }
+
+export const justExtension = (file) => {
+  let extension
+  resImg.supportedImgFormats.forEach((format) => {
+    if (file.endsWith(format)) {
+      const extensionStart = file.indexOf(format)
+      extension = file.slice(extensionStart)
+    }
+  })
+
+  return extension
+}
+

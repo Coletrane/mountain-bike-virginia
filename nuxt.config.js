@@ -35,6 +35,10 @@ module.exports = {
         integrity: 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm',
         crossorigin: 'anonymous'
       },
+      {
+        rel: 'stylesheet',
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css',
+      },
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ],
     script: [
@@ -71,7 +75,6 @@ module.exports = {
         id: 'UA-107968765-1'
       }
     ],
-    '@nuxtjs/bulma'
   ],
   sitemap: {
     path: '/sitemap.xml',
