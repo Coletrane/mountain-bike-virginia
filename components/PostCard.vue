@@ -2,8 +2,9 @@
   <card>
     <div slot="content">
       <div class="words">
-        <div class="row">
-          <div class="col-9">
+        <div class="columns is-mobile">
+          <div class="column
+                      is-9">
             <nuxt-link v-if="links"
                        :to="post.route">
               <h2 class="headline">{{post.title}}</h2>
@@ -16,7 +17,9 @@
             </div>
           </div>
           <social-actions :post="post"
-                          class="col-3 social-right"/>
+                          class="column
+                                 is-3
+                                 social-right"/>
         </div>
         <slot name="words"/>
       </div>

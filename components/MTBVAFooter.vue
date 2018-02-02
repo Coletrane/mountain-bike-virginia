@@ -2,9 +2,9 @@
   <div class="mtbva-footer">
     <div class="sponsors-container">
       <div v-for="group in sponsorGroups"
-           class="row">
+           class="columns">
           <div v-for="sponsor in group"
-               class="col-6">
+               class="column is-half">
             <a :href="sponsor.url">
               <img :src="sponsor.img"
                    :class="sponsor.class"
