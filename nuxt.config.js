@@ -33,7 +33,16 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Julius+Sans+One|Lato'
       },
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'}
+    ],
+    script: [
+      {
+        src: '/defer-iframes.js',
+        type: 'text/javascript'
+      }
     ]
   },
   plugins: [

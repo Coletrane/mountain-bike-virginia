@@ -1,5 +1,5 @@
 <template>
-  <iframe :src="url"
+  <iframe :url="url"
           scrolling='no'>
   </iframe>
 </template>
@@ -11,6 +11,18 @@
         required: true,
         type: String
       }
+    },
+    mounted() {
+
+      setTimeout(() => {
+        if (this.$store.state.iframesDeferred) {
+          this.$el.src = this.url
+        }
+
+        if (!this.$el.url && !this.$store.state.iframesDeferred) {
+          this.$store.commit('deferIframes')
+        }
+      }, 500)
     }
   }
 </script>
