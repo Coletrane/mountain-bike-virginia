@@ -3,7 +3,7 @@
     <div slot="content">
       <div class="words">
         <div class="row">
-          <div class="col-10">
+          <div class="col-9 col-sm-10">
             <nuxt-link v-if="links"
                        :to="post.route">
               <h2 class="headline">{{post.title}}</h2>
@@ -16,7 +16,7 @@
             </div>
           </div>
           <social-actions :post="post"
-                          class="col-2 social-right"/>
+                          class="col-3 col-sm-2 social-right"/>
         </div>
         <slot name="words"/>
       </div>
