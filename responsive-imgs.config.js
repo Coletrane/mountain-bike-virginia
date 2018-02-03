@@ -4,7 +4,7 @@ const s3BucketDir = '../mtbva-s3-bucket/'
 const supportedImgFormats = [
   '.jpg',
   '.jpeg',
-  '.png',
+  '.png'
 ]
 const phone = '480px'
 const tablet = '700px'
@@ -15,4 +15,3 @@ module.exports = {
   tablet,
   supportedImgFormats
 }
-

@@ -72,4 +72,3 @@ export const justExtension = (file) => {
 
   return extension
 }
-

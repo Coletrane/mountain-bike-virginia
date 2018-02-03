@@ -105,7 +105,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
   .hero-container {
   }
   .hero-content {
@@ -119,7 +119,7 @@
     transform: translate(-50%,-50%);
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 720px) {
     .hero-content {
       top: 60%;
     }
@@ -129,11 +129,10 @@
     font-size: 6rem;
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 550px) {
     .mtbva-title {
       font-size: 4rem;
     }
-
     .mtbva-subtitle {
       font-size: 1.5rem;
     }
@@ -151,11 +150,11 @@
 
   .subpage-title {
     text-shadow: 0px 3px 3px rgb(0, 0, 0);
-    font-size: 4rem;
+    font-size: 5em;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
     .subpage-title {
-      font-size: 2.8rem;
+      font-size: 3rem;
     }
   }
 

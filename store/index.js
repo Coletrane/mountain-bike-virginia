@@ -8,7 +8,7 @@ const createStore = () => {
     },
 
     mutations: {
-      changePage(state, page) {
+      changePage (state, page) {
         state.page = page
       }
     }

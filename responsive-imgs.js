@@ -4,7 +4,6 @@ const config = require('./responsive-imgs.config')
 
 // helpers for extracting filenamesn
 const noExtension = async (file) => {
-
   let filename
 
   await config.supportedImgFormats.forEach(async (format) => {
@@ -17,7 +16,6 @@ const noExtension = async (file) => {
 }
 
 const justExtension = async (file) => {
-
   let extension
 
   await config.supportedImgFormats.forEach(async (format) => {
@@ -32,7 +30,6 @@ const justExtension = async (file) => {
 
 // Resize and rename images pipeline
 const getFiles = async () => {
-
   // Get all files in the S3 bucket
   let allFiles = []
 
@@ -53,7 +50,6 @@ const getFiles = async () => {
 
 // Filter files out if they already have their responsive counterparts
 const filterFiles = async (files) => {
-
   let filteredImgFiles = []
 
   for (let file of files) {
@@ -83,9 +79,7 @@ const filterFiles = async (files) => {
 // TODO: figure out what to do with GIFS
 // Resize and save as 480px and 700px
 const resizeImages = (files) => {
-
   files.forEach(async (file) => {
-
     jimp.read(file, async (err, newFile) => {
       if (err) {
         throw err

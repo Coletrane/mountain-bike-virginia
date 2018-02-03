@@ -12,7 +12,7 @@ const sitemapRoutes = routes.appRoutes.map(route => {
 module.exports = {
   css: [
     {
-      src: 'bootstrap/dist/css/bootstrap.min.css',
+      src: 'bootstrap/dist/css/bootstrap.css',
       lang: 'css'
     },
     {
@@ -34,23 +34,6 @@ module.exports = {
         href: 'https://fonts.googleapis.com/css?family=Julius+Sans+One|Lato'
       },
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-    ],
-    script: [
-      // {
-      //   src: 'https://code.jquery.com/jquery-3.2.1.slim.min.js',
-      //   integrity: 'sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN',
-      //   crossorigin: 'anonymous'
-      // },
-      // {
-      //   src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
-      //   integrity: 'sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q',
-      //   crossorigin: 'anonymous'
-      // },
-      // {
-      //   src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
-      //   integrity: 'sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl',
-      //   crossorigin: 'anonymous'
-      // }
     ]
   },
   plugins: [
@@ -59,8 +42,8 @@ module.exports = {
   build: {
     extractCss: true,
     vendor: [
-      'bootstrap/dist/js/bootstrap.min.js',
-      'jquery/dist/jquery.slim.js'
+      '~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+      '~/node_modules/jquery/dist/jquery.slim.min.js'
     ]
   },
   modules: [

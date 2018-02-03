@@ -50,7 +50,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
   .words {
     padding: 0;
   }
