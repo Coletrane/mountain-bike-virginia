@@ -34,7 +34,6 @@
 
   th, td {
     border-bottom: 1px solid #b3b3b3;
-    padding-right: 3rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
   }

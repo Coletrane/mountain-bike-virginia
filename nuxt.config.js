@@ -49,11 +49,7 @@ module.exports = {
     {src: '~/plugins/vue-lazyload', ssr: false}
   ],
   build: {
-    extractCss: true,
-    vendor: [
-      '~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-      '~/node_modules/jquery/dist/jquery.slim.min.js'
-    ]
+    extractCss: true
   },
   modules: [
     '@nuxtjs/sitemap',

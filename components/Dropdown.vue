@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <div class="dropdown mtbva-dropedown-container">
     <button class="btn btn-primary dropdown-toggle mtbva-dropdown"
             type="button"
             id="dropdownMenuButton"
@@ -9,14 +9,17 @@
             @click="toggleDropdown()">
       {{currentItem}}
     </button>
-    <div class="dropdown-menu"
-         :class="expanded ? 'mtbva-dropdown-menu-show' : ''"
-         aria-labelledby="dropdownMenuButton">
-      <a v-for="item in items"
-         class="dropdown-item mtbva-dropdown-item"
-         @click="select(item)">
-        {{item.race}}
-      </a>
+    <div v-if="expanded"
+         class="mtbva-dropdown-menu">
+      <div class="dropdown-menu"
+           :class="expanded ? 'mtbva-dropdown-menu-show' : ''"
+           aria-labelledby="dropdownMenuButton">
+        <a v-for="item in items"
+           class="dropdown-item mtbva-dropdown-item"
+           @click="select(item)">
+          {{item.race}}
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -54,28 +57,38 @@
   }
 </script>
 <style>
+  .mtbva-dropedown-container {
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+    width: 315px;
+  }
+
   .mtbva-dropdown {
     background-color: transparent;
     border-color: #000000;
     color: #000000;
-    margin: 1rem;
-    padding: 1rem;
   }
+
   .mtbva-dropdown:hover {
-    background-color: rgba(0,0,0, .25) !important;
+    background-color: rgba(0, 0, 0, .25) !important;
     border-color: #000000 !important;
   }
+
   .mtbva-dropdown:active, .mtbva-dropdown.active, .mtbva-dropdown-item:active, .mtbva-dropdown-item.active {
     background-color: #3d7635 !important;
     border-color: #3d7635 !important;
   }
+
   .mtbva-dropdown:focus {
-    background-color: rgba(0,0,0, .25) !important;
+    background-color: rgba(0, 0, 0, .25) !important;
     border-color: #000000 !important;
   }
 
   .mtbva-dropdown-menu-show {
-    display: block !important;
+    display: inline;
+    top: 51px !important;
+    left: 13px !important;
   }
 
   .mtbva-dropdown-item:active {
