@@ -79,7 +79,7 @@
     "static": "node ./static.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
-    "test": "mocha ./test/global.spec.js --timeout 9999999",
+    "test": "NODE_ENV=test mocha ./test/global.spec.js --timeout 9999999",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh"
   },
