@@ -25,7 +25,7 @@
   import Dropdown from "../components/Dropdown"
   import ClassTable from "../components/ClassTable"
 
-  import {s3Pages, results} from "../routes"
+  import {s3Pages, results} from "../scripts/routes"
   import {resultsData} from "../assets/results"
   import {headTags} from "../assets/functions"
   import {bootstrapScripts} from "../assets/scripts"

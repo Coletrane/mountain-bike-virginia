@@ -1,5 +1,5 @@
 
-const routes = require('./routes')
+const routes = require('./scripts/routes')
 const sitemapRoutes = routes.appRoutes.map(route => {
   return {
     url: route,

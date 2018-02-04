@@ -1,5 +1,5 @@
-import * as routes from '../routes'
-import * as resImg from '../responsive-imgs.config'
+import * as routes from '../scripts/routes'
+import * as resImg from '../scripts/responsive-imgs.config'
 
 export const headTags = (title, desc, keywords, post) => {
   let metas = [

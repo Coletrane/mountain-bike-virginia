@@ -30,7 +30,7 @@
   </div>
 </template>
 <script>
-  import {s3StaticImg} from "../routes"
+  import {s3StaticImg} from "../scripts/routes"
   import {makeTwoDimensional} from "../assets/functions"
   
   export default {

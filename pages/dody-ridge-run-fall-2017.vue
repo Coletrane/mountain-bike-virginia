@@ -15,7 +15,7 @@
   import BlogPost from "../components/BlogPost.vue"
   import Youtube from "../components/Youtube.vue"
 
-  import {s3Pages} from "../routes"
+  import {s3Pages} from "../scripts/routes"
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 

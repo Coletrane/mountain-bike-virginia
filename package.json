@@ -10,7 +10,6 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "0.0.3",
-    "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
     "nuxt": "^1.3.0",
     "vue-lazyload": "^1.1.4"
@@ -35,6 +34,7 @@
     "eslint": "^4.16.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
@@ -79,9 +79,9 @@
     "static": "node ./static.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
-    "test": "mocha ./test/*.spec.js",
-    "deploy-prod": "node NODE_ENV=production ./scripts/deploy.js ",
-    "deploy-test": "node NODE_ENV=test ./scripts/deploy.js"
+    "test": "mocha ./test/global.spec.js --timeout 9999999",
+    "deploy-prod": "./scripts/deploy-prod.sh",
+    "deploy-test": "./scripts/deploy-test.sh"
   },
   "main": "dist/app.bundle.js"
 }

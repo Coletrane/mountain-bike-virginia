@@ -172,7 +172,7 @@
   import ImageLink from "../components/ImageLink.vue"
 
   import {posts} from "../assets/posts"
-  import {s3StaticImg, s3Pages, imgRoutes} from "../routes"
+  import {s3StaticImg, s3Pages, imgRoutes} from "../scripts/routes"
   import {headTags} from "../assets/functions"
   import RideWithGps from "../components/RideWithGps"
 

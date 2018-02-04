@@ -1,24 +1,54 @@
-const selenium = require('selenium-webdriver')
-const chai = require('chai')
-chai.use(require('chai-as-promised'))
-const expect = chai.expect
+const global = require('./global.spec')
+const By = require('selenium-webdriver').By
+describe('<head> tests', () => {
+  let driver
+  let expect
 
-const timeout = 10000
-let driver
-
-describe('index.vue test', () => {
-  before(() => {
-    driver = new selenium.Builder()
-      .withCapabilities(selenium.Capabilities.chrome())
-      .build()
-    driver.getWindowHandle()
+  before(async () => {
+    driver = await global.driver
+    expect = await global.expect
   })
 
-  after(() => {
-    driver.quit()
+  it('has the correct <title>', async () => {
+    expect(await driver.getTitle())
+      .to.equal('Mountain Bike Virginia')
   })
 
-  it('has the Mountain Bike Virginia title', () => {
-    expect(driver.getTitle()).to.contain('Mountain Bike Virginia')
+  describe('<meta> tests', () => {
+    it('has viewport', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='viewport']"))
+        .getAttribute('content'))
+        .to.equal('width=device-width,initial-scale=1')
+    })
+
+    it('has robots', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='robots']"))
+        .getAttribute('content'))
+        .to.equal('index, follow')
+    })
+
+    it('has revisit-after', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='revisit-after']"))
+        .getAttribute('content'))
+        .to.equal('1 month')
+    })
+
+    it('has fb:app_id', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='fb:app_id']"))
+        .getAttribute('content'))
+        .to.equal('1426359417419881')
+    })
+
+    it('has og:image', async () => {
+      let ogImage = await driver.findElement(
+        By.xpath("//meta[@name='og:image']"))
+        .getAttribute('content')
+      expect(ogImage.endsWith('foliage.png'))
+        .to.be.true
+    })
   })
 })

@@ -29,7 +29,7 @@
 </template>
 <script>
   import {boxShadow} from "../assets/styles"
-  import {s3StaticImg} from "../routes"
+  import {s3StaticImg} from "../scripts/routes"
 
   export default {
     name: "navigation",

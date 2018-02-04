@@ -40,7 +40,7 @@
 <script>
   import Navigation from "./Navigation"
   import Parallax from "./Parallax"
-  import {s3, s3StaticImg} from "../routes"
+  import {s3, s3StaticImg} from "../scripts/routes"
 
   export default {
     name: "mtbva-header",
