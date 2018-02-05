@@ -75,16 +75,16 @@
     "build": "npm run clean && nuxt build && nuxt generate",
     "build-check": "nuxt build --analyze",
     "generate": "nuxt generate",
-    "clean": "rimraf .nuxt && rimraf ./dist",
-    "start": "NODE_ENV=production node ./server.js",
-    "static": "node ./static.js",
-    "gen-imgs": "node ./scripts/responsive-imgs.js",
+    "clean": "rimraf .nuxt && rimraf dist",
+    "start": "NODE_ENV=production node server.js",
+    "static": "node static.js",
+    "gen-imgs": "node scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
-    "test": "NODE_ENV=test mocha ./test/global.spec.js --timeout 30000",
-    "unit-test": "NODE_ENV=test mocha ./test/unit",
-    "deploy-prod": "./scripts/deploy-prod.sh",
-    "deploy-test": "./scripts/deploy-test.sh",
-    "integrate": "npm run build && ./scripts/deploy-test.sh && npm test"
+    "test": "NODE_ENV=test mocha test/global.spec.js --timeout 30000",
+    "unit-test": "NODE_ENV=test mocha test/unit",
+    "deploy-prod": "scripts/deploy-prod.sh",
+    "deploy-test": "scripts/deploy-test.sh",
+    "integrate": "npm run build && scripts/deploy-test.sh && npm test"
   },
   "main": "dist/app.bundle.js"
 }
