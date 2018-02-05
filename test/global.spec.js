@@ -19,6 +19,7 @@ describe('Mountain Bike Virginia integration tests', () => {
       .withCapabilities(selenium.Capabilities.chrome())
       .build()
     await driver.get(testUrl)
+    exports.testUrl = testUrl
     exports.expect = expect
     exports.driver = driver
   })

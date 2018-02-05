@@ -84,7 +84,7 @@
     "unit-test": "NODE_ENV=test mocha ./test/unit",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
-    "integrate": "npm run build && ./scripts/deploy-test.sh && npm run integration-test"
+    "integrate": "npm run build && ./scripts/deploy-test.sh && npm test"
   },
   "main": "dist/app.bundle.js"
 }

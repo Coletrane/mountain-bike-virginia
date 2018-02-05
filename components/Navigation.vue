@@ -2,7 +2,8 @@
   <nav :style="navStyle">
     <span class="flex-outer">
       <nuxt-link to="/"
-                 key="mtbva">
+                 key="mtbva"
+                 id="mtbva-home-link">
         <img class="mtbva"
              id="mtbva-logo"
              alt='Mountain Bike Virginia'
@@ -11,8 +12,12 @@
     </span>
     <span class="flex-inner inner-left">
       <nuxt-link to="/"
-                 key="xxcva">
-        <img class="xxcva" :src="img + 'xxcva.jpg'" alt="XXCVA">
+                 key="xxcva"
+                 id="xxcva-home-link">
+        <img class="xxcva"
+             id="xxcva-logo"
+             :src="img + 'xxcva.jpg'"
+             alt="XXCVA Series. Just 40 more miles.">
       </nuxt-link>
     </span>
     <span class="flex-inner inner-right">
@@ -25,7 +30,8 @@
       <a class="nav-link"
          href="https://www.facebook.com/xxcva/">
         <img :src="img + 'fb.svg'"
-             class="fb"/>
+             class="fb"
+             id="fb-navlink-icon"/>
       </a>
     </span>
   </nav>
