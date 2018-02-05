@@ -1,5 +1,6 @@
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
+
 describe('<head> tests', () => {
   let driver
   let expect
@@ -49,6 +50,26 @@ describe('<head> tests', () => {
         .getAttribute('content')
       expect(ogImage.endsWith('foliage.png'))
         .to.be.true
+    })
+
+    it('has og:title', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='og:title']"))
+        .getAttribute('content'))
+        .to.equal('Mountain Bike Virginia')
+    })
+
+    it('has og:description', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='og:title']")))
+        .not.to.be.undefined
+    })
+
+    it('has og:url', async () => {
+      expect(await driver.findElement(
+        By.xpath("//meta[@name='og:url']"))
+        .getAttribute('content'))
+        .to.equal('http://bikeva.com')
     })
   })
 })

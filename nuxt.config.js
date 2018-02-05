@@ -26,7 +26,8 @@ module.exports = {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: 'robots', content: 'index, follow'},
       {name: 'revisit-after', content: '1 month'},
-      {name: 'fb:app_id', content: '1426359417419881'}
+      {name: 'fb:app_id', content: '1426359417419881'},
+      {name: 'og:url', content: routes.baseUrl}
     ],
     link: [
       {

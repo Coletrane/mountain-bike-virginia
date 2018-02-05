@@ -3,7 +3,10 @@
     <span class="flex-outer">
       <nuxt-link to="/"
                  key="mtbva">
-        <img class="mtbva" :src="img + 'mtbva.png'">
+        <img class="mtbva"
+             id="mtbva-logo"
+             alt='Mountain Bike Virginia'
+             :src="img + 'mtbva.png'">
       </nuxt-link>
     </span>
     <span class="flex-inner inner-left">
