@@ -1,5 +1,5 @@
 const path = require('path')
-const routes = require(path.joint(__dirname, 'scripts/routes'))
+const routes = require(path.join(__dirname, 'scripts/routes'))
 
 const sitemapRoutes = routes.appRoutes.map(route => {
   return {
