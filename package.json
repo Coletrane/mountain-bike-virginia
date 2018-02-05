@@ -74,6 +74,7 @@
     "dev": "nuxt",
     "build": "npm run clean && nuxt build && nuxt generate",
     "build-check": "nuxt build --analyze",
+    "postinstall" : "npm rebuild",
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf dist",
     "start": "NODE_ENV=production node server.js",
