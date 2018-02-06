@@ -62,10 +62,67 @@ describe('<m-t-b-v-a-header> tests', () => {
           .getAttribute('href'))
           .to.equal(testUrl)
       })
+
+      it('results link to /results', async () => {
+        expect(await nav.findElement(
+          By.id('results-link'))
+          .getAttribute('href'))
+          .to.equal(`${testUrl}results`)
+      })
+
+      it('facebook logo links to facebook', async () => {
+        expect(await nav.findElement(
+          By.id('facebook-nav-link'))
+          .getAttribute('href'))
+          .to.equal('https://www.facebook.com/xxcva/')
+      })
     })
 
     describe('behavior tests', () => {
+      it('navigates back to home with mtbva logo', async () => {
+        await nav.findElement(
+          By.id('results-link'))
+          .click()
 
+        expect(await driver.getCurrentUrl())
+          .to.equal(`${testUrl}results`)
+
+        // Find the new nav element since we navigated away from the original one
+        const secondNav = await driver.findElement(
+          By.xpath('//nav'))
+
+        // Testing mtbva logo link
+        await secondNav.findElement(
+          By.id('mtbva-home-link'))
+          .click()
+
+        expect(await driver.getCurrentUrl())
+          .to.equal(testUrl)
+      })
+
+      it('navigates back to home with xxcva logo', async () => {
+        const thirdNav = driver.findElement(
+          By.xpath('//nav'))
+
+        await thirdNav.findElement(
+          By.id('results-link'))
+          .click()
+
+        expect(await driver.getCurrentUrl())
+          .to.equal(`${testUrl}results`)
+
+        // Find the new nav element since we navigated away from the original one
+        const fourthNav = await driver.findElement(
+          By.xpath('//nav'))
+
+        // Testing mtbva logo link
+        await fourthNav.findElement(
+          By.id('xxcva-home-link'))
+          .click()
+
+        expect(await driver.getCurrentUrl())
+          .to.equal(testUrl)
+      })
     })
   })
 })

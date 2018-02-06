@@ -22,12 +22,14 @@
     </span>
     <span class="flex-inner inner-right">
       <nuxt-link to="/results"
-                 class="nav-text">
+                 class="nav-text"
+                 id="results-link">
         Results
       </nuxt-link>
     </span>
     <span class="flex-outer">
       <a class="nav-link"
+         id="facebook-nav-link"
          href="https://www.facebook.com/xxcva/">
         <img :src="img + 'fb.svg'"
              class="fb"
