@@ -245,6 +245,330 @@ export const resultsData = [
     }
   },
   {
+    race: 'Middle Mountain Momma 2017',
+    results: {
+      classes: [
+        {
+          name: 'XXC Single Speed - 39.5 miles',
+          riders: [
+            {
+              name: 'Scottie Pendleton',
+              time: '4:55:00'
+            },
+            {
+              name: 'Andy Cremeans',
+              time: '5:32:00'
+            }
+          ]
+        },
+        {
+          name: 'XXC Master Men 45+ - 39.5 miles',
+          riders: [
+            {
+              name: 'Wake Fulp',
+              time: '4:26:00'
+            },
+            {
+              name: 'Gordon Davies',
+              time: '4:36:00'
+            },
+            {
+              name: 'Chris Pohowsky',
+              time: '4:45:00'
+            },
+            {
+              name: 'Jeff Jennings',
+              time: '5:40:00'
+            },
+            {
+              name: 'John Stratiou',
+              time: '6:05:00'
+            },
+            {
+              name: 'Brian Bond',
+              time: '6:15:00'
+            },
+            {
+              name: 'Ben Faust',
+              time: '7:36:00'
+            },
+            {
+              name: 'Phil Rice',
+              time: '7:36:00'
+            },
+            {
+              name: 'Erin Setzer',
+              time: '5:24:00'
+            },
+            {
+              name: 'Sue George',
+              time: '6:08:00'
+            },
+            {
+              name: 'Lynn Faust',
+              time: '7:36:00'
+            }
+          ]
+        },
+        {
+          name: 'XXC Men - 39.5 miles',
+          riders: [
+            {
+              name: 'Ryan Serbe;',
+              time: '4:06:00'
+            },
+            {
+              name: 'Andy Rhodes',
+              time: '4:13:00'
+            },
+            {
+              name: 'Andrew Dunlap',
+              time: '4:15:00'
+            },
+            {
+              name: 'Adam Stephens',
+              time: '4:25:00'
+            },
+            {
+              name: 'Steve Cundy',
+              time: '4:52:00'
+            },
+            {
+              name: 'Joe Perpetua',
+              time: '4:52:00'
+            },
+            {
+              name: 'Doug Cubbage',
+              time: '5:06:00'
+            },
+            {
+              name: 'Tyler Graf',
+              time: '5:26:00'
+            },
+            {
+              name: 'Jeff Glenn',
+              time: '5:30:00'
+            },
+            {
+              name: 'Marty McKeon',
+              time: '5:31:00'
+            },
+            {
+              name: 'Reid Bailey',
+              time: '5:47:00'
+            },
+            {
+              name: 'Benjamin Grabaskas',
+              time: '6:24:00'
+            },
+            {
+              name: 'Jay Pelletier',
+              time: '6:25:00'
+            }
+          ]
+        },
+        {
+          name: 'Beginner Women (Open) - 11 Miles',
+          riders: [
+            {
+              name: 'Anna Sortore',
+              time: '1:27:00'
+            },
+            {
+              name: 'Mona Raza',
+              time: '2:11:00'
+            },
+            {
+              name: 'Richard Houge',
+              time: '2:26:00'
+            },
+            {
+              name: 'Michael Scales',
+              time: '2:31:00'
+            }
+          ]
+        },
+        {
+          name: 'Sport JV Women - 21 Miles',
+          riders: [
+            {
+              name: 'Ruth Brown',
+              time: '1:48:00'
+            }
+          ]
+        },
+        {
+          name: 'Sport Women (Open) - 21 Miles',
+          riders: [
+            {
+              name: 'Lynn Faust',
+              time: '3:33:00'
+            },
+            {
+              name: 'Ashley Mayer',
+              time: '3:34:00'
+            }
+          ]
+        },
+        {
+          name: 'Jr. Elementary Men (6th grade and under) - 6 Miles',
+          riders: [
+            {
+              name: 'Nik Stratiou',
+              time: '40:13'
+            }
+          ]
+        },
+        {
+          name: 'Jurnior Varsity (12-14) - 11 Miles',
+          riders: [
+            {
+              name: 'Thomas Phlegar',
+              time: '1:37:00'
+            },
+            {
+              name: 'Ryan Eads',
+              time: '2:01:00'
+            }
+          ]
+        },
+        {
+          name: 'Master Sport Women (45+) - 21 Miles',
+          riders: [
+            {
+              name: 'Catherine Parisian',
+              time: '4:51:00'
+            }
+          ]
+        },
+        {
+          name: 'Master Sport Men (55+) - 21 Miles',
+          riders: [
+            {
+              name: 'Pete Dailey',
+              time: '3:38:00'
+            },
+            {
+              name: 'Steve Johsnon',
+              time: '4:55:00'
+            }
+          ]
+        },
+        {
+          name: 'Master Sport Men (45-54) - 21 Miles',
+          riders: [
+            {
+              name: 'Matt Trybus',
+              time: '2:59:00'
+            },
+            {
+              name: 'Paul Bower',
+              time: '3:48:00'
+            },
+            {
+              name: 'Toshun Campbell',
+              time: '4:02:00'
+            }
+          ]
+        },
+        {
+          name: 'Master/Vet Sport Men (35-44) - 21 Miles',
+          riders: [
+            {
+              name: 'Georg Kaufman',
+              time: '3:06:00'
+            },
+            {
+              name: 'Richard McAfee',
+              time: '3:16:00'
+            },
+            {
+              name: 'Thomas Eads',
+              time: '3:40:00'
+            },
+            {
+              name: 'Derek Stroh',
+              time: '4:33:00'
+            },
+            {
+              name: 'Shaun Devane',
+              time: '4:48:00'
+            }
+          ]
+        },
+        {
+          name: 'Sport Men (Senior 19-34) - 21 Miles',
+          riders: [
+            {
+              name: "Mike O'Brien",
+              time: '2:51:00'
+            }
+          ]
+        },
+        {
+          name: 'Varsity Junior Expert (15-18) - 21 miles',
+          riders: [
+            {
+              name: 'Jonah Cooke',
+              time: '3:26:00'
+            },
+            {
+              name: 'Ryan Eads',
+              time: '2:01:00'
+            }
+          ]
+        },
+        {
+          name: 'John  Witherspoon',
+          riders: [
+            {
+              name: 'Seth Elleis',
+              time: '2:26:00'
+            },
+            {
+              name: 'Scott Paisley',
+              time: '2:30:00'
+            },
+            {
+              name: 'Adam Harnois',
+              time: '2:37:00'
+            }
+          ]
+        },
+        {
+          name: 'Pro/Expert Women - 21 miles',
+          riders: [
+            {
+              name: 'Julie Roach',
+              time: '4:17:00'
+            },
+            {
+              name: 'Ken Bell',
+              time: '2:13:00'
+            }
+          ]
+        },
+        {
+          name: 'Pro/Expert Men - 21 miles',
+          riders: [
+            {
+              name: 'Roy Pruett',
+              time: '2:52:00'
+            },
+            {
+              name: 'Brett Lyons',
+              time: '4:05:00'
+            },
+            {
+              name: 'Clay Lyons',
+              time: '4:05:00'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     race: 'Creature From Carvins Cove 2016',
     results: {
       classes: [
