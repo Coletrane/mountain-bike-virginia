@@ -5,7 +5,8 @@ const createStore = () => {
 
     state: {
       page: 1,
-      iframesDeferred: false
+      iframesDeferred: false,
+      currentRaceIdx: 0
     },
 
     mutations: {
@@ -14,6 +15,9 @@ const createStore = () => {
       },
       deferIframes (state) {
         state.iframesDeferred = true
+      },
+      changeRace (state, race) {
+        state.currentRaceIdx = race
       }
     }
 

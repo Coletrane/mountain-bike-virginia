@@ -1,3 +1,15 @@
+export const findRaceIndex = (name) => {
+  let result
+
+  resultsData.forEach((race, i, arr) => {
+    if (race.race === name) {
+      result = i
+    }
+  })
+
+  return result
+}
+
 export const resultsData = [
   {
     race: 'Creature From Carvins Cove 2017',

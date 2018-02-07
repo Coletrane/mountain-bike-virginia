@@ -78,6 +78,9 @@
         ]
       }
     },
+    created() {
+      this.selectRace(this.races[this.$store.state.race])
+    },
     methods: {
       initRaces() {
         // Deep copy

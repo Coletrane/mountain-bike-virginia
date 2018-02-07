@@ -81,11 +81,12 @@
     "static": "node ./static.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
-    "test": "NODE_ENV=test mocha ./test/global.spec.js --timeout 30000",
-    "unit-test": "NODE_ENV=test mocha ./test/unit",
+    "test-i": "NODE_ENV=test mocha ./test/integration/global.spec.js --timeout 30000",
+    "test-u": "NODE_ENV=test mocha --require babel-core/register ./test/unit/global.spec.js",
+    "test": "npm run test-i && npm run test-u",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
-    "integration": "npm run build && ./scripts/deploy-test.sh && npm test"
+    "integration": "npm run build && ./scripts/deploy-test.sh && npm run test-i"
   },
   "main": "dist/app.bundle.js"
 }
