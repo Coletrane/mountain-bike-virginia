@@ -25,8 +25,9 @@ describe('Mountain Bike Virginia integration tests', () => {
   })
 
   // Hook tests in here
-  importTest('./head.spec.js')
-  importTest('./components/navigation.spec.js')
+  importTest('./head.spec')
+  importTest('./components/navigation.spec')
+  importTest('./components/header.spec')
 
   after(() => {
     driver.quit()

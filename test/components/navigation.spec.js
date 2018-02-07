@@ -1,7 +1,7 @@
 const global = require('../global.spec')
 const By = require('selenium-webdriver').By
 
-describe('<m-t-b-v-a-header> tests', () => {
+describe('<navigation> tests', () => {
   let testUrl
   let driver
   let expect

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="mtbva-header">
         <navigation/>
         <parallax :src="image"
                   :height="headerHeight">
@@ -10,7 +10,8 @@
                                 name="two-sec-fade"
                                 v-on:enter="titleEntered">
                         <h1 v-if="showTitle"
-                            :class="subpage ? 'subpage-title' : 'mtbva-title'">
+                            :class="subpage ? 'subpage-title' : 'mtbva-title'"
+                            id="mtbva-title">
                             {{title}}
                         </h1>
                     </transition>
@@ -18,7 +19,8 @@
                                 name="two-sec-fade"
                                 v-on:enter="subtitleEntered">
                         <h2 class="white--text headline mtbva-subtitle"
-                            v-if="showSubtitle">
+                            v-if="showSubtitle"
+                            id="mtbva-subtitle">
                             {{subtitle}}
                         </h2>
                     </transition>
@@ -26,7 +28,8 @@
                                 name="two-sec-fade">
                         <a v-if="buttonLink && showHeroButton"
                            :href="buttonLink"
-                           class="button-link">
+                           class="button-link"
+                           id="events-button">npm
                             <button class="btn btn-outline-primary white-btn">
                                 {{button}}
                             </button>
@@ -40,7 +43,7 @@
 <script>
   import Navigation from "./Navigation"
   import Parallax from "./Parallax"
-  import {s3, s3StaticImg} from "../scripts/routes"
+  import {s3StaticImg} from "../scripts/routes"
 
   export default {
     name: "mtbva-header",
