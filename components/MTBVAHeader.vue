@@ -29,7 +29,7 @@
                         <a v-if="buttonLink && showHeroButton"
                            :href="buttonLink"
                            class="button-link"
-                           id="events-button">npm
+                           id="events-button">
                             <button class="btn btn-outline-primary white-btn">
                                 {{button}}
                             </button>

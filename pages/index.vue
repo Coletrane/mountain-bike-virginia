@@ -29,6 +29,10 @@
                 State Park.</a> The
                 first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
                 44mi.
+                <nuxt-link to="/results"
+                           @click.native="setMMM()">
+                  View the results from last year.
+                </nuxt-link>
                 <div>
                   <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
                     Register on BikeReg.
@@ -171,6 +175,7 @@
   import Youtube from "../components/Youtube.vue"
   import ImageLink from "../components/ImageLink.vue"
 
+  import {findRaceIndex} from "../assets/results"
   import {posts} from "../assets/posts"
   import {s3StaticImg, s3Pages, imgRoutes} from "../scripts/routes"
   import {headTags} from "../assets/functions"
@@ -218,6 +223,10 @@
       loadMore() {
         const newPage = this.page + 1
         this.$store.commit("changePage", newPage)
+      },
+      setMMM() {
+        let raceIdx = findRaceIndex('Middle Mountain Momma 2017')
+        this.$store.commit('changeRace', raceIdx)
       }
     }
   }

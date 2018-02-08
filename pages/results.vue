@@ -79,7 +79,7 @@
       }
     },
     created() {
-      this.selectRace(this.races[this.$store.state.race])
+      this.selectRace(this.races[this.$store.state.currentRaceIdx])
     },
     methods: {
       initRaces() {

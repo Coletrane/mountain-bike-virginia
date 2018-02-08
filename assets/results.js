@@ -162,7 +162,7 @@ export const resultsData = [
             },
             {
               name: 'Brian Bond',
-              time: '6:00'
+              time: '6'
             },
             {
               name: 'Todd Hoge',
@@ -265,11 +265,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Scottie Pendleton',
-              time: '4:55:00'
+              time: '4:55'
             },
             {
               name: 'Andy Cremeans',
-              time: '5:32:00'
+              time: '5:32'
             }
           ]
         },
@@ -278,47 +278,47 @@ export const resultsData = [
           riders: [
             {
               name: 'Wake Fulp',
-              time: '4:26:00'
+              time: '4:26'
             },
             {
               name: 'Gordon Davies',
-              time: '4:36:00'
+              time: '4:36'
             },
             {
               name: 'Chris Pohowsky',
-              time: '4:45:00'
+              time: '4:45'
             },
             {
               name: 'Jeff Jennings',
-              time: '5:40:00'
+              time: '5:40'
             },
             {
               name: 'John Stratiou',
-              time: '6:05:00'
+              time: '6:05'
             },
             {
               name: 'Brian Bond',
-              time: '6:15:00'
+              time: '6:15'
             },
             {
               name: 'Ben Faust',
-              time: '7:36:00'
+              time: '7:36'
             },
             {
               name: 'Phil Rice',
-              time: '7:36:00'
+              time: '7:36'
             },
             {
               name: 'Erin Setzer',
-              time: '5:24:00'
+              time: '5:24'
             },
             {
               name: 'Sue George',
-              time: '6:08:00'
+              time: '6:08'
             },
             {
               name: 'Lynn Faust',
-              time: '7:36:00'
+              time: '7:36'
             }
           ]
         },
@@ -327,55 +327,55 @@ export const resultsData = [
           riders: [
             {
               name: 'Ryan Serbe;',
-              time: '4:06:00'
+              time: '4:06'
             },
             {
               name: 'Andy Rhodes',
-              time: '4:13:00'
+              time: '4:13'
             },
             {
               name: 'Andrew Dunlap',
-              time: '4:15:00'
+              time: '4:15'
             },
             {
               name: 'Adam Stephens',
-              time: '4:25:00'
+              time: '4:25'
             },
             {
               name: 'Steve Cundy',
-              time: '4:52:00'
+              time: '4:52'
             },
             {
               name: 'Joe Perpetua',
-              time: '4:52:00'
+              time: '4:52'
             },
             {
               name: 'Doug Cubbage',
-              time: '5:06:00'
+              time: '5:06'
             },
             {
               name: 'Tyler Graf',
-              time: '5:26:00'
+              time: '5:26'
             },
             {
               name: 'Jeff Glenn',
-              time: '5:30:00'
+              time: '5:30'
             },
             {
               name: 'Marty McKeon',
-              time: '5:31:00'
+              time: '5:31'
             },
             {
               name: 'Reid Bailey',
-              time: '5:47:00'
+              time: '5:47'
             },
             {
               name: 'Benjamin Grabaskas',
-              time: '6:24:00'
+              time: '6:24'
             },
             {
               name: 'Jay Pelletier',
-              time: '6:25:00'
+              time: '6:25'
             }
           ]
         },
@@ -384,19 +384,19 @@ export const resultsData = [
           riders: [
             {
               name: 'Anna Sortore',
-              time: '1:27:00'
+              time: '1:27'
             },
             {
               name: 'Mona Raza',
-              time: '2:11:00'
+              time: '2:11'
             },
             {
               name: 'Richard Houge',
-              time: '2:26:00'
+              time: '2:26'
             },
             {
               name: 'Michael Scales',
-              time: '2:31:00'
+              time: '2:31'
             }
           ]
         },
@@ -405,7 +405,7 @@ export const resultsData = [
           riders: [
             {
               name: 'Ruth Brown',
-              time: '1:48:00'
+              time: '1:48'
             }
           ]
         },
@@ -414,11 +414,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Lynn Faust',
-              time: '3:33:00'
+              time: '3:33'
             },
             {
               name: 'Ashley Mayer',
-              time: '3:34:00'
+              time: '3:34'
             }
           ]
         },
@@ -436,11 +436,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Thomas Phlegar',
-              time: '1:37:00'
+              time: '1:37'
             },
             {
               name: 'Ryan Eads',
-              time: '2:01:00'
+              time: '2:01'
             }
           ]
         },
@@ -449,7 +449,7 @@ export const resultsData = [
           riders: [
             {
               name: 'Catherine Parisian',
-              time: '4:51:00'
+              time: '4:51'
             }
           ]
         },
@@ -458,11 +458,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Pete Dailey',
-              time: '3:38:00'
+              time: '3:38'
             },
             {
               name: 'Steve Johsnon',
-              time: '4:55:00'
+              time: '4:55'
             }
           ]
         },
@@ -471,15 +471,15 @@ export const resultsData = [
           riders: [
             {
               name: 'Matt Trybus',
-              time: '2:59:00'
+              time: '2:59'
             },
             {
               name: 'Paul Bower',
-              time: '3:48:00'
+              time: '3:48'
             },
             {
               name: 'Toshun Campbell',
-              time: '4:02:00'
+              time: '4:02'
             }
           ]
         },
@@ -488,23 +488,23 @@ export const resultsData = [
           riders: [
             {
               name: 'Georg Kaufman',
-              time: '3:06:00'
+              time: '3:06'
             },
             {
               name: 'Richard McAfee',
-              time: '3:16:00'
+              time: '3:16'
             },
             {
               name: 'Thomas Eads',
-              time: '3:40:00'
+              time: '3:40'
             },
             {
               name: 'Derek Stroh',
-              time: '4:33:00'
+              time: '4:33'
             },
             {
               name: 'Shaun Devane',
-              time: '4:48:00'
+              time: '4:48'
             }
           ]
         },
@@ -513,7 +513,7 @@ export const resultsData = [
           riders: [
             {
               name: "Mike O'Brien",
-              time: '2:51:00'
+              time: '2:51'
             }
           ]
         },
@@ -522,11 +522,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Jonah Cooke',
-              time: '3:26:00'
+              time: '3:26'
             },
             {
               name: 'Ryan Eads',
-              time: '2:01:00'
+              time: '2:01'
             }
           ]
         },
@@ -535,15 +535,15 @@ export const resultsData = [
           riders: [
             {
               name: 'Seth Elleis',
-              time: '2:26:00'
+              time: '2:26'
             },
             {
               name: 'Scott Paisley',
-              time: '2:30:00'
+              time: '2:30'
             },
             {
               name: 'Adam Harnois',
-              time: '2:37:00'
+              time: '2:37'
             }
           ]
         },
@@ -552,11 +552,11 @@ export const resultsData = [
           riders: [
             {
               name: 'Julie Roach',
-              time: '4:17:00'
+              time: '4:17'
             },
             {
               name: 'Ken Bell',
-              time: '2:13:00'
+              time: '2:13'
             }
           ]
         },
@@ -565,15 +565,15 @@ export const resultsData = [
           riders: [
             {
               name: 'Roy Pruett',
-              time: '2:52:00'
+              time: '2:52'
             },
             {
               name: 'Brett Lyons',
-              time: '4:05:00'
+              time: '4:05'
             },
             {
               name: 'Clay Lyons',
-              time: '4:05:00'
+              time: '4:05'
             }
           ]
         }

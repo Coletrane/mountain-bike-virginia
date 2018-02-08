@@ -84,6 +84,7 @@
     "test-i": "NODE_ENV=test mocha ./test/integration/global.spec.js --timeout 30000",
     "test-u": "NODE_ENV=test mocha --require babel-core/register ./test/unit/global.spec.js",
     "test": "npm run test-i && npm run test-u",
+    "predeploy": "npm run build && npm test",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
     "integration": "npm run build && ./scripts/deploy-test.sh && npm run test-i"

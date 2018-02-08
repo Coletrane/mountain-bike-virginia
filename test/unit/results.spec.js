@@ -9,4 +9,9 @@ describe('results.js and results.vue test', () => {
     expect(results.resultsData[raceIdx].race)
       .to.equal(searchStr)
   })
+
+  it('should not find a race', () => {
+    expect(results.findRaceIndex('Rotor Meltdown'))
+      .to.be.undefined
+  })
 })
