@@ -3,7 +3,12 @@ const chai = require('chai')
 chai.use(require('chai-as-promised'))
 const expect = chai.expect
 
-const testUrl = 'http://aws-website-mountainbikevirginia-sbin6-test.s3-website-us-east-1.amazonaws.com/'
+let testUrl
+if (process.env.NODE_ENV === 'production') {
+  testUrl = 'http://bikeva.com/'
+} else {
+  testUrl = 'http://aws-website-mountainbikevirginia-sbin6-test.s3-website-us-east-1.amazonaws.com/'
+}
 
 const importTest = (path) => {
   describe(path, () => {
@@ -26,6 +31,7 @@ describe('Mountain Bike Virginia integration tests', () => {
 
   // Hook tests in here
   importTest('./head.spec')
+  importTest('./routes.spec')
   importTest('./components/navigation.spec')
   importTest('./components/header.spec')
 

@@ -50,12 +50,4 @@ describe('<m-t-b-v-a-header> tests', () => {
         .to.equal('https://www.facebook.com/pg/xxcva/events/')
     })
   })
-
-  describe('styles tests', () => {
-
-  })
-
-  describe('behavior tests', () => {
-
-  })
 })
