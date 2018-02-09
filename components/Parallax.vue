@@ -19,6 +19,27 @@
       jumbotron: Boolean,
       src: String
     },
+    created() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll())
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('scroll', this.handleScroll())
+      }
+    },
+    methods: {
+      handleScroll() {
+        let scrolled = window.pageYOffset
+        let limit = this.$el.offsetTop+ this.$el.offsetHeight
+        if(scrolled > el.offsetTop && scrolled <= limit) {
+          el.style.backgroundPositionY =  (scrolled - el.offsetTop) /1.5+ "px";
+        } else {
+          el.style.backgroundPositionY =  "0";
+        }
+      }
+    },
     computed: {
       styles() {
         return {
@@ -36,7 +57,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
