@@ -1,36 +1,72 @@
-const fns = require('../../assets/functions')
+// Use import when working with ES6 modules
+import {posts} from '../../assets/posts'
+import {headTags} from '../../assets/functions'
+
 const expect = require('./global.spec').expect
-const posts = require('../../assets/posts')
 
-describe('functions.js tests', () => {
-  describe('headTags tests', () => {
-    let head
+let head = headTags(
+  'title',
+  'description',
+  'keywords',
+  posts.creature2017Recap)
 
-    before(() => {
-      head = fns.headTags(posts.creature2017Recap)
-    })
+describe('headTags tests', () => {
+  it('should have a title tag', () => {
+    expect(head.title)
+      .to.equal('title')
+  })
+})
 
-    it('should have a title tag', () => {
-      expect(head.title.length > 0)
-        .to.be.true
-    })
-
-    describe('meta tags test', () => {
-      Object.keys(head.meta).forEach((tag) => {
-        if (tag === 'description') {
-          it('should have description', () => {
-            expect(head.meta[tag].length > 0)
-              .to.be.true
-          })
-        }
-
-        if (tag === 'keywords') {
-          it('should have keywords', () => {
-            epxect(head.meta[tag].length > 0)
-              .to.be.true
-          })
-        }
+describe('meta tags test', () => {
+  head.meta.forEach((meta, i, arr) => {
+    let content = head.meta[i].content
+    if (meta.name === 'description') {
+      it('should have description', () => {
+        expect(content)
+          .to.equal('description')
       })
-    })
+    }
+
+    if (meta.name === 'keywords') {
+      it('should have keywords', () => {
+        expect(content)
+          .to.equal('keywords')
+      })
+    }
+
+    if (meta.name === 'og:title') {
+      it('should have og:title', () => {
+        expect(content)
+          .to.equal('title')
+      })
+    }
+
+    if (meta.name === 'og:description') {
+      it('should have og:description', () => {
+        expect(content)
+          .to.equal('description')
+      })
+    }
+
+    if (meta.name === 'og:type') {
+      it('should have og:type', () => {
+        expect(content)
+          .to.equal('website')
+      })
+    }
+
+    if (meta.name === 'og:url') {
+      it('should have og:url', () => {
+        expect(content.length > 0)
+          .to.be.true
+      })
+    }
+
+    if (meta.name === 'og:image') {
+      it('should have og:image', () => {
+        expect(content.length > 0)
+          .to.be.true
+      })
+    }
   })
 })
