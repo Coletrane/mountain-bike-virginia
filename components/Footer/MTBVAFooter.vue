@@ -1,17 +1,10 @@
 <template>
   <div class="mtbva-footer">
     <div class="sponsors-container">
-      <div v-for="group in sponsorGroups"
-           class="row">
-          <div v-for="sponsor in group"
-               class="col-6">
-            <a :href="sponsor.url">
-              <img :src="sponsor.img"
-                   :class="sponsor.class"
-                   class="sponsor"/>
-            </a>
-          </div>
-      </div>
+      <logos-three-cols v-if="mobile"
+                        :sponsors="sponsors"/>
+      <logos-four-cols v-else
+                       :sponsors="sponsors"/>
     </div>
     <div class="copyright">
       <div>
@@ -30,33 +23,29 @@
   </div>
 </template>
 <script>
-  import {s3StaticImg} from "../scripts/routes"
-  import {makeTwoDimensional} from "../assets/functions"
-  
+  import {s3StaticImg} from "../../scripts/routes"
+  import LogosFourCols from './LogosFourCols'
+  import LogosThreeCols from "./LogosThreeCols";
+
   export default {
-    computed: {
-      sponsorGroups() {
-        return makeTwoDimensional(this.sponsors)
-      }
+    name: 'mtbva-footer',
+    components: {
+      LogosThreeCols,
+      LogosFourCols
     },
     data() {
       return {
         img: s3StaticImg,
         sponsors: [
           {
-            img: `${s3StaticImg}jtrg.jpg`,
-            class: "jtrig",
-            url: "http://justtherightgear.com/"
+            img: `${s3StaticImg}va-blueridge.jpg`,
+            class: "blueridge",
+            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
             img: `${s3StaticImg}parkway.png`,
             class: "parkway",
             url: "http://parkwaybrewing.com/"
-          },
-          {
-            img: `${s3StaticImg}va-blueridge.png`,
-            class: "blueridge",
-            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
           {
             img: `${s3StaticImg}starlight.png`,
@@ -67,6 +56,11 @@
             img: `${s3StaticImg}sbc.png`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
+          },
+          {
+            img: `${s3StaticImg}jtrg.jpg`,
+            class: "jtrg",
+            url: "http://justtherightgear.com/"
           },
           {
             img: `${s3StaticImg}east-coasters.jpg`,
@@ -89,20 +83,59 @@
             url: "http://www.outdoortrails.com/"
           },
           {
-            img: `${s3StaticImg}woods.png`,
-            class: "woods",
-            url: "http://woodsac.com/"
-          }, {
             img: `${s3StaticImg}bath.jpg`,
             class: "bath",
             url: "http://discoverbath.com/"
+          },
+          {
+            img: `${s3StaticImg}woods.png`,
+            class: "woods",
+            url: "http://woodsac.com/"
           },
           {
             img: `${s3StaticImg}tavern.png`,
             class: "tavern",
             url: "http://jackmasonstavern.com/"
           }
-        ]
+        ],
+        mobile: true,
+        width: 0
+      }
+    },
+    created() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize()
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('resize', this.handleResize)
+      }
+    },
+    methods: {
+      handleScroll() {
+        window.requestAnimationFrame(() => {
+          let scrolled = window.pageYOffset
+          let offsetOffset = 1000 // lol
+          let offset = this.$el.offsetTop - offsetOffset
+          let limit = this.$el.offsetTop + this.$el.offsetHeight
+          if (scrolled > offset && scrolled <= limit) {
+            this.$el.style.backgroundPositionY = `${(scrolled - offset) / -3}px`;
+          } else {
+            this.$el.style.backgroundPositionY = `0px`
+          }
+        })
+      },
+      handleResize() {
+        this.width = document.body.clientWidth
+      }
+    },
+    watch: {
+      width() {
+        this.mobile = document.body.clientWidth <= 700
       }
     }
   }
@@ -111,15 +144,22 @@
   .mtbva-footer {
     padding-top: 4rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg');
+    background-size: 3000px;
     background-position-x: center;
-    background-position-y: top;
-    background-repeat: repeat;
+    background-position-y: 0px;
+  }
+
+  @media (max-width: 700px) {
+    .mtbva-footer {
+      /*pixel pushing lol*/
+      background-size: 2270px;
+    }
   }
 
   .sponsors-container {
     background-color: white;
     margin: auto;
-    opacity: .85;
+    opacity: .75;
     padding: .5rem;
     text-align: center;
   }
@@ -141,49 +181,6 @@
       margin-left: 2rem;
       margin-right: 2rem;
     }
-  }
-
-  .sponsor {
-    width: 90%;
-  }
-
-  .parkway {
-    margin-top: 2.7rem;
-  }
-
-  .blueridge {
-    margin-top: 2rem;
-    margin-left: 1rem;
-  }
-
-  .starlight {
-    margin-top: 2rem;
-  }
-
-  .jtrig {
-    padding-left: 1rem;
-    margin-top: 2rem;
-  }
-
-  .sbc {
-    margin-top: 1rem;
-  }
-
-  .woods {
-    margin-left: 1rem;
-    margin-top: 2rem;
-  }
-
-  .bath {
-    margin-left: 1rem;
-  }
-
-  .tavern {
-    margin-left: 1rem;
-  }
-
-  .outdoor-trails {
-    margin-top: 1.5rem;
   }
 
   .copyright {

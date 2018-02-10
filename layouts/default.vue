@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import MTBVAFooter from "../components/MTBVAFooter.vue"
+  import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
 
   export default {
     components: {MTBVAFooter},

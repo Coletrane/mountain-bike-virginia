@@ -31,6 +31,7 @@
     },
     methods: {
       handleScroll() {
+        window.requestAnimationFrame(() => {
           let scrolled = window.pageYOffset
           let limit = this.$el.offsetTop + this.$el.offsetHeight
           if (scrolled > this.$el.offsetTop && scrolled <= limit) {
@@ -38,7 +39,8 @@
           } else {
             this.$el.style.backgroundPositionY = "0";
           }
-        }
+        })
+      }
     },
     computed: {
       styles() {
@@ -59,11 +61,10 @@
     z-index: 1;
     /*background-attachment: fixed;*/
     background-position-x: center;
-    background-position-y: 0px;
+    /*background-position-y: 0px;*/
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 
   .hero {
     color: #FFFFFF;

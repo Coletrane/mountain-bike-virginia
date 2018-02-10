@@ -28,7 +28,6 @@
   import {s3Pages, results} from "../scripts/routes"
   import {resultsData} from "../assets/results"
   import {headTags} from "../assets/functions"
-  import {bootstrapScripts} from "../assets/scripts"
   const podium = `${s3Pages}${results}/podium.png`
 
   export default {

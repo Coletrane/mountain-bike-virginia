@@ -34,21 +34,6 @@ export const headTags = (title, desc, keywords, post) => {
   }
 }
 
-export const makeTwoDimensional = (elements) => {
-  let result = []
-
-  elements.forEach((elem, i, arr) => {
-    if (i % 2 === 0) {
-      result.push([
-        elements[i],
-        elements[i + 1]
-      ])
-    }
-  })
-
-  return result
-}
-
 // helpers for extracting filenamesn
 export const noExtension = (file) => {
   let filename

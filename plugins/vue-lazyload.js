@@ -7,7 +7,7 @@ Vue.use(VueLazyload, {
   loading: `${s3StaticImg}loading.gif`,
   observer: true,
   observerOptions: {
-    rootMargin: '1000px',
+    rootMargin: '1500px',
     threshold: 0
   }
 })

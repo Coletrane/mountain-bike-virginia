@@ -11,7 +11,6 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "0.0.3",
     "font-awesome": "^4.7.0",
-    "jsdom": "^11.6.2",
     "nuxt": "^1.3.0",
     "vue-lazyload": "^1.1.4"
   },
@@ -85,11 +84,10 @@
     "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js",
     "test": "NODE_ENV=test npm run test-i && NODE_ENV=test npm run test-u",
     "test-prod": "NODE_ENV=production npm run test-i && NODE_ENV=production npm run test-u",
-    "predeploy": "npm run build && npm test",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
     "integration": "npm run build && ./scripts/deploy-test.sh && npm run test-i",
-    "deploy": "npm run integration && npm run test && npm run predeploy && npm run deploy-prod && npm run test-prod"
+    "deploy": "npm run build && npm run deploy-test && npm run test && npm run deploy-prod && npm run test-prod"
   },
   "main": "dist/app.bundle.js"
 }
