@@ -21,24 +21,24 @@
     },
     created() {
       if (process.browser) {
-        window.addEventListener('scroll', this.handleScroll())
+        window.addEventListener('scroll', this.handleScroll)
       }
     },
     destroyed() {
       if (process.browser) {
-        window.removeEventListener('scroll', this.handleScroll())
+        window.removeEventListener('scroll', this.handleScroll)
       }
     },
     methods: {
       handleScroll() {
-        let scrolled = window.pageYOffset
-        let limit = this.$el.offsetTop+ this.$el.offsetHeight
-        if(scrolled > el.offsetTop && scrolled <= limit) {
-          el.style.backgroundPositionY =  (scrolled - el.offsetTop) /1.5+ "px";
-        } else {
-          el.style.backgroundPositionY =  "0";
+          let scrolled = window.pageYOffset
+          let limit = this.$el.offsetTop + this.$el.offsetHeight
+          if (scrolled > this.$el.offsetTop && scrolled <= limit) {
+            this.$el.style.backgroundPositionY = (scrolled - this.$el.offsetTop) / 2 + "px";
+          } else {
+            this.$el.style.backgroundPositionY = "0";
+          }
         }
-      }
     },
     computed: {
       styles() {
@@ -58,16 +58,12 @@
     overflow: hidden;
     z-index: 1;
     /*background-attachment: fixed;*/
-    background-position: center;
+    background-position-x: center;
+    background-position-y: 0px;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  @media (max-width: 720px) {
-    .parallax {
-      background-attachment: scroll;
-    }
-  }
 
   .hero {
     color: #FFFFFF;
