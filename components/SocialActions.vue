@@ -39,7 +39,7 @@
           baseUrl + this.route
       },
       route() {
-        if (this.post.route) {
+        if (this.post.route && !this.post.route.includes('facebook')) {
           return this.post.route
         }
       }

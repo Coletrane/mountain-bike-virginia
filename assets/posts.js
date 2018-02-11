@@ -20,19 +20,20 @@ const corey = {
 
 export const posts = {}
 
-posts.gravelocity2018 = {
-  title: 'Gravelocity 2018',
-  subtitle: 'From Gravel Dr. to the top of the Blue Ridge Parkway',
-  img: `${routes.s3Pages}${routes.gravelocity2018}/bigfinish.jpg`,
-  route: routes.gravelocity2018,
-  author: cole
+posts.rockstarVa2018 = {
+  title: 'RockStar VA',
+  subtitle: 'April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA: 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)',
+  img: `${routes.s3Pages}${routes.rockstarVa2018}/rockstar.jpg`,
+  route: 'https://www.facebook.com/events/1583483341702188/',
+  author: cole,
+  fbEvent: 'https://www.facebook.com/events/1583483341702188/'
 }
 
 posts.middleMtMomma2018 = {
   title: 'Counties of Bath and Alleghany Middle Mountain Momma',
-  subtitle: 'May 6, 2018',
+  subtitle: 'Douthat State Park Discovery Center, May 6, 2018',
   img: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm.png`,
-  route: '/',
+  route: 'https://www.facebook.com/events/371981453213164/',
   author: cole,
   rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true',
   fbEvent: 'https://www.facebook.com/events/371981453213164/',
@@ -40,6 +41,14 @@ posts.middleMtMomma2018 = {
     logo: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm.png`,
     start: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm-start.gif`
   }
+}
+
+posts.gravelocity2018 = {
+  title: 'Gravelocity 2018',
+  subtitle: 'From Gravel Dr. to the top of the Blue Ridge Parkway',
+  img: `${routes.s3Pages}${routes.gravelocity2018}/bigfinish.jpg`,
+  route: routes.gravelocity2018,
+  author: cole
 }
 
 posts.firstRide2018 = {

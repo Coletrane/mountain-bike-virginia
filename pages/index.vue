@@ -13,6 +13,31 @@
                         appear>
         <div v-if="page >= 1"
              :key="1">
+          <post-card :post="posts.rockstarVa2018">
+            <div slot="words">
+              Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke.
+              <div>
+              <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
+              </div>
+              <div>
+                <a :href="posts.rockstarVa2018.fbEvent">
+                  Details
+                  <img :src="s3StaticImg + 'fb-link.svg'"
+                       class="fb-link-icon">
+                </a>
+              </div>
+            </div>
+            <div slot="media">
+              <!--TODO: get route out of posts-->
+              <a :href="posts.rockstarVa2018.fbEvent">
+                <img v-lazy="s3StaticImg + routes.rockstarVa2018 + '/ves.png'"
+                     class="image-smaller">
+              </a>
+              <image-link :post="posts.rockstarVa2018"
+                          :href="posts.rockstarVa2018.fbEvent"
+                          :src="s3StaticImg + routes.rockstarVa2018"/>
+            </div>
+          </post-card>
           <post-card :post="posts.middleMtMomma2018">
             <div slot="author">
               <h4 class="subheading">
@@ -42,7 +67,7 @@
                   <a :href="posts.middleMtMomma2018.fbEvent">
                     Details
                     <img :src="s3StaticImg + 'fb-link.svg'"
-                         style="width: 1.2rem; padding-bottom: .3rem;">
+                         class="fb-link-icon">
                   </a>
                 </div>
               </div>
@@ -178,6 +203,7 @@
   import {findRaceIndex} from "../assets/results"
   import {posts} from "../assets/posts"
   import {s3StaticImg, s3Pages, imgRoutes} from "../scripts/routes"
+  import * as routes from "../scripts/routes"
   import {headTags} from "../assets/functions"
   import RideWithGps from "../components/RideWithGps"
 
@@ -207,6 +233,7 @@
         img: foliage,
         attachPosts: false,
         posts: posts,
+        routes: routes,
         maxPage: 2,
         fbIcon: `${s3StaticImg}fb-black.svg`,
         mmmFb: "https://www.facebook.com/events/371981453213164/",
@@ -248,6 +275,11 @@
 
   .promo {
     font-size: 1rem;
+  }
+
+  .fb-link-icon {
+    width: 1.2rem;
+    padding-bottom: .3rem;
   }
 
   .image-smaller {

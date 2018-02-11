@@ -1,5 +1,5 @@
 // TODO: make this an npm package with readline
-const s3BucketDir = '../mtbva-s3-bucket/'
+const s3BucketDir = '../../mtbva-s3-bucket/'
 
 const supportedImgFormats = [
   '.jpg',
