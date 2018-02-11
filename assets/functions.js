@@ -5,18 +5,18 @@ export const headTags = (title, desc, keywords, post) => {
   let metas = [
     {name: 'description', content: desc},
     {name: 'keywords', content: keywords},
-    {name: 'og:title', content: title},
-    {name: 'og:description', content: desc},
-    {name: 'og:type', content: 'website'}
+    {property: 'og:title', content: title},
+    {property: 'og:description', content: desc},
+    {property: 'og:type', content: 'article'}
   ]
   if (post.route) {
     metas.push({
-      name: 'og:url', content: `${routes.baseUrl}/${post.route}`
+      property: 'og:url', content: `${routes.baseUrl}/${post.route}`
     })
   }
   if (post.imgSrc || post.img) {
     let fbImg = {
-      name: 'og:image'
+      property: 'og:image'
     }
 
     if (post.imgSrc) {

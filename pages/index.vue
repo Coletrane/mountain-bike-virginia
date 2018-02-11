@@ -233,6 +233,23 @@
         s3StaticImg: s3StaticImg
       }
     },
+    mounted() {
+      if (process.browser) {
+        // Change the og:image location based on the route
+        // This is only needed because the head() function above is not exposed to the Vue instance
+        let ogImage = document.querySelector("meta[property='og:image']")
+
+        if (ogImage) {
+          if (this.$route.name === routes.rockstarVa2018) {
+            ogImage.removeAttribute('content')
+            ogImage.setAttribute('content', `${s3Pages}${routes.rockstarVa2018}/${imgRoutes[routes.rockstarVa2018]}`)
+          } else if (this.$route.name === routes.middleMtMomma2018) {
+            ogImage.removeAttribute('content')
+            ogImage.setAttribute('content', `${s3Pages}${routes.middleMtMomma2018}/${imgRoutes[routes.middleMtMomma2018]}`)
+          }
+        }
+      }
+    },
     computed: {
       page() {
         return this.$store.state.page

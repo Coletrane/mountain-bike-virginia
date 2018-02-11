@@ -39,14 +39,14 @@ describe('<head> tests', () => {
 
     it('has fb:app_id', async () => {
       expect(await driver.findElement(
-        By.xpath("//meta[@name='fb:app_id']"))
+        By.xpath("//meta[@property='fb:app_id']"))
         .getAttribute('content'))
         .to.equal('1426359417419881')
     })
 
     it('has og:image', async () => {
       let ogImage = await driver.findElement(
-        By.xpath("//meta[@name='og:image']"))
+        By.xpath("//meta[@property='og:image']"))
         .getAttribute('content')
       expect(ogImage.endsWith('foliage.png'))
         .to.be.true
@@ -54,20 +54,20 @@ describe('<head> tests', () => {
 
     it('has og:title', async () => {
       expect(await driver.findElement(
-        By.xpath("//meta[@name='og:title']"))
+        By.xpath("//meta[@property='og:title']"))
         .getAttribute('content'))
         .to.equal('Mountain Bike Virginia')
     })
 
     it('has og:description', async () => {
       expect(await driver.findElement(
-        By.xpath("//meta[@name='og:title']")))
+        By.xpath("//meta[@property='og:title']")))
         .not.to.be.undefined
     })
 
     it('has og:url', async () => {
       expect(await driver.findElement(
-        By.xpath("//meta[@name='og:url']"))
+        By.xpath("//meta[@property='og:url']"))
         .getAttribute('content'))
         .to.equal('http://bikeva.com')
     })
