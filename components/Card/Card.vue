@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import {boxShadow} from "../assets/styles"
+  import {boxShadow} from "../../assets/styles"
 
   export default {
     name: "card",

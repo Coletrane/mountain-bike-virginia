@@ -33,6 +33,7 @@ npm_debug.log
 !.idea/codeStyles/
 !.idea/cole-inman.iml
 !.idea/inspectionProfiles/
+!.idea/watcherTasks.xml,
 
 .nuxt
 dist/*

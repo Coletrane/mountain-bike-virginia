@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import {s3StaticImg} from "../scripts/routes"
+  import {s3StaticImg} from "../../scripts/routes"
 
   export default {
     name: "author",

@@ -25,7 +25,7 @@
 <script>
   import {s3StaticImg} from "../../scripts/routes"
   import LogosFourCols from './LogosFourCols'
-  import LogosThreeCols from "./LogosThreeCols";
+  import LogosThreeCols from "./LogosTwoCols";
 
   export default {
     name: 'mtbva-footer',
@@ -152,7 +152,7 @@
   @media (max-width: 700px) {
     .mtbva-footer {
       /*pixel pushing lol*/
-      background-size: 2270px;
+      background-size: 2795px;
     }
   }
 

@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-  import {baseUrl} from '../scripts/routes'
+  import {baseUrl} from '../../scripts/routes'
 
   export default {
     name: "social-actions",

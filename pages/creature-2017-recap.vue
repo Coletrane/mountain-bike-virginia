@@ -102,8 +102,8 @@
 </template>
 <script>
   import BlogPost from "../components/BlogPost.vue"
-  import Youtube from "../components/Youtube.vue"
-  import BlogImage from "../components/BlogImage.vue"
+  import Youtube from "../components/Iframes/Youtube.vue"
+  import BlogImage from "../components/Images/BlogImage.vue"
 
   import {s3Pages} from "../scripts/routes"
   import {posts} from "../assets/posts"

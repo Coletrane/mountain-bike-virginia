@@ -20,8 +20,8 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "../components/MTBVAHeader"
-  import Card from "../components/Card"
+  import MTBVAHeader from "../components/Header/MTBVAHeader"
+  import Card from "../components/Card/Card"
   import Dropdown from "../components/Dropdown"
   import ClassTable from "../components/ClassTable"
 

@@ -19,12 +19,12 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "./MTBVAHeader.vue"
-  import Youtube from "./Youtube.vue"
-  import PostCard from "./PostCard"
-  import RideWithGps from "./RideWithGps.vue"
-  import SocialActions from "./SocialActions.vue"
-  import Author from "./Author.vue"
+  import MTBVAHeader from "./Header/MTBVAHeader.vue"
+  import Youtube from "./Iframes/Youtube.vue"
+  import PostCard from "./Card/PostCard"
+  import RideWithGps from "./Iframes/RideWithGps.vue"
+  import SocialActions from "./Card/SocialActions.vue"
+  import Author from "./Card/Author.vue"
 
   export default {
     name: "blog-post",

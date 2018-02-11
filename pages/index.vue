@@ -20,21 +20,11 @@
               <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
               </div>
               <div>
-                <!--TODO: make this a component-->
-                <a :href="posts.rockstarVa2018.fbEvent">
-                  Details
-                  <img :src="s3StaticImg + 'fb-link.svg'"
-                       class="fb-link-icon">
-                </a>
+                <facebook-link :href="posts.rockstarVa2018.fbEvent"/>
               </div>
             </div>
             <div slot="media">
               <!--TODO: get route out of posts-->
-              <!--TODO: make this a component-->
-              <a :href="posts.rockstarVa2018.fbEvent">
-                <img v-lazy="s3Pages + routes.rockstarVa2018 + '/ves.png'"
-                     class="image-smaller">
-              </a>
               <image-link :post="posts.rockstarVa2018"
                           :href="posts.rockstarVa2018.fbEvent"
                           :src="s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
@@ -66,11 +56,7 @@
                   </a>
                 </div>
                 <div>
-                  <a :href="posts.middleMtMomma2018.fbEvent">
-                    Details
-                    <img :src="s3StaticImg + 'fb-link.svg'"
-                         class="fb-link-icon">
-                  </a>
+                  <facebook-link :href="posts.middleMtMomma2018.fbEvent"/>
                 </div>
               </div>
             </div>
@@ -197,23 +183,25 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "../components/MTBVAHeader.vue"
-  import PostCard from "../components/PostCard.vue"
-  import Youtube from "../components/Youtube.vue"
-  import ImageLink from "../components/ImageLink.vue"
+  import MTBVAHeader from "../components/Header/MTBVAHeader.vue"
+  import PostCard from "../components/Card/PostCard.vue"
+  import Youtube from "../components/Iframes/Youtube.vue"
+  import ImageLink from "../components/Images/ImageLink.vue"
 
   import {findRaceIndex} from "../assets/results"
   import {posts} from "../assets/posts"
   import {s3StaticImg, s3Pages, imgRoutes} from "../scripts/routes"
   import * as routes from "../scripts/routes"
   import {headTags} from "../assets/functions"
-  import RideWithGps from "../components/RideWithGps"
+  import RideWithGps from "../components/Iframes/RideWithGps"
+  import FacebookLink from "../components/Images/FacebookLink";
 
   const foliage = `${s3StaticImg}${imgRoutes["/"]}`
 
   export default {
     name: "blog",
     components: {
+      FacebookLink,
       RideWithGps,
       MTBVAHeader,
       PostCard,
@@ -277,11 +265,6 @@
 
   .promo {
     font-size: 1rem;
-  }
-
-  .fb-link-icon {
-    width: 1.2rem;
-    padding-bottom: .3rem;
   }
 
   .image-smaller {

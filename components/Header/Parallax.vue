@@ -35,9 +35,9 @@
           let scrolled = window.pageYOffset
           let limit = this.$el.offsetTop + this.$el.offsetHeight
           if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-            this.$el.style.backgroundPositionY = (scrolled - this.$el.offsetTop) / 2 + "px";
+            this.$el.style.backgroundPositionY = `${((scrolled - this.$el.offsetTop) / 2.5) - 150}px`;
           } else {
-            this.$el.style.backgroundPositionY = "0";
+            this.$el.style.backgroundPositionY = "-150px";
           }
         })
       }
@@ -59,9 +59,8 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    /*background-attachment: fixed;*/
     background-position-x: center;
-    /*background-position-y: 0px;*/
+    background-position-y: -150px;
     background-repeat: no-repeat;
     background-size: cover;
   }

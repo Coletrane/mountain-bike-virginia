@@ -6,7 +6,7 @@
   import {
     noExtension,
     justExtension
-  } from "../assets/functions"
+  } from "../../assets/functions"
 
   export default {
     name: "responsive-img",

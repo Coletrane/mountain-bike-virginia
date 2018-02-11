@@ -39,8 +39,8 @@
   </nav>
 </template>
 <script>
-  import {boxShadow} from "../assets/styles"
-  import {s3StaticImg} from "../scripts/routes"
+  import {boxShadow} from "../../assets/styles"
+  import {s3StaticImg} from "../../scripts/routes"
 
   export default {
     name: "navigation",

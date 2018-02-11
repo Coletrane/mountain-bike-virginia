@@ -13,7 +13,7 @@
 </template>
 <script>
   import BlogPost from "../components/BlogPost.vue"
-  import Youtube from "../components/Youtube.vue"
+  import Youtube from "../components/Iframes/Youtube.vue"
 
   import {s3Pages} from "../scripts/routes"
   import {posts} from "../assets/posts"

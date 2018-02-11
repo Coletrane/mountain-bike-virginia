@@ -35,7 +35,7 @@
 </template>
 <script>
   import BlogPost from "../components/BlogPost.vue"
-  import BlogImage from "../components/BlogImage"
+  import BlogImage from "../components/Images/BlogImage"
 
   import {s3Pages} from "../scripts/routes"
   import {posts} from "../assets/posts"

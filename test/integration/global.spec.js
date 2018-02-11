@@ -20,21 +20,28 @@ describe('Mountain Bike Virginia integration tests', () => {
   let driver
 
   before(async () => {
-    driver = await new selenium.Builder()
-      .withCapabilities(selenium.Capabilities.chrome())
-      .build()
+    if (process.env.BROWSER === 'chrome') {
+      driver = await new selenium.Builder()
+        .withCapabilities(selenium.Capabilities.chrome())
+        .build()
+    } else if (process.env.BROWSER === 'safari') {
+      driver = await new selenium.Builder()
+        .withCapabilities(selenium.Capabilities.safari())
+        .build()
+    }
+
     await driver.get(testUrl)
     exports.testUrl = testUrl
     exports.expect = expect
     exports.driver = driver
   })
 
-  // Hook tests in here
-  // importTest('./head.spec')
-  // importTest('./routes.spec')
-  // importTest('./components/navigation.spec')
-  // importTest('./components/header.spec')
-  // importTest('./components/post-card.spec')
+  Hook tests in here
+  importTest('./head.spec')
+  importTest('./routes.spec')
+  importTest('./components/navigation.spec')
+  importTest('./components/header.spec')
+  importTest('./components/post-card.spec')
   importTest('./components/social-actions.spec')
 
   after(() => {
