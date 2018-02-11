@@ -27,8 +27,7 @@ module.exports = {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: 'robots', content: 'index, follow'},
       {name: 'revisit-after', content: '1 week'},
-      {property: 'fb:app_id', content: '1426359417419881'},
-      {property: 'og:url', content: routes.baseUrl}
+      {property: 'fb:app_id', content: '1426359417419881'}
     ],
     link: [
       {
@@ -71,6 +70,9 @@ module.exports = {
     routes: sitemapRoutes
   },
   router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    },
     extendRoutes (rts, resolve) {
       // These are routes that don't have their own page yet, so the redirect to index.vue
       // Get the index component

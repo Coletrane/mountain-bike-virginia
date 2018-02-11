@@ -1,13 +1,14 @@
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
 const routes = require('../../scripts/routes')
-
-// routes that exist in the object but DON'T have an associated page
+const request = require('request-promise')
 
 describe('routes tests', () => {
   let driver
   let expect
   let testUrl
+  let routesWithHome = routes.routesWithIndex
+  routesWithHome.unshift('')
 
   before(async () => {
     driver = await global.driver
@@ -15,17 +16,103 @@ describe('routes tests', () => {
     testUrl = await global.testUrl
   })
 
-  it(`should have index.html for all the routes`, async () => {
-    for (const route of routes.routesWithIndex) {
-      console.log(`GET/${route}`)
-      await driver.get(`${testUrl}${route}`)
-
-      expect(await driver.findElement(
-        By.id('mtbva-home-link'))
-        .isDisplayed())
-        .to.be.true
+  for (const route of routesWithHome) {
+    let routeName
+    if (route === '') {
+      routeName = '/'
+    } else {
+      routeName = route
     }
-  })
+    describe(routeName, () => {
+      it('should have index.html', async () => {
+        await driver.get(`${testUrl}${route}`)
+
+        // Idk why Safari requires I do this
+        driver.sleep(3000)
+
+        let res = await request({
+          uri: `${testUrl}`,
+          resolveWithFullResponse: true
+        })
+
+        expect(await res.statusCode)
+          .to.equal(200)
+      })
+
+      it('has viewport', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@name='viewport']"))
+          .getAttribute('content'))
+          .to.equal('width=device-width,initial-scale=1')
+      })
+
+      it('has robots', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@name='robots']"))
+          .getAttribute('content'))
+          .to.equal('index, follow')
+      })
+
+      it('has revisit-after', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@name='revisit-after']"))
+          .getAttribute('content'))
+          .to.equal('1 week')
+      })
+
+      it('has fb:app_id', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@property='fb:app_id']"))
+          .getAttribute('content'))
+          .to.equal('1426359417419881')
+      })
+
+      describe('og:image', () => {
+        let ogImage
+
+        before(async () => {
+          ogImage = await driver.findElement(
+            By.xpath("//meta[@property='og:image']"))
+            .getAttribute('content')
+        })
+
+        it('has og:image meta tag', async () => {
+          expect(ogImage)
+            .not.to.be.undefined
+        })
+
+        it('can GET og:image url', async () => {
+          let res = await request({
+            uri: ogImage,
+            resolveWithFullResponse: true
+          })
+
+          expect(await res.statusCode)
+            .to.equal(200)
+        })
+      })
+
+      it('has og:title', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@property='og:title']"))
+          .getAttribute('content'))
+          .not.to.be.undefined
+      })
+
+      it('has og:description', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@property='og:description']")))
+          .not.to.be.undefined
+      })
+
+      it('has og:url', async () => {
+        expect(await driver.findElement(
+          By.xpath("//meta[@property='og:url']"))
+          .getAttribute('content'))
+          .to.equal(`http://bikeva.com/${route}`)
+      })
+    })
+  }
 
   after(async () => {
     await driver.get(testUrl)

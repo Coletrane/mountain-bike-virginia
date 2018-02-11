@@ -28,9 +28,7 @@ const appRoutes = [
 
 const routesWithNoIndex = [
   relaunch,
-  creature2016,
-  middleMtMomma2018,
-  rockstarVa2018
+  creature2016
 ]
 
 let routesWithIndex = []
@@ -65,7 +63,9 @@ imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[relaunch]] = 'rockymthi8.jpg'
 imgRoutes[appRoutesObj[creature2017Recap]] = 'lumberjack.jpg'
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
-imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_2795.jpg'
+imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'
+imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
+imgRoutes[appRoutesObj[creature2017Recap]] = 'wake-champ.jpg'
 imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'

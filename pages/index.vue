@@ -192,7 +192,7 @@
 
   import {findRaceIndex} from "../assets/results"
   import {posts} from "../assets/posts"
-  import {s3StaticImg, s3Pages, imgRoutes} from "../scripts/routes"
+  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from "../scripts/routes"
   import * as routes from "../scripts/routes"
   import {headTags} from "../assets/functions"
   import RideWithGps from "../components/Iframes/RideWithGps"
@@ -216,7 +216,7 @@
         "Rides and Races in the goldmine of biking that is Virginia. XXC VA race series blog and results postings. Bringing you the best trails, and rides in Virginia and beyond. Just 40 more miles. We cover all types of cycling from road, to gravel, to cross, and of course Mountain Bikes!",
         "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails",
         {
-          imgSrc: foliage
+          route: ''
         }
       )
     },
@@ -238,14 +238,25 @@
         // Change the og:image location based on the route
         // This is only needed because the head() function above is not exposed to the Vue instance
         let ogImage = document.querySelector("meta[property='og:image']")
+        let ogUrl = document.querySelector("meta[property='og:url']")
 
-        if (ogImage) {
+        if (ogImage && ogUrl) {
           if (this.$route.name === routes.rockstarVa2018) {
+
             ogImage.removeAttribute('content')
             ogImage.setAttribute('content', `${s3Pages}${routes.rockstarVa2018}/${imgRoutes[routes.rockstarVa2018]}`)
+
+            ogUrl.removeAttribute('content')
+            ogUrl.setAttribute('content', `${baseUrl}/${routes.rockstarVa2018}`)
+
           } else if (this.$route.name === routes.middleMtMomma2018) {
+
             ogImage.removeAttribute('content')
             ogImage.setAttribute('content', `${s3Pages}${routes.middleMtMomma2018}/${imgRoutes[routes.middleMtMomma2018]}`)
+
+            ogUrl.removeAttribute('content')
+            ogUrl.setAttribute('content', `${baseUrl}/${routes.middleMtMomma2018}`)
+
           }
         }
       }

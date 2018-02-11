@@ -34,7 +34,7 @@ describe('<head> tests', () => {
       expect(await driver.findElement(
         By.xpath("//meta[@name='revisit-after']"))
         .getAttribute('content'))
-        .to.equal('1 month')
+        .to.equal('1 week')
     })
 
     it('has fb:app_id', async () => {

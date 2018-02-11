@@ -9,24 +9,25 @@ export const headTags = (title, desc, keywords, post) => {
     {property: 'og:description', content: desc},
     {property: 'og:type', content: 'article'}
   ]
-  if (post.route) {
+
+  // '' is for the base url so we don't add another slash
+  if (post.route || post.route === '') {
     metas.push({
       property: 'og:url', content: `${routes.baseUrl}/${post.route}`
     })
   }
-  if (post.imgSrc || post.img) {
-    let fbImg = {
-      property: 'og:image'
-    }
 
-    if (post.imgSrc) {
-      fbImg.content = `${routes.s3}/${post.imgSrc}`
-    } else if (post.img) {
-      fbImg.content = post.img
-    }
-
-    metas.push(fbImg)
+  let fbImg = {
+    property: 'og:image'
   }
+
+  if (post.route === '') {
+    fbImg.content = `${routes.s3StaticImg}${routes.imgRoutes['/']}`
+  } else {
+    fbImg.content = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+  }
+
+  metas.push(fbImg)
 
   return {
     title: title,
