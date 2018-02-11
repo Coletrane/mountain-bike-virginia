@@ -16,14 +16,15 @@ describe('<m-t-b-v-a-header> tests', () => {
   describe('text tests', () => {
     it('should have a header', async () => {
       expect(await driver.findElement(
-        By.id('mtbva-header')))
-        .to.be.an('object')
+        By.id('mtbva-header'))
+        .isDisplayed())
+        .to.be.true
     })
 
     it('should have a title', async () => {
       expect(await driver.findElement(
         By.id('mtbva-title'))
-        .getText())
+        .getAttribute('innerText'))
         .to.equal('Mountain Bike Virginia')
     })
 

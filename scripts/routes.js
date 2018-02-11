@@ -29,7 +29,8 @@ const appRoutes = [
 const routesWithNoIndex = [
   relaunch,
   creature2016,
-  middleMtMomma2018
+  middleMtMomma2018,
+  rockstarVa2018
 ]
 
 let routesWithIndex = []

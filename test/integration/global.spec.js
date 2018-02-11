@@ -29,14 +29,14 @@ describe('Mountain Bike Virginia integration tests', () => {
         .withCapabilities(selenium.Capabilities.safari())
         .build()
     }
-
     await driver.get(testUrl)
     exports.testUrl = testUrl
     exports.expect = expect
     exports.driver = driver
   })
 
-  Hook tests in here
+  // Hook tests in here
+
   importTest('./head.spec')
   importTest('./routes.spec')
   importTest('./components/navigation.spec')

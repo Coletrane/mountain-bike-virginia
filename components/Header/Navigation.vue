@@ -56,10 +56,10 @@
 </script>
 <style scoped id="mobile">
 
-  </style>
+</style>
 <style scoped>
   nav {
-    background-color: rgba(0,0,0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     top: 0;
     z-index: 2;
@@ -67,6 +67,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 120px;
   }
 
   .flex-outer {
@@ -80,39 +81,44 @@
     padding-left: .5rem;
     padding-right: .5rem;
   }
+
   .inner-left {
     text-align: left;
   }
+
   .inner-right {
     text-align: right;
   }
 
-    nav {
-      height: 120px;
-    }
-    .mtbva {
-      width: 110px;
-    }
-    .xxcva {
-      width: 160px;
-    }
-    .nav-text {
-      font-size: 1.5rem;
-    }
-    .fb {
-      width: 2.5rem;
-    }
+  .mtbva {
+    width: 110px;
+  }
+
+  .xxcva {
+    width: 160px;
+  }
+
+  .nav-text {
+    font-size: 1.5rem;
+  }
+
+  .fb {
+    width: 2.5rem;
+  }
 
   @media (max-width: 575px) {
     nav {
       height: 100px;
     }
+
     .mtbva {
       width: 80px;
     }
+
     .xxcva {
       width: 130px;
     }
+
     .fb {
       width: 2rem;
     }
@@ -122,12 +128,15 @@
     nav {
       height: 75px;
     }
+
     .mtbva {
       width: 60px;
     }
+
     .xxcva {
       width: 70px;
     }
+
     .nav-text {
       font-size: 1.2rem;
     }
@@ -137,7 +146,6 @@
     text-decoration: none;
     color: white;
   }
-
 
 
 </style>

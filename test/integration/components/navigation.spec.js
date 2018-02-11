@@ -1,5 +1,6 @@
 const global = require('../global.spec')
 const By = require('selenium-webdriver').By
+const until = require('selenium-webdriver').until
 
 describe('<navigation> tests', () => {
   let testUrl
@@ -80,45 +81,44 @@ describe('<navigation> tests', () => {
 
     describe('behavior tests', () => {
       it('navigates back to home with mtbva logo', async () => {
-        await nav.findElement(
-          By.id('results-link'))
-          .click()
+        let resultsLink = await driver.wait(until.elementLocated(
+          By.id('results-link')), 10000)
+        await resultsLink.click()
+
+        // This is a hack because Safari is the new IE
+        await driver.sleep(3000)
 
         expect(await driver.getCurrentUrl())
           .to.equal(`${testUrl}results`)
 
-        // Find the new nav element since we navigated away from the original one
-        const secondNav = await driver.findElement(
-          By.xpath('//nav'))
-
         // Testing mtbva logo link
-        await secondNav.findElement(
-          By.id('mtbva-home-link'))
-          .click()
+        let homeLink = await driver.wait(until.elementLocated(
+          By.id('mtbva-home-link')), 10000)
+        await homeLink.click()
+
+        await driver.sleep(3000)
 
         expect(await driver.getCurrentUrl())
           .to.equal(testUrl)
       })
 
       it('navigates back to home with xxcva logo', async () => {
-        const thirdNav = driver.findElement(
-          By.xpath('//nav'))
+        let resultsLink = await driver.wait(until.elementLocated(
+          By.id('results-link')), 10000)
+        await resultsLink.click()
 
-        await thirdNav.findElement(
-          By.id('results-link'))
-          .click()
+        // This is a hack because Safari is the new IE
+        await driver.sleep(3000)
 
         expect(await driver.getCurrentUrl())
           .to.equal(`${testUrl}results`)
 
-        // Find the new nav element since we navigated away from the original one
-        const fourthNav = await driver.findElement(
-          By.xpath('//nav'))
-
         // Testing mtbva logo link
-        await fourthNav.findElement(
-          By.id('xxcva-home-link'))
-          .click()
+        let homeLink = await driver.wait(until.elementLocated(
+          By.id('xxcva-home-link')), 10000)
+        await homeLink.click()
+
+        await driver.sleep(3000)
 
         expect(await driver.getCurrentUrl())
           .to.equal(testUrl)

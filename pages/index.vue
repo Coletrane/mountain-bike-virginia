@@ -15,12 +15,14 @@
              :key="1">
           <post-card :post="posts.rockstarVa2018">
             <div slot="words">
+              <div class="promo">
               Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke.
               <div>
               <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
               </div>
               <div>
                 <facebook-link :href="posts.rockstarVa2018.fbEvent"/>
+              </div>
               </div>
             </div>
             <div slot="media">
