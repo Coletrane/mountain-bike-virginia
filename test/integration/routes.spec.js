@@ -39,6 +39,12 @@ describe('routes tests', () => {
           .to.equal(200)
       })
 
+      it('has title', async () => {
+        expect(await driver.findElement(
+          By.css('title')))
+          .not.to.be.undefined
+      })
+
       it('has viewport', async () => {
         expect(await driver.findElement(
           By.xpath("//meta[@name='viewport']"))
