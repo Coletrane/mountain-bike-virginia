@@ -15,9 +15,46 @@ describe('<post-card> tests', () => {
       By.className('card-container'))
   })
 
-  xit('headline and subtitle are displayed and have links if they need to', async () => {
-    expect(card.findElement(
-      By.xpath("//h2[@class='headline'"))
+  it('should have a headline', async () => {
+    expect(await card.findElement(
+      By.xpath("//h2[@class='headline']"))
+      .isDisplayed())
+      .to.be.true
+  })
+
+  it('should have a subheading', async () => {
+    expect(await card.findElement(
+      By.xpath("//h4[@class='subheading']"))
+      .isDisplayed())
+      .to.be.true
+  })
+
+  it('should have a linka around the headline and subheading', async () => {
+    let href = await card.findElement(
+      By.xpath('//a'))
+      .getAttribute('href')
+
+    expect(href.length > 0)
+      .to.be.true
+  })
+
+  it('should have <social-actions>', async () => {
+    expect(await card.findElement(
+      By.className('social'))
+      .isDisplayed())
+      .to.be.true
+  })
+
+  it('should have a promo section', async () => {
+    expect(await card.findElement(
+      By.className('promo'))
+      .isDisplayed())
+      .to.be.true
+  })
+
+  it('should have a media section', async () => {
+    expect(await card.findElement(
+      By.className('mtbva-media'))
       .isDisplayed())
       .to.be.true
   })

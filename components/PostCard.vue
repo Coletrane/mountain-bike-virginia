@@ -20,7 +20,9 @@
         </div>
         <slot name="words"/>
       </div>
-      <slot name="media"/>
+      <div class="mtbva-media">
+        <slot name="media"/>
+      </div>
     </div>
   </card>
 </template>

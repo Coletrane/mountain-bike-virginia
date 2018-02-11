@@ -15,6 +15,8 @@
   </div>
 </template>
 <script>
+  import {baseUrl} from '../scripts/routes'
+
   export default {
     name: "social-actions",
     props: {
@@ -25,16 +27,21 @@
     computed: {
       facebookLink() {
         return "http://www.facebook.com/share.php?u=" +
-          process.env.baseUrl + "/" + this.post.route
+          baseUrl + this.route
       },
       redditLink() {
         return "http://www.reddit.com/submit?url=" +
-          process.env.baseUrl + "/" + this.post.route
+          baseUrl + this.route
       },
       twitterLink() {
         return "http://twitter.com/home?status=" +
           this.post.title + " " +
-          this.baseUrl + "/" + this.post.route
+          baseUrl + this.route
+      },
+      route() {
+        if (this.post.route) {
+          return this.post.route
+        }
       }
     }
   }
