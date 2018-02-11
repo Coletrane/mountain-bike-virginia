@@ -55,6 +55,7 @@
     "prerender-spa-plugin": "^2.1.0",
     "sass-loader": "^6.0.6",
     "selenium-webdriver": "^4.0.0-alpha.1",
+    "sleep": "^5.1.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
@@ -86,8 +87,8 @@
     "test-prod": "NODE_ENV=production npm run test-i && NODE_ENV=production npm run test-u",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
-    "integration": "npm run build && ./scripts/deploy-test.sh && npm run test-i",
-    "deploy": "npm run build && npm run deploy-test && npm run test && npm run deploy-prod && npm run test-prod"
+    "integration": "npm run build && ./scripts/deploy-test.sh && npm run test",
+    "deploy": "./scripts/check-is-master.sh && npm run build && npm run deploy-test && node ./scripts/sleep.js && npm run test && npm run deploy-prod && node ./scripts/sleep.js && npm run test-prod"
   },
   "main": "dist/app.bundle.js"
 }

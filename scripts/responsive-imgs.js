@@ -2,7 +2,8 @@ const glob = require('glob')
 const jimp = require('jimp')
 const config = require('./responsive-imgs.config')
 
-// helpers for extracting filenamesn
+// TODO: either add responsiveness to all images, or whitelist images in /static
+// helpers for extracting filenames
 const noExtension = async (file) => {
   let filename
 

@@ -70,6 +70,9 @@ describe('<social-actions> tests', () => {
 
         expect(href.endsWith('//'))
           .to.be.false
+
+        expect(href.includes('http://bikeva.com/'))
+          .to.be.true
       })
     })
 
@@ -104,7 +107,6 @@ describe('<social-actions> tests', () => {
         expect(await twitterLinks.length > 0)
           .to.be.true
 
-        console.log(twitterLinks)
         twitterLinks.forEach(href => {
           console.log(`twitter links test:  ${href}`)
 

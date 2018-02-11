@@ -32,12 +32,12 @@
               <!--TODO: get route out of posts-->
               <!--TODO: make this a component-->
               <a :href="posts.rockstarVa2018.fbEvent">
-                <img v-lazy="s3StaticImg + routes.rockstarVa2018 + '/ves.png'"
+                <img v-lazy="s3Pages + routes.rockstarVa2018 + '/ves.png'"
                      class="image-smaller">
               </a>
               <image-link :post="posts.rockstarVa2018"
                           :href="posts.rockstarVa2018.fbEvent"
-                          :src="s3StaticImg + routes.rockstarVa2018"/>
+                          :src="s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
             </div>
           </post-card>
           <post-card :post="posts.middleMtMomma2018">

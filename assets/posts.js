@@ -21,8 +21,8 @@ const corey = {
 export const posts = {}
 
 posts.rockstarVa2018 = {
-  title: 'RockStar VA',
-  subtitle: 'April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA: 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)',
+  title: 'RockStar VA 270',
+  subtitle: 'April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA. 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)',
   img: `${routes.s3Pages}${routes.rockstarVa2018}/rockstar.jpg`,
   route: 'https://www.facebook.com/events/1583483341702188/',
   author: cole,

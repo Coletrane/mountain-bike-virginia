@@ -26,21 +26,19 @@
     },
     computed: {
       facebookLink() {
-        return "http://www.facebook.com/share.php?u=" +
-          baseUrl + this.route
+        return `http://www.facebook.com/share.php?u=${baseUrl}/${this.url}`
       },
       redditLink() {
-        return "http://www.reddit.com/submit?url=" +
-          baseUrl + this.route
+        return `http://www.reddit.com/submit?url=${baseUrl}/${this.url}`
       },
       twitterLink() {
-        return "http://twitter.com/home?status=" +
-          this.post.title + " " +
-          baseUrl + this.route
+        return `http://twitter.com/home?status=${this.post.title} ${baseUrl}/${this.url}`
       },
-      route() {
+      url() {
         if (this.post.route && !this.post.route.includes('facebook')) {
           return this.post.route
+        } else {
+          return ""
         }
       }
     }
