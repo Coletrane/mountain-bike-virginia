@@ -99,7 +99,7 @@ const resizeImages = (files) => {
           }
         })
 
-        let phoneFile = `${noExtension}-${config.phone}.${extension}`
+        // let phoneFile = `${noExtension}-${config.phone}.${extension}`
         let tabletFile = `${noExtension}-${config.tablet}.${extension}`
 
         // May turn this back on after some performance testing

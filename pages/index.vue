@@ -20,6 +20,7 @@
               <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
               </div>
               <div>
+                <!--TODO: make this a component-->
                 <a :href="posts.rockstarVa2018.fbEvent">
                   Details
                   <img :src="s3StaticImg + 'fb-link.svg'"
@@ -29,6 +30,7 @@
             </div>
             <div slot="media">
               <!--TODO: get route out of posts-->
+              <!--TODO: make this a component-->
               <a :href="posts.rockstarVa2018.fbEvent">
                 <img v-lazy="s3StaticImg + routes.rockstarVa2018 + '/ves.png'"
                      class="image-smaller">
