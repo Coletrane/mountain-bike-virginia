@@ -81,6 +81,7 @@
     "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node ./server.js",
     "static": "node ./static.js",
+    "sleep": "node ./scripts/sleep.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
     "test-i": "BROWSER=chrome mocha ./test/integration/global.spec.js --timeout 30000 && BROWSER=safari mocha ./test/integration/global.spec.js --timeout 30000",
@@ -90,8 +91,9 @@
     "test-prod": "NODE_ENV=production npm run test-i && NODE_ENV=production npm run test-u",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
-    "integration": "npm run build && ./scripts/deploy-test.sh && node ./scripts/sleep.js && npm run test",
-    "deploy": "./scripts/check-is-master.sh && npm run build && npm run deploy-test && node ./scripts/sleep.js && npm run test && npm run deploy-prod && node ./scripts/sleep.js && npm run test-prod"
+    "integration": "npm run build && ./scripts/deploy-test.sh && npm run sleep && npm run test",
+    "deploy-pipeline": "./scripts/check-is-master.sh && npm run build && npm run deploy-test && npm run sleep && npm run test && npm run deploy-prod && npm run sleep && npm run test-prod",
+    "prod-pipeline": "npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
   },
   "main": "dist/app.bundle.js"
 }

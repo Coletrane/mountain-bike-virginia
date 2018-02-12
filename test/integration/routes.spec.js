@@ -8,7 +8,7 @@ describe('routes tests', () => {
   let expect
   let testUrl
   let routesWithHome = routes.routesWithIndex
-  routesWithHome.unshift('')
+  routesWithHome.unshift('/')
 
   before(async () => {
     driver = await global.driver
@@ -17,15 +17,13 @@ describe('routes tests', () => {
   })
 
   for (const route of routesWithHome) {
-    let routeName
-    if (route === '') {
-      routeName = '/'
-    } else {
-      routeName = route
-    }
-    describe(routeName, () => {
+    describe(route, () => {
       it('should have index.html', async () => {
-        await driver.get(`${testUrl}${route}`)
+        if (route === '/') {
+          await driver.get(`${testUrl}`)
+        } else {
+          await driver.get(`${testUrl}${route}`)
+        }
 
         // Idk why Safari requires I do this
         driver.sleep(3000)
@@ -83,8 +81,8 @@ describe('routes tests', () => {
         })
 
         it('has og:image meta tag', async () => {
-          expect(ogImage)
-            .not.to.be.undefined
+          expect(ogImage.endsWith(routes.imgRoutes[route]))
+            .to.be.true
         })
 
         it('can GET og:image url', async () => {
@@ -112,15 +110,22 @@ describe('routes tests', () => {
       })
 
       it('has og:url', async () => {
+        let expected
+        if (route === '/') {
+          expected = `${routes.baseUrl}/`
+        } else {
+          expected = `${routes.baseUrl}/${route}`
+        }
         expect(await driver.findElement(
           By.xpath("//meta[@property='og:url']"))
           .getAttribute('content'))
-          .to.equal(`http://bikeva.com/${route}`)
+          .to.equal(expected)
       })
     })
   }
 
   after(async () => {
     await driver.get(testUrl)
+    await driver.sleep(3000)
   })
 })

@@ -1,6 +1,7 @@
 <template>
   <responsive-img :src="src"
-                  :portrait="portrait"/>
+                  :portrait="portrait"
+                  :alt="alt"/>
 </template>
 <script>
   import ResponsiveImg from "./ResponsiveImg"
@@ -16,6 +17,10 @@
         type: Boolean,
         required: false,
         default: false
+      },
+      alt: {
+        type: String,
+        default: 'Mountain Bike Virginia'
       }
     },
     components: {

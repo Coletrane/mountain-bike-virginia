@@ -4,15 +4,23 @@
       <div class="words">
         <div class="row">
           <div class="col-9 col-sm-10">
-            <nuxt-link v-if="links"
-                       :to="post.route">
+            <a v-if="link"
+               :href="link">
               <h2 class="headline">{{post.title}}</h2>
               <h4 class="subheading">{{post.subtitle}}</h4>
               <slot name="author"/>
-            </nuxt-link>
+            </a>
+            <router-link v-else-if="!link && post.route"
+                         :to="{name: post.route}"
+                         exact>
+              <h2 class="headline">{{post.title}}</h2>
+              <h4 class="subheading">{{post.subtitle}}</h4>
+              <slot name="author"/>
+            </router-link>
             <div v-else>
               <h2 class="headline">{{post.title}}</h2>
               <h4 class="subheading">{{post.subtitle}}</h4>
+              <slot name="author"/>
             </div>
           </div>
           <social-actions :post="post"
@@ -36,14 +44,18 @@
       post: {
         required: true
       },
-      links: {
-        required: false,
-        default: true
+      link: {
+        required: false
       }
     },
     components: {
       Card,
       SocialActions
+    },
+    computed: {
+      linkIsRoute() {
+        return !this.link.includes('http')
+      },
     }
   }
 </script>

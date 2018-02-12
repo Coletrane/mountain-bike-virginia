@@ -1,7 +1,8 @@
 <template>
   <nuxt-link
     :to="href ? href : post.route">
-    <responsive-img :src="img"/>
+    <responsive-img :src="img"
+                    :alt="post.title"/>
   </nuxt-link>
 </template>
 <script>

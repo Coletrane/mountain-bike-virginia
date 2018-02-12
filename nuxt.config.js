@@ -72,23 +72,23 @@ module.exports = {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
-    },
-    extendRoutes (rts, resolve) {
-      // These are routes that don't have their own page yet, so the redirect to index.vue
-      // Get the index component
-      let index = rts.filter(rt => rt.component.endsWith('index.vue'))[0]
-      rts.push(
-        {
-          name: routes.rockstarVa2018,
-          path: `/${routes.rockstarVa2018}`,
-          component: index.component
-        },
-        {
-          name: routes.middleMtMomma2018,
-          path: `/${routes.middleMtMomma2018}`,
-          component: index.component
-        }
-      )
     }
+    // extendRoutes (rts, resolve) {
+    //   // These are routes that don't have their own page yet, so the redirect to index.vue
+    //   // Get the index component
+    //   let index = rts.filter(rt => rt.component.endsWith('index.vue'))[0]
+    //   rts.push(
+    //     {
+    //       name: routes.rockstarVa2018,
+    //       path: `/${routes.rockstarVa2018}`,
+    //       component: index.component
+    //     },
+    //     {
+    //       name: routes.middleMtMomma2018,
+    //       path: `/${routes.middleMtMomma2018}`,
+    //       component: index.component
+    //     }
+    //   )
+    // }
   }
 }

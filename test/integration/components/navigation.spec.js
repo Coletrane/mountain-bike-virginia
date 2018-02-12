@@ -124,5 +124,10 @@ describe('<navigation> tests', () => {
           .to.equal(testUrl)
       })
     })
+
+    after(async () => {
+      await driver.get(testUrl)
+      await driver.sleep(5000)
+    })
   })
 })

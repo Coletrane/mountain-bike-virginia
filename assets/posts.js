@@ -24,7 +24,7 @@ posts.rockstarVa2018 = {
   title: 'RockStar VA 270',
   subtitle: 'April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA. 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)',
   img: `${routes.s3Pages}${routes.rockstarVa2018}/rockstar.jpg`,
-  route: 'https://www.facebook.com/events/1583483341702188/',
+  route: routes.rockstarVa2018,
   author: cole,
   fbEvent: 'https://www.facebook.com/events/1583483341702188/'
 }
@@ -33,7 +33,7 @@ posts.middleMtMomma2018 = {
   title: 'Counties of Bath and Alleghany Middle Mountain Momma',
   subtitle: 'Douthat State Park Discovery Center, May 6, 2018',
   img: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm.png`,
-  route: 'https://www.facebook.com/events/371981453213164/',
+  route: routes.middleMtMomma2018,
   author: cole,
   rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true',
   fbEvent: 'https://www.facebook.com/events/371981453213164/',

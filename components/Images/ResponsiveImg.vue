@@ -1,6 +1,7 @@
 <template>
   <img v-lazy="url"
-       :class="portrait ? 'portrait' : 'landscape'"/>
+       :class="portrait ? 'portrait' : 'landscape'"
+       :alt="alt"/>
 </template>
 <script>
   import {
@@ -17,6 +18,10 @@
       },
       portrait: {
         default: false
+      },
+      alt: {
+        type: String,
+        default: 'Mountain Bike Virginia'
       }
     },
     computed: {

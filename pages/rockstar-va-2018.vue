@@ -1,13 +1,15 @@
 <template>
   <home/>
 </template>
+
 <script>
-  import Home from '../components/Home'
+  import {posts} from "../assets/posts"
+  import {headTags} from "../assets/functions";
   import {title, description, keywords} from "../assets/index-head-tags";
-  import {headTags} from "../assets/functions"
+  import Home from "../components/Home";
 
   export default {
-    name: 'index',
+    name: 'rockstar-va-2018',
     components: {
       Home
     },
@@ -16,11 +18,7 @@
         title,
         description,
         keywords,
-        // Dummy "post" to simulate the base url
-        // empty string because headTags adds in a slash
-        {
-          route: ''
-        }
+        posts.rockstarVa2018
       )
     }
   }
