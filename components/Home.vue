@@ -17,7 +17,7 @@
                      :link="posts.rockstarVa2018.fbEvent">
             <div slot="words">
               <div class="promo">
-                Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke.
+                Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke. Ride as a team or solo (SPOT tracker required) and try to complete the 270, a feat yet to be accomplished.<a href="http://roanokemountainadventures.com/"> Roanoke Mountain Adventures</a> will be providing shuttles to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for shuttles.</a>
                 <div>
                   <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
                 </div>

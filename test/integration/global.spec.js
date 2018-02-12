@@ -37,9 +37,9 @@ describe('Mountain Bike Virginia integration tests', () => {
 
   // Hook tests in here
   // Component tests should come first to avoid safari issues
-  importTest('./components/header.spec')
-  importTest('./components/post-card.spec')
-  importTest('./components/social-actions.spec')
+  // importTest('./components/header.spec')
+  // importTest('./components/post-card.spec')
+  // importTest('./components/social-actions.spec')
   importTest('./routes.spec')
   importTest('./components/navigation.spec')
 
