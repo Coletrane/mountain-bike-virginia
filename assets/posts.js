@@ -96,7 +96,7 @@ posts.relaunch = {
   title: 'Full Site Relaunch!',
   subtitle: 'The same pirates are still at it.',
   img: `${routes.s3Pages}relaunch/rockymthi8.jpg`,
-  route: '/',
+  route: ' ',
   author: cole
 }
 
@@ -105,6 +105,6 @@ posts.creature2016 = {
   subtitle: 'Oct 2nd, 2016',
   altText: 'View the Results.',
   ytSrc: 'https://www.youtube.com/embed/i5Lxb4wtuCs',
-  route: '/',
+  route: ' ',
   author: kyle
 }

@@ -178,8 +178,9 @@
       <div v-if="page < maxPage"
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
-                @click="loadMore()">
-          Keep on Riding!
+                @click="loadMore()"
+                id="load-more-btn">
+          Keep Pedaling!
         </button>
       </div>
     </div>
