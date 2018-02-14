@@ -46,6 +46,7 @@ describe('Mountain Bike Virginia integration tests', () => {
   importTest('./components/home.spec')
   importTest('./components/social-actions.spec')
   importTest('./routes.spec')
+  importTest('./results.spec')
   importTest('./components/navigation.spec')
 
   after(() => {

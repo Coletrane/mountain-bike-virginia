@@ -17,7 +17,6 @@ const createStore = () => {
         state.iframesDeferred = true
       },
       changeRace (state, race) {
-        console.log(race)
         state.currentRaceIdx = race
       }
     }

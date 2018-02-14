@@ -14,4 +14,9 @@ describe('results.js and results.vue test', () => {
     expect(results.findRaceIndex('Rotor Meltdown'))
       .to.be.undefined
   })
+
+  it('should find a race regardless of capitalization', () => {
+    expect(results.findRaceIndex('middle mountain momma 2017'))
+      .not.to.be.undefined
+  })
 })

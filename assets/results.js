@@ -2,7 +2,7 @@ export const findRaceIndex = (name) => {
   let result
 
   resultsData.forEach((race, i, arr) => {
-    if (race.race === name) {
+    if (race.race.toLowerCase() === name.toLowerCase()) {
       result = i
     }
   })

@@ -2,4 +2,4 @@
 // while executing a deployment pipeline
 const sleep = require('sleep')
 
-sleep.sleep(60)
+sleep.sleep(30)

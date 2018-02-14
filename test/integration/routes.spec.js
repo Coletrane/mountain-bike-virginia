@@ -233,10 +233,9 @@ describe('routes tests', () => {
         }
       })
     })
-  }
 
   after(async () => {
-    await driver.get(testUrl)
-    await driver.sleep(3000)
+    // await driver.get(testUrl)
+    // await driver.sleep(3000)
   })
 })

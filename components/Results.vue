@@ -78,6 +78,7 @@
       }
     },
     created() {
+      // Keeping race selection in store instead of using a component param
       this.selectRace(this.races[this.$store.state.currentRaceIdx])
     },
     methods: {

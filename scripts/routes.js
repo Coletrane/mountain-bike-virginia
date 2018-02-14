@@ -1,4 +1,5 @@
 const results = 'results'
+const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const rockstarVa2018 = 'rockstar-va-2018'
 const middleMtMomma2018 = 'middle-mt-momma-2018'
 const gravelocity2018 = 'gravelocity-2018'
@@ -14,6 +15,7 @@ const creature2016 = 'creature-2016'
 // Keep non blog post routes at the top
 const appRoutes = [
   results,
+  resultsMiddleMountainMomma2017,
   rockstarVa2018,
   middleMtMomma2018,
   gravelocity2018,
@@ -60,6 +62,7 @@ appRoutes.forEach((route) => {
 
 imgRoutes['/'] = 'foliage.png'
 imgRoutes[appRoutesObj[results]] = 'podium.png'
+imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 imgRoutes[appRoutesObj[relaunch]] = 'rockymthi8.jpg'
 imgRoutes[appRoutesObj[creature2017Recap]] = 'lumberjack.jpg'
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
@@ -78,6 +81,7 @@ const baseUrl = 'http://bikeva.com'
 
 module.exports = {
   results,
+  resultsMiddleMountainMomma2017,
   rockstarVa2018,
   gravelocity2018,
   middleMtMomma2018,
