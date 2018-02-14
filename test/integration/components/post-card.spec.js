@@ -11,22 +11,27 @@ describe('<post-card> tests', () => {
     testUrl = await global.testUrl
     driver = await global.driver
     expect = await global.expect
+
     card = await driver.findElement(
       By.className('card-container'))
+
+    console.log(await card.findElement(
+      By.xpath("//h2[@class='headline']"))
+      .getText())
   })
 
   it('should have a headline', async () => {
     expect(await card.findElement(
       By.xpath("//h2[@class='headline']"))
-      .isDisplayed())
-      .to.be.true
+      .getText())
+      .not.to.be.undefined
   })
 
   it('should have a subheading', async () => {
     expect(await card.findElement(
       By.xpath("//h4[@class='subheading']"))
-      .isDisplayed())
-      .to.be.true
+      .getText())
+      .not.to.be.undefined
   })
 
   it('should have a linka around the headline and subheading', async () => {
@@ -40,22 +45,20 @@ describe('<post-card> tests', () => {
 
   it('should have <social-actions>', async () => {
     expect(await card.findElement(
-      By.className('social'))
-      .isDisplayed())
-      .to.be.true
+      By.className('social')))
+      .not.to.be.undefined
   })
 
   it('should have a promo section', async () => {
     expect(await card.findElement(
       By.className('promo'))
-      .isDisplayed())
-      .to.be.true
+      .getText())
+      .not.to.be.undefined
   })
 
   it('should have a media section', async () => {
     expect(await card.findElement(
-      By.className('mtbva-media'))
-      .isDisplayed())
-      .to.be.true
+      By.className('mtbva-media')))
+      .not.to.be.undefined
   })
 })

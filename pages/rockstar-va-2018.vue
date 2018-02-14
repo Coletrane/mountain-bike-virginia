@@ -5,7 +5,7 @@
 <script>
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions";
-  import {title, description, keywords} from "../assets/index-head-tags";
+  import {home} from "../assets/head-tags";
   import Home from "../components/Home";
 
   export default {
@@ -15,9 +15,9 @@
     },
     head() {
       return headTags(
-        title,
-        description,
-        keywords,
+        home.title,
+        home.description,
+        home.keywords,
         posts.rockstarVa2018
       )
     }

@@ -1,4 +1,0 @@
-// Exporting these so pages that render this one instead of something custom can use them
-export const title = 'Mountain Bike Virginia'
-export const description = 'Rides and Races in the goldmine of biking that is Virginia. XXC VA race series blog and results postings. Bringing you the best trails, and rides in Virginia and beyond. Just 40 more miles. We cover all types of cycling from road, to gravel, to cross, and of course Mountain Bikes!'
-export const keywords = "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, biking, adventure, blue ridge mountains, blue, ridge, virginia's blue ridge, cross country, enduro, xc, xxc, biking, ride, riding, racing, event, events, roanoke, virginia, southwestern virginia, va, blacksburg, harrisonburg, carvins cove"

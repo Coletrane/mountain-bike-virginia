@@ -1,6 +1,7 @@
 // Use import when working with ES6 modules
 import {posts} from '../../assets/posts'
 import {headTags} from '../../assets/functions'
+import {resultsMiddleMountainMomma2017} from '../../scripts/routes'
 
 const expect = require('./global.spec').expect
 
@@ -68,5 +69,22 @@ describe('meta tags test', () => {
           .to.be.true
       })
     }
+  })
+
+  describe('child route headTags test', () => {
+    let childHeadTags = headTags(
+      'title',
+      'description',
+      'keywords',
+      {
+        route: resultsMiddleMountainMomma2017
+      })
+
+    it('should have the correct og:image', () => {
+      let ogImage = childHeadTags.meta.filter(tag => tag.property === 'og:image')[0]
+
+      expect(ogImage.content.endsWith('pages/results/podium.png'))
+        .to.be.true
+    })
   })
 })

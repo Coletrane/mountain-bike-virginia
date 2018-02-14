@@ -134,7 +134,7 @@ describe('routes tests', () => {
               .to.be.true
           })
 
-          if (route !== 'results') {
+          if (!route.startsWith('results')) {
             it('should have a title', async () => {
               expect(await driver.findElement(
                 By.id('mtbva-title'))
@@ -175,7 +175,7 @@ describe('routes tests', () => {
           describe('<home> social links test', () => {
 
           })
-        } else if (route !== 'results') { // TODO: add social links to results
+        } else if (!route.startsWith('results')) { // TODO: add social links to results
           describe(`${route} social links test`, () => {
             let social
             let links
@@ -233,9 +233,10 @@ describe('routes tests', () => {
         }
       })
     })
+  }
 
   after(async () => {
-    // await driver.get(testUrl)
-    // await driver.sleep(3000)
+    await driver.get(testUrl)
+    await driver.sleep(3000)
   })
 })

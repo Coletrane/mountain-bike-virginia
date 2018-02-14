@@ -38,18 +38,6 @@
       Dropdown,
       ClassTable
     },
-    head() {
-      return {
-        ...headTags(
-          "Race Results",
-          "Results from races sanctioned by The Virginia Championship Commission",
-          "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove, douthat, middle mountain momma, ",
-          {
-            route: results
-          }
-        )
-      }
-    },
     data() {
       return {
         image: podium,

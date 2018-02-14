@@ -1,6 +1,7 @@
 import * as routes from '../scripts/routes'
 import * as resImg from '../scripts/responsive-imgs.config'
 
+// TODO: change this to accept a route
 export const headTags = (title, desc, keywords, post) => {
   let metas = [
     {name: 'description', content: desc},
@@ -27,7 +28,14 @@ export const headTags = (title, desc, keywords, post) => {
     if (post.route === '') {
       fbImg.content = `${routes.s3StaticImg}${routes.imgRoutes['/']}`
     } else {
-      fbImg.content = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+      let splitUrl = post.route.split('/')
+
+      // FIXME: this only works one level deep
+      if (splitUrl.length > 1) {
+        fbImg.content = `${routes.s3Pages}${splitUrl[0]}/${routes.imgRoutes[post.route]}`
+      } else {
+        fbImg.content = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+      }
     }
     metas.push(fbImg)
   }

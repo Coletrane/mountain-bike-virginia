@@ -35,10 +35,6 @@ describe('Mountain Bike Virginia integration tests', () => {
     exports.driver = driver
   })
 
-  beforeEach(async () => {
-    await driver.sleep(5000)
-  })
-
   // Hook tests in here
   // Component tests should come first to avoid safari issues
 

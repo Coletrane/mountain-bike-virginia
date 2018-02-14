@@ -3,7 +3,7 @@
 </template>
 <script>
   import Home from '../components/Home'
-  import {title, description, keywords} from "../assets/index-head-tags";
+  import {home} from "../assets/head-tags";
   import {headTags} from "../assets/functions"
 
   export default {
@@ -13,9 +13,9 @@
     },
     head() {
       return headTags(
-        title,
-        description,
-        keywords,
+        home.title,
+        home.description,
+        home.keywords,
         // Dummy "post" to simulate the base url
         // empty string because headTags adds in a slash
         {
