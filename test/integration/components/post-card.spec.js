@@ -14,10 +14,6 @@ describe('<post-card> tests', () => {
 
     card = await driver.findElement(
       By.className('card-container'))
-
-    console.log(await card.findElement(
-      By.xpath("//h2[@class='headline']"))
-      .getText())
   })
 
   it('should have a headline', async () => {

@@ -37,3 +37,6 @@ npm_debug.log
 
 .nuxt
 dist/*
+
+static/sitemap.xml
+
