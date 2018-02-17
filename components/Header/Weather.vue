@@ -1,7 +1,7 @@
 <template>
   <h3>{{cityName}}</h3>
   <img v-if="imgLoaded"
-       :src="'http://openweathermap.org/img/w/' + icon + '.png'"/>
+       :src="' + icon + '.png'"/>
 </template>
 
 <script>
