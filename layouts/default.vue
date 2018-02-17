@@ -28,17 +28,6 @@
           this.showFooter = true
           window.removeEventListener("scroll", this.handleScroll)
         }
-        //
-        // let scrolled = window.pageYOffset
-        // let el = document.getElementsByClassName('main-content')[0]
-        // if (el) {
-        //   let limit = el.offsetTop + el.offsetHeight
-        //   if (scrolled > el.offsetTop && scrolled <= limit) {
-        //     el.style.backgroundPositionY = (scrolled - el.offsetTop) / 1 + "px";
-        //   } else {
-        //     el.style.backgroundPositionY = "0";
-        //   }
-        // }
       }
     },
     created() {

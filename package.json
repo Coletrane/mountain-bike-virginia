@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@nuxtjs/axios": "^5.0.1",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "0.0.3",
     "font-awesome": "^4.7.0",
@@ -74,9 +75,9 @@
     "node": "8.9.3"
   },
   "scripts": {
-    "dev": "nuxt",
-    "build": "npm run clean && nuxt build && nuxt generate",
-    "build-check": "nuxt build --analyze",
+    "dev": "NODE_ENV=development nuxt",
+    "build": "NODE_ENV=production npm run clean && nuxt build && nuxt generate",
+    "build-check": "NODE_ENV=develoopment nuxt build --analyze",
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node ./server.js",
@@ -93,7 +94,7 @@
     "deploy-test": "./scripts/deploy-test.sh",
     "integration": "npm run build && ./scripts/deploy-test.sh && npm run sleep && npm run test",
     "deploy-pipeline": "./scripts/check-is-master.sh && npm run build && npm run deploy-test && npm run sleep && npm run test && npm run deploy-prod && npm run sleep && npm run test-prod",
-    "prod-pipeline": "npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
+    "prod-pipeline": "NODE_ENV=production npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
   },
   "main": "dist/app.bundle.js"
 }

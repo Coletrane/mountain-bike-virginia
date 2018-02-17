@@ -1,5 +1,6 @@
 const path = require('path')
 const routes = require('./scripts/routes')
+const weather = require('./weather-api-key')
 
 const sitemapRoutes = routes.appRoutes.map(route => {
   return {
@@ -59,7 +60,8 @@ module.exports = {
       {
         id: 'UA-107968765-1'
       }
-    ]
+    ],
+    '@nuxtjs/axios'
   ],
   sitemap: {
     path: '/sitemap.xml',
@@ -72,5 +74,9 @@ module.exports = {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
     }
+  },
+  env: {
+    prodWeather: weather.prod,
+    testWeather: weather.test
   }
 }

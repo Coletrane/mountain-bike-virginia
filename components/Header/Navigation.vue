@@ -21,6 +21,9 @@
       </nuxt-link>
     </span>
     <span class="flex-inner inner-right">
+      <weather city="noke"/>
+    </span>
+    <span class="flex-inner inner-right">
       <nuxt-link to="/results"
                  class="nav-text"
                  id="results-link">
@@ -41,9 +44,13 @@
 <script>
   import {boxShadow} from "../../assets/styles"
   import {s3StaticImg} from "../../scripts/routes"
+  import Weather from './Weather'
 
   export default {
     name: "navigation",
+    components: {
+      Weather
+    },
     data: function () {
       return {
         img: `${s3StaticImg}`,

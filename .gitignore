@@ -40,3 +40,4 @@ dist/*
 
 static/sitemap.xml
 
+weather-api-key.js
