@@ -1,37 +1,35 @@
 <template>
-  <nav>
-    <div class="menu">
-      <div class="mtbva-nav-close">
-        <a @click="closeMenu()">
-          <i class="fa fa-close"></i>
-        </a>
-      </div>
-      <div class="mtbva-nav-item">
-        <nuxt-link to="/"
-                   class="nav-link"
-                   id="trails-link">
-          <i class="fa fa-bicycle"></i>
-          Trails
-        </nuxt-link>
-      </div>
-      <div class="mtbva-nav-item">
-        <nuxt-link to="results"
-                   class="nav-link"
-                   id="results-link">
-          <i class="fa fa-list-ol"></i>
-          Results
-        </nuxt-link>
-      </div>
-      <div class="mtbva-nav-item">
-        <a class="nav-link"
-           id="facebook-nav-link"
-           href="https://www.facebook.com/xxcva/">
-          <i class="fa fa-facebook-official"></i>
-          Facebook
-        </a>
-      </div>
-    </div>
-  </nav>
+    <nav class="mtbva-menu">
+        <div class="mtbva-nav-close">
+          <a @click="closeMenu()">
+            <i class="fa fa-close"></i>
+          </a>
+        </div>
+        <div class="mtbva-nav-item">
+          <nuxt-link to="/"
+                     class="nav-link"
+                     id="trails-link">
+            <i class="fa fa-bicycle"></i>
+            Trails
+          </nuxt-link>
+        </div>
+        <div class="mtbva-nav-item">
+          <nuxt-link to="results"
+                     class="nav-link"
+                     id="results-link">
+            <i class="fa fa-list-ol"></i>
+            Results
+          </nuxt-link>
+        </div>
+        <div class="mtbva-nav-item">
+          <a class="nav-link"
+             id="facebook-nav-link"
+             href="https://www.facebook.com/xxcva/">
+            <i class="fa fa-facebook-official"></i>
+            Facebook
+          </a>
+        </div>
+    </nav>
 </template>
 
 <script>
@@ -46,8 +44,7 @@
 </script>
 
 <style scoped>
-
-  .menu {
+  .mtbva-menu {
     position: absolute;
     right: 0;
     color: white;

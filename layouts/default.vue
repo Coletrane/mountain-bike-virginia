@@ -1,18 +1,22 @@
 <template>
   <div>
-    <m-t-b-v-a-menu v-if="$store.state.showMenu"/>
-    <div v-if="$store.state.showMenu"
-         @click="toggleMenu"
-         class="overlay">
+    <transition name="menu-slide">
+      <m-t-b-v-a-menu v-if="$store.state.showMenu"/>
+    </transition>
+    <transition name="overlay-fade">
+      <div v-if="$store.state.showMenu"
+           @click="toggleMenu"
+           class="overlay">
+      </div>
+    </transition>
+    <div class="app-fade-wrapper">
+      <transition name="app-fade">
+        <nuxt/>
+      </transition>
     </div>
-      <div class="app-fade-wrapper">
-        <transition name="app-fade">
-          <nuxt/>
-        </transition>
-      </div>
-      <div v-if="showFooter">
-        <m-t-b-v-a-footer/>
-      </div>
+    <div v-if="showFooter">
+      <m-t-b-v-a-footer/>
+    </div>
   </div>
 </template>
 <script>
@@ -57,12 +61,12 @@
   }
 </script>
 <style>
-    html, body {
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-        overflow-x: hidden;
-    }
+  html, body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
 
   h1, h2, h3, h4 {
     font-family: 'Julius Sans One', sans-serif;
@@ -82,10 +86,12 @@
     border-color: white;
     font-size: 2rem;
   }
+
   .white-btn:hover {
-    background-color: rgba(0,0,0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     border-color: white;
   }
+
   .white-btn:active {
     background-color: #3d7635 !important;
     border-color: white !important;
@@ -97,7 +103,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transition: .5s cubic-bezier(.25,.8,.5,1);
+    transition: .5s cubic-bezier(.25, .8, .5, 1);
     z-index: 5;
     pointer-events: auto;
     touch-action: none;
@@ -114,6 +120,20 @@
 
   .app-fade-enter {
     opacity: 0;
+  }
+
+  .overlay-fade-enter-active, .overlay-fade-leave-active {
+    transition: opacity .5s;
+  }
+  .overlay-fade-enter, .overlay-fade-leave-to {
+    opacity: 0;
+  }
+
+  .menu-slide-enter-active, .menu-slide-leave-active {
+    transition: all .5s ;
+  }
+  .menu-slide-enter, .menu-slide-leave-to {
+    transform: translateX(100%);
   }
 
   .main-content {
@@ -142,6 +162,7 @@
       padding-right: 2rem;
     }
   }
+
   @media (max-width: 575px) {
     .main-content {
       padding-left: 0;
