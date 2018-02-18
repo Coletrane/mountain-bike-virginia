@@ -1,14 +1,15 @@
 <template>
     <nav class="mtbva-menu">
         <div class="mtbva-nav-item mtbva-nav-close">
-          <a @click="closeMenu()">
+          <a @click="closeMenu()"
+             id="close-menu-link">
             <i class="fa fa-close"></i>
           </a>
         </div>
         <div class="mtbva-nav-item">
           <nuxt-link to="/"
                      class="nav-link"
-                     id="trails-link">
+                     id="trails-nav-link">
             <i class="fa fa-bicycle"></i>
             Trails
           </nuxt-link>
@@ -16,7 +17,7 @@
         <div class="mtbva-nav-item">
           <nuxt-link to="results"
                      class="nav-link"
-                     id="results-link">
+                     id="results-nav-link">
             <i class="fa fa-list-ol"></i>
             Results
           </nuxt-link>

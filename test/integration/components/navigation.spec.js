@@ -1,6 +1,14 @@
+const weatherIds = require('../../../assets/weather').weatherIds
+
 const global = require('../global.spec')
 const By = require('selenium-webdriver').By
 const until = require('selenium-webdriver').until
+
+let navLinks = [
+  'trails',
+  'results',
+  'facebook'
+]
 
 describe('<navigation> tests', () => {
   let testUrl
@@ -33,101 +41,143 @@ describe('<navigation> tests', () => {
       .to.be.true
   })
 
-  it('has the Facebook nav icon', async () => {
-    let logo = await driver.findElement(
-      By.id('fb-navlink-icon'))
+  describe('weather info tests', () => {
+    let weatherElements
 
-    expect(await logo.isDisplayed())
+    before(async () => {
+      weatherElements = await driver.findElements(
+        By.className('weather'))
+    })
+
+    it('should have 3 weather elements', async () => {
+      expect(await weatherElements.length)
+        .to.equal(3)
+    })
+
+    Object.keys(weatherIds).forEach((city, i, arr) => {
+      it(`should have weather for ${city}`, async () => {
+        expect(await weatherElements[i].findElement(
+          By.className('city-name')))
+          .not.to.be.undefined
+
+        expect(await weatherElements[i].findElement(
+          By.className('temperature')))
+          .not.to.be.undefined
+
+        expect(await weatherElements[i].findElement(
+          By.css('img')))
+          .not.to.be.undefined
+      })
+    })
+  })
+
+  it('has the hamburger menu icon', async () => {
+    let icon = await driver.findElement(
+      By.id('mtbva-menu-icon'))
+
+    expect(await icon.isDisplayed())
       .to.be.true
   })
 
-  describe('<nuxt-link> / <a> tests', () => {
-    let nav
+  describe('side menu tests', () => {
+    let icon
+    let menu
+    let overlay
 
     before(async () => {
-      nav = await driver.findElement(
-        By.xpath('//nav'))
+      icon = await driver.findElement(
+        By.id('mtbva-menu-icon'))
+
+      await icon.click()
+      // lol Safari
+      await driver.sleep(3000)
+
+      menu = await driver.findElement(
+        By.className('mtbva-menu'))
+
+      overlay = await driver.findElement(
+        By.className('overlay'))
     })
 
-    describe('element tests', () => {
-      it('mtbva logo link to home', async () => {
-        expect(await nav.findElement(
-          By.id('mtbva-home-link'))
-          .getAttribute('href'))
-          .to.equal(testUrl)
-      })
-
-      it('xxcva logo link to home', async () => {
-        expect(await nav.findElement(
-          By.id('xxcva-home-link'))
-          .getAttribute('href'))
-          .to.equal(testUrl)
-      })
-
-      it('results link to /results', async () => {
-        expect(await nav.findElement(
-          By.id('results-link'))
-          .getAttribute('href'))
-          .to.equal(`${testUrl}results`)
-      })
-
-      it('facebook logo links to facebook', async () => {
-        expect(await nav.findElement(
-          By.id('facebook-nav-link'))
-          .getAttribute('href'))
-          .to.equal('https://www.facebook.com/xxcva/')
-      })
+    it('should show the menu', async () => {
+      expect(await menu.isDisplayed())
+        .to.be.true
     })
 
-    describe('behavior tests', () => {
-      it('navigates back to home with mtbva logo', async () => {
-        let resultsLink = await driver.wait(until.elementLocated(
-          By.id('results-link')), 10000)
-        await resultsLink.click()
+    it('should show the overlay', async () => {
+      expect(await overlay.isDisplayed())
+        .to.be.true
+    })
 
-        // This is a hack because Safari is the new IE
-        await driver.sleep(3000)
+    // TODO figure out if this is possible
+    xit('should not be able to scroll with the menu open', async () => {
+      let scrollScript = 'return window.pageYOffset'
 
-        expect(await driver.getCurrentUrl())
-          .to.equal(`${testUrl}results`)
+      expect(await driver.executeScript(scrollScript))
+        .to.equal(0)
+    })
 
-        // Testing mtbva logo link
-        let homeLink = await driver.wait(until.elementLocated(
-          By.id('mtbva-home-link')), 10000)
-        await homeLink.click()
+    describe('navlinks test', () => {
+      navLinks.forEach(link => {
+        it(`should have a ${link} link`, async () => {
+          let navLink = await menu.findElement(
+            By.id(`${link}-nav-link`))
 
-        await driver.sleep(3000)
+          expect(await navLink.isDisplayed())
+            .to.be.true
 
-        expect(await driver.getCurrentUrl())
-          .to.equal(testUrl)
-      })
-
-      it('navigates back to home with xxcva logo', async () => {
-        let resultsLink = await driver.wait(until.elementLocated(
-          By.id('results-link')), 10000)
-        await resultsLink.click()
-
-        // This is a hack because Safari is the new IE
-        await driver.sleep(3000)
-
-        expect(await driver.getCurrentUrl())
-          .to.equal(`${testUrl}results`)
-
-        // Testing mtbva logo link
-        let homeLink = await driver.wait(until.elementLocated(
-          By.id('xxcva-home-link')), 10000)
-        await homeLink.click()
-
-        await driver.sleep(3000)
-
-        expect(await driver.getCurrentUrl())
-          .to.equal(testUrl)
+          let linkText = await navLink.getText()
+          expect(await linkText.toLowerCase().includes(link))
+            .to.be.true
+        })
       })
     })
 
-    after(async () => {
-      await driver.get(testUrl)
-      await driver.sleep(5000)
+    describe('menu closing tests', () => {
+      let xIcon
+
+      before(async () => {
+        xIcon = await menu.findElement(
+          By.id('close-menu-link'))
+      })
+
+      it('should have the X icon', async () => {
+        expect(await xIcon.isDisplayed())
+          .to.be.true
+      })
+
+      it('should close when clicking on X icon', async () => {
+        await xIcon.click()
+        await driver.sleep(3000)
+
+        try {
+          await driver.findElement(
+            By.className('mtbva-menu'))
+        } catch (err) {
+          expect(err)
+            .not.to.be.undefined
+        }
+      })
+
+      it('should close when clicking on the overlay', async () => {
+        await driver.findElement(
+          By.id('mtbva-menu-icon'))
+          .click()
+        await driver.sleep(3000)
+
+        await driver.findElement(
+          By.className('overlay'))
+          .click()
+        await driver.sleep(3000)
+
+        try {
+          await driver.findElement(
+            By.className('mtbva-menu'))
+        } catch (err) {
+          expect(err)
+            .not.to.be.undefined
+        }
+      })
     })
   })
 })

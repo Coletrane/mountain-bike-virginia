@@ -1,5 +1,4 @@
 <template>
-  <div class="weather-container">
     <div class="weather">
       <div class="city-name">{{cityName}}</div>
       <div class="temp-icon">
@@ -8,7 +7,6 @@
              :src="icon"/>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -35,17 +33,19 @@
     },
     methods: {
       async getWeather() {
-        let apiKey = process.env.testWeather
         if (process.env.NODE_ENV === 'production') {
-          apiKey = process.env.prodWeather
-        }
+          if (weatherIds[this.city]) {
+            const res = await this.$axios.get(`http://api.openweathermap.org/data/2.5/weather?id=${weatherIds[this.city]}&units=imperial&APPID=${process.env.prodWeather}`)
 
-        if (weatherIds[this.city]) {
-          const res = await this.$axios.get(`http://api.openweathermap.org/data/2.5/weather?id=${weatherIds[this.city]}&units=imperial&APPID=${apiKey}`)
-
-          this.temperature = res.data.main.temp
-          this.description = res.data.weather[0].description
-          this.iconId = res.data.weather[0].icon
+            this.temperature = res.data.main.temp
+            this.description = res.data.weather[0].description
+            this.iconId = res.data.weather[0].icon
+            this.imgLoaded = true
+          }
+        } else { // Test data
+          this.temperature = '70.01'
+          this.description = "sunny"
+          this.iconId = weatherIcons[Math.floor(Math.random() * weatherIcons.length)].ow
           this.imgLoaded = true
         }
       }

@@ -20,19 +20,20 @@
              alt="XXCVA Series. Just 40 more miles.">
       </nuxt-link>
     </span>
-    <!--<span v-show="!mobile"-->
-          <!--class="flex-inner inner-right">-->
-      <!--<weather city="blacksburg"/>-->
-    <!--</span>-->
-    <!--<span :class="mobile ? 'flex-inner inner-right' : 'flex-outer'">-->
-      <!--<weather city="roanoke"/>-->
-    <!--</span>-->
-    <!--<span v-show="!mobile"-->
-          <!--class="flex-outer">-->
-      <!--<weather city="harrisonburg"/>-->
-    <!--</span>-->
+    <span v-show="!mobile"
+          class="flex-inner inner-right">
+      <weather city="blacksburg"/>
+    </span>
+    <span :class="mobile ? 'flex-inner inner-right' : 'flex-outer'">
+      <weather city="roanoke"/>
+    </span>
+    <span v-show="!mobile"
+          class="flex-outer">
+      <weather city="harrisonburg"/>
+    </span>
     <span class="flex-outer">
-      <a @click="toggleMenu()">
+      <a @click="toggleMenu()"
+         id='mtbva-menu-icon'>
         <i class="fa fa-bars mtbva-menu-icon"></i>
       </a>
     </span>
