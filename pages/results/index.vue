@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import Results from '../../components/Results'
+  import Results from '../../components/Results/Results'
   import {results} from "../../assets/head-tags"
   import {headTags} from "../../assets/functions"
   import * as routes from '../../scripts/routes'

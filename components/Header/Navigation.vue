@@ -20,31 +20,20 @@
              alt="XXCVA Series. Just 40 more miles.">
       </nuxt-link>
     </span>
-    <span class="flex-inner inner-right">
-      <weather city="roanoke"/>
-    </span>
-    <span v-show="!mobile"
-          class="flex-outer">
-      <weather city="harrisonburg"/>
-    </span>
-    <span v-show="!mobile"
-          class="flex-outer">
-      <weather city="blacksburg"/>
-    </span>
+    <!--<span v-show="!mobile"-->
+          <!--class="flex-inner inner-right">-->
+      <!--<weather city="blacksburg"/>-->
+    <!--</span>-->
+    <!--<span :class="mobile ? 'flex-inner inner-right' : 'flex-outer'">-->
+      <!--<weather city="roanoke"/>-->
+    <!--</span>-->
+    <!--<span v-show="!mobile"-->
+          <!--class="flex-outer">-->
+      <!--<weather city="harrisonburg"/>-->
+    <!--</span>-->
     <span class="flex-outer">
-      <nuxt-link to="/results"
-                 class="nav-text"
-                 id="results-link">
-        Results
-      </nuxt-link>
-    </span>
-    <span class="flex-outer">
-      <a class="nav-link"
-         id="facebook-nav-link"
-         href="https://www.facebook.com/xxcva/">
-        <img :src="img + 'fb.svg'"
-             class="fb"
-             id="fb-navlink-icon"/>
+      <a @click="toggleMenu()">
+        <i class="fa fa-bars menu-icon"/>
       </a>
     </span>
   </nav>
@@ -65,7 +54,8 @@
         navStyle: {
           boxShadow: boxShadow
         },
-        mobile: false
+        mobile: true,
+        menu: false
       }
     },
     created() {
@@ -85,8 +75,11 @@
       },
       setMobile() {
         this.mobile = document.body.clientWidth <= 700
+      },
+      toggleMenu() {
+        this.$store.commit('toggleMenu')
       }
-    },
+    }
   }
 </script>
 <style scoped id="mobile">
@@ -133,12 +126,9 @@
     width: 160px;
   }
 
-  .nav-text {
-    font-size: 1.5rem;
-  }
-
-  .fb {
-    width: 2.5rem;
+  .menu-icon {
+    font-size: 3rem;
+    color: white;
   }
 
   @media (max-width: 575px) {

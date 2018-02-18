@@ -1,5 +1,10 @@
 <template>
   <div>
+    <m-t-b-v-a-menu v-if="$store.state.showMenu"/>
+    <div v-if="$store.state.showMenu"
+         @click="toggleMenu"
+         class="overlay">
+    </div>
       <div class="app-fade-wrapper">
         <transition name="app-fade">
           <nuxt/>
@@ -12,9 +17,13 @@
 </template>
 <script>
   import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
+  import MTBVAMenu from '../components/Header/MTBVAMenu'
 
   export default {
-    components: {MTBVAFooter},
+    components: {
+      MTBVAFooter,
+      MTBVAMenu
+    },
     name: "app",
     scrollToTop: true,
     data() {
@@ -28,6 +37,9 @@
           this.showFooter = true
           window.removeEventListener("scroll", this.handleScroll)
         }
+      },
+      toggleMenu() {
+        this.$store.commit('toggleMenu')
       }
     },
     created() {
@@ -77,6 +89,19 @@
   .white-btn:active {
     background-color: #3d7635 !important;
     border-color: white !important;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .5s cubic-bezier(.25,.8,.5,1);
+    z-index: 5;
+    pointer-events: auto;
+    touch-action: none;
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   .app-fade-wrapper {

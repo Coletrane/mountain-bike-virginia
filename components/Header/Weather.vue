@@ -86,7 +86,7 @@
   }
 
   .temp-icon {
-    margin-top: -1rem;
+    margin-top: -.5rem;
   }
 
   .temperature {
@@ -96,7 +96,6 @@
   img {
     width: 4.5rem;
     height: 4.5rem;
-    margin-bottom: 1.6rem;
   }
 
 </style>

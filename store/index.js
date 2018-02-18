@@ -6,7 +6,8 @@ const createStore = () => {
     state: {
       page: 1,
       iframesDeferred: false,
-      currentRaceIdx: 0
+      currentRaceIdx: 0,
+      showMenu: false
     },
 
     mutations: {
@@ -18,6 +19,12 @@ const createStore = () => {
       },
       changeRace (state, race) {
         state.currentRaceIdx = race
+      },
+      toggleMenu (state) {
+        state.showMenu = !state.showMenu
+      },
+      closeMenu (state) {
+        state.showMenu = false
       }
     }
 

@@ -20,14 +20,14 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "../components/Header/MTBVAHeader"
-  import Card from "../components/Card/Card"
-  import Dropdown from "../components/Dropdown"
-  import ClassTable from "../components/ClassTable"
+  import MTBVAHeader from "../Header/MTBVAHeader"
+  import Card from "../Card/Card"
+  import Dropdown from "./Dropdown"
+  import ClassTable from "./ClassTable"
 
-  import {s3Pages, results} from "../scripts/routes"
-  import {resultsData} from "../assets/results"
-  import {headTags} from "../assets/functions"
+  import {s3Pages, results} from "../../scripts/routes"
+  import {resultsData} from "../../assets/results"
+  import {headTags} from "../../assets/functions"
   const podium = `${s3Pages}${results}/podium.png`
 
   export default {
