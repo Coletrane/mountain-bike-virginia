@@ -21,9 +21,9 @@
       </nuxt-link>
     </span>
     <span class="flex-inner inner-right">
-      <weather city="noke"/>
+      <weather city="roanoke"/>
     </span>
-    <span class="flex-inner inner-right">
+    <span class="flex-outer">
       <nuxt-link to="/results"
                  class="nav-text"
                  id="results-link">
