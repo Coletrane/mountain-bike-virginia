@@ -23,6 +23,14 @@
     <span class="flex-inner inner-right">
       <weather city="roanoke"/>
     </span>
+    <span v-show="!mobile"
+          class="flex-outer">
+      <weather city="harrisonburg"/>
+    </span>
+    <span v-show="!mobile"
+          class="flex-outer">
+      <weather city="blacksburg"/>
+    </span>
     <span class="flex-outer">
       <nuxt-link to="/results"
                  class="nav-text"
@@ -56,9 +64,29 @@
         img: `${s3StaticImg}`,
         navStyle: {
           boxShadow: boxShadow
-        }
+        },
+        mobile: false
       }
-    }
+    },
+    created() {
+      if (process.browser) {
+        this.setMobile()
+        window.addEventListener('resize', this.handleResize)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('resize', this.handleResize)
+      }
+    },
+    methods: {
+      handleResize() {
+        this.setMobile()
+      },
+      setMobile() {
+        this.mobile = document.body.clientWidth <= 700
+      }
+    },
   }
 </script>
 <style scoped id="mobile">

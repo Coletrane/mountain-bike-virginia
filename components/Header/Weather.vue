@@ -42,12 +42,11 @@
 
         if (weatherIds[this.city]) {
           const res = await this.$axios.get(`http://api.openweathermap.org/data/2.5/weather?id=${weatherIds[this.city]}&units=imperial&APPID=${apiKey}`)
-          console.log(res.data)
+
           this.temperature = res.data.main.temp
           this.description = res.data.weather[0].description
           this.iconId = res.data.weather[0].icon
           this.imgLoaded = true
-          console.log(this.temperature, this.description, this.iconId)
         }
       }
     },
@@ -59,7 +58,6 @@
       icon() {
         if (this.iconId) {
           const iconLocation = weatherIcons.find(icon => icon.ow === this.iconId)
-          console.log(iconLocation, this.iconId)
           return `${s3WeatherIcons}/${iconLocation.icon}.svg`
         }
       }
@@ -90,7 +88,7 @@
   .temp-icon {
     margin-top: -1rem;
   }
-  
+
   .temperature {
     font-size: 2.5rem;
   }
