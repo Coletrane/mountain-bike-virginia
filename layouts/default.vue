@@ -57,11 +57,26 @@
       if (process.browser) {
         window.removeEventListener("scroll", this.handleScroll)
       }
+    },
+    computed: {
+      menuOpen() {
+        return this.$store.state.showMenu
+      }
+    },
+    watch: {
+      menuOpen() {
+        console.log("MENU")
+        if (this.$store.state.showMenu && process.browser) {
+          document.body.style.overflowY = 'hidden'
+        } else {
+          document.body.style.overflowY = 'auto'
+        }
+      }
     }
   }
 </script>
 <style>
-  html, body {
+  body {
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -97,8 +112,19 @@
     border-color: white !important;
   }
 
+  .app-fade-wrapper {
+    background-color: black;
+  }
+  .app-fade-enter-active {
+    transition: opacity 1s;
+  }
+
+  .app-fade-enter {
+    opacity: 0;
+  }
+
   .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -109,19 +135,6 @@
     touch-action: none;
     background-color: rgba(0, 0, 0, 0.6);
   }
-
-  .app-fade-wrapper {
-    background-color: black;
-  }
-
-  .app-fade-enter-active {
-    transition: opacity 1s;
-  }
-
-  .app-fade-enter {
-    opacity: 0;
-  }
-
   .overlay-fade-enter-active, .overlay-fade-leave-active {
     transition: opacity .5s;
   }

@@ -1,6 +1,6 @@
 <template>
     <nav class="mtbva-menu">
-        <div class="mtbva-nav-close">
+        <div class="mtbva-nav-item mtbva-nav-close">
           <a @click="closeMenu()">
             <i class="fa fa-close"></i>
           </a>
@@ -45,36 +45,44 @@
 
 <style scoped>
   .mtbva-menu {
-    position: absolute;
+    position: fixed;
     right: 0;
     color: white;
     display: block;
     z-index: 999;
-    width: 500px;
+    width: 300px;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     pointer-events: auto;
     top: 0;
     will-change: transform;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: black;
   }
 
   a {
-    color: black;
+    color: white;
     font-size: 2rem;
     font-family: 'Julius Sans One', sans-serif;
+    font-weight: 800;
   }
-
   a:hover {
     text-decoration: none;
   }
+  @media (max-width: 575px) {
+    .mtbva-menu {
+      width: 200px;
+    }
+    a {
+      font-size: 1.3rem;
+    }
+  }
 
   .mtbva-nav-close {
-    color: black;
-    text-align: right;
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
   }
 
-  .mtbva-nav-item {
-    border-bottom: 2px solid black;
-  }
 </style>

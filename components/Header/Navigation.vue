@@ -33,7 +33,7 @@
     <!--</span>-->
     <span class="flex-outer">
       <a @click="toggleMenu()">
-        <i class="fa fa-bars menu-icon"/>
+        <i class="fa fa-bars mtbva-menu-icon"></i>
       </a>
     </span>
   </nav>
@@ -82,9 +82,6 @@
     }
   }
 </script>
-<style scoped id="mobile">
-
-</style>
 <style scoped>
   nav {
     background-color: rgba(0, 0, 0, 0.6);
@@ -103,17 +100,14 @@
     padding-left: .5rem;
     padding-right: .5rem;
   }
-
   .flex-inner {
     flex: 1 1 auto;
     padding-left: .5rem;
     padding-right: .5rem;
   }
-
   .inner-left {
     text-align: left;
   }
-
   .inner-right {
     text-align: right;
   }
@@ -125,12 +119,10 @@
   .xxcva {
     width: 160px;
   }
-
-  .menu-icon {
+  .mtbva-menu-icon {
     font-size: 3rem;
     color: white;
   }
-
   @media (max-width: 575px) {
     nav {
       height: 100px;
@@ -144,11 +136,10 @@
       width: 130px;
     }
 
-    .fb {
-      width: 2rem;
+    .mtbva-menu-icon {
+      font-size: 2rem;
     }
   }
-
   @media (max-width: 450px) {
     nav {
       height: 75px;
@@ -162,15 +153,8 @@
       width: 70px;
     }
 
-    .nav-text {
-      font-size: 1.2rem;
+    .mtbva-menu-icon {
+      font-size: 1.5rem;
     }
   }
-
-  .nav-text {
-    text-decoration: none;
-    color: white;
-  }
-
-
 </style>
