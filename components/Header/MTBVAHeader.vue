@@ -125,7 +125,7 @@
 
     @media (max-width: 720px) {
         .hero-content {
-            top: 50%;
+            top: 60%;
         }
     }
 

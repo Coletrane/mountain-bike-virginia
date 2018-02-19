@@ -53,7 +53,7 @@
     computed: {
       cityName() {
         const city = this.city.charAt(0).toUpperCase() + this.city.slice(1)
-        return `${city}, VA`
+        return city
       },
       icon() {
         if (this.iconId) {
@@ -90,12 +90,23 @@
   }
 
   .temperature {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    vertical-align: middle;
   }
 
   img {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3.5rem;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 450px) {
+    .temperature {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 2.5rem;
+    }
   }
 
 </style>

@@ -81,7 +81,7 @@
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node ./server.js",
-    "static": "node ./static.js",
+    "static": "NODE_ENV=production node ./static.js",
     "sleep": "node ./scripts/sleep.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
@@ -93,7 +93,7 @@
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
     "integration": "NODE_ENV=test npm run build && ./scripts/deploy-test.sh && npm run sleep && npm run test",
-    "production": "NODE_ENV=production npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
+    "production": "./scripts/check-is-master.sh && NODE_ENV=production npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
   },
   "main": "dist/app.bundle.js"
 }

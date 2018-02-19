@@ -65,7 +65,6 @@
     },
     watch: {
       menuOpen() {
-        console.log("MENU")
         if (this.$store.state.showMenu && process.browser) {
           document.body.style.overflowY = 'hidden'
         } else {

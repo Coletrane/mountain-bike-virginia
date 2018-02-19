@@ -30,12 +30,24 @@
             Facebook
           </a>
         </div>
+        <div class="tag-bottom">
+          <img :src="pirates"
+               alt="Mountain Bike Virginia Pirates"
+               class="pirates"/>
+        </div>
     </nav>
 </template>
 
 <script>
+  import {s3StaticImg} from '../../scripts/routes'
+
   export default {
     name: "mtbva-menu",
+    data() {
+      return {
+        pirates: `${s3StaticImg}jolly.png`
+      }
+    },
     methods: {
       closeMenu() {
         this.$store.commit('closeMenu')
@@ -66,6 +78,7 @@
     font-size: 2rem;
     font-family: 'Julius Sans One', sans-serif;
     font-weight: 800;
+    cursor: pointer;
   }
   a:hover {
     text-decoration: none;
@@ -86,4 +99,14 @@
     font-size: 2rem;
   }
 
+  .tag-bottom {
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+  }
+  .pirates {
+
+    width: 125px;
+  }
 </style>

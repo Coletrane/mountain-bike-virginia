@@ -21,10 +21,10 @@
       </nuxt-link>
     </span>
     <span v-show="!mobile"
-          class="flex-inner inner-right">
+          class="flex-outer">
       <weather city="blacksburg"/>
     </span>
-    <span :class="mobile ? 'flex-inner inner-right' : 'flex-outer'">
+    <span class="flex-outer">
       <weather city="roanoke"/>
     </span>
     <span v-show="!mobile"
@@ -75,7 +75,7 @@
         this.setMobile()
       },
       setMobile() {
-        this.mobile = document.body.clientWidth <= 700
+        this.mobile = document.body.clientWidth <= 750
       },
       toggleMenu() {
         this.$store.commit('toggleMenu')
@@ -118,11 +118,12 @@
   }
 
   .xxcva {
-    width: 160px;
+    width: 170px;
   }
   .mtbva-menu-icon {
     font-size: 3rem;
     color: white;
+    cursor: pointer;
   }
   @media (max-width: 575px) {
     nav {
@@ -134,7 +135,7 @@
     }
 
     .xxcva {
-      width: 130px;
+      width: 140px;
     }
 
     .mtbva-menu-icon {
@@ -151,7 +152,7 @@
     }
 
     .xxcva {
-      width: 70px;
+      width: 90px;
     }
 
     .mtbva-menu-icon {

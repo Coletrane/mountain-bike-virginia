@@ -13,8 +13,8 @@
     props: {
       alt: String,
       height: {
-        type: [String, Number],
-        default: 500
+        type: Number,
+        default: 600
       },
       jumbotron: Boolean,
       src: String
@@ -22,11 +22,16 @@
     created() {
       if (process.browser) {
         window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('resize', this.handleResize)
       }
+    },
+    mounted() {
+      this.handleResize()
     },
     destroyed() {
       if (process.browser) {
         window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('resize', this.handleResize)
       }
     },
     methods: {
@@ -40,6 +45,13 @@
             this.$el.style.backgroundPositionY = "-0px";
           }
         })
+      },
+      handleResize() {
+        if (document.body.clientWidth <= 600) {
+          this.$el.style.height = `${this.height - 300}px`
+        } else {
+          this.$el.style.height = `${this.height}px`
+        }
       }
     },
     computed: {
@@ -48,7 +60,7 @@
           height: `${this.height}px`,
           backgroundImage: `url(${this.src})`
         }
-      }
+      },
     }
   }
 
