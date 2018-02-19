@@ -1,13 +1,7 @@
 export const findRaceIndex = (name) => {
-  let result
-
-  resultsData.forEach((race, i, arr) => {
-    if (race.race.toLowerCase() === name.toLowerCase()) {
-      result = i
-    }
+  return resultsData.findIndex((race, i, arr) => {
+    return race.race.toLowerCase() === name.toLowerCase()
   })
-
-  return result
 }
 
 export const resultsData = [
@@ -1318,3 +1312,5 @@ export const resultsData = [
     }
   }
 ].reverse()
+
+console.log(JSON.stringify(resultsData))

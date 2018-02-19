@@ -77,11 +77,13 @@
   "scripts": {
     "dev": "NODE_ENV=development nuxt",
     "build": "npm run clean && nuxt build && nuxt generate",
-    "build-check": "NODE_ENV=develoopment nuxt build --analyze",
+    "build-test": "npm run clean && NODE_ENV=test nuxt build && NODE_ENV=test nuxt generate",
+    "build-check": "NODE_ENV=development nuxt build --analyze",
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node ./server.js",
     "static": "NODE_ENV=production node ./static.js",
+    "static-test": "NODE_ENV=test node ./static.js",
     "sleep": "node ./scripts/sleep.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
@@ -92,7 +94,7 @@
     "test-prod": "NODE_ENV=production npm run test-i && NODE_ENV=production npm run test-u",
     "deploy-prod": "./scripts/deploy-prod.sh",
     "deploy-test": "./scripts/deploy-test.sh",
-    "integration": "NODE_ENV=test npm run build && ./scripts/deploy-test.sh && npm run sleep && npm run test",
+    "integration": "npm run build-test && ./scripts/deploy-test.sh && npm run sleep && npm run test",
     "production": "./scripts/check-is-master.sh && NODE_ENV=production npm run build && npm run deploy-prod && npm run sleep && npm run test-prod"
   },
   "main": "dist/app.bundle.js"

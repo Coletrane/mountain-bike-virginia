@@ -36,9 +36,34 @@ module.exports = {
         href: 'https://fonts.googleapis.com/css?family=Julius+Sans+One|Lato'
       },
       {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: routes.s3Favicons + 'apple-touch-icon.png?v=eE5JONrEL8'
+      },
+      {
         rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
+        type: 'image/png',
+        sizes: '32x32',
+        href: routes.s3Favicons + 'favicon-32x32.png?v=eE5JONrEL8'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: routes.s3Favicons + 'favicon-16x16.png?v=eE5JONrEL8'
+      },
+      {
+        rel: 'manifest',
+        href: routes.s3Favicons + 'site.webmanifest?v=eE5JONrEL8'
+      },
+      {
+        rel: 'mask-icon',
+        href: routes.s3Favicons + 'safari-pinned-tab.svg?v=eE5JONrEL8',
+        color: '#3d7635'
+      },
+      {
+        rel: 'shortcut icon',
+        href: 'favicon.ico?v=eE5JONrEL8'
       }
     ],
     script: [
@@ -81,5 +106,6 @@ module.exports = {
   env: {
     prodWeather: weather.prod,
     testWeather: weather.test
-  }
+  },
+  dev: (process.env.NODE_ENV !== 'production')
 }

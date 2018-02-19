@@ -33,7 +33,6 @@
   }
 
   th, td {
-    border-bottom: 1px solid #b3b3b3;
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 33%;

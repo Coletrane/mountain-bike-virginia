@@ -25,7 +25,7 @@
       )
     },
     created() {
-      this.$store.commit('changeRace', findRaceIndex('Middle Mountain Momma 2017'))
+      this.$store.commit('changeRace', 1)
     }
   }
 </script>

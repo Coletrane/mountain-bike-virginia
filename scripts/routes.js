@@ -76,6 +76,7 @@ imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 
 const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
+const s3Favicons = s3 + '/static/favicons/'
 const s3WeatherIcons = s3 + '/static/weather-icons'
 const s3Pages = s3 + '/pages/'
 const baseUrl = 'http://bikeva.com'
@@ -98,6 +99,7 @@ module.exports = {
   imgRoutes,
   s3,
   s3StaticImg,
+  s3Favicons,
   s3WeatherIcons,
   s3Pages,
   baseUrl,

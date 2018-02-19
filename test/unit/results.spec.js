@@ -12,11 +12,12 @@ describe('results.js and results.vue test', () => {
 
   it('should not find a race', () => {
     expect(results.findRaceIndex('Rotor Meltdown'))
-      .to.be.undefined
+      .to.equal(-1)
   })
 
-  it('should find a race regardless of capitalization', () => {
-    expect(results.findRaceIndex('middle mountain momma 2017'))
-      .not.to.be.undefined
+  it('should find the right race', () => {
+    let raceIdx = results.findRaceIndex('middle mountain momma 2017')
+    expect(results.resultsData[raceIdx].race)
+      .to.equal('Middle Mountain Momma 2017')
   })
 })
