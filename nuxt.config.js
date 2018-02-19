@@ -73,7 +73,10 @@ module.exports = {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
-    }
+    },
+    middleware: [
+      'close-menu'
+    ]
   },
   env: {
     prodWeather: weather.prod,

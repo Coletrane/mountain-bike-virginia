@@ -1,8 +1,6 @@
-const jsdom = require('jsdom')
-const {JSDOM} = jsdom
 const fs = require('fs')
 
-const html = fs.readFileSync('./sheet001.html', 'utf-8')
+const html = fs.readFileSync('sheet001.html', 'utf-8')
 
 const isName = (line) => {
   return !line.includes('>') &&

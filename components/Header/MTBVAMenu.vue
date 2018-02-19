@@ -70,7 +70,7 @@
     pointer-events: auto;
     top: 0;
     will-change: transform;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   a {
