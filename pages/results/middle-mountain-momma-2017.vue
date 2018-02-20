@@ -25,7 +25,7 @@
       )
     },
     created() {
-      this.$store.commit('changeRace', 1)
+      this.$store.commit('selectRace', 'Middle Mountain Momma 2017')
     }
   }
 </script>

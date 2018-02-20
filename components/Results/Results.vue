@@ -63,8 +63,8 @@
         this.$store.commit('raceLoaded', res.data)
         this.currentRace = res.data
       },
-      raceIsLoaded(race) {
-        return this.$store.state.loadedRaces.find(loaded => loaded.name === race.name)
+      raceIsLoaded(name) {
+        return this.$store.state.loadedRaces.find(loaded => loaded.name === name)
       }
     }
   }
