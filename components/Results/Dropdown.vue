@@ -17,7 +17,7 @@
         <a v-for="item in items"
            class="dropdown-item mtbva-dropdown-item"
            @click="selectRace(item)">
-          {{item.name}}
+          {{item}}
         </a>
       </div>
     </div>

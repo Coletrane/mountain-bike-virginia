@@ -33,9 +33,14 @@
   }
 
   th, td {
+    border: none;
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 33%;
+  }
+
+  tr:hover, tr:active {
+    border-bottom: 1px solid #dee2e6;
   }
 
 </style>

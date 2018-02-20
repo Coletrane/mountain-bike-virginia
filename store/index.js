@@ -22,10 +22,8 @@ const createStore = () => {
       selectRace (state, race) {
         state.currentRaceName = race
       },
-      addRace (state, race) {
-        if (!state.loadedRaces.find(loaded => loaded.name === race.name)) {
-          state.loadedRaces.push(race)
-        }
+      raceLoaded (state, race) {
+        state.loadedRaces.push(race)
       },
       toggleMenu (state) {
         state.showMenu = !state.showMenu
