@@ -16,8 +16,8 @@
            aria-labelledby="dropdownMenuButton">
         <a v-for="item in items"
            class="dropdown-item mtbva-dropdown-item"
-           @click="select(item)">
-          {{item.race}}
+           @click="selectRace(item)">
+          {{item.name}}
         </a>
       </div>
     </div>
@@ -34,10 +34,6 @@
       items: {
         required: true,
         type: Array
-      },
-      selectRace: {
-        required: true,
-        type: Function
       }
     },
     data() {
@@ -50,8 +46,8 @@
       toggleDropdown() {
         this.expanded = !this.expanded
       },
-      select(item) {
-        this.selectRace(item)
+      selectRace(race) {
+        this.$store.commit('selectRace', race)
         this.toggleDropdown()
       }
     }
