@@ -38,14 +38,16 @@
     },
     methods: {
       handleScroll() {
+        let scrolled = window.pageYOffset
+        let limit = this.$el.offsetTop + this.$el.offsetHeight
+        let backgroundPos
+        if (scrolled > this.$el.offsetTop && scrolled <= limit) {
+          backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 2.5}px`;
+        } else {
+          backgroundPos = '0px';
+        }
         window.requestAnimationFrame(() => {
-          let scrolled = window.pageYOffset
-          let limit = this.$el.offsetTop + this.$el.offsetHeight
-          if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-            this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 2.5}px`;
-          } else {
-            this.$el.style.backgroundPositionY = "-0px";
-          }
+          this.$el.style.backgroundPositionY = backgroundPos;
         })
       },
       handleResize() {

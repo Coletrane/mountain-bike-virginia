@@ -13,68 +13,7 @@
                         appear>
         <div v-if="page >= 1"
              :key="1">
-          <post-card :post="posts.rockstarVa2018"
-                     :link="posts.rockstarVa2018.fbEvent">
-            <div slot="words">
-              <div class="promo">
-                Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke. Ride as a team or solo (SPOT tracker required) and try to complete the 270, a feat yet to be accomplished.<a href="http://roanokemountainadventures.com/"> Roanoke Mountain Adventures</a> will be providing shuttles to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for shuttles.</a>
-                <div>
-                  <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
-                </div>
-                <div>
-                  <facebook-link :href="posts.rockstarVa2018.fbEvent"/>
-                </div>
-              </div>
-            </div>
-            <div slot="media">
-              <image-link :post="posts.rockstarVa2018"
-                          :href="posts.rockstarVa2018.fbEvent"
-                          :src="s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
-            </div>
-          </post-card>
-          <post-card :post="posts.middleMtMomma2018"
-                     :link="posts.middleMtMomma2018.fbEvent">
-            <div slot="author">
-              <h4 class="subheading">
-                A week before Mother's day, its
-                <span style="font-weight: 800;">
-                MOMMA'S DAY.
-              </span>
-              </h4>
-            </div>
-            <div slot="words">
-              <div class="promo">
-                21st annual Middle Mountain Momma at the gorgeous <a
-                href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
-                State Park.</a> The
-                first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
-                44mi.
-                <nuxt-link to="/results"
-                           @click.native="setMMM()">
-                  View the results from last year.
-                </nuxt-link>
-                <div>
-                  <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
-                    Register on BikeReg.
-                  </a>
-                </div>
-                <div>
-                  <facebook-link :href="posts.middleMtMomma2018.fbEvent"/>
-                </div>
-              </div>
-            </div>
-            <div slot="media"
-                 style="margin-top: -2.8rem;">
-              <a :href="posts.middleMtMomma2018.fbEvent">
-                <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
-                     class="image-smaller">
-              </a>
-              <image-link :post="posts.middleMtMomma2018"
-                          :href="posts.middleMtMomma2018.fbEvent"
-                          :src="posts.middleMtMomma2018.extraImgs.start"/>
-              <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
-            </div>
-          </post-card>
+          <slot name="first"/>
           <post-card :post="posts.gravelocity2018">
             <div slot="words">
               <div class="promo">
@@ -187,17 +126,16 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "./Header/MTBVAHeader.vue"
-  import PostCard from "./Card/PostCard.vue"
-  import Youtube from "./Iframes/Youtube.vue"
-  import ImageLink from "./Images/ImageLink.vue"
+  import MTBVAHeader from "../Header/MTBVAHeader.vue"
+  import PostCard from "../Card/PostCard.vue"
+  import Youtube from "../Iframes/Youtube.vue"
+  import ImageLink from "../Images/ImageLink.vue"
 
-  import {findRaceIndex} from "../assets/results"
-  import {posts} from "../assets/posts"
-  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from "../scripts/routes"
-  import * as routes from "../scripts/routes"
-  import RideWithGps from "./Iframes/RideWithGps"
-  import FacebookLink from "./Images/FacebookLink";
+  import {posts} from "../../assets/posts"
+  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from "../../scripts/routes"
+  import * as routes from "../../scripts/routes"
+  import RideWithGps from "../Iframes/RideWithGps"
+  import FacebookLink from "../Images/FacebookLink";
 
   const foliage = `${s3StaticImg}${imgRoutes["/"]}`
 
