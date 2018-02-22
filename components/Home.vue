@@ -301,7 +301,7 @@
   }
 
   .new-page-fade-enter-to {
-    transition: opacity 2s;
+    transition: opacity 1s;
   }
 
   .new-page-fade-enter {

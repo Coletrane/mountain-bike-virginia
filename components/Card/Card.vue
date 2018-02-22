@@ -24,6 +24,6 @@
 
 <style>
   .mtbva-card {
-    background-color: rgba(0, 0, 0, .55);
+    background-color: white;
   }
 </style>

@@ -84,12 +84,10 @@
 
   h1, h2, h3, h4 {
     font-family: 'Julius Sans One', sans-serif;
-    color: white;
   }
 
   span, div, p {
     font-family: 'Lato', sans-serif;
-    color: white;
   }
 
   button {
@@ -144,7 +142,7 @@
   }
 
   .menu-slide-enter-active, .menu-slide-leave-active {
-    transition: all .5s ;
+    transition: all .2s ;
   }
   .menu-slide-enter, .menu-slide-leave-to {
     transform: translateX(100%);

@@ -26,7 +26,9 @@
       }
     },
     mounted() {
-      this.handleResize()
+      if (process.browser) {
+        this.handleResize()
+      }
     },
     destroyed() {
       if (process.browser) {
@@ -78,7 +80,7 @@
   }
 
   .hero {
-    color: #FFFFFF;
+    color: white;
     height: 100%;
     z-index: 2;
     position: relative;

@@ -63,8 +63,8 @@
 
   .mtbva-dropdown {
     background-color: transparent;
-    border-color: white;
-    color: white;
+    border-color: black;
+    color: black;
   }
 
   .mtbva-dropdown:hover {
@@ -92,11 +92,11 @@
     cursor: pointer;
   }
   .mtbva-dropdown-item:hover {
-    color: white !important;
-    background-color: rgba(0,0,0, 0.9) !important;
+    color: black !important;
+    background-color: rgba(0,0,0, 0.3) !important;
   }
   .mtbva-dropdown-item:active {
-    color: white !important;
+    color: black !important;
   }
 
 </style>

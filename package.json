@@ -89,7 +89,7 @@
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
     "test-i": "BROWSER=chrome mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000 && BROWSER=safari mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000",
     "test-safari": "BROWSER=safari mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000",
-    "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js",
+    "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js --timeout 30000",
     "test": "NODE_ENV=test npm run test-i && NODE_ENV=test npm run test-u",
     "test-prod": "NODE_ENV=production npm run test-i && NODE_ENV=production npm run test-u",
     "deploy-prod": "./scripts/deploy-prod.sh",

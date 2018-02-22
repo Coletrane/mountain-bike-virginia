@@ -28,8 +28,9 @@
   }
 </script>
 <style scoped>
-  table {
 
+  thead {
+    display: table-column;
   }
 
   th, td {
@@ -40,7 +41,7 @@
   }
 
   tr:hover, tr:active {
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid black;
   }
 
 </style>

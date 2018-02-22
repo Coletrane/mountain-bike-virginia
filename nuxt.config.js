@@ -65,12 +65,6 @@ module.exports = {
         rel: 'shortcut icon',
         href: 'favicon.ico?v=eE5JONrEL8'
       }
-    ],
-    script: [
-      {
-        src: '/defer-iframes.js',
-        type: 'text/javascript'
-      }
     ]
   },
   plugins: [

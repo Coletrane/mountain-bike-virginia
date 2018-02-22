@@ -20,16 +20,16 @@
              alt="XXCVA Series. Just 40 more miles.">
       </nuxt-link>
     </span>
-    <span v-show="!mobile"
-          class="flex-outer">
-      <weather city="blacksburg"/>
-    </span>
     <span class="flex-outer">
       <weather city="roanoke"/>
     </span>
     <span v-show="!mobile"
           class="flex-outer">
       <weather city="harrisonburg"/>
+    </span>
+    <span v-show="!mobile"
+          class="flex-outer">
+      <weather city="richmond"/>
     </span>
     <span class="flex-outer">
       <a @click="toggleMenu()"

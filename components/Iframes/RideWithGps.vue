@@ -1,5 +1,6 @@
 <template>
-  <iframe :url="url"
+  <iframe v-if="loaded"
+          :src="url"
           scrolling='no'>
   </iframe>
 </template>
@@ -12,17 +13,25 @@
         type: String
       }
     },
-    mounted() {
-
-      setTimeout(() => {
-        if (this.$store.state.iframesDeferred) {
-          this.$el.src = this.url
-        }
-
-        if (!this.$el.url && !this.$store.state.iframesDeferred) {
-          this.$store.commit('deferIframes')
-        }
-      }, 500)
+    data() {
+      return {
+        loaded: false
+      }
+    },
+    created() {
+      if (process.browser) {
+        window.addEventListener('load', this.onLoad)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('load', this.onLoad)
+      }
+    },
+    methods: {
+      onLoad() {
+        this.loaded = true
+      }
     }
   }
 </script>
