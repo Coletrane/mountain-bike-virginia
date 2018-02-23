@@ -6,7 +6,7 @@
         A week before Mother's day, its
         <span style="font-weight: 800;">
                 MOMMA'S DAY.
-              </span>
+        </span>
       </h4>
     </div>
     <div slot="words">
@@ -36,9 +36,13 @@
         <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
              class="image-smaller">
       </a>
-      <image-link :post="posts.middleMtMomma2018"
-                  :href="posts.middleMtMomma2018.fbEvent"
-                  :src="posts.middleMtMomma2018.extraImgs.start"/>
+      <a v-if="loaded"
+         :href="posts.middleMtMomma2018.fbEvent"
+         style="text-align: center">
+        <img :src="posts.middleMtMomma2018.extraImgs.start"
+             alt="Middle Mountain Momma Starting Line"
+             style="width: 100%"/>
+      </a>
       <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
     </div>
   </post-card>
@@ -62,7 +66,24 @@
     },
     data() {
       return {
-        posts: posts
+        posts: posts,
+        loaded: false
+      }
+    },
+    created() {
+      if (process.browser) {
+        window.addEventListener('load', this.onLoad)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('load', this.onLoad)
+      }
+    },
+    methods: {
+      onLoad() {
+        this.loaded = true
+        window.removeEventListener('load', this.onLoad)
       }
     }
   }

@@ -31,6 +31,7 @@
     methods: {
       onLoad() {
         this.loaded = true
+        window.removeEventListener('load', this.onLoad)
       }
     }
   }

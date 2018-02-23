@@ -15,7 +15,7 @@
     <div slot="media">
       <image-link :post="posts.rockstarVa2018"
                   :href="posts.rockstarVa2018.fbEvent"
-                  :src="s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
+                  :src="routes.s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
     </div>
   </post-card>
 </template>
@@ -24,6 +24,9 @@
   import PostCard from '../Card/PostCard'
   import FacebookLink from '../Images/FacebookLink'
   import ImageLink from '../Images/ImageLink'
+
+  import {posts} from '../../assets/posts'
+  import * as routes from '../../scripts/routes'
 
   export default {
     name: 'rockstar-va-2018-home',
@@ -34,7 +37,8 @@
     },
     data() {
       return {
-        posts: posts
+        posts: posts,
+        routes: routes
       }
     }
   }

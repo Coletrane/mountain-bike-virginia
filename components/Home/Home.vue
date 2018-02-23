@@ -208,7 +208,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .main-content {
 
   }
