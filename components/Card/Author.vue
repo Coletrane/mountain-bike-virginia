@@ -1,5 +1,6 @@
 <template>
   <div class="author-container">
+    <div>
     <a :href="author.fbUrl">
       <img class="author-pic"
            :src=author.imgUrl
@@ -8,11 +9,18 @@
         <span class="name">
         {{author.name}}
         </span>
-        <img v-if="author.fbUrl"
-             class="fb-icon"
-             :src="fbIconSrc"/>
       </div>
     </a>
+    </div>
+    <div class="social-icons">
+      <a :href="author.fbUrl">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a v-if="author.stravaUrl"
+         :href="author.stravaUrl">
+        <i class="fab fa-strava"></i>
+      </a>
+    </div>
   </div>
 </template>
 <script>
@@ -53,10 +61,13 @@
     width: 50%;
   }
 
-  .name {
+  .social-icons {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .social-icons a {
+    padding-left: .5rem;
     padding-right: .5rem;
   }
-  .fb-icon {
-    vertical-align: text-bottom;
-  }
+
 </style>

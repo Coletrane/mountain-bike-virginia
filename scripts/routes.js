@@ -1,5 +1,6 @@
 const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
+const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const rockstarVa2018 = 'rockstar-va-2018'
 const middleMtMomma2018 = 'middle-mt-momma-2018'
 const gravelocity2018 = 'gravelocity-2018'
@@ -16,6 +17,7 @@ const creature2016 = 'creature-2016'
 const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
+  battleAtBlackhorse2018,
   rockstarVa2018,
   middleMtMomma2018,
   gravelocity2018,
@@ -73,7 +75,8 @@ imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
-
+// TODO
+imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = ''
 const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
 const s3Favicons = s3 + '/static/favicons/'
@@ -86,6 +89,7 @@ const baseUrl = 'http://bikeva.com'
 module.exports = {
   results,
   resultsMiddleMountainMomma2017,
+  battleAtBlackhorse2018,
   rockstarVa2018,
   gravelocity2018,
   middleMtMomma2018,

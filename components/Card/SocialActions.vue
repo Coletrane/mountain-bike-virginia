@@ -1,15 +1,18 @@
 <template>
   <div class="social">
-    <a :href="facebookLink">
-      <i class="fa fa-facebook"
+    <a :href="facebookLink"
+        class="fb-social-action">
+      <i class="fab fa-facebook"
          aria-hidden="true"></i>
     </a>
-    <a :href="redditLink">
-      <i class="fa fa-reddit"
+    <a :href="redditLink"
+        class="reddit-social-action">
+      <i class="fab fa-reddit-alien"
          aria-hidden="true"></i>
     </a>
-    <a :href="twitterLink">
-      <i class="fa fa-twitter"
+    <a :href="twitterLink"
+       class="twitter-social-action">
+      <i class="fab fa-twitter"
          aria-hidden="true"></i>
     </a>
   </div>
@@ -52,22 +55,21 @@
 <style scoped>
 
   a {
-    color: transparent;
-  }
-
-  i {
     font-size: 2rem;
   }
 
-  i.fa-facebook {
+  a.fb-social-action {
     color: #3B5998;
+    padding-right: .5rem;
   }
 
-  i.fa-reddit {
+  a.reddit-social-action {
+    font-size: 2.4rem;
     color: #FF5700;
   }
 
-  i.fa-twitter {
+  a.twitter-social-action {
     color: #1DA1F2;
+    padding-left: .5rem;
   }
 </style>

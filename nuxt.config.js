@@ -16,10 +16,6 @@ module.exports = {
     {
       src: 'bootstrap/dist/css/bootstrap.css',
       lang: 'css'
-    },
-    {
-      src: 'font-awesome/css/font-awesome.css',
-      lang: 'css'
     }
   ],
   head: {
@@ -29,6 +25,12 @@ module.exports = {
       {name: 'robots', content: 'index, follow'},
       {name: 'revisit-after', content: '1 week'},
       {property: 'fb:app_id', content: '1426359417419881'}
+    ],
+    script: [
+      {
+        src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
+        defer: true
+      }
     ],
     link: [
       {
@@ -91,7 +93,7 @@ module.exports = {
   },
   router: {
     scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
+      return {x: 0, y: 0}
     },
     middleware: [
       'close-menu'

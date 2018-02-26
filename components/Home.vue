@@ -13,6 +13,13 @@
                         appear>
         <div v-if="page >= 1"
              :key="1">
+          <post-card :post="posts.battleAtBlackhorse2018">
+            <div slot="words">
+              <div class="promo">
+
+              </div>
+            </div>
+          </post-card>
           <post-card :post="posts.rockstarVa2018"
                      :link="posts.rockstarVa2018.fbEvent">
             <div slot="words">
@@ -80,7 +87,7 @@
               <div class="promo">
                 Who wants to do a gravel ride? Okay how about a 54 mile one? Okay how about 20 degrees?
                 Perfect. Let's ride. Once again Gravelocity had a great turnout with people coming from
-                Fredricsburg, Virginia Beach, and even Cincinnati!
+                Fredricksburg, Virginia Beach, and even Cincinnati!
               </div>
             </div>
             <div slot="media">
@@ -120,6 +127,8 @@
               <image-link :post="posts.pivotSwitchbladeReview"/>
             </div>
           </post-card>
+        <div v-if="page >= 2"
+             :key="2">
           <post-card :post="posts.creature2017Recap">
             <div slot="words">
               <div class="promo">
@@ -140,8 +149,6 @@
             </div>
           </post-card>
         </div>
-        <div v-if="page >= 2"
-             :key="2">
           <post-card :post="posts.relaunch">
             <div slot="media">
               <image-link :post="posts.relaunch"/>

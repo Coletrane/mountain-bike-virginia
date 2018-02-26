@@ -3,22 +3,38 @@ import * as routes from '../scripts/routes'
 const cole = {
   name: 'Cole Inman',
   imgUrl: `${routes.s3StaticImg}cole.jpg`,
-  fbUrl: 'https://www.facebook.com/uhmcole'
+  fbUrl: 'https://www.facebook.com/uhmcole',
+  stravaUrl: 'https://www.strava.com/athletes/15356904'
 }
 
 const kyle = {
   name: 'Kyle Inman',
   imgUrl: `${routes.s3StaticImg}kyle.jpg`,
-  fbUrl: 'https://www.facebook.com/kylnman'
+  fbUrl: 'https://www.facebook.com/kylnman',
+  stravaUrl: 'https://www.strava.com/athletes/3880?oq=kyle'
 }
 
 const corey = {
   name: 'Corey Heitz',
   imgUrl: `${routes.s3StaticImg}corey.jpg`,
-  fbUrl: 'https://www.facebook.com/corey.heitz'
+  fbUrl: 'https://www.facebook.com/corey.heitz',
+  stravaUrl: 'https://www.strava.com/athletes/5342373'
+}
+
+const gavin = {
+  name: 'Gavin Kline',
+  imgUrl: `${routes.s3StaticImg}gavin.jpg`,
+  fbUrl: 'https://www.facebook.com/gavin.kline.9'
 }
 
 export const posts = {}
+
+posts.battleAtBlackhorse2018 = {
+  title: 'Battle at Blackhorse 2018',
+  subtitle: 'Enduro up the Glenwood Horse Trail, culimnating in the famed Dody Ridge',
+  img: {}, // TODO,
+  author: gavin
+}
 
 posts.rockstarVa2018 = {
   title: 'RockStar VA 270',

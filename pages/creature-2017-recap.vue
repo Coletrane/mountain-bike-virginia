@@ -129,9 +129,7 @@
     data() {
       return {
         img: `${s3Pages}${post.route}/`,
-        post: post,
-        showPgOne: false,
-        showPgTwo: false
+        post: post
       }
     }
   }

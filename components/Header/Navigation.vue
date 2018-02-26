@@ -121,7 +121,7 @@
     width: 170px;
   }
   .mtbva-menu-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
     cursor: pointer;
   }
@@ -139,7 +139,7 @@
     }
 
     .mtbva-menu-icon {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   @media (max-width: 450px) {

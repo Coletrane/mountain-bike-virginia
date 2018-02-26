@@ -3,7 +3,7 @@
         <div class="mtbva-nav-item mtbva-nav-close">
           <a @click="closeMenu()"
              id="close-menu-link">
-            <i class="fa fa-close"></i>
+            <i class="fas fa-times-circle"></i>
           </a>
         </div>
         <div class="mtbva-nav-item">
@@ -26,7 +26,7 @@
           <a class="nav-link"
              id="facebook-nav-link"
              href="https://www.facebook.com/xxcva/">
-            <i class="fa fa-facebook-official"></i>
+            <i class="fab fa-facebook"></i>
             Facebook
           </a>
         </div>
