@@ -44,6 +44,10 @@
       },
       toggleMenu() {
         this.$store.commit('toggleMenu')
+      },
+      onLoad() {
+        this.$store.commit('onLoad')
+        window.removeEventListener('load', this.onLoad)
       }
     },
     created() {
@@ -51,11 +55,13 @@
       if (process.browser) {
         //not having this.handleScroll() is important for the method to be called over and over
         window.addEventListener("scroll", this.handleScroll)
+        window.addEventListener('load', this.onLoad)
       }
     },
     destroyed() {
       if (process.browser) {
         window.removeEventListener("scroll", this.handleScroll)
+        window.removeEventListener('load', this.onLoad)
       }
     },
     computed: {

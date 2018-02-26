@@ -17,14 +17,19 @@
         type: Boolean,
         required: false,
         default: false
-      },
-      alt: {
-        type: String,
-        default: 'Mountain Bike Virginia'
       }
     },
     components: {
       ResponsiveImg
+    },
+    computed: {
+      alt() {
+        if (process.browser) {
+          console.log(window.location.toString().substr(window.location.toString().lastIndexOf('/') + 1))
+        } else {
+          return 'Mountain Bike Virginia'
+        }
+      }
     }
   }
 </script>

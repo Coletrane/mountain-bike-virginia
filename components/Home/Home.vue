@@ -1,5 +1,6 @@
 <template>
   <div class="blog">
+
     <m-t-b-v-a-header
       :header-height="900"
       :image="img"
@@ -8,18 +9,23 @@
       button="Events"
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
+
     <div class="main-content main-content-mobile">
       <transition-group name="new-page-fade"
                         appear>
         <div v-if="page >= 1"
              :key="1">
+
+          <slot name="first"/>
+
           <post-card :post="posts.battleAtBlackhorse2018">
             <div slot="words">
               <div class="promo">
-                23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge trails. Congrats to the podium of this tough race:
+                23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
+                trails. Congrats to the podium of this tough race:
                 <ol>
                   <li>
-                  Lucas Weaver 13:52
+                    Lucas Weaver 13:52
                   </li>
                   <li>
                     Micah Fontz 14:17
@@ -40,68 +46,9 @@
               <image-link :post="posts.battleAtBlackhorse2018"/>
             </div>
           </post-card>
-          <post-card :post="posts.rockstarVa2018"
-                     :link="posts.rockstarVa2018.fbEvent">
-            <div slot="words">
-              <div class="promo">
-                Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke. Ride as a team or solo (SPOT tracker required) and try to complete the 270, a feat yet to be accomplished.<a href="http://roanokemountainadventures.com/"> Roanoke Mountain Adventures</a> will be providing shuttles to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for shuttles.</a>
-                <div>
-                  <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
-                </div>
-                <div>
-                  <facebook-link :href="posts.rockstarVa2018.fbEvent"/>
-                </div>
-              </div>
-            </div>
-            <div slot="media">
-              <image-link :post="posts.rockstarVa2018"
-                          :href="posts.rockstarVa2018.fbEvent"
-                          :src="s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
-            </div>
-          </post-card>
-          <post-card :post="posts.middleMtMomma2018"
-                     :link="posts.middleMtMomma2018.fbEvent">
-            <div slot="author">
-              <h4 class="subheading">
-                A week before Mother's day, its
-                <span style="font-weight: 800;">
-                MOMMA'S DAY.
-              </span>
-              </h4>
-            </div>
-            <div slot="words">
-              <div class="promo">
-                21st annual Middle Mountain Momma at the gorgeous <a
-                href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
-                State Park.</a> The
-                first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
-                44mi.
-                <nuxt-link to="/results"
-                           @click.native="setMMM()">
-                  View the results from last year.
-                </nuxt-link>
-                <div>
-                  <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
-                    Register on BikeReg.
-                  </a>
-                </div>
-                <div>
-                  <facebook-link :href="posts.middleMtMomma2018.fbEvent"/>
-                </div>
-              </div>
-            </div>
-            <div slot="media"
-                 style="margin-top: -2.8rem;">
-              <a :href="posts.middleMtMomma2018.fbEvent">
-                <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
-                     class="image-smaller">
-              </a>
-              <image-link :post="posts.middleMtMomma2018"
-                          :href="posts.middleMtMomma2018.fbEvent"
-                          :src="posts.middleMtMomma2018.extraImgs.start"/>
-              <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
-            </div>
-          </post-card>
+
+          <slot name="second"/>
+
           <post-card :post="posts.gravelocity2018">
             <div slot="words">
               <div class="promo">
@@ -114,6 +61,7 @@
               <image-link :post="posts.gravelocity2018"/>
             </div>
           </post-card>
+
           <post-card :post="posts.firstRide2018">
             <div slot="words">
               <div class="promo">
@@ -128,11 +76,13 @@
               <image-link :post="posts.firstRide2018"/>
             </div>
           </post-card>
+
           <post-card :post="posts.dodyRidgeRunFall2017">
             <div slot="media">
               <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"/>
             </div>
           </post-card>
+
           <post-card
             :post="posts.pivotSwitchbladeReview">
             <div slot="words">
@@ -147,8 +97,11 @@
               <image-link :post="posts.pivotSwitchbladeReview"/>
             </div>
           </post-card>
+        </div>
+
         <div v-if="page >= 2"
              :key="2">
+
           <post-card :post="posts.creature2017Recap">
             <div slot="words">
               <div class="promo">
@@ -168,17 +121,19 @@
               <youtube :src="posts.creature2017Recap.ytSrc"/>
             </div>
           </post-card>
-        </div>
+
           <post-card :post="posts.relaunch">
             <div slot="media">
               <image-link :post="posts.relaunch"/>
             </div>
           </post-card>
+
           <post-card :post="posts.specMines29Oct17">
             <div slot="media">
               <image-link :post="posts.specMines29Oct17"/>
             </div>
           </post-card>
+
           <post-card :post="posts.creature2016">
             <div slot="words">
               <div class="promo">
@@ -190,18 +145,20 @@
                 managed to take
                 first despite starting 3 minutes late.
               </div>
-              <div class="promo">
-                <nuxt-link :to="'results'">
-                  View the results here.
-                </nuxt-link>
-              </div>
+            </div>
+            <div class="promo">
+              <nuxt-link :to="'results'">
+                View the results here.
+              </nuxt-link>
             </div>
             <div slot="media">
               <youtube :src="posts.creature2016.ytSrc"/>
             </div>
           </post-card>
+
         </div>
       </transition-group>
+
       <div v-if="page < maxPage"
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
@@ -214,22 +171,21 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from "./Header/MTBVAHeader.vue"
-  import PostCard from "./Card/PostCard.vue"
-  import Youtube from "./Iframes/Youtube.vue"
-  import ImageLink from "./Images/ImageLink.vue"
+  import MTBVAHeader from '../Header/MTBVAHeader.vue'
+  import PostCard from '../Card/PostCard.vue'
+  import Youtube from '../Iframes/Youtube.vue'
+  import ImageLink from '../Images/ImageLink.vue'
 
-  import {findRaceIndex} from "../assets/results"
-  import {posts} from "../assets/posts"
-  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from "../scripts/routes"
-  import * as routes from "../scripts/routes"
-  import RideWithGps from "./Iframes/RideWithGps"
-  import FacebookLink from "./Images/FacebookLink";
+  import {posts} from '../../assets/posts'
+  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from '../../scripts/routes'
+  import * as routes from '../../scripts/routes'
+  import RideWithGps from '../Iframes/RideWithGps'
+  import FacebookLink from '../Images/FacebookLink'
 
-  const foliage = `${s3StaticImg}${imgRoutes["/"]}`
+  const foliage = `${s3StaticImg}${imgRoutes['/']}`
 
   export default {
-    name: "home",
+    name: 'home',
     components: {
       FacebookLink,
       RideWithGps,
@@ -246,7 +202,7 @@
         routes: routes,
         maxPage: 2,
         fbIcon: `${s3StaticImg}fb-black.svg`,
-        mmmFb: "https://www.facebook.com/events/371981453213164/",
+        mmmFb: 'https://www.facebook.com/events/371981453213164/',
         s3Pages: s3Pages,
         s3StaticImg: s3StaticImg
       }
@@ -255,8 +211,8 @@
       if (process.browser) {
         // Change the og:image location based on the route
         // This is only needed because the head() function above is not exposed to the Vue instance
-        let ogImage = document.querySelector("meta[property='og:image']")
-        let ogUrl = document.querySelector("meta[property='og:url']")
+        let ogImage = document.querySelector('meta[property=\'og:image\']')
+        let ogUrl = document.querySelector('meta[property=\'og:url\']')
 
         if (ogImage && ogUrl) {
           if (this.$route.name === routes.rockstarVa2018) {
@@ -287,17 +243,13 @@
     methods: {
       loadMore() {
         const newPage = this.page + 1
-        this.$store.commit("changePage", newPage)
-      },
-      setMMM() {
-        let raceIdx = findRaceIndex('Middle Mountain Momma 2017')
-        this.$store.commit('changeRace', raceIdx)
+        this.$store.commit('changePage', newPage)
       }
     }
   }
 </script>
 
-<style scoped>
+<style>
   .main-content {
 
   }

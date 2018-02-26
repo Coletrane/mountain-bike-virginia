@@ -1,15 +1,24 @@
 <template>
-  <home/>
+  <home>
+    <div slot="second">
+      <middle-mt-momma2018-home/>
+      <rockstar-va2018-home/>
+    </div>
+  </home>
 </template>
 <script>
-  import Home from '../components/Home'
+  import Home from '../components/Home/Home'
   import {home} from "../assets/head-tags";
   import {headTags} from "../assets/functions"
+  import MiddleMtMomma2018Home from '../components/Home/MiddleMtMomma2018Home'
+  import RockstarVa2018Home from '../components/Home/RockstarVa2018Home'
 
   export default {
     name: 'index',
     components: {
-      Home
+      Home,
+      MiddleMtMomma2018Home,
+      RockstarVa2018Home
     },
     head() {
       return headTags(

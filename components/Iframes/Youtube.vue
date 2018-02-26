@@ -1,6 +1,6 @@
 <template>
   <div class="yt-wrapper">
-    <iframe v-if="loaded"
+    <iframe v-if="$store.state.loaded"
             width="100%"
             frameborder="0"
             allowfullscreen
@@ -15,26 +15,6 @@
       src: {
         required: true,
         type: String
-      }
-    },
-    data() {
-      return {
-        loaded: false
-      }
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener('load', this.onLoad)
-      }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener('load', this.onLoad)
-      }
-    },
-    methods: {
-      onLoad() {
-        this.loaded = true
       }
     }
   }

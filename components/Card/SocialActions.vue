@@ -47,11 +47,7 @@
     }
   }
 </script>
-<style>
-  i {
-    padding: .7rem;
-  }
-  </style>
+
 <style scoped>
 
   a {
@@ -61,6 +57,11 @@
   a.fb-social-action {
     color: #3B5998;
     padding-right: .5rem;
+  }
+  @media (max-width: 692px) {
+    .fa-facebook {
+      margin-right: 4px;
+    }
   }
 
   a.reddit-social-action {

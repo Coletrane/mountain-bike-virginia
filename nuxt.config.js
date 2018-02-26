@@ -1,4 +1,3 @@
-const path = require('path')
 const routes = require('./scripts/routes')
 const weather = require('./weather-api-key')
 

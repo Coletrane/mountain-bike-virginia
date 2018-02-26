@@ -1,5 +1,5 @@
 <template>
-  <iframe v-if="loaded"
+  <iframe v-if="$store.state.loaded"
           :src="url"
           scrolling='no'>
   </iframe>
@@ -11,26 +11,6 @@
       url: {
         required: true,
         type: String
-      }
-    },
-    data() {
-      return {
-        loaded: false
-      }
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener('load', this.onLoad)
-      }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener('load', this.onLoad)
-      }
-    },
-    methods: {
-      onLoad() {
-        this.loaded = true
       }
     }
   }

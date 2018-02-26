@@ -8,7 +8,8 @@ const createStore = () => {
       page: 1,
       currentRaceName: races[0],
       loadedRaces: [],
-      showMenu: false
+      showMenu: false,
+      loaded: false
     },
 
     mutations: {
@@ -26,6 +27,9 @@ const createStore = () => {
       },
       closeMenu (state) {
         state.showMenu = false
+      },
+      onLoad (state) {
+        state.loaded = true
       }
     },
 
