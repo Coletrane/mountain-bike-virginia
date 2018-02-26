@@ -3,12 +3,18 @@
     <m-t-b-v-a-header
       :header-height="headerHeight"
       :image="image"
-      :title="post.title"
+      :title="title"
       subpage/>
     <div class="main-content">
         <post-card :post="post"
                    :links="false">
           <div slot="author">
+            <div v-if="post.date">
+              {{post.date}}
+            </div>
+            <div v-if="post.loc">
+              {{post.loc}}
+            </div>
           </div>
           <div slot="media">
             <author :author="post.author"/>
@@ -46,6 +52,18 @@
       },
       post: {
         required: true
+      },
+      noTitle: {
+        type: Boolean,
+        required: false,
+        default: false
+      }
+    },
+    computed: {
+      title() {
+        if (!this.noTitle) {
+          return this.post.title
+        }
       }
     }
   }

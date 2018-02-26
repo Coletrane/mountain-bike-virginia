@@ -75,8 +75,8 @@ imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
-// TODO
-imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = ''
+imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
+
 const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
 const s3Favicons = s3 + '/static/favicons/'

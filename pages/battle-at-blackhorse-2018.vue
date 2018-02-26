@@ -1,5 +1,16 @@
 <template>
-  
+  <div>
+    <blog-post :header-height="600"
+               :image="img + 'IMG_3576.jpg'"
+               :post="post"
+               no-title>
+      <div slot="content">
+        <div>
+
+        </div>
+      </div>
+    </blog-post>
+  </div>
 </template>
 
 <script>
@@ -7,7 +18,7 @@
   import Youtube from "../components/Iframes/Youtube.vue"
   import BlogImage from "../components/Images/BlogImage.vue"
 
-  import {s3Pages} from "../scripts/routes"
+  import {s3Pages, battleAtBlackhorse2018} from "../scripts/routes"
   import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
@@ -27,6 +38,12 @@
         'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
         post
       )
+    },
+    data() {
+      return {
+        img: `${s3Pages}${battleAtBlackhorse2018}/`,
+        post: post
+      }
     }
   }
 </script>

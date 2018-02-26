@@ -16,8 +16,28 @@
           <post-card :post="posts.battleAtBlackhorse2018">
             <div slot="words">
               <div class="promo">
-
+                23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge trails. Congrats to the podium of this tough race:
+                <ol>
+                  <li>
+                  Lucas Weaver 13:52
+                  </li>
+                  <li>
+                    Micah Fontz 14:17
+                  </li>
+                  <li>
+                    Matt Clements 14:19
+                  </li>
+                  <li>
+                    Rob Hobson 14:26
+                  </li>
+                  <li>
+                    Andrew Issem 15:13
+                  </li>
+                </ol>
               </div>
+            </div>
+            <div slot="media">
+              <image-link :post="posts.battleAtBlackhorse2018"/>
             </div>
           </post-card>
           <post-card :post="posts.rockstarVa2018"

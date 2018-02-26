@@ -51,7 +51,6 @@
     width: 40%;
     text-align: center;
     padding-top: 1.2rem;
-    padding-bottom: 1rem;
     max-width: 180px;
     float: left;
   }

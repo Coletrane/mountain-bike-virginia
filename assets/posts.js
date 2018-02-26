@@ -24,16 +24,20 @@ const corey = {
 const gavin = {
   name: 'Gavin Kline',
   imgUrl: `${routes.s3StaticImg}gavin.jpg`,
-  fbUrl: 'https://www.facebook.com/gavin.kline.9'
+  fbUrl: 'https://www.facebook.com/gavin.kline.9',
+  stravaUrl: 'https://www.strava.com/athletes/594725'
 }
 
 export const posts = {}
 
 posts.battleAtBlackhorse2018 = {
   title: 'Battle at Blackhorse 2018',
-  subtitle: 'Enduro up the Glenwood Horse Trail, culimnating in the famed Dody Ridge',
-  img: {}, // TODO,
-  author: gavin
+  subtitle: 'Enduro up the Glenwood Horse Trail, culimnating on the famed Dody Ridge',
+  img: `${routes.s3Pages}${routes.battleAtBlackhorse2018}/${routes.imgRoutes[routes.battleAtBlackhorse2018]}`,
+  author: gavin,
+  route: routes.battleAtBlackhorse2018,
+  date: 'February 25th, 2018',
+  loc: 'Day Creek, Blue Ridge, VA'
 }
 
 posts.rockstarVa2018 = {
@@ -64,7 +68,9 @@ posts.gravelocity2018 = {
   subtitle: 'From Gravel Dr. to the top of the Blue Ridge Parkway',
   img: `${routes.s3Pages}${routes.gravelocity2018}/bigfinish.jpg`,
   route: routes.gravelocity2018,
-  author: cole
+  author: cole,
+  date: 'January 20th 2018',
+  loc: 'Gravel Dr, Troutville, VA'
 }
 
 posts.firstRide2018 = {

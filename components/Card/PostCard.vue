@@ -7,19 +7,19 @@
             <a v-if="link"
                :href="link">
               <h2 class="headline">{{post.title}}</h2>
-              <h4 class="subheading">{{post.subtitle}}</h4>
+              <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </a>
             <router-link v-else-if="!link && post.route"
                          :to="{name: post.route}"
                          exact>
               <h2 class="headline">{{post.title}}</h2>
-              <h4 class="subheading">{{post.subtitle}}</h4>
+              <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </router-link>
             <div v-else>
               <h2 class="headline">{{post.title}}</h2>
-              <h4 class="subheading">{{post.subtitle}}</h4>
+              <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </div>
           </div>
@@ -71,7 +71,11 @@
     }
   }
 
+  .headline {
+    font-weight: 800;
+  }
   .subheading {
+    font-size: 1.5rem;
     font-family: 'Lato', sans-serif;
   }
 </style>
