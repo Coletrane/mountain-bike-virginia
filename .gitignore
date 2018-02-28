@@ -36,7 +36,6 @@ npm_debug.log
 !.idea/watcherTasks.xml,
 
 .nuxt
-dist/*
 
 static/sitemap.xml
 

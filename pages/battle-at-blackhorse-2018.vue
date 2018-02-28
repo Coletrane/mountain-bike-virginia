@@ -44,13 +44,13 @@
         <div class="blog-p">
           Leila Husain absolutely crushed the win for the gals, besting most of the dudes as well. Emma Runquist and Leslie King took the remaining steps of the women’s podium.
         </div>
-        <blog-image :src="img + 'P1000178.jpg'"/>
-        <div class="blog-p center caption">
-          Local legend Steve Hetherington shreds the Dody Ridge Chute
-        </div>
         <blog-image :src="img + 'P1000320.jpg'"/>
         <blog-image :src="img + 'P1000330.jpg'"/>
         <blog-image :src="img + 'P1000188.jpg'"/>
+        <blog-image :src="img + 'P1000178.jpg'"/>
+        <div class="blog-p center caption">
+          Local legend Steve Hetherington shreds the Dody Ridge Shoot
+        </div>
         <blog-image :src="img + 'P1000268.jpg'"/>
         <blog-image :src="img + 'P1010174.jpg'"/>
         <blog-image :src="img + 'P1010135.jpg'"/>
