@@ -80,8 +80,8 @@
     },
     head() {
       return headTags(
-        home.title,
-        home.description,
+        "Middle Mountain Momma 2018",
+        "A week before Mother's Day its MOMMAS DAY. Middle Mountain Momma mountain bike race at Douthat State Park Discovery Center, May 6, 2018",
         home.keywords,
         post
       )

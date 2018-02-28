@@ -50,8 +50,8 @@
     },
     head() {
       return headTags(
-        home.title,
-        home.description,
+        'RockStar VA',
+        '270 mile ride/race from Harrisonburg VA to Roanoke VA. Trail and gravel options are available with shuttles available as well',
         home.keywords,
         posts.rockstarVa2018
       )

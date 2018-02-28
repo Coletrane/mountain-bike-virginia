@@ -20,7 +20,7 @@ describe('results tests', () => {
       const formattedRoute = justChildRoute.split('-').join(' ')
 
       it(`should have ${formattedRoute} in the select box`, async () => {
-        await driver.get(`${testUrl}${routes.results}/${justChildRoute}`)
+        await driver.get(`${testUrl}${route}`)
 
         let dropdownText = await driver.findElement(
           By.id('dropdownMenuButton'))
