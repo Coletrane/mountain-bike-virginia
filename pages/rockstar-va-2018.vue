@@ -21,7 +21,7 @@
             <facebook-link :href="post.fbEvent"/>
           </div>
         </div>
-        <ride-with-gps :src="post.rwGps"/>
+        <ride-with-gps :url="post.rwGps"/>
       </div>
     </blog-post>
   </div>
