@@ -4,7 +4,7 @@
       :header-height="700"
       :image="img + 'iron-mine.jpg'"
       :post="post"
-      :inlineAuthor="true">
+      inline-author>
       <div slot="content">
         <youtube :src="post.ytSrc"></youtube>
       </div>

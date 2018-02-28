@@ -33,21 +33,25 @@
     </span>
     <span class="flex-outer">
       <a @click="toggleMenu()"
-         id='mtbva-menu-icon'>
-        <i class="fa fa-bars mtbva-menu-icon"></i>
+         id="mtbva-menu-link">
+        <font-awesome-icon :icon="faBars"
+                           class="mtbva-menu-icon"/>
       </a>
     </span>
   </nav>
 </template>
 <script>
-  import {boxShadow} from "../../assets/styles"
-  import {s3StaticImg} from "../../scripts/routes"
+  import {boxShadow} from '../../assets/styles'
+  import {s3StaticImg} from '../../scripts/routes'
   import Weather from './Weather'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import {faBars} from '@fortawesome/fontawesome-free-solid'
 
   export default {
-    name: "navigation",
+    name: 'navigation',
     components: {
-      Weather
+      Weather,
+      FontAwesomeIcon
     },
     data: function () {
       return {
@@ -56,7 +60,8 @@
           boxShadow: boxShadow
         },
         mobile: true,
-        menu: false
+        menu: false,
+        faBars: faBars
       }
     },
     created() {
@@ -101,14 +106,17 @@
     padding-left: .5rem;
     padding-right: .5rem;
   }
+
   .flex-inner {
     flex: 1 1 auto;
     padding-left: .5rem;
     padding-right: .5rem;
   }
+
   .inner-left {
     text-align: left;
   }
+
   .inner-right {
     text-align: right;
   }
@@ -120,11 +128,13 @@
   .xxcva {
     width: 170px;
   }
+
   .mtbva-menu-icon {
     font-size: 2.5rem;
     color: white;
     cursor: pointer;
   }
+
   @media (max-width: 575px) {
     nav {
       height: 100px;
@@ -142,6 +152,7 @@
       font-size: 1.5rem;
     }
   }
+
   @media (max-width: 450px) {
     nav {
       height: 75px;

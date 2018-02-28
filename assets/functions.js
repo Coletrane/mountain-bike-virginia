@@ -16,7 +16,12 @@ export const headTags = (title, desc, keywords, post) => {
       property: 'og:url'
     }
 
-    fbUrl.content = `${routes.baseUrl}/${post.route}`
+    if (post.route) {
+      fbUrl.content = `${routes.baseUrl}/${post.route}/`
+    } else if (post.route === '') {
+      fbUrl.content = `${routes.baseUrl}/`
+    }
+
     metas.push(fbUrl)
   }
 

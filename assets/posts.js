@@ -32,12 +32,22 @@ export const posts = {}
 
 posts.battleAtBlackhorse2018 = {
   title: 'Battle at Blackhorse 2018',
-  subtitle: 'Enduro up the Glenwood Horse Trail, culimnating on the famed Dody Ridge',
+  subtitle: 'Enduro up the Glenwood Horse Trail, culminating on the famed Dody Ridge',
   img: `${routes.s3Pages}${routes.battleAtBlackhorse2018}/${routes.imgRoutes[routes.battleAtBlackhorse2018]}`,
   author: gavin,
   route: routes.battleAtBlackhorse2018,
   date: 'February 25th, 2018',
   loc: 'Day Creek, Blue Ridge, VA'
+}
+
+posts.battleAtBlackhorse2018Video = {
+  title: 'Video: Battle at Blackhorse 2018',
+  subtitle: 'The Classic Dody Ridge Drop',
+  ytSrc: 'https://www.youtube.com/embed/SyFtJCHQNtc',
+  author: cole,
+  date: 'February 25th, 2018',
+  loc: 'Day Creek, Blue Ridge, VA',
+  route: routes.battleAtBlackhorse2018Video
 }
 
 posts.rockstarVa2018 = {
@@ -46,7 +56,8 @@ posts.rockstarVa2018 = {
   img: `${routes.s3Pages}${routes.rockstarVa2018}/rockstar.jpg`,
   route: routes.rockstarVa2018,
   author: cole,
-  fbEvent: 'https://www.facebook.com/events/1583483341702188/'
+  fbEvent: 'https://www.facebook.com/events/1583483341702188/',
+  rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26535965&sampleGraph=true'
 }
 
 posts.middleMtMomma2018 = {
@@ -54,7 +65,7 @@ posts.middleMtMomma2018 = {
   subtitle: 'Douthat State Park Discovery Center, May 6, 2018',
   img: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm.png`,
   route: routes.middleMtMomma2018,
-  author: cole,
+  author: kyle,
   rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true',
   fbEvent: 'https://www.facebook.com/events/371981453213164/',
   extraImgs: {

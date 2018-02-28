@@ -1,26 +1,52 @@
 <template>
-  <home>
-    <div slot="first">
-      <rockstar-va2018-home/>
-      <middle-mt-momma2018-home/>
-    </div>
-  </home>
+  <div>
+    <blog-post :header-height="700"
+               :image="post.img"
+               :post="post"
+               no-title
+               :no-post-title="false">
+
+      <div slot="content">
+        <div class="blog-promo">
+          Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel
+          between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke. Ride as a team
+          or solo (SPOT tracker required) and try to complete the 270, a feat yet to be accomplished.<a
+          href="http://roanokemountainadventures.com/"> Roanoke Mountain Adventures</a> will be providing shuttles
+          to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for
+          shuttles.</a>
+          <div>
+            <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
+          </div>
+          <div>
+            <facebook-link :href="post.fbEvent"/>
+          </div>
+        </div>
+        <ride-with-gps :src="post.rwGps"/>
+      </div>
+    </blog-post>
+  </div>
 </template>
 
 <script>
-  import {posts} from "../assets/posts"
-  import {headTags} from "../assets/functions"
-  import {home} from "../assets/head-tags"
-  import Home from "../components/Home/Home"
-  import MiddleMtMomma2018Home from '../components/Home/MiddleMtMomma2018Home'
-  import RockstarVa2018Home from '../components/Home/RockstarVa2018Home'
+  import {posts} from '../assets/posts'
+  import {headTags} from '../assets/functions'
+  import {home} from '../assets/head-tags'
+
+  import BlogPost from '../components/BlogPost'
+  import ImageLink from '../components/Images/ImageLink'
+  import FacebookLink from '../components/Images/FacebookLink'
+  import RideWithGps from '../components/Iframes/RideWithGps'
+
+  const post = posts.rockstarVa2018
 
   export default {
     name: 'rockstar-va-2018',
     components: {
-      Home,
-      MiddleMtMomma2018Home,
-      RockstarVa2018Home
+      RideWithGps,
+      FacebookLink,
+      ImageLink,
+      BlogPost
+
     },
     head() {
       return headTags(
@@ -29,6 +55,11 @@
         home.keywords,
         posts.rockstarVa2018
       )
+    },
+    data() {
+      return {
+        post: post
+      }
     }
   }
 </script>

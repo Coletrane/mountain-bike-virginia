@@ -25,7 +25,9 @@
     computed: {
       alt() {
         if (process.browser) {
-          console.log(window.location.toString().substr(window.location.toString().lastIndexOf('/') + 1))
+          let route = window.location.toString().substr(window.location.toString().lastIndexOf('/') + 1)
+          route = route.split('-').join(' ')
+          return route
         } else {
           return 'Mountain Bike Virginia'
         }

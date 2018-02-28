@@ -3,14 +3,14 @@
         <div class="mtbva-nav-item mtbva-nav-close">
           <a @click="closeMenu()"
              id="close-menu-link">
-            <i class="fas fa-times-circle"></i>
+            <font-awesome-icon :icon="faTimesCircle"/>
           </a>
         </div>
         <div class="mtbva-nav-item">
           <nuxt-link to="/"
                      class="nav-link"
                      id="trails-nav-link">
-            <i class="fa fa-bicycle"></i>
+            <font-awesome-icon :icon="faBicycle"/>
             Trails
           </nuxt-link>
         </div>
@@ -18,7 +18,7 @@
           <nuxt-link to="results"
                      class="nav-link"
                      id="results-nav-link">
-            <i class="fa fa-list-ol"></i>
+            <font-awesome-icon :icon="faListOl"/>
             Results
           </nuxt-link>
         </div>
@@ -26,7 +26,7 @@
           <a class="nav-link"
              id="facebook-nav-link"
              href="https://www.facebook.com/xxcva/">
-            <i class="fab fa-facebook"></i>
+            <font-awesome-icon :icon="faFacebook"/>
             Facebook
           </a>
         </div>
@@ -40,11 +40,24 @@
 
 <script>
   import {s3StaticImg} from '../../scripts/routes'
-
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import {faFacebook} from '@fortawesome/fontawesome-free-brands'
+  import {
+    faTimesCircle,
+    faBicycle,
+    faListOl
+  } from '@fortawesome/fontawesome-free-solid'
   export default {
     name: "mtbva-menu",
+    components: {
+      FontAwesomeIcon
+    },
     data() {
       return {
+        faFacebook: faFacebook,
+        faTimesCircle: faTimesCircle,
+        faBicycle: faBicycle,
+        faListOl: faListOl,
         pirates: `${s3StaticImg}jolly.png`
       }
     },

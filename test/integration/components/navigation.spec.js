@@ -73,7 +73,7 @@ describe('<navigation> tests', () => {
 
   it('has the hamburger menu icon', async () => {
     let icon = await driver.findElement(
-      By.id('mtbva-menu-icon'))
+      By.id('mtbva-menu-link'))
 
     expect(await icon.isDisplayed())
       .to.be.true
@@ -86,7 +86,7 @@ describe('<navigation> tests', () => {
 
     before(async () => {
       icon = await driver.findElement(
-        By.id('mtbva-menu-icon'))
+        By.id('mtbva-menu-link'))
 
       await icon.click()
       // lol Safari
@@ -161,7 +161,7 @@ describe('<navigation> tests', () => {
 
       it('should close when clicking on the overlay', async () => {
         await driver.findElement(
-          By.id('mtbva-menu-icon'))
+          By.id('mtbva-menu-link'))
           .click()
         await driver.sleep(3000)
 

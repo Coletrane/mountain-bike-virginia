@@ -64,7 +64,7 @@
           height: `${this.height}px`,
           backgroundImage: `url(${this.src})`
         }
-      },
+      }
     }
   }
 

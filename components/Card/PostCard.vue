@@ -6,19 +6,22 @@
           <div class="col-9 col-sm-10">
             <a v-if="link"
                :href="link">
-              <h2 class="headline">{{post.title}}</h2>
+              <h2 v-if="!noTitle"
+                  class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </a>
             <router-link v-else-if="!link && post.route"
                          :to="{name: post.route}"
                          exact>
-              <h2 class="headline">{{post.title}}</h2>
+              <h2 v-if="!noTitle"
+                  class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </router-link>
             <div v-else>
-              <h2 class="headline">{{post.title}}</h2>
+              <h2 v-if="!noTitle"
+                  class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
               <slot name="author"/>
             </div>
@@ -46,6 +49,11 @@
       },
       link: {
         required: false
+      },
+      noTitle: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     components: {

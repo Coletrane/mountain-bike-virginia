@@ -2,29 +2,42 @@
   <div class="social">
     <a :href="facebookLink"
         class="fb-social-action">
-      <i class="fab fa-facebook"
-         aria-hidden="true"></i>
+      <font-awesome-icon :icon="faFacebook"/>
     </a>
     <a :href="redditLink"
         class="reddit-social-action">
-      <i class="fab fa-reddit-alien"
-         aria-hidden="true"></i>
+      <font-awesome-icon :icon="faReddit"/>
     </a>
     <a :href="twitterLink"
        class="twitter-social-action">
-      <i class="fab fa-twitter"
-         aria-hidden="true"></i>
+      <font-awesome-icon :icon="faTwitter"/>
     </a>
   </div>
 </template>
 <script>
   import {baseUrl} from '../../scripts/routes'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import {
+    faFacebook,
+    faReddit,
+    faTwitter
+  } from '@fortawesome/fontawesome-free-brands'
 
   export default {
     name: "social-actions",
     props: {
       post: {
         required: true
+      }
+    },
+    components: {
+      FontAwesomeIcon
+    },
+    data() {
+      return {
+        faFacebook: faFacebook,
+        faReddit: faReddit,
+        faTwitter: faTwitter
       }
     },
     computed: {
@@ -56,7 +69,7 @@
 
   a.fb-social-action {
     color: #3B5998;
-    padding-right: .5rem;
+    padding-right: 1rem;
   }
   @media (max-width: 692px) {
     .fa-facebook {
@@ -65,12 +78,11 @@
   }
 
   a.reddit-social-action {
-    font-size: 2.4rem;
     color: #FF5700;
   }
 
   a.twitter-social-action {
     color: #1DA1F2;
-    padding-left: .5rem;
+    padding-left: 1rem;
   }
 </style>

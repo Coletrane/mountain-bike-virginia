@@ -8,8 +8,6 @@ describe('routes tests', () => {
   let driver
   let expect
   let testUrl
-  let routesWithHome = routes.routesWithIndex
-  routesWithHome.unshift('/')
 
   before(async () => {
     driver = await global.driver
@@ -17,21 +15,26 @@ describe('routes tests', () => {
     testUrl = await global.testUrl
   })
 
-  for (const route of routesWithHome) {
+  for (const route of routes.appRoutes) {
     describe(route, () => {
+      let url
+
+      before(async () => {
+        if (route === '/') {
+          url = await testUrl
+        } else {
+          url = await `${testUrl}${route}`
+        }
+      })
       describe('<head> tests', () => {
-        it('should have index.html', async () => {
-          if (route === '/') {
-            await driver.get(`${testUrl}`)
-          } else {
-            await driver.get(`${testUrl}${route}`)
-          }
+        it('should navigate to route', async () => {
+          await driver.get(url)
 
           // Idk why Safari requires I do this
-          driver.sleep(3000)
+          await driver.sleep(3000)
 
           let res = await request({
-            uri: `${testUrl}`,
+            uri: await url,
             resolveWithFullResponse: true
           })
 
@@ -49,7 +52,7 @@ describe('routes tests', () => {
           expect(await driver.findElement(
             By.xpath("//meta[@name='viewport']"))
             .getAttribute('content'))
-            .to.equal('width=device-width,initial-scale=1')
+            .not.to.be.undefined
         })
 
         it('has robots', async () => {
@@ -114,9 +117,9 @@ describe('routes tests', () => {
         it('has og:url', async () => {
           let expected
           if (route === '/') {
-            expected = `${routes.baseUrl}/`
+            expected = `http://bikeva.com/`
           } else {
-            expected = `${routes.baseUrl}/${route}`
+            expected = `http://bikeva.com${route}`
           }
           expect(await driver.findElement(
             By.xpath("//meta[@property='og:url']"))
@@ -175,7 +178,7 @@ describe('routes tests', () => {
           describe('<home> social links test', () => {
 
           })
-        } else if (!route.startsWith('results')) { // TODO: add social links to results
+        } else if (!route.includes('results')) { // TODO: add social links to results
           describe(`${route} social links test`, () => {
             let social
             let links

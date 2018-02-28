@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 
-const dist = './dist'
+const dist = './dist/'
+const options = {
+  index: 'index.html'
+}
 const port = 3001
 
-app.use(express.static(dist))
+app.use(express.static(dist, options))
 
 app.listen(port, function () {
   console.log('Mountain Bike Virginia serving static files from ' +

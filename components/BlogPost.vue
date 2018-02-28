@@ -7,7 +7,8 @@
       subpage/>
     <div class="main-content">
         <post-card :post="post"
-                   :links="false">
+                   :links="false"
+                   :no-title="noPostTitle">
           <div slot="author">
             <div v-if="post.date">
               {{post.date}}
@@ -17,7 +18,8 @@
             </div>
           </div>
           <div slot="media">
-            <author :author="post.author"/>
+            <author :author="post.author"
+                    :class="authorClass"/>
             <slot name="content"/>
           </div>
         </post-card>
@@ -53,16 +55,31 @@
       post: {
         required: true
       },
+      inlineAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       noTitle: {
         type: Boolean,
         required: false,
         default: false
+      },
+      noPostTitle: {
+        type: Boolean,
+        required: false,
+        default: true
       }
     },
     computed: {
       title() {
         if (!this.noTitle) {
           return this.post.title
+        }
+      },
+      authorClass() {
+        if (this.inlineAuthor) {
+          return 'inline-author'
         }
       }
     }
@@ -78,6 +95,10 @@
     font-size: 1.2rem;
   }
 
+  .blog-promo {
+    padding: 1rem;
+  }
+
   .center {
     text-align: center;
   }
@@ -87,4 +108,7 @@
     color: #5c5e5c;
   }
 
+  .inline-author {
+    float: unset !important;
+  }
 </style>

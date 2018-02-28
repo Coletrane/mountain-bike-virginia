@@ -25,12 +25,6 @@ module.exports = {
       {name: 'revisit-after', content: '1 week'},
       {property: 'fb:app_id', content: '1426359417419881'}
     ],
-    script: [
-      {
-        src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
-        defer: true
-      }
-    ],
     link: [
       {
         rel: 'stylesheet',
@@ -101,6 +95,5 @@ module.exports = {
   env: {
     prodWeather: weather.prod,
     testWeather: weather.test
-  },
-  dev: (process.env.NODE_ENV !== 'production')
+  }
 }

@@ -14,17 +14,21 @@
     </div>
     <div class="social-icons">
       <a :href="author.fbUrl">
-        <i class="fab fa-facebook"></i>
+        <font-awesome-icon :icon="faFacebook"/>
       </a>
       <a v-if="author.stravaUrl"
          :href="author.stravaUrl">
-        <i class="fab fa-strava"></i>
+        <font-awesome-icon :icon="faStrava"/>
       </a>
     </div>
   </div>
 </template>
 <script>
-  import {s3StaticImg} from "../../scripts/routes"
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import {
+    faFacebook,
+    faStrava
+  } from '@fortawesome/fontawesome-free-brands'
 
   export default {
     name: "author",
@@ -39,9 +43,13 @@
         default: false
       }
     },
+    components: {
+      FontAwesomeIcon
+    },
     data() {
       return {
-        fbIconSrc: `${s3StaticImg}fb-black.svg`
+        faFacebook: faFacebook,
+        faStrava: faStrava
       }
     }
   }

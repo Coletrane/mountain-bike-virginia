@@ -1,5 +1,6 @@
 <template>
-    <div class="weather">
+    <div v-if="allLoaded"
+         class="weather">
       <div class="city-name">{{cityName}}</div>
       <div class="temp-icon">
         <span class="temperature">{{tempStr}}</span>
@@ -60,6 +61,9 @@
           const iconLocation = weatherIcons.find(icon => icon.ow === this.iconId)
           return `${s3WeatherIcons}/${iconLocation.icon}.svg`
         }
+      },
+      allLoaded() {
+        return this.imgLoaded && this.tempStr && this.temperature && this.iconId
       }
     },
     watch: {
