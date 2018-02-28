@@ -29,9 +29,9 @@
           </post-card>
 
           <post-card :post="posts.battleAtBlackhorse2018Video">
-              <div slot="media">
-                <youtube :src="posts.battleAtBlackhorse2018Video.ytSrc"/>
-              </div>
+            <div slot="media">
+              <youtube :src="posts.battleAtBlackhorse2018Video.ytSrc"/>
+            </div>
           </post-card>
 
           <post-card :post="posts.rockstarVa2018"
@@ -134,6 +134,11 @@
             </div>
           </post-card>
 
+        </div>
+
+        <div v-if="page >= 2"
+             :key="2">
+
           <post-card :post="posts.dodyRidgeRunFall2017">
             <div slot="media">
               <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"/>
@@ -154,10 +159,6 @@
               <image-link :post="posts.pivotSwitchbladeReview"/>
             </div>
           </post-card>
-        </div>
-
-        <div v-if="page >= 2"
-             :key="2">
 
           <post-card :post="posts.creature2017Recap">
             <div slot="words">
@@ -228,8 +229,8 @@
   </div>
 </template>
 <script>
-  import {home} from "../assets/head-tags";
-  import {headTags} from "../assets/functions"
+  import {home} from '../assets/head-tags'
+  import {headTags} from '../assets/functions'
   import {posts} from '../assets/posts'
   import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from '../scripts/routes'
   import * as routes from '../scripts/routes'
