@@ -50,6 +50,16 @@ posts.battleAtBlackhorse2018Video = {
   route: routes.battleAtBlackhorse2018Video
 }
 
+posts.tuesdayNightLightsVideoFeb2018 = {
+  title: 'Video: Tuesday Night Lights',
+  subtitle: 'Weekly Winter ride from Deschutes Brewery up Mill Mountain',
+  ytSrc: 'https://www.youtube.com/embed/tE3jWeQAEfY',
+  author: kyle,
+  date: 'February 23rd, 2018',
+  loc: 'Mill Mountain, Roanoke, VA',
+  route: routes.tuesdayNightLightsVideoFeb2018
+}
+
 posts.rockstarVa2018 = {
   title: 'RockStar VA 270',
   subtitle: 'April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA. 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)',

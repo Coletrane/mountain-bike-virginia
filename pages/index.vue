@@ -37,6 +37,12 @@
             </div>
           </post-card>
 
+          <post-card :post="posts.tuesdayNightLightsVideoFeb2018">
+            <div slot="media">
+              <youtube :src="posts.tuesdayNightLightsVideoFeb2018.ytSrc"/>
+            </div>
+          </post-card>
+
           <post-card :post="posts.rockstarVa2018"
                      :link="posts.rockstarVa2018.fbEvent">
             <div slot="words">

@@ -17,7 +17,6 @@
 <script>
   import BlogPost from '../components/BlogPost.vue'
   import Youtube from '../components/Iframes/Youtube.vue'
-  import BlogImage from '../components/Images/BlogImage.vue'
 
   import {s3Pages, battleAtBlackhorse2018} from '../scripts/routes'
   import {posts} from '../assets/posts'
@@ -29,7 +28,6 @@
     name: 'battle-at-blackhorse-2018-video',
     components: {
       BlogPost,
-      BlogImage,
       Youtube
     },
     head() {
@@ -52,7 +50,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

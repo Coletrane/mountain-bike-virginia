@@ -20,7 +20,6 @@
         results.keywords,
         {
           route: routes.resultsBattleAtBlackhorse2018,
-          ogImage: `${routes.s3Pages}${routes.battleAtBlackhorse2018}/P1010117.jpg`
         }
       )
     },

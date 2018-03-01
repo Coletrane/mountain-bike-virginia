@@ -3,6 +3,7 @@ const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
+const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
 const rockstarVa2018 = 'rockstar-va-2018'
 const middleMtMomma2018 = 'middle-mt-momma-2018'
 const gravelocity2018 = 'gravelocity-2018'
@@ -22,6 +23,7 @@ const appRoutes = [
   resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
+  tuesdayNightLightsVideoFeb2018,
   rockstarVa2018,
   middleMtMomma2018,
   gravelocity2018,
@@ -55,6 +57,10 @@ appRoutes.forEach((route) => {
 imgRoutes['/'] = 'foliage.jpg'
 imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
+imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010117.jpg'
+imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
+imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1010128.jpg'
+imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
 // imgRoutes[appRoutesObj[relaunch]] = 'rockymthi8.jpg'
 imgRoutes[appRoutesObj[creature2017Recap]] = 'lumberjack.jpg'
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
@@ -65,8 +71,6 @@ imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
-imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
-imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1010128.jpg'
 
 const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
@@ -82,6 +86,7 @@ module.exports = {
   resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
+  tuesdayNightLightsVideoFeb2018,
   rockstarVa2018,
   gravelocity2018,
   middleMtMomma2018,

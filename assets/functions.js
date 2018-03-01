@@ -30,21 +30,17 @@ export const headTags = (title, desc, keywords, post) => {
       property: 'og:image'
     }
 
-    if (!post.ogImage) {
-      if (post.route === '') {
-        fbImg.content = `${routes.s3StaticImg}${routes.imgRoutes['/']}`
-      } else {
-        let splitUrl = post.route.split('/')
-
-        // FIXME: this only works one level deep
-        if (splitUrl.length > 1) {
-          fbImg.content = `${routes.s3Pages}${splitUrl[0]}/${routes.imgRoutes[post.route]}`
-        } else {
-          fbImg.content = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
-        }
-      }
+    if (post.route === '') {
+      fbImg.content = `${routes.s3StaticImg}${routes.imgRoutes['/']}`
     } else {
-      fbImg.content = post.ogImage
+      let splitUrl = post.route.split('/')
+
+      // FIXME: this only works one level deep
+      if (splitUrl.length > 1) {
+        fbImg.content = `${routes.s3Pages}${splitUrl[0]}/${routes.imgRoutes[post.route]}`
+      } else {
+        fbImg.content = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+      }
     }
     metas.push(fbImg)
   }
