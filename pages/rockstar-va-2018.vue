@@ -19,7 +19,10 @@
             <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
           </div>
           <div>
-            <facebook-link :href="post.fbEvent"/>
+            <a :href="post.fbEvent">
+              <font-awesome-icon :icon="faFacebook"
+                                 class="inline-facebook-icon"/>
+            </a>
           </div>
         </div>
         <ride-with-gps :url="post.rwGps"/>
@@ -35,8 +38,9 @@
 
   import BlogPost from '../components/BlogPost'
   import ImageLink from '../components/Images/ImageLink'
-  import FacebookLink from '../components/Images/FacebookLink'
   import RideWithGps from '../components/Iframes/RideWithGps'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
   const post = posts.rockstarVa2018
 
@@ -44,10 +48,9 @@
     name: 'rockstar-va-2018',
     components: {
       RideWithGps,
-      FacebookLink,
       ImageLink,
-      BlogPost
-
+      BlogPost,
+      FontAwesomeIcon
     },
     head() {
       return headTags(
@@ -60,6 +63,7 @@
     data() {
       return {
         post: post,
+        faFacebook: faFacebook,
         relatedPosts: [
           posts.middleMtMomma2018,
           posts.creature2017Recap

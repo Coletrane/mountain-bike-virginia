@@ -28,7 +28,10 @@
               </a>
             </div>
             <div>
-              <facebook-link :href="post.fbEvent"/>
+              <a :href="post.fbEvent">
+                <font-awesome-icon :icon="faFacebook"
+                                   class="inline-facebook-icon"/>
+              </a>
             </div>
           </div>
         </div>
@@ -58,9 +61,10 @@
   import {s3Pages, middleMtMomma2018} from '../scripts/routes'
 
   import BlogImage from '../components/Images/BlogImage'
-  import FacebookLink from '../components/Images/FacebookLink'
   import RideWithGps from '../components/Iframes/RideWithGps'
   import BlogPost from '../components/BlogPost'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
   const post = posts.middleMtMomma2018
 
@@ -69,12 +73,13 @@
     components: {
       BlogPost,
       RideWithGps,
-      FacebookLink,
-      BlogImage
+      BlogImage,
+      FontAwesomeIcon
     },
     data() {
       return {
         img: `${s3Pages}${middleMtMomma2018}/`,
+        faFacebook: faFacebook,
         post: post,
         relatedPosts: [
           posts.creature2017Recap,

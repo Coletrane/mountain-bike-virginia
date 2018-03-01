@@ -14,9 +14,8 @@
         Developed by Cole Inman.
       </div>
       <div>
-        <a class="icon" href="https://github.com/coletrane">
-          <img :src="img + 'github.svg'"
-               class="github">
+        <a class="github" href="https://github.com/coletrane">
+          <font-awesome-icon :icon="faGithub"/>
         </a>
       </div>
     </div>
@@ -25,17 +24,21 @@
 <script>
   import {s3StaticImg} from "../../scripts/routes"
   import LogosFourCols from './LogosFourCols'
-  import LogosThreeCols from "./LogosTwoCols";
+  import LogosThreeCols from "./LogosTwoCols"
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
   export default {
     name: 'mtbva-footer',
     components: {
       LogosThreeCols,
-      LogosFourCols
+      LogosFourCols,
+      FontAwesomeIcon
     },
     data() {
       return {
         img: s3StaticImg,
+        faGithub: faGithub,
         sponsors: [
           {
             img: `${s3StaticImg}va-blueridge.jpg`,
@@ -117,16 +120,18 @@
     },
     methods: {
       handleScroll() {
+        let scrolled = window.pageYOffset
+        let offsetOffset = 1000 // lol
+        let offset = this.$el.offsetTop - offsetOffset
+        let limit = this.$el.offsetTop + this.$el.offsetHeight
+        let backgroundPos
+        if (scrolled > offset && scrolled <= limit) {
+          backgroundPos = `${(scrolled - offset) / -3}px`;
+        } else {
+          backgroundPos = `0px`
+        }
         window.requestAnimationFrame(() => {
-          let scrolled = window.pageYOffset
-          let offsetOffset = 1000 // lol
-          let offset = this.$el.offsetTop - offsetOffset
-          let limit = this.$el.offsetTop + this.$el.offsetHeight
-          if (scrolled > offset && scrolled <= limit) {
-            this.$el.style.backgroundPositionY = `${(scrolled - offset) / -3}px`;
-          } else {
-            this.$el.style.backgroundPositionY = `0px`
-          }
+          this.$el.style.backgroundPositionY = backgroundPos
         })
       },
       handleResize() {
@@ -184,13 +189,17 @@
   }
 
   .copyright {
-    padding-top: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     text-align: center;
     color: white;
   }
 
   .github {
-    width: 2rem;
-    padding-bottom: 1rem;
+    color: white;
+    font-size: 2rem;
+  }
+  .github:hover {
+    color: white;
   }
 </style>

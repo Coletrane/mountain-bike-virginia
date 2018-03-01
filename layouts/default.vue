@@ -201,4 +201,7 @@
     background-color: #FFFFFF !important;
   }
 
+  .inline-facebook-icon {
+    font-size: 1.5rem;
+  }
 </style>

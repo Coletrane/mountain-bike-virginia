@@ -48,7 +48,11 @@
                   <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
                 </div>
                 <div>
-                  <facebook-link :href="posts.rockstarVa2018.fbEvent"/>
+                  <a :href="posts.rockstarVa2018.fbEvent">
+                    Details
+                    <font-awesome-icon :icon="faFacebook"
+                                        class="inline-facebook-icon"/>
+                  </a>
                 </div>
               </div>
             </div>
@@ -85,7 +89,11 @@
                   </a>
                 </div>
                 <div>
-                  <facebook-link :href="posts.middleMtMomma2018.fbEvent"/>
+                  <a :href="posts.middleMtMomma2018.fbEvent">
+                    Details
+                    <font-awesome-icon :icon="faFacebook"
+                                       class="inline-facebook-icon"/>
+                  </a>
                 </div>
               </div>
             </div>
@@ -240,19 +248,20 @@
   import Youtube from '../components/Iframes/Youtube'
   import ImageLink from '../components/Images/ImageLink'
   import RideWithGps from '../components/Iframes/RideWithGps'
-  import FacebookLink from '../components/Images/FacebookLink'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
   const foliage = `${s3StaticImg}${imgRoutes['/']}`
 
   export default {
     name: 'index',
     components: {
-      FacebookLink,
       RideWithGps,
       MTBVAHeader,
       PostCard,
       Youtube,
-      ImageLink
+      ImageLink,
+      FontAwesomeIcon
     },
     head() {
       return headTags(
@@ -269,11 +278,11 @@
     data() {
       return {
         img: foliage,
+        faFacebook: faFacebook,
         attachPosts: false,
         posts: posts,
         routes: routes,
         maxPage: 2,
-        fbIcon: `${s3StaticImg}fb-black.svg`,
         mmmFb: 'https://www.facebook.com/events/371981453213164/',
         s3Pages: s3Pages,
         s3StaticImg: s3StaticImg
