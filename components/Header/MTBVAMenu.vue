@@ -30,6 +30,14 @@
             Facebook
           </a>
         </div>
+      <div class="mtbva-nav-item">
+        <a class="nav-link"
+           id="instagram-nav-link"
+           href="https://www.instagram.com/cole_bikeva/">
+          <font-awesome-icon :icon="faInstagram"/>
+          Instagram
+        </a>
+      </div>
         <div class="tag-bottom">
           <img :src="pirates"
                alt="Mountain Bike Virginia Pirates"
@@ -41,12 +49,12 @@
 <script>
   import {s3StaticImg} from '../../scripts/routes'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import {faFacebook} from '@fortawesome/fontawesome-free-brands'
-  import {
-    faTimesCircle,
-    faBicycle,
-    faListOl
-  } from '@fortawesome/fontawesome-free-solid'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+  import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
+  import faTimesCircle from '@fortawesome/fontawesome-free-solid/faTimesCircle'
+  import faBicycle from '@fortawesome/fontawesome-free-solid/faBicycle'
+  import faListOl from '@fortawesome/fontawesome-free-solid/faListOl'
+
   export default {
     name: "mtbva-menu",
     components: {
@@ -55,6 +63,7 @@
     data() {
       return {
         faFacebook: faFacebook,
+        faInstagram: faInstagram,
         faTimesCircle: faTimesCircle,
         faBicycle: faBicycle,
         faListOl: faListOl,

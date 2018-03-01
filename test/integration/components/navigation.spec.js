@@ -7,7 +7,8 @@ const until = require('selenium-webdriver').until
 let navLinks = [
   'trails',
   'results',
-  'facebook'
+  'facebook',
+  'instagram'
 ]
 
 describe('<navigation> tests', () => {

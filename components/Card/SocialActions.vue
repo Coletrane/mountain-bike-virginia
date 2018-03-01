@@ -17,11 +17,9 @@
 <script>
   import {baseUrl} from '../../scripts/routes'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import {
-    faFacebook,
-    faReddit,
-    faTwitter
-  } from '@fortawesome/fontawesome-free-brands'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+  import faReddit from '@fortawesome/fontawesome-free-brands/faReddit'
+  import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
 
   export default {
     name: "social-actions",

@@ -25,10 +25,8 @@
 </template>
 <script>
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import {
-    faFacebook,
-    faStrava
-  } from '@fortawesome/fontawesome-free-brands'
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+  import faStrava from '@fortawesome/fontawesome-free-brands/faStrava'
 
   export default {
     name: "author",

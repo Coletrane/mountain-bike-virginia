@@ -45,7 +45,7 @@
   import {s3StaticImg} from '../../scripts/routes'
   import Weather from './Weather'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import {faBars} from '@fortawesome/fontawesome-free-solid'
+  import faBars from '@fortawesome/fontawesome-free-solid/faBars'
 
   export default {
     name: 'navigation',
