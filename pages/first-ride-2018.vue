@@ -2,7 +2,8 @@
   <blog-post
     :header-height="800"
     :image="img + 'frozen-turner.jpg'"
-    :post="post">
+    :post="post"
+    :related-posts="relatedPosts">
     <div slot="content">
       <div class="blog-p">
         Cold? Yeah, you could say that. I mean, it IS winter after all, right? However, this is winter in
@@ -85,7 +86,11 @@
     data() {
       return {
         img:  `${s3Pages}${post.route}/`,
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.creature2017Recap,
+          posts.middleMtMomma2018
+        ]
       }
     }
   }

@@ -3,15 +3,15 @@
     <blog-post :header-height="600"
                :image="img + 'dam.jpg'"
                :post="post"
-               inline-author>
+               :related-posts="relatedPosts">
 
       <div slot="content">
         <div class="blog-promo">
           <h4 class="subheading">
             A week before Mother's day, its
             <span style="font-weight: 800;">
-                MOMMA'S DAY.
-        </span>
+              MOMMA'S DAY.
+            </span>
           </h4>
           <div class="promo">
             21st annual Middle Mountain Momma at the gorgeous <a
@@ -75,13 +75,17 @@
     data() {
       return {
         img: `${s3Pages}${middleMtMomma2018}/`,
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.creature2017Recap,
+          posts.rockstarVa2018
+        ]
       }
     },
     head() {
       return headTags(
-        "Middle Mountain Momma 2018",
-        "A week before Mother's Day its MOMMAS DAY. Middle Mountain Momma mountain bike race at Douthat State Park Discovery Center, May 6, 2018",
+        'Middle Mountain Momma 2018',
+        'A week before Mother\'s Day its MOMMAS DAY. Middle Mountain Momma mountain bike race at Douthat State Park Discovery Center, May 6, 2018',
         home.keywords,
         post
       )
@@ -93,6 +97,6 @@
   .image-smaller {
     width: 60%;
     display: block;
-    margin: auto;
+    margin-left: 20%;
   }
 </style>

@@ -2,7 +2,8 @@
   <blog-post
     :header-height="800"
     :image="img + 'great-valley.jpg'"
-    :post="post">
+    :post="post"
+    :related-posts="relatedPosts">
     <div slot="content">
       <div class="blog-p">
         Like Burning Man, or some other strange, yearly ritual, every mid January since 2015 a large group of the best
@@ -142,7 +143,11 @@
     data() {
       return {
         img: `${s3Pages}${post.route}/`,
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.specMines29Oct17,
+          posts.battleAtBlackhorse2018
+        ]
       }
     }
   }

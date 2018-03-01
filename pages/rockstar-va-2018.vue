@@ -4,7 +4,8 @@
                :image="post.img"
                :post="post"
                no-title
-               :no-post-title="false">
+               :no-post-title="false"
+               :related-posts="relatedPosts">
 
       <div slot="content">
         <div class="blog-promo">
@@ -58,7 +59,11 @@
     },
     data() {
       return {
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.middleMtMomma2018,
+          posts.creature2017Recap
+        ]
       }
     }
   }

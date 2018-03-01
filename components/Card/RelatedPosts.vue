@@ -106,7 +106,4 @@
     text-align: center;
   }
 
-  .related-post-image {
-
-  }
 </style>

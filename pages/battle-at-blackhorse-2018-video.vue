@@ -3,7 +3,8 @@
     <blog-post :header-height="900"
                :image="img + 'P1000195.jpg'"
                :post="post"
-               inline-author>
+               inline-author
+               :related-posts="relatedPosts">
       <div slot="content">
         <div>
           <youtube :src="post.ytSrc"/>
@@ -14,13 +15,13 @@
 </template>
 
 <script>
-  import BlogPost from "../components/BlogPost.vue"
-  import Youtube from "../components/Iframes/Youtube.vue"
-  import BlogImage from "../components/Images/BlogImage.vue"
+  import BlogPost from '../components/BlogPost.vue'
+  import Youtube from '../components/Iframes/Youtube.vue'
+  import BlogImage from '../components/Images/BlogImage.vue'
 
-  import {s3Pages, battleAtBlackhorse2018} from "../scripts/routes"
-  import {posts} from "../assets/posts"
-  import {headTags} from "../assets/functions"
+  import {s3Pages, battleAtBlackhorse2018} from '../scripts/routes'
+  import {posts} from '../assets/posts'
+  import {headTags} from '../assets/functions'
 
   const post = posts.battleAtBlackhorse2018Video
 
@@ -42,7 +43,11 @@
     data() {
       return {
         img: `${s3Pages}${battleAtBlackhorse2018}/`,
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.battleAtBlackhorse2018,
+          posts.dodyRidgeRunFall2017
+        ]
       }
     }
   }

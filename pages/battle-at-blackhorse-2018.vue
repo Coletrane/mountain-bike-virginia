@@ -3,7 +3,8 @@
     <blog-post :header-height="600"
                :image="img + 'IMG_3576.jpg'"
                :post="post"
-               no-title>
+               no-title
+               :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">
           When someone says fun, you think of mountain bikes, friends, amazing gems of backcountry singletrack and a nice long day to enjoy it all. Now add in a few more friends and several extra rad peps to time a downhill or three for some friendly competition. That is a recipe for an absolutely astounding day in the woods. Blue Ridge Gravity has been hosting D Cups for quite a few years now to hone skills, make friends and have a good time. Starting out as a series of Super Ds every year, the events have evolved into full on, all day Enduros featuring some of the best possible tracks in the state if not the region. All for the low, low price of waking up early and getting after it.
@@ -69,10 +70,6 @@
         <blog-image :src="img + 'P1010169.jpg'"/>
         <blog-image :src="img + 'P1010130.jpg'"/>
         <blog-image :src="img + 'P1000334.jpg'"/>
-      </div>
-
-      <div slot="related">
-        <related-posts :posts="relatedPosts"/>
       </div>
     </blog-post>
   </div>

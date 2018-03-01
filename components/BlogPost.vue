@@ -26,7 +26,8 @@
 
       </post-card>
 
-      <slot name="related"/>
+      <related-posts v-if="relatedPosts"
+                     :posts="relatedPosts"/>
 
     </div>
   </div>
@@ -38,6 +39,7 @@
   import RideWithGps from './Iframes/RideWithGps.vue'
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
+  import RelatedPosts from './Card/RelatedPosts'
 
   export default {
     name: 'blog-post',
@@ -47,7 +49,8 @@
       PostCard,
       RideWithGps,
       SocialActions,
-      Author
+      Author,
+      RelatedPosts
     },
     props: {
       headerHeight: {
@@ -74,6 +77,10 @@
         type: Boolean,
         required: false,
         default: true
+      },
+      relatedPosts: {
+        type: Array,
+        required: false
       }
     },
     computed: {
