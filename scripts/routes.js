@@ -1,5 +1,6 @@
 const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
+const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
 const rockstarVa2018 = 'rockstar-va-2018'
@@ -18,6 +19,7 @@ const creature2017Recap = 'creature-2017-recap'
 const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
+  resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   rockstarVa2018,
@@ -77,6 +79,7 @@ const baseUrl = 'http://bikeva.com'
 module.exports = {
   results,
   resultsMiddleMountainMomma2017,
+  resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   rockstarVa2018,

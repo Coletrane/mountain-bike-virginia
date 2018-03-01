@@ -20,7 +20,10 @@
             <div slot="words">
               <div class="promo">
                 23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
-                trails. Congrats to the podium of this tough race:
+                trails. We'd like to give a Hell Yeah to all the shredders that finished this tough race.
+                <nuxt-link :to="routes.resultsBattleAtBlackhorse2018">
+                  Check out the results here.
+                </nuxt-link>
               </div>
             </div>
             <div slot="media">
@@ -51,7 +54,7 @@
                   <a :href="posts.rockstarVa2018.fbEvent">
                     Details
                     <font-awesome-icon :icon="faFacebook"
-                                        class="inline-facebook-icon"/>
+                                       class="inline-facebook-icon"/>
                   </a>
                 </div>
               </div>
@@ -69,8 +72,8 @@
               <h4 class="subheading">
                 A week before Mother's day, its
                 <span style="font-weight: 800;">
-                MOMMA'S DAY.
-        </span>
+                  MOMMA'S DAY.
+                </span>
               </h4>
             </div>
             <div slot="words">
@@ -80,7 +83,7 @@
                 State Park.</a> The
                 first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
                 44mi.
-                <nuxt-link to="/results/middle-mountain-momma-2017">
+                <nuxt-link :to="routes.resultsMiddleMountainMomma2017">
                   View the results from last year.
                 </nuxt-link>
                 <div>

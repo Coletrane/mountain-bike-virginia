@@ -9,7 +9,7 @@
   import * as routes from '../../scripts/routes'
 
   export default {
-    name: 'results-index',
+    name: 'battle-at-blackhorse-2018',
     components: {
       Results
     },
@@ -19,12 +19,17 @@
         results.description,
         results.keywords,
         {
-          route: routes.resultsMiddleMountainMomma2017
+          route: routes.resultsBattleAtBlackhorse2018,
+          ogImage: `${routes.s3Pages}${routes.battleAtBlackhorse2018}/P1010117.jpg`
         }
       )
     },
     created() {
-      this.$store.commit('selectRace', 'Middle Mountain Momma 2017')
+      this.$store.commit('selectRace', 'Battle at Blackhorse 2018')
     }
   }
 </script>
+
+<style scoped>
+
+</style>
