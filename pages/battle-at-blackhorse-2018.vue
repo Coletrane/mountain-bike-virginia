@@ -70,6 +70,10 @@
         <blog-image :src="img + 'P1010130.jpg'"/>
         <blog-image :src="img + 'P1000334.jpg'"/>
       </div>
+
+      <div slot="related">
+        <related-posts :posts="relatedPosts"/>
+      </div>
     </blog-post>
   </div>
 </template>
@@ -82,6 +86,7 @@
   import BlogPost from "../components/BlogPost"
   import Youtube from "../components/Iframes/Youtube"
   import BlogImage from "../components/Images/BlogImage"
+  import RelatedPosts from '../components/Card/RelatedPosts'
 
   const post = posts.battleAtBlackhorse2018
 
@@ -90,7 +95,8 @@
     components: {
       BlogImage,
       BlogPost,
-      Youtube
+      Youtube,
+      RelatedPosts
     },
     head() {
       return headTags(
@@ -103,7 +109,11 @@
     data() {
       return {
         img: `${s3Pages}${battleAtBlackhorse2018}/`,
-        post: post
+        post: post,
+        relatedPosts: [
+          posts.battleAtBlackhorse2018Video,
+          posts.dodyRidgeRunFall2017
+        ]
       }
     }
   }

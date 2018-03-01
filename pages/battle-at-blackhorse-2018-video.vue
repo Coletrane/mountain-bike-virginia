@@ -3,8 +3,7 @@
     <blog-post :header-height="900"
                :image="img + 'P1000195.jpg'"
                :post="post"
-               inline-author
-               no-title>
+               inline-author>
       <div slot="content">
         <div>
           <youtube :src="post.ytSrc"/>

@@ -86,7 +86,6 @@
 
   .city-name {
     font-size: 1rem;
-    padding-top: 1rem;
   }
 
   .temp-icon {

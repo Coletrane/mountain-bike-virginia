@@ -6,36 +6,41 @@
       :title="title"
       subpage/>
     <div class="main-content">
-        <post-card :post="post"
-                   :links="false"
-                   :no-title="noPostTitle">
-          <div slot="author">
-            <div v-if="post.date">
-              {{post.date}}
-            </div>
-            <div v-if="post.loc">
-              {{post.loc}}
-            </div>
+      <post-card :post="post"
+                 :links="false"
+                 :no-title="noPostTitle">
+        <div slot="author">
+          <div v-if="post.date">
+            {{post.date}}
           </div>
-          <div slot="media">
-            <author :author="post.author"
-                    :class="authorClass"/>
-            <slot name="content"/>
+          <div v-if="post.loc">
+            {{post.loc}}
           </div>
-        </post-card>
+        </div>
+
+        <div slot="media">
+          <author :author="post.author"
+                  :class="authorClass"/>
+          <slot name="content"/>
+        </div>
+
+      </post-card>
+
+      <slot name="related"/>
+
     </div>
   </div>
 </template>
 <script>
-  import MTBVAHeader from "./Header/MTBVAHeader.vue"
-  import Youtube from "./Iframes/Youtube.vue"
-  import PostCard from "./Card/PostCard"
-  import RideWithGps from "./Iframes/RideWithGps.vue"
-  import SocialActions from "./Card/SocialActions.vue"
-  import Author from "./Card/Author.vue"
+  import MTBVAHeader from './Header/MTBVAHeader.vue'
+  import Youtube from './Iframes/Youtube.vue'
+  import PostCard from './Card/PostCard'
+  import RideWithGps from './Iframes/RideWithGps.vue'
+  import SocialActions from './Card/SocialActions.vue'
+  import Author from './Card/Author.vue'
 
   export default {
-    name: "blog-post",
+    name: 'blog-post',
     components: {
       MTBVAHeader,
       Youtube,

@@ -50,7 +50,7 @@ appRoutes.forEach((route) => {
   imgRoutes[route] = ''
 })
 
-imgRoutes['/'] = 'foliage.png'
+imgRoutes['/'] = 'foliage.jpg'
 imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 // imgRoutes[appRoutesObj[relaunch]] = 'rockymthi8.jpg'
@@ -69,8 +69,7 @@ imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1010128.jpg'
 const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
 const s3Favicons = s3 + '/static/favicons/'
-// FIXME: Using the regular S3 instead of CloudFront
-const s3Results = 'http://mtbva.s3.amazonaws.com/results/'
+const s3Results = s3 + '/results/'
 const s3WeatherIcons = s3 + '/static/weather-icons'
 const s3Pages = s3 + '/pages/'
 const baseUrl = 'http://bikeva.com'

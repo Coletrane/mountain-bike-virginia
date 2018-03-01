@@ -31,7 +31,8 @@
           class="flex-outer">
       <weather city="richmond"/>
     </span>
-    <span class="flex-outer">
+    <span class="flex-outer"
+          style="padding-right: 1rem;">
       <a @click="toggleMenu()"
          id="mtbva-menu-link">
         <font-awesome-icon :icon="faBars"
