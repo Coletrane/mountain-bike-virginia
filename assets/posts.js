@@ -37,7 +37,11 @@ export const schemaTypes = {
   blog: 'Blog',
   person: 'Person',
   org: 'Organization',
-  image: 'ImageObject'
+  image: 'ImageObject',
+  place: 'Place',
+  address: 'PostalAddress',
+  product: 'Product',
+  rating: 'Rating'
 }
 
 export const posts = {}
@@ -102,6 +106,20 @@ posts.middleMtMomma2018 = {
   extraImgs: {
     logo: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm.png`,
     start: `${routes.s3Pages}${routes.middleMtMomma2018}/mmm-start.gif`
+  },
+  schema: {
+    type: schemaTypes.event,
+    startDate: moment('2018-05-06T9:00'),
+    location: {
+      name: 'Douthat State Park Discovery Center',
+      address: {
+        streetAddress: '14239 Douthat State Park Rd',
+        addressLocality: 'Millboro',
+        postalCode: '24460',
+        addressRegion: 'VA',
+        addressCountry: 'US'
+      }
+    }
   }
 }
 
@@ -144,7 +162,19 @@ posts.pivotSwitchbladeReview = {
   subtitle: "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
   img: `${routes.s3Pages}pivot-switchblade-review/IMG_3009.jpg`,
   route: routes.pivotSwitchbladeReview,
-  author: cole
+  author: cole,
+  schema: {
+    type: schemaTypes.review,
+    itemReviewed: {
+      brand: 'Pivot Cycles',
+      model: 'Switchblade'
+    },
+    reviewRating: {
+      ratingValue: '4.5',
+      bestRating: '5',
+      worstRating: '1'
+    }
+  }
 }
 
 posts.creature2017Recap = {

@@ -40,9 +40,11 @@ export const headTags = (title, desc, keywords, post) => {
       schema = buildArticle(post, desc)
     } else if (post.schema.type === schemaTypes.video) {
       schema = buildVideo(post, desc)
+    } else if (post.schema.type === schemaTypes.event) {
+      schema = buildEvent(post, desc)
+    } else if (post.schema.type === schemaTypes.review) {
+      schema = buildReview(post, desc)
     }
-
-    // global properties for all schemas
   } else if (post.route === '') {
     // Home
   } else if (post.route.includes('results')) {
@@ -53,6 +55,7 @@ export const headTags = (title, desc, keywords, post) => {
     title: title,
     meta: metas
   }
+
   if (schema) {
     schema['@context'] = 'http://schema.org/'
     head.script = []
@@ -95,20 +98,21 @@ const buildArticle = (post, desc) => {
   schema.mainEntityOfPage['@id'] = `${routes.baseUrl}${post.route}`
   schema.headline = post.title
   schema.image = getImageRoute(post)
-  if (post.date) {
-    schema.datePublished = post.date
-    schema.dateModified = post.date
+  schema.datePublished = post.date
+  schema.dateModified = post.date
+  schema.author = {
+    name: post.author.name
   }
-  schema.author = {}
   schema.author['@type'] = schemaTypes.person
-  schema.author.name = post.author.name
   schema.description = desc
-  schema.publisher = {}
+  schema.publisher = {
+    name: 'Mountain Bike Virginia',
+    logo: {
+      url: logoSrc
+    }
+  }
   schema.publisher['@type'] = schemaTypes.org
-  schema.publisher.name = 'Mountain Bike Virginia'
-  schema.publisher.logo = {}
   schema.publisher.logo['@type'] = schemaTypes.image
-  schema.publisher.logo.url = logoSrc
 
   return schema
 }
@@ -129,6 +133,43 @@ const buildVideo = (post, desc) => {
       part: 'snippet'
     }
   })
+
+  return schema
+}
+
+const buildEvent = (post, desc) => {
+  let schema = {}
+  schema['@type'] = schemaTypes.event
+  schema.name = post.title
+  schema.startDate = post.schema.startDate
+  schema.location = {...post.schema.location}
+  schema.location['@type'] = schemaTypes.place
+  schema.image = getImageRoute(post)
+  schema.description = desc
+
+  return schema
+}
+
+const buildReview = (post, desc) => {
+  let schema = {}
+  schema['@type'] = schemaTypes.review
+  schema.author = {
+    name: post.author.name
+  }
+  schema.author['@type'] = schemaTypes.person
+  schema.url = `${routes.baseUrl}${post.route}`
+  schema.datePublished = post.date
+  schema.publisher = {
+    name: 'Mountain Bike Virginia',
+    sameAs: routes.baseUrl
+  }
+  schema.publisher['@type'] = schemaTypes.org
+  schema.description = desc
+  schema.itemReviewed = {...post.schema.itemReviewed}
+  schema.itemReviewed['@type'] = schemaTypes.product
+  schema.reviewRating = {...post.schema.reviewRating}
+  schema.reviewRating['@type'] = schemaTypes.rating
+
   return schema
 }
 

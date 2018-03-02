@@ -4,6 +4,8 @@ const until = require('selenium-webdriver').until
 const routes = require('../../scripts/routes')
 const request = require('request-promise')
 
+const googleDataValidator = 'https://search.google.com/structured-data/testing-tool/validate'
+
 describe('routes tests', () => {
   let driver
   let expect
