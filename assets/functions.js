@@ -1,6 +1,7 @@
 import * as routes from '../scripts/routes'
 import * as resImg from '../scripts/responsive-imgs.config'
 import {schemaTypes} from './posts'
+import axios from 'axios'
 
 export const headTags = (title, desc, keywords, post) => {
   let metas = [
@@ -37,7 +38,10 @@ export const headTags = (title, desc, keywords, post) => {
   if (post.schema) {
     if (post.schema.type === schemaTypes.article) {
       schema = buildArticle(post, desc)
+    } else if (post.schema.type === schemaTypes.video) {
+      schema = buildVideo(post, desc)
     }
+
     // global properties for all schemas
   } else if (post.route === '') {
     // Home
@@ -45,20 +49,20 @@ export const headTags = (title, desc, keywords, post) => {
     // Results
   }
 
+  let head = {
+    title: title,
+    meta: metas
+  }
   if (schema) {
     schema['@context'] = 'http://schema.org/'
+    head.script = []
+    head.script.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(schema)
+    })
   }
 
-  return {
-    title: title,
-    meta: metas,
-    script: [
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(schema)
-      }
-    ]
-  }
+  return head
 }
 
 const getImageRoute = (post) => {
@@ -106,6 +110,25 @@ const buildArticle = (post, desc) => {
   schema.publisher.logo['@type'] = schemaTypes.image
   schema.publisher.logo.url = logoSrc
 
+  return schema
+}
+
+const ytApi = 'https://content.googleapis.com/youtube/v3/videos'
+const buildVideo = (post, desc) => {
+  let schema = {}
+  schema['@type'] = schemaTypes.video
+  schema.description = desc
+  schema.name = post.title
+  schema.embedUrl = post.ytSrc
+
+  let ytId = post.ytSrc.split('/')
+  ytId = ytId[ytId.length - 1]
+  axios.get(ytApi, {
+    params: {
+      id: ytId,
+      part: 'snippet'
+    }
+  })
   return schema
 }
 

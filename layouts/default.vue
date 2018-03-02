@@ -201,6 +201,10 @@
     background-color: #FFFFFF !important;
   }
 
+  img[lazy=error] {
+    width: 100% !important;
+  }
+  
   .inline-facebook-icon {
     font-size: 1.5rem;
   }

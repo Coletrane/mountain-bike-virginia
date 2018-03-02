@@ -65,7 +65,10 @@ posts.battleAtBlackhorse2018Video = {
   author: cole,
   date: moment('2018-02-25'),
   loc: 'Day Creek, Blue Ridge, VA',
-  route: routes.battleAtBlackhorse2018Video
+  route: routes.battleAtBlackhorse2018Video,
+  schema: {
+    type: schemaTypes.video
+  }
 }
 
 posts.tuesdayNightLightsVideoFeb2018 = {
