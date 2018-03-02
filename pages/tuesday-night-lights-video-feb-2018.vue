@@ -32,7 +32,8 @@
       BlogPost
     },
     head() {
-      return headTags(
+      return
+        headTags(
         post.title,
         post.subtitle,
         'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,

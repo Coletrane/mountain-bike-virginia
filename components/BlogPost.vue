@@ -83,6 +83,12 @@
         required: false
       }
     },
+    created() {
+      if (process.browser) {
+
+        // document.getElementsByTagName('head')[0].appendChild();
+      }
+    },
     computed: {
       title() {
         if (!this.noTitle) {

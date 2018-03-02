@@ -1,4 +1,5 @@
 import * as routes from '../scripts/routes'
+import moment from 'moment'
 
 const cole = {
   name: 'Cole Inman',
@@ -28,6 +29,17 @@ const gavin = {
   stravaUrl: 'https://www.strava.com/athletes/594725'
 }
 
+export const schemaTypes = {
+  article: 'NewsArticle',
+  video: 'VideoObject',
+  event: 'Event',
+  review: 'Review',
+  blog: 'Blog',
+  person: 'Person',
+  org: 'Organization',
+  image: 'ImageObject'
+}
+
 export const posts = {}
 
 posts.battleAtBlackhorse2018 = {
@@ -36,8 +48,14 @@ posts.battleAtBlackhorse2018 = {
   img: `${routes.s3Pages}${routes.battleAtBlackhorse2018}/${routes.imgRoutes[routes.battleAtBlackhorse2018]}`,
   author: gavin,
   route: routes.battleAtBlackhorse2018,
-  date: 'February 25th, 2018',
-  loc: 'Day Creek, Blue Ridge, VA'
+  date: moment('2018-02-25'),
+  loc: 'Day Creek, Blue Ridge, VA',
+  schema: {
+    type: schemaTypes.article,
+    mainEntityOfPage: {
+      type: schemaTypes.blog
+    }
+  }
 }
 
 posts.battleAtBlackhorse2018Video = {
@@ -45,7 +63,7 @@ posts.battleAtBlackhorse2018Video = {
   subtitle: 'The Classic Dody Ridge Drop',
   ytSrc: 'https://www.youtube.com/embed/SyFtJCHQNtc',
   author: cole,
-  date: 'February 25th, 2018',
+  date: moment('2018-02-25'),
   loc: 'Day Creek, Blue Ridge, VA',
   route: routes.battleAtBlackhorse2018Video
 }
