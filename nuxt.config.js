@@ -80,9 +80,14 @@ module.exports = {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://bikeva.com',
-    cacheTime: 1000 * 60 * 15,
+    cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
     routes: sitemapRoutes
+  },
+  render: {
+    static: {
+      maxAge: 1000 * 60 * 60 * 24
+    }
   },
   router: {
     scrollBehavior: function (to, from, savedPosition) {
