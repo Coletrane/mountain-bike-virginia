@@ -119,9 +119,9 @@ describe('routes tests', () => {
         it('has og:url', async () => {
           let expected
           if (route === '/') {
-            expected = `http://bikeva.com/`
+            expected = `https://bikeva.com/`
           } else {
-            expected = `http://bikeva.com${route}/`
+            expected = `https://bikeva.com${route}/`
           }
           expect(await driver.findElement(
             By.xpath('//meta[@property=\'og:url\']'))

@@ -1,5 +1,4 @@
 const routes = require('./scripts/routes')
-const weather = require('./weather-api-key')
 require('dotenv').config()
 
 const sitemapRoutes = routes.appRoutes.map(route => {
@@ -80,7 +79,7 @@ module.exports = {
   ],
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'http://bikeva.com',
+    hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 15,
     generate: true,
     routes: sitemapRoutes
@@ -92,6 +91,10 @@ module.exports = {
     middleware: [
       'close-menu'
     ]
+  },
+  loading: {
+    color: '#3d7635',
+    height: '5px'
   },
   env: {
     prodWeather: process.env.WEATHER_PROD,

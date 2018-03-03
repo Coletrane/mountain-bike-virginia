@@ -72,13 +72,13 @@ imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 
-const s3 = 'http://d2i660bt0ywr9a.cloudfront.net'
+const s3 = 'https://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
 const s3Favicons = s3 + '/static/favicons/'
 const s3Results = s3 + '/results/'
 const s3WeatherIcons = s3 + '/static/weather-icons'
 const s3Pages = s3 + '/pages/'
-const baseUrl = 'http://bikeva.com'
+const baseUrl = 'https://bikeva.com'
 
 module.exports = {
   results,

@@ -71,7 +71,7 @@ describe('<social-actions> tests', () => {
         expect(href.endsWith('//'))
           .to.be.false
 
-        expect(href.includes('http://bikeva.com/'))
+        expect(href.includes('https://bikeva.com/'))
           .to.be.true
       })
     })

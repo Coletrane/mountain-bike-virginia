@@ -9,7 +9,7 @@ describe('weather test', () => {
     for (const icon of weatherIcons) {
       it(`should be able to reach Open Weather's icon: ${icon.ow}.png`, async () => {
         let res = await request({
-          uri: `http://openweathermap.org/img/w/${icon.ow}.png`,
+          uri: `https://openweathermap.org/img/w/${icon.ow}.png`,
           resolveWithFullResponse: true
         })
 

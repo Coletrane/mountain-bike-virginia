@@ -99,7 +99,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 120px;
+    height: 100px;
   }
 
   .flex-outer {
@@ -123,11 +123,11 @@
   }
 
   .mtbva {
-    width: 110px;
+    width: 100px;
   }
 
   .xxcva {
-    width: 170px;
+    width: 150px;
   }
 
   .mtbva-menu-icon {
