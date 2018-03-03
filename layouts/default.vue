@@ -105,6 +105,9 @@
     color: white;
     border-color: white;
     font-size: 2rem;
+    box-shadow: 0px 0px 7px 1px rgb(0, 0, 0);
+    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+
   }
 
   .white-btn:hover {
@@ -204,7 +207,7 @@
   img[lazy=error] {
     width: 100% !important;
   }
-  
+
   .inline-facebook-icon {
     font-size: 1.5rem;
   }

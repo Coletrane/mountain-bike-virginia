@@ -1,6 +1,7 @@
 import * as routes from '../scripts/routes'
 import * as resImg from '../scripts/responsive-imgs.config'
-import {schemaTypes} from './posts'
+import {schemaTypes, schemaOrg} from './schmea-types'
+import {results} from './head-tags'
 import axios from 'axios'
 
 export const headTags = (title, desc, keywords, post) => {
@@ -45,9 +46,9 @@ export const headTags = (title, desc, keywords, post) => {
       schema = buildReview(post, desc)
     }
   } else if (post.route === '') {
-    // Home
+    schema = buildOrganization()
   } else if (post.route.includes('results')) {
-    // Results
+    schema = buildDataset(post)
   }
 
   let head = {
@@ -56,12 +57,19 @@ export const headTags = (title, desc, keywords, post) => {
   }
 
   if (schema) {
-    schema['@context'] = 'http://schema.org/'
-    head.script = []
-    head.script.push({
-      type: 'application/ld+json',
-      innerHTML: `${JSON.stringify(schema)}`
-    })
+    // Get rid of &quot
+    head.__dangerouslyDisableSanitizers = ['script']
+    head.script = [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(schema)
+      }
+    ]
+  }
+
+  // Disable sanitizers for video head()
+  if (post.ytSrc) {
+    head.__dangerouslyDisableSanitizers = ['script']
   }
 
   return head
@@ -86,32 +94,48 @@ const getImageRoute = (post) => {
   return result
 }
 
-const logoSrc = `${routes.s3StaticImg}/mtbva.png`
+const logoSrc = `${routes.s3StaticImg}/mtbva-big.png`
 
 // Functions for building schema.org objects
 const buildArticle = (post, desc) => {
-  let schema = {}
-  schema['@type'] = schemaTypes.article
-  schema.mainEntityOfPage = {}
-  schema.mainEntityOfPage['@type'] = post.schema.mainEntityOfPage.type
-  schema.mainEntityOfPage['@id'] = `${routes.baseUrl}${post.route}`
-  schema.headline = post.title
-  schema.image = getImageRoute(post)
-  schema.datePublished = post.date
-  schema.dateModified = post.date
-  schema.author = {
-    name: post.author.name
-  }
-  schema.author['@type'] = schemaTypes.person
-  schema.description = desc
-  schema.publisher = {
-    name: 'Mountain Bike Virginia',
-    logo: {
-      url: logoSrc
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.article,
+    mainEntityOfPage: {
+      '@type': schemaTypes.article,
+      '@id': `${routes.baseUrl}${post.route}`,
+      author: post.author.name,
+      datePublished: post.date,
+      headline: post.title,
+      image: getImageRoute(post),
+      publisher: {
+        '@type': schemaTypes.org,
+        name: 'Mountain Bike Virginia',
+        logo: {
+          '@type': schemaTypes.image,
+          url: logoSrc
+        }
+      },
+      dateModified: post.date
+    },
+    headline: post.title,
+    image: getImageRoute(post),
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': schemaTypes.person,
+      name: post.author.name
+    },
+    description: desc,
+    publisher: {
+      '@type': schemaTypes.org,
+      name: 'Mountain Bike Virginia',
+      logo: {
+        '@type': schemaTypes.image,
+        url: logoSrc
+      }
     }
   }
-  schema.publisher['@type'] = schemaTypes.org
-  schema.publisher.logo['@type'] = schemaTypes.image
 
   return schema
 }
@@ -119,12 +143,14 @@ const buildArticle = (post, desc) => {
 // This gets built asyncronysloy on a per page basis
 const ytApi = 'https://content.googleapis.com/youtube/v3/videos'
 export const buildVideo = async (post) => {
-  let schema = {}
-  schema['@type'] = schemaTypes.video
-  schema.description = post.description || post.subtitle
-  schema.name = post.title
-  schema.embedUrl = post.ytSrc
-  schema.contentUrl = post.ytSrc.split('/embed').join('')
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.video,
+    description: post.description || post.subtitle,
+    name: post.title,
+    embedUrl: post.ytSrc,
+    contentUrl: post.ytSrc.split('/embed').join('')
+  }
 
   let ytId = post.ytSrc.split('/')
   ytId = ytId[ytId.length - 1]
@@ -148,43 +174,92 @@ export const buildVideo = async (post) => {
   return [
     {
       type: 'application/ld+json',
-      innerHTML: `${JSON.stringify(schema)}`
+      innerHTML: JSON.stringify(schema)
     }
   ]
 }
 
 const buildEvent = (post, desc) => {
-  let schema = {}
-  schema['@type'] = schemaTypes.event
-  schema.name = post.title
-  schema.startDate = post.schema.startDate
-  schema.location = {...post.schema.location}
-  schema.location['@type'] = schemaTypes.place
-  schema.image = getImageRoute(post)
-  schema.description = desc
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.event,
+    name: post.title,
+    startDate: post.schema.startDate,
+    location: {
+      '@type': schemaTypes.place,
+      ...post.schema.location
+    },
+    image: getImageRoute(post),
+    description: desc
+  }
 
   return schema
 }
 
 const buildReview = (post, desc) => {
-  let schema = {}
-  schema['@type'] = schemaTypes.review
-  schema.author = {
-    name: post.author.name
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.review,
+    author: {
+      '@type': schemaTypes.person,
+      name: post.author.name
+    },
+    url: `${routes.baseUrl}${post.route}`,
+    datePublished: post.date,
+    publisher: {
+      '@type': schemaTypes.org,
+      name: 'Mountain Bike Virginia',
+      sameAs: routes.baseUrl
+    },
+    description: desc,
+    itemReviewed: {
+      '@type': schemaTypes.product,
+      ...post.schema.itemReviewed
+    },
+    reviewRating: {
+      '@type': schemaTypes.rating,
+      ...post.schema.reviewRating
+    }
   }
-  schema.author['@type'] = schemaTypes.person
-  schema.url = `${routes.baseUrl}${post.route}`
-  schema.datePublished = post.date
-  schema.publisher = {
-    name: 'Mountain Bike Virginia',
-    sameAs: routes.baseUrl
+
+  return schema
+}
+
+const buildOrganization = () => {
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.org,
+    url: routes.baseUrl,
+    logo: logoSrc,
+    contactPoint: {
+      '@type': schemaTypes.contact,
+      telephone: '+1-540-529-1426',
+      contactType: 'customer service'
+    }
   }
-  schema.publisher['@type'] = schemaTypes.org
-  schema.description = desc
-  schema.itemReviewed = {...post.schema.itemReviewed}
-  schema.itemReviewed['@type'] = schemaTypes.product
-  schema.reviewRating = {...post.schema.reviewRating}
-  schema.reviewRating['@type'] = schemaTypes.rating
+
+  return schema
+}
+
+const buildDataset = (post) => {
+  let schema = {
+    '@context': schemaOrg,
+    '@type': schemaTypes.dataset,
+    name: 'Mountain Bike Virginia XXC VA Bike Race Results',
+    description: results.description,
+    url: `${routes.baseUrl}${post.route}`,
+    sameAs: `${routes.baseUrl}/results`,
+    keywords: [
+      results.keywords
+    ],
+    creator: {
+      '@type': schemaTypes.org,
+      url: routes.baseUrl,
+      name: 'Mountain Bike Virginia XXC VA Series',
+      telephone: '+1-540-529-1426',
+      email: 'eloc49@gmail.com'
+    }
+  }
 
   return schema
 }

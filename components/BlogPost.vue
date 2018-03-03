@@ -11,7 +11,7 @@
                  :no-title="noPostTitle">
         <div slot="author">
           <div v-if="post.date">
-            {{post.date}}
+            {{post.date.format('MMMM Do, YYYY')}}
           </div>
           <div v-if="post.loc">
             {{post.loc}}

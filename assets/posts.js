@@ -1,5 +1,9 @@
 import * as routes from '../scripts/routes'
 import moment from 'moment'
+import {schemaTypes} from './schmea-types'
+
+// FIXME: https://github.com/moment/moment/issues/3488
+moment.suppressDeprecationWarnings = true
 
 const cole = {
   name: 'Cole Inman',
@@ -29,21 +33,6 @@ const gavin = {
   stravaUrl: 'https://www.strava.com/athletes/594725'
 }
 
-export const schemaTypes = {
-  article: 'NewsArticle',
-  video: 'VideoObject',
-  event: 'Event',
-  review: 'Review',
-  blog: 'Blog',
-  person: 'Person',
-  org: 'Organization',
-  image: 'ImageObject',
-  place: 'Place',
-  address: 'PostalAddress',
-  product: 'Product',
-  rating: 'Rating'
-}
-
 export const posts = {}
 
 posts.battleAtBlackhorse2018 = {
@@ -56,10 +45,7 @@ posts.battleAtBlackhorse2018 = {
   loc: 'Day Creek, Blue Ridge, VA',
   description: 'Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge',
   schema: {
-    type: schemaTypes.article,
-    mainEntityOfPage: {
-      type: schemaTypes.blog
-    }
+    type: schemaTypes.article
   }
 }
 
@@ -70,10 +56,7 @@ posts.battleAtBlackhorse2018Video = {
   author: cole,
   date: moment('2018-02-25'),
   loc: 'Day Creek, Blue Ridge, VA',
-  route: routes.battleAtBlackhorse2018Video,
-  schema: {
-    type: schemaTypes.video
-  }
+  route: routes.battleAtBlackhorse2018Video
 }
 
 posts.tuesdayNightLightsVideoFeb2018 = {
@@ -81,7 +64,7 @@ posts.tuesdayNightLightsVideoFeb2018 = {
   subtitle: 'Weekly Winter ride from Deschutes Brewery up Mill Mountain',
   ytSrc: 'https://www.youtube.com/embed/tE3jWeQAEfY',
   author: kyle,
-  date: 'February 23rd, 2018',
+  date: moment('2018-02-23'),
   loc: 'Mill Mountain, Roanoke, VA',
   route: routes.tuesdayNightLightsVideoFeb2018
 }
@@ -93,7 +76,21 @@ posts.rockstarVa2018 = {
   route: routes.rockstarVa2018,
   author: cole,
   fbEvent: 'https://www.facebook.com/events/1583483341702188/',
-  rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26535965&sampleGraph=true'
+  rwGps: 'https://rwgps-embeds.com/embeds?type=route&id=26535965&sampleGraph=true',
+  schema: {
+    type: schemaTypes.event,
+    startDate: moment('2018-04-18T07:00'),
+    location: {
+      name: 'Black Sheep Coffee',
+      address: {
+        streetAddress: '217 S Liberty St, Ste 104B',
+        addressLocality: 'Harrisonburg',
+        postalCode: '22801',
+        addressRegion: 'VA',
+        addressCountry: 'US'
+      }
+    }
+  }
 }
 
 posts.middleMtMomma2018 = {
@@ -110,7 +107,7 @@ posts.middleMtMomma2018 = {
   },
   schema: {
     type: schemaTypes.event,
-    startDate: moment('2018-05-06T9:00'),
+    startDate: moment('2018-05-06T09:00'),
     location: {
       name: 'Douthat State Park Discovery Center',
       address: {
@@ -130,9 +127,12 @@ posts.gravelocity2018 = {
   img: `${routes.s3Pages}${routes.gravelocity2018}/bigfinish.jpg`,
   route: routes.gravelocity2018,
   author: cole,
-  date: 'January 20th 2018',
+  date: moment('2018-01-20'),
   loc: 'Gravel Dr, Troutville, VA',
-  description: 'Third annual gravel ride from Botetourt, across Lee Highway and up to the top of the Blue Ridge Parkway'
+  description: 'Third annual gravel ride from Botetourt, across Lee Highway and up to the top of the Blue Ridge Parkway',
+  schema: {
+    type: schemaTypes.article
+  }
 }
 
 posts.firstRide2018 = {
@@ -141,7 +141,11 @@ posts.firstRide2018 = {
   img: `${routes.s3Pages}first-ride-2018/classic-shot-2018.jpg`,
   route: routes.firstRide2018,
   author: corey,
-  description: '28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia'
+  date: moment('2018-01-01'),
+  description: '28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia',
+  schema: {
+    type: schemaTypes.article
+  }
 }
 
 posts.dodyRidgeRunFall2017 = {
@@ -159,7 +163,11 @@ posts.specMines29Oct17 = {
   img: `${routes.s3Pages}spec-mines-oct-29-2017/IMG_3089.jpg`,
   route: routes.specMines29Oct17,
   author: cole,
-  description: 'Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet'
+  description: 'Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet',
+  date: moment('2017-11-06'),
+  schema: {
+    type: schemaTypes.article
+  }
 }
 
 posts.pivotSwitchbladeReview = {
@@ -169,6 +177,7 @@ posts.pivotSwitchbladeReview = {
   route: routes.pivotSwitchbladeReview,
   author: cole,
   description: 'Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue',
+  date: moment('2017-10-7'),
   schema: {
     type: schemaTypes.review,
     itemReviewed: {
@@ -186,10 +195,14 @@ posts.pivotSwitchbladeReview = {
 posts.creature2017Recap = {
   title: "Virginia's Blue Ridge Creature from Carvins Cove",
   subtitle: 'Oct 1st, 2017',
+  date: moment('2017-10-01'),
   altText: 'View the Results.',
   ytSrc: 'https://www.youtube.com/embed/uO44Tt0woT8',
   route: routes.creature2017Recap,
-  author: kyle
+  author: kyle,
+  schema: {
+    type: schemaTypes.article
+  }
 }
 
 posts.relaunch = {
@@ -203,6 +216,7 @@ posts.relaunch = {
 posts.creature2016 = {
   title: "Virginia's Blue Ridge Creature from Carvins Cove",
   subtitle: 'Oct 2nd, 2016',
+  date: moment('2016-10-02'),
   altText: 'View the Results.',
   ytSrc: 'https://www.youtube.com/embed/i5Lxb4wtuCs',
   route: ' ',

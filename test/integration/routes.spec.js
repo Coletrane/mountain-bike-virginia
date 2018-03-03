@@ -129,22 +129,29 @@ describe('routes tests', () => {
             .to.equal(expected)
         })
 
-        it('has a valid schema <script> tag', async () => {
+        // FIXME: integrate with yandex api once you get a key
+        xit('has a valid schema <script> tag', async () => {
           let schema = await driver.findElement(
             By.xpath('//script[@type=\'application/ld+json\']'))
             .getAttribute('outerHTML')
 
+          // FIXME: https://github.com/request/request/issues/1561
+          // let multipart = [{
+          //   'content-disposition': 'form-data name="html"',
+          //   'content-type': 'text/plain',
+          //   body: await schema
+          // }]
+          let form = await schema
+          console.log(await form)
           let res = await request({
             uri: await googleDataValidator,
             method: 'POST',
-            formData: {
-              html: await schema
-            },
+            formData: form,
             resolveWithFullResponse: true
           })
 
           // Strip out weird beginning characters Google added for some reason
-          res.body = await res.body.split(')]}'').join('')
+          res.body = await res.body.split(")]}'").join('')
           res.body = JSON.parse(await res.body)
 
           expect(await res.statusCode)

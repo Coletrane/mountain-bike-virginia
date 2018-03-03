@@ -338,11 +338,7 @@
     }
   }
 </script>
-
 <style>
-  .main-content {
-
-  }
 
   .load-more {
     text-align: center;
