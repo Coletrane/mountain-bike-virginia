@@ -135,7 +135,7 @@
     head() {
       return headTags(
         "Gravelocity 2018",
-        "Third annual gravel ride from Botetourt, across Lee Highway and up to the top of the Blue Ridge Parkway",
+        post.description,
         "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail",
         post
       )

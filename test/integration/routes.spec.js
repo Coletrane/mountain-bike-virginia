@@ -52,28 +52,28 @@ describe('routes tests', () => {
 
         it('has viewport', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@name='viewport']"))
+            By.xpath('//meta[@name=\'viewport\']'))
             .getAttribute('content'))
             .not.to.be.undefined
         })
 
         it('has robots', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@name='robots']"))
+            By.xpath('//meta[@name=\'robots\']'))
             .getAttribute('content'))
             .to.equal('index, follow')
         })
 
         it('has revisit-after', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@name='revisit-after']"))
+            By.xpath('//meta[@name=\'revisit-after\']'))
             .getAttribute('content'))
             .to.equal('1 week')
         })
 
         it('has fb:app_id', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@property='fb:app_id']"))
+            By.xpath('//meta[@property=\'fb:app_id\']'))
             .getAttribute('content'))
             .to.equal('1426359417419881')
         })
@@ -83,7 +83,7 @@ describe('routes tests', () => {
 
           before(async () => {
             ogImage = await driver.findElement(
-              By.xpath("//meta[@property='og:image']"))
+              By.xpath('//meta[@property=\'og:image\']'))
               .getAttribute('content')
           })
 
@@ -105,14 +105,14 @@ describe('routes tests', () => {
 
         it('has og:title', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@property='og:title']"))
+            By.xpath('//meta[@property=\'og:title\']'))
             .getAttribute('content'))
             .not.to.be.undefined
         })
 
         it('has og:description', async () => {
           expect(await driver.findElement(
-            By.xpath("//meta[@property='og:description']")))
+            By.xpath('//meta[@property=\'og:description\']')))
             .not.to.be.undefined
         })
 
@@ -124,9 +124,34 @@ describe('routes tests', () => {
             expected = `http://bikeva.com${route}/`
           }
           expect(await driver.findElement(
-            By.xpath("//meta[@property='og:url']"))
+            By.xpath('//meta[@property=\'og:url\']'))
             .getAttribute('content'))
             .to.equal(expected)
+        })
+
+        it('has a valid schema <script> tag', async () => {
+          let schema = await driver.findElement(
+            By.xpath('//script[@type=\'application/ld+json\']'))
+            .getAttribute('outerHTML')
+
+          let res = await request({
+            uri: await googleDataValidator,
+            method: 'POST',
+            formData: {
+              html: await schema
+            },
+            resolveWithFullResponse: true
+          })
+
+          // Strip out weird beginning characters Google added for some reason
+          res.body = await res.body.split(')]}'').join('')
+          res.body = JSON.parse(await res.body)
+
+          expect(await res.statusCode)
+            .to.equal(200)
+
+          expect(await res.body.errors.length)
+            .to.equal(0)
         })
       })
 

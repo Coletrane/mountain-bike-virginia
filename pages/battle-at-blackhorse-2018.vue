@@ -98,7 +98,7 @@
     head() {
       return headTags(
         'Battle at Blackhorse 2018',
-        'Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge',
+        post.description,
         'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
         post
       )

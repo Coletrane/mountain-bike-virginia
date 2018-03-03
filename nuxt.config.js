@@ -1,5 +1,6 @@
 const routes = require('./scripts/routes')
 const weather = require('./weather-api-key')
+require('dotenv').config()
 
 const sitemapRoutes = routes.appRoutes.map(route => {
   return {
@@ -93,7 +94,8 @@ module.exports = {
     ]
   },
   env: {
-    prodWeather: weather.prod,
-    testWeather: weather.test
+    prodWeather: process.env.WEATHER_PROD,
+    testWeather: process.env.WEATHER_TEST,
+    youTube: process.env.YOUTUBE
   }
 }

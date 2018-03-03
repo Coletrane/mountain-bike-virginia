@@ -20,7 +20,7 @@
 
   import {s3Pages, battleAtBlackhorse2018} from '../scripts/routes'
   import {posts} from '../assets/posts'
-  import {headTags} from '../assets/functions'
+  import {headTags, buildVideo} from '../assets/functions'
 
   const post = posts.battleAtBlackhorse2018Video
 
@@ -30,13 +30,24 @@
       BlogPost,
       Youtube
     },
+    async asyncData(context) {
+       return {
+         schema: await buildVideo(post)
+       }
+    },
     head() {
-      return headTags(
-        'Video: Battle at Blackhorse 2018',
-        'Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge',
-        'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
-        post
-      )
+      let head = {
+        ...headTags(
+          'Video: Battle at Blackhorse 2018',
+          posts.battleAtBlackhorse2018.description,
+          'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
+          post
+        )
+      }
+      if (this.schema) {
+        head.script = this.schema
+      }
+      return head
     },
     data() {
       return {

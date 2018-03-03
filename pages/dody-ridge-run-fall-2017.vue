@@ -6,7 +6,7 @@
       :post="post"
       inline-author>
       <div slot="content">
-        <youtube :src="post.ytSrc"></youtube>
+        <youtube :src="post.ytSrc"/>
       </div>
     </blog-post>
   </div>
@@ -17,7 +17,7 @@
 
   import {s3Pages} from "../scripts/routes"
   import {posts} from "../assets/posts"
-  import {headTags} from "../assets/functions"
+  import {headTags, buildVideo} from "../assets/functions"
 
   const post = posts.dodyRidgeRunFall2017
 
@@ -27,13 +27,24 @@
       BlogPost,
       Youtube
     },
+    async asyncData(context){
+      return {
+        schema: await buildVideo(post)
+      }
+    },
     head() {
-      return headTags(
-        "Video: Dody Ridge Run, Fall 2017",
-        "Ride Down Dody ridge along the Blue Ridge Parkway, mile 98, near the Great Valley Overlook",
-        "mountain, bike, dody, ridge, blue ridge parkway, blue ridge, virginia, trail, rocky, ride, mountain bike, 29er, enduro, all mountain",
-        post
-      )
+      let head = {
+        ...headTags(
+          "Video: Dody Ridge Run, Fall 2017",
+          post.description,
+          "mountain, bike, dody, ridge, blue ridge parkway, blue ridge, virginia, trail, rocky, ride, mountain bike, 29er, enduro, all mountain",
+          post
+        )
+      }
+      if (this.schema) {
+        head.script = this.schema
+      }
+      return head
     },
     data() {
       return {

@@ -52,7 +52,7 @@
     head() {
       return headTags(
         "Spec Mines to Blackhorse Gap",
-        "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet",
+        post.description,
         "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt",
         post
       )

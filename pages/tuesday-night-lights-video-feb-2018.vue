@@ -17,7 +17,7 @@
 <script>
   import {s3Pages, tuesdayNightLightsVideoFeb2018} from '../scripts/routes'
   import {posts} from '../assets/posts'
-  import {headTags} from '../assets/functions'
+  import {headTags, buildVideo} from '../assets/functions'
   import {home} from '../assets/head-tags'
 
   import BlogPost from '../components/BlogPost'
@@ -31,14 +31,25 @@
       Youtube,
       BlogPost
     },
+    async asyncData(context) {
+      return {
+        schema: await buildVideo(post)
+      }
+    },
     head() {
-      return
-        headTags(
-        post.title,
-        post.subtitle,
-        'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,
-        post
-      )
+      let head = {
+        ...headTags(
+          post.title,
+          post.subtitle,
+          'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,
+          post
+        )
+      }
+      if (this.schema) {
+        head.script = this.schema
+      }
+
+      return head
     },
     data() {
       return {

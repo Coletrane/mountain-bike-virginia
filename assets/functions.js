@@ -35,11 +35,10 @@ export const headTags = (title, desc, keywords, post) => {
   }
 
   let schema
+  // Building video schema in Youtube component since it needs to call the YouTube API
   if (post.schema) {
     if (post.schema.type === schemaTypes.article) {
       schema = buildArticle(post, desc)
-    } else if (post.schema.type === schemaTypes.video) {
-      schema = buildVideo(post, desc)
     } else if (post.schema.type === schemaTypes.event) {
       schema = buildEvent(post, desc)
     } else if (post.schema.type === schemaTypes.review) {
@@ -61,7 +60,7 @@ export const headTags = (title, desc, keywords, post) => {
     head.script = []
     head.script.push({
       type: 'application/ld+json',
-      innerHTML: JSON.stringify(schema)
+      innerHTML: `${JSON.stringify(schema)}`
     })
   }
 
@@ -117,24 +116,41 @@ const buildArticle = (post, desc) => {
   return schema
 }
 
+// This gets built asyncronysloy on a per page basis
 const ytApi = 'https://content.googleapis.com/youtube/v3/videos'
-const buildVideo = (post, desc) => {
+export const buildVideo = async (post) => {
   let schema = {}
   schema['@type'] = schemaTypes.video
-  schema.description = desc
+  schema.description = post.description || post.subtitle
   schema.name = post.title
   schema.embedUrl = post.ytSrc
+  schema.contentUrl = post.ytSrc.split('/embed').join('')
 
   let ytId = post.ytSrc.split('/')
   ytId = ytId[ytId.length - 1]
-  axios.get(ytApi, {
+  let res = await axios.get(ytApi, {
     params: {
+      key: process.env.youTube,
       id: ytId,
       part: 'snippet'
     }
   })
 
-  return schema
+  if (res.status === 200) {
+    schema.thumbnailUrl = [
+      res.data.items[0].snippet.thumbnails.default.url
+    ]
+
+    schema.uploadDate = res.data.items[0].snippet.publishedAt
+  }
+
+  schema['@context'] = 'http://schema.org/'
+  return [
+    {
+      type: 'application/ld+json',
+      innerHTML: `${JSON.stringify(schema)}`
+    }
+  ]
 }
 
 const buildEvent = (post, desc) => {

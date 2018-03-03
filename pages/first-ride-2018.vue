@@ -78,7 +78,7 @@
     head() {
       return headTags(
         "First Ride of The New Year 2018",
-        "28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia",
+        post.description,
         "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january",
         post
       )

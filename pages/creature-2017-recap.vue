@@ -95,7 +95,7 @@
         <div class="blog-p">
           Many thanks to Woods Family HVAC. We’ll see you again next year!
         </div>
-        <youtube :src="post.ytSrc"></youtube>
+        <youtube :src="post.ytSrc"/>
       </div>
     </blog-post>
   </div>
@@ -121,7 +121,7 @@
     head() {
       return headTags(
         "Creature from Carvin's Cove 2017",
-        "Results and pictures from the second annual race in Roanoke's fine Carvin's Cove",
+        post.subtitle,
         "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove",
         post
       )

@@ -67,7 +67,7 @@
     head() {
       return headTags(
         "Review: Pivot Switchblade",
-        "Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue",
+        post.description,
         "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail",
         post
       )

@@ -54,6 +54,7 @@ posts.battleAtBlackhorse2018 = {
   route: routes.battleAtBlackhorse2018,
   date: moment('2018-02-25'),
   loc: 'Day Creek, Blue Ridge, VA',
+  description: 'Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge',
   schema: {
     type: schemaTypes.article,
     mainEntityOfPage: {
@@ -130,7 +131,8 @@ posts.gravelocity2018 = {
   route: routes.gravelocity2018,
   author: cole,
   date: 'January 20th 2018',
-  loc: 'Gravel Dr, Troutville, VA'
+  loc: 'Gravel Dr, Troutville, VA',
+  description: 'Third annual gravel ride from Botetourt, across Lee Highway and up to the top of the Blue Ridge Parkway'
 }
 
 posts.firstRide2018 = {
@@ -138,7 +140,8 @@ posts.firstRide2018 = {
   subtitle: 'The coldest year on record.',
   img: `${routes.s3Pages}first-ride-2018/classic-shot-2018.jpg`,
   route: routes.firstRide2018,
-  author: corey
+  author: corey,
+  description: '28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia'
 }
 
 posts.dodyRidgeRunFall2017 = {
@@ -146,7 +149,8 @@ posts.dodyRidgeRunFall2017 = {
   subtitle: "Don't call her Doddie.",
   ytSrc: 'https://www.youtube.com/embed/5cIs1e8Sos4',
   route: routes.dodyRidgeRunFall2017,
-  author: cole
+  author: cole,
+  description: 'Ride Down Dody ridge along the Blue Ridge Parkway, mile 98, near the Great Valley Overlook'
 }
 
 posts.specMines29Oct17 = {
@@ -154,7 +158,8 @@ posts.specMines29Oct17 = {
   subtitle: 'Wind, Rain, Cold. Pick Two.',
   img: `${routes.s3Pages}spec-mines-oct-29-2017/IMG_3089.jpg`,
   route: routes.specMines29Oct17,
-  author: cole
+  author: cole,
+  description: 'Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet'
 }
 
 posts.pivotSwitchbladeReview = {
@@ -163,6 +168,7 @@ posts.pivotSwitchbladeReview = {
   img: `${routes.s3Pages}pivot-switchblade-review/IMG_3009.jpg`,
   route: routes.pivotSwitchbladeReview,
   author: cole,
+  description: 'Review of the 27.5 plus and 29 Pivot Switchblade in a beautiful blue',
   schema: {
     type: schemaTypes.review,
     itemReviewed: {
