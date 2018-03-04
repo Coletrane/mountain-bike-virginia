@@ -73,12 +73,6 @@
     padding-bottom: 2rem;
   }
 
-  @media (max-width: 900px) {
-    i.fa-facebook {
-      padding-right: 1rem;
-    }
-  }
-
   .headline {
     font-weight: 800;
   }

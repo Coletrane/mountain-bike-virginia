@@ -182,6 +182,12 @@
       padding-top: 4rem;
       padding-bottom: 4rem;
     }
+    .headline {
+      font-size: 1.5rem !important;
+    }
+    .subheading {
+      font-size: 1rem !important;
+    }
   }
 
   img[lazy=loading] {
