@@ -56,6 +56,11 @@
             url: "https://www.starlightapparel.com/"
           },
           {
+            img: `${s3StaticImg}deschutes.png`,
+            class: 'deschutes',
+            url: 'https://www.deschutesbrewery.com/'
+          },
+          {
             img: `${s3StaticImg}sbc.png`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
@@ -80,11 +85,11 @@
             class: "blackwater",
             url: "http://www.blackwaterbikeshop.com/"
           },
-          {
-            img: `${s3StaticImg}outdoortrails.jpg`,
-            class: "outdoor-trails",
-            url: "http://www.outdoortrails.com/"
-          },
+          // {
+          //   img: `${s3StaticImg}outdoortrails.jpg`,
+          //   class: "outdoor-trails",
+          //   url: "http://www.outdoortrails.com/"
+          // },
           {
             img: `${s3StaticImg}bath.jpg`,
             class: "bath",
@@ -140,7 +145,7 @@
     },
     watch: {
       width() {
-        this.mobile = document.body.clientWidth <= 700
+        this.mobile = document.body.clientWidth <= 850
       }
     }
   }

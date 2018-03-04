@@ -32,7 +32,7 @@
         // Re arrange the order of the sponsors
         let starlightIndex = this.sponsors.findIndex(sponsor => sponsor.class === 'starlight')
         let jtrgIndex = this.sponsors.findIndex(sponsor => sponsor.class === 'jtrg')
-        let temp  = this.sponsors[jtrgIndex]
+        let temp = this.sponsors[jtrgIndex]
         this.sponsors[jtrgIndex] = this.sponsors[starlightIndex]
         this.sponsors[starlightIndex] = temp
 
@@ -81,12 +81,14 @@
     width: 100% !important;
   }
 
-  .starlight-container-2 {
-    padding-left: 0;
-    padding-right: 30px;
-  }
+
   .starlight-img-2 {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .deschutes-img-2 {
+    padding-top: 1.5rem;
+    padding-right: 1rem;
     width: 110% !important;
   }
 
@@ -107,15 +109,21 @@
     padding-top: 1rem;
   }
 
+  .alleghany-img-2 {
+    padding-top: 2rem;
+  }
+
   .woods-img-2 {
     padding-top: 1.5rem;
     width: 100% !important;
   }
 
   .blackwater-img-2 {
-    padding-top: .5rem;
+    padding-top: 1.5rem;
   }
+
   .tavern-img-2 {
+    padding-top: 1rem;
     width: 70% !important;
   }
 

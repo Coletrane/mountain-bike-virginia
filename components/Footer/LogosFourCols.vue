@@ -57,9 +57,8 @@
     width: 100% !important;
   }
 
-  .starlight-img-4 {
-    padding-top: 2rem;
-    width: 110% !important;
+  .deschutes-img-4 {
+    padding-top: 1rem;
   }
 
   .sbc-img-4 {
@@ -80,6 +79,14 @@
 
   .outdoor-trails-img-4 {
     padding-top: 1rem;
+  }
+
+  .starlight-container-4 {
+    padding-left: 0;
+  }
+  .starlight-img-4 {
+    padding-top: 1rem;
+    width: 110% !important;
   }
 
   .bath-img-4 {

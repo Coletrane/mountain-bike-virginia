@@ -3,10 +3,8 @@
 
     <h1 class="related-posts-title">Related Posts</h1>
 
-    <div v-for="group in postsGroups"
-         class="row related-post-group">
-      <div v-for="post in group"
-           class="related-post col-xs-12 col-s-6 col-md-6 col-lg-6 col-xl-6">
+    <div v-for="post in posts"
+         class="related-post">
         <nuxt-link :to="post.route">
           <card>
             <div slot="content">
@@ -18,7 +16,6 @@
           </card>
         </nuxt-link>
       </div>
-    </div>
   </div>
 </template>
 
@@ -45,22 +42,6 @@
       handleResize() {
         this.width = document.body.clientWidth
       }
-    },
-    computed: {
-      postsGroups() {
-        let groups = []
-
-        this.posts.forEach((elem, i, arr) => {
-          if (i % 2 === 0) {
-            groups.push([
-              this.posts[i],
-              this.posts[i + 1]
-            ])
-          }
-        })
-
-        return groups
-      }
     }
   }
 </script>
@@ -85,8 +66,9 @@
   }
 
   .related-post {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: block;
+    margin: auto;
+    width: 75%;
   }
   @media (max-width: 768px) {
     .related-post {
