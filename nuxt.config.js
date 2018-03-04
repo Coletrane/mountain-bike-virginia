@@ -1,5 +1,6 @@
 const routes = require('./scripts/routes')
 require('dotenv').config()
+const webpack = require('webpack')
 
 const sitemapRoutes = routes.appRoutes.map(route => {
   return {
@@ -66,7 +67,14 @@ module.exports = {
     {src: '~/plugins/vue-lazyload', ssr: false}
   ],
   build: {
-    extractCss: true
+    extractCss: true,
+    vendor: [
+      'babel-polyfill',
+      'moment'
+    ],
+    plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    ]
   },
   modules: [
     '@nuxtjs/sitemap',

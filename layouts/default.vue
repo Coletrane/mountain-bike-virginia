@@ -159,7 +159,7 @@
 
   .main-content {
     background-color: rgb(78, 69, 49);
-    background-image: url("http://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png");
+    background-image: url("https://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png");
     background-repeat: repeat;
     background-position-y: 0px;
     padding-left: 4rem;

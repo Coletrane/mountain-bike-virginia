@@ -36,7 +36,7 @@
       async getWeather() {
         if (process.env.NODE_ENV === 'production') {
           if (weatherIds[this.city]) {
-            const res = await this.$axios.get(`http://api.openweathermap.org/data/2.5/weather?id=${weatherIds[this.city]}&units=imperial&APPID=${process.env.prodWeather}`)
+            const res = await this.$axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${weatherIds[this.city]}&units=imperial&APPID=${process.env.prodWeather}`)
 
             this.temperature = res.data.main.temp
             this.description = res.data.weather[0].description
