@@ -14,7 +14,7 @@
         <nuxt/>
       </transition>
     </div>
-    <div v-if="showFooter">
+    <div>
       <m-t-b-v-a-footer/>
     </div>
   </div>
@@ -36,12 +36,6 @@
       }
     },
     methods: {
-      handleScroll() {
-        if (window.scrollY > 500) {
-          this.showFooter = true
-          window.removeEventListener("scroll", this.handleScroll)
-        }
-      },
       toggleMenu() {
         this.$store.commit('toggleMenu')
       },
@@ -53,14 +47,11 @@
     created() {
       // Check if we are on client side since server doesn't have window
       if (process.browser) {
-        //not having this.handleScroll() is important for the method to be called over and over
-        window.addEventListener("scroll", this.handleScroll)
         window.addEventListener('load', this.onLoad)
       }
     },
     destroyed() {
       if (process.browser) {
-        window.removeEventListener("scroll", this.handleScroll)
         window.removeEventListener('load', this.onLoad)
       }
     },

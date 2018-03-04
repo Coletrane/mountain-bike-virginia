@@ -1,6 +1,6 @@
 <template>
   <a :href="sponsor.url">
-    <img :src="sponsor.img"
+    <img v-lazy="sponsor.img"
          :class="sponsor.class + '-img-' + columns"
          class="sponsor"
          :alt="sponsor.class"/>
@@ -23,7 +23,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .sponsor {
     width: 90%;
   }

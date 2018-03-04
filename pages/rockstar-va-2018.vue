@@ -16,10 +16,11 @@
           to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for
           shuttles.</a>
           <div>
-            <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
+            <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEL)</a>
           </div>
           <div>
             <a :href="post.fbEvent">
+              Event Page
               <font-awesome-icon :icon="faFacebook"
                                  class="inline-facebook-icon"/>
             </a>
