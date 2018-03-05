@@ -53,6 +53,7 @@
     color: white;
     height: 3rem;
   }
+
   ul {
     width: 100%;
     margin-bottom: 0;

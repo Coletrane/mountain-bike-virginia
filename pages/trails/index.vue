@@ -17,37 +17,58 @@
   import BottomNav from '../../components/Trails/BottomNav'
 
   import {s3StaticImg} from '../../scripts/routes'
+  import {nokeCoords, trails} from '../../assets/trails'
 
   export default {
+    name: 'trails',
     components: {
       MTBVAHeader,
       BottomNav
     },
-    name: 'trails',
     data() {
       return {
-        image: `${s3StaticImg}foliage.jpg`
+        image: `${s3StaticImg}foliage.jpg`,
+        currentInfoWindow: ' '
       }
     },
     created() {
       if (process.browser) {
 
-        window.initMap = function () {
-          const nokeCoords = {
-            lat: 37.2710,
-            lng: -79.9414
-          }
-
-          const map = new google.maps.Map(document.getElementById('map'), {
+        window.initMap = () => {
+          const nokeMap = new google.maps.Map(document.getElementById('map'), {
             center: nokeCoords,
-            zoom: 8
+            zoom: 9
           })
+
+          let markers = []
+          let infoWindows = []
+          trails.forEach((trail => {
+
+            let marker = new google.maps.Marker({
+              ...trail.mapMarker,
+              map: nokeMap
+            })
+            markers.push(marker)
+
+            let infoWindow = new google.maps.InfoWindow({
+              content: this.buildInfoWindowContent(trail)
+            })
+            infoWindows.push(infoWindow)
+
+            marker.addListener('click', () => {
+              if (marker.title !== this.currentInfoWindow) {
+                infoWindows.forEach(infoWindow => infoWindow.close())
+                infoWindow.open(map, marker)
+                this.currentInfoWindow = trail.mapMarker.title
+              }
+            })
+          }))
         }
 
         let scripts = document.getElementsByTagName('script')
         if (scripts) {
           scripts = Array.prototype.slice.call(scripts)
-          if (Array.isArray(scripts)) {
+          if (scripts.length > 0) {
             this.existingMapScript = scripts.find(script => script.src.includes('maps.googleapis.com'))
           }
         }
@@ -64,6 +85,36 @@
     mounted() {
       if (process.browser && this.existingMapScript) {
         window.initMap()
+      }
+    },
+    methods: {
+      onMarkerClick(title) {
+        this.openInfoWindow = title
+
+        // let route = `trails/${title.toLowerCase().split(' ').join('-')}`
+        // this.$router.push(route)
+      },
+      buildInfoWindowContent(trail) {
+        if (process.browser) {
+
+          const rootDiv = document.createElement('div')
+          rootDiv.id = `${trail.mapMarker.title}-info-window`
+
+          const titleH1 = document.createElement('h1')
+          titleH1.innerText = trail.mapMarker.title
+
+          const descriptionDiv = document.createElement('div')
+          descriptionDiv.class = 'info-window-description'
+          const descriptionP = document.createElement('p')
+          descriptionP.innerText = trail.description || 'no description available'
+          descriptionDiv.appendChild(descriptionP)
+
+
+          rootDiv.appendChild(titleH1)
+          rootDiv.appendChild(descriptionDiv)
+
+          return rootDiv.outerHTML
+        }
       }
     }
   }
