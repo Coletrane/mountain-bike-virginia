@@ -21,7 +21,8 @@
     "nuxt": "^1.4.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "vue-lazyload": "^1.1.4"
+    "vue-lazyload": "^1.1.4",
+    "vue-scrollto": "^2.10.0"
   },
   "peerDependencies": {},
   "devDependencies": {
