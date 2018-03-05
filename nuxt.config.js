@@ -112,6 +112,6 @@ module.exports = {
   env: {
     prodWeather: process.env.WEATHER_PROD,
     testWeather: process.env.WEATHER_TEST,
-    youTube: process.env.YOUTUBE
+    google: process.env.GOOGLE
   }
 }

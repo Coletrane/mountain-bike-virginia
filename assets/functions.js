@@ -156,7 +156,7 @@ export const buildVideo = async (post) => {
   ytId = ytId[ytId.length - 1]
   let res = await axios.get(ytApi, {
     params: {
-      key: process.env.youTube,
+      key: process.env.google,
       id: ytId,
       part: 'snippet'
     }
