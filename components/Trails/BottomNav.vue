@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar fixed-bottom mtbva-bottom-nav">
-    <ul class="navbar navbar-expand">
+  <div class="navbar fixed-bottom">
+    <ul class="navbar-expand">
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-link mtbva"
            @click="scrollToParking()">
@@ -48,8 +48,14 @@
 </script>
 
 <style scoped>
+  .navbar {
+    background: rgba(0,0,0, .5);
+    color: white;
+    height: 3rem;
+  }
   ul {
     width: 100%;
+    margin-bottom: 0;
   }
 
   li {
