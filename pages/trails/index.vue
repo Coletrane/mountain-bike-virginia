@@ -9,12 +9,22 @@
       <div id="map"></div>
       <bottom-nav/>
     </div>
+
+    <div v-show="false">
+      <div v-for="trail of trails"
+           :id="getInfoWindowRoute(trail) + '-info-window-hidden'">
+        <info-window :route="getInfoWindowRoute(trail)"
+                     :title="trail.mapMarker.title"
+                     :description="trail.description"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import MTBVAHeader from '../../components/Header/MTBVAHeader'
   import BottomNav from '../../components/Trails/BottomNav'
+  import InfoWindow from '../../components/Trails/InfoWindow'
 
   import {s3StaticImg} from '../../scripts/routes'
   import {nokeCoords, trails} from '../../assets/trails'
@@ -22,13 +32,15 @@
   export default {
     name: 'trails',
     components: {
+      InfoWindow,
       MTBVAHeader,
       BottomNav
     },
     data() {
       return {
         image: `${s3StaticImg}foliage.jpg`,
-        currentInfoWindow: ' '
+        currentInfoWindow: ' ',
+        trails: trails
       }
     },
     created() {
@@ -51,7 +63,7 @@
             markers.push(marker)
 
             let infoWindow = new google.maps.InfoWindow({
-              content: this.buildInfoWindowContent(trail)
+              content: this.getInfoWindow(trail)
             })
             infoWindows.push(infoWindow)
 
@@ -88,33 +100,13 @@
       }
     },
     methods: {
-      onMarkerClick(title) {
-        this.openInfoWindow = title
-
-        // let route = `trails/${title.toLowerCase().split(' ').join('-')}`
-        // this.$router.push(route)
-      },
-      buildInfoWindowContent(trail) {
+      getInfoWindow(trail) {
         if (process.browser) {
-
-          const rootDiv = document.createElement('div')
-          rootDiv.id = `${trail.mapMarker.title}-info-window`
-
-          const titleH1 = document.createElement('h1')
-          titleH1.innerText = trail.mapMarker.title
-
-          const descriptionDiv = document.createElement('div')
-          descriptionDiv.class = 'info-window-description'
-          const descriptionP = document.createElement('p')
-          descriptionP.innerText = trail.description || 'no description available'
-          descriptionDiv.appendChild(descriptionP)
-
-
-          rootDiv.appendChild(titleH1)
-          rootDiv.appendChild(descriptionDiv)
-
-          return rootDiv.outerHTML
+          return document.getElementById(`${this.getInfoWindowRoute(trail)}-info-window-hidden`).innerHTML
         }
+      },
+      getInfoWindowRoute(trail) {
+        return trail.mapMarker.title.toLowerCase().split(' ').join('-')
       }
     }
   }

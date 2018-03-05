@@ -21,7 +21,8 @@ export const trails = [
         lat: 37.383471,
         lng: -79.946345
       }
-    }
+    },
+    description: 'Carvins Cove Natural Reserve is the second largest municipal park in the nation. With more than 60 miles of trail, and a magnificent bike shop just down the street <a href="http://justtherightgear.com/">Just the Right Gear</a> Carvins Cove is the cornerstone of the Roanoke mountain biking landscape'
   },
   {
     mapMarker: {
