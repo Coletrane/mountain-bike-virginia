@@ -7,13 +7,12 @@
 
     <div class="main-content main-content-mobile">
       <div id="map"></div>
-      <bottom-nav/>
     </div>
 
     <div v-show="false">
       <div v-for="trail of trails"
            :id="getInfoWindowRoute(trail) + '-info-window-hidden'">
-        <info-window :route="getInfoWindowRoute(trail)"
+        <info-window :route="'trails/' + getInfoWindowRoute(trail)"
                      :title="trail.mapMarker.title"
                      :description="trail.description"/>
       </div>
@@ -23,24 +22,22 @@
 
 <script>
   import MTBVAHeader from '../../components/Header/MTBVAHeader'
-  import BottomNav from '../../components/Trails/BottomNav'
   import InfoWindow from '../../components/Trails/InfoWindow'
 
   import {s3StaticImg} from '../../scripts/routes'
-  import {nokeCoords, trails} from '../../assets/trails'
+  import {nokeCoords, trailAreas} from '../../assets/trails'
 
   export default {
     name: 'trails',
     components: {
       InfoWindow,
       MTBVAHeader,
-      BottomNav
     },
     data() {
       return {
         image: `${s3StaticImg}foliage.jpg`,
         currentInfoWindow: ' ',
-        trails: trails
+        trails: trailAreas
       }
     },
     created() {
@@ -54,7 +51,7 @@
 
           let markers = []
           let infoWindows = []
-          trails.forEach((trail => {
+          trailAreas.forEach((trail => {
 
             let marker = new google.maps.Marker({
               ...trail.mapMarker,

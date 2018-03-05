@@ -1,9 +1,11 @@
+import {s3Pages} from '../scripts/routes'
+
 export const nokeCoords = {
   lat: 37.2710,
   lng: -79.9414
 }
 
-export const trails = [
+export const trailAreas = [
   {
     mapMarker: {
       title: 'Mill Mountain',
@@ -12,7 +14,8 @@ export const trails = [
         lng: -79.9324
       }
     },
-    description: 'Mill mmmmmm'
+    description: "Mill Mountain, home of the world's largest freestanding illuminated man-made star, constructed in 1949. Boasting 12 miles of trails that are also near beer, Mill Mountain is a staple for after work rides.",
+    promoImage: ''
   },
   {
     mapMarker: {

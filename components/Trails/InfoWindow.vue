@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mtbva-info-window">
     <nuxt-link :to="route">
       <h1>
         {{title}}
@@ -33,5 +33,10 @@
 </script>
 
 <style scoped>
-
+  .mtbva-info-window {
+    width: 250px;
+  }
+  .info-window-description {
+    font-size: 1rem;
+  }
 </style>

@@ -43,8 +43,8 @@
       <blog-image :src="img + 'top-of-bobletts.jpg'"/>
       <blog-image :src="img + 'bobletts-climb.jpg'"/>
       <div class="blog-p">
-        On the climb up these two nice blokes, father and son, from Staunton and Fredricksburg asked me where the mountain bike trails
-        are in Roanoke. "Right here!" I said. All these gravel roads connect great trails like
+        On the climb up these two nice blokes, father and son, from Staunton and Fredricksburg asked me where the mountain bike trailAreas
+        are in Roanoke. "Right here!" I said. All these gravel roads connect great trailAreas like
         <a href="https://www.strava.com/segments/2281160">
           Spec Mines
         </a>,

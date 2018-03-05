@@ -11,7 +11,7 @@
         </div>
         <blog-image :src="img + 'P1000131.jpg'"/>
         <div class="blog-p">
-          One would think the less than stellar forecast would scare off many, but the promise of trails that were next to immune to rain drew over forty eager shredders. The stoke was high in the parking lot as everyone loaded up packs and Rob Issem’s trusty Volvo 240, being used as a supply drop, with snacks, goggles, assorted enduro specific gear and a few choice beverages.
+          One would think the less than stellar forecast would scare off many, but the promise of trailAreas that were next to immune to rain drew over forty eager shredders. The stoke was high in the parking lot as everyone loaded up packs and Rob Issem’s trusty Volvo 240, being used as a supply drop, with snacks, goggles, assorted enduro specific gear and a few choice beverages.
         </div>
         <blog-image :src="img + 'P1010116.jpg'"/>
         <blog-image :src="img + 'P1010120.jpg'"/>

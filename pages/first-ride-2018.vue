@@ -26,7 +26,7 @@
       </div>
       <div class="blog-p">
         Conditions were excellent...ground was frozen solid, as were the streams - no wet toes today! That’s not to say
-        that the high speeds of the fire road and lower trails didn’t result in some FROZEN toes and fingers. I mean,
+        that the high speeds of the fire road and lower trailAreas didn’t result in some FROZEN toes and fingers. I mean,
         you put those things right out front and center while you barrel down the fire road, and the wind chill just
         sucks away the heat!
       </div>

@@ -5,7 +5,7 @@
       :header-height="900"
       :image="img"
       title="Mountain Bike Virginia"
-      subtitle="Exposing the trove of trails in The Old Dominion"
+      subtitle="Exposing the trove of trailAreas in The Old Dominion"
       button="Events"
       buttonLink="https://www.facebook.com/pg/xxcva/events/">
     </m-t-b-v-a-header>
@@ -20,7 +20,7 @@
             <div slot="words">
               <div class="promo">
                 23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
-                trails. We'd like to give a Hell Yeah to all the shredders that finished this tough race.
+                trailAreas. We'd like to give a Hell Yeah to all the shredders that finished this tough race.
                 <nuxt-link :to="routes.resultsBattleAtBlackhorse2018">
                   Check out the results here.
                 </nuxt-link>

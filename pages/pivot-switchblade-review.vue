@@ -13,7 +13,7 @@
         <div class="blog-p">
           I arrive at the demo and of course there are no large 29ers in sight. I agree to take the 27.5 Plus
           Switchblade out while I wait for a bike with wheels in the correct size. My course is Percy Warner Park in
-          Nashville TN. Percy has some XCish trails, no big climbs, and a main feature downhill/bike park section.
+          Nashville TN. Percy has some XCish trailAreas, no big climbs, and a main feature downhill/bike park section.
           Seemingly the perfect combo for my bike with too much rubber. The Switchblade is LOW, and slack, a winning 1-2
           punch in the modern mountain bike industry. Yet, there is nothing winning about how many times I struck my
           pedal. Yes, yes, I know, time my pedaling better, but the problem with that is that there are an array of

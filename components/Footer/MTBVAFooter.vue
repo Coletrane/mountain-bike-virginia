@@ -87,7 +87,7 @@
           },
           // {
           //   img: `${s3StaticImg}outdoortrails.jpg`,
-          //   class: "outdoor-trails",
+          //   class: "outdoor-trailAreas",
           //   url: "http://www.outdoortrails.com/"
           // },
           {
