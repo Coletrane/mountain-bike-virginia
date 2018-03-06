@@ -1,6 +1,16 @@
 <template>
   <div>
-    <trail-area :trail-area="trailArea"/>
+    <trail-area :trail-area="trailArea">
+      <div slot="parking">
+
+      </div>
+      <div slot="trails">
+
+      </div>
+      <div slot="beer">
+
+      </div>
+    </trail-area>
   </div>
 </template>
 

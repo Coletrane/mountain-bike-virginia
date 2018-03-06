@@ -1,8 +1,11 @@
 import {s3Pages} from '../scripts/routes'
 
-export const nokeCoords = {
-  lat: 37.2710,
-  lng: -79.9414
+export const nokeMap = {
+  center: {
+    lat: 37.2710,
+    lng: -79.9414
+  },
+  zoom: 9
 }
 
 export const trailAreas = [
@@ -34,8 +37,7 @@ export const trailAreas = [
         lat: 37.2383,
         lng: -79.8520
       }
-    },
-    description: ''
+    }
   },
   {
     mapMarker: {

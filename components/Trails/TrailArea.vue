@@ -3,31 +3,40 @@
     <m-t-b-v-a-header :header-height="700"
                       :image="image"
                       :title="trailArea.mapMarker.title"/>
-      <div class="main-content main-content-mobile trail-area-content">
+    <div class="main-content main-content-mobile trail-area-content">
 
-        <card id="parking">
-          <div slot="content">
-            <h2>Parking</h2>
-            <h5>For the less fortunate of us who can't ride to the trailhead.</h5>
+      <card id="parking">
+        <div slot="content">
+          <h2>Parking</h2>
+          <h5>For the less fortunate of us who can't ride to the trailhead.</h5>
+          <div class="section-details">
+            <slot name="parking"/>
           </div>
-        </card>
+        </div>
+      </card>
 
-        <card id="trails">
-          <div slot="content">
-            <h2>Trails</h2>
-            <h5>Sustainability, guaranteed.</h5>
+      <card id="trails">
+        <div slot="content">
+          <h2>Trails</h2>
+          <h5>Sustainability, guaranteed.</h5>
+          <div class="section-details">
+            <slot name="trails"/>
           </div>
-        </card>
+        </div>
+      </card>
 
-        <card id="beer">
-          <div slot="content">
-            <h2>Beer</h2>
-            <h5>The reason we even do this.</h5>
+      <card id="beer">
+        <div slot="content">
+          <h2>Beer</h2>
+          <h5>The reason we even do this.</h5>
+          <div class="section-details">
+            <slot name="beer"/>
           </div>
-        </card>
+        </div>
+      </card>
 
-        <bottom-nav/>
-      </div>
+      <bottom-nav/>
+    </div>
   </div>
 </template>
 
@@ -65,9 +74,14 @@
 
   h2 {
     font-size: 3rem;
+    padding-top: 1rem;
   }
 
   h5 {
     font-size: 1.5rem;
+  }
+
+  .section-details {
+    padding-top: 2rem;
   }
 </style>
