@@ -4,27 +4,32 @@
       <div class="words">
         <div class="row">
           <div class="col-9 col-sm-10">
-            <a v-if="link"
-               :href="link">
-              <h2 v-if="!noTitle"
+            <nuxt-link v-if="titleLink"
+                       :to="{name: post.route}"
+                       exact>
+              <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
-              <slot name="author"/>
-            </a>
-            <router-link v-else-if="!link && post.route"
-                         :to="{name: post.route}"
-                         exact>
-              <h2 v-if="!noTitle"
-                  class="headline">{{post.title}}</h2>
-              <span class="subheading">{{post.subtitle}}</span>
-              <slot name="author"/>
-            </router-link>
+              <div v-if="post.date">
+                {{post.date.format('MMMM Do, YYYY')}}
+              </div>
+              <div v-if="post.loc">
+                {{post.loc}}
+              </div>
+            </nuxt-link>
             <div v-else>
-              <h2 v-if="!noTitle"
+              <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
-              <slot name="author"/>
+              <div v-if="post.date">
+                {{post.date.format('MMMM Do, YYYY')}}
+              </div>
+              <div v-if="post.loc">
+                {{post.loc}}
+              </div>
             </div>
+            <author v-if="!noAuthor && headerAuthor"
+                    :author="post.author"/>
           </div>
           <social-actions :post="post"
                           class="col-3 col-sm-2 social-right"/>
@@ -32,6 +37,8 @@
         <slot name="words"/>
       </div>
       <div class="mtbva-media">
+        <author v-if="!noAuthor && !headerAuthor"
+                :author="post.author"/>
         <slot name="media"/>
       </div>
     </div>
@@ -40,6 +47,7 @@
 <script>
   import Card from "./Card"
   import SocialActions from "./SocialActions"
+  import Author from './Author'
 
   export default {
     name: "post-card",
@@ -47,10 +55,17 @@
       post: {
         required: true
       },
-      link: {
-        required: false
+      noPostTitle: {
+        type: Boolean,
+        required: false,
+        default: false
       },
-      noTitle: {
+      headerAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      noAuthor: {
         type: Boolean,
         required: false,
         default: false
@@ -58,12 +73,15 @@
     },
     components: {
       Card,
-      SocialActions
+      SocialActions,
+      Author
     },
     computed: {
-      linkIsRoute() {
-        return !this.link.includes('http')
-      },
+      titleLink() {
+        if (this.post.route !== ' ') {
+          return this.post.route
+        }
+      }
     }
   }
 </script>

@@ -3,12 +3,13 @@
     <blog-post :header-height="900"
                :image="img + 'P1000195.jpg'"
                :post="post"
-               inline-author
+               header-author
                :related-posts="relatedPosts">
+      <div slot="header">
+        <author :author="post.author"/>
+      </div>
       <div slot="content">
-        <div>
           <youtube :src="post.ytSrc"/>
-        </div>
       </div>
     </blog-post>
   </div>
@@ -17,6 +18,7 @@
 <script>
   import BlogPost from '../components/BlogPost.vue'
   import Youtube from '../components/Iframes/Youtube.vue'
+  import Author from '../components/Card/Author'
 
   import {s3Pages, battleAtBlackhorse2018} from '../scripts/routes'
   import {posts} from '../assets/posts'
@@ -28,7 +30,8 @@
     name: 'battle-at-blackhorse-2018-video',
     components: {
       BlogPost,
-      Youtube
+      Youtube,
+      Author
     },
     async asyncData(context) {
        return {

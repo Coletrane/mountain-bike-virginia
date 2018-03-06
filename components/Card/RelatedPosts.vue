@@ -70,14 +70,16 @@
     margin: auto;
     width: 75%;
   }
+
+  .related-post + .related-post {
+    margin-top: 4rem;
+  }
+
   @media (max-width: 768px) {
     .related-post {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    .related-post + .related-post {
-      margin-top: 3rem;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
     }
   }
 

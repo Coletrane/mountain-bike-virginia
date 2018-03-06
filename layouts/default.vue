@@ -186,7 +186,7 @@
       font-size: 1.5rem !important;
     }
     .subheading {
-      font-size: 1rem !important;
+      font-size: 1.2rem !important;
     }
   }
 

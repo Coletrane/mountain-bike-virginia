@@ -5,31 +5,21 @@
       :image="image"
       :title="title"
       subpage/>
+
     <div class="main-content">
       <post-card :post="post"
                  :links="false"
-                 :no-title="noPostTitle">
-        <div slot="author">
-          <div v-if="post.date">
-            {{post.date.format('MMMM Do, YYYY')}}
-          </div>
-          <div v-if="post.loc">
-            {{post.loc}}
-          </div>
-        </div>
-
+                 :no-post-title="noPostTitle"
+                 :header-author="headerAuthor">
         <div slot="media">
-          <author :author="post.author"
-                  :class="authorClass"/>
           <slot name="content"/>
         </div>
-
       </post-card>
 
       <related-posts v-if="relatedPosts"
                      :posts="relatedPosts"/>
-
     </div>
+
   </div>
 </template>
 <script>
@@ -68,6 +58,11 @@
         required: false,
         default: false
       },
+      headerAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       noTitle: {
         type: Boolean,
         required: false,
@@ -83,30 +78,16 @@
         required: false
       }
     },
-    created() {
-      if (process.browser) {
-
-        // document.getElementsByTagName('head')[0].appendChild();
-      }
-    },
     computed: {
       title() {
         if (!this.noTitle) {
           return this.post.title
         }
       },
-      authorClass() {
-        if (this.inlineAuthor) {
-          return 'inline-author'
-        }
-      }
     }
   }
 </script>
 <style>
-  .words {
-    padding: 0;
-  }
 
   .blog-p {
     padding: 1rem;
@@ -126,7 +107,4 @@
     color: #5c5e5c;
   }
 
-  .inline-author {
-    float: unset !important;
-  }
 </style>

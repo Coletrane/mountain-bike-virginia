@@ -3,7 +3,8 @@
     <blog-post :header-height="600"
                :image="img + 'tnl.jpg'"
                :post="post"
-               inline-author
+               header-author
+               no-title
                :related-posts="relatedPosts">
       <div slot="content">
         <div>
