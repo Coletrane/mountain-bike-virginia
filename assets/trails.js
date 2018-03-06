@@ -34,7 +34,8 @@ export const trailAreas = [
         lat: 37.2383,
         lng: -79.8520
       }
-    }
+    },
+    description: ''
   },
   {
     mapMarker: {

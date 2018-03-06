@@ -3,21 +3,21 @@
     <ul class="navbar-expand">
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-link mtbva"
-           @click="scrollToParking()">
+           v-scroll-to="{el: '#parking'}">
           <font-awesome-icon :icon="Car"/>
           Parking
         </a>
       </li>
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-link"
-           @click="scrollToTrails()">
+           v-scroll-to="{el: '#trails'}">
           <font-awesome-icon :icon="Bicycle"/>
           Trails
         </a>
       </li>
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-item nav-link mtbva-bottom-nav-item"
-           @click="scrollToBeer()">
+           v-scroll-to="{el: '#beer'}">
           <font-awesome-icon :icon="Beer"/>
           Beer
         </a>
@@ -68,5 +68,6 @@
 
   a {
     font-size: 1.5rem;
+    cursor: pointer;
   }
 </style>

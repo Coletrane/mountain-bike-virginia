@@ -1,8 +1,30 @@
 <template>
   <div>
     <m-t-b-v-a-header :header-height="700"
-                      :image="image"/>
-      <div class="main-content main-content-mobile">
+                      :image="image"
+                      :title="trailArea.mapMarker.title"/>
+      <div class="main-content main-content-mobile trail-area-content">
+
+        <card id="parking">
+          <div slot="content">
+            <h2>Parking</h2>
+            <h5>For the less fortunate of us who can't ride to the trailhead.</h5>
+          </div>
+        </card>
+
+        <card id="trails">
+          <div slot="content">
+            <h2>Trails</h2>
+            <h5>Sustainability, guaranteed.</h5>
+          </div>
+        </card>
+
+        <card id="beer">
+          <div slot="content">
+            <h2>Beer</h2>
+            <h5>The reason we even do this.</h5>
+          </div>
+        </card>
 
         <bottom-nav/>
       </div>
@@ -12,12 +34,14 @@
 <script>
   import BottomNav from './BottomNav'
   import MTBVAHeader from '../Header/MTBVAHeader'
+  import Card from '../Card/Card'
 
   import {s3StaticImg} from '../../scripts/routes'
 
   export default {
     name: 'trail-area',
     components: {
+      Card,
       MTBVAHeader,
       BottomNav
     },
@@ -35,5 +59,15 @@
 </script>
 
 <style scoped>
+  .trail-area-content {
+    text-align: center;
+  }
 
+  h2 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
 </style>

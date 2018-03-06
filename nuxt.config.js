@@ -64,7 +64,8 @@ module.exports = {
     ]
   },
   plugins: [
-    {src: '~/plugins/vue-lazyload', ssr: false}
+    {src: '~/plugins/vue-lazyload', ssr: false},
+    {src: '~/plugins/vue-scrollto', ssr: false}
   ],
   build: {
     extractCss: true,
