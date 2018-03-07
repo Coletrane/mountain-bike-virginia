@@ -129,7 +129,6 @@ describe('routes tests', () => {
             .to.equal(expected)
         })
 
-        // FIXME: integrate with yandex api once you get a key
         xit('has a valid schema <script> tag', async () => {
           let schema = await driver.findElement(
             By.xpath('//script[@type=\'application/ld+json\']'))

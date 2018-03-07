@@ -18,14 +18,14 @@ describe('<post-card> tests', () => {
 
   it('should have a headline', async () => {
     expect(await card.findElement(
-      By.xpath("//h2[@class='headline']"))
+      By.className('headline'))
       .getText())
       .not.to.be.undefined
   })
 
   it('should have a subheading', async () => {
     expect(await card.findElement(
-      By.xpath("//h4[@class='subheading']"))
+      By.className('subheading'))
       .getText())
       .not.to.be.undefined
   })

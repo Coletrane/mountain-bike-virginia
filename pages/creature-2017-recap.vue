@@ -3,7 +3,8 @@
     <blog-post
       :header-height="480"
       :image="img + 'lumberjack.jpg'"
-      :post="post">
+      :post="post"
+      header-author>
       <div slot="content">
         <div>
           <blog-image :src="img + 'fence.jpg'"/>

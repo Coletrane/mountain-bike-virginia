@@ -16,7 +16,8 @@
         <div v-if="page >= 1"
              :key="1">
 
-          <post-card :post="posts.battleAtBlackhorse2018">
+          <post-card :post="posts.battleAtBlackhorse2018"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
@@ -31,20 +32,22 @@
             </div>
           </post-card>
 
-          <post-card :post="posts.battleAtBlackhorse2018Video">
+          <post-card :post="posts.battleAtBlackhorse2018Video"
+                     no-author>
             <div slot="media">
               <youtube :src="posts.battleAtBlackhorse2018Video.ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.tuesdayNightLightsVideoFeb2018">
+          <post-card :post="posts.tuesdayNightLightsVideoFeb2018"
+                     no-author>
             <div slot="media">
               <youtube :src="posts.tuesdayNightLightsVideoFeb2018.ytSrc"/>
             </div>
           </post-card>
 
           <post-card :post="posts.rockstarVa2018"
-                     :link="posts.rockstarVa2018.fbEvent">
+                     no-author>
             <div slot="words">
               <div class="promo">
                 Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel
@@ -73,8 +76,8 @@
           </post-card>
 
           <post-card :post="posts.middleMtMomma2018"
-                     :link="posts.middleMtMomma2018.fbEvent">
-            <div slot="author">
+                     no-author>
+            <div slot="header">
               <h4 class="subheading">
                 A week before Mother's day, its
                 <span style="font-weight: 800;">
@@ -123,7 +126,8 @@
             </div>
           </post-card>
 
-          <post-card :post="posts.gravelocity2018">
+          <post-card :post="posts.gravelocity2018"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 Who wants to do a gravel ride? Okay how about a 54 mile one? Okay how about 20 degrees?
@@ -136,7 +140,8 @@
             </div>
           </post-card>
 
-          <post-card :post="posts.firstRide2018">
+          <post-card :post="posts.firstRide2018"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 For the 28th consecutive year the the first ride of the new year was a roaring
@@ -156,14 +161,15 @@
         <div v-if="page >= 2"
              :key="2">
 
-          <post-card :post="posts.dodyRidgeRunFall2017">
+          <post-card :post="posts.dodyRidgeRunFall2017"
+                     no-author>
             <div slot="media">
               <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"/>
             </div>
           </post-card>
 
-          <post-card
-            :post="posts.pivotSwitchbladeReview">
+          <post-card :post="posts.pivotSwitchbladeReview"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not
@@ -177,7 +183,8 @@
             </div>
           </post-card>
 
-          <post-card :post="posts.creature2017Recap">
+          <post-card :post="posts.creature2017Recap"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success.
@@ -197,19 +204,22 @@
             </div>
           </post-card>
 
-          <post-card :post="posts.relaunch">
+          <post-card :post="posts.relaunch"
+                     no-author>
             <div slot="media">
               <image-link :post="posts.relaunch"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.specMines29Oct17">
+          <post-card :post="posts.specMines29Oct17"
+                     no-author>
             <div slot="media">
               <image-link :post="posts.specMines29Oct17"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.creature2016">
+          <post-card :post="posts.creature2016"
+                     no-author>
             <div slot="words">
               <div class="promo">
                 The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing
