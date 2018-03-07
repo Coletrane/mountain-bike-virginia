@@ -6,6 +6,8 @@
     </m-t-b-v-a-header>
 
     <div class="main-content main-content-mobile">
+      <google-map :map="nokeMap"
+                  :markers="trailAreas"/>
     </div>
 
   </div>
@@ -14,21 +16,24 @@
 <script>
   import MTBVAHeader from '../../components/Header/MTBVAHeader'
   import InfoWindow from '../../components/Trails/InfoWindow'
+  import GoogleMap from '../../components/Trails/GoogleMap'
 
   import {s3StaticImg} from '../../scripts/routes'
-  import {nokeCoords, trailAreas} from '../../assets/trails'
+  import {nokeMap, trailAreas} from '../../assets/trails'
 
   export default {
     name: 'trails',
     components: {
       InfoWindow,
       MTBVAHeader,
+      GoogleMap
     },
     data() {
       return {
         image: `${s3StaticImg}foliage.jpg`,
         currentInfoWindow: ' ',
-        trails: trailAreas
+        trailAreas: trailAreas,
+        nokeMap: nokeMap
       }
     },
 
@@ -36,7 +41,5 @@
 </script>
 
 <style scoped>
-  #map {
-    height: 700px;
-  }
+
 </style>

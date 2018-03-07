@@ -1,6 +1,13 @@
 const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
+
+const trails = 'trails'
+const trailsMillMt = 'trails/mill-mountain'
+const trailsCarvinsCove = 'trails/carvins-cove'
+const trailsExplorePark = 'trails/explore-park'
+const trailsBlueRidge = 'trails/blue-ridge'
+
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
 const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
@@ -21,6 +28,11 @@ const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
+  trails,
+  trailsMillMt,
+  trailsCarvinsCove,
+  trailsExplorePark,
+  trailsBlueRidge,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
@@ -84,6 +96,11 @@ module.exports = {
   results,
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
+  trails,
+  trailsMillMt,
+  trailsCarvinsCove,
+  trailsExplorePark,
+  trailsBlueRidge,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,

@@ -9,7 +9,8 @@ const createStore = () => {
       currentRaceName: races[0],
       loadedRaces: [],
       showMenu: false,
-      loaded: false
+      loaded: false,
+      googleMapsAttached: false
     },
 
     mutations: {
@@ -30,6 +31,9 @@ const createStore = () => {
       },
       onLoad (state) {
         state.loaded = true
+      },
+      googleMapsAttached (state) {
+        state.googleMapsAttached = true
       }
     },
 

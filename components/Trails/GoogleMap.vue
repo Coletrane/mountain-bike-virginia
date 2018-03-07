@@ -3,11 +3,11 @@
     <div id="map"></div>
 
     <div v-show="false">
-      <div v-for="window of infoWindows"
-           :id="getInfoWindowRoute(window) + '-info-window-hidden'">
-        <info-window :route="'trails/' + getInfoWindowRoute(trail)"
-                     :title="trail.mapMarker.title"
-                     :description="trail.description"/>
+      <div v-for="marker of markers"
+           :id="getInfoWindowKebabCase(marker) + '-info-window-hidden'">
+        <info-window :route="marker.route"
+                     :title="marker.mapMarker.title"
+                     :description="marker.description"/>
       </div>
     </div>
   </div>
@@ -29,10 +29,6 @@
       markers: {
         type: Array,
         required: true
-      },
-      infoWindows: {
-        type: Array,
-        required: true
       }
     },
     created() {
@@ -40,65 +36,84 @@
         window.initMap = () => {
           const map = new google.maps.Map(document.getElementById('map'), this.map)
 
-          this.markers.forEach((marker => {
+          this.markers.forEach(marker => {
 
-            let markers = []
-            let infoWindows = []
-            markers.push(new google.maps.Marker({
-              ...marker,
+            let localMarkers = []
+            let localInfoWindows = []
+            const localMarker = new google.maps.Marker({
+              ...marker.mapMarker,
               map: map
-            }))
-
-            let infoWindow = new google.maps.InfoWindow({
-              content: this.getInfoWindow(trail)
             })
-            infoWindows.push(new google.maps.InfoWindow({}))
+            localMarkers.push(localMarker)
 
-            marker.addListener('click', () => {
-              if (marker.title !== this.currentInfoWindow) {
-                infoWindows.forEach(infoWindow => infoWindow.close())
-                infoWindow.open(map, marker)
-                this.currentInfoWindow = trail.mapMarker.title
+            const localInfoWindow = new google.maps.InfoWindow({
+              content: this.getInfoWindow(marker)
+            })
+            localInfoWindows.push(localInfoWindow)
+
+            localMarker.addListener('click', () => {
+              if (localMarker.title !== this.currentInfoWindow) {
+                localInfoWindows.forEach(infoWindow => infoWindow.close())
+                localInfoWindow.open(map, localMarker)
+                this.currentInfoWindow = localMarker.title
               }
             })
-          }))
+          })
         }
 
-        let scripts = document.getElementsByTagName('script')
-        if (scripts) {
-          scripts = Array.prototype.slice.call(scripts)
-          if (scripts.length > 0) {
-            this.existingMapScript = scripts.find(script => script.src.includes('maps.googleapis.com'))
-          }
-        }
+        // Check if google maps is already included
+        this.checkGoogleMapsExists()
 
-        if (!this.existingMapScript) {
+        // Include it if it is not already in the DOM
+        if (!this.$store.state.googleMapsAttached) {
           const mapScript = document.createElement('script')
           mapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.google}&callback=initMap`
           mapScript.defer = true
           mapScript.async = true
           document.body.appendChild(mapScript)
         }
+
+        this.checkGoogleMapsExists()
       }
     },
     mounted() {
-      if (process.browser && this.existingMapScript) {
+      if (process.browser &&
+          this.$store.state.googleMapsAttached &&
+          window.google) {
         window.initMap()
       }
     },
     methods: {
-      getInfoWindow(trail) {
+      checkGoogleMapsExists() {
         if (process.browser) {
-          return document.getElementById(`${this.getInfoWindowRoute(trail)}-info-window-hidden`).innerHTML
+          let scripts = document.getElementsByTagName('script')
+          if (scripts) {
+            scripts = Array.prototype.slice.call(scripts)
+            if (scripts.length > 0) {
+              let scriptExists = scripts.find(script => script.src.includes('maps.googleapis.com'))
+              if (scriptExists) {
+                this.$store.commit('googleMapsAttached')
+              }
+            }
+          }
         }
       },
-      getInfoWindowRoute(trail) {
-        return trail.mapMarker.title.toLowerCase().split(' ').join('-')
+      getInfoWindow(marker) {
+        if (process.browser) {
+          return document.getElementById(`${this.getInfoWindowKebabCase(marker)}-info-window-hidden`).innerHTML
+        }
+      },
+      getInfoWindowKebabCase(marker) {
+        let route = marker.route.split('/')
+        route = route[route.length - 1]
+        return marker.route
       }
     }
   }
 </script>
 
 <style scoped>
-
+  #map {
+    height: 700px;
+  }
 </style>
