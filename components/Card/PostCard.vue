@@ -3,7 +3,11 @@
     <div slot="content">
       <div class="words">
         <div class="row">
-          <div class="col-9 col-sm-10">
+          <div class="col-10
+                      col-sm-8
+                      col-md-9
+                      col-lg-9
+                      col-xl-9">
             <nuxt-link v-if="titleLink"
                        :to="{name: post.route}"
                        exact>
@@ -32,7 +36,12 @@
                     :author="post.author"/>
           </div>
           <social-actions :post="post"
-                          class="col-3 col-sm-2 social-right"/>
+                          class="col-2
+                                 col-sm-4
+                                 col-md-3
+                                 col-lg-3
+                                 col-xl-3
+                                 social-right"/>
         </div>
         <slot name="words"/>
       </div>
@@ -98,6 +107,13 @@
     font-size: 1.5rem;
     font-family: 'Lato', sans-serif;
   }
+
+  @media (max-width: 460px) {
+    .twitter-social-action {
+      padding-left: 0 !important;
+    }
+  }
+
 </style>
 <style scoped>
   a {

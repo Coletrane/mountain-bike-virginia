@@ -3,8 +3,7 @@
     <m-t-b-v-a-header
       :header-height="headerHeight"
       :image="image"
-      :title="title"
-      subpage/>
+      :title="title"/>
 
     <div class="main-content">
       <post-card :post="post"

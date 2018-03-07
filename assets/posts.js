@@ -8,7 +8,7 @@ moment.suppressDeprecationWarnings = true
 const cole = {
   name: 'Cole Inman',
   imgUrl: `${routes.s3StaticImg}cole.jpg`,
-  fbUrl: 'https://www.facebook.com/uhmcole',
+  fbUrl: 'https://www.facebook.com/cole.bikeva',
   stravaUrl: 'https://www.strava.com/athletes/15356904'
 }
 

@@ -10,7 +10,7 @@
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
             <div v-show="showTitle">
-              <h1 :class="subpage ? 'subpage-title' : 'mtbva-title'"
+              <h1 :class="'mtbva-title'"
                   id="mtbva-title">
                 {{title}}
               </h1>
@@ -58,11 +58,6 @@
         type: String,
         required: false
       },
-      subpage: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
       subtitle: {
         type: String,
         required: false
@@ -107,7 +102,11 @@
     height: 500px;
     transform: translate(-50%, -50%);
   }
-
+  @media (max-width: 800px) {
+    .hero-content {
+      top: 50%;
+    }
+  }
   .mtbva-title {
     text-shadow: 0px 3px 3px rgb(0, 0, 0);
     font-size: 6rem;
@@ -117,6 +116,10 @@
   }
 
   @media (max-width: 600px) {
+    .hero-content {
+      top: 70%;
+    }
+
     .mtbva-title {
       font-size: 4rem;
     }
