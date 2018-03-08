@@ -5,9 +5,6 @@
                :post="post"
                header-author
                :related-posts="relatedPosts">
-      <div slot="header">
-        <author :author="post.author"/>
-      </div>
       <div slot="content">
           <youtube :src="post.ytSrc"/>
       </div>

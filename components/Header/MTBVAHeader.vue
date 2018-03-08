@@ -5,7 +5,7 @@
               :height="headerHeight">
       <div slot="hero"
            class="hero-container">
-        <div class="hero-content">
+        <div :class="'hero-content ' + heroClass">
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
@@ -69,6 +69,11 @@
       buttonLink: {
         type: String,
         required: false
+      },
+      homePage: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     data() {
@@ -85,6 +90,15 @@
       titleEntered: function (el, done) {
         this.titleShown = true
       }
+    },
+    computed: {
+      heroClass() {
+        if (this.homePage) {
+          return 'hero-content-home'
+        } else {
+          return 'hero-content-subpage'
+        }
+      }
     }
   }
 </script>
@@ -96,17 +110,27 @@
     padding: 1rem;
     text-align: center;
     position: absolute;
-    top: 70%;
     left: 50%;
     width: 100%;
     height: 500px;
     transform: translate(-50%, -50%);
   }
+  .hero-content-home {
+    top: 60%;
+  }
+  .hero-content-subpage {
+    top: 50%;
+  }
+  .hero-content-subpage h1 {
+    font-size: 5rem;
+  }
   @media (max-width: 800px) {
-    .hero-content {
+    .hero-content-home {
       top: 50%;
     }
   }
+
+
   .mtbva-title {
     text-shadow: 0px 3px 3px rgb(0, 0, 0);
     font-size: 6rem;

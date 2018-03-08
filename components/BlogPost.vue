@@ -82,7 +82,7 @@
         if (!this.noTitle) {
           return this.post.title
         }
-      },
+      }
     }
   }
 </script>
@@ -105,5 +105,8 @@
     font-size: 1rem;
     color: #5c5e5c;
   }
+
+</style>
+<style scoped>
 
 </style>

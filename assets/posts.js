@@ -59,6 +59,16 @@ posts.battleAtBlackhorse2018Video = {
   route: routes.battleAtBlackhorse2018Video
 }
 
+posts.ravenwoodRide = {
+  title: 'Goodbye Nashville: Final Ride at Ravenwood Abbandoned Golf Course',
+  subtitle: "Surrouned by suburbs, and more on the way in, I'm on my way out",
+  ytSrc: 'https://www.youtube.com/embed/SN1BRamTPEY',
+  author: cole,
+  date: moment('2018-03-08'),
+  loc: 'Shelby Bottoms Greenway, Nashville, TN',
+  route: routes.ravenwoodRide
+}
+
 posts.tuesdayNightLightsVideoFeb2018 = {
   title: 'Video: Tuesday Night Lights',
   subtitle: 'Weekly Winter ride from Deschutes Brewery up Mill Mountain',
@@ -190,6 +200,16 @@ posts.pivotSwitchbladeReview = {
       worstRating: '1'
     }
   }
+}
+
+posts.gravelocity2017Video = {
+  title: "Video: Gravelocity's Innagural Year",
+  subtitle: "A Gravel Ride, in the dead of Winter. That'll never fly.",
+  ytSrc: 'https://www.youtube.com/embed/K__Tk9nPOBM',
+  author: kyle,
+  date: moment('2017-01-08'),
+  loc: 'Gravel Dr, Troutville, VA',
+  route: routes.gravelocity2017Video
 }
 
 posts.creature2017Recap = {

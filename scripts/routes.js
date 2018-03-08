@@ -1,6 +1,7 @@
 const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
+const ravenwoodRide = 'ravenwood-ride'
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
 const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
@@ -11,6 +12,7 @@ const firstRide2018 = 'first-ride-2018'
 const dodyRidgeRunFall2017 = 'dody-ridge-run-fall-2017'
 const specMines29Oct17 = 'spec-mines-oct-29-2017'
 const pivotSwitchbladeReview = 'pivot-switchblade-review'
+const gravelocity2017Video = 'gravelocity-2017-video'
 const creature2017Recap = 'creature-2017-recap'
 // const relaunch = 'relaunch'
 // const creature2016 = 'creature-2016'
@@ -20,6 +22,7 @@ const creature2017Recap = 'creature-2017-recap'
 const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
+  ravenwoodRide,
   resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
@@ -31,6 +34,7 @@ const appRoutes = [
   dodyRidgeRunFall2017,
   specMines29Oct17,
   pivotSwitchbladeReview,
+  gravelocity2017Video,
   creature2017Recap
 ]
 
@@ -58,6 +62,7 @@ imgRoutes['/'] = 'foliage.jpg'
 imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010117.jpg'
+imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
 imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
@@ -71,6 +76,7 @@ imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
+imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
 
 const s3 = 'https://d2i660bt0ywr9a.cloudfront.net'
 const s3StaticImg = s3 + '/static/img/'
@@ -84,6 +90,7 @@ module.exports = {
   results,
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
+  ravenwoodRide,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
@@ -94,6 +101,7 @@ module.exports = {
   dodyRidgeRunFall2017,
   specMines29Oct17,
   pivotSwitchbladeReview,
+  gravelocity2017Video,
   creature2017Recap,
   appRoutes,
   appRoutesObj,

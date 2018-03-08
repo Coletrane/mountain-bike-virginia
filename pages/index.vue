@@ -7,7 +7,8 @@
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
       button="Events"
-      buttonLink="https://www.facebook.com/pg/xxcva/events/">
+      buttonLink="https://www.facebook.com/pg/xxcva/events/"
+      home-page>
     </m-t-b-v-a-header>
 
     <div class="main-content main-content-mobile">
@@ -36,6 +37,13 @@
                      no-author>
             <div slot="media">
               <youtube :src="posts.battleAtBlackhorse2018Video.ytSrc"/>
+            </div>
+          </post-card>
+
+          <post-card :post="posts.ravenwoodRide"
+                     no-author>
+            <div slot="media">
+              <youtube :src="posts.ravenwoodRide.ytSrc"/>
             </div>
           </post-card>
 
@@ -201,6 +209,13 @@
             </div>
             <div slot="media">
               <youtube :src="posts.creature2017Recap.ytSrc"/>
+            </div>
+          </post-card>
+
+          <post-card :post="posts.gravelocity2017Video"
+                     no-author>
+            <div slot="media">
+              <youtube :src="posts.gravelocity2017Video.ytSrc"/>
             </div>
           </post-card>
 
