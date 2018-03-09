@@ -32,8 +32,11 @@
                 {{post.loc}}
               </div>
             </div>
-            <author v-if="!noAuthor && headerAuthor"
-                    :author="post.author"/>
+            <div v-if="!authorSeparateDiv">
+              <author v-if="!noAuthor && headerAuthor"
+                      :author="post.author"/>
+              <slot name="header"/>
+            </div>
           </div>
           <social-actions :post="post"
                           class="col-2
@@ -43,6 +46,13 @@
                                  col-xl-3
                                  social-right"/>
         </div>
+
+        <div v-if="authorSeparateDiv">
+          <author v-if="!noAuthor && headerAuthor"
+                  :author="post.author"/>
+          <slot name="header"/>
+        </div>
+
         <slot name="words"/>
       </div>
       <div class="mtbva-media">
@@ -54,12 +64,12 @@
   </card>
 </template>
 <script>
-  import Card from "./Card"
-  import SocialActions from "./SocialActions"
+  import Card from './Card'
+  import SocialActions from './SocialActions'
   import Author from './Author'
 
   export default {
-    name: "post-card",
+    name: 'post-card',
     props: {
       post: {
         required: true
@@ -75,6 +85,11 @@
         default: false
       },
       noAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      authorSeparateDiv: {
         type: Boolean,
         required: false,
         default: false
@@ -103,6 +118,7 @@
   .headline {
     font-weight: 800;
   }
+
   .subheading {
     font-size: 1.5rem;
     font-family: 'Lato', sans-serif;

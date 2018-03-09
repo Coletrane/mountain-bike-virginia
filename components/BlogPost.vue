@@ -9,7 +9,11 @@
       <post-card :post="post"
                  :links="false"
                  :no-post-title="noPostTitle"
-                 :header-author="headerAuthor">
+                 :header-author="headerAuthor"
+                 :author-separate-div="authorSeparateDiv">
+        <div slot="header">
+          <slot name="header"/>
+        </div>
         <div slot="media">
           <slot name="content"/>
         </div>
@@ -71,6 +75,11 @@
         type: Boolean,
         required: false,
         default: true
+      },
+      authorSeparateDiv: {
+        type: Boolean,
+        required: false,
+        default: false
       },
       relatedPosts: {
         type: Array,
