@@ -31,31 +31,43 @@
         required: true
       }
     },
+    data() {
+      return {
+        mapMarkers: [],
+        infoWindows: []
+      }
+    },
     created() {
       if (process.browser) {
         window.initMap = () => {
+          // Create the map
           const map = new google.maps.Map(document.getElementById('map'), this.map)
 
+          // Initialize markers and info windows
           this.markers.forEach(marker => {
 
-            let localMarkers = []
-            let localInfoWindows = []
             const localMarker = new google.maps.Marker({
               ...marker.mapMarker,
               map: map
             })
-            localMarkers.push(localMarker)
+            this.mapMarkers.push(localMarker)
 
             const localInfoWindow = new google.maps.InfoWindow({
               content: this.getInfoWindow(marker)
             })
-            localInfoWindows.push(localInfoWindow)
+            this.infoWindows.push(localInfoWindow)
+          })
 
-            localMarker.addListener('click', () => {
-              if (localMarker.title !== this.currentInfoWindow) {
-                localInfoWindows.forEach(infoWindow => infoWindow.close())
-                localInfoWindow.open(map, localMarker)
-                this.currentInfoWindow = localMarker.title
+          // Add event listeners to info windows
+          this.mapMarkers.forEach((marker, i, arr) => {
+            marker.addListener('click', () => {
+              if (marker.title !== this.currentInfoWindow) {
+                this.infoWindows.forEach(infoWindow => {
+                  infoWindow.close()
+                })
+                // infoWindows array will be in sync with markers array
+                this.infoWindows[i].open(map, marker)
+                this.currentInfoWindow = marker.title
               }
             })
           })
