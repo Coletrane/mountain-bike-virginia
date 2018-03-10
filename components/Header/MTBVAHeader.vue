@@ -121,15 +121,6 @@
   .hero-content-subpage {
     top: 50%;
   }
-  .hero-content-subpage h1 {
-    font-size: 5rem;
-  }
-  @media (max-width: 800px) {
-    .hero-content-home {
-      top: 50%;
-    }
-  }
-
 
   .mtbva-title {
     text-shadow: 0px 3px 3px rgb(0, 0, 0);
@@ -138,10 +129,14 @@
   .mtbva-subtitle {
     text-shadow: 0px 3px 3px rgb(0, 0, 0);
   }
+  .hero-content-subpage h1 {
+    font-size: 3.5rem;
+  }
 
   @media (max-width: 600px) {
+
     .hero-content {
-      top: 70%;
+      top: 75%;
     }
 
     .mtbva-title {
@@ -151,6 +146,11 @@
     .mtbva-subtitle {
       font-size: 1.5rem;
     }
+
+    .hero-content-subpage h1 {
+      font-size: 2.5rem;
+    }
+
   }
 
   @media (max-width: 450px) {

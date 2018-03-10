@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         rel: 'shortcut icon',
-        href: 'favicon.ico?v=eE5JONrEL8'
+        href: routes.s3Favicons + 'favicon.ico?v=eE5JONrEL8'
       }
     ]
   },
