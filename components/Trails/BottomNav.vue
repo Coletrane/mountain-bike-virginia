@@ -3,21 +3,30 @@
     <ul class="navbar-expand">
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-link mtbva"
-           v-scroll-to="{el: '#parking'}">
+           v-scroll-to="{
+              el: '#parking',
+              offset: scrollOffset
+           }">
           <font-awesome-icon :icon="Car"/>
           Parking
         </a>
       </li>
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-link"
-           v-scroll-to="{el: '#trails'}">
+           v-scroll-to="{
+            el: '#trails',
+            offset: scrollOffset
+          }">
           <font-awesome-icon :icon="Bicycle"/>
           Trails
         </a>
       </li>
       <li class="nav-item mtbva-bottom-nav-item">
         <a class="nav-item nav-link mtbva-bottom-nav-item"
-           v-scroll-to="{el: '#beer'}">
+           v-scroll-to="{
+            el: '#beer',
+            offset: scrollOffset
+          }">
           <font-awesome-icon :icon="Beer"/>
           Beer
         </a>
@@ -41,7 +50,8 @@
       return {
         Car: Car,
         Bicycle: Bicycle,
-        Beer: Beer
+        Beer: Beer,
+        scrollOffset: -100
       }
     }
   }
@@ -49,7 +59,7 @@
 
 <style scoped>
   .navbar {
-    background: rgba(0,0,0, .5);
+    background: rgba(0, 0, 0, .5);
     color: white;
     height: 3rem;
   }

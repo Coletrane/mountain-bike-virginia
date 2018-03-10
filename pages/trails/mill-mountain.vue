@@ -16,7 +16,7 @@
 
 <script>
   import TrailArea from '../../components/Trails/TrailArea'
-
+  
   import {trailAreas} from '../../assets/trails'
 
   export default {
