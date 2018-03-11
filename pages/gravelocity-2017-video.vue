@@ -17,10 +17,9 @@
   import Youtube from '../components/Iframes/Youtube'
 
   import {s3Pages, gravelocity2017Video, imgRoutes} from '../scripts/routes'
-  import {posts} from '../assets/posts'
   import {headTags, buildVideo} from '../assets/functions'
 
-  const post = posts.gravelocity2017Video
+  const post = $store.state.posts.gravelocity2017Video
 
   export default {
     name: 'gravelocity-2017-video',
@@ -52,8 +51,8 @@
         image: `${s3Pages}${gravelocity2017Video}/${imgRoutes[gravelocity2017Video]}`,
         post: post,
         relatedPosts: [
-          posts.gravelocity2018,
-          posts.middleMtMomma2018
+          $store.state.posts.gravelocity2018,
+          $store.state.posts.middleMtMomma2018
         ]
       }
     }

@@ -64,10 +64,9 @@
   import BlogImage from "../components/Images/BlogImage"
 
   import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post = posts.firstRide2018
+  const post = $store.state.posts.firstRide2018
 
   export default {
     name: post.route,
@@ -88,8 +87,8 @@
         img:  `${s3Pages}${post.route}/`,
         post: post,
         relatedPosts: [
-          posts.creature2017Recap,
-          posts.middleMtMomma2018
+          $store.state.posts.creature2017Recap,
+          $store.state.posts.middleMtMomma2018
         ]
       }
     }

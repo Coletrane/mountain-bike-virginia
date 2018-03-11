@@ -77,7 +77,6 @@
 
 <script>
   import {s3Pages, battleAtBlackhorse2018} from "../scripts/routes"
-  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
   import BlogPost from "../components/BlogPost"
@@ -85,7 +84,7 @@
   import BlogImage from "../components/Images/BlogImage"
   import RelatedPosts from '../components/Card/RelatedPosts'
 
-  const post = posts.battleAtBlackhorse2018
+  const post = $store.state.posts.battleAtBlackhorse2018
 
   export default {
     name: 'battle-at-blackhorse-2018',
@@ -108,8 +107,8 @@
         img: `${s3Pages}${battleAtBlackhorse2018}/`,
         post: post,
         relatedPosts: [
-          posts.battleAtBlackhorse2018Video,
-          posts.dodyRidgeRunFall2017
+          $store.state.posts.battleAtBlackhorse2018Video,
+          $store.state.posts.dodyRidgeRunFall2017
         ]
       }
     }

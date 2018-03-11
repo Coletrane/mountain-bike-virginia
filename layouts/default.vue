@@ -30,6 +30,11 @@
     },
     name: "app",
     scrollToTop: true,
+    async asyncData() {
+      // Initialize authors and posts in store
+      await this.$store.dispatch('getAuthors')
+      await this.$store.dispatch('getPosts')
+    },
     data() {
       return {
         showFooter: false

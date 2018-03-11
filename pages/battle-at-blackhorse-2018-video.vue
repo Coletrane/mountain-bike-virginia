@@ -18,10 +18,9 @@
   import Author from '../components/Card/Author'
 
   import {s3Pages, battleAtBlackhorse2018} from '../scripts/routes'
-  import {posts} from '../assets/posts'
   import {headTags, buildVideo} from '../assets/functions'
 
-  const post = posts.battleAtBlackhorse2018Video
+  const post = $store.state.posts.battleAtBlackhorse2018Video
 
   export default {
     name: 'battle-at-blackhorse-2018-video',
@@ -39,7 +38,7 @@
       let head = {
         ...headTags(
           'Video: Battle at Blackhorse 2018',
-          posts.battleAtBlackhorse2018.description,
+          $store.state.posts.battleAtBlackhorse2018.description,
           'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
           post
         )
@@ -54,8 +53,8 @@
         img: `${s3Pages}${battleAtBlackhorse2018}/`,
         post: post,
         relatedPosts: [
-          posts.battleAtBlackhorse2018,
-          posts.dodyRidgeRunFall2017
+          $store.state.posts.battleAtBlackhorse2018,
+          $store.state.posts.dodyRidgeRunFall2017
         ]
       }
     }

@@ -79,11 +79,13 @@ imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
 
 const s3 = 'https://d2i660bt0ywr9a.cloudfront.net'
-const s3StaticImg = s3 + '/static/img/'
-const s3Favicons = s3 + '/static/favicons/'
-const s3Results = s3 + '/results/'
+const s3StaticImg = s3 + '/static/img'
+const s3Favicons = s3 + '/static/favicons'
+const s3Results = s3 + '/results'
+const s3Authors = s3 + '/authors/authors.json'
+const s3Posts = s3 + '/posts/$store.state.posts.json'
 const s3WeatherIcons = s3 + '/static/weather-icons'
-const s3Pages = s3 + '/pages/'
+const s3Pages = s3 + '/pages'
 const baseUrl = 'https://bikeva.com'
 
 module.exports = {
@@ -110,6 +112,8 @@ module.exports = {
   s3StaticImg,
   s3Favicons,
   s3Results,
+  s3Authors,
+  s3Posts,
   s3WeatherIcons,
   s3Pages,
   baseUrl

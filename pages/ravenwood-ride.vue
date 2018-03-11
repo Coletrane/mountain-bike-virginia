@@ -22,10 +22,9 @@
   import Youtube from '../components/Iframes/Youtube'
 
   import {s3Pages, ravenwoodRide} from '../scripts/routes'
-  import {posts} from '../assets/posts'
   import {headTags, buildVideo} from '../assets/functions'
 
-  const post = posts.ravenwoodRide
+  const post = $store.state.posts.ravenwoodRide
 
   export default {
     name: 'ravenwood-ride',
@@ -57,8 +56,8 @@
         image: `${s3Pages}${ravenwoodRide}/canyon-ravenwood.jpg`,
         post: post,
         relatedPosts: [
-          posts.gravelocity2017Video,
-          posts.gravelocity2018
+          $store.state.posts.gravelocity2017Video,
+          $store.state.posts.gravelocity2018
         ]
       }
     }

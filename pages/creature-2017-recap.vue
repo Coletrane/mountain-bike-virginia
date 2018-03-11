@@ -107,13 +107,10 @@
   import BlogImage from "../components/Images/BlogImage.vue"
 
   import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post = posts.creature2017Recap
-
   export default {
-    name: post.route,
+    name: this.$store.state.posts.creature2017Recap.route,
     components: {
       BlogPost,
       Youtube,
@@ -122,15 +119,14 @@
     head() {
       return headTags(
         "Creature from Carvin's Cove 2017",
-        post.subtitle,
+        this.$store.state.posts.creature2017Recap.subtitle,
         "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove",
-        post
+        this.$store.state.posts.creature2017Recap
       )
     },
     data() {
       return {
-        img: `${s3Pages}${post.route}/`,
-        post: post
+        img: `${s3Pages}/${this.$store.state.posts.creature2017Recap.route}/`,
       }
     }
   }
