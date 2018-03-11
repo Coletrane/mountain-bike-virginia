@@ -2,7 +2,8 @@
   <div>
     <trail-area :trail-area="trailArea">
       <div slot="parking">
-
+        <google-map :map="trailArea.parking.map"
+                    :markers="trailArea.parking.mapMarkers"/>
       </div>
       <div slot="trails">
 
@@ -16,13 +17,15 @@
 
 <script>
   import TrailArea from '../../components/Trails/TrailArea'
-  
+  import GoogleMap from '../../components/Trails/GoogleMap'
+
   import {trailAreas} from '../../assets/trails'
 
   export default {
     name: 'mill-mountain',
     components: {
-      TrailArea
+      TrailArea,
+      GoogleMap
     },
     computed: {
       trailArea() {
