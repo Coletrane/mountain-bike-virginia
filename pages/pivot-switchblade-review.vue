@@ -53,9 +53,10 @@
   import BlogImage from "../components/Images/BlogImage"
 
   import {s3Pages} from "../scripts/routes"
+  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post = $store.state.posts.pivotSwitchbladeReview
+  const post = posts.pivotSwitchbladeReview
 
   export default {
     name: post.route,

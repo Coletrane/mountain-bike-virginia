@@ -8,7 +8,7 @@ let head = headTags(
   'title',
   'description',
   'keywords',
-  $store.state.posts.creature2017Recap)
+  posts.creature2017Recap)
 
 describe('headTags tests', () => {
   it('should have a title tag', () => {

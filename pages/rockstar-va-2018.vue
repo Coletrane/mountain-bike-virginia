@@ -33,16 +33,17 @@
 </template>
 
 <script>
+  import {posts} from '../assets/posts'
   import {headTags} from '../assets/functions'
   import {home} from '../assets/head-tags'
-  import {imgRoutes, rockstarVa2018} from '../scripts/routes'
+
   import BlogPost from '../components/BlogPost'
   import ImageLink from '../components/Images/ImageLink'
   import RideWithGps from '../components/Iframes/RideWithGps'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  const post = $store.state.posts.rockstarVa2018
+  const post = posts.rockstarVa2018
 
   export default {
     name: 'rockstar-va-2018',
@@ -64,10 +65,9 @@
       return {
         post: post,
         faFacebook: faFacebook,
-        image: imgRoutes[rockstarVa2018],
         relatedPosts: [
-          $store.state.posts.middleMtMomma2018,
-          $store.state.posts.creature2017Recap
+          posts.middleMtMomma2018,
+          posts.creature2017Recap
         ]
       }
     }

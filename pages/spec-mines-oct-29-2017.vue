@@ -38,9 +38,10 @@
   import BlogImage from "../components/Images/BlogImage"
 
   import {s3Pages} from "../scripts/routes"
+  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post = $store.state.posts.specMines29Oct17
+  const post = posts.specMines29Oct17
 
   export default {
     name: post.route,

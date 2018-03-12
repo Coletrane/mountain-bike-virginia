@@ -10,9 +10,6 @@ export default {
   },
 
   mutations: {
-    changePage (state, page) {
-      state.page = page
-    },
     selectRace (state, race) {
       state.currentRaceName = race
     },

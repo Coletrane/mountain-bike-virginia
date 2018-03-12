@@ -5,8 +5,11 @@ import posts from './posts'
 
 export default () => {
   return new Vuex.Store({
-    ...misc,
-    ...authors,
-    ...posts
+    modules: {
+      misc,
+      authors,
+      posts
+    },
+    strict: true
   })
 }

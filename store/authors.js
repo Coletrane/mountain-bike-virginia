@@ -20,7 +20,7 @@ export default {
 
       let authors = res.data
       Object.keys(authors).forEach((author) => {
-        authors[author].imgUrl = `${s3StaticImg}/${authors[author].imgUrl}`
+        authors[author].imgUrl = `${s3StaticImg}//${authors[author].imgUrl}`
       })
 
       commit('setAuthors', authors)

@@ -55,6 +55,7 @@
 </template>
 
 <script>
+  import {posts} from '../assets/posts'
   import {headTags} from '../assets/functions'
   import {home} from '../assets/head-tags'
   import {s3Pages, middleMtMomma2018} from '../scripts/routes'
@@ -65,7 +66,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  const post = $store.state.posts.middleMtMomma2018
+  const post = posts.middleMtMomma2018
 
   export default {
     name: 'middle-mt-momma-2018',
@@ -81,8 +82,8 @@
         faFacebook: faFacebook,
         post: post,
         relatedPosts: [
-          $store.state.posts.creature2017Recap,
-          $store.state.posts.rockstarVa2018
+          posts.creature2017Recap,
+          posts.rockstarVa2018
         ]
       }
     },

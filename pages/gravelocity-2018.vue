@@ -121,9 +121,10 @@
   import BlogImage from "../components/Images/BlogImage"
 
   import {s3Pages} from "../scripts/routes"
+  import {posts} from "../assets/posts"
   import {headTags} from "../assets/functions"
 
-  const post = $store.state.posts.gravelocity2018
+  const post = posts.gravelocity2018
 
   export default {
     name: post.route,
@@ -144,8 +145,8 @@
         img: `${s3Pages}${post.route}/`,
         post: post,
         relatedPosts: [
-          $store.state.posts.specMines29Oct17,
-          $store.state.posts.battleAtBlackhorse2018
+          posts.specMines29Oct17,
+          posts.battleAtBlackhorse2018
         ]
       }
     }

@@ -17,13 +17,14 @@
 
 <script>
   import {s3Pages, tuesdayNightLightsVideoFeb2018} from '../scripts/routes'
+  import {posts} from '../assets/posts'
   import {headTags, buildVideo} from '../assets/functions'
   import {home} from '../assets/head-tags'
 
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  const post = $store.state.posts.tuesdayNightLightsVideoFeb2018
+  const post = posts.tuesdayNightLightsVideoFeb2018
 
   export default {
     name: 'tuesday-night-lights-video-feb-2018',
@@ -56,8 +57,8 @@
         img: `${s3Pages}${tuesdayNightLightsVideoFeb2018}/`,
         post: post,
         relatedPosts: [
-          $store.state.posts.gravelocity2018,
-          $store.state.posts.creature2017Recap
+          posts.gravelocity2018,
+          posts.creature2017Recap
         ]
       }
     }

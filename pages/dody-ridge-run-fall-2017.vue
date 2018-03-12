@@ -16,9 +16,10 @@
   import Youtube from "../components/Iframes/Youtube.vue"
 
   import {s3Pages} from "../scripts/routes"
+  import {posts} from "../assets/posts"
   import {headTags, buildVideo} from "../assets/functions"
 
-  const post = $store.state.posts.dodyRidgeRunFall2017
+  const post = posts.dodyRidgeRunFall2017
 
   export default {
     name: post.route,
