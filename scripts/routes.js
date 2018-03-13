@@ -14,8 +14,8 @@ const specMines29Oct17 = 'spec-mines-oct-29-2017'
 const pivotSwitchbladeReview = 'pivot-switchblade-review'
 const gravelocity2017Video = 'gravelocity-2017-video'
 const creature2017Recap = 'creature-2017-recap'
-// const relaunch = 'relaunch'
-// const creature2016 = 'creature-2016'
+const relaunch = 'relaunch'
+const creature2016 = 'creature-2016'
 
 // Try and keep routes in order they are on the home page
 // Keep non blog post routes at the top
@@ -78,7 +78,13 @@ imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
 
-const s3 = 'https://d2i660bt0ywr9a.cloudfront.net'
+let s3
+if (process.env.NODE_ENV === 'production') {
+  s3 = 'https://d2i660bt0ywr9a.cloudfront.net'
+} else {
+  // Bad naming
+  s3 = 'http://localhost:3000/mtbva-s3-bucket'
+}
 const s3StaticImg = s3 + '/static/img'
 const s3Favicons = s3 + '/static/favicons'
 const s3Results = s3 + '/results'
@@ -105,6 +111,8 @@ module.exports = {
   pivotSwitchbladeReview,
   gravelocity2017Video,
   creature2017Recap,
+  relaunch,
+  creature2016,
   appRoutes,
   appRoutesObj,
   imgRoutes,

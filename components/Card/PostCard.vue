@@ -15,7 +15,7 @@
                   class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
               <div v-if="post.date">
-                {{post.date.format('MMMM Do, YYYY')}}
+                {{post.date}}
               </div>
               <div v-if="post.loc">
                 {{post.loc}}
@@ -26,7 +26,7 @@
                   class="headline">{{post.title}}</h2>
               <span class="subheading">{{post.subtitle}}</span>
               <div v-if="post.date">
-                {{post.date.format('MMMM Do, YYYY')}}
+                {{post.date}}
               </div>
               <div v-if="post.loc">
                 {{post.loc}}
@@ -104,6 +104,11 @@
       titleLink() {
         if (this.post.route !== ' ') {
           return this.post.route
+        }
+      },
+      formattedDate() {
+        if (this.post.date) {
+          return new Date()
         }
       }
     }

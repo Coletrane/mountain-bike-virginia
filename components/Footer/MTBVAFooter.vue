@@ -1,5 +1,6 @@
 <template>
-  <div class="mtbva-footer">
+  <div class="mtbva-footer"
+       :style="backgroundImageStyles">
     <div class="sponsors-container">
       <logos-three-cols v-if="mobile"
                         :sponsors="sponsors"/>
@@ -143,6 +144,13 @@
         this.width = document.body.clientWidth
       }
     },
+    computed:  {
+      backgroundImageStyles() {
+        return {
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('${s3StaticImg}/blue_ridge_mountains.jpg');`
+        }
+      }
+    },
     watch: {
       width() {
         this.mobile = document.body.clientWidth <= 850
@@ -153,7 +161,6 @@
 <style>
   .mtbva-footer {
     padding-top: 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg');
     background-size: 3000px;
     background-position-x: center;
     background-position-y: 0px;

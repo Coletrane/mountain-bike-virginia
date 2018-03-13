@@ -85,9 +85,9 @@ const getImageRoute = (post) => {
 
     // FIXME: this only works one level deep
     if (splitUrl.length > 1) {
-      result = `${routes.s3Pages}${splitUrl[0]}/${routes.imgRoutes[post.route]}`
+      result = `${routes.s3Pages}/${splitUrl[0]}/${routes.imgRoutes[post.route]}`
     } else {
-      result = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+      result = `${routes.s3Pages}/${post.route}/${routes.imgRoutes[post.route]}`
     }
   }
 

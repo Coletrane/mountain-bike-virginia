@@ -16,7 +16,8 @@ describe('Mountain Bike Virginia unit tests', () => {
   })
 
   importTest('./functions.spec')
-  importTest('./weather.spec')
+  // importTest('./weather.spec') //TODO: change this to local
+
 
   after(() => {
 

@@ -69,8 +69,7 @@ module.exports = {
   build: {
     extractCss: true,
     vendor: [
-      'babel-polyfill',
-      'moment'
+      'babel-polyfill'
     ],
     plugins: [
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
