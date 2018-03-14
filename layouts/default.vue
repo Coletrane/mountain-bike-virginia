@@ -43,10 +43,10 @@
     },
     methods: {
       toggleMenu() {
-        this.$store.commit('toggleMenu')
+        this.$store.dispatch('toggleMenu')
       },
       onLoad() {
-        this.$store.commit('onLoad')
+        this.$store.dispatch('onLoad')
         window.removeEventListener('load', this.onLoad)
       }
     },
@@ -54,12 +54,6 @@
       // Check if we are on client side since server doesn't have window
       if (process.browser) {
         window.addEventListener('load', this.onLoad)
-        // Setting this here because I have no other way to expose CSS to JS
-        const mainContent = document.getElementsByClassName('main-content')
-        if (mainContent.length === 1) {
-          mainContent[0].style.backgroundImage = `url("${s3StaticImg}/asfalt-light.png")`
-
-        }
       }
     },
     destroyed() {

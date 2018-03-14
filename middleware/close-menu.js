@@ -1,3 +1,3 @@
 export default function ({store}) {
-  store.commit('closeMenu')
+  store.dispatch('closeMenu')
 }

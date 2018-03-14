@@ -5,7 +5,8 @@
       :image="image"
       :title="title"/>
 
-    <div class="main-content">
+    <div class="main-content"
+         :style="backgroundImage">
       <post-card :post="post"
                  :links="false"
                  :no-post-title="noPostTitle"
@@ -33,6 +34,8 @@
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
+
+  import {s3StaticImg} from '../scripts/routes'
 
   export default {
     name: 'blog-post',
@@ -90,6 +93,11 @@
       title() {
         if (!this.noTitle) {
           return this.post.title
+        }
+      },
+      backgroundImage() {
+        return {
+          backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
         }
       }
     }

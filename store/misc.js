@@ -9,6 +9,15 @@ export default {
     loaded: false
   },
 
+  actions: {
+    closeMenu (context) {
+      context.commit('CLOSE_MENU')
+    },
+    onLoad (context) {
+      context.commit('ON_LOAD')
+    }
+  },
+
   mutations: {
     selectRace (state, race) {
       state.currentRaceName = race
@@ -19,10 +28,10 @@ export default {
     toggleMenu (state) {
       state.showMenu = !state.showMenu
     },
-    closeMenu (state) {
+    CLOSE_MENU (state) {
       state.showMenu = false
     },
-    onLoad (state) {
+    ON_LOAD (state) {
       state.loaded = true
     }
   },

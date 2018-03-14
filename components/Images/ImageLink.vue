@@ -8,6 +8,8 @@
 <script>
   import ResponsiveImg from "./ResponsiveImg"
 
+  import {imgRoutes} from '../../scripts/routes'
+
   export default {
     components: {ResponsiveImg},
     name: "image-link",
@@ -28,7 +30,7 @@
     },
     computed: {
       img() {
-        return this.src ? this.src : this.post.img
+        return this.src ? this.src : imgRoutes[this.post.route]
       }
     }
   }

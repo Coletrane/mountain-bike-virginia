@@ -29,22 +29,29 @@ export default {
   },
 
   actions: {
-    loadPosts: async ({commit, state}, postsRoutes) => {
+    loadPosts: async (context, postsRoutes) => {
       let posts = []
-
       for (const route of postsRoutes) {
-        if (!state.loadedPosts.includes(route)) {
+        if (!context.getters.getPost(route)) {
           let res = await axios.get(`${routes.s3Posts}/${route}.json`)
 
           if (res.data) {
             let post = res.data
             post.route = route
+            if (post.img) {
+              Object.keys(post.img).forEach(pic => {
+                post.img[pic] = `${routes.s3Pages}/${route}/${post.img[pic]}`
+              })
+            }
+            if (!context.getters.getAuthor(post.author)) {
+              post.author = await context.dispatch('loadAuthors', [post.author])
+            }
             posts.push(post)
           }
         }
       }
 
-      commit('SET_POSTS', posts)
+      context.commit('SET_POSTS', posts)
 
       if (posts.length === 1) {
         return posts[0]
@@ -52,30 +59,22 @@ export default {
         return posts
       }
     },
-    setCurrentPage: ({commit, state}, page) => {
-      commit('SET_CURRENT_PAGE', page)
-      if (!state.loadedPages.includes(page)) {
-        state.loadedPages.push(page)
+    incrementPage: (context) => {
+      const newPage = context.state.currentPage + 1
+      context.commit('SET_CURRENT_PAGE', newPage)
+
+      if (!context.state.loadedPages.includes(newPage)) {
+        context.state.dispatch('loadPosts', context.pages[newPage])
+        context.state.loadedPages.push(newPage)
       }
     }
   },
 
   mutations: {
     SET_POSTS: (state, posts) => {
-      state.loadedPosts.push(posts)
-
-      // Sort the posts based on the page order
-      let newPosts = []
-      state.pages.forEach(page => {
-        page.forEach(post => {
-          let existingPost = state.loadedPosts.find(p => p.route === post.route)
-          if (existingPost) {
-            newPosts.push(existingPost)
-          }
-        })
+      posts.forEach(post => {
+        state.loadedPosts.push(post)
       })
-
-      state.loadedPosts = newPosts
     },
     SET_CURRENT_PAGE: (state, page) => {
       state.currentPage = page

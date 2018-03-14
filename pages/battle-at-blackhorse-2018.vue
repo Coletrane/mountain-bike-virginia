@@ -4,8 +4,7 @@
                :image="img + 'IMG_3576.jpg'"
                :post="post"
                no-title
-               :related-posts="relatedPosts"
-               :page="page">
+               :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">
           When someone says fun, you think of mountain bikes, friends, amazing gems of backcountry singletrack and a
@@ -130,12 +129,14 @@
       }
     },
     head() {
-      return headTags(
-        'Battle at Blackhorse 2018',
-        this.post.description,
-        'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
-        this.post
-      )
+      if (this.post) {
+        return headTags(
+          'Battle at Blackhorse 2018',
+          this.post.description,
+          'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
+          this.post
+        )
+      }
     },
     data() {
       return {

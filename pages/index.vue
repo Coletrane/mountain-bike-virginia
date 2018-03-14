@@ -11,13 +11,14 @@
       home-page>
     </m-t-b-v-a-header>
 
-    <div class="main-content main-content-mobile">
+    <div class="main-content"
+         :style="backgroundImage">
       <transition-group name="new-page-fade"
                         appear>
-        <div v-if="page >= 1"
+        <div v-if="$store.state.posts.currentPage >= 1"
              :key="1">
 
-          <post-card :post="posts.battleAtBlackhorse2018"
+          <post-card :post="getPost(routes.battleAtBlackhorse2018)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -29,32 +30,32 @@
               </div>
             </div>
             <div slot="media">
-              <image-link :post="posts.battleAtBlackhorse2018"/>
+              <image-link :post="getPost(routes.battleAtBlackhorse2018)"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.battleAtBlackhorse2018Video"
+          <post-card :post="getPost(routes.battleAtBlackhorse2018Video)"
                      no-author>
             <div slot="media">
-              <youtube :src="posts.battleAtBlackhorse2018Video.ytSrc"/>
+              <youtube :src="getPost(routes.battleAtBlackhorse2018Video).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.ravenwoodRide"
+          <post-card :post="getPost(routes.ravenwoodRide)"
                      no-author>
             <div slot="media">
-              <youtube :src="posts.ravenwoodRide.ytSrc"/>
+              <youtube :src="getPost(routes.ravenwoodRide).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.tuesdayNightLightsVideoFeb2018"
+          <post-card :post="getPost(routes.tuesdayNightLightsVideoFeb2018)"
                      no-author>
             <div slot="media">
-              <youtube :src="posts.tuesdayNightLightsVideoFeb2018.ytSrc"/>
+              <youtube :src="getPost(routes.tuesdayNightLightsVideoFeb2018).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.rockstarVa2018"
+          <post-card :post="getPost(routes.rockstarVa2018)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -68,7 +69,7 @@
                   <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
                 </div>
                 <div>
-                  <a :href="posts.rockstarVa2018.fbEvent">
+                  <a :href="getPost(routes.rockstarVa2018).fbEvent">
                     Details
                     <font-awesome-icon :icon="faFacebook"
                                        class="inline-facebook-icon"/>
@@ -77,13 +78,13 @@
               </div>
             </div>
             <div slot="media">
-              <image-link :post="posts.rockstarVa2018"
-                          :href="posts.rockstarVa2018.fbEvent"
+              <image-link :post="getPost(routes.rockstarVa2018)"
+                          :href="getPost(routes.rockstarVa2018).fbEvent"
                           :src="routes.s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.middleMtMomma2018"
+          <post-card :post="getPost(routes.middleMtMomma2018)"
                      no-author>
             <div slot="header">
               <h4 class="subheading">
@@ -109,7 +110,7 @@
                   </a>
                 </div>
                 <div>
-                  <a :href="posts.middleMtMomma2018.fbEvent">
+                  <a :href="getPost(routes.middleMtMomma2018).fbEvent">
                     Details
                     <font-awesome-icon :icon="faFacebook"
                                        class="inline-facebook-icon"/>
@@ -119,22 +120,22 @@
             </div>
             <div slot="media"
                  style="margin-top: -2.8rem;">
-              <a :href="posts.middleMtMomma2018.fbEvent">
-                <img v-lazy="posts.middleMtMomma2018.extraImgs.logo"
+              <a :href="getPost(routes.middleMtMomma2018).fbEvent">
+                <img v-lazy="getPost(routes.middleMtMomma2018).img.logo"
                      class="image-smaller">
               </a>
               <a v-if="$store.state.loaded"
-                 :href="posts.middleMtMomma2018.fbEvent"
+                 :href="getPost(routes.middleMtMomma2018.fbEvent)"
                  style="text-align: center">
-                <img :src="posts.middleMtMomma2018.extraImgs.start"
+                <img :src="getPost(routes.middleMtMomma2018).img.start"
                      alt="Middle Mountain Momma Starting Line"
                      style="width: 100%"/>
               </a>
-              <ride-with-gps :url="posts.middleMtMomma2018.rwGps"/>
+              <ride-with-gps :url="getPost(routes.middleMtMomma2018).rwGps"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.gravelocity2018"
+          <post-card :post="getPost(routes.gravelocity2018)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -144,11 +145,11 @@
               </div>
             </div>
             <div slot="media">
-              <image-link :post="posts.gravelocity2018"/>
+              <image-link :post="getPost(routes.gravelocity2018)"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.firstRide2018"
+          <post-card :post="getPost(routes.firstRide2018)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -160,23 +161,23 @@
               </div>
             </div>
             <div slot="media">
-              <image-link :post="posts.firstRide2018"/>
+              <image-link :post="getPost(routes.firstRide2018)"/>
             </div>
           </post-card>
 
         </div>
 
-        <div v-if="page >= 2"
+        <div v-if="$store.state.posts.currentPage >= 2"
              :key="2">
 
-          <post-card :post="posts.dodyRidgeRunFall2017"
+          <post-card :post="getPost(routes.dodyRidgeRunFall2017)"
                      no-author>
             <div slot="media">
-              <youtube :src="posts.dodyRidgeRunFall2017.ytSrc"/>
+              <youtube :src="getPost(routes.dodyRidgeRunFall2017).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.pivotSwitchbladeReview"
+          <post-card :post="getPost(routes.pivotSwitchbladeReview)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -187,11 +188,11 @@
               </div>
             </div>
             <div slot="media">
-              <image-link :post="posts.pivotSwitchbladeReview"/>
+              <image-link :post="getPost(routes.pivotSwitchbladeReview)"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.creature2017Recap"
+          <post-card :post="getPost(routes.creature2017Recap)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -208,32 +209,32 @@
               </div>
             </div>
             <div slot="media">
-              <youtube :src="posts.creature2017Recap.ytSrc"/>
+              <youtube :src="getPost(routes.creature2017Recap).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.gravelocity2017Video"
+          <post-card :post="getPost(routes.gravelocity2017Video)"
                      no-author>
             <div slot="media">
-              <youtube :src="posts.gravelocity2017Video.ytSrc"/>
+              <youtube :src="getPost(routes.gravelocity2017Video).ytSrc"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.relaunch"
+          <post-card :post="getPost(routes.relaunch)"
                      no-author>
             <div slot="media">
-              <image-link :post="posts.relaunch"/>
+              <image-link :post="getPost(routes.relaunch)"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.specMines29Oct17"
+          <post-card :post="getPost(routes.specMines29Oct17)"
                      no-author>
             <div slot="media">
-              <image-link :post="posts.specMines29Oct17"/>
+              <image-link :post="getPost(routes.specMines29Oct17)"/>
             </div>
           </post-card>
 
-          <post-card :post="posts.creature2016"
+          <post-card :post="getPost(routes.creature2016)"
                      no-author>
             <div slot="words">
               <div class="promo">
@@ -252,14 +253,14 @@
               </nuxt-link>
             </div>
             <div slot="media">
-              <youtube :src="posts.creature2016.ytSrc"/>
+              <youtube :src="getPost(routes.creature2016).ytSrc"/>
             </div>
           </post-card>
 
         </div>
       </transition-group>
 
-      <div v-if="page < maxPage"
+      <div v-if="$store.state.posts.currentPage < $store.state.totalPages"
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
                 @click="loadMore()"
@@ -274,7 +275,6 @@
   import {home} from '../assets/head-tags'
   import {headTags} from '../assets/functions'
   import {posts} from '../assets/posts'
-  import {s3StaticImg, s3Pages, imgRoutes, baseUrl} from '../scripts/routes'
   import * as routes from '../scripts/routes'
 
   import MTBVAHeader from '../components/Header/MTBVAHeader'
@@ -285,7 +285,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  const foliage = `${s3StaticImg}/${imgRoutes['/']}`
+  const foliage = `${routes.s3StaticImg}/${routes.imgRoutes['/']}`
 
   export default {
     name: 'index',
@@ -296,6 +296,13 @@
       Youtube,
       ImageLink,
       FontAwesomeIcon
+    },
+    async asyncData(context) {
+      return {
+        posts: await context.store.dispatch(
+          'loadPosts',
+          context.store.state.posts.pages[0])
+      }
     },
     head() {
       return headTags(
@@ -316,10 +323,7 @@
         attachPosts: false,
         posts: posts,
         routes: routes,
-        maxPage: 2,
         mmmFb: 'https://www.facebook.com/events/371981453213164/',
-        s3Pages: s3Pages,
-        s3StaticImg: s3StaticImg
       }
     },
     created() {
@@ -332,33 +336,39 @@
         if (ogImage && ogUrl) {
           if (this.$route.name === routes.rockstarVa2018) {
 
+            // TODO: evaluate if this is still needed
             ogImage.removeAttribute('content')
-            ogImage.setAttribute('content', `${s3Pages}${routes.rockstarVa2018}/${imgRoutes[routes.rockstarVa2018]}`)
+            ogImage.setAttribute('content', `${routes.s3Pages}${routes.rockstarVa2018}/${imgRoutes[routes.rockstarVa2018]}`)
 
             ogUrl.removeAttribute('content')
-            ogUrl.setAttribute('content', `${baseUrl}/${routes.rockstarVa2018}`)
+            ogUrl.setAttribute('content', `${routes.baseUrl}/${routes.rockstarVa2018}`)
 
           } else if (this.$route.name === routes.middleMtMomma2018) {
 
             ogImage.removeAttribute('content')
-            ogImage.setAttribute('content', `${s3Pages}${routes.middleMtMomma2018}/${imgRoutes[routes.middleMtMomma2018]}`)
+            ogImage.setAttribute('content', `${routes.s3Pages}${routes.middleMtMomma2018}/${imgRoutes[routes.middleMtMomma2018]}`)
 
             ogUrl.removeAttribute('content')
-            ogUrl.setAttribute('content', `${baseUrl}/${routes.middleMtMomma2018}`)
+            ogUrl.setAttribute('content', `${routes.baseUrl}/${routes.middleMtMomma2018}`)
 
           }
         }
       }
     },
     computed: {
-      page() {
-        return this.$store.state.page
+      backgroundImage() {
+        return {
+          backgroundImage:`url("${routes.s3StaticImg}/asfalt-light.png")`
+        }
       }
     },
     methods: {
-      loadMore() {
-        const newPage = this.page + 1
-        this.$store.commit('changePage', newPage)
+      async loadMore() {
+        const newPage = this.$store.state.posts.currentPage + 1
+        await this.$store.dispatch('changePage', newPage)
+      },
+      getPost(route) {
+          return this.$store.getters.getPost(route)
       }
     }
   }

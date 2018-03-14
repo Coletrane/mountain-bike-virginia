@@ -4,7 +4,8 @@
       :header-height="700"
       :image="image">
     </m-t-b-v-a-header>
-    <div class="main-content main-content-mobile">
+    <div class="main-content"
+         :style="backgroundImage">
       <card>
         <div slot="content">
           <dropdown v-if="$store.state.currentRaceName"
@@ -28,7 +29,13 @@
   import Card from "../Card/Card"
   import Dropdown from "./Dropdown"
   import ClassTable from "./ClassTable"
-  import {s3Pages, results, s3Results} from "../../scripts/routes"
+
+  import {
+    s3Pages,
+    results,
+    s3Results,
+    s3StaticImg
+  } from "../../scripts/routes"
   import {races} from '../../assets/results'
 
   const podium = `${s3Pages}${results}/podium.png`
@@ -65,6 +72,13 @@
       },
       raceIsLoaded(name) {
         return this.$store.state.loadedRaces.find(loaded => loaded.name === name)
+      }
+    },
+    computed: {
+      backgroundImage() {
+        return {
+          backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
+        }
       }
     }
   }

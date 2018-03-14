@@ -6,32 +6,47 @@ import axios from 'axios'
 
 export default {
   state: {
-    authors: []
+    loadedAuthors: []
   },
 
   actions: {
-    getAuthors: async ({commit}) => {
-      let res
-      try {
-        res = await axios.get(s3Authors)
-      } catch (err) {
-        console.log(err)
+    loadAuthors: async (context, authorsRoutes) => {
+      let authors = []
+
+      for (const route of authorsRoutes) {
+        if (!context.getters.getAuthor(route)) {
+          let res = await axios.get(`${s3Authors}/${route}.json`)
+
+          if (res.data) {
+            let author = res.data
+            author.imgUrl = `${s3StaticImg}/${author.imgUrl}`
+            author.route = route
+            authors.push(author)
+          }
+        }
       }
 
-      let authors = res.data
-      Object.keys(authors).forEach((author) => {
-        authors[author].imgUrl = `${s3StaticImg}//${authors[author].imgUrl}`
-      })
+      context.commit('SET_AUTHORS', authors)
 
-      commit('setAuthors', authors)
-
-      return authors
+      if (authors.length === 1) {
+        return authors[0]
+      } else {
+        return authors
+      }
     }
   },
 
   mutations: {
-    setAuthors (state, authors) {
-      state.authors = authors
+    SET_AUTHORS: (state, authors) => {
+      authors.forEach(author => {
+        state.loadedAuthors.push(author)
+      })
+    }
+  },
+
+  getters: {
+    getAuthor: state => route => {
+      return state.loadedAuthors.find(author => author.route === route)
     }
   }
 
