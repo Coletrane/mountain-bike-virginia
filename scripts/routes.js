@@ -52,12 +52,7 @@ appRoutes.forEach((route, i, arr) => {
 // Add the home route ("/") in
 appRoutes.unshift('/')
 
-// Get image routes in sync with site routes
 let imgRoutes = {}
-appRoutes.forEach((route) => {
-  imgRoutes[route] = ''
-})
-
 imgRoutes['/'] = 'foliage.jpg'
 imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
@@ -66,7 +61,7 @@ imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
 imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
-imgRoutes[appRoutesObj[relaunch]] = 'rockymthi8.jpg'
+imgRoutes[relaunch] = 'rockymthi8.jpg'
 imgRoutes[appRoutesObj[creature2017Recap]] = 'lumberjack.jpg'
 imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
 imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'

@@ -72,7 +72,7 @@
     },
     methods: {
       closeMenu() {
-        this.$store.commit('closeMenu')
+        this.$store.dispatch('closeMenu')
       }
     }
   }

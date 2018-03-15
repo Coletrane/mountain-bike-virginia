@@ -84,7 +84,7 @@
         this.mobile = document.body.clientWidth <= 750
       },
       toggleMenu() {
-        this.$store.commit('toggleMenu')
+        this.$store.dispatch('toggleMenu')
       }
     }
   }

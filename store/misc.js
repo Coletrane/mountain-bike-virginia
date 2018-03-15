@@ -9,10 +9,13 @@ export default {
   },
 
   actions: {
-    closeMenu (context) {
+    toggleMenu: (context) => {
+      context.commit('TOGGLE_MENU')
+    },
+    closeMenu: (context) => {
       context.commit('CLOSE_MENU')
     },
-    onLoad (context) {
+    onLoad: (context) => {
       context.commit('ON_LOAD')
     }
   },
@@ -24,13 +27,13 @@ export default {
     raceLoaded (state, race) {
       state.loadedRaces.push(race)
     },
-    toggleMenu (state) {
+    TOGGLE_MENU: (state) => {
       state.showMenu = !state.showMenu
     },
-    CLOSE_MENU (state) {
+    CLOSE_MENU: (state) => {
       state.showMenu = false
     },
-    ON_LOAD (state) {
+    ON_LOAD: (state) => {
       state.loaded = true
     }
   },

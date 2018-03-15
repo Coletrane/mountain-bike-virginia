@@ -1,11 +1,11 @@
 <template>
   <div>
     <transition name="menu-slide">
-      <m-t-b-v-a-menu v-if="$store.state.showMenu"/>
+      <m-t-b-v-a-menu v-if="$store.state.misc.showMenu"/>
     </transition>
     <transition name="overlay-fade">
-      <div v-if="$store.state.showMenu"
-           @click="toggleMenu"
+      <div v-if="$store.state.misc.showMenu"
+           @click="closeMenu"
            class="overlay">
       </div>
     </transition>
@@ -22,7 +22,6 @@
 <script>
   import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
   import MTBVAMenu from '../components/Header/MTBVAMenu'
-  import {s3StaticImg} from '../scripts/routes'
 
   export default {
     components: {
@@ -31,19 +30,14 @@
     },
     name: "app",
     scrollToTop: true,
-    async asyncData() {
-      // Initialize authors and posts in store
-      // await this.$store.dispatch('getAuthors')
-      // await this.$store.dispatch('getPosts')
-    },
     data() {
       return {
         showFooter: false
       }
     },
     methods: {
-      toggleMenu() {
-        this.$store.dispatch('toggleMenu')
+      closeMenu() {
+        this.$store.dispatch('closeMenu')
       },
       onLoad() {
         this.$store.dispatch('onLoad')
@@ -63,12 +57,12 @@
     },
     computed: {
       menuOpen() {
-        return this.$store.state.showMenu
+        return this.$store.state.misc.showMenu
       }
     },
     watch: {
       menuOpen() {
-        if (this.$store.state.showMenu && process.browser) {
+        if (this.$store.state.misc.showMenu && process.browser) {
           document.body.style.overflowY = 'hidden'
         } else {
           document.body.style.overflowY = 'auto'
