@@ -9,7 +9,7 @@
                       col-lg-9
                       col-xl-9">
             <nuxt-link v-if="titleLink"
-                       :to="{name: post.route}"
+                       :to="titleLink"
                        exact>
               <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}</h2>
@@ -102,8 +102,9 @@
     },
     computed: {
       titleLink() {
-        if (this.post.route !== ' ') {
-          return this.post.route
+        if (this.post.route !== ' ' &&
+          this.$router.options.routes.find(route => route.name === this.post.route)) {
+          return {name: this.post.route}
         }
       },
       formattedDate() {

@@ -80,7 +80,7 @@
             <div slot="media">
               <image-link :post="getPost(routes.rockstarVa2018)"
                           :href="getPost(routes.rockstarVa2018).fbEvent"
-                          :src="routes.s3Pages + routes.rockstarVa2018 + '/rockstar.jpg'"/>
+                          :src="routes.s3Pages + '/' + routes.rockstarVa2018 + '/rockstar.jpg'"/>
             </div>
           </post-card>
 
@@ -124,7 +124,7 @@
                 <img v-lazy="getPost(routes.middleMtMomma2018).img.logo"
                      class="image-smaller">
               </a>
-              <a v-if="$store.state.loaded"
+              <a v-if="$store.state.misc.loaded"
                  :href="getPost(routes.middleMtMomma2018.fbEvent)"
                  style="text-align: center">
                 <img :src="getPost(routes.middleMtMomma2018).img.start"
@@ -260,7 +260,7 @@
         </div>
       </transition-group>
 
-      <div v-if="$store.state.posts.currentPage < $store.state.totalPages"
+      <div v-if="showLoadMore"
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
                 @click="loadMore()"
@@ -360,12 +360,14 @@
         return {
           backgroundImage:`url("${routes.s3StaticImg}/asfalt-light.png")`
         }
+      },
+      showLoadMore() {
+        return this.$store.state.posts.currentPage < this.$store.state.posts.totalPages
       }
     },
     methods: {
       async loadMore() {
-        const newPage = this.$store.state.posts.currentPage + 1
-        await this.$store.dispatch('changePage', newPage)
+        await this.$store.dispatch('incrementPage')
       },
       getPost(route) {
           return this.$store.getters.getPost(route)

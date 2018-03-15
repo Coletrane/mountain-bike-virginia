@@ -2,7 +2,6 @@ import {races} from '../assets/results'
 
 export default {
   state: {
-    page: 1,
     currentRaceName: races[0],
     loadedRaces: [],
     showMenu: false,

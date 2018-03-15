@@ -1,5 +1,5 @@
 <template>
-  <iframe v-if="$store.state.loaded"
+  <iframe v-if="$store.state.misc.loaded"
           :src="url"
           scrolling='no'>
   </iframe>

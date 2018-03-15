@@ -23,7 +23,9 @@ export default {
         routes.specMines29Oct17,
         routes.pivotSwitchbladeReview,
         routes.gravelocity2017Video,
-        routes.creature2017Recap
+        routes.creature2017Recap,
+        routes.relaunch,
+        routes.creature2016
       ]
     ]
   },
@@ -31,6 +33,7 @@ export default {
   actions: {
     loadPosts: async (context, postsRoutes) => {
       let posts = []
+
       for (const route of postsRoutes) {
         if (!context.getters.getPost(route)) {
           let res = await axios.get(`${routes.s3Posts}/${route}.json`)
@@ -59,14 +62,16 @@ export default {
         return posts
       }
     },
-    incrementPage: (context) => {
+    incrementPage: async (context) => {
       const newPage = context.state.currentPage + 1
-      context.commit('SET_CURRENT_PAGE', newPage)
+      let posts = []
 
       if (!context.state.loadedPages.includes(newPage)) {
-        context.state.dispatch('loadPosts', context.pages[newPage])
-        context.state.loadedPages.push(newPage)
+        posts = await context.dispatch('loadPosts', context.state.pages[newPage - 1])
+        context.commit('SET_CURRENT_PAGE', newPage)
       }
+
+      return posts
     }
   },
 
@@ -78,6 +83,9 @@ export default {
     },
     SET_CURRENT_PAGE: (state, page) => {
       state.currentPage = page
+      if (!state.loadedPages.includes(page)) {
+        state.loadedPages.push(page)
+      }
     }
   },
 

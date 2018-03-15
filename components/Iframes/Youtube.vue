@@ -1,6 +1,6 @@
 <template>
   <div class="yt-wrapper">
-    <iframe v-if="$store.state.loaded"
+    <iframe v-if="$store.state.misc.loaded"
             width="100%"
             frameborder="0"
             allowfullscreen
