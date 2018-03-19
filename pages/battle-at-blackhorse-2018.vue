@@ -98,6 +98,11 @@
 </template>
 
 <script>
+  import BlogPost from '../components/BlogPost'
+  import Youtube from '../components/Iframes/Youtube'
+  import BlogImage from '../components/Images/BlogImage'
+  import RelatedPosts from '../components/Card/RelatedPosts'
+
   import {
     s3Pages,
     battleAtBlackhorse2018,
@@ -105,11 +110,6 @@
     dodyRidgeRunFall2017
   } from '../scripts/routes'
   import {headTags} from '../assets/functions'
-
-  import BlogPost from '../components/BlogPost'
-  import Youtube from '../components/Iframes/Youtube'
-  import BlogImage from '../components/Images/BlogImage'
-  import RelatedPosts from '../components/Card/RelatedPosts'
 
   export default {
     name: 'battle-at-blackhorse-2018',
@@ -121,7 +121,9 @@
     },
     async asyncData(context) {
       return {
-        post: await context.store.dispatch('loadPosts', [battleAtBlackhorse2018]),
+        post: await context.store.dispatch('loadPosts', [
+          battleAtBlackhorse2018
+        ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
           battleAtBlackhorse2018Video,
           dodyRidgeRunFall2017
@@ -131,7 +133,7 @@
     head() {
       if (this.post) {
         return headTags(
-          'Battle at Blackhorse 2018',
+          this.post.title,
           this.post.description,
           'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
           this.post

@@ -92,7 +92,7 @@ describe('routes tests', () => {
               .to.be.true
           })
 
-          it('can GET og:image url', async () => {
+          xit('can GET og:image url', async () => {
             let res = await request({
               uri: ogImage,
               resolveWithFullResponse: true

@@ -16,15 +16,20 @@
 </template>
 
 <script>
-  import {s3Pages, tuesdayNightLightsVideoFeb2018} from '../scripts/routes'
-  import {posts} from '../assets/posts'
-  import {headTags, buildVideo} from '../assets/functions'
-  import {home} from '../assets/head-tags'
-
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  const post = posts.tuesdayNightLightsVideoFeb2018
+  import {
+    s3Pages,
+    tuesdayNightLightsVideoFeb2018,
+    gravelocity2018,
+    creature2017Recap
+  } from '../scripts/routes'
+  import {
+    headTags,
+    buildVideo
+  } from '../assets/functions'
+  import {home} from '../assets/head-tags'
 
   export default {
     name: 'tuesday-night-lights-video-feb-2018',
@@ -33,33 +38,32 @@
       BlogPost
     },
     async asyncData(context) {
+      let post = await context.store.dispatch('loadPosts',[
+        tuesdayNightLightsVideoFeb2018])
       return {
-        schema: await buildVideo(post)
+        schema: await buildVideo(post),
+        post: post,
+        relatedPosts: await context.store.dispatch('loadPosts', [
+          gravelocity2018,
+          creature2017Recap
+        ])
       }
     },
     head() {
-      let head = {
-        ...headTags(
-          post.title,
-          post.subtitle,
-          'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,
-          post
-        )
+      if (this.post && this.schema) {
+        return {
+          ...headTags(
+            this.post.title,
+            this.post.subtitle,
+            'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,
+            this.post),
+          script: this.schema
+        }
       }
-      if (this.schema) {
-        head.script = this.schema
-      }
-
-      return head
     },
     data() {
       return {
-        img: `${s3Pages}${tuesdayNightLightsVideoFeb2018}/`,
-        post: post,
-        relatedPosts: [
-          posts.gravelocity2018,
-          posts.creature2017Recap
-        ]
+        img: `${s3Pages}/${tuesdayNightLightsVideoFeb2018}/`
       }
     }
   }

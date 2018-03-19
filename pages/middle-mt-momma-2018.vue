@@ -37,7 +37,7 @@
         </div>
         <div style="margin-top: -2.8rem;">
           <a :href="post.fbEvent">
-            <img v-lazy="post.extraImgs.logo"
+            <img v-lazy="img + 'mmm.png'"
                  class="image-smaller">
           </a>
           <a v-if="$store.state.loaded"
@@ -55,18 +55,20 @@
 </template>
 
 <script>
-  import {posts} from '../assets/posts'
-  import {headTags} from '../assets/functions'
-  import {home} from '../assets/head-tags'
-  import {s3Pages, middleMtMomma2018} from '../scripts/routes'
-
   import BlogImage from '../components/Images/BlogImage'
   import RideWithGps from '../components/Iframes/RideWithGps'
   import BlogPost from '../components/BlogPost'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  const post = posts.middleMtMomma2018
+  import {
+    s3Pages,
+    middleMtMomma2018,
+    creature2017Recap,
+    rockstarVa2018
+  } from '../scripts/routes'
+  import {headTags} from '../assets/functions'
+  import {home} from '../assets/head-tags'
 
   export default {
     name: 'middle-mt-momma-2018',
@@ -76,24 +78,32 @@
       BlogImage,
       FontAwesomeIcon
     },
-    data() {
+    async asyncData(context) {
       return {
-        img: `${s3Pages}${middleMtMomma2018}/`,
-        faFacebook: faFacebook,
-        post: post,
-        relatedPosts: [
-          posts.creature2017Recap,
-          posts.rockstarVa2018
-        ]
+        post: await context.store.dispatch('loadPosts',[
+          middleMtMomma2018
+        ]),
+        relatedPosts: await context.store.dispatch('loadPosts',[
+          creature2017Recap,
+          rockstarVa2018
+        ])
       }
     },
     head() {
-      return headTags(
-        'Middle Mountain Momma 2018',
-        post.subtitle,
-        home.keywords,
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.subtitle,
+          'race, douthat state park, douthat, lexington, xxc, enduro, bike race, mountain bike race' + home.keywords,
+          this.post
+        )
+      }
+    },
+    data() {
+      return {
+        img: `${s3Pages}/${middleMtMomma2018}/`,
+        faFacebook: faFacebook
+      }
     }
   }
 </script>

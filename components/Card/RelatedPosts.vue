@@ -37,7 +37,7 @@
     },
     methods: {
       image(post) {
-        return `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+        return `${routes.s3Pages}/${post.route}/${routes.imgRoutes[post.route]}`
       },
       handleResize() {
         this.width = document.body.clientWidth

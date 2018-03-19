@@ -10,37 +10,29 @@ export default {
   },
 
   actions: {
-    loadAuthors: async (context, authorsRoutes) => {
-      let authors = []
+    loadAuthor: async (context, route) => {
+      let author
 
-      for (const route of authorsRoutes) {
-        if (!context.getters.getAuthor(route)) {
-          let res = await axios.get(`${s3Authors}/${route}.json`)
+      if (!context.getters.getAuthor(route)) {
+        let res = await axios.get(`${s3Authors}/${route}.json`)
 
-          if (res.data) {
-            let author = res.data
-            author.imgUrl = `${s3StaticImg}/${author.imgUrl}`
-            author.route = route
-            authors.push(author)
-          }
+        if (res.data) {
+          author = res.data
+          author.imgUrl = `${s3StaticImg}/${author.imgUrl}`
+          author.route = route
+          context.commit('SET_AUTHOR', author)
         }
-      }
-
-      context.commit('SET_AUTHORS', authors)
-
-      if (authors.length === 1) {
-        return authors[0]
       } else {
-        return authors
+        author = context.getters.getAuthor(route)
       }
+
+      return author
     }
   },
 
   mutations: {
-    SET_AUTHORS: (state, authors) => {
-      authors.forEach(author => {
-        state.loadedAuthors.push(author)
-      })
+    SET_AUTHOR: (state, author) => {
+      state.loadedAuthors.push(author)
     }
   },
 

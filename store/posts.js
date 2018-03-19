@@ -32,34 +32,33 @@ export default {
 
   actions: {
     loadPosts: async (context, postsRoutes) => {
-      let posts = []
+      let returnPosts = []
 
       for (const route of postsRoutes) {
         if (!context.getters.getPost(route)) {
           let res = await axios.get(`${routes.s3Posts}/${route}.json`)
 
           if (res.data) {
-            let post = res.data
+            const post = res.data
             post.route = route
-            if (post.img) {
-              Object.keys(post.img).forEach(pic => {
-                post.img[pic] = `${routes.s3Pages}/${route}/${post.img[pic]}`
-              })
+
+            if (post.author) {
+              post.author = await context.dispatch('loadAuthor', post.author)
             }
-            if (!context.getters.getAuthor(post.author)) {
-              post.author = await context.dispatch('loadAuthors', [post.author])
-            }
-            posts.push(post)
+
+            returnPosts.push(post)
+
+            context.commit('SET_POST', post)
           }
+        } else {
+          returnPosts.push(context.getters.getPost(route))
         }
       }
 
-      context.commit('SET_POSTS', posts)
-
-      if (posts.length === 1) {
-        return posts[0]
-      } else {
-        return posts
+      if (returnPosts.length === 1) {
+        return returnPosts[0]
+      } else if (returnPosts.length > 1) {
+        return returnPosts
       }
     },
     incrementPage: async (context) => {
@@ -76,10 +75,8 @@ export default {
   },
 
   mutations: {
-    SET_POSTS: (state, posts) => {
-      posts.forEach(post => {
-        state.loadedPosts.push(post)
-      })
+    SET_POST: (state, post) => {
+      state.loadedPosts.push(post)
     },
     SET_CURRENT_PAGE: (state, page) => {
       state.currentPage = page
@@ -105,5 +102,4 @@ export default {
       return posts
     }
   }
-
 }

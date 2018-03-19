@@ -121,13 +121,13 @@
             <div slot="media"
                  style="margin-top: -2.8rem;">
               <a :href="getPost(routes.middleMtMomma2018).fbEvent">
-                <img v-lazy="getPost(routes.middleMtMomma2018).img.logo"
+                <img v-lazy="mmmImg + 'mmm.png'"
                      class="image-smaller">
               </a>
               <a v-if="$store.state.misc.loaded"
                  :href="getPost(routes.middleMtMomma2018.fbEvent)"
                  style="text-align: center">
-                <img :src="getPost(routes.middleMtMomma2018).img.start"
+                <img :src="mmmImg + 'mmm-start.gif'"
                      alt="Middle Mountain Momma Starting Line"
                      style="width: 100%"/>
               </a>
@@ -323,7 +323,7 @@
         attachPosts: false,
         posts: posts,
         routes: routes,
-        mmmFb: 'https://www.facebook.com/events/371981453213164/',
+        mmmImg: `${routes.s3Pages}/${routes.middleMtMomma2018}/`
       }
     },
     created() {

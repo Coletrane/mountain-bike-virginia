@@ -106,31 +106,39 @@
   import Youtube from "../components/Iframes/Youtube.vue"
   import BlogImage from "../components/Images/BlogImage.vue"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
+  import {
+    s3Pages,
+    creature2017Recap
+  } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
-  const post = posts.creature2017Recap
-
   export default {
-    name: post.route,
+    name: 'creature-2017-recap',
     components: {
       BlogPost,
       Youtube,
       BlogImage
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts', [
+          creature2017Recap
+        ])
+      }
+    },
     head() {
-      return headTags(
-        "Creature from Carvin's Cove 2017",
-        post.subtitle,
-        "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove",
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.subtitle,
+          "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove",
+          this.post
+        )
+      }
     },
     data() {
       return {
-        img: `${s3Pages}${post.route}/`,
-        post: post
+        img: `${s3Pages}/${creature2017Recap}/`
       }
     }
   }

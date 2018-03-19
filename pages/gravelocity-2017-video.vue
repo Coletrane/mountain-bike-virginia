@@ -16,11 +16,17 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages, gravelocity2017Video, imgRoutes} from '../scripts/routes'
-  import {posts} from '../assets/posts'
-  import {headTags, buildVideo} from '../assets/functions'
-
-  const post = posts.gravelocity2017Video
+  import {
+    s3Pages,
+    gravelocity2017Video,
+    gravelocity2018,
+    middleMtMomma2018,
+    imgRoutes
+  } from '../scripts/routes'
+  import {
+    headTags,
+    buildVideo
+  } from '../assets/functions'
 
   export default {
     name: 'gravelocity-2017-video',
@@ -29,37 +35,34 @@
       Youtube
     },
     async asyncData(context) {
+      let post = await context.store.dispatch('loadPosts', [
+        gravelocity2017Video
+      ])
       return {
-        schema: await buildVideo(post)
+        schema: await buildVideo(post),
+        post: post,
+        relatedPosts: await context.store.dispatch('loadPosts', [
+          gravelocity2018,
+          middleMtMomma2018
+        ])
       }
     },
     head() {
-      let head = {
-        ...headTags(
-          post.title,
-          "Yearly gravel ride in January that starts from Gravel Dr in Daleville and goes to the top of the Blue Ridge Parkway",
-          "gravel, gravel bike, adventure bike, bike, ride, winter, blue ridge parkway, parkway, virginia, blue ridge, endurance, bikepacking, road bike, cycling, cyclocross, cross, cx bike",
-          post
-        )
+      if (this.post && this.schema) {
+        return {
+          ...headTags(
+            this.post.title,
+            "Yearly gravel ride in January that starts from Gravel Dr in Daleville and goes to the top of the Blue Ridge Parkway",
+            "gravel, gravel bike, adventure bike, bike, ride, winter, blue ridge parkway, parkway, virginia, blue ridge, endurance, bikepacking, road bike, cycling, cyclocross, cross, cx bike",
+            this.post),
+          script: this.schema
+        }
       }
-      if (this.schema) {
-        head.script = this.schema
-      }
-      return head
     },
     data() {
       return {
-        image: `${s3Pages}${gravelocity2017Video}/${imgRoutes[gravelocity2017Video]}`,
-        post: post,
-        relatedPosts: [
-          posts.gravelocity2018,
-          posts.middleMtMomma2018
-        ]
+        image: `${s3Pages}/${gravelocity2017Video}/${imgRoutes[gravelocity2017Video]}`
       }
     }
   }
 </script>
-
-<style scoped>
-
-</style>
