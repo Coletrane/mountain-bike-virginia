@@ -11,27 +11,27 @@ export default {
 
   actions: {
     loadAuthor: async (context, route) => {
-      let author
+      let resultAuthor
 
       if (!context.getters.getAuthor(route)) {
         let res = await axios.get(`${s3Authors}/${route}.json`)
 
         if (res.data) {
-          author = res.data
-          author.imgUrl = `${s3StaticImg}/${author.imgUrl}`
-          author.route = route
-          context.commit('SET_AUTHOR', author)
+          resultAuthor = res.data
+          resultAuthor.imgUrl = `${s3StaticImg}/${resultAuthor.imgUrl}`
+          resultAuthor.route = route
+          context.commit('AUTHOR_LOADED', resultAuthor)
         }
       } else {
-        author = context.getters.getAuthor(route)
+        resultAuthor = context.getters.getAuthor(route)
       }
 
-      return author
+      return resultAuthor
     }
   },
 
   mutations: {
-    SET_AUTHOR: (state, author) => {
+    AUTHOR_LOADED: (state, author) => {
       state.loadedAuthors.push(author)
     }
   },

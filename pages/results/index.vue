@@ -4,6 +4,7 @@
 
 <script>
   import Results from '../../components/Results/Results'
+
   import {results} from "../../assets/head-tags"
   import {headTags} from "../../assets/functions"
   import * as routes from '../../scripts/routes'
@@ -12,6 +13,11 @@
     name: 'results-index',
     components: {
       Results
+    },
+    async asyncData(context) {
+      await context.store.dispatch(
+          'selectRace',
+          'battle-at-blackhorse-2018')
     },
     head() {
       return headTags(

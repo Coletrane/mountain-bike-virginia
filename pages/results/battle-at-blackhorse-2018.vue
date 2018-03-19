@@ -4,6 +4,7 @@
 
 <script>
   import Results from '../../components/Results/Results'
+
   import {results} from "../../assets/head-tags"
   import {headTags} from "../../assets/functions"
   import * as routes from '../../scripts/routes'
@@ -12,6 +13,12 @@
     name: 'battle-at-blackhorse-2018',
     components: {
       Results
+    },
+    async asyncData(context) {
+      await context.store.dispatch(
+        'selectRace',
+        'battle-at-blackhorse-2018'
+      )
     },
     head() {
       return headTags(
@@ -22,13 +29,6 @@
           route: routes.resultsBattleAtBlackhorse2018,
         }
       )
-    },
-    created() {
-      this.$store.commit('selectRace', 'Battle at Blackhorse 2018')
     }
   }
 </script>
-
-<style scoped>
-
-</style>

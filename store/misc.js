@@ -1,9 +1,5 @@
-import {races} from '../assets/results'
-
 export default {
   state: {
-    currentRaceName: races[0],
-    loadedRaces: [],
     showMenu: false,
     loaded: false
   },
@@ -21,12 +17,6 @@ export default {
   },
 
   mutations: {
-    selectRace (state, race) {
-      state.currentRaceName = race
-    },
-    raceLoaded (state, race) {
-      state.loadedRaces.push(race)
-    },
     TOGGLE_MENU: (state) => {
       state.showMenu = !state.showMenu
     },
@@ -35,15 +25,6 @@ export default {
     },
     ON_LOAD: (state) => {
       state.loaded = true
-    }
-  },
-
-  getters: {
-    currentRacePath: state => {
-      return state.currentRaceName.split(' ').join('-').toLowerCase()
-    },
-    currentRace: state => {
-      return state.loadedRaces.find(race => race.name === state.currentRaceName)
     }
   }
 }

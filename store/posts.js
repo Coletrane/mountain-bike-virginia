@@ -32,7 +32,7 @@ export default {
 
   actions: {
     loadPosts: async (context, postsRoutes) => {
-      let returnPosts = []
+      let resultPosts = []
 
       for (const route of postsRoutes) {
         if (!context.getters.getPost(route)) {
@@ -46,19 +46,19 @@ export default {
               post.author = await context.dispatch('loadAuthor', post.author)
             }
 
-            returnPosts.push(post)
+            resultPosts.push(post)
 
-            context.commit('SET_POST', post)
+            context.commit('POST_LOADED', post)
           }
         } else {
-          returnPosts.push(context.getters.getPost(route))
+          resultPosts.push(context.getters.getPost(route))
         }
       }
 
-      if (returnPosts.length === 1) {
-        return returnPosts[0]
-      } else if (returnPosts.length > 1) {
-        return returnPosts
+      if (resultPosts.length === 1) {
+        return resultPosts[0]
+      } else if (resultPosts.length > 1) {
+        return resultPosts
       }
     },
     incrementPage: async (context) => {
@@ -75,7 +75,7 @@ export default {
   },
 
   mutations: {
-    SET_POST: (state, post) => {
+    POST_LOADED: (state, post) => {
       state.loadedPosts.push(post)
     },
     SET_CURRENT_PAGE: (state, page) => {

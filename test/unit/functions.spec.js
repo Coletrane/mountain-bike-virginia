@@ -8,7 +8,9 @@ let head = headTags(
   'title',
   'description',
   'keywords',
-  posts.creature2017Recap)
+  {
+    route: 'creature-2017-recap'
+  })
 
 describe('headTags tests', () => {
   it('should have a title tag', () => {
