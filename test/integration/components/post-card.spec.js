@@ -12,6 +12,8 @@ describe('<post-card> tests', () => {
     driver = await global.driver
     expect = await global.expect
 
+    await driver.sleep(3000)
+
     card = await driver.findElement(
       By.className('card-container'))
   })

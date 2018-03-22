@@ -15,12 +15,16 @@ describe('<home> tests', () => {
     driver = await global.driver
     expect = await global.expect
 
+    await driver.sleep(3000)
+
     loadMoreButton = await driver.findElement(
       By.id('load-more-btn'))
 
     for (let i = 1; i < numberOfPages; i++) {
       await loadMoreButton.click()
     }
+
+    await driver.sleep(3000)
 
     cards = await driver.findElements(
       By.className('card-container'))

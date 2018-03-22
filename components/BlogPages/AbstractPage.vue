@@ -29,7 +29,7 @@
     },
     methods: {
       async loadPostComponents() {
-        for (const postRoute of this.$store.state.posts.pages[this.$store.state.posts.currentPage]) {
+        for (const postRoute of this.$store.state.posts.pages[this.page]) {
           const filename = routeToComponentFilename(postRoute)
           let esComponent = await import(`../PromoCards/${filename}`)
           const component = {
