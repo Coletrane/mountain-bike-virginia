@@ -1,0 +1,21 @@
+{
+  "title": "RockStar VA 270",
+  "subtitle": "April 7th 2018, 7 A.M. at Blacksheep Coffee Harrisonburg, VA. 270 miles from Rocktown(Harrisonburg, VA) to The Star City(Roanoke, VA)",
+  "author": "cole",
+  "fbEvent": "https://www.facebook.com/events/1583483341702188/",
+  "rwGps": "https://rwgps-embeds.com/embeds?type=route&id=26535965&sampleGraph=true",
+  "schema": {
+    "type": "Event",
+    "startDate": "2018-04-18T07:00:00.000Z",
+    "location": {
+      "name": "Black Sheep Coffee",
+      "address": {
+        "streetAddress": "217 S Liberty St, Ste 104B",
+        "addressLocality": "Harrisonburg",
+        "postalCode": "22801",
+        "addressRegion": "VA",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
