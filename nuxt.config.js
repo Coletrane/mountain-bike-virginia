@@ -2,15 +2,6 @@ const routes = require('./scripts/routes')
 require('dotenv').config()
 const webpack = require('webpack')
 
-const sitemapRoutes = routes.appRoutes.map(route => {
-  return {
-    url: route,
-    changefreq: 'daily',
-    priority: 1,
-    lastmodISO: new Date().toISOString()
-  }
-})
-
 module.exports = {
   css: [
     {
@@ -89,7 +80,14 @@ module.exports = {
     hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
-    routes: sitemapRoutes
+    routes: routes.appRoutes.map(route => {
+      return {
+        url: route,
+        changefreq: 'daily',
+        priority: 1,
+        lastmodISO: new Date().toISOString()
+      }
+    })
   },
   render: {
     static: {
@@ -114,6 +112,12 @@ module.exports = {
     google: process.env.GOOGLE
   },
   generate: {
-    routes: routes.appRoutes
+    routes: routes.appRoutes.map(route => {
+      if (route.charAt(0) !== '/') {
+        return ('/' + route)
+      } else {
+        return route
+      }
+    })
   }
 }
