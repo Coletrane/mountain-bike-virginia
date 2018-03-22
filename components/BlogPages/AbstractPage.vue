@@ -1,0 +1,56 @@
+<template>
+  <div class="abstract-page">
+    <div v-for="postRoute of $store.state.posts.pages[page]">
+      <component v-if="postComponentsLoaded"
+                 :is="getPostComponent(postRoute)"/>
+    </div>
+  </div>
+</template>
+
+<script>
+  import {routeToComponentFilename} from '../../assets/functions'
+
+  export default {
+    name: 'abstract-page',
+    props: {
+      page: {
+        type: Number,
+        required: true
+      }
+    },
+    data() {
+      return {
+        postComponents: [],
+        postComponentsLoaded: false
+      }
+    },
+    created() {
+      this.loadPostComponents()
+    },
+    methods: {
+      async loadPostComponents() {
+        for (const postRoute of this.$store.state.posts.pages[this.$store.state.posts.currentPage]) {
+          const filename = routeToComponentFilename(postRoute)
+          let esComponent = await import(`../PromoCards/${filename}`)
+          const component = {
+            route: postRoute,
+            component: esComponent.default
+          }
+          this.postComponents.push(component)
+        }
+
+        if (this.postComponents.length ===
+            this.$store.state.posts.pages[this.page].length) {
+          this.postComponentsLoaded = true
+        }
+      },
+      getPostComponent(postRoute) {
+        const postComponent = this.postComponents.find(component => {
+          return component.route === postRoute
+        })
+
+        return postComponent.component
+      }
+    }
+  }
+</script>

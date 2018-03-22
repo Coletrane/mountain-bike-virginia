@@ -287,3 +287,13 @@ export const justExtension = (file) => {
 
   return extension
 }
+
+export const routeToComponentFilename = (route) => {
+  let postFilename = route.split('-')
+  postFilename = postFilename.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  })
+  postFilename = postFilename.join('')
+
+  return postFilename
+}

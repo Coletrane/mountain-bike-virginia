@@ -14,15 +14,13 @@
     <div class="main-content"
          :style="backgroundImage">
 
-        <div v-for="page of $store.state.posts.totalPages">
-          <transition-group name="new-page-fade"
-                            appear>
-          <div v-if="$store.state.posts.currentPage >= page"
-               :key="page">
-            <component :is="getPage(page)"/>
-          </div>
-          </transition-group>
-        </div>
+        <transition-group name="new-page-fade"
+                          appear>
+          <page-0 v-if="$store.state.posts.currentPage >= 0"
+                  :key="0"/>
+          <page-1 v-if="$store.state.posts.currentPage >= 1"
+                  :key="1"/>
+        </transition-group>
 
       <div v-if="showLoadMore"
            class="load-more">
@@ -37,32 +35,24 @@
 </template>
 <script>
   import MTBVAHeader from '../components/Header/MTBVAHeader'
-  import PostCard from '../components/Card/PostCard'
-  import Youtube from '../components/Iframes/Youtube'
-  import ImageLink from '../components/Images/ImageLink'
-  import RideWithGps from '../components/Iframes/RideWithGps'
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
   // Pages
+  const Page0 = () => import('../components/BlogPages/Page0')
   const Page1 = () => import('../components/BlogPages/Page1')
-  const Page2 = () => import('../components/BlogPages/Page2')
 
   import {home} from '../assets/head-tags'
   import {headTags} from '../assets/functions'
-  import * as routes from '../scripts/routes'
+  import {
+    s3StaticImg,
+    imgRoutes
+  } from '../scripts/routes'
 
   export default {
     name: 'index',
     components: {
-      RideWithGps,
       MTBVAHeader,
-      PostCard,
-      Youtube,
-      ImageLink,
-      FontAwesomeIcon,
-      Page1,
-      Page2
+      Page0,
+      Page1
     },
     async asyncData(context) {
       return {
@@ -85,32 +75,27 @@
     },
     data() {
       return {
-        img: `${routes.s3StaticImg}/${routes.imgRoutes['/']}`,
-        faFacebook: faFacebook,
-        attachPosts: false,
-        routes: routes,
-        pages: [
-          Page1,
-          Page2,
-        ]
+        img: `${s3StaticImg}/${imgRoutes['/']}`
+      }
+    },
+    async mounted() {
+      if (this.$store.state.posts.currentPage === -1) {
+        await this.$store.dispatch('incrementPage')
       }
     },
     computed: {
       backgroundImage() {
         return {
-          backgroundImage:`url("${routes.s3StaticImg}/asfalt-light.png")`
+          backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`
         }
       },
       showLoadMore() {
-        return this.$store.state.posts.currentPage < this.$store.state.posts.totalPages
+        return this.$store.state.posts.currentPage < this.$store.state.posts.pages.length - 1
       }
     },
     methods: {
       async loadMore() {
         await this.$store.dispatch('incrementPage')
-      },
-      getPage(page) {
-        return this.pages[page - 1]
       }
     }
   }

@@ -1,33 +1,54 @@
 import * as routes from '../scripts/routes'
 import axios from 'axios'
 
+const postsOrder = [
+  routes.battleAtBlackhorse2018,
+  routes.battleAtBlackhorse2018Video,
+  routes.ravenwoodRide,
+  routes.tuesdayNightLightsVideoFeb2018,
+  routes.rockstarVa2018,
+  routes.middleMtMomma2018,
+  routes.gravelocity2018,
+  routes.firstRide2018,
+  routes.dodyRidgeRunFall2017,
+  routes.specMines29Oct17,
+  routes.pivotSwitchbladeReview,
+  routes.gravelocity2017Video,
+  routes.creature2017Recap,
+  routes.relaunch,
+  routes.creature2016
+]
+
+// Will always be 1 less than total pages since last page will have the rest
+const postsPerPage = [
+  8
+]
+postsPerPage.push(
+  postsOrder.length - postsPerPage.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  })
+)
+
+const pages = []
+// "Initialize" multi dimensional array
+postsPerPage.forEach((perPage, page, arr) => {
+  pages[page] = []
+})
+
+let postsOrderCount = 0
+pages.forEach((page, pageNumber, pagesArr) => {
+  for (let i = 0; i < postsPerPage[pageNumber]; i++) {
+    pages[pageNumber][i] = postsOrder[postsOrderCount]
+    postsOrderCount++
+  }
+})
+
 export default {
   state: {
     loadedPosts: [],
-    totalPages: 2,
-    currentPage: 1,
-    loadedPages: [1],
-    pages: [
-      [
-        routes.battleAtBlackhorse2018,
-        routes.battleAtBlackhorse2018Video,
-        routes.ravenwoodRide,
-        routes.tuesdayNightLightsVideoFeb2018,
-        routes.rockstarVa2018,
-        routes.middleMtMomma2018,
-        routes.gravelocity2018,
-        routes.firstRide2018
-      ],
-      [
-        routes.dodyRidgeRunFall2017,
-        routes.specMines29Oct17,
-        routes.pivotSwitchbladeReview,
-        routes.gravelocity2017Video,
-        routes.creature2017Recap,
-        routes.relaunch,
-        routes.creature2016
-      ]
-    ]
+    currentPage: -1, // This is incremented after posts are loaded in index.vue
+    loadedPages: [0],
+    pages: pages
   },
 
   actions: {
@@ -66,9 +87,10 @@ export default {
       let posts = []
 
       if (!context.state.loadedPages.includes(newPage)) {
-        posts = await context.dispatch('loadPosts', context.state.pages[newPage - 1])
-        context.commit('SET_CURRENT_PAGE', newPage)
+        posts = await context.dispatch('loadPosts', context.state.pages[newPage])
       }
+
+      context.commit('SET_CURRENT_PAGE', newPage)
 
       return posts
     }
