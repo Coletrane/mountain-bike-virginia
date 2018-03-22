@@ -112,5 +112,8 @@ module.exports = {
     prodWeather: process.env.WEATHER_PROD,
     testWeather: process.env.WEATHER_TEST,
     google: process.env.GOOGLE
+  },
+  generate: {
+    routes: routes.appRoutes
   }
 }
