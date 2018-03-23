@@ -88,7 +88,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development nuxt",
-    "build": "nuxt generate",
+    "build": "npm run sync-json && nuxt generate",
     "sync-json": "rm -r ../mtbva-s3-bucket/posts && rm -r ../mtbva-s3-bucket/authors && rm -r ../mtbva-s3-bucket/results && cp -r ./json/* ../mtbva-s3-bucket/",
     "build-check": "NODE_ENV=development nuxt build --analyze",
     "generate": "nuxt generate",
