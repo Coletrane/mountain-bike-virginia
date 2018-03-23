@@ -130,12 +130,6 @@
     font-family: 'Lato', sans-serif;
   }
 
-  @media (max-width: 460px) {
-    .twitter-social-action {
-      padding-left: 0 !important;
-    }
-  }
-
 </style>
 <style scoped>
   a {
@@ -149,6 +143,7 @@
 
   .social-right {
     text-align: right;
+    padding-left: 0;
   }
 
   img {

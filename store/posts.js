@@ -2,6 +2,7 @@ import * as routes from '../scripts/routes'
 import axios from 'axios'
 
 const postsOrder = [
+  routes.dtSwiss54tRatchetReview,
   routes.battleAtBlackhorse2018,
   routes.battleAtBlackhorse2018Video,
   routes.ravenwoodRide,

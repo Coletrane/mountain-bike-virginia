@@ -101,7 +101,6 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
   import BlogImage from '../components/Images/BlogImage'
-  import RelatedPosts from '../components/Card/RelatedPosts'
 
   import {
     s3Pages,
@@ -116,8 +115,7 @@
     components: {
       BlogImage,
       BlogPost,
-      Youtube,
-      RelatedPosts
+      Youtube
     },
     async asyncData(context) {
       return {

@@ -135,8 +135,12 @@
 
   @media (max-width: 600px) {
 
-    .hero-content {
-      top: 100%;
+    .hero-content-subpage {
+      top: 80%;
+    }
+
+    .hero-content-home {
+      top: 75%;
     }
 
     .mtbva-title {
