@@ -119,15 +119,15 @@
     top: 60%;
   }
   .hero-content-subpage {
-    top: 50%;
+    top: 75%;
   }
 
   .mtbva-title {
-    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
     font-size: 6rem;
   }
   .mtbva-subtitle {
-    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
   }
   .hero-content-subpage h1 {
     font-size: 3.5rem;
@@ -136,7 +136,7 @@
   @media (max-width: 600px) {
 
     .hero-content {
-      top: 75%;
+      top: 100%;
     }
 
     .mtbva-title {

@@ -1,8 +1,16 @@
 <template>
   <div class="abstract-page">
     <div v-for="postRoute of $store.state.posts.pages[page]">
-      <component v-if="postComponentsLoaded"
-                 :is="getPostComponent(postRoute)"/>
+
+      <transition name="new-page-fade">
+        <component v-if="getPostComponent(postRoute)"
+                   :is="getPostComponent(postRoute)"/>
+      </transition>
+
+      <div v-if="!getPostComponent(postRoute)"
+           class="post-card-placeholder">
+      </div>
+
     </div>
   </div>
 </template>
@@ -40,7 +48,7 @@
         }
 
         if (this.postComponents.length ===
-            this.$store.state.posts.pages[this.page].length) {
+          this.$store.state.posts.pages[this.page].length) {
           this.postComponentsLoaded = true
         }
       },
@@ -49,8 +57,25 @@
           return component.route === postRoute
         })
 
-        return postComponent.component
+        if (postComponent) {
+          return postComponent.component
+        }
       }
     }
   }
 </script>
+
+<style>
+  .post-card-placeholder {
+    width: 100%;
+    height: 500px;
+  }
+
+  .new-page-fade-enter-to {
+    transition: opacity 1s;
+  }
+
+  .new-page-fade-enter {
+    opacity: 0;
+  }
+</style>

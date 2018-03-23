@@ -14,13 +14,10 @@
     <div class="main-content"
          :style="backgroundImage">
 
-        <transition-group name="new-page-fade"
-                          appear>
           <page-0 v-if="$store.state.posts.currentPage >= 0"
                   :key="0"/>
           <page-1 v-if="$store.state.posts.currentPage >= 1"
                   :key="1"/>
-        </transition-group>
 
       <div v-if="showLoadMore"
            class="load-more">
@@ -125,14 +122,6 @@
     .image-smaller {
       width: 100%;
     }
-  }
-
-  .new-page-fade-enter-to {
-    transition: opacity 1s;
-  }
-
-  .new-page-fade-enter {
-    opacity: 0;
   }
 
 </style>

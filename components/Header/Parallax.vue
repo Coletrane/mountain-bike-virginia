@@ -42,12 +42,12 @@
         let limit = this.$el.offsetTop + this.$el.offsetHeight
         let backgroundPos
         if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-          backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 2.5}px`;
+          backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 3}px`
         } else {
-          backgroundPos = '0px';
+          backgroundPos = '0px'
         }
         window.requestAnimationFrame(() => {
-          this.$el.style.backgroundPositionY = backgroundPos;
+          this.$el.style.backgroundPositionY = backgroundPos
         })
       },
       handleResize() {
