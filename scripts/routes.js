@@ -85,6 +85,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 const s3StaticImg = s3 + '/static/img'
 const s3Favicons = s3 + '/static/favicons'
+const s3Sponsors = s3 + '/static/sponsors'
 const s3Results = s3 + '/results'
 const s3Authors = s3 + '/authors'
 const s3Posts = s3 + '/posts'
@@ -118,6 +119,7 @@ module.exports = {
   s3,
   s3StaticImg,
   s3Favicons,
+  s3Sponsors,
   s3Results,
   s3Authors,
   s3Posts,
