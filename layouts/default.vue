@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-  import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
+  import MTBVAFooter from '../components/Footer/MTBVAFooter.vue'
   import MTBVAMenu from '../components/Header/MTBVAMenu'
 
   export default {
@@ -28,7 +28,7 @@
       MTBVAFooter,
       MTBVAMenu
     },
-    name: "app",
+    name: 'app',
     scrollToTop: true,
     data() {
       return {
@@ -114,6 +114,7 @@
   .app-fade-wrapper {
     background-color: black;
   }
+
   .app-fade-enter-active {
     transition: opacity 1s;
   }
@@ -134,16 +135,19 @@
     touch-action: none;
     background-color: rgba(0, 0, 0, 0.6);
   }
+
   .overlay-fade-enter-active, .overlay-fade-leave-active {
     transition: opacity .5s;
   }
+
   .overlay-fade-enter, .overlay-fade-leave-to {
     opacity: 0;
   }
 
   .menu-slide-enter-active, .menu-slide-leave-active {
-    transition: all .2s ;
+    transition: all .2s;
   }
+
   .menu-slide-enter, .menu-slide-leave-to {
     transform: translateX(100%);
   }
@@ -181,9 +185,11 @@
       padding-top: 4rem;
       padding-bottom: 4rem;
     }
+
     .headline {
       font-size: 1.5rem !important;
     }
+
     .subheading {
       font-size: 1.2rem !important;
     }
@@ -193,10 +199,7 @@
     width: 50% !important;
     height: auto !important;
     display: block !important;
-    margin-left: 30% !important;
-    margin-right: auto !important;
-    margin-top: 25% !important;
-    margin-bottom: 25% !important;
+    margin: auto !important;
     background-color: #FFFFFF !important;
   }
 

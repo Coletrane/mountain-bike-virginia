@@ -155,7 +155,9 @@ describe('routes tests', () => {
           })
 
           // Strip out weird beginning characters Google added for some reason
-          res.body = await res.body.split(")]}'").join('')
+          res.body = await res.body.split(')]}'
+          ').join('
+          ')
           res.body = JSON.parse(await res.body)
 
           expect(await res.statusCode)
