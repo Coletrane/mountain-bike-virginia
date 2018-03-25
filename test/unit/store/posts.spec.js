@@ -1,5 +1,10 @@
 // FIXME: https://github.com/nuxt/nuxt.js/issues/1774
-import {actions, getters, state} from '../../../store/posts'
+import {
+  state,
+  actions,
+  getters
+} from '../../../store/posts'
+import * as routes from '../../../scripts/routes'
 
 const expect = require('./global.spec').expect
 

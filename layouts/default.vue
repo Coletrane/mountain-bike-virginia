@@ -166,8 +166,8 @@
     .main-content {
       padding-top: 6rem;
       padding-bottom: 6rem;
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding-left: 12rem;
+      padding-right: 12rem;
     }
   }
 

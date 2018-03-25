@@ -9,7 +9,7 @@
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
-            <div v-show="showTitle">
+            <div>
               <h1 :class="'mtbva-title'"
                   id="mtbva-title">
                 {{title}}
