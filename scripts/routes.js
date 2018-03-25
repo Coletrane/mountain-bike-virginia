@@ -1,6 +1,8 @@
 const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
+
+const caneCreekViscosetReview = 'cane-creek-viscoset-review'
 const dtSwiss54tRatchetReview = 'dt-swiss-54t-ratchet-review'
 const ravenwoodRide = 'ravenwood-ride'
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
@@ -24,6 +26,7 @@ const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
   dtSwiss54tRatchetReview,
+  caneCreekViscosetReview,
   ravenwoodRide,
   resultsBattleAtBlackhorse2018,
   battleAtBlackhorse2018,
@@ -75,6 +78,7 @@ imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
 imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
+imgRoutes[appRoutesObj[caneCreekViscosetReview]] = ''
 
 let s3
 if (process.env.NODE_ENV === 'production') {
@@ -97,6 +101,7 @@ module.exports = {
   results,
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
+  caneCreekViscosetReview,
   dtSwiss54tRatchetReview,
   ravenwoodRide,
   battleAtBlackhorse2018,
