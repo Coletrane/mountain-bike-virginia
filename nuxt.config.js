@@ -64,28 +64,14 @@ module.exports = {
     ],
     extend (config, {isDev, isClient}) {
       config.entry.routes = ['./scripts/routes.js']
-      console.log(config.entry)
-      // if (isClient) {
-      //   config.plugins.push(
-      //     new webpack.optimize.CommonsChunkPlugin({
-      //       name: 'routes',
-      //       filename: 'routes.js'
-      //     }))
-      // }
-      // config.plugins.forEach(plugin => {
-      //   if (plugin.constructor.name === 'CommonsChunkPlugin') {
-      //     console.log(plugin)
-      //   }
-      // })
-      //
-      // console.log('\n\n\n\n\n\n\n')
-    },
-    plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'routes',
-        filename: 'routes.js'
+      config.plugins.forEach(plugin => {
+        if (plugin.constructor.name === 'CommonsChunkPlugin' &&
+            plugin.chunkNames.includes('vendor')) {
+          plugin.chunkNames.unshift('routes')
+          plugin.filenameTemplate = undefined
+        }
       })
-    ]
+    }
   },
   modules: [
     '@nuxtjs/sitemap',
