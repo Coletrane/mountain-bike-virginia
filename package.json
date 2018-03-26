@@ -87,8 +87,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development nuxt",
-    "build": "npm run sync-json && cd ../ && ./s3-sync-mtbva.sh && cd mountain-bike-virginia && nuxt generate",
-    "sync-json": "node ./scripts/validate-json.js && cp -r ./json/* ../mtbva-s3-bucket/",
+    "build": "npm run cp-json && cd ../ && ./s3-sync-mtbva.sh && cd mountain-bike-virginia && nuxt generate",
+    "cp-json": "node ./scripts/validate-json.js && cp -r ./json/* ../mtbva-s3-bucket/",
     "build-check": "NODE_ENV=development nuxt build --analyze",
     "generate": "nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",

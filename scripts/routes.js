@@ -78,7 +78,7 @@ imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
 imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
-imgRoutes[appRoutesObj[caneCreekViscosetReview]] = ''
+imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
 
 let s3
 if (process.env.NODE_ENV === 'production') {
