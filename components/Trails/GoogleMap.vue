@@ -92,43 +92,26 @@
           })
         }
 
-        // Check if google maps is already included
-        this.checkGoogleMapsExists()
-
-        // Include it if it is not already in the DOM
-        if (!this.$store.state.googleMapsAttached) {
+        // Attach google maps API it if it is not already in the DOM
+        if (!this.$store.state.misc.googleMapsAttached) {
           const mapScript = document.createElement('script')
           mapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.google}&libraries=places&callback=initMap`
           mapScript.defer = true
           mapScript.async = true
           document.body.appendChild(mapScript)
+          this.$store.dispatch('googleMapsAttached')
         }
 
-        this.checkGoogleMapsExists()
       }
     },
     mounted() {
       if (process.browser &&
-          this.$store.state.googleMapsAttached &&
+          this.$store.state.misc.googleMapsAttached &&
           window.google) {
         window.initMap()
       }
     },
     methods: {
-      checkGoogleMapsExists() {
-        if (process.browser) {
-          let scripts = document.getElementsByTagName('script')
-          if (scripts) {
-            scripts = Array.prototype.slice.call(scripts)
-            if (scripts.length > 0) {
-              let scriptExists = scripts.find(script => script.src.includes('maps.googleapis.com'))
-              if (scriptExists) {
-                this.$store.dispatch('googleMapsAttached')
-              }
-            }
-          }
-        }
-      },
       getInfoWindow(marker) {
         if (process.browser) {
           return document.getElementById(`${this.getInfoWindowKebabCase(marker)}-info-window-hidden`).innerHTML
