@@ -42,6 +42,12 @@
         yet to fumble about with that, choosing the factory setup since I installed the unit in April. I figured Cane
         Creek had that part well sorted by the time I came along.
       </div>
+      <blog-image :src="img + 'viscoset-inside.jpg'"/>
+      <div class="blog-p center caption">
+        <a href="https://www.pinkbike.com/news/cane-creek-viscoset-headset-eurobike-2016.html">
+          Photo Credit: Pinkbike
+        </a>
+      </div>
       <div class="blog-p">
         Turning the bars while stopped, a damping resistance is felt, but does not bind unpleasantly like an overtight
         headset. Just smooth, yet slower turning. Out on the trail, no notice of any unpleasant steering restrictions,
