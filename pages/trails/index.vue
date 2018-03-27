@@ -7,7 +7,7 @@
 
     <div class="main-content main-content-mobile">
       <google-map :map="nokeMap"
-                  :markers="trailAreas"/>
+                  :markers="trailAreaMarkers"/>
     </div>
 
   </div>
@@ -32,11 +32,21 @@
       return {
         image: `${s3StaticImg}/foliage.jpg`,
         currentInfoWindow: ' ',
-        trailAreas: trailAreas,
-        nokeMap: nokeMap
+        nokeMap: nokeMap,
+        trailAreas: trailAreas
       }
     },
+    computed: {
+      trailAreaMarkers() {
+        let markers = []
 
+        this.trailAreas.forEach(area => {
+          markers.push(area.mapMarker)
+        })
+
+        return markers
+      }
+    }
   }
 </script>
 

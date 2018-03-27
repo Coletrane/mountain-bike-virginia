@@ -21,7 +21,10 @@ const millMtPosition = {
 }
 trailAreas.push({
   mapMarker: {
-    title: 'Mill Mountain',
+    title: {
+      text: 'Mill Mountain',
+      link: trailsMillMt
+    },
     type: markerTypes.custom,
     position: millMtPosition,
     description: 'Mill Mountain, home of the world\'s largest freestanding illuminated man-made star, constructed in 1949. Boasting 12 miles of trails that are also near beer, Mill Mountain is a staple for after work rides.',
@@ -36,7 +39,9 @@ trailAreas.push({
     },
     mapMarkers: [
       {
-        title: 'Rivers Edge Sports Complex',
+        title: {
+          text: 'Rivers Edge Sports Complex'
+        },
         type: markerTypes.place,
         id: 'ChIJH2RZr6ANTYgRvONHVN3AIF4',
         description: ''
@@ -51,7 +56,10 @@ const carvinsCovePosition = {
 }
 trailAreas.push({
   mapMarker: {
-    title: 'Carvins Cove',
+    title: {
+      text: 'Carvins Cove',
+      link: trailsCarvinsCove
+    },
     position: carvinsCovePosition,
     type: markerTypes.custom
   },
@@ -72,7 +80,10 @@ const exploreParkPosition = {
 }
 trailAreas.push({
   mapMarker: {
-    title: 'Explore Park',
+    title: {
+      text: 'Explore Park',
+      link: trailsExplorePark
+    },
     position: exploreParkPosition,
     type: markerTypes.custom
   },
@@ -93,7 +104,10 @@ const blueRidgePosition = {
 }
 trailAreas.push({
   mapMarker: {
-    title: 'Blue Ridge',
+    title: {
+      text: 'Blue Ridge',
+      link: trailsBlueRidge
+    },
     position: blueRidgePosition,
     type: markerTypes.custom
   },

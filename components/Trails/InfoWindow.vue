@@ -1,14 +1,14 @@
 <template>
   <div class="mtbva-info-window">
-    <nuxt-link v-if="route && route.name"
+    <nuxt-link v-if="title.link && title.link.name"
                :to="route">
       <h3>
-        {{title}}
+        {{title.text}}
       </h3>
     </nuxt-link>
     <div v-else>
       <h3>
-        {{title}}
+        {{title.text}}
       </h3>
     </div>
     <div class="info-window-description"
@@ -22,17 +22,13 @@
     name: 'info-window',
     props: {
       title: {
-        type: String,
+        type: Object,
         required: true
       },
       description: {
         type: String,
         required: false,
         default: 'no description available'
-      },
-      route: {
-        type: String,
-        required: false
       }
     }
   }

@@ -5,9 +5,8 @@
     <div v-show="false">
       <div v-for="marker of markers"
            :id="getInfoWindowKebabCase(marker) + '-info-window-hidden'">
-        <info-window :route="marker.route"
-                     :title="getMarker(marker).title"
-                     :description="getMarker(marker).description"/>
+        <info-window :title="marker.title"
+                     :description="marker.description"/>
       </div>
     </div>
   </div>
@@ -51,15 +50,16 @@
 
 
             let localMarker
-            if (marker.mapMarker.type === markerTypes.custom) {
+            if (marker.type === markerTypes.custom) {
               localMarker = new google.maps.Marker({
-                ...marker.mapMarker,
+                position: marker.position,
+                title: marker.title.text,
                 animation: google.maps.Animation.DROP,
                 map: map
               })
-            } else if (marker.mapMarker.type === markerTypes.place) {
+            } else if (marker.type === markerTypes.place) {
               placesService.getDetails({
-                placeId: marker.mapMarker.id
+                placeId: marker.id
               }, (place, status) => {
                 if (status === google.maps.PlacesServiceStatus.OK) {
                   localMarker = new google.maps.Marker({
@@ -118,14 +118,7 @@
         }
       },
       getInfoWindowKebabCase(marker) {
-        return this.getMarker(marker).title.toLowerCase().replace(' ', '-')
-      },
-      getMarker(marker) {
-        if (marker.mapMarker) {
-          return marker.mapMarker
-        } else {
-          return marker
-        }
+        return marker.title.text.toLowerCase().replace(' ', '-')
       },
     }
   }
