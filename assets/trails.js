@@ -1,4 +1,4 @@
-import * as routes from '../scripts/routes'
+import {trailsMillMt, trailsCarvinsCove, trailsBlueRidge, trailsExplorePark} from '../scripts/routes'
 
 export const markerTypes = {
   place: 'place',
@@ -28,7 +28,7 @@ trailAreas.push({
     img: ''
   },
   headerImg: '',
-  route: routes.trailsMillMt,
+  route: trailsMillMt,
   parking: {
     map: {
       center: millMtPosition,
@@ -57,7 +57,7 @@ trailAreas.push({
   },
   description: 'Carvins Cove Natural Reserve is the second largest municipal park in the nation. With more than 60 miles of trail, and a magnificent bike shop just down the street <a href="http://justtherightgear.com/">Just the Right Gear</a> Carvins Cove is the cornerstone of the Roanoke mountain biking landscape',
   promoImg: '',
-  route: routes.trailsCarvinsCove,
+  route: trailsCarvinsCove,
   parking: {
     map: {
       center: carvinsCovePosition,
@@ -78,7 +78,7 @@ trailAreas.push({
   },
   description: '',
   promoImg: '',
-  route: routes.trailsExplorePark,
+  route: trailsExplorePark,
   parking: {
     map: {
       center: exploreParkPosition,
@@ -99,7 +99,7 @@ trailAreas.push({
   },
   description: '',
   promoImg: '',
-  route: routes.trailsBlueRidge,
+  route: trailsBlueRidge,
   parking: {
     map: {
       center: blueRidgePosition,
@@ -107,3 +107,13 @@ trailAreas.push({
     }
   }
 })
+
+// Helper functions
+export const findTrailArea = (currentRoutePath) => {
+  const routeArr = currentRoutePath.split('/')
+  const trailName = routeArr[routeArr.length - 1].split('-').join(' ')
+  const trailArea = trailAreas.find(area => {
+    return area.mapMarker.title.toLowerCase() === trailName
+  })
+  return trailArea
+}

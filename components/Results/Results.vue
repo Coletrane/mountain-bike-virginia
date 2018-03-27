@@ -4,14 +4,15 @@
       :header-height="700"
       :image="image">
     </m-t-b-v-a-header>
-    <div class="main-content main-content-mobile">
+    <div class="main-content"
+         :style="backgroundImage">
       <card>
         <div slot="content">
-          <dropdown v-if="$store.state.currentRaceName"
-                    :current-item="$store.state.currentRaceName"
-                    :items="races"/>
-          <div v-if="$store.getters.currentRace">
-            <div v-for="clazz in $store.getters.currentRace.results.classes">
+          <dropdown v-if="$store.state.results.currentRace.name"
+                    :current-item="$store.state.results.currentRace.name"
+                    :items="$store.state.results.races"/>
+          <div v-if="$store.state.results.currentRace">
+            <div v-for="clazz in $store.state.results.currentRace.results.classes">
             <h4>{{clazz.name}}</h4>
             <class-table :items="clazz.riders"/>
             </div>
@@ -28,10 +29,12 @@
   import Card from "../Card/Card"
   import Dropdown from "./Dropdown"
   import ClassTable from "./ClassTable"
-  import {s3Pages, results, s3Results} from "../../scripts/routes"
-  import {races} from '../../assets/results'
 
-  const podium = `${s3Pages}${results}/podium.png`
+  import {
+    s3Pages,
+    results,
+    s3StaticImg
+  } from "../../scripts/routes"
 
   export default {
     name: "results",
@@ -43,28 +46,14 @@
     },
     data() {
       return {
-        image: podium,
-        races: races
+        image: `${s3Pages}/${results}/podium.png`,
       }
     },
-    created() {
-      this.getRace()
-      this.$store.subscribe((mutation, state) => {
-        if (mutation.type === 'selectRace' &&
-            !this.raceIsLoaded(mutation.payload)) {
-          this.getRace()
+    computed: {
+      backgroundImage() {
+        return {
+          backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
         }
-      })
-
-    },
-    methods: {
-      async getRace() {
-        const res = await this.$axios.get(`${s3Results}${this.$store.getters.currentRacePath}.json`)
-        this.$store.commit('raceLoaded', res.data)
-        this.currentRace = res.data
-      },
-      raceIsLoaded(name) {
-        return this.$store.state.loadedRaces.find(loaded => loaded.name === name)
       }
     }
   }

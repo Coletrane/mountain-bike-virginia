@@ -2,7 +2,8 @@
   <blog-post
     :header-height="800"
     :image="img + 'IMG_3794.jpg'"
-    :post="post">
+    :post="post"
+    no-title>
     <div slot="content">
       <div class="blog-p">
         The morning of October 29th, 2017, I was intending to have balls. I was <i>indending</i> to just say "I'm doin
@@ -37,30 +38,38 @@
   import BlogPost from "../components/BlogPost.vue"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
+  import {
+    s3Pages,
+    specMines29Oct17
+  } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
-  const post = posts.specMines29Oct17
-
   export default {
-    name: post.route,
+    name: 'spec-mines-oct-29-2017',
     components: {
       BlogPost,
       BlogImage
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts', [
+          specMines29Oct17
+        ])
+      }
+    },
     head() {
-      return headTags(
-        "Spec Mines to Blackhorse Gap",
-        post.description,
-        "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt",
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.description,
+          "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt",
+          this.post
+        )
+      }
     },
     data() {
       return {
-        img:  `${s3Pages}${post.route}/`,
-        post: post
+        img:  `${s3Pages}/${specMines29Oct17}/`,
       }
     }
   }

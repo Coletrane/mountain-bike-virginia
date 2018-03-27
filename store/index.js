@@ -1,52 +1,17 @@
 import Vuex from 'vuex'
-import {races} from '../assets/results'
+import misc from './misc'
+import authors from './authors'
+import posts from './posts'
+import results from './results'
 
-const createStore = () => {
+export default () => {
   return new Vuex.Store({
-
-    state: {
-      page: 1,
-      currentRaceName: races[0],
-      loadedRaces: [],
-      showMenu: false,
-      loaded: false,
-      googleMapsAttached: false
+    modules: {
+      misc,
+      authors,
+      posts,
+      results
     },
-
-    mutations: {
-      changePage (state, page) {
-        state.page = page
-      },
-      selectRace (state, race) {
-        state.currentRaceName = race
-      },
-      raceLoaded (state, race) {
-        state.loadedRaces.push(race)
-      },
-      toggleMenu (state) {
-        state.showMenu = !state.showMenu
-      },
-      closeMenu (state) {
-        state.showMenu = false
-      },
-      onLoad (state) {
-        state.loaded = true
-      },
-      googleMapsAttached (state) {
-        state.googleMapsAttached = true
-      }
-    },
-
-    getters: {
-      currentRacePath: state => {
-        return state.currentRaceName.split(' ').join('-').toLowerCase()
-      },
-      currentRace: state => {
-        return state.loadedRaces.find(race => race.name === state.currentRaceName)
-      }
-    }
-
+    strict: true
   })
 }
-
-export default createStore

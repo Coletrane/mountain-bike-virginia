@@ -17,7 +17,7 @@
         <a v-for="item in items"
            class="dropdown-item mtbva-dropdown-item"
            @click="selectRace(item)">
-          {{item}}
+          {{item.name}}
         </a>
       </div>
     </div>
@@ -42,12 +42,11 @@
       }
     },
     methods: {
-      // TODO: put this in store
       toggleDropdown() {
         this.expanded = !this.expanded
       },
       selectRace(race) {
-        this.$store.commit('selectRace', race)
+        this.$store.dispatch('selectRace', race.route)
         this.toggleDropdown()
       }
     }

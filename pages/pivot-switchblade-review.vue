@@ -52,30 +52,38 @@
   import BlogPost from "../components/BlogPost.vue"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
+  import {
+    s3Pages,
+    pivotSwitchbladeReview
+  } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
-  const post = posts.pivotSwitchbladeReview
-
   export default {
-    name: post.route,
+    name: 'pivot-switchblade-review',
     components: {
       BlogPost,
       BlogImage
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts', [
+          pivotSwitchbladeReview
+        ])
+      }
+    },
     head() {
-      return headTags(
-        "Review: Pivot Switchblade",
-        post.description,
-        "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail",
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.description,
+          "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail",
+          this.post
+        )
+      }
     },
     data() {
       return {
-        img:  `${s3Pages}${post.route}/`,
-        post: post
+        img:  `${s3Pages}/${pivotSwitchbladeReview}/`
       }
     }
   }

@@ -1,5 +1,4 @@
 // Use import when working with ES6 modules
-import {posts} from '../../assets/posts'
 import {headTags} from '../../assets/functions'
 import {resultsMiddleMountainMomma2017} from '../../scripts/routes'
 
@@ -9,7 +8,9 @@ let head = headTags(
   'title',
   'description',
   'keywords',
-  posts.creature2017Recap)
+  {
+    route: 'creature-2017-recap'
+  })
 
 describe('headTags tests', () => {
   it('should have a title tag', () => {

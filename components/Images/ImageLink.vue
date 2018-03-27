@@ -1,12 +1,17 @@
 <template>
   <nuxt-link
-    :to="href ? href : post.route">
+    :to="link">
     <responsive-img :src="img"
                     :alt="post.title"/>
   </nuxt-link>
 </template>
 <script>
   import ResponsiveImg from "./ResponsiveImg"
+
+  import {
+    imgRoutes,
+    s3Pages
+  } from '../../scripts/routes'
 
   export default {
     components: {ResponsiveImg},
@@ -27,8 +32,22 @@
       ResponsiveImg
     },
     computed: {
+      link() {
+        if (this.href) {
+          return this.href
+        } else if (this.post &&
+                   this.$router.options.routes.find(route => route.name === this.post.route)) {
+          return {name: this.post.route}
+        } else {
+          return {name: 'index'}
+        }
+      },
       img() {
-        return this.src ? this.src : this.post.img
+        if (this.src) {
+          return this.src
+        } else {
+          return `${s3Pages}/${this.post.route}/${imgRoutes[this.post.route]}`
+        }
       }
     }
   }

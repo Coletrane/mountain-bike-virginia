@@ -15,50 +15,47 @@
   import BlogPost from "../components/BlogPost.vue"
   import Youtube from "../components/Iframes/Youtube.vue"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
-  import {headTags, buildVideo} from "../assets/functions"
-
-  const post = posts.dodyRidgeRunFall2017
+  import {
+    s3Pages,
+    dodyRidgeRunFall2017
+  } from "../scripts/routes"
+  import {
+    headTags,
+    buildVideo
+  } from "../assets/functions"
 
   export default {
-    name: post.route,
+    name: 'dody-ridge-run-fall-2017',
     components: {
       BlogPost,
       Youtube
     },
-    async asyncData(context){
+    async asyncData(context) {
+      let post = await context.store.dispatch('loadPosts', [
+        dodyRidgeRunFall2017
+      ])
       return {
-        schema: await buildVideo(post)
+        schema: await buildVideo(post),
+        post: post
       }
     },
     head() {
-      let head = {
-        ...headTags(
-          "Video: Dody Ridge Run, Fall 2017",
-          post.description,
-          "mountain, bike, dody, ridge, blue ridge parkway, blue ridge, virginia, trail, rocky, ride, mountain bike, 29er, enduro, all mountain",
-          post
-        )
+      if (this.post && this.schema) {
+        return {
+          ...headTags(
+            this.post.title,
+            this.post.description,
+            "mountain, bike, dody, ridge, blue ridge parkway, blue ridge, virginia, trail, rocky, ride, mountain bike, 29er, enduro, all mountain",
+            this.post),
+          script: this.schema
+        }
       }
-      if (this.schema) {
-        head.script = this.schema
-      }
-      return head
     },
     data() {
       return {
-        img: `${s3Pages}${post.route}/`,
-        post: post
+        img: `${s3Pages}/${dodyRidgeRunFall2017}/`
       }
     }
   }
 </script>
 
-<style>
-  .author-container {
-    padding-top: 0 !important;
-    float: none !important;
-  }
-
-  </style>

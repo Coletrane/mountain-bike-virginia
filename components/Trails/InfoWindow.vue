@@ -1,10 +1,16 @@
 <template>
   <div class="mtbva-info-window">
-    <nuxt-link :to="route">
-      <h1>
+    <nuxt-link v-if="route && route.name"
+               :to="route">
+      <h3>
         {{title}}
-      </h1>
+      </h3>
     </nuxt-link>
+    <div v-else>
+      <h3>
+        {{title}}
+      </h3>
+    </div>
     <div class="info-window-description"
           v-html="description">
     </div>
@@ -26,7 +32,7 @@
       },
       route: {
         type: String,
-        required: true
+        required: false
       }
     }
   }

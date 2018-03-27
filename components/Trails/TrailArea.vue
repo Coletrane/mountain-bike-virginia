@@ -54,14 +54,14 @@
       MTBVAHeader,
       BottomNav
     },
-    data() {
-      return {
-        image: `${s3StaticImg}foliage.jpg`
-      }
-    },
     props: {
       trailArea: {
         required: true
+      }
+    },
+    data() {
+      return {
+        image: `${s3StaticImg}/foliage.jpg`
       }
     }
   }

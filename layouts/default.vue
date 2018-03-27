@@ -1,11 +1,11 @@
 <template>
   <div>
     <transition name="menu-slide">
-      <m-t-b-v-a-menu v-if="$store.state.showMenu"/>
+      <m-t-b-v-a-menu v-if="$store.state.misc.showMenu"/>
     </transition>
     <transition name="overlay-fade">
-      <div v-if="$store.state.showMenu"
-           @click="toggleMenu"
+      <div v-if="$store.state.misc.showMenu"
+           @click="closeMenu"
            class="overlay">
       </div>
     </transition>
@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-  import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
+  import MTBVAFooter from '../components/Footer/MTBVAFooter.vue'
   import MTBVAMenu from '../components/Header/MTBVAMenu'
 
   export default {
@@ -28,7 +28,7 @@
       MTBVAFooter,
       MTBVAMenu
     },
-    name: "app",
+    name: 'app',
     scrollToTop: true,
     data() {
       return {
@@ -36,11 +36,11 @@
       }
     },
     methods: {
-      toggleMenu() {
-        this.$store.commit('toggleMenu')
+      closeMenu() {
+        this.$store.dispatch('closeMenu')
       },
       onLoad() {
-        this.$store.commit('onLoad')
+        this.$store.dispatch('onLoad')
         window.removeEventListener('load', this.onLoad)
       }
     },
@@ -57,12 +57,12 @@
     },
     computed: {
       menuOpen() {
-        return this.$store.state.showMenu
+        return this.$store.state.misc.showMenu
       }
     },
     watch: {
       menuOpen() {
-        if (this.$store.state.showMenu && process.browser) {
+        if (this.$store.state.misc.showMenu && process.browser) {
           document.body.style.overflowY = 'hidden'
         } else {
           document.body.style.overflowY = 'auto'
@@ -97,7 +97,7 @@
     border-color: white;
     font-size: 2rem;
     box-shadow: 0px 0px 7px 1px rgb(0, 0, 0);
-    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
 
   }
 
@@ -114,6 +114,7 @@
   .app-fade-wrapper {
     background-color: black;
   }
+
   .app-fade-enter-active {
     transition: opacity 1s;
   }
@@ -134,23 +135,25 @@
     touch-action: none;
     background-color: rgba(0, 0, 0, 0.6);
   }
+
   .overlay-fade-enter-active, .overlay-fade-leave-active {
     transition: opacity .5s;
   }
+
   .overlay-fade-enter, .overlay-fade-leave-to {
     opacity: 0;
   }
 
   .menu-slide-enter-active, .menu-slide-leave-active {
-    transition: all .2s ;
+    transition: all .2s;
   }
+
   .menu-slide-enter, .menu-slide-leave-to {
     transform: translateX(100%);
   }
 
   .main-content {
     background-color: rgb(78, 69, 49);
-    background-image: url("https://d2i660bt0ywr9a.cloudfront.net/static/img/asfalt-light.png");
     background-repeat: repeat;
     background-position-y: 0px;
     padding-left: 4rem;
@@ -163,8 +166,8 @@
     .main-content {
       padding-top: 6rem;
       padding-bottom: 6rem;
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding-left: 12rem;
+      padding-right: 12rem;
     }
   }
 
@@ -182,9 +185,11 @@
       padding-top: 4rem;
       padding-bottom: 4rem;
     }
+
     .headline {
       font-size: 1.5rem !important;
     }
+
     .subheading {
       font-size: 1.2rem !important;
     }
@@ -194,10 +199,7 @@
     width: 50% !important;
     height: auto !important;
     display: block !important;
-    margin-left: 30% !important;
-    margin-right: auto !important;
-    margin-top: 25% !important;
-    margin-bottom: 25% !important;
+    margin: auto !important;
     background-color: #FFFFFF !important;
   }
 

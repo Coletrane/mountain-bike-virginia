@@ -56,7 +56,7 @@
     },
     data: function () {
       return {
-        img: `${s3StaticImg}`,
+        img: `${s3StaticImg}/`,
         navStyle: {
           boxShadow: boxShadow
         },
@@ -84,7 +84,7 @@
         this.mobile = document.body.clientWidth <= 750
       },
       toggleMenu() {
-        this.$store.commit('toggleMenu')
+        this.$store.dispatch('toggleMenu')
       }
     }
   }

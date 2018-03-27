@@ -85,9 +85,9 @@ const getImageRoute = (post) => {
 
     // FIXME: this only works one level deep
     if (splitUrl.length > 1) {
-      result = `${routes.s3Pages}${splitUrl[0]}/${routes.imgRoutes[post.route]}`
+      result = `${routes.s3Pages}/${splitUrl[0]}/${routes.imgRoutes[post.route]}`
     } else {
-      result = `${routes.s3Pages}${post.route}/${routes.imgRoutes[post.route]}`
+      result = `${routes.s3Pages}/${post.route}/${routes.imgRoutes[post.route]}`
     }
   }
 
@@ -105,7 +105,7 @@ const buildArticle = (post, desc) => {
       '@type': schemaTypes.article,
       '@id': `${routes.baseUrl}${post.route}`,
       author: post.author.name,
-      datePublished: post.date,
+      datePublished: new Date(post.date).toISOString(),
       headline: post.title,
       image: getImageRoute(post),
       publisher: {
@@ -116,12 +116,12 @@ const buildArticle = (post, desc) => {
           url: logoSrc
         }
       },
-      dateModified: post.date
+      dateModified: new Date(post.date).toISOString()
     },
     headline: post.title,
     image: getImageRoute(post),
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
     author: {
       '@type': schemaTypes.person,
       name: post.author.name
@@ -184,7 +184,7 @@ const buildEvent = (post, desc) => {
     '@context': schemaOrg,
     '@type': schemaTypes.event,
     name: post.title,
-    startDate: post.schema.startDate,
+    startDate: new Date(post.schema.startDate).toISOString(),
     location: {
       '@type': schemaTypes.place,
       ...post.schema.location
@@ -205,7 +205,7 @@ const buildReview = (post, desc) => {
       name: post.author.name
     },
     url: `${routes.baseUrl}${post.route}`,
-    datePublished: post.date,
+    datePublished: new Date(post.date).toISOString(),
     publisher: {
       '@type': schemaTypes.org,
       name: 'Mountain Bike Virginia',
@@ -286,4 +286,14 @@ export const justExtension = (file) => {
   })
 
   return extension
+}
+
+export const routeToComponentFilename = (route) => {
+  let postFilename = route.split('-')
+  postFilename = postFilename.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  })
+  postFilename = postFilename.join('')
+
+  return postFilename
 }

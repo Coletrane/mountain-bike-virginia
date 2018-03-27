@@ -5,11 +5,16 @@
       :image="image"
       :title="title"/>
 
-    <div class="main-content">
+    <div class="main-content"
+         :style="backgroundImage">
       <post-card :post="post"
                  :links="false"
                  :no-post-title="noPostTitle"
-                 :header-author="headerAuthor">
+                 :header-author="headerAuthor"
+                 :author-separate-div="authorSeparateDiv">
+        <div slot="header">
+          <slot name="header"/>
+        </div>
         <div slot="media">
           <slot name="content"/>
         </div>
@@ -29,6 +34,8 @@
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
+
+  import {s3StaticImg} from '../scripts/routes'
 
   export default {
     name: 'blog-post',
@@ -72,6 +79,11 @@
         required: false,
         default: true
       },
+      authorSeparateDiv: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       relatedPosts: {
         type: Array,
         required: false
@@ -83,6 +95,11 @@
           return this.post.title
         }
       },
+      backgroundImage() {
+        return {
+          backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
+        }
+      }
     }
   }
 </script>
@@ -105,5 +122,8 @@
     font-size: 1rem;
     color: #5c5e5c;
   }
+
+</style>
+<style scoped>
 
 </style>

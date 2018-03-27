@@ -30,7 +30,7 @@
     },
     data() {
       return {
-        image: `${s3StaticImg}foliage.jpg`,
+        image: `${s3StaticImg}/foliage.jpg`,
         currentInfoWindow: ' ',
         trailAreas: trailAreas,
         nokeMap: nokeMap

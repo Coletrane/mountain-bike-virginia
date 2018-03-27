@@ -63,34 +63,45 @@
   import BlogPost from "../components/BlogPost"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
+  import {
+    s3Pages,
+    firstRide2018,
+    creature2017Recap,
+    middleMtMomma2018
+  } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
-  const post = posts.firstRide2018
 
   export default {
-    name: post.route,
+    name: 'first-ride-2018',
     components: {
       BlogPost,
       BlogImage
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts', [
+          firstRide2018
+        ]),
+        relatedPosts: await context.store.dispatch('loadPosts', [
+          creature2017Recap,
+          middleMtMomma2018
+        ])
+      }
+    },
     head() {
-      return headTags(
-        "First Ride of The New Year 2018",
-        post.description,
-        "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january",
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.description,
+          "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january",
+          this.post
+        )
+      }
     },
     data() {
       return {
-        img:  `${s3Pages}${post.route}/`,
-        post: post,
-        relatedPosts: [
-          posts.creature2017Recap,
-          posts.middleMtMomma2018
-        ]
+        img: `${s3Pages}/${firstRide2018}/`
       }
     }
   }

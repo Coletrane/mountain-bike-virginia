@@ -67,12 +67,12 @@
         faTimesCircle: faTimesCircle,
         faBicycle: faBicycle,
         faListOl: faListOl,
-        pirates: `${s3StaticImg}jolly.png`
+        pirates: `${s3StaticImg}/jolly.png`
       }
     },
     methods: {
       closeMenu() {
-        this.$store.commit('closeMenu')
+        this.$store.dispatch('closeMenu')
       }
     }
   }

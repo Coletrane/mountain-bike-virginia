@@ -123,7 +123,7 @@
             if (scripts.length > 0) {
               let scriptExists = scripts.find(script => script.src.includes('maps.googleapis.com'))
               if (scriptExists) {
-                this.$store.commit('googleMapsAttached')
+                this.$store.dispatch('googleMapsAttached')
               }
             }
           }
@@ -135,7 +135,7 @@
         }
       },
       getInfoWindowKebabCase(marker) {
-        return marker.title.toLowerCase().replace(' ', '-')
+        return this.getMarker(marker).title.toLowerCase().replace(' ', '-')
       },
       getMarker(marker) {
         if (marker.mapMarker) {

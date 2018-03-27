@@ -120,34 +120,44 @@
   import BlogPost from "../components/BlogPost"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {s3Pages} from "../scripts/routes"
-  import {posts} from "../assets/posts"
+  import {
+    s3Pages,
+    gravelocity2018,
+    gravelocity2017Video,
+    specMines29Oct17,
+  } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
-  const post = posts.gravelocity2018
-
   export default {
-    name: post.route,
+    name: 'gravelocity-2018',
     components: {
       BlogPost,
       BlogImage
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts', [
+          gravelocity2018
+        ]),
+        relatedPosts: await context.store.dispatch('loadPosts', [
+          gravelocity2017Video,
+          specMines29Oct17
+        ])
+      }
+    },
     head() {
-      return headTags(
-        "Gravelocity 2018",
-        post.description,
-        "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail",
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.route,
+          this.post.description,
+          "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail",
+          this.post
+        )
+      }
     },
     data() {
       return {
-        img: `${s3Pages}${post.route}/`,
-        post: post,
-        relatedPosts: [
-          posts.specMines29Oct17,
-          posts.battleAtBlackhorse2018
-        ]
+        img: `${s3Pages}/${gravelocity2018}/`,
       }
     }
   }

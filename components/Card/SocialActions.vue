@@ -64,6 +64,11 @@
   a {
     font-size: 2rem;
   }
+  @media (max-width: 575px) {
+    a {
+      font-size: 1.8rem;
+    }
+  }
 
   a.fb-social-action {
     color: #3B5998;
@@ -82,5 +87,10 @@
   a.twitter-social-action {
     color: #1DA1F2;
     padding-left: 1rem;
+  }
+  @media (max-width: 460px) {
+    a.twitter-social-action {
+      padding-left: 0 !important;
+    }
   }
 </style>

@@ -5,11 +5,11 @@
               :height="headerHeight">
       <div slot="hero"
            class="hero-container">
-        <div class="hero-content">
+        <div :class="'hero-content ' + heroClass">
           <transition appear
                       name="two-sec-fade"
                       v-on:enter="titleEntered">
-            <div v-show="showTitle">
+            <div>
               <h1 :class="'mtbva-title'"
                   id="mtbva-title">
                 {{title}}
@@ -69,11 +69,16 @@
       buttonLink: {
         type: String,
         required: false
+      },
+      homePage: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     data() {
       return {
-        img: `${s3StaticImg}`,
+        img: `${s3StaticImg}/`,
         showTitle: false,
         titleShown: false,
       }
@@ -84,6 +89,15 @@
     methods: {
       titleEntered: function (el, done) {
         this.titleShown = true
+      }
+    },
+    computed: {
+      heroClass() {
+        if (this.homePage) {
+          return 'hero-content-home'
+        } else {
+          return 'hero-content-subpage'
+        }
       }
     }
   }
@@ -96,28 +110,37 @@
     padding: 1rem;
     text-align: center;
     position: absolute;
-    top: 70%;
     left: 50%;
     width: 100%;
     height: 500px;
     transform: translate(-50%, -50%);
   }
-  @media (max-width: 800px) {
-    .hero-content {
-      top: 50%;
-    }
+  .hero-content-home {
+    top: 60%;
   }
+  .hero-content-subpage {
+    top: 75%;
+  }
+
   .mtbva-title {
-    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
     font-size: 6rem;
   }
   .mtbva-subtitle {
-    text-shadow: 0px 3px 3px rgb(0, 0, 0);
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
+  }
+  .hero-content-subpage h1 {
+    font-size: 3.5rem;
   }
 
   @media (max-width: 600px) {
-    .hero-content {
-      top: 70%;
+
+    .hero-content-subpage {
+      top: 80%;
+    }
+
+    .hero-content-home {
+      top: 75%;
     }
 
     .mtbva-title {
@@ -127,6 +150,11 @@
     .mtbva-subtitle {
       font-size: 1.5rem;
     }
+
+    .hero-content-subpage h1 {
+      font-size: 2.5rem;
+    }
+
   }
 
   @media (max-width: 450px) {

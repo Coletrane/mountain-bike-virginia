@@ -1,9 +1,9 @@
 <template>
   <div>
-    <trail-area :trail-area="trailArea">
+    <trail-area :trail-area="millMountain">
       <div slot="parking">
-        <google-map :map="trailArea.parking.map"
-                    :markers="trailArea.parking.mapMarkers"/>
+        <google-map :map="millMountain.parking.map"
+                    :markers="millMountain.parking.mapMarkers"/>
       </div>
       <div slot="trails">
 
@@ -19,7 +19,7 @@
   import TrailArea from '../../components/Trails/TrailArea'
   import GoogleMap from '../../components/Trails/GoogleMap'
 
-  import {trailAreas} from '../../assets/trails'
+  import {findTrailArea} from '../../assets/trails'
 
   export default {
     name: 'mill-mountain',
@@ -27,14 +27,9 @@
       TrailArea,
       GoogleMap
     },
-    computed: {
-      trailArea() {
-        const routeArr = this.$router.currentRoute.path.split('/')
-        const trailName = routeArr[routeArr.length - 1].split('-').join(' ')
-        const trailArea = trailAreas.find(area => {
-          return area.mapMarker.title.toLowerCase() === trailName
-        })
-        return trailArea
+    data() {
+      return {
+        millMountain: findTrailArea(this.$router.currentRoute.path)
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <blog-post :header-height="700"
-               :image="post.img"
+               :image="image"
                :post="post"
                no-title
                :no-post-title="false"
@@ -33,17 +33,21 @@
 </template>
 
 <script>
-  import {posts} from '../assets/posts'
-  import {headTags} from '../assets/functions'
-  import {home} from '../assets/head-tags'
-
   import BlogPost from '../components/BlogPost'
   import ImageLink from '../components/Images/ImageLink'
   import RideWithGps from '../components/Iframes/RideWithGps'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  const post = posts.rockstarVa2018
+  import {
+    s3Pages,
+    imgRoutes,
+    rockstarVa2018,
+    middleMtMomma2018,
+    creature2017Recap
+  } from '../scripts/routes'
+  import {headTags} from '../assets/functions'
+  import {home} from '../assets/head-tags'
 
   export default {
     name: 'rockstar-va-2018',
@@ -53,22 +57,31 @@
       BlogPost,
       FontAwesomeIcon
     },
+    async asyncData(context) {
+      return {
+        post: await context.store.dispatch('loadPosts',[
+          rockstarVa2018
+        ]),
+        relatedPosts: await context.store.dispatch('loadPosts', [
+          middleMtMomma2018,
+          creature2017Recap
+        ])
+      }
+    },
     head() {
-      return headTags(
-        'RockStar VA',
-        post.subtitle,
-        home.keywords,
-        post
-      )
+      if (this.post) {
+        return headTags(
+          this.post.title,
+          this.post.subtitle,
+          home.keywords,
+          this.post
+        )
+      }
     },
     data() {
       return {
-        post: post,
         faFacebook: faFacebook,
-        relatedPosts: [
-          posts.middleMtMomma2018,
-          posts.creature2017Recap
-        ]
+        image: `${s3Pages}/${rockstarVa2018}/${imgRoutes[rockstarVa2018]}`
       }
     }
   }
