@@ -24,7 +24,7 @@
         <button class="btn btn-outline-primary white-btn"
                 @click="loadMore()"
                 id="load-more-btn">
-          Keep Pedaling!
+          Load More
         </button>
       </div>
     </div>
