@@ -35,7 +35,7 @@ describe('<home> tests', () => {
       .to.be.true
   })
 
-  it('each card should have social links', async () => {
+  xit('each card should have social links', async () => {
     for (const card of cards) {
       console.log(await card.findElement(
         By.className('headline'))
