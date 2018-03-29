@@ -1,0 +1,18 @@
+{
+  "title": "Review: Guerrilla Gravity Pedalhead",
+  "subtitle": "The pure spirit of a hardtail, fun, and nothing else",
+  "author": "dan",
+  "description": "Review of the Guerrilla Gravity Pedalhead a hardtail that can be in 27.5 plus or 29 inch wheel configurations.",
+  "date": "March 29, 2018",
+  "schema": {
+    "type": "Review",
+    "itemReviewed": {
+      "brand": "Guerrilla Gravity",
+      "model": "Pedalhead"
+    },
+    "reviewRating": {
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+}

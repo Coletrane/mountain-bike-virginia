@@ -15,7 +15,7 @@ export default {
 
         if (res.data) {
           resultAuthor = res.data
-          resultAuthor.imgUrl = `${s3StaticImg}/${resultAuthor.imgUrl}`
+          resultAuthor.imgUrl = `${s3StaticImg}/authors/${resultAuthor.imgUrl}`
           resultAuthor.route = route
           context.commit('AUTHOR_LOADED', resultAuthor)
         }

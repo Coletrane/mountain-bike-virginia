@@ -17,7 +17,6 @@ describe('headTags tests', () => {
     expect(head.title)
       .to.equal('title')
   })
-})
 
 describe('meta tags test', () => {
   head.meta.forEach((meta, i, arr) => {
