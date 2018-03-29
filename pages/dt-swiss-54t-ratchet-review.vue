@@ -87,12 +87,10 @@
         post: await context.store.dispatch('loadPosts', [
           dtSwiss54tRatchetReview
         ]),
-        relatedPosts: [
-          await context.store.dispatch('loadPosts', [
+        relatedPosts: await context.store.dispatch('loadPosts', [
             pivotSwitchbladeReview,
             caneCreekViscosetReview
           ])
-        ]
       }
     },
     head() {

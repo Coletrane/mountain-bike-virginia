@@ -134,34 +134,32 @@ describe('routes tests', () => {
             .to.equal(expected)
         })
 
-        xit('has a valid schema <script> tag', async () => {
+        it('has a valid schema <script> tag', async () => {
           let schema = await driver.findElement(
             By.xpath('//script[@type=\'application/ld+json\']'))
-            .getAttribute('outerHTML')
+            .getAttribute('innerText')
+          // Since this is test mode, all the urls are localhost, replace that with bikeva.com
+          schema = await schema.replace(
+            'http://localhost:3000',
+            'https://bikeva.com')
 
-          // FIXME: https://github.com/request/request/issues/1561
-          // let multipart = [{
-          //   'content-disposition': 'form-data name="html"',
-          //   'content-type': 'text/plain',
-          //   body: await schema
-          // }]
-          let form = await schema
-          console.log(await form)
           let res = await request({
-            uri: await googleDataValidator,
+            uri: googleDataValidator,
             method: 'POST',
-            formData: form,
+            formData: {
+              html: await schema
+            },
             resolveWithFullResponse: true
           })
 
           // Strip out weird beginning characters Google added for some reason
-          res.body = await res.body.split(")]}'").join('')
-          res.body = JSON.parse(await res.body)
+          res.body = await res.body.replace(")]}'", '')
+          const resObj = JSON.parse(await res.body)
 
           expect(await res.statusCode)
             .to.equal(200)
 
-          expect(await res.body.errors.length)
+          expect(await resObj.totalNumErrors)
             .to.equal(0)
         })
       })

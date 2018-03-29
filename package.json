@@ -64,7 +64,7 @@
     "node-sass": "^4.6.0",
     "postcss-loader": "^2.0.6",
     "prerender-spa-plugin": "^2.1.0",
-    "request": "^2.83.0",
+    "request": "^2.85.0",
     "request-promise": "^4.2.2",
     "sass-loader": "^6.0.6",
     "selenium-webdriver": "^4.0.0-alpha.1",
