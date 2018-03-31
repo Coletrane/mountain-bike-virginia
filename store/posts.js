@@ -2,7 +2,6 @@ import * as routes from '../scripts/routes'
 import axios from 'axios'
 
 const postsOrder = [
-  routes.guerrillaGravityPedalheadReview,
   routes.caneCreekViscosetReview,
   routes.dtSwiss54tRatchetReview,
   routes.battleAtBlackhorse2018,
@@ -24,7 +23,7 @@ const postsOrder = [
 
 // Will always be 1 less than total pages since last page will have the rest
 const postsPerPage = [
-  10
+  9
 ]
 postsPerPage.push(
   postsOrder.length - postsPerPage.reduce((accumulator, currentValue) => {

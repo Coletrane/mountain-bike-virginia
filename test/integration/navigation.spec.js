@@ -1,6 +1,6 @@
-const weatherIds = require('../../../assets/weather').weatherIds
+const weatherIds = require('../../assets/weather').weatherIds
 
-const global = require('../global.spec')
+const global = require('./global.spec')
 const By = require('selenium-webdriver').By
 const until = require('selenium-webdriver').until
 

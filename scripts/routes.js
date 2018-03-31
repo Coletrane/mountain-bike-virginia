@@ -2,7 +2,6 @@ const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
 
-const guerrillaGravityPedalheadReview = 'guerrilla-gravity-pedalhead-review'
 const caneCreekViscosetReview = 'cane-creek-viscoset-review'
 const dtSwiss54tRatchetReview = 'dt-swiss-54t-ratchet-review'
 const ravenwoodRide = 'ravenwood-ride'
@@ -28,7 +27,6 @@ const appRoutes = [
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
 
-  guerrillaGravityPedalheadReview,
   dtSwiss54tRatchetReview,
   caneCreekViscosetReview,
   ravenwoodRide,
@@ -68,7 +66,6 @@ imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
 
-imgRoutes[appRoutesObj[guerrillaGravityPedalheadReview]] = ''
 imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
 imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
@@ -108,7 +105,6 @@ module.exports = {
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
 
-  guerrillaGravityPedalheadReview,
   caneCreekViscosetReview,
   dtSwiss54tRatchetReview,
   ravenwoodRide,
