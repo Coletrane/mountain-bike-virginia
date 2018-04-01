@@ -134,7 +134,7 @@ describe('routes tests', () => {
             .to.equal(expected)
         })
 
-        it('has a valid schema <script> tag', async () => {
+        xit('has a valid schema <script> tag', async () => {
           let schema = await driver.findElement(
             By.xpath('//script[@type=\'application/ld+json\']'))
             .getAttribute('innerText')
@@ -159,6 +159,9 @@ describe('routes tests', () => {
           expect(await res.statusCode)
             .to.equal(200)
 
+          if (resObj.totalNumErrors > 0) {
+            console.log(resObj.errors)
+          }
           expect(await resObj.totalNumErrors)
             .to.equal(0)
         })

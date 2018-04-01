@@ -17,7 +17,7 @@ describe('<home> tests', () => {
     expect = await global.expect
 
     console.log('Sleeping for Safari\'s stupidity')
-    await driver.sleep(3000)
+    await driver.sleep(6000)
     console.log('Sleep over!')
 
     for (let i = 1; i < numberOfPages; i++) {
@@ -29,7 +29,7 @@ describe('<home> tests', () => {
       }
     }
 
-    await driver.sleep(3000)
+    await driver.sleep(6000)
     console.log('New page sleep over!')
 
     cards = await driver.findElements(
