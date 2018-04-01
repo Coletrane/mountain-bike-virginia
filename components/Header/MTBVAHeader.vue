@@ -6,9 +6,6 @@
       <div slot="hero"
            class="hero-container">
         <div :class="'hero-content ' + heroClass">
-          <transition appear
-                      name="two-sec-fade"
-                      v-on:enter="titleEntered">
             <div>
               <h1 :class="'mtbva-title'"
                   id="mtbva-title">
@@ -27,7 +24,6 @@
                 </button>
               </a>
             </div>
-          </transition>
         </div>
       </div>
     </parallax>
@@ -79,16 +75,6 @@
     data() {
       return {
         img: `${s3StaticImg}/`,
-        showTitle: false,
-        titleShown: false,
-      }
-    },
-    mounted() {
-      this.showTitle = true
-    },
-    methods: {
-      titleEntered: function (el, done) {
-        this.titleShown = true
       }
     },
     computed: {
@@ -103,8 +89,6 @@
   }
 </script>
 <style>
-  .hero-container {
-  }
 
   .hero-content {
     padding: 1rem;

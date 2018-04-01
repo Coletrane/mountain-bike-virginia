@@ -72,7 +72,7 @@
   import BlogImage from '../components/Images/BlogImage'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages, dtSwiss54tRatchetReview, pivotSwitchbladeReview} from '../scripts/routes'
+  import {s3Pages, dtSwiss54tRatchetReview, pivotSwitchbladeReview, caneCreekViscosetReview} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {
@@ -87,11 +87,10 @@
         post: await context.store.dispatch('loadPosts', [
           dtSwiss54tRatchetReview
         ]),
-        relatedPosts: [
-          await context.store.dispatch('loadPosts', [
-            pivotSwitchbladeReview
+        relatedPosts: await context.store.dispatch('loadPosts', [
+            pivotSwitchbladeReview,
+            caneCreekViscosetReview
           ])
-        ]
       }
     },
     head() {

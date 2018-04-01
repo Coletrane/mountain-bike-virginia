@@ -31,15 +31,17 @@ const creature2016 = 'creature-2016'
 const appRoutes = [
   results,
   resultsMiddleMountainMomma2017,
-  dtSwiss54tRatchetReview,
-  caneCreekViscosetReview,
-  ravenwoodRide,
   resultsBattleAtBlackhorse2018,
+
   trails,
   trailsMillMt,
   trailsCarvinsCove,
   trailsExplorePark,
   trailsBlueRidge,
+
+  dtSwiss54tRatchetReview,
+  caneCreekViscosetReview,
+  ravenwoodRide,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
@@ -69,27 +71,29 @@ appRoutes.forEach((route, i, arr) => {
 appRoutes.unshift('/')
 
 let imgRoutes = {}
+
 imgRoutes['/'] = 'foliage.jpg'
+
 imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
-imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
+
+imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
+imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
+imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
 imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
-imgRoutes[relaunch] = 'rockymthi8.jpg'
-imgRoutes[appRoutesObj[creature2017Recap]] = 'lumberjack.jpg'
-imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
-imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'
-imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
-imgRoutes[appRoutesObj[creature2017Recap]] = 'wake-champ.jpg'
-imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
+imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
-imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
+imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
+imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
+imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'
 imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
-imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
-imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
+imgRoutes[appRoutesObj[creature2017Recap]] = 'wake-champ.jpg'
+imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
+imgRoutes[relaunch] = 'rockymthi8.jpg'
 
 let s3
 if (process.env.NODE_ENV === 'production') {
@@ -112,14 +116,16 @@ module.exports = {
   results,
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
-  caneCreekViscosetReview,
-  dtSwiss54tRatchetReview,
-  ravenwoodRide,
+
   trails,
   trailsMillMt,
   trailsCarvinsCove,
   trailsExplorePark,
   trailsBlueRidge,
+
+  caneCreekViscosetReview,
+  dtSwiss54tRatchetReview,
+  ravenwoodRide,
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
@@ -134,6 +140,7 @@ module.exports = {
   creature2017Recap,
   relaunch,
   creature2016,
+
   appRoutes,
   appRoutesObj,
   imgRoutes,

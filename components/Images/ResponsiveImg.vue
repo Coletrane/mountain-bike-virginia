@@ -50,15 +50,6 @@
   }
 </script>
 <style>
-  img[lazy=loading] {
-    width: 20%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25%;
-    margin-bottom: 25%;
-  }
 
   .landscape[lazy=loaded] {
     width: 100% !important;
