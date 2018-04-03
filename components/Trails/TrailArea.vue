@@ -2,8 +2,9 @@
   <div>
     <m-t-b-v-a-header :header-height="700"
                       :image="image"
-                      :title="trailArea.mapMarker.title"/>
-    <div class="main-content main-content-mobile trail-area-content">
+                      :title="trailArea.mapMarker.title.text"/>
+    <div class="main-content trail-area-content"
+         :style="{backgroundImage: backgroundImage}">
 
       <card id="parking">
         <div slot="content">
@@ -61,7 +62,8 @@
     },
     data() {
       return {
-        image: `${s3StaticImg}/foliage.jpg`
+        image: `${s3StaticImg}/foliage.jpg`,
+        backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`
       }
     }
   }

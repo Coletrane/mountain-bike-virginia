@@ -1,15 +1,9 @@
 <template>
   <div>
-    <trail-area :trail-area="millMountain">
+    <trail-area :trail-area="blueRidge">
       <div slot="parking">
-        <google-map :map="millMountain.parking.map"
-                    :markers="millMountain.parking.mapMarkers"/>
-      </div>
-      <div slot="trails">
-
-      </div>
-      <div slot="beer">
-
+        <google-map :map="blueRidge.parking.map"
+                    :markers="blueRidge.parking.mapMarkers"/>
       </div>
     </trail-area>
   </div>
@@ -22,15 +16,17 @@
   import {findTrailArea} from '../../assets/trails'
 
   export default {
-    name: 'mill-mountain',
+    name: 'blue-ridge',
     components: {
       TrailArea,
       GoogleMap
     },
     data() {
       return {
-        millMountain: findTrailArea(this.$router.currentRoute.path)
+        blueRidge: findTrailArea(this.$router.currentRoute.path)
       }
+    },
+    mounted() {
     }
   }
 </script>

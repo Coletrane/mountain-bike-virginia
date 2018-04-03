@@ -6,6 +6,7 @@
       <div v-for="marker of markers"
            :id="getInfoWindowKebabCase(marker) + '-info-window-hidden'">
         <info-window :title="marker.title"
+                     :image="marker.img"
                      :description="marker.description"/>
       </div>
     </div>
@@ -80,7 +81,12 @@
           // Add event listeners to info windows
           this.mapMarkers.forEach((marker, i, arr) => {
             marker.addListener('click', () => {
-              if (marker.title !== this.currentInfoWindow) {
+              if (marker.title === this.currentInfoWindow) {
+                this.infoWindows.forEach(infoWindow => {
+                  infoWindow.close()
+                })
+                this.currentInfoWindow = null
+              } else {
                 this.infoWindows.forEach(infoWindow => {
                   infoWindow.close()
                 })

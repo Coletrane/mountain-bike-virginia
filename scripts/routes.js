@@ -108,6 +108,7 @@ const s3Sponsors = s3 + '/static/sponsors'
 const s3Results = s3 + '/results'
 const s3Authors = s3 + '/authors'
 const s3Posts = s3 + '/posts'
+const s3Trails = 'http://localhost:3000/trails' // FIXME
 const s3WeatherIcons = s3 + '/static/weather-icons'
 const s3Pages = s3 + '/pages'
 const baseUrl = 'https://bikeva.com'
@@ -151,6 +152,7 @@ module.exports = {
   s3Results,
   s3Authors,
   s3Posts,
+  s3Trails,
   s3WeatherIcons,
   s3Pages,
   baseUrl

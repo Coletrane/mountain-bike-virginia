@@ -5,7 +5,8 @@
       :image="image">
     </m-t-b-v-a-header>
 
-    <div class="main-content main-content-mobile">
+    <div class="main-content"
+         :style="{backgroundImage: backgroundImage}">
       <google-map :map="nokeMap"
                   :markers="trailAreaMarkers"/>
     </div>
@@ -31,6 +32,7 @@
     data() {
       return {
         image: `${s3StaticImg}/foliage.jpg`,
+        backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`,
         currentInfoWindow: ' ',
         nokeMap: nokeMap,
         trailAreas: trailAreas

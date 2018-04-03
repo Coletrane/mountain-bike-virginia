@@ -1,4 +1,6 @@
-import {trailsMillMt, trailsCarvinsCove, trailsBlueRidge, trailsExplorePark} from '../scripts/routes'
+import {s3Trails, trailsMillMt, trailsCarvinsCove, trailsBlueRidge, trailsExplorePark} from '../scripts/routes'
+
+const googleMapsUrl = 'http://www.google.com/maps/place/'
 
 export const markerTypes = {
   place: 'place',
@@ -61,10 +63,11 @@ trailAreas.push({
       link: trailsCarvinsCove
     },
     position: carvinsCovePosition,
-    type: markerTypes.custom
+    type: markerTypes.custom,
+    description: 'Carvins Cove Natural Reserve is the second largest municipal park in the nation. With more than 60 miles of trail, and a magnificent bike shop just down the street <a href="http://justtherightgear.com/">Just the Right Gear</a> Carvins Cove is the cornerstone of the Roanoke mountain biking landscape',
+    img: ''
   },
-  description: 'Carvins Cove Natural Reserve is the second largest municipal park in the nation. With more than 60 miles of trail, and a magnificent bike shop just down the street <a href="http://justtherightgear.com/">Just the Right Gear</a> Carvins Cove is the cornerstone of the Roanoke mountain biking landscape',
-  promoImg: '',
+  headerImg: '',
   route: trailsCarvinsCove,
   parking: {
     map: {
@@ -102,6 +105,11 @@ const blueRidgePosition = {
   lat: 37.4087,
   lng: -79.7485
 }
+const dayCreekPosition = {
+  lat: 37.408811,
+  lng: -79.748277
+}
+const blueRidgeImg = `${s3Trails}/blue-ridge`
 trailAreas.push({
   mapMarker: {
     title: {
@@ -109,25 +117,42 @@ trailAreas.push({
       link: trailsBlueRidge
     },
     position: blueRidgePosition,
-    type: markerTypes.custom
+    type: markerTypes.custom,
+    description: "Nestled in census-designated place of Blue Ridge, on the Blue Ridge Mountains, and along the Blue Ridge Parkway (America's longest linear park at 469 miles) lies a special convergence of old mining trails, and the Appalachian Trail (No bikes)",
+    img: ''
   },
-  description: '',
-  promoImg: '',
+  headerImg: '',
   route: trailsBlueRidge,
   parking: {
     map: {
       center: blueRidgePosition,
       zoom: 12
-    }
+    },
+    mapMarkers: [
+      {
+        title: {
+          text: 'Day Creek'
+        },
+        type: markerTypes.custom,
+        position: dayCreekPosition,
+        description: `<a href="${googleMapsUrl}${dayCreekPosition.lat},${dayCreekPosition.lng}"> Directions to here </a>`,
+        img: `${blueRidgeImg}/day-creek-parking-lot.jpg`
+      }
+    ]
   }
 })
 
 // Helper functions
 export const findTrailArea = (currentRoutePath) => {
   const routeArr = currentRoutePath.split('/')
-  const trailName = routeArr[routeArr.length - 1].split('-').join(' ')
-  const trailArea = trailAreas.find(area => {
-    return area.mapMarker.title.toLowerCase() === trailName
+  let trailName = routeArr.find(chunk => {
+    return !chunk.includes('trail') && chunk !== ''
   })
+  trailName = trailName.split('-').join(' ')
+
+  const trailArea = trailAreas.find(area => {
+    return area.mapMarker.title.text.toLowerCase() === trailName
+  })
+
   return trailArea
 }
