@@ -16,8 +16,8 @@ describe('<home> tests', () => {
     driver = await global.driver
     expect = await global.expect
 
-    console.log('Sleeping for Safari\'s stupidity')
-    await driver.sleep(6000)
+    console.log('Sleeping')
+    await driver.sleep(3000)
     console.log('Sleep over!')
 
     for (let i = 1; i < numberOfPages; i++) {
@@ -25,11 +25,11 @@ describe('<home> tests', () => {
         By.id('load-more-btn'))
       if (await loadMoreButton) {
         console.log('Clicking Load More button')
-        await loadMoreButton.click()
+        driver.executeScript("document.getElementById('load-more-btn').click();")
       }
     }
 
-    await driver.sleep(6000)
+    await driver.sleep(3000)
     console.log('New page sleep over!')
 
     cards = await driver.findElements(
