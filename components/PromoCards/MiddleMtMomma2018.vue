@@ -14,7 +14,7 @@
         21st annual Middle Mountain Momma at the gorgeous <a
         href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
         State Park.</a> The
-        first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
+        first race in the XXC Marathon Series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
         44mi.
         <nuxt-link :to="resultsMiddleMountainMomma2017">
           View the results from last year.

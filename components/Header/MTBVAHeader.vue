@@ -2,7 +2,7 @@
   <div id="mtbva-header">
     <navigation/>
     <parallax :src="image"
-              :height="headerHeight">
+              :height="1000">
       <div slot="hero"
            class="hero-container">
         <div :class="'hero-content ' + heroClass">
