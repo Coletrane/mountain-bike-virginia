@@ -2,6 +2,8 @@ const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
 
+const middleMtMomma2018 = 'middle-mt-momma-2018'
+const rockstarVa2018 = 'rockstar-va-2018'
 const hoopHoleTrailWork2018 = 'hoop-hole-trail-work-2018'
 const caneCreekViscosetReview = 'cane-creek-viscoset-review'
 const dtSwiss54tRatchetReview = 'dt-swiss-54t-ratchet-review'
@@ -9,8 +11,6 @@ const ravenwoodRide = 'ravenwood-ride'
 const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
 const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
 const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
-const rockstarVa2018 = 'rockstar-va-2018'
-const middleMtMomma2018 = 'middle-mt-momma-2018'
 const gravelocity2018 = 'gravelocity-2018'
 const firstRide2018 = 'first-ride-2018'
 const dodyRidgeRunFall2017 = 'dody-ridge-run-fall-2017'
@@ -28,6 +28,8 @@ const appRoutes = [
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
 
+  middleMtMomma2018,
+  rockstarVa2018,
   hoopHoleTrailWork2018,
   dtSwiss54tRatchetReview,
   caneCreekViscosetReview,
@@ -35,8 +37,6 @@ const appRoutes = [
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
-  rockstarVa2018,
-  middleMtMomma2018,
   gravelocity2018,
   firstRide2018,
   dodyRidgeRunFall2017,
@@ -68,6 +68,8 @@ imgRoutes[appRoutesObj[results]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
 imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
 
+imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
+imgRoutes[appRoutesObj[rockstarVa2018]] = 'stokesville-market-snow.jpg'
 imgRoutes[appRoutesObj[hoopHoleTrailWork2018]] = 'cole-sly-lookback.jpg'
 imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
 imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
@@ -75,8 +77,6 @@ imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
 imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
 imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
 imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
-imgRoutes[appRoutesObj[rockstarVa2018]] = 'rockstar.jpg'
-imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
 imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
 imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
 imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
@@ -108,6 +108,8 @@ module.exports = {
   resultsMiddleMountainMomma2017,
   resultsBattleAtBlackhorse2018,
 
+  middleMtMomma2018,
+  rockstarVa2018,
   hoopHoleTrailWork2018,
   caneCreekViscosetReview,
   dtSwiss54tRatchetReview,
@@ -115,9 +117,7 @@ module.exports = {
   battleAtBlackhorse2018,
   battleAtBlackhorse2018Video,
   tuesdayNightLightsVideoFeb2018,
-  rockstarVa2018,
   gravelocity2018,
-  middleMtMomma2018,
   firstRide2018,
   dodyRidgeRunFall2017,
   specMines29Oct17,

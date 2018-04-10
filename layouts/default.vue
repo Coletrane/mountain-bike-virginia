@@ -100,16 +100,37 @@
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
 
   }
-
   .white-btn:hover {
     background-color: rgba(0, 0, 0, 0.75);
     border-color: white;
   }
-
   .white-btn:active {
     background-color: #3d7635 !important;
     border-color: white !important;
   }
+
+  .black-btn {
+    font-family: 'Julius Sans One', sans-serif;
+    color: black;
+    border-color: black;
+    font-size: 2rem;
+  }
+  .black-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+  }
+  .black-btn:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+  }
+  .black-btn-selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+  }
+
 
   .app-fade-wrapper {
     background-color: black;
@@ -209,5 +230,22 @@
 
   .inline-facebook-icon {
     font-size: 1.5rem;
+  }
+
+  /*get rid of ridewithgps border radius*/
+  .TripRouteEmbed-53d3c121 {
+    border-radius: 0 !important;
+  }
+
+  .image-smaller {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+
+  @media (max-width: 720px) {
+    .image-smaller {
+      width: 100%;
+    }
   }
 </style>

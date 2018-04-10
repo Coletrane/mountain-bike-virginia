@@ -130,10 +130,4 @@
     }
   }
 </style>
-<style scoped>
-  .image-smaller {
-    width: 60%;
-    display: block;
-    margin-left: 20%;
-  }
-</style>
+

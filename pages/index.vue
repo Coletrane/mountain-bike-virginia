@@ -112,17 +112,5 @@
     font-size: 1rem;
   }
 
-  .image-smaller {
-    width: 60%;
-    display: block;
-    margin: auto;
-  }
-
-  @media (max-width: 720px) {
-    .image-smaller {
-      width: 100%;
-    }
-  }
-
 </style>
 
