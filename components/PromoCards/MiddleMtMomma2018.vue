@@ -42,9 +42,11 @@
       <a v-if="$store.state.misc.loaded"
          :href="$store.getters.getPost(middleMtMomma2018.fbEvent)"
          style="text-align: center">
-        <img :src="mmmImg + 'mmm-start.gif'"
-             alt="Middle Mountain Momma Starting Line"
-             style="width: 100%"/>
+        <m-t-b-v-a-video :src="mmmImg + 'mmm-start.mp4'"
+                         autoplay
+                         muted
+                         preload
+                         loop/>
       </a>
       <ride-with-gps :url="$store.getters.getPost(middleMtMomma2018).rwGps"/>
     </div>
@@ -54,6 +56,7 @@
 <script>
   import PostCard from '../Card/PostCard'
   import RideWithGps from '../Iframes/RideWithGps'
+  import MTBVAVideo from '../Iframes/MTBVAVideo'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
   
@@ -68,6 +71,7 @@
     components: {
       PostCard,
       RideWithGps,
+      MTBVAVideo,
       FontAwesomeIcon
     },
     data() {

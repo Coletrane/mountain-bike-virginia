@@ -50,9 +50,11 @@
           <a v-if="$store.state.misc.loaded"
              :href="post.fbEvent"
              style="text-align: center">
-            <img :src="img + 'mmm-start.gif'"
-                 alt="Middle Mountain Momma Starting Line"
-                 style="width: 100%"/>
+            <m-t-b-v-a-video :src="img + 'mmm-start.mp4'"
+                             autoplay
+                             muted
+                             preload
+                             loop/>
           </a>
           <ride-with-gps :url="post.rwGps"/>
         </div>
@@ -64,6 +66,7 @@
 <script>
   import BlogImage from '../components/Images/BlogImage'
   import RideWithGps from '../components/Iframes/RideWithGps'
+  import MTBVAVideo from '../components/Iframes/MTBVAVideo'
   import BlogPost from '../components/BlogPost'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
@@ -77,6 +80,7 @@
     components: {
       BlogPost,
       RideWithGps,
+      MTBVAVideo,
       BlogImage,
       FontAwesomeIcon
     },
