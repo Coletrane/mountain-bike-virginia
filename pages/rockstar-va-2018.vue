@@ -52,6 +52,7 @@
           If you don't think you need a frame bag or two, you're wrong.
         </div>
         <blog-image :src="img + 'turner-knolling.jpg'"/>
+        <blog-image :src="img + 'pre-gps-turner.jpg'"/>
         <div class="blog-p">
           We set out and hit the downhill pump track at Hillandale Park before a 12 mile rolling section through rural Dale Enterprise and Hinton. This section is a perfect warm up, and you will want a warm up, because what comes next is hainus in every sense. 2,900 feet in 12 miles is what you will be gaining up Slate Springs Mountain, you may be stopping, and you will certainly be pushing if you are a loaded down bikepacking rig.
         </div>
@@ -79,9 +80,16 @@
         <blog-image :src="img + 'jeeps-snow.jpg'"/>
         <quote quote="This 2 is gonna become a 10 real quick if we don't get off this rock"/>
         <div class="blog-p">
-
-            The Jeeps eventually caught up, just as it began to snow.
+            The Jeeps eventually caught up, just as it began to snow. Me, Ed and Travis said goodbye to them, looked at each other and knew. We had to move. Now. The small descent to the base of Reddish Kob was quite fun for doubletrack. Easy grade rocky technical sections meant that us on the full suspensions finally excelled in both speed and enjoyment. Me and Travis wait at the next junction for Ed. As he comes up, he says "Oh you missed it. Some of the best bike riding of all time back there, I mean people would pay to watch that." He then goes on to tell us a piece of gear he had strapped to his bike had fallen off due to the bumps. "No matter, I'll just shove it down my jacket." (which was much too thin for now)
         </div>
+        <div class="blog-p">
+          Cold. Fatigue. Little locational awareness. I felt genuinely anxious, for the first time in a long time. My body tapped its adrenaline reserves, but alas, no drop of survival gasoline could be siphoned. We reach the base of Reddish Knob, snow accumulating, CamelBaks frozen, more climbing. I gave out. My plan had always been to just start and see how far I got in the weekend, so I suppose this was not a drastic deviation, but given my heavy packing woes, this <i>new</i> plan was defeat. As we stood at the junction to the beginning of the Reddish Knob ascent, Virginia on our left arm, West Virginia on our right, I announced, "I'm bailing." I blew down Briery Branch rd 20 miles into Stokesville, where I took refuge at Stokesville Market.
+        </div>
+        <blog-image :src="img + 'stokesville-market-refuge.jpg'"/>
+        <div class="blog-p">
+          They say that sometimes when you need things most, they appear. Feeling defeated, foolish, I waited at the Stokesville Market. As I walked the aisles I naturally gravitated to the beer section. I scanned up and down, surprised by the quality selection of craft brews, something I would not expect for a shanty, rural market in western Virginia. I look up, and think I'm hallucinating. There it is. The beer I've been looking for since November. The beer who's recipe changes every year. I had already come to terms with the fact that, yes 2017 could have been a great vintage, but I'll never know, because I never found it. Here in my darkest hour, the Stokesville Market had <a href="https://www.anchorbrewing.com/beer/christmas_ale">Anchor Christmas Ale.</a> In a grand irony I sat outside on the bench, arm around my bike, drinking an Anchor Christmas Ale, watching snow fall on April 7.
+        </div>
+        <blog-image :src="img + 'stokesville-market-snow.jpg'"/>
       </div>
     </blog-post>
   </div>
