@@ -2,7 +2,6 @@
   <div>
     <blog-post :image="img + 'stokesville-market-snow.jpg'"
                :post="post"
-               no-title
                :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">
@@ -87,7 +86,11 @@
         </div>
         <blog-image :src="img + 'stokesville-market-refuge.jpg'"/>
         <div class="blog-p">
-          They say that sometimes when you need things most, they appear. Feeling defeated, foolish, I waited at the Stokesville Market. As I walked the aisles I naturally gravitated to the beer section. I scanned up and down, surprised by the quality selection of craft brews, something I would not expect for a shanty, rural market in western Virginia. I look up, and think I'm hallucinating. There it is. The beer I've been looking for since November. The beer who's recipe changes every year. I had already come to terms with the fact that, yes 2017 could have been a great vintage, but I'll never know, because I never found it. Here in my darkest hour, the Stokesville Market had <a href="https://www.anchorbrewing.com/beer/christmas_ale">Anchor Christmas Ale.</a> In a grand irony I sat outside on the bench, arm around my bike, drinking an Anchor Christmas Ale, watching snow fall on April 7.
+          They say that sometimes when you need things most, they appear. Feeling defeated, foolish, I waited at the Stokesville Market. As I walked the aisles I naturally gravitated to the beer section. I scanned up and down, surprised by the quality selection of craft brews, something I would not expect for a shanty, rural market in western Virginia. I look up, and think I'm hallucinating. There it is. The beer I've been looking for since November. The beer who's recipe changes every year. I had already come to terms with the fact that, yes 2017 could have been a great vintage, but I'll never know, because I never found it. Here in my darkest hour, the Stokesville Market had <a href="https://www.anchorbrewing.com/beer/christmas_ale">Anchor Christmas Ale.</a>
+        </div>
+        <blog-image :src="img + 'anchor-christmas-ale.jpg'"/>
+        <div class="blog-p">
+          In a grand irony I sat outside on the bench, arm around my bike, drinking an Anchor Christmas Ale, watching snow fall on April 7.
         </div>
         <blog-image :src="img + 'stokesville-market-snow.jpg'"/>
       </div>

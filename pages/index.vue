@@ -24,7 +24,7 @@
         <button class="btn btn-outline-primary white-btn"
                 @click="loadMore()"
                 id="load-more-btn">
-          Load More
+          NEXT PAGE
         </button>
       </div>
     </div>
@@ -101,6 +101,7 @@
 
   .load-more {
     text-align: center;
+    padding-top: 2rem;
   }
 
   .card-container {

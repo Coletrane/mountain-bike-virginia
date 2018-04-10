@@ -9,7 +9,7 @@
             <div>
               <h1 :class="'mtbva-title'"
                   id="mtbva-title">
-                {{title}}
+                {{title.toUpperCase()}}
               </h1>
               <h2 class="white--text headline mtbva-subtitle"
                   id="mtbva-subtitle">
@@ -20,7 +20,7 @@
                  class="button-link"
                  id="events-button">
                 <button class="btn btn-outline-primary white-btn">
-                    {{button}}
+                    {{button.toUpperCase()}}
                 </button>
               </a>
             </div>
@@ -103,7 +103,7 @@
     top: 60%;
   }
   .hero-content-subpage {
-    top: 75%;
+    top: 60%;
   }
 
   .mtbva-title {

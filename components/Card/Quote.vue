@@ -58,7 +58,28 @@
     font-size: 2rem;
     text-align: center;
   }
+  svg {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .quote-person {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 550px) {
+    .quote {
+      font-size: 1.5rem;
+    }
+    svg {
+      font-size: 1rem;
+    }
+    .quote-person {
+      font-size: .8rem;
+    }
+  }
   .left-quote {
+    margin-right: 0;
     flex: 0 1 auto;
     align-self: flex-start;
   }
@@ -67,19 +88,8 @@
     align-self: center;
   }
   .right-quote {
+    margin-left: 0;
     flex: 0 1 auto;
     align-self: flex-end;
-  }
-  svg {
-    font-size: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-
-
-  .quote-person {
-    text-align: center;
-    font-size: 1.2rem;
   }
 </style>

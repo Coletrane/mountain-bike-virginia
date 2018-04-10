@@ -20,7 +20,11 @@ module.exports = {
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Julius+Sans+One|Lato'
+        href: routes.s3Fonts + '/MyriadPro-Bold/styles.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Lato'
       },
       {
         rel: 'apple-touch-icon',

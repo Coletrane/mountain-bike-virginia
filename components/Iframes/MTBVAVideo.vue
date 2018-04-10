@@ -1,4 +1,5 @@
 <template>
+  <div class="video-wrapper">
   <video v-if="$store.state.misc.loaded"
          width="100%"
          :preload="preload"
@@ -8,6 +9,7 @@
     <source :src="src" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  </div>
 </template>
 
 <script>
@@ -43,5 +45,19 @@
 </script>
 
 <style scoped>
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
 
+  .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

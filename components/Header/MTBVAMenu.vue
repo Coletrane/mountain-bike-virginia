@@ -98,7 +98,7 @@
   a {
     color: white;
     font-size: 2rem;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold';
     font-weight: 800;
     cursor: pointer;
   }

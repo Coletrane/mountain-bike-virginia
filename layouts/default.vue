@@ -80,8 +80,12 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold';
   }
+  h2 {
+    font-size: 2.5rem;
+  }
+
 
   span, div, p {
     font-family: 'Lato', sans-serif;
@@ -92,7 +96,7 @@
   }
 
   .white-btn {
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold';
     color: white;
     border-color: white;
     font-size: 2rem;
@@ -110,7 +114,7 @@
   }
 
   .black-btn {
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold';
     color: black;
     border-color: black;
     font-size: 2rem;
@@ -208,7 +212,7 @@
     }
 
     .headline {
-      font-size: 1.5rem !important;
+      font-size: 2rem !important;
     }
 
     .subheading {
