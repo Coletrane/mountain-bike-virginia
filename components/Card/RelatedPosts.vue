@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  import {s3Pages, imgRoutes} from '../../scripts/routes'
-
   import postComponentLoader from '../../assets/mixins/post-component-loader'
+
+  import {s3Pages, imgRoutes} from '../../scripts/routes'
 
   export default {
     name: 'half-card',

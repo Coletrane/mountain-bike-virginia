@@ -63,7 +63,25 @@
           Just as I turn around, off in the cold distance, 2 riders were approaching, and the wind began to howl. One on a loaded Ibis HD4 and another on a less loaded Raleigh gravel bike. Travis Jones, doing the trail route on the Ibis makes it across with ease. Ed Bridge, doing the gravel route on the Raleigh goes head on into the somewhat deep creek, gets caught on his pedal, and gets both his feet soaked. Ed don't care. He dumps his shoes out and keeps going. I asked if they would be keeping this pace and suggested we camp together, of which these two characters agreed.
         </div>
         <blog-image :src="img + 'ed-pointing-creek.jpg'"/>
+        <div class="blog-p">
+          We ascended up Stone Spring and reached the ridge by midday. Towards the middle of the ridge there is a large clearing up on a plateau that the trail leads to. We heard dirt bikes idling in the distance. Suddenly, they sped off past us from the top of the plateau. Feeling less entrenched in the backwoods, yet still unsure of what we would find at the top we pressed on.
+        </div>
+        <m-t-b-v-a-video :src="img + 'jeep-clearing.mp4'"
+                         autoplay
+                         muted
+                         preload
+                         loop/>
+        <div class="blog-p">
+          A group of friendly Jeep enthusiasts who hadn't kitted out their machines to merely park them at the mall were what we found. Satisfied just to rest for a while we chatted, then all too soon made our way down the path again. It was quite a shame the temperature was so low on the ridge, because there are many good places to camp, and even a metal pipe spring coming out of the wall of rock. (keep your eyes on the right as you go down towards Reddish Knob)</div>
+        <blog-image :src="img + 'turner-snow.jpg'"/>
+        <quote quote="I'd rate this trail a 2 out of 10"
+               person="One of the Jeep Fellows"/>
+        <blog-image :src="img + 'jeeps-snow.jpg'"/>
+        <quote quote="This 2 is gonna become a 10 real quick if we don't get off this rock"/>
+        <div class="blog-p">
 
+            The Jeeps eventually caught up, just as it began to snow.
+        </div>
       </div>
     </blog-post>
   </div>
@@ -73,10 +91,10 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
   import RideWithGps from '../components/Iframes/RideWithGps'
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+  import MTBVAVideo from '../components/Iframes/MTBVAVideo'
+  import Quote from '../components/Card/Quote'
 
-  import {s3Pages, imgRoutes, rockstarVa2018, middleMtMomma2018, creature2017Recap} from '../scripts/routes'
+  import {s3Pages, rockstarVa2018, middleMtMomma2018, creature2017Recap} from '../scripts/routes'
   import {headTags} from '../assets/functions'
   import {home} from '../assets/head-tags'
 
@@ -84,9 +102,10 @@
     name: 'rockstar-va-2018',
     components: {
       RideWithGps,
+      MTBVAVideo,
+      Quote,
       BlogImage,
-      BlogPost,
-      FontAwesomeIcon
+      BlogPost
     },
     async asyncData(context) {
       return {
@@ -111,7 +130,6 @@
     },
     data() {
       return {
-        faFacebook: faFacebook,
         img: `${s3Pages}/${rockstarVa2018}/`,
         selectedRaceRoute: 'trail'
       }

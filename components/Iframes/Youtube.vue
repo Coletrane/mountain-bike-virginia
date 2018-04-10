@@ -17,8 +17,8 @@
     name: 'youtube',
     props: {
       src: {
-        required: true,
-        type: String
+        type: String,
+        required: true
       }
     },
     data() {
