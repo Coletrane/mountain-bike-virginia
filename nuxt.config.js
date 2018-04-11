@@ -5,6 +5,9 @@ const webpack = require('webpack')
 module.exports = {
   css: [
     {
+      src: '@/static/MyriadPro-Bold/styles.css'
+    },
+    {
       src: 'bootstrap/dist/css/bootstrap.css',
       lang: 'css'
     }
@@ -18,10 +21,6 @@ module.exports = {
       {property: 'fb:app_id', content: '1426359417419881'}
     ],
     link: [
-      {
-        rel: 'stylesheet',
-        href: routes.s3Fonts + '/MyriadPro-Bold/styles.css'
-      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Lato'

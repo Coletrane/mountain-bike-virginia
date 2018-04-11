@@ -6,8 +6,8 @@
       <div slot="content">
         <div class="blog-p">
           <a href="https://www.facebook.com/robert.issem">Rob Issem</a> has truly earned his title Captain Insane-O for
-          conjuring up a race that scoffs at the though of being called an Epic. Epic ain't the word. The RockStar VA
-          gets its absolutley perfect name from the town of Harrisonburg, also known as Rocktown, and the town of
+          conjuring up a race that scoffs at the thought of being called an Epic. Epic ain't the word. The RockStar VA
+          gets its absolutely perfect name from the town of Harrisonburg, also known as Rocktown, and the town of
           Roanoke, also known as The Star City. The race offers 3 grueling routes, trail (270 miles, 36k feet), gravel
           (260 miles, 20k feet), and pave (164 miles, 9.7k feet). Two facts stand out as astounding statements to the
           nature of the area in which this race takes place. This is a one way, 270 mile ride on trail that only gives
@@ -53,10 +53,10 @@
         <blog-image :src="img + 'turner-knolling.jpg'"/>
         <blog-image :src="img + 'pre-gps-turner.jpg'"/>
         <div class="blog-p">
-          We set out and hit the downhill pump track at Hillandale Park before a 12 mile rolling section through rural Dale Enterprise and Hinton. This section is a perfect warm up, and you will want a warm up, because what comes next is hainus in every sense. 2,900 feet in 12 miles is what you will be gaining up Slate Springs Mountain, you may be stopping, and you will certainly be pushing if you are a loaded down bikepacking rig.
+          We set out and hit the downhill pump track at Hillandale Park before a 12 mile rolling section through rural Dale Enterprise and Hinton. This section is a perfect warm up, and you will want a warm up, because what comes next is heinous in every sense. 2,900 feet in 12 miles is what you will be gaining up Slate Springs Mountain, you may be stopping, and you will certainly be pushing if you are a loaded down bikepacking rig.
         </div>
         <div class="blog-p">
-          Given the grim look of the weather, my misfortune in packing half my weight on my back, and the fact that I was alone, about halfway up this climb I contemplated bailing. The thing that was ailen about this bail contemplation was that it had nothing to do with physical ability, it was all to do with safety. Stone Spring Mountain climb is made more intimidating by the fact that you will be touching and even crossing the West Virginia border in spots. I came to a pretty healthy creek with no good way to cross. I begin to step from rock to rock, careful as I go to not get wet <i>this early</i> I stop right in the middle, and ponder turning around once more. Time slowed as I weighed the pros and cons of this decision. I press on, and make it without a drop of water in my shoes. I ride a little farther down to the next creek, and then turn around.
+          Given the grim look of the weather, my misfortune in packing half my weight on my back, and the fact that I was alone, about halfway up this climb I contemplated bailing. The thing that was alien about this bail contemplation was that it had nothing to do with physical ability, it was all to do with safety. Stone Spring Mountain climb is made more intimidating by the fact that you will be touching and even crossing the West Virginia border in spots. I came to a pretty healthy creek with no good way to cross. I begin to step from rock to rock, careful as I go to not get wet <i>this early</i> I stop right in the middle, and ponder turning around once more. Time slowed as I weighed the pros and cons of this decision. I press on, and make it without a drop of water in my shoes. I ride a little farther down to the next creek, and then turn around.
         </div>
         <blog-image :src="img + 'turner-bottom-creek.jpg'"/>
         <div class="blog-p">

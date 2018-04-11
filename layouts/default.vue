@@ -80,7 +80,8 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'MyriadPro-Bold';
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
   }
   h2 {
     font-size: 2.5rem;
@@ -96,7 +97,8 @@
   }
 
   .white-btn {
-    font-family: 'MyriadPro-Bold';
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
     color: white;
     border-color: white;
     font-size: 2rem;
@@ -114,7 +116,8 @@
   }
 
   .black-btn {
-    font-family: 'MyriadPro-Bold';
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
     color: black;
     border-color: black;
     font-size: 2rem;

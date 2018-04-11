@@ -102,7 +102,7 @@
   a {
     color: white;
     font-size: 2rem;
-    font-family: 'MyriadPro-Bold';
+    font-family: 'MyriadPro-Bold', sans-serif;
     font-weight: 800;
     cursor: pointer;
   }
