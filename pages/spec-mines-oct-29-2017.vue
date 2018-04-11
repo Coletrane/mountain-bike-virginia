@@ -2,8 +2,7 @@
   <blog-post
     :header-height="800"
     :image="img + 'IMG_3794.jpg'"
-    :post="post"
-    no-title>
+    :post="post">
     <div slot="content">
       <div class="blog-p">
         The morning of October 29th, 2017, I was intending to have balls. I was <i>indending</i> to just say "I'm doin

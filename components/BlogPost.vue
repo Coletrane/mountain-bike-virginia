@@ -3,7 +3,7 @@
     <m-t-b-v-a-header
       :header-height="headerHeight"
       :image="image"
-      :title="title"/>
+      :title="post.title"/>
 
     <div class="main-content"
          :style="backgroundImage">
@@ -69,11 +69,6 @@
         required: false,
         default: false
       },
-      noTitle: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
       noPostTitle: {
         type: Boolean,
         required: false,
@@ -90,11 +85,6 @@
       }
     },
     computed: {
-      title() {
-        if (!this.noTitle) {
-          return this.post.title
-        }
-      },
       backgroundImage() {
         return {
           backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`

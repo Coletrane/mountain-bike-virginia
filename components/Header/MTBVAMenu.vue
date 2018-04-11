@@ -95,6 +95,10 @@
     background-color: rgba(0, 0, 0, 0.9);
   }
 
+  svg {
+    margin-right: 1rem;
+  }
+
   a {
     color: white;
     font-size: 2rem;

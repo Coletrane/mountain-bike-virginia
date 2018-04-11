@@ -2,7 +2,8 @@
   <div>
     <m-t-b-v-a-header
       :header-height="700"
-      :image="image">
+      :image="image"
+      title="Results">
     </m-t-b-v-a-header>
     <div class="main-content"
          :style="backgroundImage">

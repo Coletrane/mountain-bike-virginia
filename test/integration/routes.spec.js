@@ -197,13 +197,13 @@ describe('routes tests', () => {
           }
 
           if (route === '/') {
-            it('shold have events button', async () => {
+            it('should have events button', async () => {
               // wait for animation to finish
               let button = await driver.wait(until.elementLocated(
                 By.id('events-button')))
 
               expect(await button.getAttribute('innerHTML'))
-                .to.contain('Events')
+                .to.contain('EVENTS')
 
               expect(await button.getAttribute('href'))
                 .to.equal('https://www.facebook.com/pg/xxcva/events/')

@@ -3,7 +3,6 @@
     <blog-post :header-height="600"
                :image="img + 'IMG_3576.jpg'"
                :post="post"
-               no-title
                :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">

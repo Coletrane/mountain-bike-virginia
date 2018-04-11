@@ -4,7 +4,6 @@
                :image="img + 'tnl.jpg'"
                :post="post"
                header-author
-               no-title
                :related-posts="relatedPosts">
       <div slot="content">
         <div>
