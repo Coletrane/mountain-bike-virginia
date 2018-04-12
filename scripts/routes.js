@@ -64,8 +64,8 @@ let imgRoutes = {}
 
 imgRoutes['/'] = 'foliage.jpg'
 
-imgRoutes[appRoutesObj[results]] = 'podium.png'
-imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.png'
+imgRoutes[appRoutesObj[results]] = 'podium.jpg'
+imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.jpg'
 imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
 
 imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'

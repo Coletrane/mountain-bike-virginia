@@ -12,7 +12,7 @@
           review.
         </div>
         <a href="https://www.worldwidecyclery.com/">
-          <blog-image :src="img + 'worldwide-cyclery.png'"/>
+          <blog-image :src="img + 'worldwide-cyclery.jpg'"/>
         </a>
         <blog-image :src="img + 'tire-chain-whip.jpg'"/>
         <div class="blog-p">

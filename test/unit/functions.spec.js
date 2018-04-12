@@ -83,7 +83,7 @@ describe('headTags tests', () => {
       it('should have the correct og:image', () => {
         let ogImage = childHeadTags.meta.filter(tag => tag.property === 'og:image')[0]
 
-        expect(ogImage.content.endsWith('pages/results/podium.png'))
+        expect(ogImage.content.endsWith('pages/results/podium.jpg'))
           .to.be.true
       })
     })

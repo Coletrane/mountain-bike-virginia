@@ -47,7 +47,7 @@
     },
     data() {
       return {
-        image: `${s3Pages}/${results}/podium.png`,
+        image: `${s3Pages}/${results}/podium.jpg`,
       }
     },
     computed: {

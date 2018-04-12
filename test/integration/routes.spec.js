@@ -33,7 +33,7 @@ describe('routes tests', () => {
           await driver.get(url)
 
           // Idk why Safari requires I do this
-          await driver.sleep(3000)
+          // await driver.sleep(6000)
 
           let res = await request({
             uri: await url,
@@ -53,28 +53,28 @@ describe('routes tests', () => {
         it('has viewport', async () => {
           expect(await driver.findElement(
             By.xpath('//meta[@name=\'viewport\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .not.to.be.undefined
         })
 
         it('has robots', async () => {
           expect(await driver.findElement(
             By.xpath('//meta[@name=\'robots\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .to.equal('index, follow')
         })
 
         it('has revisit-after', async () => {
           expect(await driver.findElement(
             By.xpath('//meta[@name=\'revisit-after\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .to.equal('1 week')
         })
 
         it('has fb:app_id', async () => {
           expect(await driver.findElement(
             By.xpath('//meta[@property=\'fb:app_id\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .to.equal('1426359417419881')
         })
 
@@ -84,7 +84,7 @@ describe('routes tests', () => {
           before(async () => {
             ogImage = await driver.findElement(
               By.xpath('//meta[@property=\'og:image\']'))
-              .getAttribute('content')
+                                  .getAttribute('content')
           })
 
           it('has og:image meta tag', async () => {
@@ -111,7 +111,7 @@ describe('routes tests', () => {
         it('has og:title', async () => {
           expect(await driver.findElement(
             By.xpath('//meta[@property=\'og:title\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .not.to.be.undefined
         })
 
@@ -130,14 +130,14 @@ describe('routes tests', () => {
           }
           expect(await driver.findElement(
             By.xpath('//meta[@property=\'og:url\']'))
-            .getAttribute('content'))
+                             .getAttribute('content'))
             .to.equal(expected)
         })
 
         xit('has a valid schema <script> tag', async () => {
           let schema = await driver.findElement(
             By.xpath('//script[@type=\'application/ld+json\']'))
-            .getAttribute('innerText')
+                                   .getAttribute('innerText')
           // Since this is test mode, all the urls are localhost, replace that with bikeva.com
           schema = await schema.replace(
             'http://localhost:3000',
@@ -153,7 +153,9 @@ describe('routes tests', () => {
           })
 
           // Strip out weird beginning characters Google added for some reason
+          // @formatter:off
           res.body = await res.body.replace(")]}'", '')
+          // @formatter:on
           const resObj = JSON.parse(await res.body)
 
           expect(await res.statusCode)
@@ -172,7 +174,7 @@ describe('routes tests', () => {
           it('should have a header', async () => {
             expect(await driver.findElement(
               By.id('mtbva-header'))
-              .isDisplayed())
+                               .isDisplayed())
               .to.be.true
           })
 
@@ -180,7 +182,7 @@ describe('routes tests', () => {
             it('should have a title', async () => {
               expect(await driver.findElement(
                 By.id('mtbva-title'))
-                .getAttribute('innerText'))
+                                 .getAttribute('innerText'))
                 .not.to.be.undefined
             })
 
@@ -274,6 +276,52 @@ describe('routes tests', () => {
           })
         }
       })
+
+      //
+      if (process.env.BROWSER === 'chrome') {
+        describe('<img> tests', () => {
+          const notFoundLogString = 'Failed to load resource: the server responded with a status of 404 (Not Found)'
+          const widths = [
+            1280,
+            720,
+            480
+          ]
+
+          for (const width of widths) {
+            describe(`${width} width`, () => {
+              before(async () => {
+                await driver.manage().window().setRect({
+                  width: width - 20,
+                  height: 1024
+                })
+                await driver.get(url)
+              })
+
+              it('should not have any broken <img>s', async () => {
+                const imgs = await driver.findElements(
+                  By.css('img'))
+                for (const img of await imgs) {
+                  await driver.executeScript('arguments[0].scrollIntoView(true);', img)
+                  await driver.wait(() => {
+                    return driver.executeScript('return arguments[0].complete', img)
+                  })
+
+                  let notFounds = await driver.manage().logs().get('browser')
+                  notFounds = await notFounds.filter(logs => {
+                    return logs.message.includes(notFoundLogString)
+                  })
+
+                  if (notFounds.length > 0) {
+                    console.log(notFounds)
+                  }
+                  expect(await notFounds.length)
+                    .to.equal(0)
+                }
+              })
+            })
+          }
+        })
+      }
     })
   }
 

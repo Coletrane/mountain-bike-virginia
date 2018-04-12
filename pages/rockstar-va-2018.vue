@@ -15,20 +15,20 @@
         </div>
         <div>
           <div class="row route-selection">
-            <button class="route-btn black-btn col-4"
+            <button class="route-btn white-btn-alt col-4"
                     :class="buttonSelected('trail')"
                     @click="selectRaceRoute('trail')">
-              Trail
+              TRAIL
             </button>
-            <button class="route-btn black-btn col-4"
+            <button class="route-btn white-btn-alt col-4"
                     :class="buttonSelected('gravel')"
                     @click="selectRaceRoute('gravel')">
-              Gravel
+              GRAVEL
             </button>
-            <button class="route-btn black-btn col-4"
+            <button class="route-btn white-btn-alt col-4"
                     :class="buttonSelected('pave')"
                     @click="selectRaceRoute('pave')">
-              Pave
+              PAVE
             </button>
 
             <ride-with-gps v-if="selectedRaceRoute === 'trail'"
@@ -151,7 +151,7 @@
       },
       buttonSelected(raceRoute) {
         if (this.selectedRaceRoute === raceRoute) {
-          return 'black-btn-selected'
+          return 'white-btn-alt-selected'
         }
       }
     }
@@ -161,7 +161,10 @@
 <style scoped>
   .route-selection {
     margin: 0;
-    background: black;
-    text-align: center
+    text-align: center;
+  }
+
+  .route-btn {
+    font-size: 1.5rem;
   }
 </style>

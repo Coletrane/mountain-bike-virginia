@@ -5,7 +5,8 @@
          :preload="preload"
          :autoplay="autoplay"
          :muted="muted"
-         :loop="loop">
+         :loop="loop"
+         :controls="controls">
     <source :src="src" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -39,6 +40,20 @@
         type: Boolean,
         required: false,
         default: false
+      }
+    },
+    data() {
+      return {
+        controls: false
+      }
+    },
+    created() {
+      if (process.browser) {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          this.controls = true;
+        }
       }
     }
   }

@@ -4,7 +4,7 @@
       <div class="words">
         <div class="row">
           <div class="col-10
-                      col-sm-10
+                      col-sm-9
                       col-md-9
                       col-lg-9
                       col-xl-9">
@@ -40,7 +40,7 @@
           </div>
           <social-actions :post="post"
                           class="col-2
-                                 col-sm-2
+                                 col-sm-3
                                  col-md-3
                                  col-lg-3
                                  col-xl-3

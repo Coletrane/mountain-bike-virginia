@@ -115,27 +115,25 @@
     border-color: white !important;
   }
 
-  .black-btn {
+  .white-btn-alt {
     font-family: 'MyriadPro-Bold', sans-serif;
     font-weight: 800;
     color: black;
-    border-color: black;
+    border-color: white;
     font-size: 2rem;
+    background: transparent;
   }
-  .black-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    color: white;
+  .white-btn-alt:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
   }
-  .black-btn:active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    color: white;
+  .white-btn-alt:active {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
   }
-  .black-btn-selected {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    color: white;
+  .white-btn-alt-selected {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
   }
 
 
@@ -237,11 +235,6 @@
 
   .inline-facebook-icon {
     font-size: 1.5rem;
-  }
-
-  /*get rid of ridewithgps border radius*/
-  .TripRouteEmbed-53d3c121 {
-    border-radius: 0 !important;
   }
 
   .image-smaller {

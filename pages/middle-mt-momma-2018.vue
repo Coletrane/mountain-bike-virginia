@@ -47,15 +47,11 @@
             <img v-lazy="img + 'mmm.png'"
                  class="image-smaller">
           </a>
-          <a v-if="$store.state.misc.loaded"
-             :href="post.fbEvent"
-             style="text-align: center">
-            <m-t-b-v-a-video :src="img + 'mmm-start.mp4'"
-                             autoplay
-                             muted
-                             preload
-                             loop/>
-          </a>
+          <m-t-b-v-a-video :src="img + 'mmm-start.mp4'"
+                           autoplay
+                           muted
+                           preload
+                           loop/>
           <ride-with-gps :url="post.rwGps"/>
         </div>
       </div>
@@ -121,12 +117,14 @@
       padding-bottom: 0.5rem !important;
     }
   }
+
   @media (max-width: 500px) {
     .author-container {
       padding-top: 2.5rem !important;
       padding-bottom: 2.5rem !important;
     }
   }
+
   @media (max-width: 400px) {
     .author-container {
       padding-top: 3.5rem !important;

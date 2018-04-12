@@ -4,10 +4,7 @@
        :alt="alt"/>
 </template>
 <script>
-  import {
-    noExtension,
-    justExtension
-  } from "../../assets/functions"
+  import {noExtension, justExtension} from "../../assets/functions"
 
   export default {
     name: "responsive-img",
@@ -21,7 +18,7 @@
       },
       alt: {
         type: String,
-        default: 'Mountain Bike Virginia'
+        default: "Mountain Bike Virginia"
       }
     },
     computed: {
@@ -32,9 +29,11 @@
 
         if (filename && extension) {
           if (process.browser) {
-
-            if (document.body.clientWidth <= 700) {
-              result = `${filename}-700px${extension}`
+            if (document.body.clientWidth <= 480) {
+              result = `${filename}-480${extension}`
+            } else if (document.body.clientWidth <= 720 &&
+                       document.body.clientWidth > 480) {
+              result = `${filename}-720${extension}`
             } else {
               result = this.src
             }
@@ -50,7 +49,6 @@
   }
 </script>
 <style>
-
   .landscape[lazy=loaded] {
     width: 100% !important;
   }
@@ -66,6 +64,4 @@
       width: 100%;
     }
   }
-
-
 </style>

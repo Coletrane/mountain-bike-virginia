@@ -39,15 +39,12 @@
         <img v-lazy="mmmImg + 'mmm.png'"
              class="image-smaller">
       </a>
-      <a v-if="$store.state.misc.loaded"
-         :href="$store.getters.getPost(middleMtMomma2018.fbEvent)"
-         style="text-align: center">
-        <m-t-b-v-a-video :src="mmmImg + 'mmm-start.mp4'"
-                         autoplay
-                         muted
-                         preload
-                         loop/>
-      </a>
+
+      <m-t-b-v-a-video :src="mmmImg + 'mmm-start.mp4'"
+                       autoplay
+                       muted
+                       preload
+                       loop/>
       <ride-with-gps :url="$store.getters.getPost(middleMtMomma2018).rwGps"/>
     </div>
   </post-card>
@@ -59,13 +56,9 @@
   import MTBVAVideo from '../Iframes/MTBVAVideo'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-  
-  import {
-    middleMtMomma2018,
-    resultsMiddleMountainMomma2017,
-    s3Pages
-  } from '../../scripts/routes'
-  
+
+  import {middleMtMomma2018, resultsMiddleMountainMomma2017, s3Pages} from '../../scripts/routes'
+
   export default {
     name: 'middle-mt-momma-2018-promo',
     components: {
