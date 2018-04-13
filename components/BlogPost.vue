@@ -5,6 +5,9 @@
       :image="image"
       :title="post.title"/>
 
+    <banner-ad href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
+               :img="s3Ads + '/sketch-collect/sketch-collect-banner.jpg'"/>
+
     <div class="main-content"
          :style="backgroundImage">
       <post-card :post="post"
@@ -34,8 +37,9 @@
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
+  import BannerAd from './Ads/BannerAd'
 
-  import {s3StaticImg} from '../scripts/routes'
+  import {s3StaticImg, s3Ads} from '../scripts/routes'
 
   export default {
     name: 'blog-post',
@@ -46,7 +50,8 @@
       RideWithGps,
       SocialActions,
       Author,
-      RelatedPosts
+      RelatedPosts,
+      BannerAd
     },
     props: {
       headerHeight: {
@@ -82,6 +87,11 @@
       relatedPosts: {
         type: Array,
         required: false
+      }
+    },
+    data() {
+      return {
+        s3Ads: s3Ads
       }
     },
     computed: {

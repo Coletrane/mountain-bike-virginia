@@ -1,18 +1,17 @@
 <template>
   <div class="video-wrapper">
-  <video v-if="$store.state.misc.loaded"
-         width="100%"
-         :preload="preload"
-         :autoplay="autoplay"
-         :muted="muted"
-         :loop="loop"
-         :controls="controls">
-    <source :src="src" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <video v-if="$store.state.misc.loaded"
+           width="100%"
+           :preload="preload"
+           :autoplay="autoplay"
+           :muted="muted"
+           :loop="loop"
+           :controls="controls">
+      <source :src="src" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </template>
-
 <script>
   export default {
     name: 'mtbva-video',
@@ -42,23 +41,21 @@
         default: false
       }
     },
-    data() {
+    data () {
       return {
         controls: false
       }
     },
-    created() {
+    created () {
       if (process.browser) {
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          this.controls = true;
+          this.controls = true
         }
       }
     }
   }
 </script>
-
 <style scoped>
   .video-wrapper {
     position: relative;
