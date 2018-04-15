@@ -7,6 +7,5 @@
   "description": "Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge",
   "schema": {
     "type": "NewsArticle"
-  },
-  "imgRoute": "P1010128.jpg"
+  }
 }

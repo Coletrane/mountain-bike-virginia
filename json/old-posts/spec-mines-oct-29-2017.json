@@ -6,6 +6,5 @@
   "date": "October 29, 2017",
   "schema": {
     "type": "NewsArticle"
-  },
-  "imgRoute": "IMG_3089.jpg"
+  }
 }

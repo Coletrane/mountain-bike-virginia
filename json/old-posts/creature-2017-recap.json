@@ -7,6 +7,5 @@
   "author": "kyle",
   "schema": {
     "type": "NewsArticle"
-  },
-  "imgRoute": "wake-champ.jpg"
+  }
 }

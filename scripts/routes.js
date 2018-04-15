@@ -1,91 +1,32 @@
-const results = 'results'
-const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
-const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
+const fs = require('fs')
+const glob = require('glob')
+const _ = require('lodash')
 
-const rockyMountainInstinctReview = 'rocky-mountain-instinct-review'
-const middleMtMomma2018 = 'middle-mt-momma-2018'
-const rockstarVa2018 = 'rockstar-va-2018'
-const hoopHoleTrailWork2018 = 'hoop-hole-trail-work-2018'
-const caneCreekViscosetReview = 'cane-creek-viscoset-review'
-const dtSwiss54tRatchetReview = 'dt-swiss-54t-ratchet-review'
-const ravenwoodRide = 'ravenwood-ride'
-const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
-const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
-const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
-const gravelocity2018 = 'gravelocity-2018'
-const firstRide2018 = 'first-ride-2018'
-const dodyRidgeRunFall2017 = 'dody-ridge-run-fall-2017'
-const specMines29Oct17 = 'spec-mines-oct-29-2017'
-const pivotSwitchbladeReview = 'pivot-switchblade-review'
-const gravelocity2017Video = 'gravelocity-2017-video'
-const creature2017Recap = 'creature-2017-recap'
-const relaunch = 'relaunch'
-const creature2016 = 'creature-2016'
+// let imgRoutes = {}
 
-// Try and keep routes in order they are on the home page
-// Keep non blog post routes at the top
-const appRoutes = [
-  results,
-  resultsMiddleMountainMomma2017,
-  resultsBattleAtBlackhorse2018,
-
-  middleMtMomma2018,
-  rockstarVa2018,
-  hoopHoleTrailWork2018,
-  dtSwiss54tRatchetReview,
-  caneCreekViscosetReview,
-  ravenwoodRide,
-  battleAtBlackhorse2018,
-  battleAtBlackhorse2018Video,
-  tuesdayNightLightsVideoFeb2018,
-  gravelocity2018,
-  firstRide2018,
-  dodyRidgeRunFall2017,
-  specMines29Oct17,
-  pivotSwitchbladeReview,
-  gravelocity2017Video,
-  creature2017Recap
-]
-
-// For use in express and below
-let appRoutesObj = {}
-appRoutes.forEach(route => {
-  appRoutesObj[route] = route
-})
-
-// Add the "/" to each route
-appRoutes.forEach((route, i, arr) => {
-  arr[i] = '/' + route
-})
-
-// Add the home route ("/") in
-appRoutes.unshift('/')
-
-let imgRoutes = {}
-
-imgRoutes['/'] = 'foliage.jpg'
-
-imgRoutes[appRoutesObj[results]] = 'podium.jpg'
-imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.jpg'
-imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
-
-imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
-imgRoutes[appRoutesObj[rockstarVa2018]] = 'stokesville-market-snow.jpg'
-imgRoutes[appRoutesObj[hoopHoleTrailWork2018]] = 'cole-sly-lookback.jpg'
-imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
-imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
-imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
-imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
-imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
-imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
-imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
-imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
-imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
-imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'
-imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
-imgRoutes[appRoutesObj[creature2017Recap]] = 'wake-champ.jpg'
-imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
-imgRoutes[relaunch] = 'rockymthi8.jpg'
+// imgRoutes['/'] = 'foliage.jpg'
+//
+// imgRoutes[appRoutesObj[results]] = 'podium.jpg'
+// imgRoutes[appRoutesObj[resultsMiddleMountainMomma2017]] = 'podium.jpg'
+// imgRoutes[appRoutesObj[resultsBattleAtBlackhorse2018]] = 'P1010128.jpg'
+//
+// imgRoutes[appRoutesObj[middleMtMomma2018]] = 'mmm.png'
+// imgRoutes[appRoutesObj[rockstarVa2018]] = 'stokesville-market-snow.jpg'
+// imgRoutes[appRoutesObj[hoopHoleTrailWork2018]] = 'cole-sly-lookback.jpg'
+// imgRoutes[appRoutesObj[caneCreekViscosetReview]] = 'viscoset.jpg'
+// imgRoutes[appRoutesObj[dtSwiss54tRatchetReview]] = 'dt-swiss-54t-ratchet.jpg'
+// imgRoutes[appRoutesObj[battleAtBlackhorse2018]] = 'P1010128.jpg'
+// imgRoutes[appRoutesObj[battleAtBlackhorse2018Video]] = 'P1000160.jpg'
+// imgRoutes[appRoutesObj[ravenwoodRide]] = 'canyon-ravenwood.jpg'
+// imgRoutes[appRoutesObj[tuesdayNightLightsVideoFeb2018]] = 'tnl.jpg'
+// imgRoutes[appRoutesObj[gravelocity2018]] = 'bigfinish.jpg'
+// imgRoutes[appRoutesObj[firstRide2018]] = 'classic-shot-2018.jpg'
+// imgRoutes[appRoutesObj[dodyRidgeRunFall2017]] = 'iron-mine.jpg'
+// imgRoutes[appRoutesObj[specMines29Oct17]] = 'IMG_3089.jpg'
+// imgRoutes[appRoutesObj[gravelocity2017Video]] = 'bobletts-climb.jpg'
+// imgRoutes[appRoutesObj[creature2017Recap]] = 'wake-champ.jpg'
+// imgRoutes[appRoutesObj[pivotSwitchbladeReview]] = 'IMG_3009.jpg'
+// imgRoutes[relaunch] = 'rockymthi8.jpg'
 
 let s3
 if (process.env.NODE_ENV === 'production') {
@@ -105,33 +46,89 @@ const s3Pages = s3 + '/pages'
 const s3Ads = s3 + '/ads'
 const baseUrl = 'https://bikeva.com'
 
+// Get all the routes that Nuxt will generate
+let routes = []
+let files = glob.sync('pages/**/*.{vue,js}')
+files.forEach(file => {
+  let route = file.replace(/\.(js|vue)$/, '')
+  route = route.replace('pages/', '')
+  route = route.replace('index', '')
+  if (route === '') {
+    route = '/'
+  }
+  routes.push(route)
+})
+
+// Make sure .json files have a corresponding .vue file in /pages
+let posts = []
+const postJsonFiles = glob.sync('json/posts/**/*.json')
+postJsonFiles.forEach(file => {
+  let jsonFile = fs.readFileSync(file, 'utf8')
+
+  let fileNameRoute = file.split('/')
+  fileNameRoute = fileNameRoute[fileNameRoute.length - 1]
+  fileNameRoute = fileNameRoute.replace('.json', '')
+
+  let route = routes.find(route => route === fileNameRoute)
+
+  const post = JSON.parse(jsonFile)
+  if (!post.date) {
+    throw new Error('NO DATE! ' + fileNameRoute)
+  }
+
+  post.route = route || fileNameRoute
+
+  posts.push(post)
+})
+
+// Sort the posts by date
+posts.sort((a, b) => {
+  return new Date(b.date) - new Date(a.date)
+})
+
+// Reinsert posts that we want out of order
+posts.splice(1, 0, posts.find(post => post.route === 'rockstar-va-2018'))
+
+// Make sure there are no duplicates
+posts = _.uniq(posts)
+
+// Get just the routes in order
+let postsOrder = []
+posts.forEach(post => {
+  postsOrder.push(post.route)
+})
+
+// Initialize the pagination (sortof)
+const postsPerPage = [
+  10
+]
+postsPerPage.push(
+  postsOrder.length - postsPerPage
+                      .reduce((accumulator, currentValue) => {
+                        return accumulator + currentValue
+                      })
+)
+
+// "Initialize" multi dimensional array
+const pages = []
+postsPerPage.forEach((perPage, page, arr) => {
+  pages[page] = []
+})
+let postsOrderCount = 0
+pages.forEach((page, pageNumber, pagesArr) => {
+  for (let i = 0; i < postsPerPage[pageNumber]; i++) {
+    pages[pageNumber][i] = postsOrder[postsOrderCount]
+    postsOrderCount++
+  }
+})
+
+console.log(pages)
+pages.forEach((page, i, arr) => {
+  const json = JSON.stringify(page, null, 2)
+  fs.writeFileSync(`json/pages/${i}.json`, json)
+})
+
 module.exports = {
-  results,
-  resultsMiddleMountainMomma2017,
-  resultsBattleAtBlackhorse2018,
-
-  middleMtMomma2018,
-  rockstarVa2018,
-  hoopHoleTrailWork2018,
-  caneCreekViscosetReview,
-  dtSwiss54tRatchetReview,
-  ravenwoodRide,
-  battleAtBlackhorse2018,
-  battleAtBlackhorse2018Video,
-  tuesdayNightLightsVideoFeb2018,
-  gravelocity2018,
-  firstRide2018,
-  dodyRidgeRunFall2017,
-  specMines29Oct17,
-  pivotSwitchbladeReview,
-  gravelocity2017Video,
-  creature2017Recap,
-  relaunch,
-  creature2016,
-
-  appRoutes,
-  appRoutesObj,
-  imgRoutes,
   s3,
   s3StaticImg,
   s3Favicons,

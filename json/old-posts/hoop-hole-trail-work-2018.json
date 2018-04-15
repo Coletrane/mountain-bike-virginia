@@ -7,6 +7,5 @@
   "description": "Cole Inman completing part of his trail work for his RockStar VA entry fee.",
   "schema": {
     "type": "NewsArticle"
-  },
-  "imgRoute": "cole-sly-lookback.jpg"
+  }
 }

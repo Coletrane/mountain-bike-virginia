@@ -65,16 +65,16 @@ module.exports = {
     vendor: [
       'babel-polyfill'
     ],
-    extend (config, {isDev, isClient}) {
-      config.entry.routes = ['./scripts/routes.js']
-      config.plugins.forEach(plugin => {
-        if (plugin.constructor.name === 'CommonsChunkPlugin' &&
-            plugin.chunkNames.includes('vendor')) {
-          plugin.chunkNames.unshift('routes')
-          plugin.filenameTemplate = undefined
-        }
-      })
-    }
+    // extend (config, {isDev, isClient}) {
+    //   config.entry.routes = ['./scripts/routes.js']
+    //   config.plugins.forEach(plugin => {
+    //     if (plugin.constructor.name === 'CommonsChunkPlugin' &&
+    //         plugin.chunkNames.includes('vendor')) {
+    //       plugin.chunkNames.unshift('routes')
+    //       plugin.filenameTemplate = undefined
+    //     }
+    //   })
+    // }
   },
   modules: [
     '@nuxtjs/sitemap',
@@ -90,14 +90,14 @@ module.exports = {
     hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
-    routes: routes.appRoutes.map(route => {
-      return {
-        url: route,
-        changefreq: 'daily',
-        priority: 1,
-        lastmodISO: new Date().toISOString()
-      }
-    })
+    // routes: routes.appRoutes.map(route => {
+    //   return {
+    //     url: route,
+    //     changefreq: 'daily',
+    //     priority: 1,
+    //     lastmodISO: new Date().toISOString()
+    //   }
+    // })
   },
   render: {
     static: {
@@ -122,12 +122,12 @@ module.exports = {
     google: process.env.GOOGLE
   },
   generate: {
-    routes: routes.appRoutes.map(route => {
-      if (route.charAt(0) !== '/') {
-        return ('/' + route)
-      } else {
-        return route
-      }
-    })
+    // routes: routes.appRoutes.map(route => {
+    //   if (route.charAt(0) !== '/') {
+    //     return ('/' + route)
+    //   } else {
+    //     return route
+    //   }
+    // })
   }
 }

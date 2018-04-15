@@ -6,6 +6,5 @@
   "description": "28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia",
   "schema": {
     "type": "NewsArticle"
-  },
-  "imgRoute": "classic-shot-2018.jpg"
+  }
 }
