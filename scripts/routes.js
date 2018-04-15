@@ -2,6 +2,7 @@ const results = 'results'
 const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
 const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
 
+const rockyMountainInstinctReview = 'rocky-mountain-instinct-review'
 const middleMtMomma2018 = 'middle-mt-momma-2018'
 const rockstarVa2018 = 'rockstar-va-2018'
 const hoopHoleTrailWork2018 = 'hoop-hole-trail-work-2018'
@@ -143,3 +144,4 @@ module.exports = {
   s3Ads,
   baseUrl
 }
+

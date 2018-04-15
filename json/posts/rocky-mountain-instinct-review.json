@@ -1,0 +1,19 @@
+{
+  "title": "Review: Rocky Mountain Instinct",
+  "subtitle": "",
+  "author": "cole, kyle",
+  "description": "Review of the Rocky Mountain Instinct trail bike with 29 inch wheels at the Underdog Bikes demo",
+  "date": "April 13, 2018",
+  "schema": {
+    "type": "Review",
+    "itemReviewed": {
+      "brand": "Rocky Mountain",
+      "model": "Instinct"
+    },
+    "reviewRating": {
+      "ratingValue": "3.5",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+}
