@@ -5,6 +5,9 @@ const webpack = require('webpack')
 module.exports = {
   css: [
     {
+      src: '@/static/MyriadPro-Bold/styles.css'
+    },
+    {
       src: 'bootstrap/dist/css/bootstrap.css',
       lang: 'css'
     }
@@ -20,7 +23,7 @@ module.exports = {
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Julius+Sans+One|Lato'
+        href: 'https://fonts.googleapis.com/css?family=Lato'
       },
       {
         rel: 'apple-touch-icon',

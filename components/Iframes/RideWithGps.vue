@@ -6,7 +6,7 @@
 </template>
 <script>
   export default {
-    name: "ride-with-gps",
+    name: 'ride-with-gps',
     props: {
       url: {
         required: true,
@@ -24,9 +24,14 @@
     height: 600px;
   }
 
-  @media (min-width: 992px) {
-    iframe {
-      height: 800px;
-    }
+  /*get rid of ridewithgps border radius*/
+  .TripRouteEmbed-53d3c121 {
+    border-radius: 0 !important;
   }
-  </style>
+
+  /*@media (min-width: 992px) {*/
+  /*iframe {*/
+  /*height: 800px;*/
+  /*}*/
+  /*}*/
+</style>

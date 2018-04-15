@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import {routeToComponentFilename} from '../../assets/functions'
+  import postComponentLoader from '../../assets/mixins/post-component-loader'
 
   export default {
     name: 'abstract-page',
@@ -26,43 +26,11 @@
         required: true
       }
     },
-    data() {
-      return {
-        postComponents: [],
-        postComponentsLoaded: false
-      }
-    },
-    created() {
-      this.loadPostComponents()
-    },
-    methods: {
-      async loadPostComponents() {
-        for (const postRoute of this.$store.state.posts.pages[this.page]) {
-          const filename = routeToComponentFilename(postRoute)
-          let esComponent = await import(`../PromoCards/${filename}`)
-          const component = {
-            route: postRoute,
-            component: esComponent.default
-          }
-          this.postComponents.push(component)
-        }
-
-        if (this.postComponents.length ===
-          this.$store.state.posts.pages[this.page].length) {
-          this.postComponentsLoaded = true
-        }
-      },
-      getPostComponent(postRoute) {
-        const postComponent = this.postComponents.find(component => {
-          return component.route === postRoute
-        })
-
-        if (postComponent) {
-          return postComponent.component
-        }
-      }
-    }
+    mixins: [
+      postComponentLoader
+    ]
   }
+
 </script>
 
 <style>

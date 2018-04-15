@@ -3,28 +3,11 @@
              no-author>
     <div slot="words">
       <div class="promo">
-        Come one, come all, to the best gravel, trail, bikepacking, endurance, 270 miles on two wheels. Travel
-        between two of the most legendary cycling towns in the country, Harrisonburg and Roanoke. Ride as a team
-        or solo (SPOT tracker required) and try to complete the 270, a feat yet to be accomplished.<a
-        href="http://roanokemountainadventures.com/"> Roanoke Mountain Adventures</a> will be providing shuttles
-        to and from both Harrisonburg and Roanoke. <a href="http://roanokemountainadventures.com/">Rate$ for
-        shuttles.</a>
-        <div>
-          <a href="http://tinyurl.com/rockstargooglemap">Route options (TRAIL or GRAVEl)</a>
-        </div>
-        <div>
-          <a :href="$store.getters.getPost(rockstarVa2018).fbEvent">
-            Details
-            <font-awesome-icon :icon="faFacebook"
-                               class="inline-facebook-icon"/>
-          </a>
-        </div>
+        An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile race from Harrisonburg to Roanoke, Virginia. Facing snow in the first week of April wasn't part of the plan. Many bailed prior to the race, I was one of the only ones to bail during the race.
       </div>
     </div>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(rockstarVa2018)"
-                  :href="$store.getters.getPost(rockstarVa2018).fbEvent"
-                  :src="s3Pages + '/' + rockstarVa2018 + '/rockstar.jpg'"/>
+      <image-link :post="$store.getters.getPost(rockstarVa2018)"/>
     </div>
   </post-card>
 </template>

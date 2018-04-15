@@ -3,7 +3,6 @@
     <blog-post :header-height="600"
                :image="img + 'IMG_3576.jpg'"
                :post="post"
-               no-title
                :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">
@@ -99,23 +98,16 @@
 
 <script>
   import BlogPost from '../components/BlogPost'
-  import Youtube from '../components/Iframes/Youtube'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {
-    s3Pages,
-    battleAtBlackhorse2018,
-    battleAtBlackhorse2018Video,
-    dodyRidgeRunFall2017
-  } from '../scripts/routes'
+  import {s3Pages, battleAtBlackhorse2018, battleAtBlackhorse2018Video, dodyRidgeRunFall2017} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {
     name: 'battle-at-blackhorse-2018',
     components: {
       BlogImage,
-      BlogPost,
-      Youtube
+      BlogPost
     },
     async asyncData(context) {
       return {

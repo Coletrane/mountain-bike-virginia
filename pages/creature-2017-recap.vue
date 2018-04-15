@@ -1,10 +1,8 @@
 <template>
   <div>
-    <blog-post
-      :header-height="480"
-      :image="img + 'lumberjack.jpg'"
-      :post="post"
-      header-author>
+    <blog-post :image="img + 'lumberjack.jpg'"
+               :post="post"
+               header-author>
       <div slot="content">
         <div>
           <blog-image :src="img + 'fence.jpg'"/>
@@ -102,15 +100,12 @@
   </div>
 </template>
 <script>
-  import BlogPost from "../components/BlogPost.vue"
-  import Youtube from "../components/Iframes/Youtube.vue"
-  import BlogImage from "../components/Images/BlogImage.vue"
+  import BlogPost from '../components/BlogPost.vue'
+  import Youtube from '../components/Iframes/Youtube.vue'
+  import BlogImage from '../components/Images/BlogImage.vue'
 
-  import {
-    s3Pages,
-    creature2017Recap
-  } from "../scripts/routes"
-  import {headTags} from "../assets/functions"
+  import {s3Pages, creature2017Recap} from '../scripts/routes'
+  import {headTags} from '../assets/functions'
 
   export default {
     name: 'creature-2017-recap',
@@ -131,7 +126,7 @@
         return headTags(
           this.post.title,
           this.post.subtitle,
-          "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove",
+          'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove',
           this.post
         )
       }

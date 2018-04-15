@@ -80,8 +80,13 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
   }
+  h2 {
+    font-size: 2.5rem;
+  }
+
 
   span, div, p {
     font-family: 'Lato', sans-serif;
@@ -92,7 +97,8 @@
   }
 
   .white-btn {
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
     color: white;
     border-color: white;
     font-size: 2rem;
@@ -100,16 +106,36 @@
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
 
   }
-
   .white-btn:hover {
     background-color: rgba(0, 0, 0, 0.75);
     border-color: white;
   }
-
   .white-btn:active {
     background-color: #3d7635 !important;
     border-color: white !important;
   }
+
+  .white-btn-alt {
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-weight: 800;
+    color: black;
+    border-color: white;
+    font-size: 2rem;
+    background: transparent;
+  }
+  .white-btn-alt:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
+  }
+  .white-btn-alt:active {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
+  }
+  .white-btn-alt-selected {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: black;
+  }
+
 
   .app-fade-wrapper {
     background-color: black;
@@ -187,7 +213,7 @@
     }
 
     .headline {
-      font-size: 1.5rem !important;
+      font-size: 2rem !important;
     }
 
     .subheading {
@@ -209,5 +235,17 @@
 
   .inline-facebook-icon {
     font-size: 1.5rem;
+  }
+
+  .image-smaller {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+
+  @media (max-width: 720px) {
+    .image-smaller {
+      width: 100%;
+    }
   }
 </style>

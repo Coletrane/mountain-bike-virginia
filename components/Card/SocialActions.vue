@@ -66,7 +66,7 @@
   }
   @media (max-width: 575px) {
     a {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -88,9 +88,9 @@
     color: #1DA1F2;
     padding-left: 1rem;
   }
-  @media (max-width: 460px) {
-    a.twitter-social-action {
-      padding-left: 0 !important;
-    }
-  }
+  /*@media (max-width: 460px) {*/
+    /*a.twitter-social-action {*/
+      /*padding-left: 0 !important;*/
+    /*}*/
+  /*}*/
 </style>

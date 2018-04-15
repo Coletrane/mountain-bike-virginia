@@ -2,32 +2,28 @@
   <div id="mtbva-header">
     <navigation/>
     <parallax :src="image"
-              :height="headerHeight">
+              :height="1000">
       <div slot="hero"
            class="hero-container">
-        <div :class="'hero-content ' + heroClass">
-          <transition appear
-                      name="two-sec-fade"
-                      v-on:enter="titleEntered">
+        <div class="hero-content">
             <div>
-              <h1 :class="'mtbva-title'"
+              <h1 class="mtbva-title"
                   id="mtbva-title">
-                {{title}}
+                {{title.toUpperCase()}}
               </h1>
               <h2 class="white--text headline mtbva-subtitle"
                   id="mtbva-subtitle">
                 {{subtitle}}
               </h2>
-              <a v-if="buttonLink"
+              <a v-if="buttonLink && button"
                  :href="buttonLink"
                  class="button-link"
                  id="events-button">
                 <button class="btn btn-outline-primary white-btn">
-                    {{button}}
+                    {{button.toUpperCase()}}
                 </button>
               </a>
             </div>
-          </transition>
         </div>
       </div>
     </parallax>
@@ -56,7 +52,7 @@
       },
       title: {
         type: String,
-        required: false
+        required: true
       },
       subtitle: {
         type: String,
@@ -79,32 +75,11 @@
     data() {
       return {
         img: `${s3StaticImg}/`,
-        showTitle: false,
-        titleShown: false,
-      }
-    },
-    mounted() {
-      this.showTitle = true
-    },
-    methods: {
-      titleEntered: function (el, done) {
-        this.titleShown = true
-      }
-    },
-    computed: {
-      heroClass() {
-        if (this.homePage) {
-          return 'hero-content-home'
-        } else {
-          return 'hero-content-subpage'
-        }
       }
     }
   }
 </script>
 <style>
-  .hero-container {
-  }
 
   .hero-content {
     padding: 1rem;
@@ -114,12 +89,7 @@
     width: 100%;
     height: 500px;
     transform: translate(-50%, -50%);
-  }
-  .hero-content-home {
-    top: 60%;
-  }
-  .hero-content-subpage {
-    top: 75%;
+    top: 60%
   }
 
   .mtbva-title {
@@ -129,19 +99,8 @@
   .mtbva-subtitle {
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
   }
-  .hero-content-subpage h1 {
-    font-size: 3.5rem;
-  }
 
   @media (max-width: 600px) {
-
-    .hero-content-subpage {
-      top: 80%;
-    }
-
-    .hero-content-home {
-      top: 75%;
-    }
 
     .mtbva-title {
       font-size: 4rem;
@@ -150,11 +109,6 @@
     .mtbva-subtitle {
       font-size: 1.5rem;
     }
-
-    .hero-content-subpage h1 {
-      font-size: 2.5rem;
-    }
-
   }
 
   @media (max-width: 450px) {

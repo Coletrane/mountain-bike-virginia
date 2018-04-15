@@ -14,7 +14,7 @@
         21st annual Middle Mountain Momma at the gorgeous <a
         href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
         State Park.</a> The
-        first race in the XXC VA series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
+        first race in the XXC Marathon Series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
         44mi.
         <nuxt-link :to="resultsMiddleMountainMomma2017">
           View the results from last year.
@@ -39,13 +39,12 @@
         <img v-lazy="mmmImg + 'mmm.png'"
              class="image-smaller">
       </a>
-      <a v-if="$store.state.misc.loaded"
-         :href="$store.getters.getPost(middleMtMomma2018.fbEvent)"
-         style="text-align: center">
-        <img :src="mmmImg + 'mmm-start.gif'"
-             alt="Middle Mountain Momma Starting Line"
-             style="width: 100%"/>
-      </a>
+
+      <m-t-b-v-a-video :src="mmmImg + 'mmm-start.mp4'"
+                       autoplay
+                       muted
+                       preload
+                       loop/>
       <ride-with-gps :url="$store.getters.getPost(middleMtMomma2018).rwGps"/>
     </div>
   </post-card>
@@ -54,20 +53,18 @@
 <script>
   import PostCard from '../Card/PostCard'
   import RideWithGps from '../Iframes/RideWithGps'
+  import MTBVAVideo from '../Iframes/MTBVAVideo'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-  
-  import {
-    middleMtMomma2018,
-    resultsMiddleMountainMomma2017,
-    s3Pages
-  } from '../../scripts/routes'
-  
+
+  import {middleMtMomma2018, resultsMiddleMountainMomma2017, s3Pages} from '../../scripts/routes'
+
   export default {
     name: 'middle-mt-momma-2018-promo',
     components: {
       PostCard,
       RideWithGps,
+      MTBVAVideo,
       FontAwesomeIcon
     },
     data() {

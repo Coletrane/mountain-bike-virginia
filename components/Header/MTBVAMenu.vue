@@ -95,10 +95,14 @@
     background-color: rgba(0, 0, 0, 0.9);
   }
 
+  svg {
+    margin-right: 1rem;
+  }
+
   a {
     color: white;
     font-size: 2rem;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'MyriadPro-Bold', sans-serif;
     font-weight: 800;
     cursor: pointer;
   }
