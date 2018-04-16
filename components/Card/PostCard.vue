@@ -8,7 +8,7 @@
                       col-md-9
                       col-lg-9
                       col-xl-9">
-            <nuxt-link v-if="post.route && post.route != ' '"
+            <nuxt-link v-if="postRoute"
                        :to="{name: post.route}">
               <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}
@@ -67,6 +67,8 @@
   import SocialActions from './SocialActions'
   import Author from './Author'
 
+  import postRoute from '../../assets/mixins/post-route'
+
   export default {
     name: 'post-card',
     props: {
@@ -99,6 +101,9 @@
       SocialActions,
       Author
     },
+    mixins: [
+      postRoute
+    ],
     computed: {
       formattedDate() {
         if (this.post.date) {

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-if="post.route"
+  <nuxt-link v-if="postRoute"
              :to="{name: post.route}">
     <responsive-img :src="img"
                     :alt="post.title"/>
@@ -12,6 +12,8 @@
 </template>
 <script>
   import ResponsiveImg from './ResponsiveImg'
+
+  import postRoute from '../../assets/mixins/post-route'
 
   import { s3Pages } from '../../scripts/routes'
 
@@ -33,6 +35,9 @@
     components: {
       ResponsiveImg
     },
+    mixins: [
+      postRoute
+    ],
     computed: {
       img() {
         if (this.src) {
