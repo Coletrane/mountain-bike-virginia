@@ -11,8 +11,6 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
-  import {relaunch} from '../../scripts/routes'
-
   export default {
     name: 'relaunch-promo',
     components: {

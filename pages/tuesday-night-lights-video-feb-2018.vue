@@ -18,12 +18,7 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {
-    s3Pages,
-    tuesdayNightLightsVideoFeb2018,
-    gravelocity2018,
-    creature2017Recap
-  } from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {
     headTags,
     buildVideo

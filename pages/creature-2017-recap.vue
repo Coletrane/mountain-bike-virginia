@@ -104,7 +104,7 @@
   import Youtube from '../components/Iframes/Youtube.vue'
   import BlogImage from '../components/Images/BlogImage.vue'
 
-  import {s3Pages, creature2017Recap} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {

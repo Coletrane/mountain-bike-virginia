@@ -19,9 +19,7 @@
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
   
   import {
-    s3Pages,
-    rockstarVa2018
-  } from '../../scripts/routes'
+    s3Pages} from '../../scripts/routes'
   
   export default {
     name: 'rockstar-va-2018-promo',

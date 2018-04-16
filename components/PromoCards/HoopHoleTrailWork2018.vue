@@ -15,9 +15,6 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
-  import {hoopHoleTrailWork2018, rockstarVa2018, middleMtMomma2018} from '../../scripts/routes'
-
-
   export default {
     name: 'hoop-hole-trail-work-2018-promo',
     components: {

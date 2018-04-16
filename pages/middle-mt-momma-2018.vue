@@ -67,7 +67,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  import {s3Pages, middleMtMomma2018, creature2017Recap, rockstarVa2018} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
   import {home} from '../assets/head-tags'
 

@@ -71,7 +71,7 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages, caneCreekViscosetReview, dtSwiss54tRatchetReview, pivotSwitchbladeReview} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {

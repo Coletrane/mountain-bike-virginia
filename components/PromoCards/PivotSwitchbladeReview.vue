@@ -18,9 +18,7 @@
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
-  
-  import {pivotSwitchbladeReview} from '../../scripts/routes'
-  
+
   export default {
     name: 'pivot-switchblade-review-promo',
     components: {

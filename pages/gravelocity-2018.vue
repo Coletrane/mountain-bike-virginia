@@ -120,12 +120,7 @@
   import BlogPost from "../components/BlogPost"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {
-    s3Pages,
-    gravelocity2018,
-    gravelocity2017Video,
-    specMines29Oct17,
-  } from "../scripts/routes"
+  import {s3Pages} from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
   export default {

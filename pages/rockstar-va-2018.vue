@@ -105,7 +105,7 @@
   import MTBVAVideo from '../components/Iframes/MTBVAVideo'
   import Quote from '../components/Card/Quote'
 
-  import {s3Pages, rockstarVa2018, middleMtMomma2018, creature2017Recap} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
   import {home} from '../assets/head-tags'
 

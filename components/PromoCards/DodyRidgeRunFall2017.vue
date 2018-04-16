@@ -11,7 +11,6 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
-  import {dodyRidgeRunFall2017} from '../../scripts/routes'
 
   export default {
     name: 'dody-ridge-run-fall-2017-promo',

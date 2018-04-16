@@ -11,8 +11,6 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
-  import {specMines29Oct17} from '../../scripts/routes'
-
   export default {
     name: 'spec-mines-oct-29-2017-promo',
     components: {

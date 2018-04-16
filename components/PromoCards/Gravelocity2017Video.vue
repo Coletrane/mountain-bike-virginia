@@ -11,8 +11,6 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
-  import {gravelocity2017Video} from '../../scripts/routes'
-
   export default {
     name: 'gravelocity-2017-video-promo',
     components: {

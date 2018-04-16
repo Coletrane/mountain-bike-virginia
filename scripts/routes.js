@@ -1,4 +1,28 @@
 
+const results = 'results'
+const resultsMiddleMountainMomma2017 = 'results/middle-mountain-momma-2017'
+const resultsBattleAtBlackhorse2018 = 'results/battle-at-blackhorse-2018'
+
+const rockyMountainInstinctReview = 'rocky-mountain-instinct-review'
+const middleMtMomma2018 = 'middle-mt-momma-2018'
+const rockstarVa2018 = 'rockstar-va-2018'
+const hoopHoleTrailWork2018 = 'hoop-hole-trail-work-2018'
+const caneCreekViscosetReview = 'cane-creek-viscoset-review'
+const dtSwiss54tRatchetReview = 'dt-swiss-54t-ratchet-review'
+const ravenwoodRide = 'ravenwood-ride'
+const battleAtBlackhorse2018 = 'battle-at-blackhorse-2018'
+const battleAtBlackhorse2018Video = 'battle-at-blackhorse-2018-video'
+const tuesdayNightLightsVideoFeb2018 = 'tuesday-night-lights-video-feb-2018'
+const gravelocity2018 = 'gravelocity-2018'
+const firstRide2018 = 'first-ride-2018'
+const dodyRidgeRunFall2017 = 'dody-ridge-run-fall-2017'
+const specMines29Oct17 = 'spec-mines-oct-29-2017'
+const pivotSwitchbladeReview = 'pivot-switchblade-review'
+const gravelocity2017Video = 'gravelocity-2017-video'
+const creature2017Recap = 'creature-2017-recap'
+const relaunch = 'relaunch'
+const creature2016 = 'creature-2016'
+
 // let imgRoutes = {}
 
 // imgRoutes['/'] = 'foliage.jpg'

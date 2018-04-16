@@ -17,9 +17,7 @@
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
-  
-  import {gravelocity2018} from '../../scripts/routes'
-  
+
   export default {
     name: 'gravelocity-2018-promo',
     components: {

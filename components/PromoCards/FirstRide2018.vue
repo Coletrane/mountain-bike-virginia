@@ -19,9 +19,7 @@
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
-  
-  import {firstRide2018} from '../../scripts/routes'
-  
+
   export default {
     name: 'first-ride-2018-promo',
     components: {

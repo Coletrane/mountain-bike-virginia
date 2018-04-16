@@ -1,6 +1,5 @@
 // Use import when working with ES6 modules
 import {headTags} from '../../assets/functions'
-import {resultsMiddleMountainMomma2017} from '../../scripts/routes'
 
 const expect = require('./global.spec').expect
 

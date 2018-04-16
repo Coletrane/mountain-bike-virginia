@@ -11,8 +11,6 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
-  import {battleAtBlackhorse2018Video} from '../../scripts/routes'
-
   export default {
     name: 'battle-at-blackhorse-2018-video-promo',
     components: {

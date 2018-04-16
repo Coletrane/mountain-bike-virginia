@@ -16,8 +16,6 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
-  import {dtSwiss54tRatchetReview} from '../../scripts/routes'
-
   export default {
     name: 'dt-swiss-54t-ratchet-review-promo',
     components: {

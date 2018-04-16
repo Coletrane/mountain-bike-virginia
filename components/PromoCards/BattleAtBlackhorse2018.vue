@@ -20,8 +20,6 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
-  import {battleAtBlackhorse2018, resultsBattleAtBlackhorse2018} from '../../scripts/routes'
-
   export default {
     name: 'battle-at-blackhorse-2018-promo',
     components: {

@@ -27,8 +27,6 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
-  import {creature2016} from '../../scripts/routes'
-
   export default {
     name: 'creature-2016-promo',
     components: {

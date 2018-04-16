@@ -57,7 +57,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  import {middleMtMomma2018, resultsMiddleMountainMomma2017, s3Pages} from '../../scripts/routes'
+  import {s3Pages} from '../../scripts/routes'
 
   export default {
     name: 'middle-mt-momma-2018-promo',

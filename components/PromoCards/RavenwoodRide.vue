@@ -11,8 +11,6 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
-  import {ravenwoodRide} from '../../scripts/routes'
-
   export default {
     name: 'ravenwood-ride-promo',
     components: {

@@ -9,7 +9,6 @@
   import ResponsiveImg from "./ResponsiveImg"
 
   import {
-    imgRoutes,
     s3Pages
   } from '../../scripts/routes'
 
@@ -46,7 +45,7 @@
         if (this.src) {
           return this.src
         } else {
-          return `${s3Pages}/${this.post.route}/${imgRoutes[this.post.route]}`
+          return `${s3Pages}/${this.post.route}/${this.post.imageRoute}`
         }
       }
     }

@@ -28,12 +28,7 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {
-    s3Pages,
-    ravenwoodRide,
-    gravelocity2017Video,
-    gravelocity2018
-  } from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {
     headTags,
     buildVideo

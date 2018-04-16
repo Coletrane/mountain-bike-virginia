@@ -16,12 +16,7 @@
   import BlogPost from '../components/BlogPost.vue'
   import Youtube from '../components/Iframes/Youtube.vue'
 
-  import {
-    s3Pages,
-    battleAtBlackhorse2018Video,
-    battleAtBlackhorse2018,
-    dodyRidgeRunFall2017
-  } from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {
     headTags,
     buildVideo

@@ -33,7 +33,6 @@
 
   import {
     s3Pages,
-    results,
     s3StaticImg
   } from "../../scripts/routes"
 
@@ -47,7 +46,7 @@
     },
     data() {
       return {
-        image: `${s3Pages}/${results}/podium.jpg`,
+        image: `${s3Pages}/results/podium.jpg`,
       }
     },
     computed: {

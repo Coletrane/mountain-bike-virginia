@@ -37,7 +37,7 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages, hoopHoleTrailWork2018, rockstarVa2018, middleMtMomma2018} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {

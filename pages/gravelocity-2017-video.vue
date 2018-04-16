@@ -16,13 +16,7 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {
-    s3Pages,
-    gravelocity2017Video,
-    gravelocity2018,
-    middleMtMomma2018,
-    imgRoutes
-  } from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {
     headTags,
     buildVideo

@@ -64,10 +64,7 @@
   import BlogImage from "../components/Images/BlogImage"
 
   import {
-    s3Pages,
-    firstRide2018,
-    creature2017Recap,
-    middleMtMomma2018
+    s3Pages
   } from "../scripts/routes"
   import {headTags} from "../assets/functions"
 

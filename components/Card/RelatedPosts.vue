@@ -14,7 +14,7 @@
 <script>
   import postComponentLoader from '../../assets/mixins/post-component-loader'
 
-  import {s3Pages, imgRoutes} from '../../scripts/routes'
+  import {s3Pages} from '../../scripts/routes'
 
   export default {
     name: 'half-card',
@@ -25,12 +25,7 @@
     },
     mixins: [
       postComponentLoader
-    ],
-    methods: {
-      image(post) {
-        return `${s3Pages}/${post.route}/${imgRoutes[post.route]}`
-      }
-    }
+    ]
   }
 </script>
 

@@ -7,7 +7,6 @@
 
   import {results} from "../../assets/head-tags"
   import {headTags} from "../../assets/functions"
-  import * as routes from '../../scripts/routes'
 
   export default {
     name: 'battle-at-blackhorse-2018',
@@ -26,7 +25,7 @@
         results.description,
         results.keywords,
         {
-          route: routes.resultsBattleAtBlackhorse2018,
+          route: resultsBattleAtBlackhorse2018,
         }
       )
     }

@@ -72,7 +72,7 @@
   import BlogImage from '../components/Images/BlogImage'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages, dtSwiss54tRatchetReview, pivotSwitchbladeReview, caneCreekViscosetReview} from '../scripts/routes'
+  import {s3Pages} from '../scripts/routes'
   import {headTags} from '../assets/functions'
 
   export default {

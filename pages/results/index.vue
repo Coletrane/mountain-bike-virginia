@@ -7,7 +7,6 @@
 
   import {results} from "../../assets/head-tags"
   import {headTags} from "../../assets/functions"
-  import * as routes from '../../scripts/routes'
 
   export default {
     name: 'results-index',
@@ -25,7 +24,7 @@
         results.description,
         results.keywords,
         {
-          route: routes.results
+          route: 'results'
         }
       )
     }

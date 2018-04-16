@@ -52,10 +52,7 @@
   import BlogPost from "../components/BlogPost.vue"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {
-    s3Pages,
-    pivotSwitchbladeReview
-  } from "../scripts/routes"
+  import {s3Pages} from "../scripts/routes"
   import {headTags} from "../assets/functions"
 
   export default {

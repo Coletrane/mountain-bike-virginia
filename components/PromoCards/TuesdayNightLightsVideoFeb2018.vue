@@ -10,9 +10,7 @@
 <script>
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
-  
-  import {tuesdayNightLightsVideoFeb2018} from '../../scripts/routes'
-  
+
   export default {
     name: 'tuesday-night-lights-video-feb-2018-promo',
     components: {
