@@ -1,7 +1,7 @@
 <template>
   <nav :style="navStyle">
     <span class="flex-outer">
-      <nuxt-link to="/"
+      <nuxt-link :to="{name: 'index'}"
                  key="mtbva"
                  id="mtbva-home-link">
         <img class="mtbva"
@@ -11,7 +11,7 @@
       </nuxt-link>
     </span>
     <span class="flex-inner inner-left">
-      <nuxt-link to="/"
+      <nuxt-link :to="{name: 'index'}"
                  key="xxcva"
                  id="xxcva-home-link">
         <img class="xxcva"

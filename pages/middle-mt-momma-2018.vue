@@ -26,7 +26,7 @@
               XXC: 44mi<br>
             </div>
             <div>
-              <nuxt-link to="/results/middle-mountain-momma-2017">
+              <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
                 View the results from last year.
               </nuxt-link>
               <div>
