@@ -56,7 +56,7 @@ posts.forEach(post => {
 
 // Initialize the pagination (sortof)
 const postsPerPage = [
-  1
+  10
 ]
 postsPerPage.push(
   postsOrder.length - postsPerPage

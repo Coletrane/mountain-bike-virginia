@@ -121,11 +121,11 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          rockstarVa2018
+          'rockstar-va-2018'
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
           'middle-mt-momma-2018',
-          creature2017Recap
+          'creature-2017-recap'
         ])
       }
     },
@@ -141,7 +141,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${rockstarVa2018}/`,
+        img: `${s3Pages}/rockstar-va-2018/`,
         selectedRaceRoute: 'trail'
       }
     },

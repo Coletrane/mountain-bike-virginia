@@ -1,8 +1,8 @@
 <template>
-  <post-card :post="$store.getters.getPost(specMines29Oct17)"
+  <post-card :post="post"
              no-author>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(specMines29Oct17)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -19,7 +19,7 @@
     },
     data() {
       return {
-        specMines29Oct17: specMines29Oct17
+        post: this.$store.getters.getPost('spec-mines-oct-29-2017')
       }
     }
   }

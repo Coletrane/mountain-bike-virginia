@@ -85,11 +85,11 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          dtSwiss54tRatchetReview
+          'dt-swiss-54t-ratchet-review'
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
-            pivotSwitchbladeReview,
-            caneCreekViscosetReview
+            'pivot-switchblade-review',
+            'cane-creek-viscoset-review'
           ])
       }
     },
@@ -105,7 +105,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${dtSwiss54tRatchetReview}/`
+        img: `${s3Pages}/dt-swiss-54t-ratchet-review/`
       }
     }
   }

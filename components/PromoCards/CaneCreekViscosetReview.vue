@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(caneCreekViscosetReview)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
@@ -7,7 +7,7 @@
       </div>
     </div>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(caneCreekViscosetReview)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        caneCreekViscosetReview: caneCreekViscosetReview
+        post: this.$store.getters.getPost('cane-creek-viscoset-review')
       }
     }
   }

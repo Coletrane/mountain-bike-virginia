@@ -1,8 +1,8 @@
 <template>
-  <post-card :post="$store.getters.getPost(ravenwoodRide)"
+  <post-card :post="post"
              no-author>
     <div slot="media">
-      <youtube :src="$store.getters.getPost(ravenwoodRide).ytSrc"/>
+      <youtube :src="post.ytSrc"/>
     </div>
   </post-card>
 </template>
@@ -19,7 +19,7 @@
     },
     data() {
       return {
-        ravenwoodRide: ravenwoodRide
+        post: this.$store.getters.getPost('ravenwood-ride')
       }
     }
   }

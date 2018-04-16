@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(gravelocity2018)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(gravelocity2018)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -26,7 +26,7 @@
     },
     data() {
       return {
-        gravelocity2018: gravelocity2018
+        post: this.$store.getters.getPost('gravelocity-2018')
       }
     }
   }

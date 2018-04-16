@@ -30,13 +30,13 @@
     },
     async asyncData(context) {
       let post = await context.store.dispatch('loadPosts', [
-        gravelocity2017Video
+        'gravelocity-2017-video'
       ])
       return {
         schema: await buildVideo(post),
         post: post,
         relatedPosts: await context.store.dispatch('loadPosts', [
-          gravelocity2018,
+          'gravelocity-2018',
           'middle-mt-momma-2018'
         ])
       }
@@ -55,7 +55,7 @@
     },
     data() {
       return {
-        image: `${s3Pages}/${gravelocity2017Video}/${imgRoutes[gravelocity2017Video]}`
+        image: `${s3Pages}/'gravelocity-2017-video/${this.post.imgRoute}`
       }
     }
   }

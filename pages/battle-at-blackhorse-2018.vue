@@ -112,11 +112,11 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          battleAtBlackhorse2018
+          'battle-at-blackhorse-2018'
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
-          battleAtBlackhorse2018Video,
-          dodyRidgeRunFall2017
+          'battle-at-blackhorse-2018-video',
+          'dody-ridge-fall-run'
         ])
       }
     },
@@ -132,7 +132,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${battleAtBlackhorse2018}/`
+        img: `${s3Pages}/battle-at-blackhorse-2018/`
       }
     }
   }

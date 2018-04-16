@@ -1,8 +1,8 @@
 <template>
-  <post-card :post="$store.getters.getPost(relaunch)"
+  <post-card :post="post"
              no-author>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(relaunch)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -19,7 +19,7 @@
     },
     data() {
       return {
-        relaunch: relaunch
+        post: this.$store.getters.getPost('relaunch')
       }
     }
   }

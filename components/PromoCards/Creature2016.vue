@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(creature2016)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
@@ -13,12 +13,12 @@
       </div>
     </div>
     <div class="promo">
-      <nuxt-link :to="'results'">
+      <nuxt-link :to="{name: 'results'}">
         View the results here.
       </nuxt-link>
     </div>
     <div slot="media">
-      <youtube :src="$store.getters.getPost(creature2016).ytSrc"/>
+      <youtube :src="post.ytSrc"/>
     </div>
   </post-card>
 </template>
@@ -35,7 +35,7 @@
     },
     data() {
       return {
-        creature2016: creature2016
+        post: this.$store.getters.getPost('creature-2016')
       }
     }
   }

@@ -25,7 +25,7 @@
         results.description,
         results.keywords,
         {
-          route: resultsBattleAtBlackhorse2018,
+          route: 'results-battle-at-blackhorse-2018',
         }
       )
     }

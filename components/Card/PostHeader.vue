@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link :to="post.route">
+    <nuxt-link :to="{name: post.route}">
 
     </nuxt-link>
   </div>

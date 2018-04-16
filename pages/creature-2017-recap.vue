@@ -117,7 +117,7 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          creature2017Recap
+          'creature-2017-recap'
         ])
       }
     },
@@ -133,7 +133,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${creature2017Recap}/`
+        img: `${s3Pages}/creature-2017-recap/`
       }
     }
   }

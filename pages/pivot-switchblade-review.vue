@@ -64,7 +64,7 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          pivotSwitchbladeReview
+          'pivot-switchblade-review'
         ])
       }
     },
@@ -80,7 +80,7 @@
     },
     data() {
       return {
-        img:  `${s3Pages}/${pivotSwitchbladeReview}/`
+        img:  `${s3Pages}/'pivot-switchblade-review'/`
       }
     }
   }

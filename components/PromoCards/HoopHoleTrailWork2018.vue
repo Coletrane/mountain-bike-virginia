@@ -1,12 +1,12 @@
 <template>
-  <post-card :post="$store.getters.getPost(hoopHoleTrailWork2018)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
-      The entry fee for the <a :href="$store.getters.getPost(rockstarVa2018).fbEvent">RockStar VA</a> race/ride captures the spirit of backcountry riding exquisitely. Entrants can either donate to a trail work advocacy group, or complete 10 hours of trail work. Seeing as the latter involves me out exploring and riding, the trail work option was the only choice.
+      The entry fee for the <a :href="$store.getters.getPost('rockstar-va-2018').fbEvent">RockStar VA</a> race/ride captures the spirit of backcountry riding exquisitely. Entrants can either donate to a trail work advocacy group, or complete 10 hours of trail work. Seeing as the latter involves me out exploring and riding, the trail work option was the only choice.
     </div>
 
     <div slot="media">
-      <image-link :post="$store.getters.getPost(hoopHoleTrailWork2018)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -23,8 +23,7 @@
     },
     data() {
       return {
-        hoopHoleTrailWork2018: hoopHoleTrailWork2018,
-        rockstarVa2018: rockstarVa2018,
+        post: this.$store.getters.getPost('hoop-hole-trail-work-2018'),
       }
     }
   }

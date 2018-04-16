@@ -42,13 +42,14 @@
     },
     async asyncData(context) {
       let post = await context.store.dispatch('loadPosts', [
-        ravenwoodRide])
+        'ravenwood-ride'
+      ])
       return {
         schema: await buildVideo(post),
         post: post,
         relatedPosts: await context.store.dispatch('loadPosts', [
-          gravelocity2017Video,
-          gravelocity2018
+          'gravelocity-2017-video',
+          'gravelocity-2018'
         ])
       }
     },

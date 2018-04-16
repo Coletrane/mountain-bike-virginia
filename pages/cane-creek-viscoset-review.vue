@@ -83,12 +83,12 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          caneCreekViscosetReview
+          'cane-creek-viscoset-review'
         ]),
         relatedPosts:
           await context.store.dispatch('loadPosts', [
-            dtSwiss54tRatchetReview,
-            pivotSwitchbladeReview
+            'dt-swiss-54t-ratchet-review',
+            'pivot-switchblade-review'
           ])
       }
     },
@@ -104,7 +104,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${caneCreekViscosetReview}/`
+        img: `${s3Pages}/cane-creek-viscoset-review/`
       }
     }
   }

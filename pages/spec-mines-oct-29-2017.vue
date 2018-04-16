@@ -49,7 +49,7 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          specMines29Oct17
+          'spec-mines-oct-29-2017'
         ])
       }
     },
@@ -65,7 +65,7 @@
     },
     data() {
       return {
-        img:  `${s3Pages}/${specMines29Oct17}/`,
+        img:  `${s3Pages}/'spec-mines-oct-29-2017'/`,
       }
     }
   }

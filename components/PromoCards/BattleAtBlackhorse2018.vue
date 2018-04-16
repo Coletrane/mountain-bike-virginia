@@ -1,17 +1,17 @@
 <template>
-  <post-card :post="$store.getters.getPost(battleAtBlackhorse2018)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
         23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
         trails. We'd like to give a Hell Yeah to all the shredders that finished this tough race.
-        <nuxt-link :to="resultsBattleAtBlackhorse2018">
+        <nuxt-link :to="{name: 'results-battle-at-blackhorse-2018'}">
           Check out the results here.
         </nuxt-link>
       </div>
     </div>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(battleAtBlackhorse2018)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -28,8 +28,7 @@
     },
     data() {
       return {
-        battleAtBlackhorse2018: battleAtBlackhorse2018,
-        resultsBattleAtBlackhorse2018: resultsBattleAtBlackhorse2018
+        post: this.$store.getters.getPost('battle-at-blackhorse-2018')
       }
     }
   }

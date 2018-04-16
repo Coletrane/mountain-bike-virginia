@@ -132,11 +132,11 @@
     async asyncData(context) {
       return {
         post: await context.store.dispatch('loadPosts', [
-          gravelocity2018
+          'gravelocity-2018'
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
-          gravelocity2017Video,
-          specMines29Oct17
+          'gravelocity-2017-video',
+          'spec-mines-oct-29-2017'
         ])
       }
     },
@@ -152,7 +152,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${gravelocity2018}/`,
+        img: `${s3Pages}/gravelocity-2018/`,
       }
     }
   }

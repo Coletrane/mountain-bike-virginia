@@ -10,7 +10,7 @@
         come alive.
       </div>
       <div class="promo">
-        <nuxt-link :to="'results'">
+        <nuxt-link :to="{name: 'results'}">
           View the results here.
         </nuxt-link>
       </div>
