@@ -76,7 +76,7 @@ describe('headTags tests', () => {
         'description',
         'keywords',
         {
-          route: resultsMiddleMountainMomma2017
+          route: 'results-middle-mountain-momma-2017'
         })
 
       it('should have the correct og:image', () => {

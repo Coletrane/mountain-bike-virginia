@@ -53,7 +53,10 @@
       Page1
     },
     async asyncData (context) {
-      return await context.store.dispatch('incrementPage')
+      await context.store.dispatch('loadPage', 0)
+      return await context.store.dispatch(
+        'loadPosts',
+        context.store.state.routes.pages[0])
     },
     head () {
       return headTags(
@@ -73,11 +76,6 @@
         s3Ads: s3Ads
       }
     },
-    async mounted () {
-      if (this.$store.state.posts.currentPage === -1) {
-        await this.$store.dispatch('posts/incrementPage')
-      }
-    },
     computed: {
       backgroundImage () {
         return {
@@ -85,12 +83,13 @@
         }
       },
       showLoadMore () {
-        return this.$store.state.posts.currentPage < this.$store.state.routes.numberOfPages - 1
+        return this.$store.state.routes.currentPage <
+               this.$store.state.routes.numberOfPages - 1
       }
     },
     methods: {
       async loadMore () {
-        await this.$store.dispatch('posts/incrementPage')
+        await this.$store.dispatch('incrementPage')
       }
     }
   }

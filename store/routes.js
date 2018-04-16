@@ -4,7 +4,7 @@ import axios from 'axios'
 export default {
   state: {
     pages: [],
-    currentPage: -1,
+    currentPage: 0,
     loadedPages: [],
     numberOfPages: 2
   },

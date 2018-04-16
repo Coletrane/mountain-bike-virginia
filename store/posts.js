@@ -1,9 +1,9 @@
-import {s3Posts} from '../scripts/routes'
+import { s3Posts } from '../scripts/routes'
 import axios from 'axios'
 
 export default {
   state: {
-    loadedPosts: [],
+    loadedPosts: []
   },
 
   actions: {
@@ -41,7 +41,8 @@ export default {
       const newPage = context.rootState.routes.currentPage + 1
       let posts = []
 
-      if (!context.rootState.routes.loadedPages.includes(newPage)) {
+      if (!context.rootState.routes.loadedPages.includes(newPage) &&
+          context.rootState.routes.numberOfPages > newPage) {
         await context.dispatch('setCurrentPage', newPage)
         posts = await context.dispatch('loadPosts', context.rootState.routes.pages[newPage])
       }
@@ -64,7 +65,7 @@ export default {
       let posts = []
       routes.forEach(route => {
         let foundPost = state.loadedPosts
-          .find(post => post.route === route)
+                             .find(post => post.route === route)
         if (foundPost) {
           posts.push(foundPost)
         }
