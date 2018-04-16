@@ -46,8 +46,6 @@ export default {
         posts = await context.dispatch('loadPosts', context.rootState.routes.pages[newPage])
       }
 
-      context.commit('SET_CURRENT_PAGE', newPage)
-
       return posts
     }
   },

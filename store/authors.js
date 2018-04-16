@@ -10,18 +10,20 @@ export default {
     loadAuthor: async (context, route) => {
       let resultAuthor
 
-      if (!context.getters.getAuthor(route)) {
-        let res = await axios.get(`${s3Authors}/${route}.json`)
+     for (const author of route.split(' ')) {
+       if (!context.getters.getAuthor(author)) {
+         let res = await axios.get(`${s3Authors}/${author}.json`)
 
-        if (res.data) {
-          resultAuthor = res.data
-          resultAuthor.imgUrl = `${s3StaticImg}/authors/${resultAuthor.imgUrl}`
-          resultAuthor.route = route
-          context.commit('AUTHOR_LOADED', resultAuthor)
-        }
-      } else {
-        resultAuthor = context.getters.getAuthor(route)
-      }
+         if (res.data) {
+           resultAuthor = res.data
+           resultAuthor.imgUrl = `${s3StaticImg}/authors/${resultAuthor.imgUrl}`
+           resultAuthor.route = author
+           context.commit('AUTHOR_LOADED', resultAuthor)
+         }
+       } else {
+         resultAuthor = context.getters.getAuthor(author)
+       }
+     }
 
       return resultAuthor
     }
