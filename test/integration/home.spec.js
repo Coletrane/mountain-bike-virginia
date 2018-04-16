@@ -1,11 +1,11 @@
-import posts from '../../store/posts'
+import routesState from '../../store/routes'
+import {routes} from '../../scripts/build-routes-json'
 import _ from 'lodash'
-import * as routes from '../../scripts/routes'
 
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
 
-const numberOfPages = posts.state.pages.length
+const numberOfPages = routesState.state.numberOfPages
 
 describe('<home> tests', () => {
   let driver
@@ -41,7 +41,7 @@ describe('<home> tests', () => {
       .to.be.true
   })
 
-  for (const [i, post] of _.flatten(posts.state.pages).entries()) {
+  for (const [i, post] of routes) {
     it('should have a headline', async () => {
       expect(await cards[i].findElement(
         By.className('headline'))
@@ -56,7 +56,7 @@ describe('<home> tests', () => {
         .not.to.be.undefined
     })
 
-    if (post !== routes.relaunch && post !== routes.creature2016) {
+    if (post !== 'relaunch' && post !== 'creature-2016') {
       it('should have a link around the headline and subheading', async () => {
         let href = await cards[i].findElement(
           By.xpath('//a'))

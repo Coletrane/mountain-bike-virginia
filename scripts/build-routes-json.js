@@ -84,3 +84,8 @@ pages.forEach((page, i, arr) => {
   const json = JSON.stringify(page, null, 2)
   fs.writeFileSync(`json/routes/${i}.json`, json)
 })
+
+module.exports = {
+  routes,
+  posts
+}

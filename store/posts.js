@@ -1,4 +1,4 @@
-import * as routes from '../scripts/routes'
+import {s3Posts} from '../scripts/routes'
 import axios from 'axios'
 
 export default {
@@ -12,7 +12,7 @@ export default {
 
       for (const route of postsRoutes) {
         if (!context.getters.getPost(route)) {
-          let res = await axios.get(`${routes.s3Posts}/${route}.json`)
+          let res = await axios.get(`${s3Posts}/${route}.json`)
 
           if (res.data) {
             const post = res.data

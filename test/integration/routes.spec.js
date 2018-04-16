@@ -1,7 +1,7 @@
+import {routes, posts} from '../../scripts/build-routes-json'
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
 const until = require('selenium-webdriver').until
-const routes = require('../../scripts/routes')
 const request = require('request-promise')
 
 const googleDataValidator = 'https://search.google.com/structured-data/testing-tool/validate'
@@ -17,7 +17,7 @@ describe('routes tests', () => {
     testUrl = await global.testUrl
   })
 
-  for (const route of routes.appRoutes) {
+  for (const route of routes) {
     describe(route, () => {
       let url
 
@@ -88,12 +88,16 @@ describe('routes tests', () => {
           })
 
           it('has og:image meta tag', async () => {
-            let imgRoute = route
+            let expected
+
             if (route !== '/') {
-              imgRoute = route.replace('/', '')
+              const postJson = JSON.parse(require(`../../json/posts/${route}.json`))
+              expected = postJson.imgRoute
+            } else {
+              expected = 'foliage.jpg'
             }
 
-            expect(ogImage.endsWith(routes.imgRoutes[imgRoute]))
+            expect(ogImage.endsWith(expected))
               .to.be.true
           })
 

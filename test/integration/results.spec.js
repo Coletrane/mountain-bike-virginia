@@ -1,12 +1,12 @@
+import {routes} from '../../scripts/build-routes-json'
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
-const routes = require('../../scripts/routes')
 
 describe('results tests', () => {
   let driver
   let expect
   let testUrl
-  let childRoutes = routes.appRoutes.filter(route => route.startsWith('/results/'))
+  let childRoutes = routes.filter(route => route.startsWith('/results/'))
 
   before(async () => {
     driver = await global.driver
