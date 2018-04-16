@@ -53,7 +53,7 @@
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
           rockstarVa2018,
-          middleMtMomma2018
+          'middle-mt-momma-2018'
         ])
       }
     },
@@ -69,8 +69,7 @@
     },
     data() {
       return {
-        img: `${s3Pages}/${hoopHoleTrailWork2018}/`,
-        rockstarVa2018: rockstarVa2018
+        img: `${s3Pages}/${hoopHoleTrailWork2018}/`
       }
     }
   }

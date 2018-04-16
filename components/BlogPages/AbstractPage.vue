@@ -1,20 +1,18 @@
 <template>
   <div class="abstract-page">
-    <div v-for="postRoute of $store.state.routes.pages[page]">
-
-      <transition name="new-page-fade">
-        <component v-if="getPostComponent(postRoute)"
-                   :is="getPostComponent(postRoute)"/>
-      </transition>
-
-      <div v-if="!getPostComponent(postRoute)"
-           class="post-card-placeholder">
+    <div v-if="pageLoaded">
+      <div v-for="postRoute of $store.state.routes.pages[page]">
+        <transition name="new-page-fade">
+          <component v-if="getPostComponent(postRoute)"
+                     :is="getPostComponent(postRoute)"/>
+        </transition>
+        <div v-if="!getPostComponent(postRoute)"
+             class="post-card-placeholder">
+        </div>
       </div>
-
     </div>
   </div>
 </template>
-
 <script>
   import postComponentLoader from '../../assets/mixins/post-component-loader'
 
@@ -28,11 +26,16 @@
     },
     mixins: [
       postComponentLoader
-    ]
+    ],
+    computed: {
+      pageLoaded() {
+        return this.$store.getters.getPosts(
+          this.$store.state.routes.pages[this.page]).length ===
+               this.$store.state.routes.pages[this.page].length
+      }
+    }
   }
-
 </script>
-
 <style>
   .post-card-placeholder {
     width: 100%;

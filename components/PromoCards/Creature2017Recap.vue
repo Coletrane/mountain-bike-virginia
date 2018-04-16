@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(creature2017Recap)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div slot="media">
-      <youtube :src="$store.getters.getPost(creature2017Recap).ytSrc"/>
+      <youtube :src="post.ytSrc"/>
     </div>
   </post-card>
 </template>
@@ -33,12 +33,8 @@
     },
     data() {
       return {
-        creature2017Recap: creature2017Recap
+        post: this.$store.getters.getPost('creature-2017-recap')
       }
     }
   }
 </script>
-
-<style scoped>
-
-</style>

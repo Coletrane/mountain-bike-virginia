@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(middleMtMomma2018)"
+  <post-card :post="post"
              no-author>
     <div slot="header">
       <h4 class="subheading">
@@ -16,7 +16,7 @@
         State Park.</a> The
         first race in the XXC Marathon Series! Classes: Youth: 7mi, Junior: 11mi, Classic: 21mi, XXC:
         44mi.
-        <nuxt-link :to="resultsMiddleMountainMomma2017">
+        <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
           View the results from last year.
         </nuxt-link>
         <div>
@@ -25,7 +25,7 @@
           </a>
         </div>
         <div>
-          <a :href="$store.getters.getPost(middleMtMomma2018).fbEvent">
+          <a :href="post.fbEvent">
             Details
             <font-awesome-icon :icon="faFacebook"
                                class="inline-facebook-icon"/>
@@ -35,7 +35,7 @@
     </div>
     <div slot="media"
          style="margin-top: -2.8rem;">
-      <a :href="$store.getters.getPost(middleMtMomma2018).fbEvent">
+      <a :href="post.fbEvent">
         <img v-lazy="mmmImg + 'mmm.png'"
              class="image-smaller">
       </a>
@@ -45,7 +45,7 @@
                        muted
                        preload
                        loop/>
-      <ride-with-gps :url="$store.getters.getPost(middleMtMomma2018).rwGps"/>
+      <ride-with-gps :url="post.rwGps"/>
     </div>
   </post-card>
 </template>
@@ -69,10 +69,9 @@
     },
     data() {
       return {
-        middleMtMomma2018: middleMtMomma2018,
-        resultsMiddleMountainMomma2017: resultsMiddleMountainMomma2017,
+        post: this.$store.getters.getPost('middle-mt-momma-2018'),
         faFacebook: faFacebook,
-        mmmImg: `${s3Pages}/${middleMtMomma2018}/`
+        mmmImg: `${s3Pages}/middle-mt-momma-2018/`
       }
     }
   }

@@ -1,20 +1,23 @@
 <template>
-  <nuxt-link
-    :to="link">
+  <nuxt-link v-if="post.route"
+             :to="{name: post.route}">
     <responsive-img :src="img"
                     :alt="post.title"/>
   </nuxt-link>
+  <a v-else-if="href"
+     :href="href">
+    <responsive-img :src="img"
+                    :alt="post.title"/>
+  </a>
 </template>
 <script>
-  import ResponsiveImg from "./ResponsiveImg"
+  import ResponsiveImg from './ResponsiveImg'
 
-  import {
-    s3Pages
-  } from '../../scripts/routes'
+  import { s3Pages } from '../../scripts/routes'
 
   export default {
     components: {ResponsiveImg},
-    name: "image-link",
+    name: 'image-link',
     props: {
       post: {
         required: true,
@@ -31,21 +34,11 @@
       ResponsiveImg
     },
     computed: {
-      link() {
-        if (this.href) {
-          return this.href
-        } else if (this.post &&
-                   this.$router.options.pages.find(route => route.name === this.post.route)) {
-          return {name: this.post.route}
-        } else {
-          return {name: 'index'}
-        }
-      },
       img() {
         if (this.src) {
           return this.src
         } else {
-          return `${s3Pages}/${this.post.route}/${this.post.imageRoute}`
+          return `${s3Pages}/${this.post.route}/${this.post.imgRoute}`
         }
       }
     }

@@ -82,7 +82,7 @@
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
           creature2017Recap,
-          middleMtMomma2018
+          'middle-mt-momma-2018'
         ])
       }
     },

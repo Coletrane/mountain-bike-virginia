@@ -1,5 +1,5 @@
 <template>
-  <post-card :post="$store.getters.getPost(rockstarVa2018)"
+  <post-card :post="post"
              no-author>
     <div slot="words">
       <div class="promo">
@@ -7,7 +7,7 @@
       </div>
     </div>
     <div slot="media">
-      <image-link :post="$store.getters.getPost(rockstarVa2018)"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
@@ -17,10 +17,7 @@
   import ImageLink from '../Images/ImageLink'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-  
-  import {
-    s3Pages} from '../../scripts/routes'
-  
+
   export default {
     name: 'rockstar-va-2018-promo',
     components: {
@@ -30,8 +27,7 @@
     },
     data() {
       return {
-        rockstarVa2018: rockstarVa2018,
-        s3Pages: s3Pages,
+        post: this.$store.getters.getPost('rockstar-va-2018'),
         faFacebook: faFacebook
       }
     }

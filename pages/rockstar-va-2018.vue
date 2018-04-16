@@ -124,7 +124,7 @@
           rockstarVa2018
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
-          middleMtMomma2018,
+          'middle-mt-momma-2018',
           creature2017Recap
         ])
       }

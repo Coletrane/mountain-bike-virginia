@@ -13,15 +13,17 @@ export default {
     loadPage: async (context, pageNum) => {
       let resultRoutes = []
 
-      let res = await axios.get(`${s3Routes}/${pageNum}.json`)
+      if (pageNum < context.state.numberOfPages) {
+        let res = await axios.get(`${s3Routes}/${pageNum}.json`)
 
-      if (res.data) {
-        resultRoutes = res.data
+        if (res.data) {
+          resultRoutes = res.data
 
-        context.commit('PAGE_LOADED', {
-          routes: resultRoutes,
-          page: pageNum
-        })
+          context.commit('PAGE_LOADED', {
+            routes: resultRoutes,
+            page: pageNum
+          })
+        }
       }
 
       return resultRoutes

@@ -25,7 +25,6 @@
       return {
         hoopHoleTrailWork2018: hoopHoleTrailWork2018,
         rockstarVa2018: rockstarVa2018,
-        middleMtMomma2018: middleMtMomma2018
       }
     }
   }

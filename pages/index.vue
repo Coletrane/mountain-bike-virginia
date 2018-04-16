@@ -53,7 +53,7 @@
       Page1
     },
     async asyncData (context) {
-      await context.store.dispatch('incrementPage')
+      return await context.store.dispatch('incrementPage')
     },
     head () {
       return headTags(

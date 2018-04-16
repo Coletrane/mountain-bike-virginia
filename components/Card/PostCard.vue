@@ -8,11 +8,11 @@
                       col-md-9
                       col-lg-9
                       col-xl-9">
-            <nuxt-link v-if="titleLink"
-                       :to="titleLink"
-                       exact>
+            <nuxt-link v-if="post.route && post.route != ' '"
+                       :to="{name: post.route}">
               <h2 v-if="!noPostTitle"
-                  class="headline">{{post.title}}</h2>
+                  class="headline">{{post.title}}
+              </h2>
               <span class="subheading">{{post.subtitle}}</span>
               <div v-if="post.date">
                 {{post.date}}
@@ -23,7 +23,8 @@
             </nuxt-link>
             <div v-else>
               <h2 v-if="!noPostTitle"
-                  class="headline">{{post.title}}</h2>
+                  class="headline">{{post.title}}
+              </h2>
               <span class="subheading">{{post.subtitle}}</span>
               <div v-if="post.date">
                 {{post.date}}
@@ -46,13 +47,11 @@
                                  col-xl-3
                                  social-right"/>
         </div>
-
         <div v-if="authorSeparateDiv">
           <author v-if="!noAuthor && headerAuthor"
                   :author="post.author"/>
           <slot name="header"/>
         </div>
-
         <slot name="words"/>
       </div>
       <div class="mtbva-media">
@@ -101,15 +100,9 @@
       Author
     },
     computed: {
-      titleLink() {
-        if (this.post.route !== ' ' &&
-          this.$router.options.pages.find(route => route.name === this.post.route)) {
-          return {name: this.post.route}
-        }
-      },
       formattedDate() {
         if (this.post.date) {
-          return new Date()
+          return new Date(this.post.date)
         }
       }
     }
@@ -129,7 +122,6 @@
     font-size: 1.5rem;
     font-family: 'Lato', sans-serif;
   }
-
 </style>
 <style scoped>
   a {

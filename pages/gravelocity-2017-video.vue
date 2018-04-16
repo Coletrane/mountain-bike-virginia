@@ -37,7 +37,7 @@
         post: post,
         relatedPosts: await context.store.dispatch('loadPosts', [
           gravelocity2018,
-          middleMtMomma2018
+          'middle-mt-momma-2018'
         ])
       }
     },

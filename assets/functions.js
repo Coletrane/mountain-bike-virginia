@@ -79,15 +79,15 @@ const getImageRoute = (post) => {
   let result
 
   if (post.route === '') {
-    result = `${s3StaticImg}${post.imageRoute}`
+    result = `${s3StaticImg}${post.imgRoute}`
   } else {
     let splitUrl = post.route.split('/')
 
     // FIXME: this only works one level deep
     if (splitUrl.length > 1) {
-      result = `${s3Pages}/${splitUrl[0]}/${post.imageRoute}`
+      result = `${s3Pages}/${splitUrl[0]}/${post.imgRoute}`
     } else {
-      result = `${s3Pages}/${post.route}/${post.imageRoute}`
+      result = `${s3Pages}/${post.route}/${post.imgRoute}`
     }
   }
 
