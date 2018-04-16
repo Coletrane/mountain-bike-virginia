@@ -4,7 +4,6 @@ import axios from 'axios'
 export default {
   state: {
     loadedPosts: [],
-    currentPage: -1, // This is incremented after posts are loaded in index.vue
     loadedPages: [0]
   },
 
