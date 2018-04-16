@@ -1,4 +1,4 @@
-import * as routes from '../scripts/routes'
+import {baseUrl, s3StaticImg, s3Pages}from '../scripts/routes'
 import * as resImg from '../scripts/responsive-imgs.config'
 import {schemaTypes, schemaOrg} from './schmea-types'
 import {results} from './head-tags'
@@ -19,9 +19,9 @@ export const headTags = (title, desc, keywords, post) => {
     }
 
     if (post.route) {
-      fbUrl.content = `${routes.baseUrl}/${post.route}/`
+      fbUrl.content = `${baseUrl}/${post.route}/`
     } else if (post.route === '') {
-      fbUrl.content = `${routes.baseUrl}/`
+      fbUrl.content = `${baseUrl}/`
     }
 
     metas.push(fbUrl)
@@ -79,22 +79,22 @@ const getImageRoute = (post) => {
   let result
 
   if (post.route === '') {
-    result = `${routes.s3StaticImg}${routes.imgRoutes['/']}`
+    result = `${s3StaticImg}${post.imageRoute}`
   } else {
     let splitUrl = post.route.split('/')
 
     // FIXME: this only works one level deep
     if (splitUrl.length > 1) {
-      result = `${routes.s3Pages}/${splitUrl[0]}/${routes.imgRoutes[post.route]}`
+      result = `${s3Pages}/${splitUrl[0]}/${post.imageRoute}`
     } else {
-      result = `${routes.s3Pages}/${post.route}/${routes.imgRoutes[post.route]}`
+      result = `${s3Pages}/${post.route}/${post.imageRoute}`
     }
   }
 
   return result
 }
 
-const logoSrc = `${routes.s3StaticImg}/mtbva-big.png`
+const logoSrc = `${s3StaticImg}/mtbva-big.png`
 
 // Functions for building schema.org objects
 const buildArticle = (post, desc) => {
@@ -103,7 +103,7 @@ const buildArticle = (post, desc) => {
     '@type': schemaTypes.article,
     mainEntityOfPage: {
       '@type': schemaTypes.article,
-      '@id': `${routes.baseUrl}${post.route}`,
+      '@id': `${baseUrl}${post.route}`,
       author: post.author.name,
       datePublished: new Date(post.date).toISOString(),
       headline: post.title,
@@ -204,12 +204,12 @@ const buildReview = (post, desc) => {
       '@type': schemaTypes.person,
       name: post.author.name
     },
-    url: `${routes.baseUrl}${post.route}`,
+    url: `${baseUrl}${post.route}`,
     datePublished: new Date(post.date).toISOString(),
     publisher: {
       '@type': schemaTypes.org,
       name: 'Mountain Bike Virginia',
-      sameAs: routes.baseUrl
+      sameAs: baseUrl
     },
     description: desc,
     itemReviewed: {
@@ -229,7 +229,7 @@ const buildOrganization = () => {
   let schema = {
     '@context': schemaOrg,
     '@type': schemaTypes.org,
-    url: routes.baseUrl,
+    url: baseUrl,
     logo: logoSrc,
     contactPoint: {
       '@type': schemaTypes.contact,
@@ -247,14 +247,14 @@ const buildDataset = (post) => {
     '@type': schemaTypes.dataset,
     name: 'Mountain Bike Virginia XXC VA Bike Race Results',
     description: results.description,
-    url: `${routes.baseUrl}${post.route}`,
-    sameAs: `${routes.baseUrl}/results`,
+    url: `${baseUrl}${post.route}`,
+    sameAs: `${baseUrl}/results`,
     keywords: [
       results.keywords
     ],
     creator: {
       '@type': schemaTypes.org,
-      url: routes.baseUrl,
+      url: baseUrl,
       name: 'Mountain Bike Virginia XXC VA Series',
       telephone: '+1-540-529-1426',
       email: 'eloc49@gmail.com'

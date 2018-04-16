@@ -36,7 +36,7 @@
         if (this.href) {
           return this.href
         } else if (this.post &&
-                   this.$router.options.routes.find(route => route.name === this.post.route)) {
+                   this.$router.options.pages.find(route => route.name === this.post.route)) {
           return {name: this.post.route}
         } else {
           return {name: 'index'}

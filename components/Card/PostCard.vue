@@ -103,7 +103,7 @@
     computed: {
       titleLink() {
         if (this.post.route !== ' ' &&
-          this.$router.options.routes.find(route => route.name === this.post.route)) {
+          this.$router.options.pages.find(route => route.name === this.post.route)) {
           return {name: this.post.route}
         }
       },

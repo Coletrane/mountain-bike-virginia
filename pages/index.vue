@@ -16,9 +16,9 @@
     <div class="main-content"
          :style="backgroundImage">
 
-      <page-0 v-if="$store.state.posts.currentPage >= 0"
+      <page-0 v-if="$store.state.routes.currentPage >= 0"
               :key="0"/>
-      <page-1 v-if="$store.state.posts.currentPage >= 1"
+      <page-1 v-if="$store.state.routes.currentPage >= 1"
               :key="1"/>
 
       <div v-if="showLoadMore"
@@ -38,7 +38,7 @@
   import BannerAd from '../components/Ads/BannerAd'
   import { home } from '../assets/head-tags'
   import { headTags } from '../assets/functions'
-  import { s3StaticImg, s3Ads, imgRoutes } from '../scripts/routes'
+  import { s3StaticImg, s3Ads } from '../scripts/routes'
 
   // Pages
   const Page0 = () => import('../components/BlogPages/Page0')
@@ -53,11 +53,7 @@
       Page1
     },
     async asyncData (context) {
-      return {
-        posts: await context.store.dispatch(
-          'loadPosts',
-          context.store.state.posts.pages[0])
-      }
+      await context.store.dispatch('incrementPage')
     },
     head () {
       return headTags(
@@ -73,13 +69,13 @@
     },
     data () {
       return {
-        img: `${s3StaticImg}/${imgRoutes['/']}`,
+        img: `${s3StaticImg}/foliage.jpg`,
         s3Ads: s3Ads
       }
     },
     async mounted () {
       if (this.$store.state.posts.currentPage === -1) {
-        await this.$store.dispatch('incrementPage')
+        await this.$store.dispatch('posts/incrementPage')
       }
     },
     computed: {
@@ -89,12 +85,12 @@
         }
       },
       showLoadMore () {
-        return this.$store.state.posts.currentPage < this.$store.state.posts.pages.length - 1
+        return this.$store.state.posts.currentPage < this.$store.state.routes.numberOfPages - 1
       }
     },
     methods: {
       async loadMore () {
-        await this.$store.dispatch('incrementPage')
+        await this.$store.dispatch('posts/incrementPage')
       }
     }
   }

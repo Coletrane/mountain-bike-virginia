@@ -1,6 +1,6 @@
 <template>
   <div class="abstract-page">
-    <div v-for="postRoute of $store.state.posts.pages[page]">
+    <div v-for="postRoute of $store.state.routes.pages[page]">
 
       <transition name="new-page-fade">
         <component v-if="getPostComponent(postRoute)"

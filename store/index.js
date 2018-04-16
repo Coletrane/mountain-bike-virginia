@@ -3,6 +3,7 @@ import misc from './misc'
 import authors from './authors'
 import posts from './posts'
 import results from './results'
+import routes from './routes'
 
 export default () => {
   return new Vuex.Store({
@@ -10,7 +11,8 @@ export default () => {
       misc,
       authors,
       posts,
-      results
+      results,
+      routes
     },
     strict: true
   })

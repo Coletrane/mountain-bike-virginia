@@ -4,7 +4,6 @@ import axios from 'axios'
 export default {
   state: {
     loadedPosts: [],
-    loadedPages: [0]
   },
 
   actions: {
@@ -39,11 +38,12 @@ export default {
       }
     },
     incrementPage: async (context) => {
-      const newPage = context.state.currentPage + 1
+      const newPage = context.rootState.routes.currentPage + 1
       let posts = []
 
-      if (!context.state.loadedPages.includes(newPage)) {
-        posts = await context.dispatch('loadPosts', context.rootState.pages[newPage])
+      if (!context.rootState.routes.loadedPages.includes(newPage)) {
+        await context.dispatch('setCurrentPage', newPage)
+        posts = await context.dispatch('loadPosts', context.rootState.routes.pages[newPage])
       }
 
       context.commit('SET_CURRENT_PAGE', newPage)
@@ -55,12 +55,6 @@ export default {
   mutations: {
     POST_LOADED: (state, post) => {
       state.loadedPosts.push(post)
-    },
-    SET_CURRENT_PAGE: (state, page) => {
-      state.currentPage = page
-      if (!state.loadedPages.includes(page)) {
-        state.loadedPages.push(page)
-      }
     }
   },
 

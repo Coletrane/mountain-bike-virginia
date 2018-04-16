@@ -17,10 +17,10 @@ export default {
       }
       // AbstractPage.vue
     } else {
-      for (const postRoute of this.$store.state.posts.pages[this.page]) {
+      for (const postRoute of this.$store.state.routes.pages[this.page]) {
         await this.loadPostComponent(postRoute)
         if (this.postComponents.length ===
-          this.$store.state.posts.pages[this.page].length) {
+          this.$store.state.routes.pages[this.page].length) {
           this.postComponentsLoaded = true
         }
       }
