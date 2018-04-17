@@ -7,5 +7,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "classic-shot-2018.jpg"
+  "imgRoute": "classic-shot-2018.jpg",
+  "relatedPosts": [
+    "creature-2017-recap",
+    "middle-mt-momma-2018"
+  ],
+  "keywords": "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january"
 }

@@ -25,7 +25,7 @@ describe('routes tests', () => {
         if (route === '/') {
           url = await testUrl
         } else {
-          url = await `${testUrl}${route}`
+          url = await `${testUrl}/${route}`
         }
       })
       describe('<head> tests', () => {
@@ -130,7 +130,7 @@ describe('routes tests', () => {
           if (route === '/') {
             expected = `https://bikeva.com/`
           } else {
-            expected = `https://bikeva.com${route}/`
+            expected = `https://bikeva.com/${route}/`
           }
           expect(await driver.findElement(
             By.xpath('//meta[@property=\'og:url\']'))

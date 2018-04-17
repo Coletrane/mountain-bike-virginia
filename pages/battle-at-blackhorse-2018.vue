@@ -100,8 +100,7 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'battle-at-blackhorse-2018',
@@ -116,7 +115,7 @@
         ]),
         relatedPosts: await context.store.dispatch('loadPosts', [
           'battle-at-blackhorse-2018-video',
-          'dody-ridge-fall-run'
+          'dody-ridge-run-fall-2017'
         ])
       }
     },

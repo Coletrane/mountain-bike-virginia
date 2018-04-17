@@ -8,5 +8,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "cole-sly-lookback.jpg"
+  "imgRoute": "cole-sly-lookback.jpg",
+  "relatedPosts": [
+    "rockstar-va-2018",
+    "middle-mt-momma-2018"
+  ],
+  "keywords": "mountain, bike, trail, trail work, saw, trail advocacy, rockstar, race, ride, backcountry, woods, clearing, trailwork, volunteer"
 }

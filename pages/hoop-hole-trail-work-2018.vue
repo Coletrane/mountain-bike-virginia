@@ -37,8 +37,7 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'hoop-hole-trail-work-2018',
@@ -46,31 +45,8 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'hoop-hole-trail-work-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'rockstar-va-2018',
-          'middle-mt-momma-2018'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          'mountain, bike, trail, trail work, saw, trail advocacy, rockstar, race, ride, backcountry, woods, clearing, trailwork, volunteer',
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/hoop-hole-trail-work-2018/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

@@ -1,3 +1,5 @@
+import {routeToComponentFilename} from '../functions'
+
 export default {
   data() {
     return {
@@ -25,12 +27,10 @@ export default {
         }
       }
     }
-
-
   },
   methods: {
     async loadPostComponent(postRoute) {
-      const filename = this.routeToComponentFilename(postRoute)
+      const filename = routeToComponentFilename(postRoute)
       let esComponent = await import(`@/components/PromoCards/${filename}`)
       const component = {
         route: postRoute,
@@ -46,15 +46,6 @@ export default {
       if (postComponent) {
         return postComponent.component
       }
-    },
-    routeToComponentFilename(route) {
-      let postFilename = route.split('-')
-      postFilename = postFilename.map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-      })
-      postFilename = postFilename.join('')
-
-      return postFilename
     }
   }
 }

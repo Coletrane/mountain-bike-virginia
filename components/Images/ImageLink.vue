@@ -9,6 +9,9 @@
     <responsive-img :src="img"
                     :alt="post.title"/>
   </a>
+  <responsive-img v-else
+                  :src="img"
+                  :alt="post.title"/>
 </template>
 <script>
   import ResponsiveImg from './ResponsiveImg'

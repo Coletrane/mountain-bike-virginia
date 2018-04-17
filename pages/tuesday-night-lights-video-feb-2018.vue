@@ -1,7 +1,6 @@
 <template>
   <div>
-    <blog-post :header-height="600"
-               :image="img + 'tnl.jpg'"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                header-author
                :related-posts="relatedPosts">
@@ -18,12 +17,7 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages} from '../scripts/routes'
-  import {
-    headTags,
-    buildVideo
-  } from '../assets/functions'
-  import {home} from '../assets/head-tags'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'tuesday-night-lights-video-feb-2018',

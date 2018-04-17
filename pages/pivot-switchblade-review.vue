@@ -1,9 +1,8 @@
 <template>
   <div>
-    <blog-post
-      :header-height="700"
-      :image="img + 'IMG_3009.jpg'"
-      :post="post">
+    <blog-post :image="img + post.imgRoute"
+               :post="post"
+               :related-posts="relatedPosts">
       <div slot="content">
         <div class="blog-p">
           Upon being a convert to the church of the DW Link, my interest in Pivot Cycles far outmatches many other
@@ -49,11 +48,10 @@
   </div>
 </template>
 <script>
-  import BlogPost from "../components/BlogPost.vue"
-  import BlogImage from "../components/Images/BlogImage"
+  import BlogPost from '../components/BlogPost.vue'
+  import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from "../scripts/routes"
-  import {headTags} from "../assets/functions"
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'pivot-switchblade-review',
@@ -61,27 +59,8 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'pivot-switchblade-review'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail",
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img:  `${s3Pages}/'pivot-switchblade-review'/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

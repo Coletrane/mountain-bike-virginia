@@ -67,9 +67,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
-  import {home} from '../assets/head-tags'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'middle-mt-momma-2018',
@@ -80,30 +78,11 @@
       BlogImage,
       FontAwesomeIcon
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'middle-mt-momma-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'creature-2017-recap',
-          'rockstar-va-2018'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.subtitle,
-          'race, douthat state park, douthat, lexington, xxc, enduro, bike race, mountain bike race' + home.keywords,
-          this.post
-        )
-      }
-    },
+    mixins: [
+      blogPost
+    ],
     data() {
       return {
-        img: `${s3Pages}/middle-mt-momma-2018/`,
         faFacebook: faFacebook
       }
     }

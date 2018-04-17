@@ -1,6 +1,6 @@
 <template>
   <div>
-    <blog-post :image="img + 'lumberjack.jpg'"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                header-author>
       <div slot="content">
@@ -104,8 +104,7 @@
   import Youtube from '../components/Iframes/Youtube.vue'
   import BlogImage from '../components/Images/BlogImage.vue'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'creature-2017-recap',
@@ -114,28 +113,9 @@
       Youtube,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'creature-2017-recap'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.subtitle,
-          'mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove',
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/creature-2017-recap/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>
 

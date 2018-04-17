@@ -4,6 +4,12 @@
   "ytSrc": "https://www.youtube.com/embed/K__Tk9nPOBM",
   "author": "kyle",
   "date": "January 8, 2017",
+  "description": "Yearly gravel ride in January that starts from Gravel Dr in Daleville and goes to the top of the Blue Ridge Parkway",
   "loc": "Gravel Dr, Troutville, VA",
-  "imgRoute": "bobletts-climb.jpg"
+  "imgRoute": "bobletts-climb.jpg",
+  "relatedPosts": [
+    "gravelocity-2018",
+    "middle-mt-momma-2018"
+  ],
+  "keywords": "gravel, gravel bike, adventure bike, bike, ride, winter, blue ridge parkway, parkway, virginia, blue ridge, endurance, bikepacking, road bike, cycling, cyclocross, cross, cx bike"
 }

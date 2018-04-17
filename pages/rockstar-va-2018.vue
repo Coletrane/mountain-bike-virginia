@@ -1,6 +1,6 @@
 <template>
   <div>
-    <blog-post :image="img + 'stokesville-market-snow.jpg'"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                :related-posts="relatedPosts">
       <div slot="content">
@@ -105,9 +105,7 @@
   import MTBVAVideo from '../components/Iframes/MTBVAVideo'
   import Quote from '../components/Card/Quote'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
-  import {home} from '../assets/head-tags'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'rockstar-va-2018',
@@ -118,30 +116,11 @@
       BlogImage,
       BlogPost
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'rockstar-va-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'middle-mt-momma-2018',
-          'creature-2017-recap'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.subtitle,
-          home.keywords,
-          this.post
-        )
-      }
-    },
+    mixins: [
+      blogPost
+    ],
     data() {
       return {
-        img: `${s3Pages}/rockstar-va-2018/`,
         selectedRaceRoute: 'trail'
       }
     },

@@ -85,6 +85,7 @@ pages.forEach((page, i, arr) => {
   fs.writeFileSync(`json/routes/${i}.json`, json)
 })
 
+
 module.exports = {
   routes,
   posts

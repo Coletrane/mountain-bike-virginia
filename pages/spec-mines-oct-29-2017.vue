@@ -1,8 +1,6 @@
 <template>
-  <blog-post
-    :header-height="800"
-    :image="img + 'IMG_3794.jpg'"
-    :post="post">
+  <blog-post :image="img + 'IMG_3794.jpg'"
+             :post="post">
     <div slot="content">
       <div class="blog-p">
         The morning of October 29th, 2017, I was intending to have balls. I was <i>indending</i> to just say "I'm doin
@@ -34,11 +32,10 @@
   </blog-post>
 </template>
 <script>
-  import BlogPost from "../components/BlogPost.vue"
-  import BlogImage from "../components/Images/BlogImage"
+  import BlogPost from '../components/BlogPost.vue'
+  import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from "../scripts/routes"
-  import {headTags} from "../assets/functions"
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'spec-mines-oct-29-2017',
@@ -46,28 +43,9 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'spec-mines-oct-29-2017'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt",
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img:  `${s3Pages}/'spec-mines-oct-29-2017'/`,
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>
 

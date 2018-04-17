@@ -71,8 +71,7 @@
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'cane-creek-viscoset-review',
@@ -80,32 +79,8 @@
       BlogImage,
       BlogPost
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'cane-creek-viscoset-review'
-        ]),
-        relatedPosts:
-          await context.store.dispatch('loadPosts', [
-            'dt-swiss-54t-ratchet-review',
-            'pivot-switchblade-review'
-          ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          'cane creek, headset, forty, viscoset, e-bike, mountain bike, parts, head, bearing, enduro, review',
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/cane-creek-viscoset-review/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

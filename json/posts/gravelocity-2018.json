@@ -8,5 +8,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "bigfinish.jpg"
+  "imgRoute": "bigfinish.jpg",
+  "relatedPosts": [
+    "gravelocity-2017-video",
+    "spec-mines-oct-29-2017"
+  ],
+  "keywords": "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail"
 }

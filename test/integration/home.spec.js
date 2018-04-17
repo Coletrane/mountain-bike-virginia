@@ -1,6 +1,5 @@
 import routesState from '../../store/routes'
-import {routes} from '../../scripts/build-routes-json'
-import _ from 'lodash'
+import {posts} from '../../scripts/build-routes-json'
 
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
@@ -41,7 +40,7 @@ describe('<home> tests', () => {
       .to.be.true
   })
 
-  for (const [i, post] of routes) {
+  for (const [i, post] of posts.entries()) {
     it('should have a headline', async () => {
       expect(await cards[i].findElement(
         By.className('headline'))
@@ -56,7 +55,7 @@ describe('<home> tests', () => {
         .not.to.be.undefined
     })
 
-    if (post !== 'relaunch' && post !== 'creature-2016') {
+    if (post.route !== 'relaunch' && post.route !== 'creature-2016') {
       it('should have a link around the headline and subheading', async () => {
         let href = await cards[i].findElement(
           By.xpath('//a'))

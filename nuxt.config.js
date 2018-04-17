@@ -1,4 +1,5 @@
-const routes = require('./scripts/routes')
+const routes = require('./scripts/build-routes-json')
+const s3Routes = require('./scripts/routes')
 require('dotenv').config()
 const webpack = require('webpack')
 
@@ -28,32 +29,32 @@ module.exports = {
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: routes.s3Favicons + '/apple-touch-icon.png?v=eE5JONrEL8'
+        href: s3Routes.s3Favicons + '/apple-touch-icon.png?v=eE5JONrEL8'
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: routes.s3Favicons + '/favicon-32x32.png?v=eE5JONrEL8'
+        href: s3Routes.s3Favicons + '/favicon-32x32.png?v=eE5JONrEL8'
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: routes.s3Favicons + '/favicon-16x16.png?v=eE5JONrEL8'
+        href: s3Routes.s3Favicons + '/favicon-16x16.png?v=eE5JONrEL8'
       },
       {
         rel: 'manifest',
-        href: routes.s3Favicons + '/site.webmanifest?v=eE5JONrEL8'
+        href: s3Routes.s3Favicons + '/site.webmanifest?v=eE5JONrEL8'
       },
       {
         rel: 'mask-icon',
-        href: routes.s3Favicons + '/safari-pinned-tab.svg?v=eE5JONrEL8',
+        href: s3Routes.s3Favicons + '/safari-pinned-tab.svg?v=eE5JONrEL8',
         color: '#3d7635'
       },
       {
         rel: 'shortcut icon',
-        href: routes.s3Favicons + '/favicon.ico?v=eE5JONrEL8'
+        href: s3Routes.s3Favicons + '/favicon.ico?v=eE5JONrEL8'
       }
     ]
   },
@@ -66,7 +67,7 @@ module.exports = {
       'babel-polyfill'
     ],
     // extend (config, {isDev, isClient}) {
-    //   config.entry.routes = ['./scripts/routes.js']
+    //   config.entry.routes = ['./scripts/s3Routes.js']
     //   config.plugins.forEach(plugin => {
     //     if (plugin.constructor.name === 'CommonsChunkPlugin' &&
     //         plugin.chunkNames.includes('vendor')) {
@@ -90,7 +91,7 @@ module.exports = {
     hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
-    // routes: routes.appRoutes.map(route => {
+    // routes: s3Routes.appRoutes.map(route => {
     //   return {
     //     url: route,
     //     changefreq: 'daily',
@@ -120,14 +121,5 @@ module.exports = {
     prodWeather: process.env.WEATHER_PROD,
     testWeather: process.env.WEATHER_TEST,
     google: process.env.GOOGLE
-  },
-  generate: {
-    // routes: routes.appRoutes.map(route => {
-    //   if (route.charAt(0) !== '/') {
-    //     return ('/' + route)
-    //   } else {
-    //     return route
-    //   }
-    // })
   }
 }

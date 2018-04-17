@@ -28,11 +28,7 @@
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages} from '../scripts/routes'
-  import {
-    headTags,
-    buildVideo
-  } from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'ravenwood-ride',
@@ -40,35 +36,8 @@
       BlogPost,
       Youtube
     },
-    async asyncData(context) {
-      let post = await context.store.dispatch('loadPosts', [
-        'ravenwood-ride'
-      ])
-      return {
-        schema: await buildVideo(post),
-        post: post,
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'gravelocity-2017-video',
-          'gravelocity-2018'
-        ])
-      }
-    },
-    head() {
-      if (this.post && this.schema) {
-        return {
-          ...headTags(
-            this.post.title,
-            'Road Bike Ride on Ravenwood Abandoned Golf Course connected to Shelby Bottoms Greenway in East Nashville, Tennessee',
-            'road, bike, greenway, nashville, ride, cycling, velo, canyon, golf course, riding',
-            this.post),
-          script: this.schema
-        }
-      }
-    },
-    data() {
-      return {
-        image: `${s3Pages}/${ravenwoodRide}/canyon-ravenwood.jpg`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

@@ -1,9 +1,7 @@
 <template>
-  <blog-post
-    :header-height="800"
-    :image="img + 'great-valley.jpg'"
-    :post="post"
-    :related-posts="relatedPosts">
+  <blog-post :image="img + 'great-valley.jpg'"
+             :post="post"
+             :related-posts="relatedPosts">
     <div slot="content">
       <div class="blog-p">
         Like Burning Man, or some other strange, yearly ritual, every mid January since 2015 a large group of the best
@@ -21,7 +19,6 @@
       <blog-image :src="img + 'parking.jpg'"/>
       <blog-image :src="img + 'wilmer-way.jpg'"/>
       <blog-image :src="img + 'wilmer.jpg'"/>
-
       <div class="blog-p">
         We set off past route 11, through Camp Bethel, and into what we call, the Botetourt Turnpike, which is a gravel
         road sandwiched between Troutville and the Blue Ridge parkway. The Turnpike connects Bobllett's gap, Blackhorse
@@ -43,7 +40,8 @@
       <blog-image :src="img + 'top-of-bobletts.jpg'"/>
       <blog-image :src="img + 'bobletts-climb.jpg'"/>
       <div class="blog-p">
-        On the climb up these two nice blokes, father and son, from Staunton and Fredricksburg asked me where the mountain bike trails
+        On the climb up these two nice blokes, father and son, from Staunton and Fredricksburg asked me where the
+        mountain bike trails
         are in Roanoke. "Right here!" I said. All these gravel roads connect great trails like
         <a href="https://www.strava.com/segments/2281160">
           Spec Mines
@@ -52,10 +50,10 @@
           Dody Ridge
         </a>,
         <a href="https://www.mtbproject.com/trail/7026114/glenwood-horse-trail-3004e-day-creek-to-bobletts-gap-rd">
-           The Glenwood Horse Trail
-          </a>, and we even passed
+          The Glenwood Horse Trail
+        </a>, and we even passed
         <a href="https://www.mtbproject.com/trail/7011050/mineshaft-trail-via-bobblets-gap">
-           Mineshaft
+          Mineshaft
         </a>
         on the way up Bobletts. At the top I pointed right and said:
         "Oh by the way, thats the Appalacian Trail right there."
@@ -87,11 +85,9 @@
         Gravelocity ends by getting on Gravel Dr. and going through a farm to cut back to Wilmer's place. This is
         private label gravel with only permission to ride it one day a year.
       </div>
-
       <blog-image :src="img + 'farm-pano.jpg'"/>
       <blog-image :src="img + 'finish1.jpg'"/>
       <blog-image :src="img + 'blue-helmet.jpg'"/>
-
       <blog-image :src="img + 'beard.jpg'"/>
       <blog-image :src="img + 'bandit.jpg'"/>
       <blog-image :src="img + 'berry.jpg'"/>
@@ -99,7 +95,6 @@
       <blog-image :src="img + 'david-gregg.jpg'"/>
       <blog-image :src="img + 'deschutes-girl.jpg'"/>
       <blog-image :src="img + 'bobletts-gap-blokes.jpg'"/>
-
       <blog-image :src="img + 'deschutes-jersey.jpg'"/>
       <blog-image :src="img + 'red-jacket.jpg'"/>
       <blog-image :src="img + 'red-noodle-bars.jpg'"/>
@@ -111,17 +106,14 @@
         Until next year gravel grinders.
       </div>
       <blog-image :src="img + 'wilmer-end.jpg'"/>
-
-
     </div>
   </blog-post>
 </template>
 <script>
-  import BlogPost from "../components/BlogPost"
-  import BlogImage from "../components/Images/BlogImage"
+  import BlogPost from '../components/BlogPost'
+  import BlogImage from '../components/Images/BlogImage'
 
-  import {s3Pages} from "../scripts/routes"
-  import {headTags} from "../assets/functions"
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'gravelocity-2018',
@@ -129,31 +121,8 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'gravelocity-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'gravelocity-2017-video',
-          'spec-mines-oct-29-2017'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.route,
-          this.post.description,
-          "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail",
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/gravelocity-2018/`,
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

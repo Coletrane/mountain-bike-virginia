@@ -8,5 +8,10 @@
   "schema": {
     "type:": "NewsArticle"
   },
-  "imgRoute": "stokesville-market-snow.jpg"
+  "imgRoute": "stokesville-market-snow.jpg",
+  "relatedPosts": [
+    "middle-mt-momma-2018",
+    "creature-2017-recap"
+  ],
+  "keywords": "roanoke, harrisonburg, race, ride, endurance, virginia endurance series, bikepacking, gravel, trail, road, pave, snow, ultra"
 }

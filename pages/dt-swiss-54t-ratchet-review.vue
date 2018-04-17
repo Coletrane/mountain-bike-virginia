@@ -1,7 +1,6 @@
 <template>
   <div>
-    <blog-post :header-height="900"
-               :image="img + 'dt-swiss-54t-ratchet.jpg'"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                :related-posts="relatedPosts">
       <div slot="content">
@@ -72,8 +71,7 @@
   import BlogImage from '../components/Images/BlogImage'
   import Youtube from '../components/Iframes/Youtube'
 
-  import {s3Pages} from '../scripts/routes'
-  import {headTags} from '../assets/functions'
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'dt-swiss-54t-ratchet-review',
@@ -82,31 +80,8 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'dt-swiss-54t-ratchet-review'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-            'pivot-switchblade-review',
-            'cane-creek-viscoset-review'
-          ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          'hub, dt swiss, ratchet, quick engagement, review, product review, mountain bike, dt swiss 240, dt swiss 350, upgrade, kit, trail, enduro, trials',
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/dt-swiss-54t-ratchet-review/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

@@ -7,5 +7,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "IMG_3089.jpg"
+  "imgRoute": "IMG_3089.jpg",
+  "relatedPosts": [
+    "battle-at-blackhorse-2018",
+    "dody-ridge-run-fall-2017"
+  ],
+  "keywords": "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt"
 }

@@ -8,5 +8,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "wake-champ.jpg"
+  "imgRoute": "wake-champ.jpg",
+  "relatedPosts": [
+    "middle-mt-momma-2018",
+    "first-ride-2018"
+  ],
+  "keywords": "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove"
 }

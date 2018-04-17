@@ -63,11 +63,7 @@
   import BlogPost from "../components/BlogPost"
   import BlogImage from "../components/Images/BlogImage"
 
-  import {
-    s3Pages
-  } from "../scripts/routes"
-  import {headTags} from "../assets/functions"
-
+  import blogPost from '../assets/mixins/blog-post'
 
   export default {
     name: 'first-ride-2018',
@@ -75,31 +71,8 @@
       BlogPost,
       BlogImage
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'first-ride-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'creature-2017-recap',
-          'middle-mt-momma-2018'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january",
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/first-ride-2018/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>
