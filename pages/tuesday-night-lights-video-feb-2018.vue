@@ -25,35 +25,8 @@
       Youtube,
       BlogPost
     },
-    async asyncData(context) {
-      let post = await context.store.dispatch('loadPosts',[
-        'tuesday-night-lights-video-feb-2018'
-      ])
-      return {
-        schema: await buildVideo(post),
-        post: post,
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'gravelocity-2018',
-          'creature-2017-recap'
-        ])
-      }
-    },
-    head() {
-      if (this.post && this.schema) {
-        return {
-          ...headTags(
-            this.post.title,
-            this.post.subtitle,
-            'mill mountain, night ride, lights, deschutes brewery, deschutes' + home.keywords,
-            this.post),
-          script: this.schema
-        }
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/tuesday-night-lights-video-feb-2018/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

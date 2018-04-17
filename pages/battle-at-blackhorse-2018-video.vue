@@ -1,17 +1,15 @@
 <template>
   <div>
-    <blog-post :header-height="900"
-               :image="img + post.imgRoute"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                header-author
                :related-posts="relatedPosts">
       <div slot="content">
-          <youtube :src="post.ytSrc"/>
+        <youtube :src="post.ytSrc"/>
       </div>
     </blog-post>
   </div>
 </template>
-
 <script>
   import BlogPost from '../components/BlogPost.vue'
   import Youtube from '../components/Iframes/Youtube.vue'

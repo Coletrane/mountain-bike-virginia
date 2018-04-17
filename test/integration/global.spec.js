@@ -33,8 +33,8 @@ describe('Mountain Bike Virginia integration tests', () => {
   // Hook tests in here
 
   // importTest('./navigation.spec')
-  importTest('./home.spec')
-  // importTest('./routes.spec')
+  // importTest('./home.spec')
+  importTest('./routes.spec')
   // importTest('./results.spec')
 
   after(() => {

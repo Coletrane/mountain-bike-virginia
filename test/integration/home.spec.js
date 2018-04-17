@@ -15,10 +15,6 @@ describe('<home> tests', () => {
     driver = await global.driver
     expect = await global.expect
 
-    console.log('Sleeping')
-    await driver.sleep(3000)
-    console.log('Sleep over!')
-
     for (let i = 1; i < numberOfPages; i++) {
       let loadMoreButton = await driver.findElement(
         By.id('load-more-btn'))

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <blog-post :header-height="600"
-               :image="img + 'IMG_3576.jpg'"
+    <blog-post :image="img + 'IMG_3576.jpg'"
                :post="post"
                :related-posts="relatedPosts">
       <div slot="content">
@@ -30,7 +29,6 @@
           side of Gel Ridge to Bobblets Gap Road the narrow off cambers, tight turns and wet leaves proved treacherous
           for many despite the lack of harsh gradient.
         </div>
-
         <div class="blog-p">
           Following a classic Virginia fire road climb up to the parkway the blistering speed and sheer joy of the
           little-known Hammond Hollow Trail lay in wait. A sneaky lung buster climb interrupted the mach stupid blast
@@ -61,7 +59,6 @@
         </div>
         <blog-image :src="img + 'P1010117.jpg'"/>
         <blog-image :src="img + 'IMG_3588.jpg'"/>
-
         <div class="blog-p">
           Leila Husain absolutely crushed the win for the gals, besting most of the dudes as well. Emma Runquist and
           Leslie King took the remaining steps of the women’s podium.
@@ -95,7 +92,6 @@
     </blog-post>
   </div>
 </template>
-
 <script>
   import BlogPost from '../components/BlogPost'
   import BlogImage from '../components/Images/BlogImage'
@@ -108,31 +104,8 @@
       BlogImage,
       BlogPost
     },
-    async asyncData(context) {
-      return {
-        post: await context.store.dispatch('loadPosts', [
-          'battle-at-blackhorse-2018'
-        ]),
-        relatedPosts: await context.store.dispatch('loadPosts', [
-          'battle-at-blackhorse-2018-video',
-          'dody-ridge-run-fall-2017'
-        ])
-      }
-    },
-    head() {
-      if (this.post) {
-        return headTags(
-          this.post.title,
-          this.post.description,
-          'mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia',
-          this.post
-        )
-      }
-    },
-    data() {
-      return {
-        img: `${s3Pages}/battle-at-blackhorse-2018/`
-      }
-    }
+    mixins: [
+      blogPost
+    ]
   }
 </script>

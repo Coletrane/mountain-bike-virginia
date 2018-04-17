@@ -91,7 +91,7 @@ describe('routes tests', () => {
             let expected
 
             if (route !== '/') {
-              const postJson = JSON.parse(require(`../../json/posts/${route}.json`))
+              const postJson = require(`../../json/posts/${route}.json`)
               expected = postJson.imgRoute
             } else {
               expected = 'foliage.jpg'
@@ -331,6 +331,5 @@ describe('routes tests', () => {
 
   after(async () => {
     await driver.get(testUrl)
-    await driver.sleep(3000)
   })
 })

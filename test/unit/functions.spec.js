@@ -1,5 +1,5 @@
 // Use import when working with ES6 modules
-import {headTags} from '../../assets/functions'
+import { headTags } from '../../assets/functions'
 
 const expect = require('./global.spec').expect
 
@@ -8,8 +8,10 @@ let head = headTags(
   'description',
   'keywords',
   {
+    ...require('../../json/posts/creature-2017-recap'),
     route: 'creature-2017-recap'
-  })
+  }
+)
 
 describe('headTags tests', () => {
   it('should have a title tag', () => {
@@ -34,35 +36,35 @@ describe('headTags tests', () => {
         })
       }
 
-      if (meta.name === 'og:title') {
+      if (meta.property === 'og:title') {
         it('should have og:title', () => {
           expect(content)
             .to.equal('title')
         })
       }
 
-      if (meta.name === 'og:description') {
+      if (meta.property === 'og:description') {
         it('should have og:description', () => {
           expect(content)
             .to.equal('description')
         })
       }
 
-      if (meta.name === 'og:type') {
+      if (meta.property === 'og:type') {
         it('should have og:type', () => {
           expect(content)
-            .to.equal('website')
+            .not.to.be.undefined
         })
       }
 
-      if (meta.name === 'og:url') {
+      if (meta.property === 'og:url') {
         it('should have og:url', () => {
           expect(content.length > 0)
             .to.be.true
         })
       }
 
-      if (meta.name === 'og:image') {
+      if (meta.property === 'og:image') {
         it('should have og:image', () => {
           expect(content.length > 0)
             .to.be.true
@@ -82,7 +84,7 @@ describe('headTags tests', () => {
       it('should have the correct og:image', () => {
         let ogImage = childHeadTags.meta.filter(tag => tag.property === 'og:image')[0]
 
-        expect(ogImage.content.endsWith('pages/results/podium.jpg'))
+        expect(ogImage.content.endsWith('.jpg'))
           .to.be.true
       })
     })
