@@ -94,7 +94,7 @@
         <div class="blog-p">
           Many thanks to Woods Family HVAC. We’ll see you again next year!
         </div>
-        <youtube :src="post.ytSrc"/>
+        <youtube :src="post.youtube"/>
       </div>
     </blog-post>
   </div>

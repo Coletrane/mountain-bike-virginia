@@ -4,6 +4,7 @@
   "author": "cole",
   "description": "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet",
   "date": "October 29, 2017",
+  "loc": "Blue Ridge Parkway, Blue Ridge, VA",
   "schema": {
     "type": "NewsArticle"
   },

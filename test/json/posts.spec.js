@@ -1,12 +1,17 @@
-import {posts} from '../../scripts/build-routes-json'
+import { posts } from '../../scripts/build-routes-json'
+
 const expect = require('./global.spec').expect
 const glob = require('glob')
 
 // Sort posts alphabetically
 posts.sort((a, b) => {
-  if(a.route < b.route) return -1;
-  if(a.route > b.route) return 1;
-  return 0;
+  if (a.route < b.route) {
+    return -1
+  }
+  if (a.route > b.route) {
+    return 1
+  }
+  return 0
 })
 
 describe('/posts/ test', () => {
@@ -27,9 +32,13 @@ describe('/posts/ test', () => {
 
     // Sort json files alphabetically
     postsJson.sort((a, b) => {
-           if(a.filename < b.filename) return -1;
-           if(a.filename > b.filename) return 1;
-           return 0;
+      if (a.filename < b.filename) {
+        return -1
+      }
+      if (a.filename > b.filename) {
+        return 1
+      }
+      return 0
     })
   })
 
@@ -73,9 +82,13 @@ describe('/posts/ test', () => {
           })
         })
 
-        it('should have a loc', async () => {
-          expect(await postJson.json.loc)
-            .not.to.be.undefined
+        it('should have a loc if its not a review', async () => {
+          const schema = await postJson.json.schema
+          if ((schema && schema.type !== 'Review') ||
+              !schema) {
+            expect(await postJson.json.loc)
+              .not.to.be.undefined
+          }
         })
 
         it('should have a description', async () => {

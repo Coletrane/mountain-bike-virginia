@@ -3,6 +3,7 @@
   "subtitle": "The coldest year on record.",
   "author": "corey",
   "date": "January 1, 2018",
+  "loc": "Carvins Cove, Roanoke, VA",
   "description": "28th Annual First Ride Of The New Year at Carvins Cove in Roanoke, Virginia",
   "schema": {
     "type": "NewsArticle"

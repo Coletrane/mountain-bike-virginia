@@ -1,13 +1,15 @@
 {
   "title": "Video: Tuesday Night Lights",
   "subtitle": "Weekly Winter ride from Deschutes Brewery up Mill Mountain",
+  "description": "Weekly Winter ride from Deschutes Brewery up Mill Mountain",
   "ytSrc": "https://www.youtube.com/embed/tE3jWeQAEfY",
   "author": "kyle",
   "date": "February 23, 2018",
   "loc": "Mill Mountain, Roanoke, VA",
   "imgRoute": "tnl.jpg",
   "relatedPosts": [
-
+    "first-ride-2018",
+    "gravelocity-2018"
   ],
   "keywords": "mill mountain, night ride, lights, deschutes brewery, deschutes"
 }
