@@ -1,4 +1,5 @@
-import {routes, posts} from '../../scripts/build-routes-json'
+import { routes } from '../../scripts/build-routes-json'
+
 const global = require('./global.spec')
 const By = require('selenium-webdriver').By
 const until = require('selenium-webdriver').until
@@ -90,9 +91,11 @@ describe('routes tests', () => {
           it('has og:image meta tag', async () => {
             let expected
 
-            if (route !== '/') {
+            if (route !== '/' && !route.includes('results')) {
               const postJson = require(`../../json/posts/${route}.json`)
               expected = postJson.imgRoute
+            } else if (route.includes('results')) {
+              expected = '.jpg'
             } else {
               expected = 'foliage.jpg'
             }
@@ -129,6 +132,8 @@ describe('routes tests', () => {
           let expected
           if (route === '/') {
             expected = `https://bikeva.com/`
+          } else if (route.endsWith('/')) {
+            expected = `https://bikeva.com/${route}`
           } else {
             expected = `https://bikeva.com/${route}/`
           }

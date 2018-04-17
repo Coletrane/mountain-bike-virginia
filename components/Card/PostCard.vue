@@ -34,8 +34,10 @@
               </div>
             </div>
             <div v-if="!authorSeparateDiv">
-              <author v-if="!noAuthor && headerAuthor"
-                      :author="post.author"/>
+              <div v-if="!noAuthor && headerAuthor"
+                   v-for="author of postAuthors">
+                <author :author="author"/>
+              </div>
               <slot name="header"/>
             </div>
           </div>
@@ -55,8 +57,10 @@
         <slot name="words"/>
       </div>
       <div class="mtbva-media">
-        <author v-if="!noAuthor && !headerAuthor"
-                :author="post.author"/>
+        <div v-if="!noAuthor && !headerAuthor"
+             v-for="author of postAuthors">
+          <author :author="author"/>
+        </div>
         <slot name="media"/>
       </div>
     </div>
@@ -108,6 +112,13 @@
       formattedDate() {
         if (this.post.date) {
           return new Date(this.post.date)
+        }
+      },
+      postAuthors() {
+        if (Array.isArray(this.post.author)) {
+          return this.post.author
+        } else {
+          return [this.post.author]
         }
       }
     }

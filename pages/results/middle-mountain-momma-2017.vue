@@ -25,7 +25,7 @@
         results.description,
         results.keywords,
         {
-          route: 'results-middle-mountain-momma-2017'
+          route: 'results/middle-mountain-momma-2017'
         }
       )
     }

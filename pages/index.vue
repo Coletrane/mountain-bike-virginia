@@ -63,10 +63,8 @@
         home.title,
         home.description,
         home.keywords,
-        // Dummy "post" to simulate the base url
-        // empty string because headTags adds in a slash
         {
-          route: ''
+          route: '/'
         }
       )
     },

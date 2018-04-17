@@ -1,7 +1,6 @@
 <template>
   <div>
-    <blog-post :header-height="900"
-               :image="image"
+    <blog-post :image="img + post.imgRoute"
                :post="post"
                header-author
                author-separate-div
@@ -23,7 +22,6 @@
     </blog-post>
   </div>
 </template>
-
 <script>
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'

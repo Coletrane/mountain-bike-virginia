@@ -19,7 +19,16 @@ export default {
             post.route = route
 
             if (post.author) {
-              post.author = await context.dispatch('loadAuthor', post.author)
+              let authorArr = []
+              for (const author of post.author.split(' ')) {
+                await context.dispatch('loadAuthor', author)
+                authorArr.push(context.getters.getAuthor(author))
+              }
+              if (authorArr.length === 1) {
+                post.author = authorArr[0]
+              } else {
+                post.author = authorArr
+              }
             }
 
             resultPosts.push(post)

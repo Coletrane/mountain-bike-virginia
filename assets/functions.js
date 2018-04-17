@@ -13,14 +13,14 @@ export const headTags = (title, desc, keywords, post) => {
     {property: 'og:type', content: 'article'}
   ]
 
-  if (post.route || post.route === '') {
+  if (post.route || post.route === '/') {
     let fbUrl = {
       property: 'og:url'
     }
 
-    if (post.route) {
+    if (post.route !== '/') {
       fbUrl.content = `${baseUrl}/${post.route}/`
-    } else if (post.route === '') {
+    } else if (post.route === '/') {
       fbUrl.content = `${baseUrl}/`
     }
 
@@ -78,8 +78,8 @@ export const headTags = (title, desc, keywords, post) => {
 const getImageRoute = (post) => {
   let result
 
-  if (post.route === '') {
-    result = `${s3StaticImg}/${post.imgRoute}`
+  if (post.route === '/') {
+    result = `${s3StaticImg}/foliage.jpg`
   } else if (post.route.includes('results')) {
     if (post.route === 'results-battle-at-blackhorse-2018') {
       result = `${s3Pages}/results/P1010117.jpg`
