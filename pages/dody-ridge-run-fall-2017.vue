@@ -1,8 +1,6 @@
 <template>
   <div>
-    <blog-post
-      :header-height="700"
-      :image="img + post.imgRoute"
+    <blog-post :image="img + post.imgRoute"
       :post="post"
       header-author>
       <div slot="content">

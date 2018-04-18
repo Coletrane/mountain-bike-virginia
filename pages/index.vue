@@ -1,8 +1,6 @@
 <template>
   <div class="blog">
-    <m-t-b-v-a-header
-      :header-height="900"
-      :image="img"
+    <m-t-b-v-a-header :image="img"
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
       button="Events"

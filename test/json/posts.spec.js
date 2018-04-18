@@ -58,22 +58,34 @@ describe('/posts/ test', () => {
         it('should have a title', async () => {
           expect(await postJson.json.title)
             .not.to.be.undefined
+
+          expect(await postJson.json.title)
+            .not.to.equal('')
         })
 
         it('should have a subtitle', async () => {
           expect(await postJson.json.subtitle)
             .not.to.be.undefined
+
+          expect(await postJson.json.subtitle)
+            .not.to.equal('')
         })
 
         it('should have an author', async () => {
           expect(await postJson.json.author)
             .not.to.be.undefined
+
+          expect(await postJson.json.author)
+            .not.to.equal('')
         })
 
         describe('date', () => {
           it('should have a date', async () => {
             expect(await postJson.json.date)
               .not.to.be.undefined
+
+            expect(await postJson.json.date)
+              .not.to.equal('')
           })
 
           it('should be able to new Date()', async () => {
@@ -88,23 +100,38 @@ describe('/posts/ test', () => {
               !schema) {
             expect(await postJson.json.loc)
               .not.to.be.undefined
+
+            expect(await postJson.json.loc)
+              .not.to.equal('')
           }
         })
 
         it('should have a description', async () => {
           expect(await postJson.json.description)
             .not.to.be.undefined
+
+          expect(await postJson.json.description)
+            .not.to.equal('')
         })
 
         it('should have an imgRoute', async () => {
           expect(await postJson.json.imgRoute)
             .not.to.be.undefined
+
+          expect(await postJson.json.imgRoute)
+            .not.to.equal('')
         })
 
         describe('related posts', () => {
           it('should have relatedPosts', async () => {
             expect(await postJson.json.relatedPosts)
               .not.to.be.undefined
+
+            expect(await postJson.json.relatedPosts)
+              .not.to.equal([])
+
+            expect(await postJson.json.relatedPosts)
+              .not.to.equal('')
           })
 
           it('should have valid relatedPosts', async () => {
@@ -118,6 +145,9 @@ describe('/posts/ test', () => {
 
               expect(foundPost)
                 .not.to.be.undefined
+
+              expect(foundPost)
+                .not.to.equal('')
             }
           })
         })
@@ -125,6 +155,9 @@ describe('/posts/ test', () => {
         it('should have keywords', async () => {
           expect(await postJson.json.keywords)
             .not.to.be.undefined
+
+          expect(await postJson.json.keywords)
+            .not.to.equal('')
         })
 
         describe('schema test', () => {
@@ -132,6 +165,9 @@ describe('/posts/ test', () => {
             if (!(await postJson.json.ytSrc)) {
               expect(await postJson.json.schema)
                 .not.to.be.undefined
+
+              expect(await postJson.json.schema)
+                .not.to.equal('')
             }
           })
 
@@ -139,6 +175,9 @@ describe('/posts/ test', () => {
             if (await postJson.json.ytSrc) {
               expect(await postJson.json.schema)
                 .to.be.undefined
+
+              expect(await postJson.json.schema)
+                .not.to.equal('')
             }
           })
         })

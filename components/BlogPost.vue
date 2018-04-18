@@ -11,8 +11,8 @@
     <div class="main-content"
          :style="backgroundImage">
       <post-card :post="post"
-                 :links="false"
-                 :no-post-title="noPostTitle"
+                 no-post-title
+                 blog-post
                  :header-author="headerAuthor"
                  :author-separate-div="authorSeparateDiv">
         <div slot="header">
@@ -73,11 +73,6 @@
         type: Boolean,
         required: false,
         default: false
-      },
-      noPostTitle: {
-        type: Boolean,
-        required: false,
-        default: true
       },
       authorSeparateDiv: {
         type: Boolean,

@@ -8,13 +8,13 @@
                       col-md-9
                       col-lg-9
                       col-xl-9">
-            <nuxt-link v-if="postRoute"
+            <nuxt-link v-if="postRoute && !blogPost"
                        :to="{name: post.route}">
               <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}
               </h2>
               <span class="subheading">{{post.subtitle}}</span>
-              <div v-if="post.date">
+              <div>
                 {{post.date}}
               </div>
               <div v-if="post.loc">
@@ -26,7 +26,7 @@
                   class="headline">{{post.title}}
               </h2>
               <span class="subheading">{{post.subtitle}}</span>
-              <div v-if="post.date">
+              <div >
                 {{post.date}}
               </div>
               <div v-if="post.loc">
@@ -34,10 +34,8 @@
               </div>
             </div>
             <div v-if="!authorSeparateDiv">
-              <div v-if="!noAuthor && headerAuthor"
-                   v-for="author of postAuthors">
-                <author :author="author"/>
-              </div>
+              <author v-if="!noAuthor && headerAuthor"
+                      :author="post.author"/>
               <slot name="header"/>
             </div>
           </div>
@@ -57,10 +55,8 @@
         <slot name="words"/>
       </div>
       <div class="mtbva-media">
-        <div v-if="!noAuthor && !headerAuthor"
-             v-for="author of postAuthors">
-          <author :author="author"/>
-        </div>
+        <author v-if="!noAuthor && !headerAuthor"
+                :author="post.author"/>
         <slot name="media"/>
       </div>
     </div>
@@ -80,6 +76,11 @@
         required: true
       },
       noPostTitle: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      blogPost: {
         type: Boolean,
         required: false,
         default: false
@@ -111,14 +112,7 @@
     computed: {
       formattedDate() {
         if (this.post.date) {
-          return new Date(this.post.date)
-        }
-      },
-      postAuthors() {
-        if (Array.isArray(this.post.author)) {
-          return this.post.author
-        } else {
-          return [this.post.author]
+          return new Date()
         }
       }
     }

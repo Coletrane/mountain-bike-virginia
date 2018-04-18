@@ -1,7 +1,5 @@
 <template>
-  <blog-post
-    :header-height="800"
-    :image="img + 'frozen-turner.jpg'"
+  <blog-post :image="img + 'frozen-turner.jpg'"
     :post="post"
     :related-posts="relatedPosts">
     <div slot="content">

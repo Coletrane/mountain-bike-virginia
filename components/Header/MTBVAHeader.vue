@@ -8,6 +8,7 @@
         <div class="hero-content">
             <div>
               <h1 class="mtbva-title"
+                  :class="subpageTitleClass"
                   id="mtbva-title">
                 {{title.toUpperCase()}}
               </h1>
@@ -76,6 +77,13 @@
       return {
         img: `${s3StaticImg}/`,
       }
+    },
+    computed: {
+      subpageTitleClass() {
+        if (this.$route.name !== 'index') {
+          return 'mtbva-title-subpage'
+        }
+      }
     }
   }
 </script>
@@ -96,6 +104,9 @@
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
     font-size: 6rem;
   }
+  .mtbva-title-subpage {
+    font-size: 4rem;
+  }
   .mtbva-subtitle {
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
   }
@@ -105,7 +116,9 @@
     .mtbva-title {
       font-size: 4rem;
     }
-
+    .mtbva-title-subpage {
+      font-size: 3rem;
+    }
     .mtbva-subtitle {
       font-size: 1.5rem;
     }
@@ -115,7 +128,9 @@
     .mtbva-title {
       font-size: 3rem;
     }
-
+    .mtbva-title-subpage {
+      font-size: 2rem;
+    }
     .mtbva-subtitle {
       font-size: 1rem;
     }

@@ -44,6 +44,7 @@ posts.sort((a, b) => {
 
 // Reinsert posts that we want out of order
 posts.splice(1, 0, posts.find(post => post.route === 'rockstar-va-2018'))
+posts.splice(11, 0, posts.find(post => post.route === 'ravenwood-ride'))
 
 // Make sure there are no duplicates
 posts = _.uniq(posts)
