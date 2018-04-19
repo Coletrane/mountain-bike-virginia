@@ -126,13 +126,13 @@
 
   @media (max-width: 450px) {
     .mtbva-title {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
     .mtbva-title-subpage {
       font-size: 2rem;
     }
     .mtbva-subtitle {
-      font-size: 1rem;
+      font-size: .5rem;
     }
   }
 

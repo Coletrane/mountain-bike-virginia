@@ -49,7 +49,7 @@
         faGithub: faGithub,
         sponsors: [
           {
-            img: `${s3Sponsors}/va-blueridge.jpg`,
+            img: `${s3Sponsors}/va-blueridge.png`,
             class: "blueridge",
             url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
           },
@@ -69,27 +69,32 @@
             url: 'https://www.deschutesbrewery.com/'
           },
           {
+            img: `${s3Sponsors}/bath.png`,
+            class: "bath",
+            url: "http://discoverbath.com/"
+          },
+          {
             img: `${s3Sponsors}/sbc.png`,
             class: "sbc",
             url: "http://www.shenandoahbicycle.com/"
           },
           {
-            img: `${s3Sponsors}/jtrg.jpg`,
+            img: `${s3Sponsors}/jtrg.png`,
             class: "jtrg",
             url: "http://justtherightgear.com/"
           },
           {
-            img: `${s3Sponsors}/east-coasters.jpg`,
+            img: `${s3Sponsors}/east-coasters.png`,
             class: "east-coasters",
             url: "https://eastcoasters.com/"
           },
           {
-            img: `${s3Sponsors}/alleghany.jpg`,
+            img: `${s3Sponsors}/alleghany.png`,
             class: "alleghany",
             url: "http://www.visitalleghanyhighlands.com/main/index.php"
           },
           {
-            img: `${s3Sponsors}/blackwater.jpg`,
+            img: `${s3Sponsors}/blackwater.png`,
             class: "blackwater",
             url: "http://www.blackwaterbikeshop.com/"
           },
@@ -98,11 +103,6 @@
           //   class: "outdoor-trails",
           //   url: "http://www.outdoortrails.com/"
           // },
-          {
-            img: `${s3Sponsors}/bath.jpg`,
-            class: "bath",
-            url: "http://discoverbath.com/"
-          },
           {
             img: `${s3Sponsors}/woods.png`,
             class: "woods",
@@ -192,9 +192,9 @@
   }
 
   .sponsors-container {
-    background-color: white;
+    /*background-color: white;*/
     margin: auto;
-    opacity: .75;
+    /*opacity: .75;*/
     padding: .5rem;
     text-align: center;
   }

@@ -50,6 +50,7 @@
 
   .blueridge-img-4 {
     width: 105% !important;
+    margin-top: .8rem;
   }
 
   .parkway-img-4 {
@@ -63,30 +64,27 @@
 
   .sbc-img-4 {
     width: 85% !important;
+    margin-top: 1.4rem;
   }
 
   .jtrg-img-4 {
-    padding-top: 1rem;
+    margin-top: 1rem;
   }
 
   .alleghany-img-4 {
-    padding-top: 1rem;
+    margin-top: 1rem;
   }
 
   .blackwater-img-4 {
-    padding-top: .5rem;
-  }
-
-  .outdoor-trails-img-4 {
-    padding-top: 1rem;
+    margin-top: .5rem;
   }
 
   .starlight-container-4 {
     padding-left: 0;
   }
   .starlight-img-4 {
-    padding-top: 1rem;
-    width: 110% !important;
+    margin-top: 1.3rem;
+    width: 100% !important;
   }
 
   .bath-img-4 {
@@ -94,7 +92,7 @@
   }
 
   .woods-img-4 {
-    padding-top: 1rem;
+    margin-top: 2rem;
   }
 
   .tavern-img-4 {

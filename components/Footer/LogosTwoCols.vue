@@ -77,53 +77,56 @@
   }
 
   .parkway-img-2 {
-    padding-top: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
     width: 100% !important;
   }
 
 
   .starlight-img-2 {
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .deschutes-img-2 {
-    padding-top: 1.5rem;
-    padding-right: 1rem;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
     width: 110% !important;
   }
 
   .sbc-img-2 {
-    padding-top: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
   }
 
   .jtrg-img-2 {
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .outdoor-trails-img-2 {
-    padding-top: 1rem;
+    margin-top: 1rem;
   }
 
   .bath-img-2 {
     width: 75% !important;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
 
   .alleghany-img-2 {
-    padding-top: 2rem;
+    margin-top: 2rem;
   }
 
   .woods-img-2 {
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
     width: 100% !important;
   }
 
   .blackwater-img-2 {
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .tavern-img-2 {
-    padding-top: 1rem;
+    margin-top: 1rem;
     width: 70% !important;
   }
 
