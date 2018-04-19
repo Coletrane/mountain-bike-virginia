@@ -81,6 +81,8 @@ module.exports = {
     hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
+    // Hack to prevent duplicates, remove when 1.0 is released
+    exclude: ['/**/*'],
     routes: routes.routes.map(route => {
       return {
         url: route,
