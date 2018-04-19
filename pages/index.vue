@@ -4,7 +4,7 @@
       title="Mountain Bike Virginia"
       subtitle="Exposing the trove of trails in The Old Dominion"
       button="Events"
-      buttonLink="https://www.facebook.com/pg/xxcva/events/"
+      buttonLink="https://www.facebook.com/pg/bikevirginia/events/"
       home-page>
     </m-t-b-v-a-header>
 

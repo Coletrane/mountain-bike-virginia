@@ -16,7 +16,7 @@
       </div>
     </div>
     <div slot="media">
-      <youtube :src="post.ytSrc"/>
+      <youtube :src="post.youtube"/>
     </div>
   </post-card>
 </template>

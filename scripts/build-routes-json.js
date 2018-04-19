@@ -1,6 +1,7 @@
 const fs = require('fs')
 const glob = require('glob')
 const _ = require('lodash')
+const arrayMove = require('array-move')
 
 // Get all the routes that Nuxt will generate
 let routes = []
@@ -43,8 +44,8 @@ posts.sort((a, b) => {
 })
 
 // Reinsert posts that we want out of order
-posts.splice(1, 0, posts.find(post => post.route === 'rockstar-va-2018'))
-posts.splice(11, 0, posts.find(post => post.route === 'ravenwood-ride'))
+posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'rockstar-va-2018'), 1)
+posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'ravenwood-ride'), 11)
 
 // Make sure there are no duplicates
 posts = _.uniq(posts)

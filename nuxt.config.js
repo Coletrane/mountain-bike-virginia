@@ -66,16 +66,6 @@ module.exports = {
     vendor: [
       'babel-polyfill'
     ],
-    // extend (config, {isDev, isClient}) {
-    //   config.entry.routes = ['./scripts/s3Routes.js']
-    //   config.plugins.forEach(plugin => {
-    //     if (plugin.constructor.name === 'CommonsChunkPlugin' &&
-    //         plugin.chunkNames.includes('vendor')) {
-    //       plugin.chunkNames.unshift('routes')
-    //       plugin.filenameTemplate = undefined
-    //     }
-    //   })
-    // }
   },
   modules: [
     '@nuxtjs/sitemap',
@@ -91,14 +81,14 @@ module.exports = {
     hostname: 'https://bikeva.com',
     cacheTime: 1000 * 60 * 60 * 24,
     generate: true,
-    // routes: s3Routes.appRoutes.map(route => {
-    //   return {
-    //     url: route,
-    //     changefreq: 'daily',
-    //     priority: 1,
-    //     lastmodISO: new Date().toISOString()
-    //   }
-    // })
+    routes: routes.routes.map(route => {
+      return {
+        url: route,
+        changefreq: 'daily',
+        priority: 1,
+        lastmodISO: new Date().toISOString()
+      }
+    })
   },
   render: {
     static: {

@@ -3,14 +3,6 @@
     <blog-post :image="img + 'green-pivot.jpg'"
                :post="post"
                :related-posts="relatedPosts">
-      <div slot="header">
-        <h4 class="subheading">
-          A week before Mother's day, its
-          <span style="font-weight: 800;">
-            MOMMA'S DAY.
-          </span>
-        </h4>
-      </div>
       <div slot="content">
         <div class="blog-promo">
           <div class="promo">
@@ -50,7 +42,6 @@
           <m-t-b-v-a-video :src="img + 'mmm-start.mp4'"
                            autoplay
                            muted
-                           preload
                            loop/>
           <ride-with-gps :url="post.rwGps"/>
         </div>
@@ -58,7 +49,6 @@
     </blog-post>
   </div>
 </template>
-
 <script>
   import BlogImage from '../components/Images/BlogImage'
   import RideWithGps from '../components/Iframes/RideWithGps'
@@ -88,7 +78,6 @@
     }
   }
 </script>
-
 <style>
   @media (max-width: 700px) {
     .author-container {

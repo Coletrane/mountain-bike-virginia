@@ -21,10 +21,10 @@ describe('<home> tests', () => {
       if (await loadMoreButton) {
         console.log('Clicking Load More button')
         driver.executeScript("document.getElementById('load-more-btn').click();")
+        await driver.sleep(3000)
       }
     }
 
-    await driver.sleep(3000)
     console.log('New page sleep over!')
 
     cards = await driver.findElements(

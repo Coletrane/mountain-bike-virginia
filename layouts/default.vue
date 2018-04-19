@@ -29,7 +29,6 @@
       MTBVAMenu
     },
     name: 'app',
-    scrollToTop: true,
     data() {
       return {
         showFooter: false

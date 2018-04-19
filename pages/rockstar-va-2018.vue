@@ -69,7 +69,6 @@
         <m-t-b-v-a-video :src="img + 'jeep-clearing.mp4'"
                          autoplay
                          muted
-                         preload
                          loop/>
         <div class="blog-p">
           A group of friendly Jeep enthusiasts who hadn't kitted out their machines to merely park them at the mall were what we found. Satisfied just to rest for a while we chatted, then all too soon made our way down the path again. It was quite a shame the temperature was so low on the ridge, because there are many good places to camp, and even a metal pipe spring coming out of the wall of rock. (keep your eyes on the right as you go down towards Reddish Knob)</div>

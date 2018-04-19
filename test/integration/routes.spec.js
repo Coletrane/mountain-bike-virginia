@@ -217,7 +217,7 @@ describe('routes tests', () => {
                 .to.contain('EVENTS')
 
               expect(await button.getAttribute('href'))
-                .to.equal('https://www.facebook.com/pg/xxcva/events/')
+                .to.equal('https://www.facebook.com/pg/bikevirginia/events/')
             })
           }
         })

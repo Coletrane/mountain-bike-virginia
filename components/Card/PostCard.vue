@@ -13,25 +13,29 @@
               <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}
               </h2>
-              <span class="subheading">{{post.subtitle}}</span>
-              <div>
-                {{post.date}}
-              </div>
-              <div v-if="post.loc">
-                {{post.loc}}
-              </div>
+              <h3 class="subheading">
+                {{post.subtitle}}
+              </h3>
+                <h4>
+                  {{post.date}}
+                </h4>
+                <h4 v-if="post.loc">
+                  {{post.loc}}
+                </h4>
             </nuxt-link>
             <div v-else>
               <h2 v-if="!noPostTitle"
                   class="headline">{{post.title}}
               </h2>
-              <span class="subheading">{{post.subtitle}}</span>
-              <div >
-                {{post.date}}
-              </div>
-              <div v-if="post.loc">
-                {{post.loc}}
-              </div>
+              <h3 class="subheading">
+                {{post.subtitle}}
+              </h3>
+                <h4>
+                  {{post.date}}
+                </h4>
+                <h4 v-if="post.loc">
+                  {{post.loc}}
+                </h4>
             </div>
             <div v-if="!authorSeparateDiv">
               <author v-if="!noAuthor && headerAuthor"
@@ -118,25 +122,22 @@
     }
   }
 </script>
-<style>
-  .post-card-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .headline {
-    font-weight: 800;
-  }
-
-  .subheading {
-    font-size: 1.5rem;
-    font-family: 'Lato', sans-serif;
-  }
-</style>
 <style scoped>
   a {
     color: black;
     text-decoration: none;
+  }
+
+  h2 {
+    font-weight: 800;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
   }
 
   .words {

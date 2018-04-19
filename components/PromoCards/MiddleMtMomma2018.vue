@@ -1,14 +1,6 @@
 <template>
   <post-card :post="post"
              no-author>
-    <div slot="header">
-      <h4 class="subheading">
-        A week before Mother's day, its
-        <span style="font-weight: 800;">
-          MOMMA'S DAY.
-        </span>
-      </h4>
-    </div>
     <div slot="words">
       <div class="promo">
         21st annual Middle Mountain Momma at the gorgeous <a
@@ -39,17 +31,14 @@
         <img v-lazy="mmmImg + 'mmm.png'"
              class="image-smaller">
       </a>
-
       <m-t-b-v-a-video :src="mmmImg + 'mmm-start.mp4'"
                        autoplay
                        muted
-                       preload
                        loop/>
       <ride-with-gps :url="post.rwGps"/>
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import RideWithGps from '../Iframes/RideWithGps'
@@ -57,7 +46,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  import {s3Pages} from '../../scripts/routes'
+  import { s3Pages } from '../../scripts/routes'
 
   export default {
     name: 'middle-mt-momma-2018-promo',
