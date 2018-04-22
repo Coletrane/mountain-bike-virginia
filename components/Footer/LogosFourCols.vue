@@ -60,6 +60,7 @@
 
   .deschutes-img-4 {
     padding-top: 1rem;
+    width: 80% !important;
   }
 
   .sbc-img-4 {

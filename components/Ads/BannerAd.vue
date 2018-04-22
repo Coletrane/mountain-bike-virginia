@@ -1,11 +1,13 @@
 <template>
-  <a :href="href">
+  <a :href="href"
+      class="banner-ad">
     <responsive-img :src="img"/>
   </a>
 </template>
-
 <script>
   import ResponsiveImg from '../Images/ResponsiveImg'
+
+  import ad from '../../assets/mixins/ad'
 
   export default {
     components: {ResponsiveImg},
@@ -19,6 +21,9 @@
         type: String,
         required: true
       }
-    }
+    },
+    mixins: [
+      ad
+    ]
   }
 </script>

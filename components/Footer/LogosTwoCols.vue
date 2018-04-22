@@ -78,23 +78,22 @@
 
   .parkway-img-2 {
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: .5rem;
     width: 100% !important;
   }
 
 
   .starlight-img-2 {
     margin-top: 1.5rem;
-  }
-
-  .deschutes-img-2 {
-    margin-top: 1.5rem;
-    margin-right: 1rem;
     width: 110% !important;
   }
 
+  .deschutes-img-2 {
+    width: 85% !important;
+    margin-top: 1rem;
+  }
+
   .sbc-img-2 {
-    margin-left: 1.5rem;
     margin-top: 1rem;
   }
 
@@ -108,8 +107,7 @@
 
   .bath-img-2 {
     width: 75% !important;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    margin-top: 1.5rem;
   }
 
   .alleghany-img-2 {
@@ -128,6 +126,11 @@
   .tavern-img-2 {
     margin-top: 1rem;
     width: 70% !important;
+  }
+
+  .east-coasters-img-2 {
+    margin-top: 1rem;
+    width: 100% !important;
   }
 
 </style>

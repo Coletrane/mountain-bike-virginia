@@ -9,28 +9,22 @@
             21st annual Middle Mountain Momma at the gorgeous <a
             href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
             State Park.</a> The
-            first race in the XXC Marathon Series!
-            <div class="race-classes">
-              <h5>Classes:</h5>
-              Youth: 7mi,<br>
-              Junior: 11mi,<br>
-              Classic: 21mi,<br>
-              XXC: 44mi<br>
-            </div>
+            first race in the XXC-VA Series! This race is for all ages and skill levels. <a :href="post.fbEvent">Contact
+            us on Facebook </a>with any questions. Food provided by <a href="https://www.facebook.com/Longfin.Grill/">Longfin
+            Grill</a>, the best fish and chips in town! We love putting on this race and need to see YOU out on some of
+            the best trails Virginia has to offer.
+            <h5>Classes:</h5>
+            <strong> Youth: </strong> 7mi |  <strong> Junior: </strong> 11mi | <strong> Classic: </strong> 21mi | <strong> XXC: </strong>
+            44mi
+          </div>
+          <div>
+            <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
+              View the results from last year.
+            </nuxt-link>
             <div>
-              <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
-                View the results from last year.
-              </nuxt-link>
-              <div>
-                <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
-                  Register on BikeReg.
-                </a>
-              </div>
-              <div>
-                <a :href="post.fbEvent">
-                  Facebook Event
-                </a>
-              </div>
+              <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
+                Register on BikeReg.
+              </a>
             </div>
           </div>
         </div>
@@ -79,25 +73,8 @@
   }
 </script>
 <style>
-  @media (max-width: 700px) {
-    .author-container {
-      padding-top: 2.5rem !important;
-      padding-bottom: 0.5rem !important;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .author-container {
-      padding-top: 2.5rem !important;
-      padding-bottom: 2.5rem !important;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .author-container {
-      padding-top: 3.5rem !important;
-      padding-bottom: 3.5rem !important;
-    }
+  .race-classes {
+    text-align: center;
   }
 </style>
 
