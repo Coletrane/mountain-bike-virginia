@@ -2,8 +2,8 @@
   <div class="blog-post">
     <m-t-b-v-a-header :image="image"
                       :title="post.title"/>
-    <banner-ad href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
-               :img="s3Ads + '/sketch-collect/sketch-collect-banner.jpg'"/>
+    <banner href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
+            :img="s3Banners + '/sketch-collect-banner.jpg'"/>
     <div class="main-content"
          :style="backgroundImage">
       <blog-post-card :post="post"
@@ -25,9 +25,9 @@
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
-  import BannerAd from './Ads/BannerAd'
+  import Banner from './Das/Banner'
 
-  import { s3StaticImg, s3Ads } from '../scripts/routes'
+  import { s3StaticImg, s3Banners } from '../scripts/routes'
 
   export default {
     name: 'blog-post',
@@ -39,7 +39,7 @@
       SocialActions,
       Author,
       RelatedPosts,
-      BannerAd
+      Banner
     },
     props: {
       image: {
@@ -61,7 +61,7 @@
     },
     data() {
       return {
-        s3Ads: s3Ads
+        s3Banners: s3Banners
       }
     },
     computed: {

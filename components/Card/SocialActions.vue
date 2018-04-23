@@ -76,7 +76,7 @@
   }
   @media (max-width: 692px) {
     .fa-facebook {
-      margin-right: 4px;
+      margin-right: 2px;
     }
   }
 

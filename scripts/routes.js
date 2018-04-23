@@ -13,7 +13,7 @@ const s3Authors = s3 + '/authors'
 const s3Posts = s3 + '/posts'
 const s3WeatherIcons = s3 + '/static/weather-icons'
 const s3Pages = s3 + '/pages'
-const s3Ads = s3 + '/ads'
+const s3Banners = s3 + '/banners'
 const s3Routes = s3 + '/routes'
 const baseUrl = 'https://bikeva.com'
 
@@ -27,7 +27,7 @@ module.exports = {
   s3Posts,
   s3WeatherIcons,
   s3Pages,
-  s3Ads,
+  s3Banners,
   s3Routes,
   baseUrl
 }

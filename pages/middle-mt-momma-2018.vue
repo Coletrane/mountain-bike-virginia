@@ -14,9 +14,10 @@
             Grill</a>, the best fish and chips in town! We love putting on this race and need to see YOU out on some of
             the best trails Virginia has to offer.
             <h5>Classes:</h5>
-            <strong> Youth: </strong> 7mi |  <strong> Beginner: </strong> 11mi | <strong> XC: </strong> 21mi | <strong> XXC: </strong>
-            see maps below.
-            44mi
+            <strong> Youth: </strong> 7mi |  <strong> Beginner: </strong> 11mi | <strong> XC: </strong> 21mi | <strong> XXC: </strong> 44mi
+          </div>
+          <div>
+            See maps below.
           </div>
           <div>
             <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
@@ -29,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div style="margin-top: -2rem;">
+        <div>
           <a :href="post.fbEvent">
             <img v-lazy="img + 'mmm.png'"
                  class="image-smaller">

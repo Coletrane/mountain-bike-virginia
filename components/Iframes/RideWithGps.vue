@@ -15,13 +15,22 @@
     }
   }
 </script>
-
 <style scoped>
   iframe {
     width: 1px;
     min-width: 100%;
     border: none;
-    height: 600px;
+    height: 800px;
+  }
+  @media (max-width: 700px) {
+    iframe {
+      height: 600px;
+    }
+  }
+  @media (max-width: 400px) {
+    iframe {
+      height: 450px;
+    }
   }
 
   /*get rid of ridewithgps border radius*/
@@ -29,9 +38,5 @@
     border-radius: 0 !important;
   }
 
-  /*@media (min-width: 992px) {*/
-  /*iframe {*/
-  /*height: 800px;*/
-  /*}*/
-  /*}*/
+
 </style>

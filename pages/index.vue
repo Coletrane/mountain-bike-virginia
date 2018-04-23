@@ -8,8 +8,8 @@
       home-page>
     </m-t-b-v-a-header>
 
-    <banner-ad href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
-               :img="s3Ads + '/sketch-collect/sketch-collect-banner.jpg'"/>
+    <banner href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
+            :img="s3Banners + '/sketch-collect-banner.jpg'"/>
 
     <div class="main-content"
          :style="backgroundImage">
@@ -33,10 +33,10 @@
 </template>
 <script>
   import MTBVAHeader from '../components/Header/MTBVAHeader'
-  import BannerAd from '../components/Ads/BannerAd'
+  import Banner from '../components/Das/Banner'
   import { home } from '../assets/head-tags'
   import { headTags } from '../assets/functions'
-  import { s3StaticImg, s3Ads } from '../scripts/routes'
+  import { s3StaticImg, s3Banners } from '../scripts/routes'
 
   // Pages
   const Page0 = () => import('../components/BlogPages/Page0')
@@ -46,7 +46,7 @@
     name: 'index',
     components: {
       MTBVAHeader,
-      BannerAd,
+      Banner,
       Page0,
       Page1
     },
@@ -69,7 +69,7 @@
     data () {
       return {
         img: `${s3StaticImg}/foliage.jpg`,
-        s3Ads: s3Ads
+        s3Banners: s3Banners
       }
     },
     computed: {

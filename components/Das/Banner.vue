@@ -1,17 +1,17 @@
 <template>
   <a :href="href"
-      class="banner-ad">
+      class="banner">
     <responsive-img :src="img"/>
   </a>
 </template>
 <script>
   import ResponsiveImg from '../Images/ResponsiveImg'
 
-  import ad from '../../assets/mixins/ad'
+  import ad from '../../assets/mixins/da'
 
   export default {
     components: {ResponsiveImg},
-    name: 'banner-ad',
+    name: 'banner',
     props: {
       href: {
         type: String,

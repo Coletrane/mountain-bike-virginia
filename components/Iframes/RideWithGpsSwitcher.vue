@@ -55,16 +55,18 @@
 
   button {
     flex: 1 1 auto;
-    font-size: 1.5rem;
-    font-family: 'MyriadPro-Bold', sans-serif;
-    font-weight: 800;
-    color: black;
-    border-color: white;
+    border: none;
     font-size: 2rem;
     background: transparent;
   }
   .button-selected {
     background-image: linear-gradient(#73a533 0%, #73a533 100%);
     background-size: 100% 1em;
+  }
+  span {
+    font-family: 'MyriadPro-Bold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: black;
   }
 </style>
