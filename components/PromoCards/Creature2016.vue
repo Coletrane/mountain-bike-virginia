@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing

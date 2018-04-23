@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         A true quiver killer, the Rocky Mountain Instinct is a do it all bike that manages to tear up downhills and tear

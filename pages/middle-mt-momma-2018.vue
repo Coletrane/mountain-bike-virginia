@@ -14,7 +14,8 @@
             Grill</a>, the best fish and chips in town! We love putting on this race and need to see YOU out on some of
             the best trails Virginia has to offer.
             <h5>Classes:</h5>
-            <strong> Youth: </strong> 7mi |  <strong> Junior: </strong> 11mi | <strong> Classic: </strong> 21mi | <strong> XXC: </strong>
+            <strong> Youth: </strong> 7mi |  <strong> Beginner: </strong> 11mi | <strong> XC: </strong> 21mi | <strong> XXC: </strong>
+            see maps below.
             44mi
           </div>
           <div>
@@ -37,7 +38,24 @@
                            autoplay
                            muted
                            loop/>
-          <ride-with-gps :url="post.rwGps"/>
+          <ride-with-gps-switcher :gps-routes="[
+            {
+              name: 'youth',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=27285133&sampleGraph=true'
+            },
+            {
+              name: 'beginner',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=27285230&sampleGraph=true'
+            },
+            {
+              name: 'xc',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=4047388&sampleGraph=true'
+            },
+            {
+              name: 'xxc',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true'
+            }
+          ]"/>
         </div>
       </div>
     </blog-post>
@@ -45,7 +63,7 @@
 </template>
 <script>
   import BlogImage from '../components/Images/BlogImage'
-  import RideWithGps from '../components/Iframes/RideWithGps'
+  import RideWithGpsSwitcher from '../components/Iframes/RideWithGpsSwitcher'
   import MTBVAVideo from '../components/Iframes/MTBVAVideo'
   import BlogPost from '../components/BlogPost'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
@@ -56,8 +74,8 @@
   export default {
     name: 'middle-mt-momma-2018',
     components: {
+      RideWithGpsSwitcher,
       BlogPost,
-      RideWithGps,
       MTBVAVideo,
       BlogImage,
       FontAwesomeIcon

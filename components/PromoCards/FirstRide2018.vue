@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         For the 28th consecutive year the the first ride of the new year was a roaring

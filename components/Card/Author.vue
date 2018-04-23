@@ -54,7 +54,6 @@
   .author-container {
     width: 40%;
     text-align: center;
-    padding-top: 1.5rem;
     max-width: 180px;
     float: left;
   }

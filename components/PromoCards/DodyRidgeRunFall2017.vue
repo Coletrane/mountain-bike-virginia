@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="media">
       <youtube :src="post.ytSrc"/>
     </div>

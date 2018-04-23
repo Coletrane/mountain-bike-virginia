@@ -101,11 +101,11 @@
     "sleep": "node ./scripts/sleep.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
-    "test-i": "BROWSER=chrome mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000 && BROWSER=safari mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000",
+    "test-i": "BROWSER=chrome mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000; BROWSER=safari mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000",
     "test-safari": "BROWSER=safari mocha --require babel-core/register ./test/integration/global.spec.js --timeout 30000",
     "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js --timeout 30000",
     "test-j": "mocha --require babel-core/register ./test/json/global.spec.js --timeout 30000",
-    "test": "npm run test-j && NODE_ENV=test npm run test-i && NODE_ENV=test npm run test-u",
+    "test": "npm run test-j && NODE_ENV=test npm run test-i; NODE_ENV=test npm run test-u",
     "deploy-prod": "./scripts/check-is-master.sh && NODE_ENV=production npm run build && ./scripts/deploy-prod.sh"
   },
   "main": "dist/app.bundle.js"

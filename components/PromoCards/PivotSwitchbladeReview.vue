@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not

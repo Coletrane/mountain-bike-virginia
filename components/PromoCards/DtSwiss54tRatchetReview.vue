@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         We've all heard it, the performance exhaust of mountain bikes, Quick Engagement™. While many are special hubs

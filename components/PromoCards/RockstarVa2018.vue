@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile

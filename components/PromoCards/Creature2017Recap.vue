@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         Once again Virginia's Blue Ridge Creature from Carvins Cove was a resounding success.

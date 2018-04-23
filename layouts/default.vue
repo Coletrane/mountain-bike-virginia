@@ -114,28 +114,6 @@
     border-color: white !important;
   }
 
-  .white-btn-alt {
-    font-family: 'MyriadPro-Bold', sans-serif;
-    font-weight: 800;
-    color: black;
-    border-color: white;
-    font-size: 2rem;
-    background: transparent;
-  }
-  .white-btn-alt:hover {
-    background-color: rgba(255, 255, 255, 0);
-    border-color: black;
-  }
-  .white-btn-alt:active {
-    background-color: rgba(255, 255, 255, 0);
-    border-color: black;
-  }
-  .white-btn-alt-selected {
-    background-color: rgba(255, 255, 255, 0);
-    border-color: black;
-  }
-
-
   .app-fade-wrapper {
     background-color: black;
   }
@@ -246,5 +224,17 @@
     .image-smaller {
       width: 100%;
     }
+  }
+
+  .link-hover {
+    background-image: linear-gradient(rgba(115, 166, 52,0.5) 0%, rgba(115, 166, 52,0.5) 100%);
+    background-repeat: repeat-y;
+    background-size: 0% 0em;
+    background-position: 0 65%;
+    transition: 600ms ease;
+  }
+  .link-hover:hover {
+    background-image: linear-gradient(#73a533 0%, #73a533 100%);
+    background-size: 100% 1em;
   }
 </style>

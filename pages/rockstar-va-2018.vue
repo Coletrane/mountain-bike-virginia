@@ -14,30 +14,20 @@
           you a taste of each trail section. The trail and gravel routes don't diverge until mile 36.
         </div>
         <div>
-          <div class="row route-selection">
-            <button class="route-btn white-btn-alt col-4"
-                    :class="buttonSelected('trail')"
-                    @click="selectRaceRoute('trail')">
-              TRAIL
-            </button>
-            <button class="route-btn white-btn-alt col-4"
-                    :class="buttonSelected('gravel')"
-                    @click="selectRaceRoute('gravel')">
-              GRAVEL
-            </button>
-            <button class="route-btn white-btn-alt col-4"
-                    :class="buttonSelected('pave')"
-                    @click="selectRaceRoute('pave')">
-              PAVE
-            </button>
-
-            <ride-with-gps v-if="selectedRaceRoute === 'trail'"
-                           url="https://rwgps-embeds.com/embeds?type=route&id=27086614&sampleGraph=true"/>
-            <ride-with-gps v-if="selectedRaceRoute === 'gravel'"
-                           url="https://rwgps-embeds.com/embeds?type=route&id=27056025&sampleGraph=true"/>
-            <ride-with-gps v-if="selectedRaceRoute === 'pave'"
-                           url="https://rwgps-embeds.com/embeds?type=route&id=27086777&sampleGraph=true"/>
-          </div>
+          <ride-with-gps-switcher :gps-routes="[
+              {
+                name: 'trail',
+                url: 'https://rwgps-embeds.com/embeds?type=route&id=27086614&sampleGraph=true'
+              },
+              {
+                name: 'gravel',
+                url: 'https://rwgps-embeds.com/embeds?type=route&id=27056025&sampleGraph=true'
+              },
+              {
+                name: 'pave',
+                url: 'https://rwgps-embeds.com/embeds?type=route&id=27086777&sampleGraph=true'
+              }
+            ]"/>
         </div>
         <div class="blog-p">
           I want to give a huge round of applause to the 35 racers that started this event. Prior to the start date the person I was teaming with said he no longer wanted to do an insane multi-day bikepacking trip, fair enough. On top of this the weather turned abysmal, as it does for the first year of any event, especially one this ostentatious. The forecast: 3 to 8 inches of snow, and a low of 25 degrees over night on Saturday. The fact that all these racers took that situation, gnashed their teeth and took it head on is truly remarkable.
@@ -105,10 +95,12 @@
   import Quote from '../components/Card/Quote'
 
   import blogPost from '../assets/mixins/blog-post'
+  import RideWithGpsSwitcher from '../components/Iframes/RideWithGpsSwitcher'
 
   export default {
     name: 'rockstar-va-2018',
     components: {
+      RideWithGpsSwitcher,
       RideWithGps,
       MTBVAVideo,
       Quote,
@@ -117,32 +109,6 @@
     },
     mixins: [
       blogPost
-    ],
-    data() {
-      return {
-        selectedRaceRoute: 'trail'
-      }
-    },
-    methods: {
-      selectRaceRoute(raceRoute) {
-        this.selectedRaceRoute = raceRoute
-      },
-      buttonSelected(raceRoute) {
-        if (this.selectedRaceRoute === raceRoute) {
-          return 'white-btn-alt-selected'
-        }
-      }
-    }
+    ]
   }
 </script>
-
-<style scoped>
-  .route-selection {
-    margin: 0;
-    text-align: center;
-  }
-
-  .route-btn {
-    font-size: 1.5rem;
-  }
-</style>

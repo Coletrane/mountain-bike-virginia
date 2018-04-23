@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-  >
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         I first became aware of Cane Creek’s ViscoSet steering damper from <a href="http://teamdicky.blogspot.com/">

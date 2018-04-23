@@ -3,7 +3,9 @@
     <nuxt-link v-if="postRoute"
                :to="{name: post.route}">
       <h2 v-if="post.title"
-          class="headline">{{post.title.toUpperCase()}}
+          class="headline
+                 link-hover">
+        {{post.title.toUpperCase()}}
       </h2>
       <h3 v-if="post.subtitle"
           class="subheading">
@@ -20,7 +22,9 @@
     </nuxt-link>
     <div v-else>
       <h2 v-if="post.title"
-          class="headline">{{post.title.toUpperCase()}}
+          class="headline
+                link-hover">
+        {{post.title.toUpperCase()}}
       </h2>
       <h3 v-if="post.subtitle"
           class="subheading">
@@ -76,18 +80,6 @@
     color: black;
   }
 
-  /*hover effect*/
-  h2 {
-    background-image: linear-gradient(rgba(115, 166, 52,0.5) 0%, rgba(115, 166, 52,0.5) 100%);
-    background-repeat: repeat-y;
-    background-size: 0% 0em;
-    background-position: 0 65%;
-    transition: 600ms ease;
-  }
-  h2:hover {
-    background-image: linear-gradient(#73a533 0%, #73a533 100%);
-    background-size: 100% 1em;
-  }
   h2 {
     text-decoration: underline;
     font-weight: 800;
