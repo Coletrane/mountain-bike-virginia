@@ -1,9 +1,11 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="words">
       <div class="promo">
-        We've all heard it, the performance exhaust of mountain bikes, Quick Engagement™. While many are special hubs that come loud and proud, DT Swiss takes a reserved, sensable, and modular approach to it, giving quick engagement to all who are willing to pay.
+        We've all heard it, the performance exhaust of mountain bikes, Quick Engagement™. While many are special hubs
+        that come loud and proud, DT Swiss takes a reserved, sensable, and modular approach to it, giving quick
+        engagement to all who are willing to pay.
       </div>
     </div>
     <div slot="media">
@@ -11,7 +13,6 @@
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'

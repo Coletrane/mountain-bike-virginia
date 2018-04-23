@@ -1,6 +1,6 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="words">
       <div class="promo">
         21st annual Middle Mountain Momma at the gorgeous <a

@@ -1,6 +1,6 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="words">
       <div class="promo">
         With over a 5 grand pricetag, the Pivot Switchblade is easily a great deal. It's not
@@ -14,7 +14,6 @@
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'

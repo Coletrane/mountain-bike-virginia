@@ -1,9 +1,11 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="words">
       <div class="promo">
-        An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile race from Harrisonburg to Roanoke, Virginia. Facing snow in the first week of April wasn't part of the plan. Many bailed prior to the race, I was one of the only ones to bail during the race.
+        An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile
+        race from Harrisonburg to Roanoke, Virginia. Facing snow in the first week of April wasn't part of the plan.
+        Many bailed prior to the race, I was one of the only ones to bail during the race.
       </div>
     </div>
     <div slot="media">
@@ -11,7 +13,6 @@
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
@@ -33,7 +34,5 @@
     }
   }
 </script>
-
 <style scoped>
-
 </style>

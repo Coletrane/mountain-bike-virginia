@@ -88,7 +88,7 @@
 
 
   span, div, p {
-    font-family: 'Lato', sans-serif;
+    font-family: 'lato', sans-serif;
   }
 
   button {

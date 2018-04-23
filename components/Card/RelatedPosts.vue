@@ -14,10 +14,8 @@
 <script>
   import postComponentLoader from '../../assets/mixins/post-component-loader'
 
-  import {s3Pages} from '../../scripts/routes'
-
   export default {
-    name: 'half-card',
+    name: 'related-posts',
     props: {
       posts: {
         required: true

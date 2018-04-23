@@ -1,12 +1,10 @@
 <template>
-  <post-card :post="post"
-             no-author>
+  <post-card :post="post">
     <div slot="media">
       <youtube :src="post.ytSrc"/>
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'

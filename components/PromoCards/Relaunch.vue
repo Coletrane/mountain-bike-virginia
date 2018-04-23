@@ -1,12 +1,11 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="media">
       <image-link :post="post"/>
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'

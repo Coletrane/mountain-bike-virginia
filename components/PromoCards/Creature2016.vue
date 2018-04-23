@@ -1,6 +1,6 @@
 <template>
   <post-card :post="post"
-             no-author>
+  >
     <div slot="words">
       <div class="promo">
         The innagural year of Virginia's Blue Ridge Creature from Carvins Cove was a smashing
@@ -22,7 +22,6 @@
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'

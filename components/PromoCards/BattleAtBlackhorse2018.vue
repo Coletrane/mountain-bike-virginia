@@ -1,6 +1,5 @@
 <template>
-  <post-card :post="post"
-             no-author>
+  <post-card :post="post">
     <div slot="words">
       <div class="promo">
         23 miles, 3 stages, of absolute brutality from the Glenwood Horse trail, Hammin Hollow, and Dody Ridge
@@ -15,7 +14,6 @@
     </div>
   </post-card>
 </template>
-
 <script>
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'

@@ -2,11 +2,8 @@
   <div>
     <blog-post :image="img + post.imgRoute"
                :post="post"
-               header-author
-               author-separate-div
                :related-posts="relatedPosts">
-      <div class="blog-p"
-           slot="header">
+      <div class="blog-p">
         Rock and Roll is dead, but machine learning isn't. On a wild hair to see what the music industry is actually
         like, I've turned my back on it. Packing up and moving there knowing nobody, I found myself in Nashville, on
         <strong><i>two wheels.</i></strong> Bikes take you places, bikes take you to great people. With moving back to
