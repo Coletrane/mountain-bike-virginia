@@ -1,52 +1,40 @@
 <template>
   <div class="blog-post">
-    <m-t-b-v-a-header
-      :header-height="headerHeight"
-      :image="image"
-      :title="post.title"/>
-
+    <m-t-b-v-a-header :image="image"
+                      :title="post.title"/>
     <banner-ad href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
                :img="s3Ads + '/sketch-collect/sketch-collect-banner.jpg'"/>
-
     <div class="main-content"
          :style="backgroundImage">
-      <post-card :post="post"
-                 no-post-title
-                 blog-post
-                 :header-author="headerAuthor"
-                 :author-separate-div="authorSeparateDiv">
-        <div slot="header">
-          <slot name="header"/>
-        </div>
+      <blog-post-card :post="post"
+                      :header-author="headerAuthor">
         <div slot="media">
           <slot name="content"/>
         </div>
-      </post-card>
-
+      </blog-post-card>
       <related-posts v-if="relatedPosts"
                      :posts="relatedPosts"/>
     </div>
-
   </div>
 </template>
 <script>
   import MTBVAHeader from './Header/MTBVAHeader.vue'
   import Youtube from './Iframes/Youtube.vue'
-  import PostCard from './Card/PostCard'
+  import BlogPostCard from './Card/BlogPostCard'
   import RideWithGps from './Iframes/RideWithGps.vue'
   import SocialActions from './Card/SocialActions.vue'
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
   import BannerAd from './Ads/BannerAd'
 
-  import {s3StaticImg, s3Ads} from '../scripts/routes'
+  import { s3StaticImg, s3Ads } from '../scripts/routes'
 
   export default {
     name: 'blog-post',
     components: {
       MTBVAHeader,
       Youtube,
-      PostCard,
+      BlogPostCard,
       RideWithGps,
       SocialActions,
       Author,
@@ -54,9 +42,6 @@
       BannerAd
     },
     props: {
-      headerHeight: {
-        type: Number
-      },
       image: {
         type: String,
         required: true
@@ -64,17 +49,7 @@
       post: {
         required: true
       },
-      inlineAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
       headerAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      authorSeparateDiv: {
         type: Boolean,
         required: false,
         default: false
@@ -92,14 +67,13 @@
     computed: {
       backgroundImage() {
         return {
-          backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
+          backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`
         }
       }
     }
   }
 </script>
 <style>
-
   .blog-p {
     padding: 1rem;
     font-size: 1.2rem;
@@ -117,8 +91,6 @@
     font-size: 1rem;
     color: #5c5e5c;
   }
-
 </style>
 <style scoped>
-
 </style>

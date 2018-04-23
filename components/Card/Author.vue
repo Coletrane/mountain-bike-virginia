@@ -1,16 +1,14 @@
 <template>
   <div class="author-container">
     <div>
-    <a :href="author.fbUrl">
       <img class="author-pic"
            :src=author.imgUrl
            :alt="author.name">
-      <div class="name-container">
-        <span class="name">
-        {{author.name}}
-        </span>
+      <div>
+        <a :href="author.fbUrl">
+          {{author.name}}
+        </a>
       </div>
-    </a>
     </div>
     <div class="social-icons">
       <a :href="author.fbUrl">
@@ -29,7 +27,7 @@
   import faStrava from '@fortawesome/fontawesome-free-brands/faStrava'
 
   export default {
-    name: "author",
+    name: 'author',
     props: {
       author: {
         type: Object,
@@ -66,13 +64,17 @@
     width: 50%;
   }
 
-  .social-icons {
+  svg {
     text-align: center;
     font-size: 2rem;
-  }
-  .social-icons a {
-    padding-left: .5rem;
-    padding-right: .5rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
   }
 
+  a {
+    text-decoration: underline;
+    color: black;
+    background: transparent;
+  }
 </style>

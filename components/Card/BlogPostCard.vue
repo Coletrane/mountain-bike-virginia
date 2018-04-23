@@ -1,13 +1,14 @@
 <template>
   <abstract-post-card :post="post">
     <div slot="header">
-      <post-header :post="post"/>
+      <post-header :post="headerPost"/>
       <div v-if="headerAuthor">
         <author v-if="post.author"
                 :author="post.author"/>
       </div>
     </div>
-    <div class="mtbva-media">
+    <div slot="after-header"
+         class="mtbva-media">
       <div v-if="!headerAuthor">
         <author v-if="post.author"
                 :author="post.author"/>
@@ -38,8 +39,17 @@
       PostHeader,
       AbstractPostCard,
       Author
+    },
+    computed: {
+      // Removes properties of the post for the header
+      headerPost() {
+        return {
+          subtitle: this.post.subtitle,
+          date: this.post.date,
+          loc: this.post.loc
+        }
+      }
     }
   }
 </script>
-<style scoped>
-</style>
+

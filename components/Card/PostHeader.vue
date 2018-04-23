@@ -3,7 +3,7 @@
     <nuxt-link v-if="postRoute"
                :to="{name: post.route}">
       <h2 v-if="post.title"
-          class="headline">{{post.title}}
+          class="headline">{{post.title.toUpperCase()}}
       </h2>
       <h3 v-if="post.subtitle"
           class="subheading">
@@ -20,7 +20,7 @@
     </nuxt-link>
     <div v-else>
       <h2 v-if="post.title"
-          class="headline">{{post.title}}
+          class="headline">{{post.title.toUpperCase()}}
       </h2>
       <h3 v-if="post.subtitle"
           class="subheading">
@@ -67,6 +67,10 @@
   }
 </script>
 <style scoped>
+  .post-card-header {
+    padding-top: .5rem;
+  }
+
   a {
     text-decoration: none;
     color: black;

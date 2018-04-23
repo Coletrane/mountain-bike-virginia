@@ -1,7 +1,7 @@
 <template>
   <div class="related-posts">
 
-    <h1 class="related-posts-title">Related Posts</h1>
+    <h1 class="related-posts-title">RELATED POSTS</h1>
 
     <div v-for="post in posts"
          class="related-post">
