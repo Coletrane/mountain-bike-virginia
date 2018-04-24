@@ -7,23 +7,18 @@ let testUrl = 'http://localhost:3000'
 
 const importTest = (path) => {
   describe(path, () => {
-    require(path)
+    require(path)('safari')
   })
 }
 
-describe('Mountain Bike Virginia integration tests', () => {
+describe('Safari integration tests', () => {
   let driver
 
   before(async () => {
-    if (process.env.BROWSER === 'chrome') {
-      driver = await new selenium.Builder()
-        .withCapabilities(selenium.Capabilities.chrome())
-        .build()
-    } else if (process.env.BROWSER === 'safari') {
-      driver = await new selenium.Builder()
-        .withCapabilities(selenium.Capabilities.safari())
-        .build()
-    }
+
+    driver = await new selenium.Builder()
+      .withCapabilities(selenium.Capabilities.safari())
+      .build()
     await driver.get(testUrl)
     exports.testUrl = testUrl
     exports.expect = expect
