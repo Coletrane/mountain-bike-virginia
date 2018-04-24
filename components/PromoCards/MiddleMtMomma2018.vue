@@ -34,13 +34,30 @@
                        autoplay
                        muted
                        loop/>
-      <ride-with-gps :url="post.rwGps"/>
+      <ride-with-gps-switcher :gps-routes="[
+            {
+              name: 'youth',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=27285133&sampleGraph=true'
+            },
+            {
+              name: 'beginner',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=27285230&sampleGraph=true'
+            },
+            {
+              name: 'xc',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=4047388&sampleGraph=true'
+            },
+            {
+              name: 'xxc',
+              url: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true'
+            }
+          ]"/>
     </div>
   </post-card>
 </template>
 <script>
   import PostCard from '../Card/PostCard'
-  import RideWithGps from '../Iframes/RideWithGps'
+  import RideWithGpsSwitcher from '../Iframes/RideWithGpsSwitcher'
   import MTBVAVideo from '../Iframes/MTBVAVideo'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
@@ -51,7 +68,7 @@
     name: 'middle-mt-momma-2018-promo',
     components: {
       PostCard,
-      RideWithGps,
+      RideWithGpsSwitcher,
       MTBVAVideo,
       FontAwesomeIcon
     },

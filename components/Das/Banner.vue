@@ -7,7 +7,7 @@
 <script>
   import ResponsiveImg from '../Images/ResponsiveImg'
 
-  import ad from '../../assets/mixins/da'
+  import da from '../../assets/mixins/da'
 
   export default {
     components: {ResponsiveImg},
@@ -23,7 +23,7 @@
       }
     },
     mixins: [
-      ad
+      da
     ]
   }
 </script>
