@@ -1,11 +1,16 @@
 <template>
   <div class="abstract-page">
     <div v-if="pageLoaded">
-      <div v-for="postRoute of $store.state.routes.pages[page]">
+      <div v-for="(postRoute, i) of $store.state.routes.pages[page]">
         <transition name="new-page-fade">
           <component v-if="getPostComponent(postRoute)"
                      :is="getPostComponent(postRoute)"/>
         </transition>
+        <banner v-if="i % 3 === 0"
+                :style="{
+          paddingTop: '1rem',
+          paddingBottom: '1rem'
+        }"/>
         <div v-if="!getPostComponent(postRoute)"
              class="post-card-placeholder">
         </div>
@@ -14,6 +19,8 @@
   </div>
 </template>
 <script>
+  import Banner from '../../components/Das/Banner'
+
   import postComponentLoader from '../../assets/mixins/post-component-loader'
 
   export default {
@@ -23,6 +30,9 @@
         type: Number,
         required: true
       }
+    },
+    components: {
+      Banner
     },
     mixins: [
       postComponentLoader

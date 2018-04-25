@@ -2,8 +2,7 @@
   <div class="blog-post">
     <m-t-b-v-a-header :image="image"
                       :title="post.title"/>
-    <banner href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
-            :img="s3Banners + '/sketch-collect-banner.jpg'"/>
+    <banner/>
     <div class="main-content"
          :style="backgroundImage">
       <blog-post-card :post="post"

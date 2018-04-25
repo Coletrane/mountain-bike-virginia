@@ -4,6 +4,7 @@ import authors from './authors'
 import posts from './posts'
 import results from './results'
 import routes from './routes'
+import das from './das'
 
 export default () => {
   return new Vuex.Store({
@@ -12,7 +13,8 @@ export default () => {
       authors,
       posts,
       results,
-      routes
+      routes,
+      das
     },
     strict: true
   })

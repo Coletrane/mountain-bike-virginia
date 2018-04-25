@@ -8,8 +8,7 @@
       home-page>
     </m-t-b-v-a-header>
 
-    <banner href="https://viralstyle.com/store/angelo-wash/Sketchcollect"
-            :img="s3Banners + '/sketch-collect-banner.jpg'"/>
+    <banner/>
 
     <div class="main-content"
          :style="backgroundImage">

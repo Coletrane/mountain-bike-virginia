@@ -159,8 +159,6 @@
     background-color: rgb(78, 69, 49);
     background-repeat: repeat;
     background-position-y: 0px;
-    padding-left: 4rem;
-    padding-right: 4rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
@@ -169,22 +167,11 @@
     .main-content {
       padding-top: 6rem;
       padding-bottom: 6rem;
-      padding-left: 12rem;
-      padding-right: 12rem;
-    }
-  }
-
-  @media (max-width: 750px) {
-    .main-content {
-      padding-left: 2rem;
-      padding-right: 2rem;
     }
   }
 
   @media (max-width: 575px) {
     .main-content {
-      padding-left: 0;
-      padding-right: 0;
       padding-top: 4rem;
       padding-bottom: 4rem;
     }

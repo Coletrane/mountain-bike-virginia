@@ -1,8 +1,11 @@
 <template>
-  <a :href="href"
-      class="banner">
-    <responsive-img :src="img"/>
-  </a>
+  <div>
+    <a v-if="banner"
+       :href="banner.url"
+       class="banner">
+      <responsive-img :src="banner.img"/>
+    </a>
+  </div>
 </template>
 <script>
   import ResponsiveImg from '../Images/ResponsiveImg'
@@ -12,18 +15,16 @@
   export default {
     components: {ResponsiveImg},
     name: 'banner',
-    props: {
-      href: {
-        type: String,
-        required: true
-      },
-      img: {
-        type: String,
-        required: true
-      }
-    },
     mixins: [
       da
-    ]
+    ],
+    data() {
+      return {
+        banner: null
+      }
+    },
+    async created() {
+      this.banner = await this.$store.dispatch('randomBanner')
+    }
   }
 </script>
