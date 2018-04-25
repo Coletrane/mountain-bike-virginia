@@ -91,7 +91,7 @@
 </script>
 <style scoped>
   nav {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
     z-index: 2;

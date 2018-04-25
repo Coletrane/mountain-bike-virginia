@@ -49,11 +49,11 @@
   .after-header a {
     text-decoration: underline;
     color: black;
-    background-image: linear-gradient(#73a533 0%, #73a533 100%);
+    background: rgba(115, 165, 51, 0.75);
     background-size: 100% 1em;
   }
   .after-header a:hover {
-    background-image: linear-gradient(#3d7635 0%, #3d7635 100%);
+    background: rgba(61, 118, 53, 0.8);
     transition: 600ms ease;
   }
   .after-header svg {

@@ -27,27 +27,39 @@
       }
     },
     mounted() {
-      this.$store.watch(state => {
-        return this.$store.state.misc.loaded
-      }, (newVal, oldVal) => {
+      if (!this.$store.state.misc.loaded) {
+        this.$store.watch(state => {
+          return this.$store.state.misc.loaded
+        }, (newVal, oldVal) => this.iframeListener())
+      } else {
+        this.iframeListener()
+      }
+    },
+    methods: {
+      iframeListener() {
         if (process.browser) {
           const img = this.$el.children[0]
           const iframe = this.$el.children[1]
-
           if (iframe) {
             iframe.onload = () => {
               this.loaded = true
             }
           }
         }
-      })
+      }
+    },
+    watch: {
+      url() {
+        this.loaded = false
+        this.iframeListener()
+      }
     }
   }
 </script>
 <style scoped>
 
   iframe, div {
-    min-width: 100%;
+    width: 100%;
     border: none;
     height: 800px;
   }
@@ -65,7 +77,7 @@
   }
 
   img {
-    width: 85%;
+    width: 75%;
     height: auto;
     display: block;
     margin-top: 50%;

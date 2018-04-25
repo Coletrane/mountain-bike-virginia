@@ -234,7 +234,7 @@
     transition: 600ms ease;
   }
   .link-hover:hover {
-    background-image: linear-gradient(#73a533 0%, #73a533 100%);
+    background-image: linear-gradient(rgba(115, 165, 51, 0.85) 0%, rgba(115, 165, 51, 0.85) 100%);
     background-size: 100% 1em;
   }
 </style>
