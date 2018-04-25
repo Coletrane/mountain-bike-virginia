@@ -7,18 +7,6 @@
                  link-hover">
         {{post.title.toUpperCase()}}
       </h2>
-      <h3 v-if="post.subtitle"
-          class="subheading">
-        {{post.subtitle}}
-      </h3>
-      <h4 v-if="post.date">
-        <font-awesome-icon :icon="faCalendarAlt"/>
-        {{post.date}}
-      </h4>
-      <h4 v-if="post.loc">
-        <font-awesome-icon :icon="faLocationArrow"/>
-        {{post.loc}}
-      </h4>
     </nuxt-link>
     <div v-else>
       <h2 v-if="post.title"
@@ -26,19 +14,19 @@
                 link-hover">
         {{post.title.toUpperCase()}}
       </h2>
-      <h3 v-if="post.subtitle"
-          class="subheading">
-        {{post.subtitle}}
-      </h3>
-      <h4 v-if="post.date">
-        <font-awesome-icon :icon="faCalendarAlt"/>
-        {{post.date}}
-      </h4>
-      <h4 v-if="post.loc">
-        <font-awesome-icon :icon="faLocationArrow"/>
-        {{post.loc}}
-      </h4>
     </div>
+    <h3 v-if="post.subtitle"
+        class="subheading">
+      {{post.subtitle}}
+    </h3>
+    <h4 v-if="post.date">
+      <font-awesome-icon :icon="faCalendarAlt"/>
+      {{post.date}}
+    </h4>
+    <h4 v-if="post.loc">
+      <font-awesome-icon :icon="faLocationArrow"/>
+      {{post.loc}}
+    </h4>
   </div>
 </template>
 <script>

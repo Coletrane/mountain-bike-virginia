@@ -1,5 +1,5 @@
 import routesState from '../../store/routes'
-import {posts} from '../../scripts/build-routes-json'
+import { posts } from '../../scripts/build-routes-json'
 
 module.exports = (browser) => {
   const global = require(`./global.${browser}.spec`)
@@ -21,7 +21,7 @@ module.exports = (browser) => {
           By.id('load-more-btn'))
         if (await loadMoreButton) {
           console.log('Clicking Load More button')
-          driver.executeScript("document.getElementById('load-more-btn').click();")
+          driver.executeScript('document.getElementById(\'load-more-btn\').click();')
           await driver.sleep(3000)
         }
       }
@@ -41,22 +41,22 @@ module.exports = (browser) => {
       it('should have a headline', async () => {
         expect(await cards[i].findElement(
           By.className('headline'))
-                             .getText())
+          .getText())
           .not.to.be.undefined
       })
 
       it('should have a subheading', async () => {
         expect(await cards[i].findElement(
           By.className('subheading'))
-                             .getText())
+          .getText())
           .not.to.be.undefined
       })
 
       if (post.route !== 'relaunch' && post.route !== 'creature-2016') {
         it('should have a link around the headline and subheading', async () => {
           let href = await cards[i].findElement(
-            By.xpath('//a'))
-                                   .getAttribute('href')
+            By.css('a'))
+            .getAttribute('href')
 
           expect(href.length > 0)
             .to.be.true
