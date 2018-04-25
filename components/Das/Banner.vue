@@ -23,7 +23,7 @@
         banner: null
       }
     },
-    async created() {
+    async mounted() {
       this.banner = await this.$store.dispatch('randomBanner')
     }
   }

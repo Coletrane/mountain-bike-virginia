@@ -11,6 +11,10 @@ export default {
       {
         url: 'https://www.visitroanokeva.com/',
         img: `${s3Banners}/virginias-blue-ridge.jpg`
+      },
+      {
+        url: 'https://parkwaybrewing.com/',
+        img: `${s3Banners}/parkway.jpg`
       }
     ]
   },

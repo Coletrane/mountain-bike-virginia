@@ -8,8 +8,8 @@
         </transition>
         <banner v-if="i % 3 === 0"
                 :style="{
-          paddingTop: '1rem',
-          paddingBottom: '1rem'
+          paddingTop: '2rem',
+          paddingBottom: '2rem'
         }"/>
         <div v-if="!getPostComponent(postRoute)"
              class="post-card-placeholder">
