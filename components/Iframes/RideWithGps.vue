@@ -80,8 +80,14 @@
     width: 75%;
     height: auto;
     display: block;
-    margin-top: 50%;
+    padding-top: 25%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /*iOS safari is a joke*/
+  iframe {
+    width: 1px;
+    min-width: 100%;
   }
 </style>
