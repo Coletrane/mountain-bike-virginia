@@ -25,7 +25,7 @@
         <div class="mtbva-nav-item">
           <a class="nav-link"
              id="facebook-nav-link"
-             href="https://www.facebook.com/xxcva/">
+             href="https://www.facebook.com/bikevirginia/">
             <font-awesome-icon :icon="faFacebook"/>
             Facebook
           </a>
