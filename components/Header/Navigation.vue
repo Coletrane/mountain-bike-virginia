@@ -11,7 +11,7 @@
       </nuxt-link>
     </span>
     <span class="flex-inner inner-left">
-      <nuxt-link :to="{name: 'xxcva-race-series'}"
+      <nuxt-link :to="{name: 'xxc-va-race-series-2018'}"
                  key="xxcva"
                  id="xxcva-home-link">
         <img class="xxcva"

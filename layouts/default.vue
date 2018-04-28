@@ -82,10 +82,10 @@
     font-family: 'MyriadPro-Bold', sans-serif;
     font-weight: 800;
   }
+
   h2 {
     font-size: 2.5rem;
   }
-
 
   span, div, p {
     font-family: 'lato', sans-serif;
@@ -105,10 +105,12 @@
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
 
   }
+
   .white-btn:hover {
     background-color: rgba(0, 0, 0, 0.75);
     border-color: white;
   }
+
   .white-btn:active {
     background-color: #3d7635 !important;
     border-color: white !important;
@@ -214,12 +216,13 @@
   }
 
   .link-hover {
-    background-image: linear-gradient(rgba(115, 166, 52,0.5) 0%, rgba(115, 166, 52,0.5) 100%);
+    background-image: linear-gradient(rgba(115, 166, 52, 0.5) 0%, rgba(115, 166, 52, 0.5) 100%);
     background-repeat: repeat-y;
     background-size: 0% 0em;
     background-position: 0 65%;
     transition: 600ms ease;
   }
+
   .link-hover:hover {
     background-image: linear-gradient(rgba(115, 165, 51, 0.85) 0%, rgba(115, 165, 51, 0.85) 100%);
     background-size: 100% 1em;

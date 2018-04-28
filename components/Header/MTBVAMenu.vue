@@ -7,7 +7,7 @@
       </a>
     </div>
     <div class="mtbva-nav-item">
-      <nuxt-link :to="{name: 'xxcva-race-series'}"
+      <nuxt-link :to="{name: 'xxc-va-race-series-2018'}"
                  class="nav-link"
                  id="xxcva-nav-link">
         <font-awesome-icon :icon="faFlagCheckered"/>
