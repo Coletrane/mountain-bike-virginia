@@ -97,6 +97,9 @@
         window.addEventListener('resize', this.handleResize)
       }
     },
+    mounted() {
+      this.handleResize()
+    },
     destroyed() {
       if (process.browser) {
         window.removeEventListener('scroll', this.handleScroll)
@@ -140,6 +143,7 @@
   .timeline-header {
     color: white;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   .timeline {
@@ -189,7 +193,7 @@
   }
 
   .timeline-card {
-    max-width: 42%;
+    max-width: 45%;
     position: relative;
     width: auto;
     background-color: white;
@@ -201,7 +205,7 @@
 
   .caret-left {
     position: absolute;
-    right: -18px;
+    right: -15px;
   }
 
   .timeline-card-left {
@@ -210,7 +214,7 @@
 
   .caret-right {
     position: absolute;
-    left: -18px;
+    left: -15px;
   }
 
   .timeline-card-right {
@@ -239,6 +243,10 @@
   }
 
   @media (max-width: 750px) {
+    .timeline-item {
+      margin-top: 2rem;
+    }
+
     .center-line {
       left: 6%;
     }

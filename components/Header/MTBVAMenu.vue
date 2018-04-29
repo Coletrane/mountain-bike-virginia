@@ -7,19 +7,19 @@
       </a>
     </div>
     <div class="mtbva-nav-item">
-      <nuxt-link :to="{name: 'xxc-va-race-series-2018'}"
-                 class="nav-link"
-                 id="xxcva-nav-link">
-        <font-awesome-icon :icon="faFlagCheckered"/>
-        XXCVA Races
-      </nuxt-link>
-    </div>
-    <div class="mtbva-nav-item">
       <nuxt-link :to="{name: 'index'}"
                  class="nav-link"
                  id="trails-nav-link">
         <font-awesome-icon :icon="faBicycle"/>
         Trails
+      </nuxt-link>
+    </div>
+    <div class="mtbva-nav-item">
+      <nuxt-link :to="{name: 'xxc-va-race-series-2018'}"
+                 class="nav-link"
+                 id="xxcva-nav-link">
+        <font-awesome-icon :icon="faFlagCheckered"/>
+        Races
       </nuxt-link>
     </div>
     <div class="mtbva-nav-item">
