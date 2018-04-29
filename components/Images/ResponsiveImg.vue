@@ -43,7 +43,6 @@
           result = this.src
         }
 
-        console.log(result)
         return result
       }
     }

@@ -92,7 +92,9 @@ module.exports = (browser) => {
             it('has og:image meta tag', async () => {
               let expected
 
-              if (route !== '/' && !route.includes('results')) {
+              if (route !== '/' &&
+                  !route.includes('results') &&
+                  route !== 'xxc-va-race-series/2018') {
                 const postJson = require(`../../json/posts/${route}.json`)
                 expected = postJson.imgRoute
               } else if (route.includes('results')) {

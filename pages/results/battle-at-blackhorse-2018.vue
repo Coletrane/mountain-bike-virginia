@@ -19,6 +19,7 @@
         'battle-at-blackhorse-2018'
       )
     },
+    // TODO: make this a mixin
     head() {
       return headTags(
         results.title,
