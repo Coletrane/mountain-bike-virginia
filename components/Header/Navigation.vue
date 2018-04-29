@@ -94,7 +94,7 @@
     background-color: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;

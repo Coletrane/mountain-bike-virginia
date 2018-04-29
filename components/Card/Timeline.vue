@@ -1,8 +1,5 @@
 <template>
-  <div class="timeline-container"
-       :style="{
-          height: (height + 500) + 'px'
-       }">
+  <div class="timeline-container">
     <div class="timeline-header">
       <h3>
         Just 40 More Miles.
@@ -11,40 +8,47 @@
     <div class="timeline">
       <div class="center-line"
            :style="{
-              height: height + 'px'
+              height: height
            }"></div>
       <div v-for="(item, i) of items"
            class="timeline-item">
-        <div v-show="item.scrolledIntoView">
-          <div class="date">
-            {{item.date}}
-          </div>
-          <div v-if="true"
-               class="timeline-card"
-               :class="left(i) ? 'timeline-card-left' : 'timeline-card-right'">
-            <font-awesome-icon :icon="left(i) ? faCaretRight: faCaretLeft"
-                               :class="left(i) ? 'caret-left' : 'caret-right'"
-                               class="caret"/>
-            <responsive-img :src="item.img"/>
-            <div class="timeline-words">
-              <h4>
-                {{item.title}}
-              </h4>
-              <div class="location">
-                <a :href="item.location.map">
-                  <font-awesome-icon :icon="faLocationArrow"/>
-                  {{item.location.text}}
-                </a>
-              </div>
-              <div class="fb-event">
-                <a :href="item.fbEvent">
-                  <font-awesome-icon :icon="faFacebook"/>
-                  Facebook Event
-                </a>
-              </div>
-              <div>
-                {{item.description}}
-              </div>
+        <div class="date">
+          {{item.date}}
+        </div>
+        <div class="timeline-card"
+             :class="left(i) ? 'timeline-card-left' : 'timeline-card-right'">
+          <font-awesome-icon :icon="left(i) ? faCaretRight: faCaretLeft"
+                             :class="left(i) ? 'caret-left' : 'caret-right'"
+                             class="caret"/>
+          <a :href="item.fbEvent"
+              :style="{background: 'none'}">
+          <responsive-img :src="item.img"/>
+          </a>
+          <div class="timeline-words">
+            <h4>
+              {{item.title}}
+            </h4>
+            <div class="location">
+              <a :href="item.location.map">
+                <font-awesome-icon :icon="faLocationArrow"/>
+                {{item.location.text}}
+              </a>
+            </div>
+            <div class="fb-event">
+              <a :href="item.fbEvent">
+                <font-awesome-icon :icon="faFacebook"/>
+                Facebook Event
+              </a>
+            </div>
+            <div v-if="item.register"
+                 class="register">
+              <a :href="item.register">
+                <font-awesome-icon :icon="faBicycle"/>
+                Register on BikeReg
+              </a>
+            </div>
+            <div>
+              {{item.description}}
             </div>
           </div>
         </div>
@@ -59,12 +63,17 @@
   import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
   import faLocationArrow from '@fortawesome/fontawesome-free-solid/faLocationArrow'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+  import faBicycle from '@fortawesome/fontawesome-free-solid/faBicycle'
 
   export default {
     name: 'timeline',
     props: {
       items: {
         type: Array,
+        required: true
+      },
+      height: {
+        type: String,
         required: true
       }
     },
@@ -78,6 +87,7 @@
         faFacebook: faFacebook,
         faCaretRight: faCaretRight,
         faCaretLeft: faCaretLeft,
+        faBicycle: faBicycle,
         collapsed: false
       }
     },
@@ -102,31 +112,24 @@
         }
       },
       handleScroll() {
-        const timelineItemHeight = 400
-        const timelineStartPosition = 500
+        const timelineStartPosition = 400
 
         this.items.forEach((item, i, arr) => {
-          const itemHeightOffset = (i + 1) * timelineItemHeight
+          const itemHeightOffset = (i + 1) * 300
 
-          console.log(window.scrollY, (timelineStartPosition + itemHeightOffset))
           if (window.scrollY > (timelineStartPosition + itemHeightOffset)) {
             this.$set(this.items[i], 'scrolledIntoView', true)
           }
         })
       },
       handleResize() {
-        if (document.body.clientWidth <= 700) {
+        if (document.body.clientWidth <= 750) {
           this.collapsed = true
         } else {
           this.collapsed = false
         }
       }
     },
-    computed: {
-      height() {
-        return this.items.length * 400
-      }
-    }
   }
 </script>
 <style scoped>
@@ -147,11 +150,11 @@
 
   .center-line {
     position: absolute;
-    width: 3px;
+    width: 5px;
     top: 0;
     left: 50%;
     margin-left: -2px;
-    background: white;
+    background: #e9720f;
     z-index: 1;
   }
 
@@ -170,7 +173,7 @@
     margin-left: -31px;
     color: black;
     border-radius: 100%;
-    background: white;
+    background: #e9720f;
     z-index: 2;
   }
 
@@ -226,16 +229,16 @@
     transition: 600ms ease;
   }
 
-  .location, .fb-event {
+  .location, .fb-event, .register {
     font-size: 1.25rem;
   }
 
-  .location svg, .fb-event svg {
+  .location svg, .fb-event svg, .register svg {
     font-size: 1.5rem;
     background: none;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     .center-line {
       left: 6%;
     }
