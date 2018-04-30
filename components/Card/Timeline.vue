@@ -234,7 +234,7 @@
   }
 
   .location svg, .fb-event svg, .register svg {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     background: none;
   }
 
