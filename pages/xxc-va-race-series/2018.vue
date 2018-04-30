@@ -8,8 +8,7 @@
             backgroundImage: backgroundImage.backgroundImage,
             paddingTop: '2rem'
          }">
-      <timeline :items="races"
-                height="68%"/>
+      <timeline :items="races"/>
     </div>
   </div>
 </template>

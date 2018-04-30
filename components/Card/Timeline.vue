@@ -6,10 +6,7 @@
       </h3>
     </div>
     <div class="timeline">
-      <div class="center-line"
-           :style="{
-              height: height
-           }"></div>
+      <div class="center-line"></div>
       <div v-for="(item, i) of items"
            class="timeline-item">
         <div class="date">
@@ -70,10 +67,6 @@
     props: {
       items: {
         type: Array,
-        required: true
-      },
-      height: {
-        type: String,
         required: true
       }
     },
@@ -153,6 +146,7 @@
   }
 
   .center-line {
+    height: 100%;
     position: absolute;
     width: 5px;
     top: 0;
@@ -165,7 +159,7 @@
   .date {
     text-align: center;
     font-family: 'MyriadPro-Bold', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     padding-top: 1rem;
     line-height: 1.3rem;
     font-weight: 800;
@@ -206,6 +200,7 @@
   .caret-left {
     position: absolute;
     right: -15px;
+    top: 5px;
   }
 
   .timeline-card-left {
@@ -215,6 +210,7 @@
   .caret-right {
     position: absolute;
     left: -15px;
+    top: 5px;
   }
 
   .timeline-card-right {
