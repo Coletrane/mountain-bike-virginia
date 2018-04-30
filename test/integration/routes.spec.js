@@ -92,13 +92,15 @@ module.exports = (browser) => {
             it('has og:image meta tag', async () => {
               let expected
 
-              if (route !== '/' && !route.includes('results')) {
+              if (route !== '/' &&
+                  !route.includes('results') &&
+                  route !== 'xxc-va-race-series/2018') {
                 const postJson = require(`../../json/posts/${route}.json`)
                 expected = postJson.imgRoute
-              } else if (route.includes('results')) {
-                expected = '.jpg'
-              } else {
+              } else if (route === '/') {
                 expected = 'foliage.jpg'
+              } else {
+                expected = '.jpg'
               }
 
               expect(ogImage.endsWith(expected))
@@ -229,7 +231,8 @@ module.exports = (browser) => {
             describe('<home> social links test', () => {
 
             })
-          } else if (!route.includes('results')) { // TODO: add social links to results
+          } else if (!route.includes('results') &&
+                     routes === 'xxc-va-race-series/2018') { // TODO: add social links to results
             describe(`${route} social links test`, () => {
               let social
               let links

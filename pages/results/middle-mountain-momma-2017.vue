@@ -5,28 +5,20 @@
 <script>
   import Results from '../../components/Results/Results'
 
-  import {results} from "../../assets/head-tags"
-  import {headTags} from "../../assets/functions"
+  import results from '../../assets/mixins/results'
 
   export default {
     name: 'results-index',
     components: {
       Results
     },
+    mixins: [
+      results
+    ],
     async asyncData(context) {
       await context.store.dispatch(
         'selectRace',
         'middle-mountain-momma-2017'
-      )
-    },
-    head() {
-      return headTags(
-        results.title,
-        results.description,
-        results.keywords,
-        {
-          route: 'results/middle-mountain-momma-2017'
-        }
       )
     }
   }

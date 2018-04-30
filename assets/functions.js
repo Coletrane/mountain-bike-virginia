@@ -1,4 +1,4 @@
-import {baseUrl, s3StaticImg, s3Pages}from '../scripts/routes'
+import {baseUrl, s3StaticImg, s3Pages} from '../scripts/routes'
 import * as resImg from '../scripts/responsive-imgs.config'
 import {schemaTypes, schemaOrg} from './schmea-types'
 import {results} from './head-tags'
@@ -13,27 +13,28 @@ export const headTags = (title, desc, keywords, post) => {
     {property: 'og:type', content: 'article'}
   ]
 
-  if (post.route || post.route === '/') {
-    let fbUrl = {
-      property: 'og:url'
+  // remove all except one trailing slash /
+  let urlSplit = `${post.route}`.split('/')
+  urlSplit.forEach((chunk, i, arr) => {
+    if (chunk === '') {
+      urlSplit.splice(i, 1)
     }
-
-    if (post.route !== '/') {
-      fbUrl.content = `${baseUrl}/${post.route}/`
-    } else if (post.route === '/') {
-      fbUrl.content = `${baseUrl}/`
-    }
-
-    metas.push(fbUrl)
+  })
+  let ogUrl = `${baseUrl}/${urlSplit.join('/')}`
+  // add a slash on the end so facebook doesn't get redirected
+  if (post.route !== '/') {
+    ogUrl = ogUrl + '/'
   }
 
-  if (post.route || post.route === '') {
-    let fbImg = {
-      property: 'og:image',
-      content: getImageRoute(post)
-    }
-    metas.push(fbImg)
-  }
+  metas.push({
+    property: 'og:url',
+    content: ogUrl
+  })
+
+  metas.push({
+    property: 'og:image',
+    content: getImageRoute(post)
+  })
 
   let schema
   // Building video schema in Youtube component since it needs to call the YouTube API
@@ -78,22 +79,12 @@ export const headTags = (title, desc, keywords, post) => {
 const getImageRoute = (post) => {
   let result
 
-  if (post.route === '/') {
-    result = `${s3StaticImg}/foliage.jpg`
-  } else if (post.route.includes('results')) {
-    if (post.route === 'results-battle-at-blackhorse-2018') {
-      result = `${s3Pages}/results/P1010117.jpg`
-    } else {
-      result = `${s3Pages}/results/podium.jpg`
-    }
-  } else {
-    let splitUrl = post.route.split('/')
+  let splitUrl = post.route.split('/')
 
-    if (splitUrl.length > 1) {
-      result = `${s3Pages}/${splitUrl[0]}/${post.imgRoute}`
-    } else {
-      result = `${s3Pages}/${post.route}/${post.imgRoute}`
-    }
+  if (splitUrl.length > 1) {
+    result = `${s3Pages}/${splitUrl[0]}/${post.imgRoute}`
+  } else {
+    result = `${s3Pages}/${post.route}/${post.imgRoute}`
   }
 
   return result

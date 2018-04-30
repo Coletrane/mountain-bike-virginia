@@ -19,6 +19,10 @@ export default {
       {
         url: 'https://www.deschutesbrewery.com/',
         img: `${s3Banners}/deschutes.jpg`
+      },
+      {
+        url: 'http://jackmasonstavern.com/',
+        img: `${s3Banners}/jack-masons-tavern.jpg`
       }
     ]
   },
