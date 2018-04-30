@@ -193,7 +193,7 @@
   }
 
   .timeline-card {
-    max-width: 45%;
+    max-width: 43%;
     position: relative;
     width: auto;
     background-color: white;

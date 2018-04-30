@@ -78,6 +78,7 @@ describe('headTags tests', () => {
         'description',
         'keywords',
         {
+          imgRoute: 'foliage.jpg',
           route: 'results-middle-mountain-momma-2017'
         })
 

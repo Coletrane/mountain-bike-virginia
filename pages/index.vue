@@ -60,7 +60,8 @@
         home.description,
         home.keywords,
         {
-          route: '/'
+          route: this.$route.path,
+          imgRoute: 'foliage.jpg'
         }
       )
     },

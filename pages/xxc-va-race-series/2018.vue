@@ -23,6 +23,8 @@
   import {headTags} from '../../assets/functions'
   import {s3Pages, s3PagesEvents} from '../../scripts/routes'
 
+  const headerImage = `${s3Pages}/creature-2017-recap/wake-champ.jpg`
+
   export default {
     name: 'xxcva-race-series-2018',
     components: {
@@ -39,13 +41,14 @@
         'Series of Marathon MTB, 40+ mile races in Virginia since 2001',
         'marathon mtb, mtb, marathon, xc, xxc, cross country, trail, bike, race, mountain bike, bike race, virginia, douthat, creature from carvins cove, carvins cove, hoo ha, massanutten',
         {
+          imgRoute: headerImage,
           route: this.$route.path.substring(1)
         }
       )
     },
     data() {
       return {
-        headerImage: `${s3Pages}/creature-2017-recap/wake-champ.jpg`,
+        headerImage: headerImage,
         races: [
           {
             title: 'Counties of Bath and Alleghany Middle Mountain Momma',

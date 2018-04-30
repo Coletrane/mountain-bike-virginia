@@ -1,33 +1,23 @@
 <template>
   <results/>
 </template>
-
 <script>
   import Results from '../../components/Results/Results'
 
-  import {results} from "../../assets/head-tags"
-  import {headTags} from "../../assets/functions"
+  import results from '../../assets/mixins/results'
 
   export default {
     name: 'battle-at-blackhorse-2018',
     components: {
       Results
     },
+    mixins: [
+      results
+    ],
     async asyncData(context) {
       await context.store.dispatch(
         'selectRace',
         'battle-at-blackhorse-2018'
-      )
-    },
-    // TODO: make this a mixin
-    head() {
-      return headTags(
-        results.title,
-        results.description,
-        results.keywords,
-        {
-          route: 'results/battle-at-blackhorse-2018',
-        }
       )
     }
   }
