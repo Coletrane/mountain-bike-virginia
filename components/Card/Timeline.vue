@@ -159,7 +159,7 @@
   .date {
     text-align: center;
     font-family: 'MyriadPro-Bold', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding-top: 1rem;
     line-height: 1.3rem;
     font-weight: 800;
@@ -234,7 +234,7 @@
   }
 
   .location svg, .fb-event svg, .register svg {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background: none;
   }
 
