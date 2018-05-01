@@ -77,10 +77,12 @@ export const headTags = (title, desc, keywords, post) => {
 }
 
 const getImageRoute = (post) => {
+  if (post.ogImage) {
+    return post.ogImage
+  }
+
   let result
-
   let splitUrl = post.route.split('/')
-
   if (splitUrl.length > 1) {
     result = `${s3Pages}/${splitUrl[0]}/${post.imgRoute}`
   } else {

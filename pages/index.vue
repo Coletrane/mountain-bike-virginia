@@ -37,6 +37,8 @@
   const Page0 = () => import('../components/BlogPages/Page0')
   const Page1 = () => import('../components/BlogPages/Page1')
 
+  const foliage = `${s3StaticImg}/foliage.jpg`
+
   export default {
     name: 'index',
     components: {
@@ -61,13 +63,13 @@
         home.keywords,
         {
           route: this.$route.path,
-          imgRoute: 'foliage.jpg'
+          ogImage: foliage
         }
       )
     },
     data() {
       return {
-        img: `${s3StaticImg}/foliage.jpg`,
+        img: foliage,
         s3Banners: s3Banners
       }
     },

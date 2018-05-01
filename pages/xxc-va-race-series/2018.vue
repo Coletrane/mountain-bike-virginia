@@ -40,7 +40,7 @@
         'Series of Marathon MTB, 40+ mile races in Virginia since 2001',
         'marathon mtb, mtb, marathon, xc, xxc, cross country, trail, bike, race, mountain bike, bike race, virginia, douthat, creature from carvins cove, carvins cove, hoo ha, massanutten',
         {
-          imgRoute: headerImage,
+          ogImage: headerImage,
           route: this.$route.path.substring(1)
         }
       )

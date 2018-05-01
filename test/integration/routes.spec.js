@@ -1,4 +1,5 @@
 import { routes } from '../../scripts/build-routes-json'
+const fs = require('fs')
 
 module.exports = (browser) => {
   const global = require(`./global.${browser}.spec`)
@@ -107,14 +108,12 @@ module.exports = (browser) => {
                 .to.be.true
             })
 
-            xit('can GET og:image url', async () => {
-              let res = await request({
-                uri: ogImage,
-                resolveWithFullResponse: true
-              })
-
-              expect(await res.statusCode)
-                .to.equal(200)
+            it('can "GET" og:image url', async () => {
+              let imgPath = ogImage.replace(
+                'http://localhost:3000/',
+                '../../../')
+              expect(fs.existsSync(imgPath))
+                .not.to.be.undefined
             })
           })
 
