@@ -37,7 +37,7 @@
     head() {
       return headTags(
         'XXC-VA Marathon MTB Race Series',
-        'Series of Marathon MTB, 40+ mile races in Virginia since 2001',
+        'Dos Equis C, XXC Marathon MTB Races in and around Virginia. Just 40 more miles.',
         'marathon mtb, mtb, marathon, xc, xxc, cross country, trail, bike, race, mountain bike, bike race, virginia, douthat, creature from carvins cove, carvins cove, hoo ha, massanutten',
         {
           ogImage: headerImage,
