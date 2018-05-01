@@ -8,7 +8,7 @@
   "fbEvent": "https://www.facebook.com/events/1583483341702188/",
   "rwGps": "https://rwgps-embeds.com/embeds?type=route&id=27086614&sampleGraph=true",
   "schema": {
-    "type:": "NewsArticle"
+    "type": "NewsArticle"
   },
   "imgRoute": "stokesville-market-snow.jpg",
   "relatedPosts": [

@@ -4,8 +4,7 @@
       <post-header :post="headerPost"/>
       <div v-if="headerAuthor">
         <author v-if="post.author"
-                :author="post.author"
-                :style="{paddingBottom: '1rem'}"/>
+                :author="post.author"/>
       </div>
     </div>
     <div slot="after-header"

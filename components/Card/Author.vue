@@ -53,6 +53,7 @@
 <style scoped>
   .author-container {
     padding-top: 1rem;
+    padding-bottom: 1rem;
     width: 40%;
     text-align: center;
     max-width: 180px;

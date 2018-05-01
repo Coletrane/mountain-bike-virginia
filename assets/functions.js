@@ -46,7 +46,8 @@ export const headTags = (title, desc, keywords, post) => {
     } else if (post.schema.type === schemaTypes.review) {
       schema = buildReview(post, desc)
     }
-  } else if (post.route === '') {
+  } else if (post.route === '/' ||
+             post.route.includes('xxc-va-race-series')) {
     schema = buildOrganization()
   } else if (post.route.includes('results')) {
     schema = buildDataset(post)

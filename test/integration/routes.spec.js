@@ -1,4 +1,4 @@
-import { routes } from '../../scripts/build-routes-json'
+import {routes} from '../../scripts/build-routes-json'
 const fs = require('fs')
 
 module.exports = (browser) => {
@@ -56,28 +56,28 @@ module.exports = (browser) => {
           it('has viewport', async () => {
             expect(await driver.findElement(
               By.xpath('//meta[@name=\'viewport\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .not.to.be.undefined
           })
 
           it('has robots', async () => {
             expect(await driver.findElement(
               By.xpath('//meta[@name=\'robots\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .to.equal('index, follow')
           })
 
           it('has revisit-after', async () => {
             expect(await driver.findElement(
               By.xpath('//meta[@name=\'revisit-after\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .to.equal('1 week')
           })
 
           it('has fb:app_id', async () => {
             expect(await driver.findElement(
               By.xpath('//meta[@property=\'fb:app_id\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .to.equal('1426359417419881')
           })
 
@@ -87,7 +87,7 @@ module.exports = (browser) => {
             before(async () => {
               ogImage = await driver.findElement(
                 By.xpath('//meta[@property=\'og:image\']'))
-                                    .getAttribute('content')
+                .getAttribute('content')
             })
 
             it('has og:image meta tag', async () => {
@@ -120,7 +120,7 @@ module.exports = (browser) => {
           it('has og:title', async () => {
             expect(await driver.findElement(
               By.xpath('//meta[@property=\'og:title\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .not.to.be.undefined
           })
 
@@ -141,42 +141,21 @@ module.exports = (browser) => {
             }
             expect(await driver.findElement(
               By.xpath('//meta[@property=\'og:url\']'))
-                               .getAttribute('content'))
+              .getAttribute('content'))
               .to.equal(expected)
           })
 
-          xit('has a valid schema <script> tag', async () => {
+          it('has a valid schema <script> tag', async () => {
             let schema = await driver.findElement(
               By.xpath('//script[@type=\'application/ld+json\']'))
-                                     .getAttribute('innerText')
-            // Since this is test mode, all the urls are localhost, replace that with bikeva.com
-            schema = await schema.replace(
-              'http://localhost:3000',
-              'https://bikeva.com')
+              .getAttribute('innerText')
 
-            let res = await request({
-              uri: googleDataValidator,
-              method: 'POST',
-              formData: {
-                html: await schema
-              },
-              resolveWithFullResponse: true
-            })
-
-            // Strip out weird beginning characters Google added for some reason
-            // @formatter:off
-          res.body = await res.body.replace(")]}'", '')
-          // @formatter:on
-            const resObj = JSON.parse(await res.body)
-
-            expect(await res.statusCode)
-              .to.equal(200)
-
-            if (resObj.totalNumErrors > 0) {
-              console.log(resObj.errors)
-            }
-            expect(await resObj.totalNumErrors)
-              .to.equal(0)
+            expect(await schema)
+              .not.to.be.undefined
+            //
+            // console.log(jsonschema.validate(4, await JSON.parse(schema)))
+            // expect(jsonschema.validate(4, await JSON.parse(schema)))
+            //   .to.be.true
           })
         })
 
@@ -185,7 +164,7 @@ module.exports = (browser) => {
             it('should have a header', async () => {
               expect(await driver.findElement(
                 By.id('mtbva-header'))
-                                 .isDisplayed())
+                .isDisplayed())
                 .to.be.true
             })
 
@@ -193,7 +172,7 @@ module.exports = (browser) => {
               it('should have a title', async () => {
                 expect(await driver.findElement(
                   By.id('mtbva-title'))
-                                   .getAttribute('innerText'))
+                  .getAttribute('innerText'))
                   .not.to.be.undefined
               })
 

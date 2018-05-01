@@ -2,8 +2,7 @@
   <div>
     <blog-post :image="img + post.imgRoute"
                :post="post"
-               :related-posts="relatedPosts"
-               header-author>
+               :related-posts="relatedPosts">
       <div class="blog-p">
         Rock and Roll is dead, but machine learning isn't. On a wild hair to see what the music industry is actually
         like, I've turned my back on it. Packing up and moving there knowing nobody, I found myself in Nashville, on
@@ -20,6 +19,7 @@
     </blog-post>
   </div>
 </template>
+
 <script>
   import BlogPost from '../components/BlogPost'
   import Youtube from '../components/Iframes/Youtube'
