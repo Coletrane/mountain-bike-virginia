@@ -1,13 +1,14 @@
 import {results} from "../../assets/head-tags"
 import {headTags} from "../../assets/functions"
+import {s3Pages} from '../../scripts/routes'
 
 export default {
   head() {
-    let imgRoute
+    let ogImage
     if (this.$route.name === 'results-battle-at-blackhorse-2018') {
-      imgRoute = 'results/P1010117.jpg'
+      ogImage = 'P1010117.jpg'
     } else {
-      imgRoute = 'results/podium.jpg'
+      ogImage = 'podium.jpg'
     }
 
     return headTags(
@@ -15,7 +16,7 @@ export default {
       results.description,
       results.keywords,
       {
-        imgRoute: imgRoute,
+        ogImage: `${s3Pages}/results/${ogImage}`,
         route: this.$route.path.substring(1),
       }
     )

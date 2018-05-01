@@ -111,9 +111,9 @@ module.exports = (browser) => {
             it('can "GET" og:image url', async () => {
               let imgPath = ogImage.replace(
                 'http://localhost:3000/',
-                '../../../')
+                '../')
               expect(fs.existsSync(imgPath))
-                .not.to.be.undefined
+                .to.be.true
             })
           })
 
