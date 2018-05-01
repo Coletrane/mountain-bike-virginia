@@ -1,7 +1,7 @@
 <template>
   <div class="post-card-header">
     <nuxt-link v-if="postRoute"
-               :to="{name: post.route}">
+               :to="{name: postRouteName}">
       <h2 v-if="post.title"
           class="headline
                  link-hover">

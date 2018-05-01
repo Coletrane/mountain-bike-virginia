@@ -6,7 +6,7 @@ export default {
     pages: [],
     currentPage: 0,
     loadedPages: [],
-    numberOfPages: 2
+    numberOfPages: 3
   },
 
   actions: {

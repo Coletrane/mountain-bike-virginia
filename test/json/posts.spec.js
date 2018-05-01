@@ -18,10 +18,9 @@ describe('/posts/ test', () => {
   let postsJson = []
 
   before(() => {
-    const files = glob.sync('json/posts/*.json')
+    const files = glob.sync('json/posts/**/*.json')
     files.forEach(file => {
-      let filename = file.split('/')
-      filename = filename[filename.length - 1]
+      let filename = file.replace('json/posts/', '')
       filename = filename.replace('.json', '')
 
       postsJson.push({

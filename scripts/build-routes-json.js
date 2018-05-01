@@ -22,8 +22,7 @@ const postJsonFiles = glob.sync('json/posts/**/*.json')
 postJsonFiles.forEach(file => {
   let jsonFile = fs.readFileSync(file, 'utf8')
 
-  let fileNameRoute = file.split('/')
-  fileNameRoute = fileNameRoute[fileNameRoute.length - 1]
+  let fileNameRoute = file.replace('json/posts/', '')
   fileNameRoute = fileNameRoute.replace('.json', '')
 
   let route = routes.find(route => route === fileNameRoute)
@@ -38,13 +37,14 @@ postJsonFiles.forEach(file => {
   posts.push(post)
 })
 
+
 // Sort the posts by date
 posts.sort((a, b) => {
   return new Date(b.date) - new Date(a.date)
 })
 
 // Reinsert posts that we want out of order
-posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'rockstar-va-2018'), 1)
+posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'rockstar-va-2018'), 2)
 posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'ravenwood-ride'), 11)
 
 // Make sure there are no duplicates
@@ -58,7 +58,8 @@ posts.forEach(post => {
 
 // Initialize the pagination (sortof)
 const postsPerPage = [
-  10
+  9,
+  9
 ]
 postsPerPage.push(
   postsOrder.length - postsPerPage
@@ -86,7 +87,6 @@ pages.forEach((page, i, arr) => {
   const json = JSON.stringify(page, null, 2)
   fs.writeFileSync(`json/routes/${i}.json`, json)
 })
-
 
 module.exports = {
   routes,

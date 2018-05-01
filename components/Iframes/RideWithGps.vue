@@ -77,7 +77,7 @@
   }
 
   img {
-    width: 75%;
+    width: 50%;
     height: auto;
     display: block;
     padding-top: 25%;

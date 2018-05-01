@@ -293,5 +293,13 @@ export const routeToComponentFilename = (route) => {
   })
   postFilename = postFilename.join('')
 
+  if (postFilename.includes('/')) {
+    postFilename = postFilename.split('/')
+    postFilename = postFilename.map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    postFilename = postFilename.join('/')
+  }
+
   return postFilename
 }

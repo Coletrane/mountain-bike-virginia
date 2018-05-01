@@ -13,6 +13,8 @@
               :key="0"/>
       <page-1 v-if="$store.state.routes.currentPage >= 1"
               :key="1"/>
+      <page-2 v-if="$store.state.routes.currentPage >= 2"
+              :key="2"/>
       <div v-if="showLoadMore"
            class="load-more">
         <button class="btn btn-outline-primary white-btn"
@@ -36,6 +38,7 @@
   // Pages
   const Page0 = () => import('../components/BlogPages/Page0')
   const Page1 = () => import('../components/BlogPages/Page1')
+  const Page2 = () => import('../components/BlogPages/Page2')
 
   const foliage = `${s3StaticImg}/foliage.jpg`
 
@@ -45,7 +48,8 @@
       MTBVAHeader,
       Banner,
       Page0,
-      Page1
+      Page1,
+      Page2
     },
     mixins: [
       backgroundImage

@@ -3,22 +3,23 @@ import { s3Pages } from '../../scripts/routes'
 
 export default {
   async asyncData(context) {
+    const route = context.route.path.slice(1)
     await context.store.dispatch('loadPosts', [
-      context.route.name
+      route
     ])
     await context.store.dispatch('loadPosts',
-      context.store.getters.getPost(context.route.name).relatedPosts
+      context.store.getters.getPost(route).relatedPosts
     )
 
     const postInstance = {
-      post: context.store.getters.getPost(context.route.name),
+      post: context.store.getters.getPost(route),
       relatedPosts: context.store.getters.getPosts(
-        context.store.getters.getPost(context.route.name).relatedPosts
+        context.store.getters.getPost(route).relatedPosts
       ),
-      img: `${s3Pages}/${context.route.name}/`
+      img: `${s3Pages}/${route}/`
     }
 
-    const post = context.store.getters.getPost(context.route.name)
+    const post = context.store.getters.getPost(route)
     if (post.ytSrc) {
       postInstance.schema = await buildVideo(post)
     }
