@@ -11,12 +11,12 @@
           <slot name="content"/>
         </div>
       </blog-post-card>
-      <banner :style="{
-        paddingTop: '3rem',
-        paddingBottom: '2rem'
-      }"/>
+      <!--<banner :style="{-->
+        <!--paddingTop: '3rem',-->
+        <!--paddingBottom: '2rem'-->
+      <!--}"/>-->
 
-      <related-posts v-if="relatedPosts"
+      <related-posts v-if="relatedPosts.length > 0"
                      :posts="relatedPosts"/>
     </div>
   </div>

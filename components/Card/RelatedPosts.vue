@@ -35,10 +35,11 @@
       handleScroll() {
         if (this.pageComponents.length < this.posts.length &&
             this.$el.offsetTop < (window.innerHeight + window.scrollY)) {
-          this.loadPageComponent(this.pageComponents.length + 1)
+          this.loadPageComponent(this.pageComponents.length)
         }
       },
       async loadPageComponent(i) {
+        console.log(i)
         const component = {
           route: this.posts[i].route,
           component: async () => await import(`@/pages/${this.posts[i].route}`)
