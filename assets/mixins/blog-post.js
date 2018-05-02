@@ -1,5 +1,5 @@
-import { headTags, buildVideo } from '../functions'
-import { s3Pages } from '../../scripts/routes'
+import {headTags, buildVideo} from '../functions'
+import {s3Pages} from '../../scripts/routes'
 
 export default {
   async asyncData(context) {
@@ -46,6 +46,20 @@ export default {
           this.post
         )
       }
+    }
+  },
+  props: {
+    // This is for when it is a related post
+    postAtBottom: {
+      type: Object,
+      required: false
+    }
+  },
+  created() {
+    if (this.postAtBottom) {
+      this.post = this.postAtBottom
+      this.relatedPosts = []
+      this.img = `${s3Pages}/${this.post.route}/`
     }
   }
 }

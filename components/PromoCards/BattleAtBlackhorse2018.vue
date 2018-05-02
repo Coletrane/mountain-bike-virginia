@@ -1,4 +1,4 @@
-<template>
+  <template>
   <post-card :post="post">
     <div slot="words">
       <div class="promo">

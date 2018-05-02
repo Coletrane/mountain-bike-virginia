@@ -1,19 +1,14 @@
 <template>
   <div class="related-posts">
-
-    <h1 class="related-posts-title">RELATED POSTS</h1>
-
-    <div v-for="post in posts"
+    <div v-for="(post, i) in posts"
          class="related-post">
-      <component v-if="getPostComponent(post.route)"
-                 :is="getPostComponent(post.route)"/>
+      <component v-if="pageComponents.length >= i && getPageComponent(post.route)"
+                 :is="getPageComponent(post.route)"
+                 :post-at-bottom="post"/>
     </div>
   </div>
 </template>
-
 <script>
-  import postComponentLoader from '../../assets/mixins/post-component-loader'
-
   export default {
     name: 'related-posts',
     props: {
@@ -21,12 +16,47 @@
         required: true
       }
     },
-    mixins: [
-      postComponentLoader
-    ]
+    data() {
+      return {
+        pageComponents: []
+      }
+    },
+    created() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('scroll', this.handleScroll)
+      }
+    },
+    methods: {
+      handleScroll() {
+        if (this.pageComponents.length < this.posts.length &&
+            this.$el.offsetTop < (window.innerHeight + window.scrollY)) {
+          this.loadPageComponent(this.pageComponents.length + 1)
+        }
+      },
+      async loadPageComponent(i) {
+        const component = {
+          route: this.posts[i].route,
+          component: async () => await import(`@/pages/${this.posts[i].route}`)
+        }
+        this.pageComponents.push(component)
+      },
+      getPageComponent(route) {
+        const pageComponent = this.pageComponents.find(component => {
+          return component.route === route
+        })
+
+        if (pageComponent) {
+          return pageComponent.component
+        }
+      }
+    }
   }
 </script>
-
 <style scoped>
   .related-posts {
     padding-top: 2rem;
@@ -43,5 +73,4 @@
     font-weight: 800;
     margin: 0;
   }
-
 </style>

@@ -15,6 +15,7 @@
         paddingTop: '3rem',
         paddingBottom: '2rem'
       }"/>
+
       <related-posts v-if="relatedPosts"
                      :posts="relatedPosts"/>
     </div>
@@ -29,6 +30,7 @@
   import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
   import Banner from './Das/Banner'
+
 
   import { s3StaticImg, s3Banners } from '../scripts/routes'
 
@@ -64,7 +66,7 @@
     },
     data() {
       return {
-        s3Banners: s3Banners
+        s3Banners: s3Banners,
       }
     },
     computed: {
