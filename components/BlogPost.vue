@@ -79,6 +79,10 @@
   }
 </script>
 <style>
+  .card-container {
+    padding-top: 2rem;
+  }
+  
   .blog-p {
     padding: 1rem;
     font-size: 1.2rem;

@@ -33,13 +33,28 @@
     },
     methods: {
       handleScroll() {
-        if (this.pageComponents.length < this.posts.length &&
-            this.$el.offsetTop < (window.innerHeight + window.scrollY)) {
-          this.loadPageComponent(this.pageComponents.length)
+        if (this.pageComponents.length < this.posts.length) {
+
+          const relatedPost = this.$el.children[this.pageComponents.length - 1]
+          let blogPost
+          if (relatedPost && relatedPost.firstChild) {
+            blogPost = relatedPost.firstChild
+          }
+          const bottomScrollPosition = window.innerHeight + window.scrollY
+
+          // No related posts have been loaded
+          if (!blogPost && bottomScrollPosition > this.$el.offsetTop) {
+            this.loadPageComponent(this.pageComponents.length)
+          // The first related post has been loaded
+          } else if (blogPost &&
+                     blogPost.offsetHeight &&
+                     bottomScrollPosition > this.$el.offsetTop + blogPost.offsetHeight) {
+            this.loadPageComponent(this.pageComponents.length)
+          }
         }
+
       },
       async loadPageComponent(i) {
-        console.log(i)
         const component = {
           route: this.posts[i].route,
           component: async () => await import(`@/pages/${this.posts[i].route}`)
