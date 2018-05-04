@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export default {
   state: {
-    loadedPosts: []
+    loadedPosts: [],
+    currentPost: {}
   },
 
   actions: {
@@ -57,12 +58,21 @@ export default {
       }
 
       return posts
+    },
+    setCurrentPost: (context, postRoute) => {
+      if (!context.state.currentPost ||
+          context.state.currentPost.route !== postRoute) {
+        context.commit('SET_CURRENT_POST', postRoute)
+      }
     }
   },
 
   mutations: {
     POST_LOADED: (state, post) => {
       state.loadedPosts.push(post)
+    },
+    SET_CURRENT_POST: (state, postRoute) => {
+      state.currentPost = postRoute
     }
   },
 

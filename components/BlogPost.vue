@@ -16,7 +16,7 @@
         <!--paddingBottom: '2rem'-->
       <!--}"/>-->
 
-      <related-posts v-if="relatedPosts.length > 0"
+      <related-posts v-if="relatedPosts && relatedPosts.length > 0"
                      :posts="relatedPosts"/>
     </div>
   </div>
@@ -82,7 +82,7 @@
   .card-container {
     padding-top: 2rem;
   }
-  
+
   .blog-p {
     padding: 1rem;
     font-size: 1.2rem;

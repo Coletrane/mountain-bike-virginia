@@ -33,31 +33,71 @@
     },
     methods: {
       handleScroll() {
-        if (this.pageComponents.length < this.posts.length) {
+        const bottomScrollPosition = window.innerHeight + window.scrollY
 
+        if (this.pageComponents.length < this.posts.length) {
           const relatedPost = this.$el.children[this.pageComponents.length - 1]
           let blogPost
           if (relatedPost && relatedPost.firstChild) {
             blogPost = relatedPost.firstChild
           }
-          const bottomScrollPosition = window.innerHeight + window.scrollY
 
           // No related posts have been loaded
           if (!blogPost && bottomScrollPosition > this.$el.offsetTop) {
             this.loadPageComponent(this.pageComponents.length)
-          // The first related post has been loaded
+            // The first related post has been loaded
           } else if (blogPost &&
                      blogPost.offsetHeight &&
                      bottomScrollPosition > this.$el.offsetTop + blogPost.offsetHeight) {
             this.loadPageComponent(this.pageComponents.length)
           }
         }
+         //TODO
+        // this.updateTitle()
+      },
+      updateTitle() {
+        if (process.browser) {
+          const bottomScrollPosition = window.innerHeight + window.scrollY
+          const offsetHeights =
+            Array.prototype.slice.call(this.$el.children).map(child => {
+              return child.offsetHeight
+            })
+          offsetHeights.forEach((height, i, arr) => {
+            for (let j = 0; j < i; j++) {
+              offsetHeights[i] += offsetHeights[j]
+            }
+          })
 
+          // Original post
+          if (window.scrollY < this.$el.offsetTop) {
+            document.title = this.$parent.post.title
+            // TODO: figure out if I want to do pushState
+            // https://github.com/vuejs/vue-router/issues/703
+            // window.history.pushState(
+            //   {},
+            //   this.$parent.post.title,
+            //   this.$route.path)
+          } else {
+            offsetHeights.forEach((height, i, arr) => {
+                const realHeight = height + this.$el.offsetHeight
+                const isMiddlePost = arr[i + 1] &&
+                                     realHeight < arr[i + 1] &&
+                                     bottomScrollPosition < arr[i + 1]
+                const isLastPost = !arr[i + 1] &&
+                                   bottomScrollPosition > arr[i - 1]
+                if (isMiddlePost || isLastPost) {
+                  console.log(this.posts[i].title)
+                  document.title = this.posts[i].title
+                }
+            })
+          }
+        }
       },
       async loadPageComponent(i) {
+        const post = this.posts[i]
         const component = {
-          route: this.posts[i].route,
-          component: async () => await import(`@/pages/${this.posts[i].route}`)
+          route: post.route,
+          component: async () => await import(`@/pages/${post.route}`)
         }
         this.pageComponents.push(component)
       },

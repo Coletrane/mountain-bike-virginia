@@ -7,43 +7,47 @@ export default {
     await context.store.dispatch('loadPosts', [
       route
     ])
+    const currentPost = context.store.getters.getPost(route)
+    context.store.dispatch('setCurrentPost', currentPost.route)
+
     await context.store.dispatch('loadPosts',
-      context.store.getters.getPost(route).relatedPosts
+      currentPost.relatedPosts
     )
 
     const postInstance = {
-      post: context.store.getters.getPost(route),
+      post: currentPost,
       relatedPosts: context.store.getters.getPosts(
-        context.store.getters.getPost(route).relatedPosts
+        currentPost.relatedPosts
       ),
       img: `${s3Pages}/${route}/`
     }
 
-    const post = context.store.getters.getPost(route)
-    if (post.ytSrc) {
-      postInstance.schema = await buildVideo(post)
+    if (currentPost.ytSrc) {
+      postInstance.schema = await buildVideo(currentPost)
     }
 
     return postInstance
   },
   head() {
-    if (this.post) {
+    const currentPost = this.$store.getters.getPost(
+      this.$store.state.posts.currentPost)
+    if (currentPost) {
       if (this.schema) {
         return {
           ...headTags(
-            this.post.title,
-            this.post.subtitle,
-            this.post.keywords,
-            this.post
+            currentPost.title,
+            currentPost.subtitle,
+            currentPost.keywords,
+            currentPost
           ),
           script: this.schema
         }
       } else {
         return headTags(
-          this.post.title,
-          this.post.subtitle,
-          this.post.keywords,
-          this.post
+          currentPost.title,
+          currentPost.subtitle,
+          currentPost.keywords,
+          currentPost
         )
       }
     }

@@ -1,6 +1,5 @@
 <template>
   <div id="mtbva-header">
-    <navigation/>
     <parallax :src="image"
               :height="1000">
       <div slot="hero"
@@ -31,14 +30,12 @@
   </div>
 </template>
 <script>
-  import Navigation from './Navigation'
   import Parallax from './Parallax'
   import {s3StaticImg} from '../../scripts/routes'
 
   export default {
     name: 'mtbva-header',
     components: {
-      Navigation,
       Parallax
     },
     props: {

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navigation/>
     <transition name="menu-slide">
       <m-t-b-v-a-menu v-if="$store.state.misc.showMenu"/>
     </transition>
@@ -22,11 +23,14 @@
 <script>
   import MTBVAFooter from '../components/Footer/MTBVAFooter.vue'
   import MTBVAMenu from '../components/Header/MTBVAMenu'
+  import Navigation from '../components/Header/Navigation'
+
 
   export default {
     components: {
       MTBVAFooter,
-      MTBVAMenu
+      MTBVAMenu,
+      Navigation
     },
     name: 'app',
     data() {
