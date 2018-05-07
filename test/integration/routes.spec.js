@@ -268,8 +268,7 @@ module.exports = (browser) => {
           }
         })
 
-        //
-        if (process.env.BROWSER === 'chrome') {
+        if (browser === 'chrome') {
           describe('<img> tests', () => {
             const notFoundLogString = 'Failed to load resource: the server responded with a status of 404 (Not Found)'
             const widths = [

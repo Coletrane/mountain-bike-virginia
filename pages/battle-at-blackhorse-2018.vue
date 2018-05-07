@@ -78,7 +78,7 @@
         <blog-image :src="img + 'P1010118.jpg'"/>
         <blog-image :src="img + 'P1000289.jpg'"/>
         <blog-image :src="img + 'P1000323.jpg'"/>
-        <blog-image :src="img + 'P1010140.jpg'"/>
+        <blog-image :src="img + 'P1010140.jpgd'"/>
         <blog-image :src="img + 'P1000294.jpg'"/>
         <blog-image :src="img + 'P1000221.jpg'"/>
         <blog-image :src="img + 'P1000182.jpg'"/>
