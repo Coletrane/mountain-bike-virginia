@@ -7,6 +7,8 @@ export default {
     let ogImage
     if (this.$route.name === 'results-battle-at-blackhorse-2018') {
       ogImage = 'P1010117.jpg'
+    } else if (this.$route.name === 'results-middle-mountain-momma-2018') {
+      ogImage = 'connor-bell-dab.jpg'
     } else {
       ogImage = 'podium.jpg'
     }

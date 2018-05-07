@@ -1,9 +1,7 @@
 <template>
   <div>
-    <m-t-b-v-a-header
-      :header-height="700"
-      :image="image"
-      title="Results">
+    <m-t-b-v-a-header :image="image"
+                      title="Results">
     </m-t-b-v-a-header>
     <div class="main-content"
          :style="backgroundImage">
@@ -31,10 +29,7 @@
   import Dropdown from "./Dropdown"
   import ClassTable from "./ClassTable"
 
-  import {
-    s3Pages,
-    s3StaticImg
-  } from "../../scripts/routes"
+  import {s3StaticImg, s3Pages} from "../../scripts/routes"
 
   export default {
     name: "results",
@@ -44,12 +39,20 @@
       Dropdown,
       ClassTable
     },
-    data() {
-      return {
-        image: `${s3Pages}/results/podium.jpg`,
+    props: {
+      headerImage: {
+        type: String,
+        required: false
       }
     },
     computed: {
+      image() {
+        if (this.headerImage) {
+          return `${s3Pages}/results/${this.headerImage}`
+        } else {
+          return `${s3Pages}/results/podium.jpg`
+        }
+      },
       backgroundImage() {
         return {
           backgroundImage:`url("${s3StaticImg}/asfalt-light.png")`
