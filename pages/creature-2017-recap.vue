@@ -5,6 +5,7 @@
                header-author>
       <div slot="content">
         <div>
+          <youtube :src="post.youtube"/>
           <blog-image :src="img + 'fence.jpg'"/>
           <div class="blog-p">
             The view of Carvins Cove’s backside from Hollins University. Outdoor Trails, a terrific outdoor store in
@@ -94,7 +95,6 @@
         <div class="blog-p">
           Many thanks to Woods Family HVAC. We’ll see you again next year!
         </div>
-        <youtube :src="post.youtube"/>
       </div>
     </blog-post>
   </div>

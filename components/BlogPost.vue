@@ -11,10 +11,6 @@
           <slot name="content"/>
         </div>
       </blog-post-card>
-      <!--<banner :style="{-->
-        <!--paddingTop: '3rem',-->
-        <!--paddingBottom: '2rem'-->
-      <!--}"/>-->
 
       <related-posts v-if="relatedPosts && relatedPosts.length > 0"
                      :posts="relatedPosts"/>

@@ -159,51 +159,6 @@ module.exports = (browser) => {
           })
         })
 
-        describe('<m-t-b-v-a-header> tests', () => {
-          describe('text tests', () => {
-            it('should have a header', async () => {
-              expect(await driver.findElement(
-                By.id('mtbva-header'))
-                .isDisplayed())
-                .to.be.true
-            })
-
-            if (!route.startsWith('results')) {
-              it('should have a title', async () => {
-                expect(await driver.findElement(
-                  By.id('mtbva-title'))
-                  .getAttribute('innerText'))
-                  .not.to.be.undefined
-              })
-
-              it('should have a subtitle', async () => {
-                // wait for the animation to finish
-                let subtitle = await driver.wait(until.elementLocated(
-                  By.id('mtbva-subtitle')))
-
-                // Quite odd that getText() sometimes returns something, sometimes doesn't
-                // Using contain here because there are some spaces and /n in the string
-                expect(await subtitle.getAttribute('innerHTML'))
-                  .not.to.be.undefined
-              })
-            }
-
-            if (route === '/') {
-              it('should have events button', async () => {
-                // wait for animation to finish
-                let button = await driver.wait(until.elementLocated(
-                  By.id('events-button')))
-
-                expect(await button.getAttribute('innerHTML'))
-                  .to.contain('EVENTS')
-
-                expect(await button.getAttribute('href'))
-                  .to.equal('https://www.facebook.com/pg/bikevirginia/events/')
-              })
-            }
-          })
-        })
-
         describe('<social-links> test', () => {
           if (route === '/') {
             describe('<home> social links test', () => {
@@ -290,7 +245,7 @@ module.exports = (browser) => {
                 it('should not have any broken <img>s', async () => {
                   const imgs = await driver.findElements(
                     By.css('img'))
-                  for (const img of await imgs) {
+                  for (const [i, img] of await imgs.entries()) {
                     await driver.executeScript('arguments[0].scrollIntoView(true);', img)
                     await driver.wait(() => {
                       return driver.executeScript('return arguments[0].complete', img)
@@ -300,6 +255,10 @@ module.exports = (browser) => {
                     notFounds = await notFounds.filter(logs => {
                       return logs.message.includes(notFoundLogString)
                     })
+
+                    if (i === await imgs.length - 1) {
+                      await driver.sleep(1000)
+                    }
 
                     if (notFounds.length > 0) {
                       console.log(notFounds)

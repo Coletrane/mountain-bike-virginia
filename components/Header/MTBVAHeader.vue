@@ -1,5 +1,5 @@
 <template>
-  <div id="mtbva-header">
+  <div class="mtbva-header">
     <parallax :src="image"
               :height="1000">
       <div slot="hero"
@@ -7,18 +7,15 @@
         <div class="hero-content">
             <div>
               <h1 class="mtbva-title"
-                  :class="subpageTitleClass"
-                  id="mtbva-title">
+                  :class="subpageTitleClass">
                 {{title.toUpperCase()}}
               </h1>
-              <h2 class="white--text headline mtbva-subtitle"
-                  id="mtbva-subtitle">
+              <h2 class="white--text headline mtbva-subtitle">
                 {{subtitle}}
               </h2>
               <a v-if="buttonLink && button"
                  :href="buttonLink"
-                 class="button-link"
-                 id="events-button">
+                 class="button-link">
                 <button class="btn btn-outline-primary white-btn">
                     {{button.toUpperCase()}}
                 </button>
@@ -85,6 +82,10 @@
   }
 </script>
 <style>
+
+  .mtbva-header {
+    background-color: black;
+  }
 
   .hero-content {
     padding: 1rem;

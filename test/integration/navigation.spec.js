@@ -150,7 +150,7 @@ module.exports = (browser) => {
 
         it('should close when clicking on X icon', async () => {
           await xIcon.click()
-          await driver.sleep(3000)
+          await driver.sleep(500)
 
           try {
             await driver.findElement(
@@ -165,12 +165,13 @@ module.exports = (browser) => {
           await driver.findElement(
             By.id('mtbva-menu-link'))
                       .click()
-          await driver.sleep(3000)
+          await driver.sleep(500)
 
-          await driver.findElement(
+          const overlay = await driver.findElement(
             By.className('overlay'))
-                      .click()
-          await driver.sleep(3000)
+          await driver.executeScript('arguments[0].scrollIntoView()', await overlay)
+          await overlay.click()
+          await driver.sleep(500)
 
           try {
             await driver.findElement(
