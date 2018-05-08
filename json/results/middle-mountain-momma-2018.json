@@ -1,0 +1,440 @@
+{
+  "name": "Middle Mountain Momma 2018",
+  "results": {
+    "classes": [
+      {
+        "name": "XXC Men Open - 40 miles",
+        "riders": [
+          {
+            "name": "Andy Rhodes",
+            "time": "4:24"
+          },
+          {
+            "name": "Joe Perpetua",
+            "time": "4:45"
+          },
+          {
+            "name": "Levi Thornton",
+            "time": "4:46"
+          },
+          {
+            "name": "Jeff Morris",
+            "time": "4:46"
+          },
+          {
+            "name": "Matthew Resbcker",
+            "time": "4:51"
+          },
+          {
+            "name": "Bryan Wright",
+            "time": "5:18"
+          },
+          {
+            "name": "Hairon Mattson",
+            "time": "5:35"
+          },
+          {
+            "name": "Matthew Ralph",
+            "time": "5:43"
+          },
+          {
+            "name": "Jerico Slavin",
+            "time": "5:43"
+          },
+          {
+            "name": "Dane Paris",
+            "time": "5:57"
+          },
+          {
+            "name": "Alan Cross",
+            "time": "6:02"
+          },
+          {
+            "name": "Lucas Weaver",
+            "time": "6:04"
+          },
+          {
+            "name": "Michael Cummins",
+            "time": "6:09:10"
+          },
+          {
+            "name": "Jeff Kramer",
+            "time": "6:26"
+          },
+          {
+            "name": "Paul Keitelman",
+            "time": "6:30"
+          },
+          {
+            "name": "Mike Sutherland",
+            "time": "7:06"
+          }
+        ]
+      },
+      {
+        "name": "XXC Women - 40 miles",
+        "riders": [
+          {
+            "name": "Leila Husain",
+            "time": "6:21"
+          },
+          {
+            "name": "Amanda Brookman",
+            "time": "7:07"
+          }
+        ]
+      },
+      {
+        "name": "XXC Master Men 45+ - 40 miles",
+        "riders": [
+          {
+            "name": "Clark Patrick",
+            "time": "4:30"
+          },
+          {
+            "name": "Chris Pohowsky",
+            "time": "4:38"
+          },
+          {
+            "name": "Justin Deleo",
+            "time": "5:08"
+          },
+          {
+            "name": "Charles Dye",
+            "time": "5:23"
+          },
+          {
+            "name": "Doug Atkins",
+            "time": "5:25"
+          },
+          {
+            "name": "Scott Ramsey",
+            "time": "5:25:01"
+          },
+          {
+            "name": "Jon Gaudio",
+            "time": "5:28"
+          },
+          {
+            "name": "James Weidhahn",
+            "time": "5:39"
+          },
+          {
+            "name": "John Stratiou",
+            "time": "5:50"
+          },
+          {
+            "name": "Brian Bond",
+            "time": "6:09"
+          },
+          {
+            "name": "Joe Knbchtel",
+            "time": "6:31:10"
+          }
+        ]
+      },
+      {
+        "name": "XXC Single Speed - 40 miles",
+        "riders": [
+          {
+            "name": "Michael Coco",
+            "time": "4:34"
+          },
+          {
+            "name": "Michael Scales",
+            "time": "4:43"
+          },
+          {
+            "name": "Aaron Copeland",
+            "time": "4:57"
+          },
+          {
+            "name": "Joel Ganshan",
+            "time": "5:19"
+          }
+        ]
+      },
+      {
+        "name": "XC Men Open - 21 miles",
+        "riders": [
+          {
+            "name": "Mason Allen",
+            "time": "3:08"
+          },
+          {
+            "name": "Christopher Deaton",
+            "time": "3:56"
+          },
+          {
+            "name": "Kevin Nelson",
+            "time": "4:01"
+          }
+        ]
+      },
+      {
+        "name": "XC Women Open - 21 miles",
+        "riders": [
+          {
+            "name": "Desen Ozkan",
+            "time": "3:10"
+          },
+          {
+            "name": "Lynn Faust",
+            "time": "4:06"
+          }
+        ]
+      },
+      {
+        "name": "XC Sport Men 35-44 - 21 miles",
+        "riders": [
+          {
+            "name": "Larry Weber",
+            "time": "2:37"
+          },
+          {
+            "name": "Matthew Whitford",
+            "time": "2:53"
+          },
+          {
+            "name": "Samuel Robbins",
+            "time": "2:54"
+          },
+          {
+            "name": "George Kaufmann",
+            "time": "3:13"
+          },
+          {
+            "name": "Rob Allen",
+            "time": "3:13:30"
+          },
+          {
+            "name": "Johnny Rivera",
+            "time": "3:17"
+          },
+          {
+            "name": "Ben Faust",
+            "time": "4:07"
+          }
+        ]
+      },
+      {
+        "name": "XC Sport Women 35-44 - 21 miles",
+        "riders": [
+          {
+            "name": "Andie Thompson",
+            "time": "3:18"
+          },
+          {
+            "name": "Robyn Browne",
+            "time": "3:18:01"
+          },
+          {
+            "name": "Alexandra Dahlgreen",
+            "time": "3:20"
+          },
+          {
+            "name": "Ashley Mayer",
+            "time": "3:58"
+          }
+        ]
+      },
+      {
+        "name": "XC Sport Men 45-54 - 21 miles",
+        "riders": [
+          {
+            "name": "Keith Schumann",
+            "time": "2:55"
+          },
+          {
+            "name": "Richard Mcafee",
+            "time": "3:05"
+          },
+          {
+            "name": "Drew Duke",
+            "time": "3:13:02"
+          },
+          {
+            "name": "Paul Bower",
+            "time": "3:13:50"
+          },
+          {
+            "name": "Sean Devitt",
+            "time": "3:23"
+          },
+          {
+            "name": "Mark Harris",
+            "time": "3:32"
+          },
+          {
+            "name": "David Durkin",
+            "time": "3:44"
+          },
+          {
+            "name": "Carl Smith",
+            "time": "3:45"
+          },
+          {
+            "name": "Jeff Duncan",
+            "time": "3:57"
+          }
+        ]
+      },
+      {
+        "name": "XC Master Sport Men 55+ - 21 miles",
+        "riders": [
+          {
+            "name": "Dale Heath",
+            "time": "2:56"
+          },
+          {
+            "name": "Kevin Cox",
+            "time": "4:01"
+          },
+          {
+            "name": "Todd Gilley",
+            "time": "4:14"
+          }
+        ]
+      },
+      {
+        "name": "XC Expert Men Open - 21 miles",
+        "riders": [
+          {
+            "name": "Connor Bell",
+            "time": "2:03"
+          },
+          {
+            "name": "Brian Frazier",
+            "time": "2:09"
+          },
+          {
+            "name": "Jackson Hotchkiss",
+            "time": "2:16"
+          },
+          {
+            "name": "Andrew Bobb",
+            "time": "2:17"
+          },
+          {
+            "name": "Matthew Browne",
+            "time": "2:43"
+          }
+        ]
+      },
+      {
+        "name": "XC Expert Singlespeed - 21 miles",
+        "riders": [
+          {
+            "name": "Sam Browning",
+            "time": "2:50"
+          }
+        ]
+      },
+      {
+        "name": "XC Expert Women Open - 21 miles",
+        "riders": [
+          {
+            "name": "Philicia Marion",
+            "time": "2:36"
+          },
+          {
+            "name": "Kelly Paduch",
+            "time": "2:44"
+          },
+          {
+            "name": "Cathy Wright",
+            "time": "2:44"
+          }
+        ]
+      },
+      {
+        "name": "XC Master Expert 35+ - 21 miles",
+        "riders": [
+          {
+            "name": "Ken Bell",
+            "time": "2:20"
+          },
+          {
+            "name": "Jeff Plassman",
+            "time": "2:23"
+          },
+          {
+            "name": "Jeff Jennings",
+            "time": "2:35"
+          },
+          {
+            "name": "Jamison Baker",
+            "time": "2:39:18"
+          },
+          {
+            "name": "Robert Dmberhandt",
+            "time": "2:41"
+          },
+          {
+            "name": "Michael Lipka",
+            "time": "2:43:10"
+          },
+          {
+            "name": "Adam Harnois",
+            "time": "2:45"
+          },
+          {
+            "name": "Tyler Graf",
+            "time": "2:51"
+          },
+          {
+            "name": "Mark Mccardell",
+            "time": "3:13"
+          }
+        ]
+      },
+      {
+        "name": "Junior Elementary - 7 miles",
+        "riders": [
+          {
+            "name": "Nolan Woodard",
+            "time": "1:40"
+          }
+        ]
+      },
+      {
+        "name": "Beginner Men Open - 11 miles",
+        "riders": [
+          {
+            "name": "Robert Berry",
+            "time": "1:20"
+          },
+          {
+            "name": "Camden Woodard",
+            "time": "1:35"
+          }
+        ]
+      },
+      {
+        "name": "Beginner Women Open - 11 miles",
+        "riders": [
+          {
+            "name": "Rebecca Robbins",
+            "time": "1:42"
+          },
+          {
+            "name": "Steph Agren",
+            "time": "1:56"
+          },
+          {
+            "name": "Sarah Blackhowski",
+            "time": "2:07"
+          },
+          {
+            "name": "Marie Kleine",
+            "time": "2:23"
+          },
+          {
+            "name": "Sarah Jane Lawrence",
+            "time": "2:36:20"
+          }
+        ]
+      }
+    ]
+  }
+}

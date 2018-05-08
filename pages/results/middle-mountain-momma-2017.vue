@@ -8,7 +8,7 @@
   import results from '../../assets/mixins/results'
 
   export default {
-    name: 'results-index',
+    name: 'results-middle-mountain-momma-2017',
     components: {
       Results
     },

@@ -2,11 +2,12 @@ import {s3Results} from '../scripts/routes'
 import axios from 'axios'
 
 const raceNames = [
+  'Middle Mountain Momma 2018',
   'Battle At Blackhorse 2018',
   'Creature From Carvins Cove 2017',
-  'Middle Mountain Momma 2017',
+  // 'Middle Mountain Momma 2017',
   'Creature From Carvins Cove 2016',
-  'Middle Mountain Momma 2016'
+  // 'Middle Mountain Momma 2016'
 ]
 
 let races = []

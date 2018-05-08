@@ -1,13 +1,14 @@
 <template>
-  <results/>
+  <results header-image="connor-bell-dab.jpg"/>
 </template>
+
 <script>
   import Results from '../../components/Results/Results'
 
   import results from '../../assets/mixins/results'
 
   export default {
-    name: 'results-index',
+    name: 'results-middle-mountain-momma-2018',
     components: {
       Results
     },
@@ -17,7 +18,8 @@
     async asyncData(context) {
       await context.store.dispatch(
         'selectRace',
-        'middle-mountain-momma-2018')
+        'middle-mountain-momma-2018'
+      )
     }
   }
 </script>
