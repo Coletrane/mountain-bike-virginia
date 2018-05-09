@@ -14,5 +14,6 @@ const importTest = (path) => {
 describe('Mountain Bike Virginia JSON tests', () => {
 
   importTest('./posts.spec')
+  importTest('./results.spec')
 
 })
