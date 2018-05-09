@@ -23,7 +23,6 @@
   import BlogPostCard from './Card/BlogPostCard'
   import RideWithGps from './Iframes/RideWithGps.vue'
   import SocialActions from './Card/SocialActions.vue'
-  import Author from './Card/Author.vue'
   import RelatedPosts from './Card/RelatedPosts'
   import Banner from './Das/Banner'
 
@@ -38,7 +37,6 @@
       BlogPostCard,
       RideWithGps,
       SocialActions,
-      Author,
       RelatedPosts,
       Banner
     },

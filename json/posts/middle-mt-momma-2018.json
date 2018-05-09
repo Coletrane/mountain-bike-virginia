@@ -2,26 +2,15 @@
   "title": "Counties of Bath and Alleghany Middle Mountain Momma",
   "subtitle": "A week before Mother's Day its MOMMA'S DAY.",
   "description": "21st annual Counties of Bath and Alleghany Middle Mountain Momma is a marathon mountain bike race at Douthat State Park. Many classes available including the XXC 40 mile.",
-  "author": "kyle",
+  "author": "mike-scales",
   "date": "May 6, 2018",
-  "loc": "Douthat State Park, Millboro, VA",
-  "rwGps": "https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true",
+  "loc": "Douthat State Park, Clifton Forge, VA",
   "fbEvent": "https://www.facebook.com/events/371981453213164/",
   "schema": {
-    "type": "Event",
-    "startDate": "2018-05-06T09:00:00.000Z",
-    "location": {
-      "name": "Douthat State Park Discovery Center",
-      "address": {
-        "streetAddress": "14239 Douthat State Park Rd",
-        "addressLocality": "Millboro",
-        "postalCode": "24460",
-        "addressRegion": "VA",
-        "addressCountry": "US"
-      }
-    }
+    "type": "NewsArticle"
   },
-  "imgRoute": "mmm.png",
+  "imgRoute": "P1010337.jpg",
+  "ogImage": "P1010315.jpg",
   "relatedPosts": [
     "creature-2017-recap",
     "rockstar-va-2018"

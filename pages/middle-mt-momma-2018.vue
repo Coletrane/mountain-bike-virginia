@@ -1,45 +1,10 @@
 <template>
   <div>
-    <blog-post :image="img + 'green-pivot.jpg'"
+    <blog-post :image="img + post.ogImage"
                :post="post"
                :related-posts="relatedPosts">
       <div slot="content">
-        <div class="blog-promo">
-          <div class="promo">
-            21st annual Middle Mountain Momma at the gorgeous <a
-            href="http://www.dcr.virginia.gov/state-parks/douthat#general_information">Douthat
-            State Park.</a> The
-            first race in the XXC-VA Series! This race is for all ages and skill levels. <a :href="post.fbEvent">Contact
-            us on Facebook </a>with any questions. Food provided by <a href="https://www.facebook.com/Longfin.Grill/">Longfin
-            Grill</a>, the best fish and chips in town! We love putting on this race and need to see YOU out on some of
-            the best trails Virginia has to offer.
-            <h5>Classes:</h5>
-            <strong> Youth: </strong> 7mi |  <strong> Beginner: </strong> 11mi | <strong> XC: </strong> 21mi | <strong> XXC: </strong> 44mi
-          </div>
-          <div>
-            See maps below.
-          </div>
-          <div>
-            <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
-              View the results from last year.
-            </nuxt-link>
-            <div>
-              <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
-                Register on BikeReg.
-              </a>
-            </div>
-          </div>
-        </div>
-        <div>
-          <a :href="post.fbEvent">
-            <img v-lazy="img + 'mmm.png'"
-                 class="image-smaller">
-          </a>
-          <m-t-b-v-a-video :src="img + 'mmm-start.mp4'"
-                           autoplay
-                           muted
-                           loop/>
-          <ride-with-gps-switcher :gps-routes="[
+        <ride-with-gps-switcher :gps-routes="[
             {
               name: 'youth',
               url: 'https://rwgps-embeds.com/embeds?type=route&id=27285133&sampleGraph=true'
@@ -57,7 +22,133 @@
               url: 'https://rwgps-embeds.com/embeds?type=route&id=26778887&sampleGraph=true'
             }
           ]"/>
-        </div>
+        <blog-image :src="img + 'P1010061.jpg'"/>
+        <blog-image :src="img + 'P1010065.jpg'"/>
+        <blog-image :src="img + 'P1010076.jpg'"/>
+        <blog-image :src="img + 'P1010084.jpg'"/>
+        <blog-image :src="img + 'P1010106.jpg'"/>
+        <blog-image :src="img + 'P1010108.jpg'"/>
+        <blog-image :src="img + 'P1010110.jpg'"/>
+        <blog-image :src="img + 'P1010115.jpg'"/>
+        <blog-image :src="img + 'P1010120.jpg'"/>
+        <blog-image :src="img + 'P1010122.jpg'"/>
+        <blog-image :src="img + 'P1010128.jpg'"/>
+        <blog-image :src="img + 'P1010130.jpg'"/>
+        <blog-image :src="img + 'P1010131.jpg'"/>
+        <blog-image :src="img + 'P1010132.jpg'"/>
+        <blog-image :src="img + 'P1010139.jpg'"/>
+        <blog-image :src="img + 'P1010140.jpg'"/>
+        <blog-image :src="img + 'P1010143.jpg'"/>
+        <blog-image :src="img + 'P1010144.jpg'"/>
+        <blog-image :src="img + 'P1010148.jpg'"/>
+        <blog-image :src="img + 'P1010157.jpg'"/>
+        <blog-image :src="img + 'P1010158.jpg'"/>
+        <blog-image :src="img + 'P1010159.jpg'"/>
+        <blog-image :src="img + 'P1010162.jpg'"/>
+        <blog-image :src="img + 'P1010163.jpg'"/>
+        <blog-image :src="img + 'P1010165.jpg'"/>
+        <blog-image :src="img + 'P1010167.jpg'"/>
+        <blog-image :src="img + 'P1010168.jpg'"/>
+        <blog-image :src="img + 'P1010169.jpg'"/>
+        <blog-image :src="img + 'P1010170.jpg'"/>
+        <blog-image :src="img + 'P1010177.jpg'"/>
+        <blog-image :src="img + 'P1010178.jpg'"/>
+        <blog-image :src="img + 'P1010179.jpg'"/>
+        <blog-image :src="img + 'P1010180.jpg'"/>
+        <blog-image :src="img + 'P1010184.jpg'"/>
+        <blog-image :src="img + 'P1010190.jpg'"/>
+        <blog-image :src="img + 'P1010192.jpg'"/>
+        <blog-image :src="img + 'P1010199.jpg'"/>
+        <blog-image :src="img + 'P1010227.jpg'"/>
+        <blog-image :src="img + 'P1010296.jpg'"/>
+        <blog-image :src="img + 'P1010302.jpg'"/>
+        <blog-image :src="img + 'P1010304.jpg'"/>
+        <blog-image :src="img + 'P1010310.jpg'"/>
+        <blog-image :src="img + 'P1010315.jpg'"/>
+        <blog-image :src="img + 'P1010316.jpg'"/>
+        <blog-image :src="img + 'P1010323.jpg'"/>
+        <blog-image :src="img + 'P1010337.jpg'"/>
+        <blog-image :src="img + 'P1010345.jpg'"/>
+        <blog-image :src="img + 'P1010350.jpg'"/>
+        <blog-image :src="img + 'P1010358.jpg'"/>
+        <blog-image :src="img + 'P1010369.jpg'"/>
+        <blog-image :src="img + 'P1010391.jpg'"/>
+        <blog-image :src="img + 'P1010399.jpg'"/>
+        <blog-image :src="img + 'P1010413.jpg'"/>
+        <blog-image :src="img + 'P1010416.jpg'"/>
+        <blog-image :src="img + 'P1010420.jpg'"/>
+        <blog-image :src="img + 'P1010424.jpg'"/>
+        <blog-image :src="img + 'P1010427.jpg'"/>
+        <blog-image :src="img + 'P1010431.jpg'"/>
+        <blog-image :src="img + 'P1010440.jpg'"/>
+        <blog-image :src="img + 'P1010445.jpg'"/>
+        <blog-image :src="img + 'P1010448.jpg'"/>
+        <blog-image :src="img + 'P1010453.jpg'"/>
+        <blog-image :src="img + 'P1010459.jpg'"/>
+        <blog-image :src="img + 'P1010471.jpg'"/>
+        <blog-image :src="img + 'P1010481.jpg'"/>
+        <blog-image :src="img + 'P1010487.jpg'"/>
+        <blog-image :src="img + 'P1010496.jpg'"/>
+        <blog-image :src="img + 'P1010512.jpg'"/>
+        <blog-image :src="img + 'P1010518.jpg'"/>
+        <blog-image :src="img + 'P1010525.jpg'"/>
+        <blog-image :src="img + 'P1010529.jpg'"/>
+        <blog-image :src="img + 'P1010539.jpg'"/>
+        <blog-image :src="img + 'P1010546.jpg'"/>
+        <blog-image :src="img + 'P1010562.jpg'"/>
+        <blog-image :src="img + 'P1010574.jpg'"/>
+        <blog-image :src="img + 'P1010575.jpg'"/>
+        <blog-image :src="img + 'P1010577.jpg'"/>
+        <blog-image :src="img + 'P1010584.jpg'"/>
+        <blog-image :src="img + 'P1010593.jpg'"/>
+        <blog-image :src="img + 'P1010602.jpg'"/>
+        <blog-image :src="img + 'P1010605.jpg'"/>
+        <blog-image :src="img + 'P1010608.jpg'"/>
+        <blog-image :src="img + 'P1010614.jpg'"/>
+        <blog-image :src="img + 'P1010621.jpg'"/>
+        <blog-image :src="img + 'P1010625.jpg'"/>
+        <blog-image :src="img + 'P1010628.jpg'"/>
+        <blog-image :src="img + 'P1010640.jpg'"/>
+        <blog-image :src="img + 'P1010647.jpg'"/>
+        <blog-image :src="img + 'P1010651.jpg'"/>
+        <blog-image :src="img + 'P1010666.jpg'"/>
+        <blog-image :src="img + 'P1010675.jpg'"/>
+        <blog-image :src="img + 'P1010685.jpg'"/>
+        <blog-image :src="img + 'P1010689.jpg'"/>
+        <blog-image :src="img + 'P1010694.jpg'"/>
+        <blog-image :src="img + 'P1010697.jpg'"/>
+        <blog-image :src="img + 'P1010702.jpg'"/>
+        <blog-image :src="img + 'P1010711.jpg'"/>
+        <blog-image :src="img + 'P1010716.jpg'"/>
+        <blog-image :src="img + 'P1010727.jpg'"/>
+        <blog-image :src="img + 'P1010734.jpg'"/>
+        <blog-image :src="img + 'P1010739.jpg'"/>
+        <blog-image :src="img + 'P1010741.jpg'"/>
+        <blog-image :src="img + 'P1010755.jpg'"/>
+        <blog-image :src="img + 'P1010769.jpg'"/>
+        <blog-image :src="img + 'P1010770.jpg'"/>
+        <blog-image :src="img + 'P1010779.jpg'"/>
+        <blog-image :src="img + 'P1010783.jpg'"/>
+        <blog-image :src="img + 'P1010792.jpg'"/>
+        <blog-image :src="img + 'P1010795.jpg'"/>
+        <blog-image :src="img + 'P1010796.jpg'"/>
+        <blog-image :src="img + 'P1010800.jpg'"/>
+        <blog-image :src="img + 'P1010805.jpg'"/>
+        <blog-image :src="img + 'P1010808.jpg'"/>
+        <blog-image :src="img + 'P1010809.jpg'"/>
+        <blog-image :src="img + 'P1010812.jpg'"/>
+        <blog-image :src="img + 'P1010815.jpg'"/>
+        <blog-image :src="img + 'P1010817.jpg'"/>
+        <blog-image :src="img + 'P1010820.jpg'"/>
+        <blog-image :src="img + 'P1010822.jpg'"/>
+        <blog-image :src="img + 'P1010823.jpg'"/>
+        <blog-image :src="img + 'P1010825.jpg'"/>
+        <blog-image :src="img + 'P1010826.jpg'"/>
+        <blog-image :src="img + 'P1010833.jpg'"/>
+        <blog-image :src="img + 'P1010835.jpg'"/>
+        <blog-image :src="img + 'P1010836.jpg'"/>
+        <blog-image :src="img + 'P1010839.jpg'"/>
+        <blog-image :src="img + 'P1010846.jpg'"/>
       </div>
     </blog-post>
   </div>

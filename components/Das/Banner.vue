@@ -28,3 +28,17 @@
     }
   }
 </script>
+
+<style scoped>
+  img[lazy=loading] {
+    width: 25% !important;
+    height: auto !important;
+    display: block !important;
+    margin: auto !important;
+    background-color: #FFFFFF !important;
+  }
+
+  img[lazy=error] {
+    width: 25% !important;
+  }
+</style>
