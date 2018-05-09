@@ -49,6 +49,7 @@
 <style scoped>
   .quote-wrapper {
     padding-top: 2rem;
+    padding-bottom: 2rem;
     height: auto;
   }
   .quote {

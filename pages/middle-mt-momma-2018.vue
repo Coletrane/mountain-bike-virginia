@@ -25,41 +25,27 @@
         <blog-image :src="img + 'P1010061.jpg'"/>
         <blog-image :src="img + 'P1010065.jpg'"/>
         <blog-image :src="img + 'P1010076.jpg'"/>
-        <blog-image :src="img + 'P1010084.jpg'"/>
         <blog-image :src="img + 'P1010106.jpg'"/>
-        <blog-image :src="img + 'P1010108.jpg'"/>
+        <quote quote="We were the eye of the storm"/>
         <blog-image :src="img + 'P1010110.jpg'"/>
         <blog-image :src="img + 'P1010115.jpg'"/>
-        <blog-image :src="img + 'P1010120.jpg'"/>
         <blog-image :src="img + 'P1010122.jpg'"/>
         <blog-image :src="img + 'P1010128.jpg'"/>
         <blog-image :src="img + 'P1010130.jpg'"/>
-        <blog-image :src="img + 'P1010131.jpg'"/>
         <blog-image :src="img + 'P1010132.jpg'"/>
         <blog-image :src="img + 'P1010139.jpg'"/>
-        <blog-image :src="img + 'P1010140.jpg'"/>
-        <blog-image :src="img + 'P1010143.jpg'"/>
         <blog-image :src="img + 'P1010144.jpg'"/>
-        <blog-image :src="img + 'P1010148.jpg'"/>
         <blog-image :src="img + 'P1010157.jpg'"/>
         <blog-image :src="img + 'P1010158.jpg'"/>
-        <blog-image :src="img + 'P1010159.jpg'"/>
-        <blog-image :src="img + 'P1010162.jpg'"/>
-        <blog-image :src="img + 'P1010163.jpg'"/>
         <blog-image :src="img + 'P1010165.jpg'"/>
         <blog-image :src="img + 'P1010167.jpg'"/>
         <blog-image :src="img + 'P1010168.jpg'"/>
-        <blog-image :src="img + 'P1010169.jpg'"/>
         <blog-image :src="img + 'P1010170.jpg'"/>
         <blog-image :src="img + 'P1010177.jpg'"/>
-        <blog-image :src="img + 'P1010178.jpg'"/>
-        <blog-image :src="img + 'P1010179.jpg'"/>
         <blog-image :src="img + 'P1010180.jpg'"/>
         <blog-image :src="img + 'P1010184.jpg'"/>
         <blog-image :src="img + 'P1010190.jpg'"/>
         <blog-image :src="img + 'P1010192.jpg'"/>
-        <blog-image :src="img + 'P1010199.jpg'"/>
-        <blog-image :src="img + 'P1010227.jpg'"/>
         <blog-image :src="img + 'P1010296.jpg'"/>
         <blog-image :src="img + 'P1010302.jpg'"/>
         <blog-image :src="img + 'P1010304.jpg'"/>
@@ -67,6 +53,9 @@
         <blog-image :src="img + 'P1010315.jpg'"/>
         <blog-image :src="img + 'P1010316.jpg'"/>
         <blog-image :src="img + 'P1010323.jpg'"/>
+        <div class="blog-p caption">
+          Chris Pohowsky rips it off Middle Mountain into Salt Stump
+        </div>
         <blog-image :src="img + 'P1010337.jpg'"/>
         <blog-image :src="img + 'P1010345.jpg'"/>
         <blog-image :src="img + 'P1010350.jpg'"/>
@@ -96,8 +85,10 @@
         <blog-image :src="img + 'P1010539.jpg'"/>
         <blog-image :src="img + 'P1010546.jpg'"/>
         <blog-image :src="img + 'P1010562.jpg'"/>
+        <div class="blog-p caption">
+          The legendary Dale Heath rips down the chute to the Salt Stump Switchback
+        </div>
         <blog-image :src="img + 'P1010574.jpg'"/>
-        <blog-image :src="img + 'P1010575.jpg'"/>
         <blog-image :src="img + 'P1010577.jpg'"/>
         <blog-image :src="img + 'P1010584.jpg'"/>
         <blog-image :src="img + 'P1010593.jpg'"/>
@@ -136,6 +127,8 @@
         <blog-image :src="img + 'P1010805.jpg'"/>
         <blog-image :src="img + 'P1010808.jpg'"/>
         <blog-image :src="img + 'P1010809.jpg'"/>
+        <quote quote="I'll be honest, this is the longest I've ridden my bike"
+               person="Lucas Weaver"/>
         <blog-image :src="img + 'P1010812.jpg'"/>
         <blog-image :src="img + 'P1010815.jpg'"/>
         <blog-image :src="img + 'P1010817.jpg'"/>
@@ -148,7 +141,10 @@
         <blog-image :src="img + 'P1010835.jpg'"/>
         <blog-image :src="img + 'P1010836.jpg'"/>
         <blog-image :src="img + 'P1010839.jpg'"/>
+        <quote quote="I just started riding 4 months ago"
+               person="Mike Sutherland, XXC 40 mile racer"/>
         <blog-image :src="img + 'P1010846.jpg'"/>
+
       </div>
     </blog-post>
   </div>
@@ -158,6 +154,7 @@
   import RideWithGpsSwitcher from '../components/Iframes/RideWithGpsSwitcher'
   import MTBVAVideo from '../components/Iframes/MTBVAVideo'
   import BlogPost from '../components/BlogPost'
+  import Quote from '../components/Card/Quote'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
@@ -170,7 +167,8 @@
       BlogPost,
       MTBVAVideo,
       BlogImage,
-      FontAwesomeIcon
+      FontAwesomeIcon,
+      Quote
     },
     mixins: [
       blogPost

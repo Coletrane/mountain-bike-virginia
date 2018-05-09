@@ -12,7 +12,6 @@
 </template>
 <script>
   import PostCard from '../Card/PostCard'
-  import RideWithGpsSwitcher from '../Iframes/RideWithGpsSwitcher'
   import ImageLink from '../Images/ImageLink'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
@@ -23,7 +22,6 @@
     name: 'middle-mt-momma-2018-promo',
     components: {
       PostCard,
-      RideWithGpsSwitcher,
       ImageLink,
       FontAwesomeIcon
     },

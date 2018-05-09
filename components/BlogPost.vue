@@ -91,6 +91,7 @@
   }
 
   .caption {
+    text-align: center;
     font-size: 1rem;
     color: #5c5e5c;
   }
