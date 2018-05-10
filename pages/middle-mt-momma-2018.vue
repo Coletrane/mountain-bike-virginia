@@ -20,8 +20,8 @@
             See maps below.
           </div>
           <div>
-            <nuxt-link :to="{name: 'results-middle-mountain-momma-2017'}">
-              View the results from last year.
+            <nuxt-link :to="{name: 'results-middle-mountain-momma-2018'}">
+              View the results.
             </nuxt-link>
             <div>
               <a href="https://www.bikereg.com/county-of-bath-middle-mountain-momma">
