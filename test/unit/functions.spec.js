@@ -79,7 +79,7 @@ describe('headTags tests', () => {
         'keywords',
         {
           imgRoute: 'foliage.jpg',
-          route: 'results-middle-mountain-momma-2017'
+          route: 'results-middle-mountain-momma-2018'
         })
 
       it('should have the correct og:image', () => {

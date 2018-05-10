@@ -91,20 +91,10 @@ module.exports = (browser) => {
             })
 
             it('has og:image meta tag', async () => {
-              let expected
-
-              if (route !== '/' &&
-                  !route.includes('results') &&
-                  route !== 'xxc-va-race-series/2018') {
-                const postJson = require(`../../json/posts/${route}.json`)
-                expected = postJson.imgRoute
-              } else if (route === '/') {
-                expected = 'foliage.jpg'
-              } else {
-                expected = '.jpg'
-              }
-
-              expect(ogImage.endsWith(expected))
+              expect(ogImage.endsWith('undefined'))
+                .to.be.false
+              expect(ogImage.endsWith('.jpg') ||
+                     ogImage.endsWith('.png'))
                 .to.be.true
             })
 
@@ -240,6 +230,7 @@ module.exports = (browser) => {
                     height: 1024
                   })
                   await driver.get(url)
+                  await driver.sleep(1000)
                 })
 
                 it('should not have any broken <img>s', async () => {

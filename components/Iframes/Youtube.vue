@@ -1,6 +1,5 @@
 <template>
-  <div class="yt-wrapper embed-responsive"
-       :class="embedResponsiveClass">
+  <div class="yt-wrapper embed-responsive embed-responsive-16by9">
     <div class="embed-responsive-item">
     <img v-if="true"
          :src="loadingImg"/>
@@ -29,17 +28,7 @@
     },
     mixins: [
       iframeLoader
-    ],
-    computed: {
-      embedResponsiveClass() {
-        if (process.browser &&
-            document.body.clientWidth > 1500) {
-          return 'embed-responsive-16by9'
-        } else {
-          return 'embed-responsive-4by3'
-        }
-      }
-    }
+    ]
   }
 </script>
 <style scoped>

@@ -33,13 +33,15 @@ describe('/results/ test', () => {
           })
 
           for (const clazz of times) {
-            console.log(`${clazz.race} ${clazz.clazz}`)
             let sorted = await clazz.times.sort((a, b) => {
               if (a < b) return -1;
               if (a > b) return 1;
               return 0
             })
             clazz.times.forEach((time, i, arr) => {
+              if (time !== sorted[i]) {
+                console.log(`FAIL: ${clazz.race} ${clazz.clazz}`)
+              }
               expect(time)
                 .to.equal(sorted[i])
             })

@@ -1,6 +1,5 @@
 import {results} from "../../assets/head-tags"
 import {headTags} from "../../assets/functions"
-import {s3Pages} from '../../scripts/routes'
 
 export default {
   head() {
@@ -18,7 +17,7 @@ export default {
       results.description,
       results.keywords,
       {
-        ogImage: `${s3Pages}/results/${ogImage}`,
+        ogImage: ogImage,
         route: this.$route.path.substring(1),
       }
     )

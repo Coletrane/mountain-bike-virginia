@@ -79,7 +79,14 @@ export const headTags = (title, desc, keywords, post) => {
 
 const getImageRoute = (post) => {
   if (post.ogImage) {
-    return post.ogImage
+    if (post.route === '/' ||
+        post.route.startsWith('xxc-va-race-series')) {
+      return post.ogImage
+    } else if (post.route.startsWith('results/')) {
+      return `${s3Pages}/results/${post.ogImage}`
+    } else {
+      return `${s3Pages}/${post.route}/${post.ogImage}`
+    }
   } else {
     return `${s3Pages}/${post.route}/${post.imgRoute}`
   }
