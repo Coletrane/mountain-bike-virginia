@@ -9,16 +9,16 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'battle-at-blackhorse-2018-video-promo',
     components: {
       PostCard,
       Youtube
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost('battle-at-blackhorse-2018-video')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>

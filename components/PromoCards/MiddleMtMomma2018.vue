@@ -52,7 +52,9 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-  import { s3Pages } from '../../scripts/routes'
+  import {s3Pages} from '../../scripts/routes'
+
+  import promoCard from '../../assets/mixins/promo-card'
 
   export default {
     name: 'middle-mt-momma-2018-promo',
@@ -61,9 +63,11 @@
       RideWithGpsSwitcher,
       FontAwesomeIcon
     },
+    mixins: [
+      promoCard
+    ],
     data() {
       return {
-        post: this.$store.getters.getPost('middle-mt-momma-2018'),
         faFacebook: faFacebook,
         mmmImg: `${s3Pages}/middle-mt-momma-2018/`
       }

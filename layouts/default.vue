@@ -7,13 +7,12 @@
     <transition name="overlay-fade">
       <div v-if="$store.state.misc.showMenu"
            @click="closeMenu"
-           class="overlay">
+           class="overlay"
+           id="mtbva-overlay">
       </div>
     </transition>
     <div class="app-fade-wrapper">
-      <transition name="app-fade">
-        <nuxt/>
-      </transition>
+      <nuxt/>
     </div>
     <div>
       <m-t-b-v-a-footer/>
@@ -122,14 +121,6 @@
 
   .app-fade-wrapper {
     background-color: black;
-  }
-
-  .app-fade-enter-active {
-    transition: opacity 1s;
-  }
-
-  .app-fade-enter {
-    opacity: 0;
   }
 
   .overlay {

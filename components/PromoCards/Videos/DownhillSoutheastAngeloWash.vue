@@ -9,17 +9,16 @@
   import PostCard from '../../Card/PostCard'
   import Youtube from '../../Iframes/Youtube'
 
+  import promoCard from '../../../assets/mixins/promo-card'
+
   export default {
-    name: 'downhill-southeast-angelo-wash-promo',
+    name: 'videos-downhill-southeast-angelo-wash-promo',
     components: {
       PostCard,
       Youtube
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost(
-          'videos/downhill-southeast-angelo-wash')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>

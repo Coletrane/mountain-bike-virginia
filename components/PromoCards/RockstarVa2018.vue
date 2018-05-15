@@ -18,6 +18,8 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'rockstar-va-2018-promo',
     components: {
@@ -25,13 +27,13 @@
       ImageLink,
       FontAwesomeIcon
     },
+    mixins: [
+      promoCard
+    ],
     data() {
       return {
-        post: this.$store.getters.getPost('rockstar-va-2018'),
         faFacebook: faFacebook
       }
     }
   }
 </script>
-<style scoped>
-</style>

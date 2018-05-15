@@ -9,16 +9,16 @@
   import PostCard from '../Card/PostCard'
   import Youtube from '../Iframes/Youtube'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'dody-ridge-run-fall-2017-promo',
     components: {
       PostCard,
       Youtube
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost('dody-ridge-run-fall-2017')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>

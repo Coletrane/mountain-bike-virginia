@@ -9,16 +9,16 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'relaunch-promo',
     components: {
       PostCard,
       ImageLink
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost('relaunch')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>

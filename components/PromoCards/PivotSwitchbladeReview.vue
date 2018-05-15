@@ -17,16 +17,16 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'pivot-switchblade-review-promo',
     components: {
       PostCard,
       ImageLink
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost('pivot-switchblade-review')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>

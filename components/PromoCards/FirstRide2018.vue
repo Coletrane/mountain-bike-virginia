@@ -18,16 +18,16 @@
   import PostCard from '../Card/PostCard'
   import ImageLink from '../Images/ImageLink'
 
+  import promoCard from '../../assets/mixins/promo-card'
+
   export default {
     name: 'first-ride-2018-promo',
     components: {
       PostCard,
       ImageLink
     },
-    data() {
-      return {
-        post: this.$store.getters.getPost('first-ride-2018')
-      }
-    }
+    mixins: [
+      promoCard
+    ]
   }
 </script>
