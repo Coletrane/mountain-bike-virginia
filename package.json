@@ -107,6 +107,7 @@
     "test-safari": "mocha --require babel-core/register ./test/integration/global.safari.spec.js --timeout 30000",
     "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js --timeout 30000",
     "test-j": "mocha --require babel-core/register ./test/json/global.spec.js --timeout 30000",
+    "test-img": "mocha --require babel-core/register ./test/images.spec.js --timeout 30000",
     "test": "mocha --require babel-core/register ./test/global.spec.js --timeout 30000",
     "deploy-prod": "./scripts/check-is-master.sh && NODE_ENV=production npm run build && ./scripts/deploy-prod.sh"
   },

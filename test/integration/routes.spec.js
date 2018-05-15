@@ -243,55 +243,55 @@ module.exports = (browser) => {
           }
         })
 
-        if (browser === 'chrome') {
-          describe('<img> tests', () => {
-            const notFoundLogString = 'Failed to load resource: the server responded with a status of 404 (Not Found)'
-            const widths = [
-              1280,
-              720,
-              480
-            ]
-
-            for (const width of widths) {
-              describe(`${width} width`, () => {
-                before(async () => {
-                  await driver.manage().window().setRect({
-                    width: width - 20,
-                    height: 1024
-                  })
-                  await driver.get(url)
-                  await driver.sleep(1000)
-                })
-
-                it('should not have any broken <img>s', async () => {
-                  const imgs = await driver.findElements(
-                    By.css('img'))
-                  for (const [i, img] of await imgs.entries()) {
-                    await driver.executeScript('arguments[0].scrollIntoView(true);', img)
-                    await driver.wait(() => {
-                      return driver.executeScript('return arguments[0].complete', img)
-                    })
-
-                    let notFounds = await driver.manage().logs().get('browser')
-                    notFounds = await notFounds.filter(logs => {
-                      return logs.message.includes(notFoundLogString)
-                    })
-
-                    if (i === await imgs.length - 1) {
-                      await driver.sleep(1000)
-                    }
-
-                    if (notFounds.length > 0) {
-                      console.log(notFounds)
-                    }
-                    expect(await notFounds.length)
-                      .to.equal(0)
-                  }
-                })
-              })
-            }
-          })
-        }
+        // if (browser === 'chrome') {
+        //   describe('<img> tests', () => {
+        //     const notFoundLogString = 'Failed to load resource: the server responded with a status of 404 (Not Found)'
+        //     const widths = [
+        //       1280,
+        //       720,
+        //       480
+        //     ]
+        //
+        //     for (const width of widths) {
+        //       describe(`${width} width`, () => {
+        //         before(async () => {
+        //           await driver.manage().window().setRect({
+        //             width: width - 20,
+        //             height: 1024
+        //           })
+        //           await driver.get(url)
+        //           await driver.sleep(1000)
+        //         })
+        //
+        //         it('should not have any broken <img>s', async () => {
+        //           const imgs = await driver.findElements(
+        //             By.css('img'))
+        //           for (const [i, img] of await imgs.entries()) {
+        //             await driver.executeScript('arguments[0].scrollIntoView(true);', img)
+        //             await driver.wait(() => {
+        //               return driver.executeScript('return arguments[0].complete', img)
+        //             })
+        //
+        //             let notFounds = await driver.manage().logs().get('browser')
+        //             notFounds = await notFounds.filter(logs => {
+        //               return logs.message.includes(notFoundLogString)
+        //             })
+        //
+        //             if (i === await imgs.length - 1) {
+        //               await driver.sleep(1000)
+        //             }
+        //
+        //             if (notFounds.length > 0) {
+        //               console.log(notFounds)
+        //             }
+        //             expect(await notFounds.length)
+        //               .to.equal(0)
+        //           }
+        //         })
+        //       })
+        //     }
+        //   })
+        // }
       })
     }
 
