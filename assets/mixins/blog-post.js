@@ -3,12 +3,25 @@ import {s3Pages} from '../../scripts/routes'
 
 export default {
   async asyncData(context) {
-    const route = context.route.path.slice(1)
+    let route
+    if (context.route.matched.length === 1) {
+      route = context.route.matched[0].path.slice(1)
+    } else {
+      let routeSplit = route.split('/')
+      let routeSplitNoSlashes = []
+      routeSplit.forEach(route => {
+        if (route !== '') {
+          routeSplitNoSlashes.push(route)
+        }
+      })
+      route = routeSplitNoSlashes.join('/')
+    }
+
     await context.store.dispatch('loadPosts', [
       route
     ])
     const currentPost = context.store.getters.getPost(route)
-    context.store.dispatch('setCurrentPost', currentPost.route)
+    context.store.dispatch('setCurrentPost', currentPost)
 
     await context.store.dispatch('loadPosts',
       currentPost.relatedPosts
@@ -29,27 +42,12 @@ export default {
     return postInstance
   },
   head() {
-    const currentPost = this.$store.getters.getPost(
-      this.$store.state.posts.currentPost)
-    if (currentPost) {
-      if (this.schema) {
-        return {
-          ...headTags(
-            currentPost.title,
-            currentPost.subtitle,
-            currentPost.keywords,
-            currentPost
-          ),
-          script: this.schema
-        }
-      } else {
-        return headTags(
-          currentPost.title,
-          currentPost.subtitle,
-          currentPost.keywords,
-          currentPost
-        )
-      }
+    if (!this.postAtBottom &&
+        this.post) {
+      return this.blogHeadTags(this.post)
+    } else if (this.postAtBottom &&
+               this.$store.state.posts.currentPost) {
+      return this.blogHeadTags(this.$store.state.posts.currentPost)
     }
   },
   props: {
@@ -64,6 +62,28 @@ export default {
       this.post = this.postAtBottom
       this.relatedPosts = []
       this.img = `${s3Pages}/${this.post.route}/`
+    }
+  },
+  methods: {
+    blogHeadTags(post) {
+      if (this.schema) {
+        return {
+          ...headTags(
+            post.title,
+            post.subtitle,
+            post.keywords,
+            post
+          ),
+          script: this.schema
+        }
+      } else {
+        return headTags(
+          post.title,
+          post.subtitle,
+          post.keywords,
+          post
+        )
+      }
     }
   }
 }

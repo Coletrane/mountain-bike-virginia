@@ -102,6 +102,7 @@
     "sleep": "node ./scripts/sleep.js",
     "gen-imgs": "node ./scripts/responsive-imgs.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
+    "test-one": "JUST_ONE=true mocha --require babel-core/register ./test/integration/global.chrome.spec.js --timeout 30000;",
     "test-i": "mocha --require babel-core/register ./test/integration/global.chrome.spec.js --timeout 30000; mocha --require babel-core/register ./test/integration/global.safari.spec.js --timeout 30000",
     "test-safari": "mocha --require babel-core/register ./test/integration/global.safari.spec.js --timeout 30000",
     "test-u": "mocha --require babel-core/register ./test/unit/global.spec.js --timeout 30000",

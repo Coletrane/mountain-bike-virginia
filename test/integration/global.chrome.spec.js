@@ -27,10 +27,12 @@ describe('Google Chrome integration tests', () => {
 
   // Hook tests in here
 
-  importTest('./navigation.spec')
-  importTest('./home.spec')
+  if (!process.env.JUST_ONE) {
+    importTest('./navigation.spec')
+    importTest('./home.spec')
+    importTest('./results.spec')
+  }
   importTest('./routes.spec')
-  importTest('./results.spec')
 
   after(() => {
     driver.quit()

@@ -160,7 +160,8 @@ export const buildVideo = async (post) => {
     }
   })
 
-  if (res.status === 200) {
+  if (res.status === 200 ||
+      res.data.items.length > 0) {
     schema.thumbnailUrl = [
       res.data.items[0].snippet.thumbnails.default.url
     ]

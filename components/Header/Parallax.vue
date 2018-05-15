@@ -16,7 +16,6 @@
         type: Number,
         default: 600
       },
-      jumbotron: Boolean,
       src: String
     },
     created() {

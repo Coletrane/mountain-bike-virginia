@@ -1,8 +1,20 @@
-import {routes} from '../../scripts/build-routes-json'
+import {routes, posts} from '../../scripts/build-routes-json'
 const fs = require('fs')
 
+let routesToTest
+if (process.env.JUST_ONE) {
+  routesToTest = [routes[0]]
+} else {
+  routesToTest = routes
+}
+
 module.exports = (browser) => {
-  const global = require(`./global.${browser}.spec`)
+  let global
+  if (browser) {
+    global = require(`./global.${browser}.spec`)
+  } else {
+    global = require(`./global.chrome.spec`)
+  }
   const By = require('selenium-webdriver').By
   const until = require('selenium-webdriver').until
   const request = require('request-promise')
@@ -20,9 +32,10 @@ module.exports = (browser) => {
       testUrl = await global.testUrl
     })
 
-    for (const route of routes) {
+    for (const route of routesToTest) {
       describe(route, () => {
         let url
+        let post
 
         before(async () => {
           if (route === '/') {
@@ -30,6 +43,7 @@ module.exports = (browser) => {
           } else {
             url = await `${testUrl}/${route}`
           }
+          post = posts.find(post => post.route === route)
         })
         describe('<head> tests', () => {
           it('should navigate to route', async () => {
@@ -48,9 +62,25 @@ module.exports = (browser) => {
           })
 
           it('has title', async () => {
-            expect(await driver.findElement(
-              By.css('title')))
+            let title = await driver.findElement(
+              By.css('title'))
+            expect(await title)
               .not.to.be.undefined
+            if (post) {
+              expect(await title.getAttribute('innerText'))
+                .to.equal(post.title)
+            }
+          })
+
+          it('has keywords', async () => {
+            let keywords = await driver.findElement(
+              By.xpath('//meta[@name=\'keywords\']'))
+            expect(await keywords)
+              .not.to.be.undefined
+            if (post) {
+              expect(await keywords.getAttribute('content'))
+                .to.equal(post.keywords)
+            }
           })
 
           it('has viewport', async () => {
