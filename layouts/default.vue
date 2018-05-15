@@ -12,7 +12,9 @@
       </div>
     </transition>
     <div class="app-fade-wrapper">
-      <nuxt/>
+      <transition appear name="app-fade">
+        <nuxt/>
+      </transition>
     </div>
     <div>
       <m-t-b-v-a-footer/>
@@ -26,16 +28,11 @@
 
 
   export default {
+    name: 'app',
     components: {
       MTBVAFooter,
       MTBVAMenu,
       Navigation
-    },
-    name: 'app',
-    data() {
-      return {
-        showFooter: false
-      }
     },
     methods: {
       closeMenu() {
@@ -121,6 +118,13 @@
 
   .app-fade-wrapper {
     background-color: black;
+  }
+  .app-fade-enter-active {
+    transition: opacity 1s;
+  }
+
+  .app-fade-enter {
+    opacity: 0;
   }
 
   .overlay {
@@ -218,8 +222,16 @@
     transition: 600ms ease;
   }
 
-  .link-hover:hover {
+  @media (min-width: 850px) {
+    .link-hover:hover {
+      background-image: linear-gradient(rgba(115, 165, 51, 0.85) 0%, rgba(115, 165, 51, 0.85) 100%);
+      background-size: 100% 1em;
+    }
+  }
+
+  .link-hover:active {
     background-image: linear-gradient(rgba(115, 165, 51, 0.85) 0%, rgba(115, 165, 51, 0.85) 100%);
     background-size: 100% 1em;
   }
+
 </style>
