@@ -57,8 +57,8 @@
               text: 'Douthat State Park, Millboro, VA',
               map: 'https://goo.gl/maps/jqyX7GY5Ngy'
             },
-            fbEvent: 'https://www.facebook.com/events/371981453213164/',
-            register: 'https://www.bikereg.com/county-of-bath-middle-mountain-momma',
+            results: 'results-middle-mountain-momma-2018',
+            blogPost: 'middle-mt-momma-2018',
             img: `${s3Pages}/middle-mt-momma-2018/mmm.png`
           },
           {

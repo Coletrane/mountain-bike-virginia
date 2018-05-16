@@ -31,7 +31,8 @@
                 {{item.location.text}}
               </a>
             </div>
-            <div class="fb-event">
+            <div v-if="item.fbEvent"
+                 class="fb-event">
               <a :href="item.fbEvent">
                 <font-awesome-icon :icon="faFacebook"/>
                 Facebook Event
@@ -43,6 +44,20 @@
                 <font-awesome-icon :icon="faBicycle"/>
                 Register on BikeReg
               </a>
+            </div>
+            <div v-if="item.results"
+                 class="results">
+              <nuxt-link :to="{name: item.results}">
+                <font-awesome-icon :icon="faListOl"/>
+                View the Results
+              </nuxt-link>
+            </div>
+            <div v-if="item.blogPost"
+                 class="blog-post-coverage">
+              <nuxt-link :to="{name: item.blogPost}">
+                <font-awesome-icon :icon="faBicycle"/>
+                Official Coverage
+              </nuxt-link>
             </div>
             <div>
               {{item.description}}
@@ -61,6 +76,7 @@
   import faLocationArrow from '@fortawesome/fontawesome-free-solid/faLocationArrow'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
   import faBicycle from '@fortawesome/fontawesome-free-solid/faBicycle'
+  import faListOl from '@fortawesome/fontawesome-free-solid/faListOl'
 
   export default {
     name: 'timeline',
@@ -81,6 +97,7 @@
         faCaretRight: faCaretRight,
         faCaretLeft: faCaretLeft,
         faBicycle: faBicycle,
+        faListOl: faListOl,
         collapsed: false
       }
     },
