@@ -6,7 +6,8 @@
     <div class="main-content"
          :style="backgroundImage">
       <blog-post-card :post="post"
-                      :header-author="headerAuthor">
+                      :header-author="headerAuthor"
+                      :no-author="noAuthor">
         <div slot="media">
           <slot name="content"/>
         </div>
@@ -53,6 +54,11 @@
         required: false,
         default: false
       },
+      noAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       relatedPosts: {
         type: Array,
         required: false
@@ -78,7 +84,7 @@
   }
 
   .blog-p {
-    padding: 1rem;
+    padding: .5rem 1rem;
     font-size: 1.2rem;
   }
 
