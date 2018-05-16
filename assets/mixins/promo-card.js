@@ -1,6 +1,7 @@
 const directories = [
   'videos',
-  'events'
+  'events',
+  'external'
 ]
 
 export default {

@@ -42,7 +42,9 @@ describe('/posts/ test', () => {
   })
 
   for (const [i, post] of posts.entries()) {
-    if (post.route !== 'relaunch' && post.route !== 'creature-2016') {
+    if (post.route !== 'relaunch' &&
+        post.route !== 'creature-2016' &&
+        !post.route.startsWith('external')) {
       describe(post.route, () => {
         let postJson
         before(async () => {

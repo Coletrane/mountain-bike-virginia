@@ -87,12 +87,10 @@ module.exports = (browser) => {
       let overlay
 
       before(async () => {
-        icon = await driver.findElement(
-          By.id('mtbva-menu-link'))
+        await driver.executeScript('document.getElementById(\'mtbva-menu-link\').click();')
 
-        await icon.click()
-        // lol Safari
-        await driver.sleep(3000)
+
+        await driver.sleep(1000)
 
         menu = await driver.findElement(
           By.className('mtbva-menu'))
