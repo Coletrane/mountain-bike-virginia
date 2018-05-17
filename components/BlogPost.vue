@@ -101,6 +101,9 @@
     font-size: 1rem;
     color: #5c5e5c;
   }
+  p {
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+  }
 </style>
-<style scoped>
-</style>
+
