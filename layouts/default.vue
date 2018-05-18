@@ -12,7 +12,7 @@
       </div>
     </transition>
     <div class="app-fade-wrapper">
-      <transition appear :name="transition">
+      <transition :name="transition">
         <nuxt/>
       </transition>
     </div>
