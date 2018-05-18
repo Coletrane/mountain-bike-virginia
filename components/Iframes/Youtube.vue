@@ -1,7 +1,7 @@
 <template>
   <div class="yt-wrapper embed-responsive embed-responsive-16by9">
     <div class="embed-responsive-item">
-    <img v-if="true"
+    <img v-if="!loaded"
          :src="loadingImg"/>
     <iframe v-if="$store.state.misc.loaded"
             v-show="loaded"

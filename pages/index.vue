@@ -101,8 +101,5 @@
     padding-bottom: 2rem;
   }
 
-  .promo {
-    font-size: 1rem;
-  }
 </style>
 

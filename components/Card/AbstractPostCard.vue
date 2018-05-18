@@ -45,6 +45,7 @@
 <style>
   .words {
     padding: 1rem;
+    font-size: 1.2rem;
   }
   .after-header a {
     text-decoration: underline;

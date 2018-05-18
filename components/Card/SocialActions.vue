@@ -16,6 +16,9 @@
 </template>
 <script>
   import {baseUrl} from '../../scripts/routes'
+
+  import postRoute from '../../assets/mixins/post-route'
+
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
   import faReddit from '@fortawesome/fontawesome-free-brands/faReddit'
@@ -31,6 +34,9 @@
     components: {
       FontAwesomeIcon
     },
+    mixins: [
+      postRoute
+    ],
     data() {
       return {
         faFacebook: faFacebook,
@@ -49,10 +55,10 @@
         return `http://twitter.com/home?status=${this.post.title} ${baseUrl}/${this.url}`
       },
       url() {
-        if (this.post.route && !this.post.route.includes('facebook')) {
+        if (this.postRoute) {
           return this.post.route
         } else {
-          return ""
+          return ''
         }
       }
     }

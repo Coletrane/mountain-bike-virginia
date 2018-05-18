@@ -4,7 +4,9 @@
       <font-awesome-icon :icon="faQuoteLeft"
                          class="left-quote"/>
       <span class="quote-text">
-        <i><strong>{{ quote }}</strong></i>
+        <i><strong>
+          <span v-html="quote"></span>
+        </strong></i>
       </span>
 
       <font-awesome-icon :icon="faQuoteRight"

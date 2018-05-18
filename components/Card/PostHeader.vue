@@ -8,6 +8,15 @@
         {{post.title.toUpperCase()}}
       </h2>
     </nuxt-link>
+    <div v-else-if="post.link">
+      <a :href="post.link">
+        <h2 v-if="post.title"
+            class="headline
+                link-hover">
+          {{post.title.toUpperCase()}}
+        </h2>
+      </a>
+    </div>
     <div v-else>
       <h2 v-if="post.title"
           class="headline

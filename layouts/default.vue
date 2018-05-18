@@ -12,7 +12,7 @@
       </div>
     </transition>
     <div class="app-fade-wrapper">
-      <transition appear name="app-fade">
+      <transition :name="transition">
         <nuxt/>
       </transition>
     </div>
@@ -34,23 +34,35 @@
       MTBVAMenu,
       Navigation
     },
-    methods: {
-      closeMenu() {
-        this.$store.dispatch('closeMenu')
-      },
-      onLoad() {
-        this.$store.dispatch('onLoad')
-        window.removeEventListener('load', this.onLoad)
+    data() {
+      return {
+        transition: 'app-fade'
       }
     },
     created() {
       // Check if we are on client side since server doesn't have window
       if (process.browser) {
         window.addEventListener('load', this.onLoad)
+        window.onpopstate = () => {
+          this.transition = 'none'
+          // FIXME: find a better way to do this
+          setTimeout(() => {
+            this.transition = 'app-fade'
+          }, 1000)
+        }
       }
     },
     destroyed() {
       if (process.browser) {
+        window.removeEventListener('load', this.onLoad)
+      }
+    },
+    methods: {
+      closeMenu() {
+        this.$store.dispatch('closeMenu')
+      },
+      onLoad() {
+        this.$store.dispatch('onLoad')
         window.removeEventListener('load', this.onLoad)
       }
     },

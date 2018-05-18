@@ -1,6 +1,6 @@
 <template>
   <nuxt-link v-if="postRoute"
-             :to="{name: post.route}">
+             :to="{name: postRouteName}">
     <responsive-img :src="img"
                     :alt="post.title"/>
   </nuxt-link>

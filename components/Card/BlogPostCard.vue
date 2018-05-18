@@ -2,14 +2,14 @@
   <abstract-post-card :post="post">
     <div slot="header">
       <post-header :post="headerPost"/>
-      <div v-if="headerAuthor">
+      <div v-if="!noAuthor && headerAuthor">
         <author v-if="post.author"
                 :author="post.author"/>
       </div>
     </div>
     <div slot="after-header"
          class="mtbva-media">
-      <div v-if="!headerAuthor">
+      <div v-if="!noAuthor && !headerAuthor">
         <author v-if="post.author"
                 :author="post.author"/>
       </div>
@@ -30,6 +30,11 @@
         required: true
       },
       headerAuthor: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      noAuthor: {
         type: Boolean,
         required: false,
         default: false

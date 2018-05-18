@@ -1,26 +1,28 @@
 <template>
   <post-card :post="post">
-    <div slot="words">
-      <div class="promo">
-
-      </div>
-    </div>
     <div slot="media">
-      <image-link :post="post"/>
+      <instagram :src="post.instagram"/>
+    </div>
+    <div slot="words">
+      <div class="promo"
+            v-html="post.promo">
+      </div>
     </div>
   </post-card>
 </template>
 <script>
   import PostCard from '../../Card/PostCard'
   import ImageLink from '../../Images/ImageLink'
+  import Instagram from '../../Iframes/Instagram'
 
   import promoCard from '../../../assets/mixins/promo-card'
 
   export default {
-    name: 'events-va-blue-ridge-meeting-may-17-2018-promo',
+    name: 'events-roanoke-silver-ride-center-promo',
     components: {
       PostCard,
-      ImageLink
+      ImageLink,
+      Instagram
     },
     mixins: [
       promoCard

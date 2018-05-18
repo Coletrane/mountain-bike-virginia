@@ -44,8 +44,14 @@ posts.sort((a, b) => {
 })
 
 // Reinsert posts that we want out of order
-posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'rockstar-va-2018'), 2)
-posts = arrayMove(posts, _.findIndex(posts, post => post.route === 'ravenwood-ride'), 11)
+const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
+if (mmmIdx) {
+  posts = arrayMove(posts, mmmIdx , 1)
+}
+const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
+if (ravenIdx) {
+  posts = arrayMove(posts, ravenIdx, 12)
+}
 
 // Make sure there are no duplicates
 posts = _.uniq(posts)

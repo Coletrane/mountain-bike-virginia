@@ -1,0 +1,16 @@
+{
+  "title": "Singletracks Names Roanoke as one of the best Mountain Bike Towns",
+  "subtitle": "Over 75 miles of singletrack in town, and 200+ miles in a 30 minute radius",
+  "description": "With the Blue Ridge Mountains rising up sharply to the west of town, not only is there some 200 miles of bike-legal singletrack near Roanoke, but those miles offer true mountain biking.",
+  "date": "March 12, 2018",
+  "loc": "Roanoke, VA",
+  "link": "https://www.singletracks.com/blog/mtb-trails/10-best-us-mountain-bike-towns-lowest-cost-living/6/",
+  "schema": {
+    "type": "NewsArticle"
+  },
+  "imgRoute": "roanoke.jpg",
+  "relatedPosts": [
+    "first-ride-2018"
+  ],
+  "keywords": "roanoke, va, virginia, mountain biking, mtb, singletracks, trails, trail, biking, cycling, backcountry, backwoods"
+}

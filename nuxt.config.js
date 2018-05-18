@@ -98,12 +98,8 @@ module.exports = {
     }
   },
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      if (to.name === 'index') {
-        return savedPosition
-      } else {
-        return {x: 0, y: 0}
-      }
+    scrollBehavior (to, from, savedPosition) {
+      return { x: 0, y: 0 }
     },
     middleware: [
       'close-menu',

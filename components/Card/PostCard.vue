@@ -4,11 +4,12 @@
       <post-header :post="post"/>
     </div>
     <div slot="after-header">
-      <div class="words">
-        <slot name="words"/>
-      </div>
       <div class="mtbva-media">
         <slot name="media"/>
+      </div>
+      <div class="words"
+            :class="noPadding">
+        <slot name="words"/>
       </div>
     </div>
   </abstract-post-card>
@@ -32,15 +33,25 @@
       SocialActions,
       Author
     },
-    computed: {
-      formattedDate() {
-        if (this.post.date) {
-          return new Date()
-        }
+    data() {
+      return {
+        noPadding: ''
+      }
+    },
+    mounted() {
+      if (this.$store.state.posts.currentPost.route === this.post.route) {
+        this.$el.scrollIntoView()
+      }
+      if (!this.$el.getElementsByClassName('words')[0].innerHTML) {
+        this.noPadding = 'no-padding'
       }
     }
   }
 </script>
-
+<style>
+  .no-padding {
+    padding: 0 !important;
+  }
+</style>
 
 
