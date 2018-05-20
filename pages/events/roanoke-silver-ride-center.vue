@@ -1,12 +1,13 @@
 <template>
-  <blog-post :image="img + post.imgRoute"
+  <blog-post :image="img + 'disco-wiens.jpg'"
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
-      <div v-html="post.promo"
-           style="padding-bottom: 1rem;"></div>
+      <p v-html="post.promo"
+           style="padding-bottom: 1rem;"></p>
       <instagram :src="post.instagram"/>
-      <blog-image :src="img + 'IMG_3851.jpg'"/>
+      <blog-image :src="img + 'disco-wiens-shake.jpg'"
+                  portrait/>
       <p>
         Matt Clements shakes hands with David Wiens after a hard fought victory at the Wednesday night Disco race on
         Mill Mountain. 40 Riders showed out in the rain and Wiens had ridden the famed Dody Ridge prior that day.

@@ -54,12 +54,12 @@
   }
 
   .portrait[lazy=loaded] {
-    width: 50%;
+    width: 65%;
     display: block;
     margin: auto;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 800px) {
     .portrait[lazy=loaded] {
       width: 100%;
     }
