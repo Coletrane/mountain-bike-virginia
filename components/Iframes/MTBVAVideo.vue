@@ -13,6 +13,8 @@
   </div>
 </template>
 <script>
+  import isMobile from '../../assets/detect-mobile'
+
   export default {
     name: 'mtbva-video',
     props: {
@@ -50,6 +52,12 @@
       if (process.browser) {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          this.controls = true
+        }
+
+        if (isMobile()) {
+          this.autoplay = false
+          this.preload = false
           this.controls = true
         }
       }

@@ -6,7 +6,7 @@
           <component v-if="getPostComponent(postRoute)"
                      :is="getPostComponent(postRoute)"/>
         </transition>
-        <banner v-if="i % 3 === 0"
+        <banner v-if="(i + 1) % 3 === 0"
                 :style="{
           paddingTop: '2rem',
           paddingBottom: '2rem'

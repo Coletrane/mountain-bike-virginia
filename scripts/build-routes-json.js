@@ -44,16 +44,23 @@ posts.sort((a, b) => {
 })
 
 // Reinsert posts that we want out of order
+const silverIdx = _.findIndex(posts, post => post.route === 'events/roanoke-silver-ride-center')
+if (silverIdx) {
+  posts = arrayMove(posts, silverIdx , 0)
+}
 const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
 if (mmmIdx) {
-  posts = arrayMove(posts, mmmIdx , 1)
+  posts = arrayMove(posts, mmmIdx , 2)
 }
 const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
 if (ravenIdx) {
-  posts = arrayMove(posts, ravenIdx, 12)
+  posts = arrayMove(posts, ravenIdx, 13)
 }
 
 // Make sure there are no duplicates
+if (_.uniq(posts).length !== posts.length) {
+  throw new Error('_.uniq(posts.length) !== posts.length')
+}
 posts = _.uniq(posts)
 
 // Get just the routes in order

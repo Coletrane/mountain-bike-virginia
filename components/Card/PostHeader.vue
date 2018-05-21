@@ -84,13 +84,13 @@
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: 'lato', sans-serif;
     font-style: italic;
   }
 
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: 'lato', sans-serif;
   }
 

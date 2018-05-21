@@ -13,7 +13,9 @@
   import da from '../../assets/mixins/da'
 
   export default {
-    components: {ResponsiveImg},
+    components: {
+      ResponsiveImg
+    },
     name: 'banner',
     mixins: [
       da

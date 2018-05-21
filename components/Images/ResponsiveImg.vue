@@ -4,10 +4,10 @@
        :alt="alt"/>
 </template>
 <script>
-  import {noExtension, justExtension} from "../../assets/functions"
+  import {noExtension, justExtension} from '../../assets/functions'
 
   export default {
-    name: "responsive-img",
+    name: 'responsive-img',
     props: {
       src: {
         type: String,
@@ -18,7 +18,7 @@
       },
       alt: {
         type: String,
-        default: "Mountain Bike Virginia"
+        default: 'Mountain Bike Virginia'
       }
     },
     computed: {

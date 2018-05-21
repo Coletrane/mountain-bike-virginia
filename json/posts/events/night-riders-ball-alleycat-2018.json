@@ -1,0 +1,17 @@
+{
+  "title": "Ride Solutions Night Riders Ball Alleycat",
+  "subtitle": "Impromptu, zany, and unapolagetic. The most fun on 2 wheels in the Star City",
+  "description": "Carlo Dy, the master of the alley cat races held at various events around Roanoke, hosts a race for the Ride Solutions Night Riders Ball. All you need is a bike and a desire to have a great time.",
+  "date": "May 19, 2018",
+  "author": "cole",
+  "loc": "Martins, Roanoke, VA",
+  "schema": {
+    "type": "NewsArticle"
+  },
+  "imgRoute": "IMG_3669.jpg",
+  "relatedPosts": [
+    "events/roanoke-silver-ride-center",
+    "middle-mt-momma-2018"
+  ],
+  "keywords": "bike, cycling, alley cat, race, bike share, ride solutions, downtown roanoke, downtown, music, road bike, gravel bike, zagster, app"
+}
