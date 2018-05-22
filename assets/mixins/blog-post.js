@@ -21,7 +21,6 @@ export default {
       route
     ])
     const currentPost = context.store.getters.getPost(route)
-    context.store.dispatch('setCurrentPost', currentPost)
 
     await context.store.dispatch('loadPosts',
       currentPost.relatedPosts
@@ -44,10 +43,8 @@ export default {
   head() {
     if (!this.postAtBottom &&
         this.post) {
+      this.realPost = this.post
       return this.blogHeadTags(this.post)
-    } else if (this.postAtBottom &&
-               this.$store.state.posts.currentPost) {
-      return this.blogHeadTags(this.$store.state.posts.currentPost)
     }
   },
   props: {
@@ -62,6 +59,8 @@ export default {
       this.post = this.postAtBottom
       this.relatedPosts = []
       this.img = `${s3Pages}/${this.post.route}/`
+    } else {
+      this.$store.dispatch('setCurrentPost', this.post)
     }
   },
   methods: {

@@ -103,7 +103,8 @@ module.exports = {
     },
     middleware: [
       'close-menu',
-      'empty-das'
+      'empty-das',
+      'current-post'
     ]
   },
   loading: {

@@ -39,12 +39,6 @@
       }
     },
     mounted() {
-      if (this.$store.state.posts.currentPost.route === this.post.route) {
-        this.$el.scrollIntoView()
-        if (this.$route.name === 'index') {
-          this.$store.dispatch('setCurrentPost', {})
-        }
-      }
       if (!this.$el.getElementsByClassName('words')[0].innerHTML) {
         this.noPadding = 'no-padding'
       }
