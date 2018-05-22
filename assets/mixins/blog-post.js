@@ -7,14 +7,7 @@ export default {
     if (context.route.matched.length === 1) {
       route = context.route.matched[0].path.slice(1)
     } else {
-      let routeSplit = route.split('/')
-      let routeSplitNoSlashes = []
-      routeSplit.forEach(route => {
-        if (route !== '') {
-          routeSplitNoSlashes.push(route)
-        }
-      })
-      route = routeSplitNoSlashes.join('/')
+      throw new Error (`${route.name} route.matched has nothing!`)
     }
 
     await context.store.dispatch('loadPosts', [
@@ -45,6 +38,15 @@ export default {
         this.post) {
       this.realPost = this.post
       return this.blogHeadTags(this.post)
+    } else {
+      let route
+      if (this.$route.matched.length === 1) {
+        route = this.$route.matched[0].path.slice(1)
+      } else {
+        throw new Error (`${route.name} route.matched has nothing!`)
+      }
+
+      return this.blogHeadTags(this.$store.getters.getPost(route))
     }
   },
   props: {
