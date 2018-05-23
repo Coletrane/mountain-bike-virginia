@@ -45,17 +45,24 @@ posts.sort((a, b) => {
 
 // Reinsert posts that we want out of order
 const silverIdx = _.findIndex(posts, post => post.route === 'events/roanoke-silver-ride-center')
-if (silverIdx) {
-  posts = arrayMove(posts, silverIdx , 0)
+if (silverIdx === -1) {
+  throw new Error('')
 }
+posts = arrayMove(posts, silverIdx , 0)
+
 const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
-if (mmmIdx) {
-  posts = arrayMove(posts, mmmIdx , 2)
+const mmmVideoIdx = _.findIndex(posts, post => post.route === 'videos/middle-mountain-momma-2018-video')
+if (mmmIdx === -1 || mmmVideoIdx === -1) {
+  throw new Error('')
 }
+posts = arrayMove(posts, mmmIdx , mmmVideoIdx)
+
 const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
-if (ravenIdx) {
-  posts = arrayMove(posts, ravenIdx, 13)
+if (ravenIdx === -1) {
+  throw new Error('')
 }
+posts = arrayMove(posts, ravenIdx, ravenIdx + 13)
+
 
 // Make sure there are no duplicates
 if (_.uniq(posts).length !== posts.length) {

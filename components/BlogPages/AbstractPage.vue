@@ -3,7 +3,8 @@
     <div v-if="pageLoaded">
       <div v-for="(postRoute, i) of $store.state.routes.pages[page]">
         <transition name="new-page-fade">
-          <component v-if="getPostComponent(postRoute)"
+          <component v-if="getPostComponent(postRoute) &&
+                           getPostComponent(postRoute) !== '404'"
                      :is="getPostComponent(postRoute)"/>
         </transition>
         <banner v-if="(i + 1) % 3 === 0"
@@ -11,7 +12,8 @@
           paddingTop: '2rem',
           paddingBottom: '2rem'
         }"/>
-        <div v-if="!getPostComponent(postRoute)"
+        <div v-if="!getPostComponent(postRoute) &&
+                    getPostComponent(postRoute) !== '404'"
              class="post-card-placeholder">
         </div>
       </div>

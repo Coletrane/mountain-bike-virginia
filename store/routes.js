@@ -19,10 +19,12 @@ export default {
         if (res.data) {
           resultRoutes = res.data
 
-          context.commit('PAGE_LOADED', {
-            routes: resultRoutes,
-            page: pageNum
-          })
+          if (!context.state.loadedPages.includes(pageNum)) {
+            context.commit('PAGE_LOADED', {
+              routes: resultRoutes,
+              page: pageNum
+            })
+          }
         }
       }
 
