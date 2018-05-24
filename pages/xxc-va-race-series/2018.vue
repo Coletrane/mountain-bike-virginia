@@ -69,7 +69,8 @@
               text: 'Massanutten Resort Western Slope, Keezletown, VA',
               map: 'https://goo.gl/maps/8r6gvvFwrkt'
             },
-            fbEvent: 'https://www.facebook.com/events/204985483439005/',
+            fbEvent: 'https://www.facebook.com/events/432850813812960/',
+            blogPost: 'events-massanutten-hoo-ha-2018',
             register: 'https://www.bikereg.com/massanutten-hoo-ha',
             img: `${s3PagesEvents}/massanutten-hoo-ha-2018/hoo-ha-flyer.jpg`
           },

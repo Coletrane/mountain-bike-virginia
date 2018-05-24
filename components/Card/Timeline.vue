@@ -17,10 +17,17 @@
           <font-awesome-icon :icon="left(i) ? faCaretRight: faCaretLeft"
                              :class="left(i) ? 'caret-left' : 'caret-right'"
                              class="caret"/>
-          <a :href="item.fbEvent"
-              :style="{background: 'none'}">
-          <responsive-img :src="item.img"/>
-          </a>
+          <div v-if="item.blogPost">
+            <nuxt-link :to="{name: item.blogPost}">
+              <responsive-img :src="item.img"/>
+            </nuxt-link>
+          </div>
+          <div v-else-if="item.fbEvent && !item.blogPost">
+            <a :href="item.fbEvent"
+               :style="{background: 'none'}">
+              <responsive-img :src="item.img"/>
+            </a>
+          </div>
           <div class="timeline-words">
             <h4>
               {{item.title}}
@@ -142,7 +149,7 @@
           this.collapsed = false
         }
       }
-    },
+    }
   }
 </script>
 <style scoped>
