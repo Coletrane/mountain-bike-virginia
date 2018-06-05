@@ -3,20 +3,6 @@
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
-      <div class="blog-p">
-        <a :href="post.register">
-          <font-awesome-icon :icon="faBicycle"/>
-          Register on BikeReg
-        </a>
-      </div>
-      <div class="blog-p">
-        <a :href="post.fbEvent">
-          <font-awesome-icon :icon="faFacebook"/>
-          Facebook Event
-        </a>
-      </div>
-      <p v-html="post.description"></p>
-      <blog-image :src="img + 'hoo-ha-flyer.jpg'"/>
     </div>
   </blog-post>
 </template>

@@ -1,25 +1,14 @@
 {
   "title": "30th Annual Massanutten Hoo-Ha!",
   "subtitle": "The second epic race in the XXC-VA Marathon MTB Series!",
-  "description": "Saturday, June 2: <br> ENDURO begins at 9:00AM! <br> Sunday, June 3: <br> XXC (32 miles) begins at 9:00AM <br> Pro and Expert XC (22 miles) begins at 11:00AM. <br> Sport, Singlespeed, and Clydesdale (12 miles) begins at 11:00AM <br> Junior (9 miles) begins at 11:45AM",
+  "description": "",
   "author": "kyle",
   "date": "June 3, 2018, 9:00",
   "loc": "Massanutten Western Slope, Keezletown, VA",
   "fbEvent": "https://www.facebook.com/events/432850813812960/",
   "register": "https://www.bikereg.com/massanutten-hoo-ha",
   "schema": {
-    "type": "Event",
-    "startDate": "2018-06-03T09:00:00.000Z",
-    "location": {
-      "name": "Massanutten Western Slope",
-      "address": {
-        "streetAddress": "3493 Happy Valley Rd",
-        "addressLocality": "Keezletown",
-        "postalCode": "22832",
-        "addressRegion": "VA",
-        "addressCountry": "US"
-      }
-    }
+    "type": "NewsArticle"
   },
   "imgRoute": "hoo-ha-flyer.jpg",
   "relatedPosts": [

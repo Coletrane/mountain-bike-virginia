@@ -1,26 +1,21 @@
 <template>
   <post-card :post="post">
     <div slot="media">
-      <image-link :post="post"/>
-    </div>
-    <div slot="words">
-      <div class="blog-p">
-
-      </div>
+      <youtube :src="post.ytSrc"/>
     </div>
   </post-card>
 </template>
 <script>
   import PostCard from '../../Card/PostCard'
-  import ImageLink from '../../Images/ImageLink'
+  import Youtube from '../../Iframes/Youtube'
 
   import promoCard from '../../../assets/mixins/promo-card'
 
   export default {
-    name: 'events-massanutten-hoo-ha-2018-promo',
+    name: 'videos-blue-ridge-trailheads-gauntlet-rim-dent-promo',
     components: {
       PostCard,
-      ImageLink,
+      Youtube
     },
     mixins: [
       promoCard
