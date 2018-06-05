@@ -21,9 +21,9 @@
   </div>
 </template>
 <script>
-  import Banner from '../../components/Das/Banner'
+  import Banner from './Das/Banner'
 
-  import postComponentLoader from '../../assets/mixins/post-component-loader'
+  import postComponentLoader from '../assets/mixins/post-component-loader'
 
   export default {
     name: 'abstract-page',

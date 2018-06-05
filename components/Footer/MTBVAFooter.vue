@@ -1,41 +1,34 @@
 <template>
-  <div class="mtbva-footer"
-       :style="backgroundImageStyles">
+  <div class="mtbva-footer">
     <div class="sponsors-container">
       <logos-three-cols v-if="mobile"
                         :sponsors="sponsors"/>
       <logos-four-cols v-else
                        :sponsors="sponsors"/>
     </div>
-    <div class="copyright">
-      <div>
-        © 2017 Virginia Championship Commission, Inc.
-      </div>
-      <div>
-        Developed by Cole Inman.
-      </div>
-      <div>
-        <a class="github" href="https://github.com/coletrane">
-          <font-awesome-icon :icon="faGithub"/>
-        </a>
-      </div>
-    </div>
+    <!--<div class="copyright">-->
+      <!--<div>-->
+        <!--© 2017 Virginia Championship Commission, Inc.-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--Developed by Cole Inman.-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--<a class="github" href="https://github.com/coletrane">-->
+          <!--<font-awesome-icon :icon="faGithub"/>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 <script>
   import LogosFourCols from './LogosFourCols'
-  import LogosThreeCols from "./LogosTwoCols"
+  import LogosThreeCols from './LogosTwoCols'
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
-  import {
-    s3Sponsors,
-    s3StaticImg
-  } from "../../scripts/routes"
-  import {
-    noExtension,
-    justExtension
-  } from '../../assets/functions'
+  import {s3Sponsors, s3StaticImg} from '../../scripts/routes'
+  import {noExtension, justExtension} from '../../assets/functions'
 
   export default {
     name: 'mtbva-footer',
@@ -50,18 +43,18 @@
         sponsors: [
           {
             img: `${s3Sponsors}/va-blueridge.png`,
-            class: "blueridge",
-            url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
+            class: 'blueridge',
+            url: 'https://www.visitroanokeva.com/region/blue-ridge-mountains/'
           },
           {
             img: `${s3Sponsors}/parkway.png`,
-            class: "parkway",
-            url: "http://parkwaybrewing.com/"
+            class: 'parkway',
+            url: 'http://parkwaybrewing.com/'
           },
           {
             img: `${s3Sponsors}/starlight.png`,
-            class: "starlight",
-            url: "https://www.starlightapparel.com/"
+            class: 'starlight',
+            url: 'https://www.starlightapparel.com/'
           },
           {
             img: `${s3Sponsors}/deschutes.png`,
@@ -70,33 +63,33 @@
           },
           {
             img: `${s3Sponsors}/bath.png`,
-            class: "bath",
-            url: "http://discoverbath.com/"
+            class: 'bath',
+            url: 'http://discoverbath.com/'
           },
           {
             img: `${s3Sponsors}/sbc.png`,
-            class: "sbc",
-            url: "http://www.shenandoahbicycle.com/"
+            class: 'sbc',
+            url: 'http://www.shenandoahbicycle.com/'
           },
           {
             img: `${s3Sponsors}/jtrg.png`,
-            class: "jtrg",
-            url: "http://justtherightgear.com/"
+            class: 'jtrg',
+            url: 'http://justtherightgear.com/'
           },
           {
             img: `${s3Sponsors}/east-coasters.png`,
-            class: "east-coasters",
-            url: "https://eastcoasters.com/"
+            class: 'east-coasters',
+            url: 'https://eastcoasters.com/'
           },
           {
             img: `${s3Sponsors}/alleghany.png`,
-            class: "alleghany",
-            url: "http://www.visitalleghanyhighlands.com/main/index.php"
+            class: 'alleghany',
+            url: 'http://www.visitalleghanyhighlands.com/main/index.php'
           },
           {
             img: `${s3Sponsors}/blackwater.png`,
-            class: "blackwater",
-            url: "http://www.blackwaterbikeshop.com/"
+            class: 'blackwater',
+            url: 'http://www.blackwaterbikeshop.com/'
           },
           // {
           //   img: `${s3Sponsors}/outdoortrails.jpg`,
@@ -105,13 +98,13 @@
           // },
           {
             img: `${s3Sponsors}/woods.png`,
-            class: "woods",
-            url: "http://woodsac.com/"
+            class: 'woods',
+            url: 'http://woodsac.com/'
           },
           {
             img: `${s3Sponsors}/tavern.png`,
-            class: "tavern",
-            url: "http://jackmasonstavern.com/"
+            class: 'tavern',
+            url: 'http://jackmasonstavern.com/'
           }
         ],
         mobile: true,
@@ -148,7 +141,7 @@
         let limit = this.$el.offsetTop + this.$el.offsetHeight
         let backgroundPos
         if (scrolled > offset && scrolled <= limit) {
-          backgroundPos = `${(scrolled - offset) / -3}px`;
+          backgroundPos = `${(scrolled - offset) / -3}px`
         } else {
           backgroundPos = `0px`
         }
@@ -158,13 +151,6 @@
       },
       handleResize() {
         this.width = document.body.clientWidth
-      }
-    },
-    computed:  {
-      backgroundImageStyles() {
-        return {
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('${s3StaticImg}/blue_ridge_mountains.jpg');`
-        }
       }
     },
     watch: {
@@ -182,6 +168,7 @@
     background-size: 3000px;
     background-position-x: center;
     background-position-y: 0px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg');
   }
 
   @media (max-width: 700px) {
@@ -229,6 +216,7 @@
     color: white;
     font-size: 2rem;
   }
+
   .github:hover {
     color: white;
   }

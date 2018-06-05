@@ -9,19 +9,11 @@
     <banner/>
     <div class="main-content"
          :style="backgroundImage">
-      <page-0 v-if="$store.state.routes.currentPage >= 0"
-              :key="0"/>
-      <page-1 v-if="$store.state.routes.currentPage >= 1"
-              :key="1"/>
-      <page-2 v-if="$store.state.routes.currentPage >= 2"
-              :key="2"/>
-      <div v-if="showLoadMore"
-           class="load-more">
-        <button class="btn btn-outline-primary white-btn"
-                @click="loadMore()"
-                id="load-more-btn">
-          NEXT PAGE
-        </button>
+      <div v-for="(page, i) of pages">
+        <component v-if="$store.state.routes.currentPage >= i"
+                   :is="AbstractPage"
+                   v-bind="{page: i}"/>
+        <m-t-b-v-a-footer v-if="i === 0"/>
       </div>
     </div>
   </div>
@@ -29,16 +21,12 @@
 <script>
   import MTBVAHeader from '../components/Header/MTBVAHeader'
   import Banner from '../components/Das/Banner'
+  import MTBVAFooter from '../components/Footer/MTBVAFooter'
 
   import {home} from '../assets/head-tags'
   import {headTags} from '../assets/functions'
   import {s3StaticImg, s3Banners} from '../scripts/routes'
   import backgroundImage from '../assets/mixins/background-image'
-
-  // Pages
-  const Page0 = () => import('../components/BlogPages/Page0')
-  const Page1 = () => import('../components/BlogPages/Page1')
-  const Page2 = () => import('../components/BlogPages/Page2')
 
   const foliage = `${s3StaticImg}/foliage.jpg`
 
@@ -47,9 +35,7 @@
     components: {
       MTBVAHeader,
       Banner,
-      Page0,
-      Page1,
-      Page2
+      MTBVAFooter
     },
     mixins: [
       backgroundImage
@@ -74,7 +60,19 @@
     data() {
       return {
         img: foliage,
-        s3Banners: s3Banners
+        s3Banners: s3Banners,
+        pages: new Array(3),
+        AbstractPage: () => import('../components/AbstractPage')
+      }
+    },
+    mounted() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll)
+      }
+    },
+    destroyed() {
+      if (process.browser) {
+        window.removeEventListener('scroll', this.handleScroll)
       }
     },
     computed: {
@@ -84,6 +82,11 @@
       }
     },
     methods: {
+      handleScroll() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          this.loadMore()
+        }
+      },
       async loadMore() {
         await this.$store.dispatch('incrementPage')
       }

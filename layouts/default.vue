@@ -16,7 +16,7 @@
         <nuxt/>
       </transition>
     </div>
-    <div>
+    <div v-if="$route.name !== 'index'">
       <m-t-b-v-a-footer/>
     </div>
   </div>
