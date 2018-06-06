@@ -6,19 +6,20 @@
       <logos-four-cols v-else
                        :sponsors="sponsors"/>
     </div>
-    <!--<div class="copyright">-->
-      <!--<div>-->
-        <!--© 2017 Virginia Championship Commission, Inc.-->
-      <!--</div>-->
-      <!--<div>-->
-        <!--Developed by Cole Inman.-->
-      <!--</div>-->
-      <!--<div>-->
-        <!--<a class="github" href="https://github.com/coletrane">-->
-          <!--<font-awesome-icon :icon="faGithub"/>-->
-        <!--</a>-->
-      <!--</div>-->
-    <!--</div>-->
+    <div class="copyright">
+      <div>
+        © 2017 Virginia Championship Commission, Inc.
+      </div>
+      <div>
+        Developed by Cole Inman.
+      </div>
+      <div>
+        <a class="github" href="https://github.com/coletrane">
+          <font-awesome-icon :icon="faGithub"/>
+        </a>
+      </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
