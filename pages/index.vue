@@ -13,7 +13,12 @@
         <component v-if="$store.state.routes.currentPage >= i"
                    :is="AbstractPage"
                    v-bind="{page: i}"/>
-        <m-t-b-v-a-footer v-if="i === 0"/>
+        <m-t-b-v-a-footer v-if="i === 0"
+                          :copyright="false"
+                          :style="{
+                            marginTop: '4rem',
+                            marginBottom: '4rem'
+                          }"/>
       </div>
     </div>
   </div>
@@ -83,7 +88,8 @@
     },
     methods: {
       handleScroll() {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        const loadThreshold = ((window.innerHeight + window.scrollY) + 5000)
+        if (loadThreshold >= document.body.offsetHeight) {
           this.loadMore()
         }
       },

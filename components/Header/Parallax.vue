@@ -1,7 +1,10 @@
 <template>
   <div class="parallax"
-       :style="styles">
-    <div class="hero">
+       :style="">
+    <img :src="src"
+         :alt="alt"
+         class="hero-image"/>
+    <div class="hero-text">
       <slot name="hero"/>
     </div>
   </div>
@@ -17,45 +20,6 @@
         default: 600
       },
       src: String
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener('scroll', this.handleScroll)
-        window.addEventListener('resize', this.handleResize)
-      }
-    },
-    mounted() {
-      if (process.browser) {
-        this.handleResize()
-      }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener('scroll', this.handleScroll)
-        window.removeEventListener('resize', this.handleResize)
-      }
-    },
-    methods: {
-      handleScroll() {
-        let scrolled = window.pageYOffset
-        let limit = this.$el.offsetTop + this.$el.offsetHeight
-        let backgroundPos
-        if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-          backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 3}px`
-        } else {
-          backgroundPos = '0px'
-        }
-        window.requestAnimationFrame(() => {
-          this.$el.style.backgroundPositionY = backgroundPos
-        })
-      },
-      handleResize() {
-        if (document.body.clientWidth <= 600) {
-          this.$el.style.height = `${this.height - 300}px`
-        } else {
-          this.$el.style.height = `${this.height}px`
-        }
-      }
     },
     computed: {
       styles() {
@@ -73,14 +37,48 @@
   .parallax {
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: -1;
     background-position-x: center;
     background-position-y: 0px;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 1200px;
+  }
+  @media (max-width: 1000px) {
+    .parallax {
+      height: 900px;
+    }
+  }
+  @media (max-width: 700px) {
+    .parallax {
+      height: 720px;
+    }
   }
 
-  .hero {
+  .hero-image {
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  @media (max-width: 1000px) {
+    .hero-image {
+      width: 130%;
+      left: -12%;
+    }
+  }
+  @media (max-width: 700px) {
+    .hero-image {
+      width: 200%;
+      left: -44%;
+      top: -10%;
+    }
+  }
+
+  .hero-text {
     color: white;
     height: 100%;
     z-index: 2;

@@ -1,7 +1,7 @@
 {
   "title": "30th Annual Massanutten Hoo-Ha!",
-  "subtitle": "The second epic race in the XXC-VA Marathon MTB Series!",
-  "description": "",
+  "subtitle": "Came Hell or high water (the latter delivered in tidal waves),  the 30th Massanutten Hoo-Ha! is in the books.",
+  "description": "Coverage of the 30th annual Massanutten Hoo-Ha enduro xc and xxc bike race in Keezletown Virginia, just outside of Harrisonburg.",
   "author": "kyle",
   "date": "June 3, 2018, 9:00",
   "loc": "Massanutten Western Slope, Keezletown, VA",
@@ -10,10 +10,10 @@
   "schema": {
     "type": "NewsArticle"
   },
-  "imgRoute": "hoo-ha-flyer.jpg",
+  "imgRoute": "IMG_3692.jpg",
   "relatedPosts": [
     "middle-mt-momma-2018",
     "rockstar-va-2018"
   ],
-  "keywords": "race, massanutten, harrisonburg, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva, xxc, enduro, bike race, mountain bike race"
+  "keywords": "race, massanutten, harrisonburg, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva, xxc, enduro, bike race, mountain bike race xcm, xco"
 }

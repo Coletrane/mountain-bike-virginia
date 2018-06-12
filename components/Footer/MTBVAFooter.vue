@@ -6,7 +6,8 @@
       <logos-four-cols v-else
                        :sponsors="sponsors"/>
     </div>
-    <div class="copyright">
+    <div v-if="copyright"
+         class="copyright">
       <div>
         © 2017 Virginia Championship Commission, Inc.
       </div>
@@ -18,7 +19,6 @@
           <font-awesome-icon :icon="faGithub"/>
         </a>
       </div>
-      </div>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
-  import {s3Sponsors, s3StaticImg} from '../../scripts/routes'
+  import {s3Sponsors} from '../../scripts/routes'
   import {noExtension, justExtension} from '../../assets/functions'
 
   export default {
@@ -37,6 +37,13 @@
       LogosThreeCols,
       LogosFourCols,
       FontAwesomeIcon
+    },
+    props: {
+      copyright: {
+        type: Boolean,
+        required: false,
+        default: true
+      }
     },
     data() {
       return {

@@ -43,4 +43,11 @@
   img[lazy=error] {
     width: 25% !important;
   }
+
+  @media (min-width: 1200px) {
+    div {
+      max-height: 250px;
+      overflow: hidden;
+    }
+  }
 </style>

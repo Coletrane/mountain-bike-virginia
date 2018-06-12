@@ -16,17 +16,11 @@ module.exports = (browser) => {
       driver = await global.driver
       expect = await global.expect
 
-      for (let i = 1; i < numberOfPages; i++) {
-        let loadMoreButton = await driver.findElement(
-          By.id('load-more-btn'))
-        if (await loadMoreButton) {
-          console.log('Clicking Load More button')
-          driver.executeScript('document.getElementById(\'load-more-btn\').click();')
-          await driver.sleep(3000)
-        }
+
+      for (const [i, post] of posts.entries()) {
+        await driver.executeScript(`scroll(0,${i * 3000});`)
       }
 
-      console.log('New page sleep over!')
 
       cards = await driver.findElements(
         By.className('card-container'))

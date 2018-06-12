@@ -84,7 +84,7 @@
 <style>
 
   .mtbva-header {
-    background-color: black;
+    /*background-color: black;*/
   }
 
   .hero-content {
@@ -109,7 +109,7 @@
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
 
     .mtbva-title {
       font-size: 4rem;

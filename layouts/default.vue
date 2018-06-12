@@ -16,9 +16,7 @@
         <nuxt/>
       </transition>
     </div>
-    <div v-if="$route.name !== 'index'">
-      <m-t-b-v-a-footer/>
-    </div>
+    <m-t-b-v-a-footer/>
   </div>
 </template>
 <script>
@@ -129,7 +127,7 @@
   }
 
   .app-fade-wrapper {
-    background-color: black;
+    /*background-color: black;*/
   }
   .app-fade-enter-active {
     transition: opacity 1s;
@@ -174,6 +172,7 @@
     background-position-y: 0px;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    z-index: 2;
   }
 
   @media (min-width: 1200px) {

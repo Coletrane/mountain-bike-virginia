@@ -48,7 +48,7 @@ const silverIdx = _.findIndex(posts, post => post.route === 'events/roanoke-silv
 if (silverIdx === -1) {
   throw new Error('')
 }
-posts = arrayMove(posts, silverIdx , 0)
+posts = arrayMove(posts, silverIdx , 2)
 
 const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
 const mmmVideoIdx = _.findIndex(posts, post => post.route === 'videos/middle-mountain-momma-2018-video')
