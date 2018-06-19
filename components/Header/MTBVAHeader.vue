@@ -1,7 +1,6 @@
 <template>
   <div class="mtbva-header">
-    <parallax :src="image"
-              :height="1000">
+    <parallax :src="image">
       <div slot="hero"
            class="hero-container">
         <div class="hero-content">
@@ -36,11 +35,6 @@
       Parallax
     },
     props: {
-      headerHeight: {
-        type: Number,
-        required: false,
-        default: 600
-      },
       image: {
         type: String,
         required: true
@@ -84,7 +78,7 @@
 <style>
 
   .mtbva-header {
-    /*background-color: black;*/
+    background-color: black;
   }
 
   .hero-content {

@@ -2,7 +2,6 @@ import {s3Banners} from '../scripts/routes'
 
 export default {
   state: {
-    allBannersLoaded: false,
     banners: [
       {
         url: 'https://viralstyle.com/store/angelo-wash/Sketchcollect',
@@ -43,19 +42,10 @@ export default {
         })
       }
 
-      // Fire off an action to signal all banners are loaded
-      if (!context.state.allBannersLoaded &&
-          context.state.banners.filter(banner => !banner.displayed).length === 0) {
-        context.dispatch('allBannersLoaded')
-      }
-
       return random
     },
     bannerDisplayed: (context, banner) => {
       context.commit('BANNER_DISPLAYED', banner)
-    },
-    allBannersLoaded: (context) => {
-      context.commit('ALL_BANNERS_LOADED')
     },
     emptyBanners: (context) => {
       context.commit('EMPTY_BANNERS')
@@ -67,11 +57,18 @@ export default {
       state.banners.find(ban => ban.url === banner.url).displayed = true
     },
     ALL_BANNERS_LOADED: (state) => {
-      state.allBannersLoaded = true
     },
     EMPTY_BANNERS: (state) => {
-      state.allBannersLoaded = false
       state.banners.map(banner => banner.displayed = false)
     }
   },
+
+  getters: {
+    allBannersDisplayed: state => {
+      const displayedBanners = state.banners.filter(banner => {
+        return banner.displayed === true
+      })
+      return displayedBanners.length === state.banners.length
+    }
+  }
 }

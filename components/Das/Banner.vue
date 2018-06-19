@@ -30,7 +30,6 @@
     }
   }
 </script>
-
 <style scoped>
   img[lazy=loading] {
     width: 25% !important;

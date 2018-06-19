@@ -24,7 +24,6 @@
   import MTBVAMenu from '../components/Header/MTBVAMenu'
   import Navigation from '../components/Header/Navigation'
 
-
   export default {
     name: 'app',
     components: {
@@ -127,8 +126,9 @@
   }
 
   .app-fade-wrapper {
-    /*background-color: black;*/
+    background-color: black;
   }
+
   .app-fade-enter-active {
     transition: opacity 1s;
   }
@@ -177,15 +177,15 @@
 
   @media (min-width: 1200px) {
     .main-content {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
   @media (max-width: 575px) {
     .main-content {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     .headline {
@@ -244,5 +244,4 @@
     background-image: linear-gradient(rgba(115, 165, 51, 0.85) 0%, rgba(115, 165, 51, 0.85) 100%);
     background-size: 100% 1em;
   }
-
 </style>

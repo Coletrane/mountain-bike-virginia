@@ -61,7 +61,7 @@ const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
 if (ravenIdx === -1) {
   throw new Error('')
 }
-posts = arrayMove(posts, ravenIdx, ravenIdx + 13)
+posts = arrayMove(posts, ravenIdx, ravenIdx + 3)
 
 
 // Make sure there are no duplicates
@@ -78,8 +78,8 @@ posts.forEach(post => {
 
 // Initialize the pagination (sortof)
 const postsPerPage = [
-  9,
-  9
+  10,
+  10,
 ]
 postsPerPage.push(
   postsOrder.length - postsPerPage

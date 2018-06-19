@@ -1,5 +1,6 @@
 <template>
-  <div class="mtbva-footer">
+  <div class="mtbva-footer"
+       :class="backgroundClass">
     <div class="sponsors-container">
       <logos-three-cols v-if="mobile"
                         :sponsors="sponsors"/>
@@ -28,7 +29,7 @@
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
   import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 
-  import {s3Sponsors} from '../../scripts/routes'
+  import {s3Sponsors, s3StaticImg} from '../../scripts/routes'
   import {noExtension, justExtension} from '../../assets/functions'
 
   export default {
@@ -167,7 +168,16 @@
           this.mobile = document.body.clientWidth <= 850
         }
       }
-    }
+    },
+    computed: {
+        backgroundClass() {
+          if (process.env === 'production') {
+            return 'mtbva-footer-image-prod'
+          } else {
+            return 'mtbva-footer-image-dev'
+          }
+        }
+      }
   }
 </script>
 <style>
@@ -176,7 +186,12 @@
     background-size: 3000px;
     background-position-x: center;
     background-position-y: 0px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.69)), url('http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg');
+  }
+  .mtbva-footer-image-dev {
+    background-image:  url("http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg");
+  }
+  .mtbva-footer-image-prod {
+    background-image:  url("https://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg");
   }
 
   @media (max-width: 700px) {
