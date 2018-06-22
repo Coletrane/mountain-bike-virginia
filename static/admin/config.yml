@@ -1,0 +1,11 @@
+backend:
+  name: git-gateway
+  branch: master
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts/"
+    create: true
+    slug: {{slug}}
+    fields:
+      - {}
