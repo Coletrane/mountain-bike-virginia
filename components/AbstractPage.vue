@@ -18,7 +18,6 @@
   import Banner from './Das/Banner'
 
   import {routeToComponentFilename} from '../assets/functions'
-  import {schemaTypes} from '../assets/schmea-types'
 
   export default {
     name: 'abstract-page',
@@ -55,7 +54,7 @@
     methods: {
       async loadPostComponent(postRoute) {
         let post = this.$store.getters.posts(postRoute)
-        
+
         if (post) {
           const filename = routeToComponentFilename(postRoute)
           let postComponent = {
@@ -69,13 +68,9 @@
             if (post.ytSrc) {
               const videoPromo = await import('@/components/Card/VideoPromoCard')
               postComponent.component = videoPromo.default
-            } else if (post.schema.type === schemaTypes.article) {
+            } else {
               const blogPromo = await import('@/components/Card/BlogPostPromoCard')
               postComponent.component = blogPromo.default
-            } else {
-              // Website is in middle of a deployment and routes json is out of sync with .js files on the server
-              const cardPlaceholder = await import('@/components/Card/PostCardPlaceholder')
-              postComponent.component = cardPlaceholder.default
             }
           } finally {
             this.postComponents.push(postComponent)
