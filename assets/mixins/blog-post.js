@@ -13,7 +13,7 @@ export default {
     await context.store.dispatch('loadPosts', [
       route
     ])
-    const currentPost = context.store.getters.getPost(route)
+    const currentPost = context.store.getters.posts(route)
 
     await context.store.dispatch('loadPosts',
       currentPost.relatedPosts
@@ -21,7 +21,7 @@ export default {
 
     const postInstance = {
       post: currentPost,
-      relatedPosts: context.store.getters.getPosts(
+      relatedPosts: context.store.getters.posts(
         currentPost.relatedPosts
       ),
       img: `${s3Pages}/${route}/`
@@ -46,7 +46,7 @@ export default {
         throw new Error (`${route.name} route.matched has nothing!`)
       }
 
-      return this.blogHeadTags(this.$store.getters.getPost(route))
+      return this.blogHeadTags(this.$store.getters.posts(route))
     }
   },
   props: {

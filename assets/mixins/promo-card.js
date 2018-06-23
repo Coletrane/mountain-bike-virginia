@@ -7,7 +7,7 @@ const directories = [
 export default {
   data() {
     return {
-      post: this.$store.getters.getPost(this.componentRoute())
+      post: this.$store.getters.posts(this.componentRoute())
     }
   },
   methods: {

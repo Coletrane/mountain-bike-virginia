@@ -4,7 +4,7 @@
              :related-posts="relatedPosts">
     <div slot="content">
       <div class="blog-p">
-        The entry fee for the <a :href="$store.getters.getPost('rockstar-va-2018').fbEvent">RockStar VA</a> race/ride captures the spirit of backcountry riding exquisitely. Entrants can either donate to a trail work advocacy group, or complete 10 hours of trail work. Seeing as the latter involves me out exploring and riding, the trail work option was the only choice. Armed with information from <a href="https://www.facebook.com/robert.issem">Rob Issem</a> me and my father set out to clear the Hoop Hole Iron Ore trail.
+        The entry fee for the <a :href="$store.getters.posts('rockstar-va-2018').fbEvent">RockStar VA</a> race/ride captures the spirit of backcountry riding exquisitely. Entrants can either donate to a trail work advocacy group, or complete 10 hours of trail work. Seeing as the latter involves me out exploring and riding, the trail work option was the only choice. Armed with information from <a href="https://www.facebook.com/robert.issem">Rob Issem</a> me and my father set out to clear the Hoop Hole Iron Ore trail.
       </div>
       <blog-image :src="img + 'hoop-hole-sign.jpg'"/>
       <div class="blog-p">

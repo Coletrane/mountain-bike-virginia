@@ -10,9 +10,8 @@
     <div class="main-content"
          :style="backgroundImage">
       <div v-for="(page, i) of pages">
-        <component v-if="$store.state.routes.currentPage >= i"
-                   :is="AbstractPage"
-                   v-bind="{page: i}"/>
+        <abstract-page v-if="$store.state.posts.currentPage > i"
+                       :page="i"/>
         <m-t-b-v-a-footer v-if="i === 0"
                           :copyright="false"
                           :style="{
@@ -27,10 +26,13 @@
   import MTBVAHeader from '../components/Header/MTBVAHeader'
   import Banner from '../components/Das/Banner'
   import MTBVAFooter from '../components/Footer/MTBVAFooter'
+  import AbstractPage from '../components/AbstractPage'
 
   import {home} from '../assets/head-tags'
   import {headTags} from '../assets/functions'
   import {s3StaticImg, s3Banners} from '../scripts/routes'
+  import {numPages} from '../store/posts'
+
   import backgroundImage from '../assets/mixins/background-image'
 
   const foliage = `${s3StaticImg}/foliage.jpg`
@@ -40,16 +42,15 @@
     components: {
       MTBVAHeader,
       Banner,
-      MTBVAFooter
+      MTBVAFooter,
+      AbstractPage
     },
     mixins: [
       backgroundImage
     ],
     async asyncData(context) {
-      await context.store.dispatch('loadPage', 0)
       return await context.store.dispatch(
-        'loadPosts',
-        context.store.state.routes.pages[0])
+        'loadPage')
     },
     head() {
       return headTags(
@@ -66,8 +67,7 @@
       return {
         img: foliage,
         s3Banners: s3Banners,
-        pages: new Array(3),
-        AbstractPage: () => import('../components/AbstractPage')
+        pages: new Array(numPages),
       }
     },
     mounted() {
@@ -80,21 +80,25 @@
         window.removeEventListener('scroll', this.handleScroll)
       }
     },
-    computed: {
-      showLoadMore() {
-        return this.$store.state.routes.currentPage <
-               this.$store.state.routes.numberOfPages - 1
-      }
-    },
     methods: {
-      handleScroll() {
+      async handleScroll() {
+        if (this.$store.state.posts.currentPage === numPages) {
+          window.removeEventListener('scroll', this.handleScroll)
+          return
+        }
+        if (this.loadingMore) {
+          return
+        }
+
         const loadThreshold = ((window.innerHeight + window.scrollY) + 5000)
         if (loadThreshold >= document.body.offsetHeight) {
-          this.loadMore()
+          this.loadingMore = true
+          await this.loadMore()
+          this.loadingMore = false
         }
       },
       async loadMore() {
-        await this.$store.dispatch('incrementPage')
+        await this.$store.dispatch('loadPage')
       }
     }
   }

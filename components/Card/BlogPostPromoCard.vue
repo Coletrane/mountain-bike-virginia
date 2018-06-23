@@ -8,21 +8,20 @@
     </div>
   </post-card>
 </template>
-
 <script>
-  import PostCard from '../../Card/PostCard'
-  import ImageLink from '../../Images/ImageLink'
+  import PostCard from '../Card/PostCard'
+  import ImageLink from '../Images/ImageLink'
 
-  import promoCard from '../../../assets/mixins/promo-card'
+  import abstractPromoCard from '../../assets/mixins/abstract-promo-card'
 
   export default {
-    name: 'events-night-riders-ball-alleycat-2018-promo',
+    name: 'blog-post-promo-card',
     components: {
       PostCard,
       ImageLink
     },
     mixins: [
-      promoCard
+      abstractPromoCard
     ]
   }
 </script>
