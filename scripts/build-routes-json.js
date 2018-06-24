@@ -37,7 +37,6 @@ postJsonFiles.forEach(file => {
   posts.push(post)
 })
 
-
 // Sort the posts by date
 posts.sort((a, b) => {
   return new Date(b.date) - new Date(a.date)
@@ -48,21 +47,20 @@ const silverIdx = _.findIndex(posts, post => post.route === 'events/roanoke-silv
 if (silverIdx === -1) {
   throw new Error('')
 }
-posts = arrayMove(posts, silverIdx , 2)
+posts = arrayMove(posts, silverIdx, 2)
 
 const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
 const mmmVideoIdx = _.findIndex(posts, post => post.route === 'videos/middle-mountain-momma-2018-video')
 if (mmmIdx === -1 || mmmVideoIdx === -1) {
   throw new Error('')
 }
-posts = arrayMove(posts, mmmIdx , mmmVideoIdx)
+posts = arrayMove(posts, mmmIdx, mmmVideoIdx)
 
 const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
 if (ravenIdx === -1) {
   throw new Error('')
 }
 posts = arrayMove(posts, ravenIdx, ravenIdx + 3)
-
 
 // Make sure there are no duplicates
 if (_.uniq(posts).length !== posts.length) {
@@ -79,11 +77,10 @@ posts.forEach(post => {
 // Initialize the pagination (sortof)
 const postsPerPage = [
   10,
-  10,
+  10
 ]
 postsPerPage.push(
-  postsOrder.length - postsPerPage
-                      .reduce((accumulator, currentValue) => {
+  postsOrder.length - postsPerPage.reduce((accumulator, currentValue) => {
                         return accumulator + currentValue
                       })
 )

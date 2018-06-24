@@ -1,8 +1,4 @@
-const directories = [
-  'videos',
-  'events',
-  'external'
-]
+import {postDirs} from '../../constants'
 
 export default {
   data() {
@@ -14,7 +10,7 @@ export default {
     componentRoute() {
       let componentRoute = ''
       let nameSplit = this.$options.name.split('-')
-      if (directories.find(dir => dir === nameSplit[0])) {
+      if (postDirs.find(dir => dir === nameSplit[0])) {
         componentRoute = `${nameSplit[0]}/`
         nameSplit.splice(0, 1)
       }
