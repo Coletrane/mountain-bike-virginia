@@ -16,7 +16,6 @@ let postRoute
 while (!postRoute) {
   postRoute = rl.question('What is this post\'s route? ')
 }
-
 let post = {}
 while (!post.title) {
   post.title = rl.question('Title: ')
@@ -117,7 +116,9 @@ const createPostJson = (dir, route, post) => {
     'utf-8',
     (err, data) => {
       if (err) {
-        console.log(err)
+        return Promise.reject(err)
+      } else {
+        return Promise.resolve()
       }
     }
   )
@@ -163,7 +164,9 @@ const createPostComponent = (dir, route, post) => {
         'utf-8',
         (err, data) => {
           if (err) {
-            console.log(err)
+            return Promise.reject(err)
+          } else {
+            return Promise.resolve()
           }
         }
       )
@@ -188,7 +191,9 @@ const createCustomPromoCard = (dir, route) => {
         'utf-8',
         (err, data) => {
           if (err) {
-            console.log(err)
+            return Promise.reject(err)
+          } else {
+            return Promise.resolve()
           }
         })
     })
@@ -217,32 +222,55 @@ const createImageDir = (dir, route) => {
   }
 }
 
+const fileNeedsResponsiveImage = (files, file) => {
+  return (file.endsWith('.jpg')  || file.endsWith('.png')) &&
+         !file.endsWith('-1280.jpg') && !file.endsWith('-1280.png') &&
+         !file.endsWith('-720.jpg') && !file.endsWith('-720.png') &&
+         !file.endsWith('-480.jpg') && !file.endsWith('-480.png')
+}
+
 const generateResponsiveImages = (dir, route) => {
   fs.readdir(s3ImgDir(dir, route), (err, files) => {
     files.forEach((file) => {
-      if (file.endsWith('.jpg') || file.endsWith('.png')) {
+      if (fileNeedsResponsiveImage(files, file)) {
         const origFile = `${s3ImgDir(dir, route)}/${file}`
         const fileWith1280 = resImgPath(dir, route, file, 1280)
+
         sharp(origFile)
           .resize(1280)
           .toFile(fileWith1280)
-          .then((data) => {
+          .then(data => {
+            // https://nodejs.org/api/fs.html#fs_fs_promises_api see when that is not experimental
             fs.unlink(origFile, (err) => {
-              fs.rename(fileWith1280, origFile, (err) => {})
+              if (err) {
+                return Promise.reject(err)
+              } else {
+                fs.rename(fileWith1280, origFile, (err) => {
+                  if (err) {
+                    return Promise.reject(err)
+                  } else {
+                    sharp(origFile)
+                      .resize(720)
+                      .toFile(resImgPath(dir, route, file, 720))
+                      .then(data => {
+                        sharp(origFile)
+                          .resize(480)
+                          .toFile(resImgPath(dir, route, file, 480))
+                          .then(data => {
+                            return Promise.resolve()
+                          })
+                    })
+                  }
+                })
+              }
             })
           })
-
-        sharp(origFile)
-          .resize(720)
-          .toFile(resImgPath(dir, route, file, 720))
-
-        sharp(origFile)
-          .resize(480)
-          .toFile(resImgPath(dir, route, file, 480))
+          .catch(err => {
+            console.log(file, err)
+            return Promise.reject(err)
+          })
       }
     })
   })
+  return Promise.resolve()
 }
-
-
-createPostComponent(postDir, postRoute, {})
