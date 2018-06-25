@@ -1,11 +1,9 @@
-import routesState from '../../store/routes'
+import {numPages} from '../../store/posts'
 import { posts } from '../../scripts/build-routes-json'
 
 module.exports = (browser) => {
   const global = require(`./global.${browser}.spec`)
   const By = require('selenium-webdriver').By
-
-  const numberOfPages = routesState.state.numberOfPages
 
   describe('<home> tests', () => {
     let driver
@@ -26,8 +24,8 @@ module.exports = (browser) => {
         By.className('card-container'))
     })
 
-    it('should have cards', async () => {
-      expect(cards.length > 0)
+    it(`should have ${posts.length} posts`, async () => {
+      expect(cards.length === posts.length)
         .to.be.true
     })
 
