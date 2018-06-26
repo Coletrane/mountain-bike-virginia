@@ -1,58 +1,63 @@
 // Packages
-const fs = require('fs')
-const path = require('path')
-const readdirRecursive = require('recursive-readdir')
-const rl = require('readline-sync')
-const sharp = require('sharp')
-const imagemin = require('imagemin')  // TODO
-const execa = require('execa')
-const Listr = require('listr')
+const fs = require("fs")
+const path = require("path")
+const readdirRecursive = require("recursive-readdir")
+const rl = require("readline-sync")
+const sharp = require("sharp")
+const imagemin = require("imagemin") // TODO
+const execa = require("execa")
+const Listr = require("listr")
 
 // Internal
-const constants = require('../constants')
+const constants = require("../constants")
 // const buildRoutes = require('./build-routes-json')
 
-const postDir = constants.postDirs[rl.keyInSelect(constants.postDirs, 'What category is this post? ')]
+const postDir =
+  constants.postDirs[
+    rl.keyInSelect(constants.postDirs, "What category is this post? ")
+  ]
 let postRoute
 while (!postRoute) {
-  postRoute = rl.question('What is this post\'s route? ')
+  postRoute = rl.question("What is this post's route? ")
 }
 let customPromoCard
 let newJson
 if (fs.existsSync(`./json/posts/${postDir}/${postRoute}.json`)) {
-  newJson = rl.keyInYNStrict('There is already a JSON file for this post, would you like to use it? ')
+  newJson = rl.keyInYNStrict(
+    "There is already a JSON file for this post, would you like to use it? "
+  )
 }
 let post = {}
 if (!newJson) {
   while (!post.title) {
-    post.title = rl.question('Title: ')
+    post.title = rl.question("Title: ")
   }
   while (!post.subtitle) {
-    post.subtitle = rl.question('Subtitle: ')
+    post.subtitle = rl.question("Subtitle: ")
   }
   while (!post.description) {
-    post.description = rl.question('Description: ')
+    post.description = rl.question("Description: ")
   }
   while (!fs.existsSync(`./json/authors/${post.author}.json`)) {
-    post.author = rl.question('Author: ')
+    post.author = rl.question("Author: ")
   }
   while (isNaN(Date.parse(post.date))) {
-    post.date = rl.question('Date: ')
+    post.date = rl.question("Date: ")
   }
   while (!post.loc) {
-    post.loc = rl.question('Location: ')
+    post.loc = rl.question("Location: ")
   }
   while (!post.imgRoute) {
-    post.imgRoute = rl.question('Image Route: ')
+    post.imgRoute = rl.question("Image Route: ")
   }
   while (!post.keywords) {
-    post.keywords = rl.question('Keywords: ')
+    post.keywords = rl.question("Keywords: ")
   }
   let numRelatedPosts = -1
   while (numRelatedPosts < 0) {
-    numRelatedPosts = rl.questionInt('How many related posts? ')
+    numRelatedPosts = rl.questionInt("How many related posts? ")
   }
-  let posts = fs.readdirSync('./json/posts/')
+  let posts = fs.readdirSync("./json/posts/")
   constants.postDirs.forEach(dir => {
     posts.splice(posts.indexOf(dir), 1)
     const dirPosts = fs.readdirSync(`./json/posts/${dir}`)
@@ -68,55 +73,59 @@ if (!newJson) {
       post.relatedPosts[i] = rl.question(`related post ${i}: `)
     }
   }
-  if (postDir === 'videos') {
+  if (postDir === "videos") {
     while (!post.ytSrc) {
-      post.ytSrc = rl.question('Youtube Embed URL: ')
+      post.ytSrc = rl.question("Youtube Embed URL: ")
     }
   } else {
     post.schema = {
-      type: 'NewsArticle'
+      type: "NewsArticle"
     }
   }
 }
-customPromoCard = rl.keyInYNStrict('Would you like a custom Promo Card Component? ')
+customPromoCard = rl.keyInYNStrict(
+  "Would you like a custom Promo Card Component? "
+)
 
 let taskArr = []
 if (!newJson) {
   taskArr.push({
-    title: 'Creating JSON File',
+    title: "Creating JSON File",
     task: () => createPostJson(postDir, postRoute, post)
   })
 }
 
 taskArr = taskArr.concat([
   {
-    title: 'Moving JSON to local S3 bucket',
+    title: "Moving JSON to local S3 bucket",
     task: () => {
-      execa('rsync', ['./json/* ../mtbva-s3-bucket;'], ['--checksum --delete -r -v '])
-        .stdout.pipe(process.stdout)
-
+      execa(
+        "rsync",
+        ["./json/* ../mtbva-s3-bucket;"],
+        ["--checksum --delete -r -v "]
+      ).stdout.pipe(process.stdout)
     }
   },
   {
-    title: 'Creating image directory',
+    title: "Creating image directory",
     task: () => createImageDir(postDir, postRoute)
   },
   {
-    title: 'Creating responsive images',
+    title: "Creating responsive images",
     task: () => generateResponsiveImages(postDir, postRoute)
   },
   {
-    title: 'Minifying images',
+    title: "Minifying images",
     task: () => {}
   },
   {
-    title: 'Creating Post Component',
+    title: "Creating Post Component",
     task: () => createPostComponent(postDir, postRoute, post)
   }
 ])
 if (customPromoCard) {
   taskArr.push({
-    title: 'Creating Custom Promo Card',
+    title: "Creating Custom Promo Card",
     task: () => createCustomPromoCard(postDir, postRoute)
   })
 }
@@ -125,14 +134,13 @@ const tasks = new Listr(taskArr)
 
 tasks.run()
 
-
 // File System stuff
 
 const createPostJson = (dir, route, post) => {
   fs.writeFile(
     `./json/posts/${dir}/${route}.json`,
     JSON.stringify(post, null, 2),
-    'utf-8',
+    "utf-8",
     (err, data) => {
       if (err) {
         return Promise.reject(err)
@@ -144,41 +152,75 @@ const createPostJson = (dir, route, post) => {
 }
 
 const createPostComponent = (dir, route, post) => {
-  const templateFile = post.ytSrc ? 'VideoBlogPostTemplate.vue' : 'BlogPostTemplate.vue'
-  fs.readFile(
-    `./scripts/Templates/${templateFile}`,
-    'utf-8',
-    (err, data) => {
-      let componentFile = data.replace(`name: '',`, `name: '${route}',`)
+  const templateFile = post.ytSrc
+    ? "VideoBlogPostTemplate.vue"
+    : "BlogPostTemplate.vue"
+  fs.readFile(`./scripts/Templates/${templateFile}`, "utf-8", (err, data) => {
+    let componentFile = data.replace(`name: '',`, `name: '${route}',`)
 
-      if (!post.ytSrc) {
-        let imgTags = []
-        let pics = fs.readdirSync(s3ImgDir(dir, route))
-        // FIXME: may need to sort by filename instead of mtime
-        pics = pics.sort((a, b) => {
-          return fs.statSync(`${s3ImgDir(dir, route)}/${a}`).mtime.getTime() -
-                 fs.statSync(`${s3ImgDir(dir, route)}/${b}`).mtime.getTime()
-        })
+    if (!post.ytSrc) {
+      let imgTags = []
+      let pics = fs.readdirSync(s3ImgDir(dir, route))
+      // FIXME: may need to sort by filename instead of mtime
+      pics = pics.sort((a, b) => {
+        return (
+          fs.statSync(`${s3ImgDir(dir, route)}/${a}`).mtime.getTime() -
+          fs.statSync(`${s3ImgDir(dir, route)}/${b}`).mtime.getTime()
+        )
+      })
 
-        pics.forEach(pic => {
-          if (fileNeedsResponsiveImage(pic)) {
-            imgTags.push(`    <blog-image :src="img + '${pic}'"/>`)
-          }
-        })
-        imgTagStrArr = [
-          `<div slot="content">`
-        ]
-        imgTags.forEach(tag => {
-          imgTagStrArr.push(`  ${tag}`)
-        })
+      pics.forEach(pic => {
+        if (fileNeedsResponsiveImage(pic)) {
+          imgTags.push(`    <blog-image :src="img + '${pic}'"/>`)
+        }
+      })
+      imgTagStrArr = [`<div slot="content">`]
+      imgTags.forEach(tag => {
+        imgTagStrArr.push(`  ${tag}`)
+      })
 
-        componentFile = componentFile.replace('<div slot="content">', imgTagStrArr.join('\n'))
+      componentFile = componentFile.replace(
+        '<div slot="content">',
+        imgTagStrArr.join("\n")
+      )
+    }
+
+    fs.writeFile(
+      `./pages/${dir}/${route}.vue`,
+      componentFile,
+      "utf-8",
+      (err, data) => {
+        if (err) {
+          return Promise.reject(err)
+        } else {
+          return Promise.resolve()
+        }
       }
+    )
+  })
+}
+
+const createCustomPromoCard = (dir, route) => {
+  fs.readFile(
+    "./scripts/Templates/CustomPromoCardTemplate.vue",
+    "utf-8",
+    (err, data) => {
+      const componentFile = data.replace(
+        `name: '',`,
+        `name: '${dir}-${route}-promo',`
+      )
+      // Vue component naming convention has upper case
+      const upperCaseDir = dir.charAt(0).toUpperCase() + dir.slice(1)
+      let filenameArr = route.split("-")
+      filenameArr = filenameArr.map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+      })
+      const componentFilename = `${filenameArr.join("")}.vue`
 
       fs.writeFile(
-        `./pages/${dir}/${route}.vue`,
+        `./components/PromoCards/${upperCaseDir}/${componentFilename}`,
         componentFile,
-        'utf-8',
+        "utf-8",
         (err, data) => {
           if (err) {
             return Promise.reject(err)
@@ -191,34 +233,6 @@ const createPostComponent = (dir, route, post) => {
   )
 }
 
-const createCustomPromoCard = (dir, route) => {
-  fs.readFile(
-    './scripts/Templates/CustomPromoCardTemplate.vue',
-    'utf-8',
-    (err, data) => {
-      const componentFile = data.replace(`name: '',`, `name: '${dir}-${route}-promo',`)
-      // Vue component naming convention has upper case
-      const upperCaseDir = dir.charAt(0).toUpperCase() + dir.slice(1)
-      let filenameArr = route.split('-')
-      filenameArr = filenameArr.map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-      })
-      const componentFilename = `${filenameArr.join('')}.vue`
-
-      fs.writeFile(
-        `./components/PromoCards/${upperCaseDir}/${componentFilename}`,
-        componentFile,
-        'utf-8',
-        (err, data) => {
-          if (err) {
-            return Promise.reject(err)
-          } else {
-            return Promise.resolve()
-          }
-        })
-    })
-}
-
 // Image Processing
 
 const s3ImgDir = (dir, route) => {
@@ -226,22 +240,32 @@ const s3ImgDir = (dir, route) => {
 }
 
 const resImgPath = (dir, route, file, width) => {
-  return s3ImgDir(dir, route) +
-         '/' + path.basename(file).split('.')[0] +
-         '-' + width + path.extname(file)
+  return (
+    s3ImgDir(dir, route) +
+    "/" +
+    path.basename(file).split(".")[0] +
+    "-" +
+    width +
+    path.extname(file)
+  )
 }
 
 const createImageDir = (dir, route) => {
   const confirmImagesCopied = () => {
     let confirm
     while (confirm !== postRoute) {
-      confirm = rl.question(`Copy the images to ${s3ImgDir(dir, route)}. Type this post's route to continue `)
+      confirm = rl.question(
+        `Copy the images to ${s3ImgDir(
+          dir,
+          route
+        )}. Type this post's route to continue `
+      )
     }
     return Promise.resolve()
   }
 
   if (!fs.existsSync(s3ImgDir(dir, route))) {
-    fs.mkdir(s3ImgDir(dir, route), (err) => {
+    fs.mkdir(s3ImgDir(dir, route), err => {
       if (err) {
         return Promise.reject(err)
       } else {
@@ -253,16 +277,21 @@ const createImageDir = (dir, route) => {
   }
 }
 
-const fileNeedsResponsiveImage = (file) => {
-  return (file.endsWith('.jpg')  || file.endsWith('.png')) &&
-         !file.endsWith('-1280.jpg') && !file.endsWith('-1280.png') &&
-         !file.endsWith('-720.jpg') && !file.endsWith('-720.png') &&
-         !file.endsWith('-480.jpg') && !file.endsWith('-480.png')
+const fileNeedsResponsiveImage = file => {
+  return (
+    (file.endsWith(".jpg") || file.endsWith(".png")) &&
+    !file.endsWith("-1280.jpg") &&
+    !file.endsWith("-1280.png") &&
+    !file.endsWith("-720.jpg") &&
+    !file.endsWith("-720.png") &&
+    !file.endsWith("-480.jpg") &&
+    !file.endsWith("-480.png")
+  )
 }
 
 const generateResponsiveImages = (dir, route) => {
   fs.readdir(s3ImgDir(dir, route), (err, files) => {
-    files.forEach((file) => {
+    files.forEach(file => {
       if (fileNeedsResponsiveImage(file)) {
         const origFile = `${s3ImgDir(dir, route)}/${file}`
         const fileWith1280 = resImgPath(dir, route, file, 1280)
@@ -272,11 +301,11 @@ const generateResponsiveImages = (dir, route) => {
           .toFile(fileWith1280)
           .then(data => {
             // https://nodejs.org/api/fs.html#fs_fs_promises_api see when that is not experimental
-            fs.unlink(origFile, (err) => {
+            fs.unlink(origFile, err => {
               if (err) {
                 return Promise.reject(err)
               } else {
-                fs.rename(fileWith1280, origFile, (err) => {
+                fs.rename(fileWith1280, origFile, err => {
                   if (err) {
                     return Promise.reject(err)
                   } else {
@@ -290,7 +319,7 @@ const generateResponsiveImages = (dir, route) => {
                           .then(data => {
                             return Promise.resolve()
                           })
-                    })
+                      })
                   }
                 })
               }

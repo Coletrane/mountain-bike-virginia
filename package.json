@@ -72,6 +72,7 @@
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
     "prerender-spa-plugin": "^2.1.0",
+    "prettier": "^1.13.6",
     "readline-sync": "^1.4.9",
     "recursive-readdir": "^2.2.2",
     "request": "^2.87.0",
@@ -119,6 +120,9 @@
     "test-img": "mocha --require babel-core/register ./test/images.spec.js --timeout 30000",
     "test": "mocha --require babel-core/register ./test/global.spec.js --timeout 30000",
     "deploy-prod": "./scripts/check-is-master.sh && NODE_ENV=production npm run build && ./scripts/deploy-prod.sh"
+  },
+  "prettier": {
+    "semi": false
   },
   "main": "dist/app.bundle.js"
 }
