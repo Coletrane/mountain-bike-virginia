@@ -3,6 +3,7 @@ module.exports = {
     'videos',
     'events',
     'external',
-    'reviews'
+    'reviews',
+    'shop'
   ]
 }

@@ -73,6 +73,7 @@
     "postcss-loader": "^2.1.5",
     "prerender-spa-plugin": "^2.1.0",
     "readline-sync": "^1.4.9",
+    "recursive-readdir": "^2.2.2",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "sass-loader": "^6.0.7",

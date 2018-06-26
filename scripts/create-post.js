@@ -1,6 +1,7 @@
 // Packages
 const fs = require('fs')
 const path = require('path')
+const readdirRecursive = require('recursive-readdir')
 const rl = require('readline-sync')
 const sharp = require('sharp')
 const imagemin = require('imagemin')  // TODO
@@ -16,59 +17,79 @@ let postRoute
 while (!postRoute) {
   postRoute = rl.question('What is this post\'s route? ')
 }
+let customPromoCard
+let newJson
+if (fs.existsSync(`./json/posts/${postDir}/${postRoute}.json`)) {
+  newJson = rl.keyInYNStrict('There is already a JSON file for this post, would you like to use it? ')
+}
 let post = {}
-while (!post.title) {
-  post.title = rl.question('Title: ')
-}
-while (!post.subtitle) {
-  post.subtitle = rl.question('Subtitle: ')
-}
-while (!post.description) {
-  post.description = rl.question('Description: ')
-}
-while (!fs.existsSync(`./json/authors/${post.author}.json`)) {
-  post.author = rl.question('Author: ')
-}
-while (isNaN(Date.parse(post.date))) {
-  post.date = rl.question('Date: ')
-}
-while (!post.loc) {
-  post.loc = rl.question('Location: ')
-}
-while (!post.imgRoute) {
-  post.imgRoute = rl.question('Image Route: ')
-}
-while (!post.keywords) {
-  post.keywords = rl.question('Keywords: ')
-}
-let numRelatedPosts
-while (!numRelatedPosts) {
-  numRelatedPosts = rl.question('How many related posts? ')
-}
-post.relatedPosts = new Array(numRelatedPosts)
-post.relatedPosts.forEach((p, i, arr) => {
-  while (!fs.existsSync(`./json/posts/${post.relatedPosts[i]}.json`)) {
-    post.relatedPosts[i] = rl.question(`related post ${i}: `)
+if (!newJson) {
+  while (!post.title) {
+    post.title = rl.question('Title: ')
   }
-})
-if (postDir === 'videos') {
-  while (!post.ytSrc) {
-    post.ytSrc = rl.question('Youtube Embed URL: ')
+  while (!post.subtitle) {
+    post.subtitle = rl.question('Subtitle: ')
   }
-} else {
-  post.schema = {
-    type: 'NewsArticle'
+  while (!post.description) {
+    post.description = rl.question('Description: ')
   }
+  while (!fs.existsSync(`./json/authors/${post.author}.json`)) {
+    post.author = rl.question('Author: ')
+  }
+  while (isNaN(Date.parse(post.date))) {
+    post.date = rl.question('Date: ')
+  }
+  while (!post.loc) {
+    post.loc = rl.question('Location: ')
+  }
+  while (!post.imgRoute) {
+    post.imgRoute = rl.question('Image Route: ')
+  }
+  while (!post.keywords) {
+    post.keywords = rl.question('Keywords: ')
+  }
+  let numRelatedPosts = -1
+  while (numRelatedPosts < 0) {
+    numRelatedPosts = rl.questionInt('How many related posts? ')
+  }
+  let posts = fs.readdirSync('./json/posts/')
+  constants.postDirs.forEach(dir => {
+    posts.splice(posts.indexOf(dir), 1)
+    const dirPosts = fs.readdirSync(`./json/posts/${dir}`)
+    dirPosts.forEach(post => {
+      dir
+    })
+  })
+  console.log(posts)
+  // FIXME: this doesn't print all subdirectories
+  post.relatedPosts = []
+  for (let i = 0; i < numRelatedPosts; i++) {
+    while (!fs.existsSync(`./json/posts/${post.relatedPosts[i]}.json`)) {
+      post.relatedPosts[i] = rl.question(`related post ${i}: `)
+    }
+  }
+  if (postDir === 'videos') {
+    while (!post.ytSrc) {
+      post.ytSrc = rl.question('Youtube Embed URL: ')
+    }
+  } else {
+    post.schema = {
+      type: 'NewsArticle'
+    }
+  }
+  customPromoCard = rl.keyInYNStrict('Would you like a custom Promo Card Component? ')
 }
 
-const customPromoCard = rl.keyInYN('Would you like a custom Promo Card Component? ')
 
-
-let taskArr = [
-  {
+let taskArr = []
+if (!newJson) {
+  taskArr.push({
     title: 'Creating JSON File',
     task: () => createPostJson(postDir, postRoute, post)
-  },
+  })
+}
+
+taskArr = taskArr.concat([
   {
     title: 'Moving JSON to local S3 bucket',
     task: () => {
@@ -93,13 +114,12 @@ let taskArr = [
     title: 'Creating Post Component',
     task: () => createPostComponent(postDir, postRoute, post)
   }
-]
-
+])
 if (customPromoCard) {
   taskArr.push({
-    title: 'Create Custom Promo Card',
+    title: 'Creating Custom Promo Card',
     task: () => createCustomPromoCard(postDir, postRoute)
-  },)
+  })
 }
 
 const tasks = new Listr(taskArr)
@@ -182,9 +202,12 @@ const createCustomPromoCard = (dir, route) => {
       const componentFile = data.replace(`name: '',`, `name: '${dir}-${route}-promo',`)
       // Vue component naming convention has upper case
       const upperCaseDir = dir.charAt(0).toUpperCase() + dir.slice(1)
-      const componentFilename = route.charAt(0).toUpperCase() +
-                                route.slice(1) +
-                                'Promo.vue'
+      let filenameArr = route.split('-')
+      filenameArr = filenameArr.map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+      })
+      const componentFilename = `${filenameArr.join('')}Promo.vue`
+
       fs.writeFile(
         `./components/PromoCards/${upperCaseDir}/${componentFilename}`,
         componentFile,
@@ -212,13 +235,24 @@ const resImgPath = (dir, route, file, width) => {
 }
 
 const createImageDir = (dir, route) => {
-  if (!fs.existsSync(s3ImgDir(dir, route))) {
-    fs.mkdirSync(s3ImgDir(dir, route))
+  const confirmImagesCopied = () => {
+    let confirm
+    while (confirm !== postRoute) {
+      confirm = rl.question(`Copy the images to ${s3ImgDir(dir, route)}. Type this post's route to continue `)
+      return Promise.resolve()
+    }
   }
 
-  let confirm
-  while (confirm !== postRoute) {
-    confirm = rl.question(`Copy the images to ${s3ImgDir(dir, route)}. Type this post's route to continue `)
+  if (!fs.existsSync(s3ImgDir(dir, route))) {
+    fs.mkdir(s3ImgDir(dir, route), (err) => {
+      if (err) {
+        return Promise.reject(err)
+      } else {
+        confirmImagesCopied()
+      }
+    })
+  } else {
+    confirmImagesCopied()
   }
 }
 
