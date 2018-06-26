@@ -1,7 +1,8 @@
 {
   "title": "Virginia's Blue Ridge Creature from Carvins Cove",
   "subtitle": "Oct 1st, 2017",
-  "description": "XXC VA series championship. 2nd annual 44 mile marathon mountain bike race at Carvins Cove in Roanoke, Virginia.",
+  "description":
+    "XXC VA series championship. 2nd annual 44 mile marathon mountain bike race at Carvins Cove in Roanoke, Virginia.",
   "date": "October 1, 2017",
   "altText": "View the Results.",
   "youtube": "https://www.youtube.com/embed/uO44Tt0woT8",
@@ -11,9 +12,7 @@
     "type": "NewsArticle"
   },
   "imgRoute": "wake-champ.jpg",
-  "relatedPosts": [
-    "middle-mt-momma-2018",
-    "first-ride-2018"
-  ],
-  "keywords": "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove"
+  "relatedPosts": ["middle-mt-momma-2018", "first-ride-2018"],
+  "keywords":
+    "mountain, bike, cyclocross, gravel, ride, race, review, blog, results, cycling, road, virginia, trails, creature, carvins cove"
 }

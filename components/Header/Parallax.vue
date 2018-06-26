@@ -8,91 +8,92 @@
 </template>
 
 <script>
-  export default {
-    name: 'parallax',
-    props: {
-      src: {
-        type: String,
-        required: true,
-      },
-      alt: {
-        type: String,
-        required: false,
-        default: 'Mountain Bike Virginia'
-      },
+export default {
+  name: "parallax",
+  props: {
+    src: {
+      type: String,
+      required: true
     },
-    created() {
-      if (process.browser) {
-        window.addEventListener('scroll', this.handleScroll)
+    alt: {
+      type: String,
+      required: false,
+      default: "Mountain Bike Virginia"
+    }
+  },
+  created() {
+    if (process.browser) {
+      window.addEventListener("scroll", this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener("scroll", this.handleScroll)
+    }
+  },
+  methods: {
+    handleScroll() {
+      let scrolled = window.pageYOffset
+      let limit = this.$el.offsetTop + this.$el.offsetHeight
+      let backgroundPos
+      if (scrolled > this.$el.offsetTop && scrolled <= limit) {
+        backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled -
+          this.$el.offsetTop) /
+          3}px`
+      } else {
+        backgroundPos = "0px"
       }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener('scroll', this.handleScroll)
-      }
-    },
-    methods: {
-      handleScroll() {
-        let scrolled = window.pageYOffset
-        let limit = this.$el.offsetTop + this.$el.offsetHeight
-        let backgroundPos
-        if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-          backgroundPos = this.$el.style.backgroundPositionY = `${(scrolled - this.$el.offsetTop) / 3}px`
-        } else {
-          backgroundPos = '0px'
-        }
-        window.requestAnimationFrame(() => {
-          this.$el.style.backgroundPositionY = backgroundPos
-        })
-      },
-    },
-    computed: {
-      styles() {
-        return {
-          backgroundImage: `url(${this.src})`
-        }
+      window.requestAnimationFrame(() => {
+        this.$el.style.backgroundPositionY = backgroundPos
+      })
+    }
+  },
+  computed: {
+    styles() {
+      return {
+        backgroundImage: `url(${this.src})`
       }
     }
   }
-
+}
 </script>
 
 <style scoped>
+.parallax {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-position-x: center;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1200px;
+}
+
+.hero {
+  color: white;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+@media (max-width: 700px) {
   .parallax {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    background-position-x: center;
-    background-position-y: 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1200px;
+    height: 900px;
   }
-
-  .hero {
-    color: white;
-    height: 100%;
-    z-index: 2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem;
+}
+@media (max-width: 450px) {
+  .parallax {
+    height: 720px;
   }
-
-  @media (max-width: 700px) {
-    .parallax {
-      height: 900px;
-    }
+}
+@media (max-width: 350px) {
+  .parallax {
+    height: 580px;
   }
-  @media (max-width: 450px) {
-    .parallax {
-      height: 720px;
-    }
-  }
-  @media (max-width: 350px) {
-    .parallax {
-      height: 580px;
-    }
-  }
+}
 </style>

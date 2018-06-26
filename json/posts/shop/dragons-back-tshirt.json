@@ -1,12 +1,15 @@
 {
   "title": "Sale: Dragon's Back T-Shirt $18",
-  "subtitle": "Proceeds go to Roanoke IMBA for maintenance of the North Mountain trails",
-  "description": "Limited Edition Dragon’s Back T-shirt! You know the dragon has taken a bite outta you, now it’s your turn to take some dragon back! Rock this limited edition Next Level super soft T-shirt. Front is on left (duh), back is on…you get the picture. Available in M through XL until they’re gone. Once these $18 shirts are gone, $3 of each shirt sold goes to a Dragon’s Back maintenance fund, managed by our local mountain bike club, Roanoke IMBA. Click any of the payment links below to order.",
+  "subtitle":
+    "Proceeds go to Roanoke IMBA for maintenance of the North Mountain trails",
+  "description":
+    "Limited Edition Dragon’s Back T-shirt! You know the dragon has taken a bite outta you, now it’s your turn to take some dragon back! Rock this limited edition Next Level super soft T-shirt. Front is on left (duh), back is on…you get the picture. Available in M through XL until they’re gone. Once these $18 shirts are gone, $3 of each shirt sold goes to a Dragon’s Back maintenance fund, managed by our local mountain bike club, Roanoke IMBA. Click any of the payment links below to order.",
   "author": "kyle",
   "date": "jun 26 2018",
   "loc": "North Mountain, Catawba, VA",
   "imgRoute": "dragons-back-tshirt.jpg",
-  "keywords": "bike, mtb, mtbva, mountain bike, t-shirt, shirt, dragons back, north mountain, bike race, enduro, trail, cross country, catwaba, blacksburg, virginia tech, gnarly",
+  "keywords":
+    "bike, mtb, mtbva, mountain bike, t-shirt, shirt, dragons back, north mountain, bike race, enduro, trail, cross country, catwaba, blacksburg, virginia tech, gnarly",
   "relatedPosts": [
     "events/roanoke-silver-ride-center",
     "events/massanutten-hoo-ha-2018"

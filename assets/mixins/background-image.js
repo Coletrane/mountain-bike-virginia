@@ -1,4 +1,4 @@
-import {s3StaticImg} from '../../scripts/routes'
+import { s3StaticImg } from "../../scripts/routes"
 
 export default {
   computed: {

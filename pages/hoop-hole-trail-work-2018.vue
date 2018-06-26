@@ -34,19 +34,17 @@
 </template>
 
 <script>
-  import BlogPost from '../components/BlogPost'
-  import BlogImage from '../components/Images/BlogImage'
+import BlogPost from "../components/BlogPost"
+import BlogImage from "../components/Images/BlogImage"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'hoop-hole-trail-work-2018',
-    components: {
-      BlogPost,
-      BlogImage
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "hoop-hole-trail-work-2018",
+  components: {
+    BlogPost,
+    BlogImage
+  },
+  mixins: [blogPost]
+}
 </script>

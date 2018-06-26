@@ -2,16 +2,15 @@
   "title": "Blue Ridge Parkway tuckaway into Spec Mines",
   "subtitle": "Wind, Rain, Cold. Pick Two.",
   "author": "cole",
-  "description": "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet",
+  "description":
+    "Ride on the Blue Ridge Parkway to Spec Mines trail in 30mph winds and sleet",
   "date": "October 29, 2017",
   "loc": "Blue Ridge Parkway, Blue Ridge, VA",
   "schema": {
     "type": "NewsArticle"
   },
   "imgRoute": "IMG_3089.jpg",
-  "relatedPosts": [
-    "battle-at-blackhorse-2018",
-    "dody-ridge-run-fall-2017"
-  ],
-  "keywords": "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt"
+  "relatedPosts": ["battle-at-blackhorse-2018", "dody-ridge-run-fall-2017"],
+  "keywords":
+    "mountain, bike, blue, ridge, parkway, spec, mines, pico, pulaski, iron, company, ride, adventure, cold, fall, daleville, botetourt"
 }

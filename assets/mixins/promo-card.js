@@ -1,4 +1,4 @@
-import {postDirs} from '../../constants'
+import { postDirs } from "../../constants"
 
 export default {
   data() {
@@ -8,14 +8,14 @@ export default {
   },
   methods: {
     componentRoute() {
-      let componentRoute = ''
-      let nameSplit = this.$options.name.split('-')
+      let componentRoute = ""
+      let nameSplit = this.$options.name.split("-")
       if (postDirs.find(dir => dir === nameSplit[0])) {
         componentRoute = `${nameSplit[0]}/`
         nameSplit.splice(0, 1)
       }
-      componentRoute += nameSplit.join('-')
-      componentRoute = componentRoute.replace('-promo', '')
+      componentRoute += nameSplit.join("-")
+      componentRoute = componentRoute.replace("-promo", "")
       return componentRoute
     }
   }

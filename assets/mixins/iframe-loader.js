@@ -1,4 +1,4 @@
-import { s3StaticImg } from '../../scripts/routes'
+import { s3StaticImg } from "../../scripts/routes"
 
 export default {
   data() {
@@ -9,9 +9,12 @@ export default {
   },
   mounted() {
     if (!this.$store.state.misc.loaded) {
-      this.$store.watch(state => {
-        return this.$store.state.misc.loaded
-      }, (newVal, oldVal) => this.iframeListener())
+      this.$store.watch(
+        state => {
+          return this.$store.state.misc.loaded
+        },
+        (newVal, oldVal) => this.iframeListener()
+      )
     } else {
       this.iframeListener()
     }
@@ -19,8 +22,8 @@ export default {
   methods: {
     iframeListener() {
       if (process.browser) {
-        const img = this.$el.getElementsByTagName('img')[0]
-        const iframe = this.$el.getElementsByTagName('iframe')[0]
+        const img = this.$el.getElementsByTagName("img")[0]
+        const iframe = this.$el.getElementsByTagName("iframe")[0]
         if (iframe) {
           iframe.onload = () => {
             this.loaded = true

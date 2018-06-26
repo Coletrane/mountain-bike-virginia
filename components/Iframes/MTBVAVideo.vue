@@ -13,70 +13,70 @@
   </div>
 </template>
 <script>
-  import isMobile from '../../assets/detect-mobile'
+import isMobile from "../../assets/detect-mobile"
 
-  export default {
-    name: 'mtbva-video',
-    props: {
-      src: {
-        type: String,
-        required: true
-      },
-      preload: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      autoplay: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      muted: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      loop: {
-        type: Boolean,
-        required: false,
-        default: false
-      }
+export default {
+  name: "mtbva-video",
+  props: {
+    src: {
+      type: String,
+      required: true
     },
-    data () {
-      return {
-        controls: false
-      }
+    preload: {
+      type: Boolean,
+      required: false,
+      default: false
     },
-    created () {
-      if (process.browser) {
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          this.controls = true
-        }
+    autoplay: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    muted: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    loop: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+  data() {
+    return {
+      controls: false
+    }
+  },
+  created() {
+    if (process.browser) {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        this.controls = true
+      }
 
-        if (isMobile()) {
-          this.autoplay = false
-          this.preload = false
-          this.controls = true
-        }
+      if (isMobile()) {
+        this.autoplay = false
+        this.preload = false
+        this.controls = true
       }
     }
   }
+}
 </script>
 <style scoped>
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-  }
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
 
-  .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 </style>

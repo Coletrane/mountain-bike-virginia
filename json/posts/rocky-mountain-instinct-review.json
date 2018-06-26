@@ -1,8 +1,10 @@
 {
   "title": "Review: Rocky Mountain Instinct",
-  "subtitle": "9 positions of geo adjustment, but you know youll leave it in full slack.",
+  "subtitle":
+    "9 positions of geo adjustment, but you know youll leave it in full slack.",
   "author": "kyle",
-  "description": "Review of the Rocky Mountain Instinct trail bike with 29 inch wheels at the Underdog Bikes demo",
+  "description":
+    "Review of the Rocky Mountain Instinct trail bike with 29 inch wheels at the Underdog Bikes demo",
   "date": "April 13, 2018",
   "schema": {
     "type": "Review",
@@ -17,9 +19,7 @@
     }
   },
   "imgRoute": "kyle-inman-down-monument-2.jpg",
-  "relatedPosts": [
-    "pivot-switchblade-review",
-    "dt-swiss-54t-ratchet-review"
-  ],
-  "keywords": "rocky mountain, bike, trail, enduro, all mountain, freeride, bike, review, trails, fox, sram, demo, instinct, slayer, thunderbolt, trail bike, enduro bike, mountain bike"
+  "relatedPosts": ["pivot-switchblade-review", "dt-swiss-54t-ratchet-review"],
+  "keywords":
+    "rocky mountain, bike, trail, enduro, all mountain, freeride, bike, review, trails, fox, sram, demo, instinct, slayer, thunderbolt, trail bike, enduro bike, mountain bike"
 }

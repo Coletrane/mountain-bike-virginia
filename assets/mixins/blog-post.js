@@ -1,5 +1,5 @@
-import {headTags, buildVideo} from '../functions'
-import {s3Pages} from '../../scripts/routes'
+import { headTags, buildVideo } from "../functions"
+import { s3Pages } from "../../scripts/routes"
 
 export default {
   async asyncData(context) {
@@ -7,23 +7,17 @@ export default {
     if (context.route.matched.length === 1) {
       route = context.route.matched[0].path.slice(1)
     } else {
-      throw new Error (`${route.name} route.matched has nothing!`)
+      throw new Error(`${route.name} route.matched has nothing!`)
     }
 
-    await context.store.dispatch('loadPosts', [
-      route
-    ])
+    await context.store.dispatch("loadPosts", [route])
     const currentPost = context.store.getters.posts(route)
 
-    await context.store.dispatch('loadPosts',
-      currentPost.relatedPosts
-    )
+    await context.store.dispatch("loadPosts", currentPost.relatedPosts)
 
     const postInstance = {
       post: currentPost,
-      relatedPosts: context.store.getters.posts(
-        currentPost.relatedPosts
-      ),
+      relatedPosts: context.store.getters.posts(currentPost.relatedPosts),
       img: `${s3Pages}/${route}/`
     }
 
@@ -34,8 +28,7 @@ export default {
     return postInstance
   },
   head() {
-    if (!this.postAtBottom &&
-        this.post) {
+    if (!this.postAtBottom && this.post) {
       this.realPost = this.post
       return this.blogHeadTags(this.post)
     } else {
@@ -43,7 +36,7 @@ export default {
       if (this.$route.matched.length === 1) {
         route = this.$route.matched[0].path.slice(1)
       } else {
-        throw new Error (`${route.name} route.matched has nothing!`)
+        throw new Error(`${route.name} route.matched has nothing!`)
       }
 
       return this.blogHeadTags(this.$store.getters.posts(route))
@@ -62,28 +55,18 @@ export default {
       this.relatedPosts = []
       this.img = `${s3Pages}/${this.post.route}/`
     } else {
-      this.$store.dispatch('setCurrentPost', this.post)
+      this.$store.dispatch("setCurrentPost", this.post)
     }
   },
   methods: {
     blogHeadTags(post) {
       if (this.schema) {
         return {
-          ...headTags(
-            post.title,
-            post.subtitle,
-            post.keywords,
-            post
-          ),
+          ...headTags(post.title, post.subtitle, post.keywords, post),
           script: this.schema
         }
       } else {
-        return headTags(
-          post.title,
-          post.subtitle,
-          post.keywords,
-          post
-        )
+        return headTags(post.title, post.subtitle, post.keywords, post)
       }
     }
   }

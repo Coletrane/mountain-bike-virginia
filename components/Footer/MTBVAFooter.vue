@@ -24,223 +24,223 @@
   </div>
 </template>
 <script>
-  import LogosFourCols from './LogosFourCols'
-  import LogosThreeCols from './LogosTwoCols'
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import LogosFourCols from "./LogosFourCols"
+import LogosThreeCols from "./LogosTwoCols"
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
+import faGithub from "@fortawesome/fontawesome-free-brands/faGithub"
 
-  import {s3Sponsors, s3StaticImg} from '../../scripts/routes'
-  import {noExtension, justExtension} from '../../assets/functions'
+import { s3Sponsors, s3StaticImg } from "../../scripts/routes"
+import { noExtension, justExtension } from "../../assets/functions"
 
-  export default {
-    name: 'mtbva-footer',
-    components: {
-      LogosThreeCols,
-      LogosFourCols,
-      FontAwesomeIcon
-    },
-    props: {
-      copyright: {
-        type: Boolean,
-        required: false,
-        default: true
-      }
-    },
-    data() {
-      return {
-        faGithub: faGithub,
-        sponsors: [
-          {
-            img: `${s3Sponsors}/va-blueridge.png`,
-            class: 'blueridge',
-            url: 'https://www.visitroanokeva.com/region/blue-ridge-mountains/'
-          },
-          {
-            img: `${s3Sponsors}/parkway.png`,
-            class: 'parkway',
-            url: 'http://parkwaybrewing.com/'
-          },
-          {
-            img: `${s3Sponsors}/starlight.png`,
-            class: 'starlight',
-            url: 'https://www.starlightapparel.com/'
-          },
-          {
-            img: `${s3Sponsors}/deschutes.png`,
-            class: 'deschutes',
-            url: 'https://www.deschutesbrewery.com/'
-          },
-          {
-            img: `${s3Sponsors}/bath.png`,
-            class: 'bath',
-            url: 'http://discoverbath.com/'
-          },
-          {
-            img: `${s3Sponsors}/sbc.png`,
-            class: 'sbc',
-            url: 'http://www.shenandoahbicycle.com/'
-          },
-          {
-            img: `${s3Sponsors}/jtrg.png`,
-            class: 'jtrg',
-            url: 'http://justtherightgear.com/'
-          },
-          {
-            img: `${s3Sponsors}/east-coasters.png`,
-            class: 'east-coasters',
-            url: 'https://eastcoasters.com/'
-          },
-          {
-            img: `${s3Sponsors}/alleghany.png`,
-            class: 'alleghany',
-            url: 'http://www.visitalleghanyhighlands.com/main/index.php'
-          },
-          {
-            img: `${s3Sponsors}/blackwater.png`,
-            class: 'blackwater',
-            url: 'http://www.blackwaterbikeshop.com/'
-          },
-          // {
-          //   img: `${s3Sponsors}/outdoortrails.jpg`,
-          //   class: "outdoor-trails",
-          //   url: "http://www.outdoortrails.com/"
-          // },
-          {
-            img: `${s3Sponsors}/woods.png`,
-            class: 'woods',
-            url: 'http://woodsac.com/'
-          },
-          {
-            img: `${s3Sponsors}/tavern.png`,
-            class: 'tavern',
-            url: 'http://jackmasonstavern.com/'
-          }
-        ],
-        mobile: true,
-        width: 0
-      }
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener('scroll', this.handleScroll)
-        window.addEventListener('resize', this.handleResize)
-        this.handleResize()
-        // Set the mobile images once instead of on resize
-        // this is how the other pages do it
-        if (document.body.clientWidth <= 425) {
-          this.sponsors.forEach(sponsor => {
-            const filename = noExtension(sponsor.img)
-            const extension = justExtension(sponsor.img)
-            sponsor.img = `${filename}-150px${extension}`
-          })
+export default {
+  name: "mtbva-footer",
+  components: {
+    LogosThreeCols,
+    LogosFourCols,
+    FontAwesomeIcon
+  },
+  props: {
+    copyright: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
+  data() {
+    return {
+      faGithub: faGithub,
+      sponsors: [
+        {
+          img: `${s3Sponsors}/va-blueridge.png`,
+          class: "blueridge",
+          url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
+        },
+        {
+          img: `${s3Sponsors}/parkway.png`,
+          class: "parkway",
+          url: "http://parkwaybrewing.com/"
+        },
+        {
+          img: `${s3Sponsors}/starlight.png`,
+          class: "starlight",
+          url: "https://www.starlightapparel.com/"
+        },
+        {
+          img: `${s3Sponsors}/deschutes.png`,
+          class: "deschutes",
+          url: "https://www.deschutesbrewery.com/"
+        },
+        {
+          img: `${s3Sponsors}/bath.png`,
+          class: "bath",
+          url: "http://discoverbath.com/"
+        },
+        {
+          img: `${s3Sponsors}/sbc.png`,
+          class: "sbc",
+          url: "http://www.shenandoahbicycle.com/"
+        },
+        {
+          img: `${s3Sponsors}/jtrg.png`,
+          class: "jtrg",
+          url: "http://justtherightgear.com/"
+        },
+        {
+          img: `${s3Sponsors}/east-coasters.png`,
+          class: "east-coasters",
+          url: "https://eastcoasters.com/"
+        },
+        {
+          img: `${s3Sponsors}/alleghany.png`,
+          class: "alleghany",
+          url: "http://www.visitalleghanyhighlands.com/main/index.php"
+        },
+        {
+          img: `${s3Sponsors}/blackwater.png`,
+          class: "blackwater",
+          url: "http://www.blackwaterbikeshop.com/"
+        },
+        // {
+        //   img: `${s3Sponsors}/outdoortrails.jpg`,
+        //   class: "outdoor-trails",
+        //   url: "http://www.outdoortrails.com/"
+        // },
+        {
+          img: `${s3Sponsors}/woods.png`,
+          class: "woods",
+          url: "http://woodsac.com/"
+        },
+        {
+          img: `${s3Sponsors}/tavern.png`,
+          class: "tavern",
+          url: "http://jackmasonstavern.com/"
         }
-      }
-    },
-    destroyed() {
-      if (process.browser) {
-        window.removeEventListener('scroll', this.handleScroll)
-        window.removeEventListener('resize', this.handleResize)
-      }
-    },
-    methods: {
-      handleScroll() {
-        let scrolled = window.pageYOffset
-        let offsetOffset = 1000 // lol
-        let offset = this.$el.offsetTop - offsetOffset
-        let limit = this.$el.offsetTop + this.$el.offsetHeight
-        let backgroundPos
-        if (scrolled > offset && scrolled <= limit) {
-          backgroundPos = `${(scrolled - offset) / -3}px`
-        } else {
-          backgroundPos = `0px`
-        }
-        window.requestAnimationFrame(() => {
-          this.$el.style.backgroundPositionY = backgroundPos
+      ],
+      mobile: true,
+      width: 0
+    }
+  },
+  created() {
+    if (process.browser) {
+      window.addEventListener("scroll", this.handleScroll)
+      window.addEventListener("resize", this.handleResize)
+      this.handleResize()
+      // Set the mobile images once instead of on resize
+      // this is how the other pages do it
+      if (document.body.clientWidth <= 425) {
+        this.sponsors.forEach(sponsor => {
+          const filename = noExtension(sponsor.img)
+          const extension = justExtension(sponsor.img)
+          sponsor.img = `${filename}-150px${extension}`
         })
-      },
-      handleResize() {
-        this.width = document.body.clientWidth
       }
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener("scroll", this.handleScroll)
+      window.removeEventListener("resize", this.handleResize)
+    }
+  },
+  methods: {
+    handleScroll() {
+      let scrolled = window.pageYOffset
+      let offsetOffset = 1000 // lol
+      let offset = this.$el.offsetTop - offsetOffset
+      let limit = this.$el.offsetTop + this.$el.offsetHeight
+      let backgroundPos
+      if (scrolled > offset && scrolled <= limit) {
+        backgroundPos = `${(scrolled - offset) / -3}px`
+      } else {
+        backgroundPos = `0px`
+      }
+      window.requestAnimationFrame(() => {
+        this.$el.style.backgroundPositionY = backgroundPos
+      })
     },
-    watch: {
-      width() {
-        if (process.browser) {
-          this.mobile = document.body.clientWidth <= 850
-        }
+    handleResize() {
+      this.width = document.body.clientWidth
+    }
+  },
+  watch: {
+    width() {
+      if (process.browser) {
+        this.mobile = document.body.clientWidth <= 850
       }
-    },
-    computed: {
-        backgroundClass() {
-          if (process.env === 'production') {
-            return 'mtbva-footer-image-prod'
-          } else {
-            return 'mtbva-footer-image-dev'
-          }
-        }
+    }
+  },
+  computed: {
+    backgroundClass() {
+      if (process.env === "production") {
+        return "mtbva-footer-image-prod"
+      } else {
+        return "mtbva-footer-image-dev"
       }
+    }
   }
+}
 </script>
 <style>
+.mtbva-footer {
+  padding-top: 4rem;
+  background-size: 3000px;
+  background-position-x: center;
+  background-position-y: 0px;
+}
+.mtbva-footer-image-dev {
+  background-image: url("http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg");
+}
+.mtbva-footer-image-prod {
+  background-image: url("https://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg");
+}
+
+@media (max-width: 700px) {
   .mtbva-footer {
-    padding-top: 4rem;
-    background-size: 3000px;
-    background-position-x: center;
-    background-position-y: 0px;
+    /*pixel pushing lol*/
+    background-size: 2795px;
   }
-  .mtbva-footer-image-dev {
-    background-image:  url("http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg");
-  }
-  .mtbva-footer-image-prod {
-    background-image:  url("https://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg");
-  }
+}
 
-  @media (max-width: 700px) {
-    .mtbva-footer {
-      /*pixel pushing lol*/
-      background-size: 2795px;
-    }
-  }
+.sponsors-container {
+  /*background-color: white;*/
+  margin: auto;
+  /*opacity: .75;*/
+  padding: 0.5rem;
+  text-align: center;
+}
 
+.sponsors-container {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+@media (min-width: 1200px) {
   .sponsors-container {
-    /*background-color: white;*/
-    margin: auto;
-    /*opacity: .75;*/
-    padding: .5rem;
-    text-align: center;
+    margin-left: 8rem;
+    margin-right: 8rem;
   }
+}
 
+@media (max-width: 575px) {
   .sponsors-container {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
+}
 
-  @media (min-width: 1200px) {
-    .sponsors-container {
-      margin-left: 8rem;
-      margin-right: 8rem;
-    }
-  }
+.copyright {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  color: white;
+}
 
-  @media (max-width: 575px) {
-    .sponsors-container {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-  }
+.github {
+  color: white;
+  font-size: 2rem;
+}
 
-  .copyright {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    text-align: center;
-    color: white;
-  }
-
-  .github {
-    color: white;
-    font-size: 2rem;
-  }
-
-  .github:hover {
-    color: white;
-  }
+.github:hover {
+  color: white;
+}
 </style>

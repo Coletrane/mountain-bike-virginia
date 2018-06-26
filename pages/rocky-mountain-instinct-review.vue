@@ -24,19 +24,17 @@
   </blog-post>
 </template>
 <script>
-  import BlogPost from '../components/BlogPost.vue'
-  import BlogImage from '../components/Images/BlogImage'
+import BlogPost from "../components/BlogPost.vue"
+import BlogImage from "../components/Images/BlogImage"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'rocky-mountain-instinct-review',
-    components: {
-      BlogPost,
-      BlogImage
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "rocky-mountain-instinct-review",
+  components: {
+    BlogPost,
+    BlogImage
+  },
+  mixins: [blogPost]
+}
 </script>

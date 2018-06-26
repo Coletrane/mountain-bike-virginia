@@ -18,43 +18,42 @@
   </abstract-post-card>
 </template>
 <script>
-  import AbstractPostCard from './AbstractPostCard'
-  import PostHeader from './PostHeader'
-  import Author from './Author'
+import AbstractPostCard from "./AbstractPostCard"
+import PostHeader from "./PostHeader"
+import Author from "./Author"
 
-  export default {
-    name: 'blog-post-card',
-    props: {
-      post: {
-        type: Object,
-        required: true
-      },
-      headerAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      noAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      }
+export default {
+  name: "blog-post-card",
+  props: {
+    post: {
+      type: Object,
+      required: true
     },
-    components: {
-      PostHeader,
-      AbstractPostCard,
-      Author
+    headerAuthor: {
+      type: Boolean,
+      required: false,
+      default: false
     },
-    computed: {
-      // Removes properties of the post for the header
-      headerPost() {
-        return {
-          subtitle: this.post.subtitle,
-          date: this.post.date,
-          loc: this.post.loc
-        }
+    noAuthor: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+  components: {
+    PostHeader,
+    AbstractPostCard,
+    Author
+  },
+  computed: {
+    // Removes properties of the post for the header
+    headerPost() {
+      return {
+        subtitle: this.post.subtitle,
+        date: this.post.date,
+        loc: this.post.loc
       }
     }
   }
+}
 </script>
-

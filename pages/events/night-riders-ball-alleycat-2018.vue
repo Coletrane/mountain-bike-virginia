@@ -51,28 +51,27 @@
   </blog-post>
 </template>
 <script>
-  import BlogPost from '../../components/BlogPost'
-  import BlogImage from '../../components/Images/BlogImage'
-  import Quote from '../../components/Card/Quote'
-  import Youtube from '../../components/Iframes/Youtube'
+import BlogPost from "../../components/BlogPost"
+import BlogImage from "../../components/Images/BlogImage"
+import Quote from "../../components/Card/Quote"
+import Youtube from "../../components/Iframes/Youtube"
 
-  import blogPost from '../../assets/mixins/blog-post'
+import blogPost from "../../assets/mixins/blog-post"
 
-  export default {
-    name: 'night-riders-ball-alleycat-2018',
-    components: {
-      BlogPost,
-      BlogImage,
-      Quote,
-      Youtube
-    },
-    mixins: [
-      blogPost
-    ],
-    data() {
-      return {
-        drunkcyclist: 'A Drunkcyclist shirt means you <span style="text-decoration: underline;">must</span> chug a beer'
-      }
+export default {
+  name: "night-riders-ball-alleycat-2018",
+  components: {
+    BlogPost,
+    BlogImage,
+    Quote,
+    Youtube
+  },
+  mixins: [blogPost],
+  data() {
+    return {
+      drunkcyclist:
+        'A Drunkcyclist shirt means you <span style="text-decoration: underline;">must</span> chug a beer'
     }
   }
+}
 </script>

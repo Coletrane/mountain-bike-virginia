@@ -24,67 +24,67 @@
   </div>
 </template>
 <script>
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-  import faStrava from '@fortawesome/fontawesome-free-brands/faStrava'
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
+import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
+import faStrava from "@fortawesome/fontawesome-free-brands/faStrava"
 
-  export default {
-    name: 'author',
-    props: {
-      author: {
-        type: Object,
-        required: true
-      },
-      inline: {
-        type: Boolean,
-        required: false,
-        default: false
-      }
+export default {
+  name: "author",
+  props: {
+    author: {
+      type: Object,
+      required: true
     },
-    components: {
-      FontAwesomeIcon
-    },
-    data() {
-      return {
-        faFacebook: faFacebook,
-        faStrava: faStrava
-      }
+    inline: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+  components: {
+    FontAwesomeIcon
+  },
+  data() {
+    return {
+      faFacebook: faFacebook,
+      faStrava: faStrava
     }
   }
+}
 </script>
 <style>
-  .strava-icon {
-    color: #fc4c02 !important;
-  }
+.strava-icon {
+  color: #fc4c02 !important;
+}
 </style>
 <style scoped>
-  .author-container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 40%;
-    text-align: center;
-    max-width: 180px;
-    float: left;
-  }
+.author-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 40%;
+  text-align: center;
+  max-width: 180px;
+  float: left;
+}
 
-  .author-pic {
-    border-radius: 50%;
-    width: 50%;
-  }
+.author-pic {
+  border-radius: 50%;
+  width: 50%;
+}
 
-  svg {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: .5rem;
-    margin-left: .25rem;
-    margin-right: .25rem;
-  }
+svg {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 
-  a {
-    text-decoration: underline;
-    background: transparent;
-  }
-  a:hover {
-    background: none;
-  }
+a {
+  text-decoration: underline;
+  background: transparent;
+}
+a:hover {
+  background: none;
+}
 </style>

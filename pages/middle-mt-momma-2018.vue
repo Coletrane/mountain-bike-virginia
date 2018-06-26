@@ -290,33 +290,30 @@
   </div>
 </template>
 <script>
-  import BlogImage from '../components/Images/BlogImage'
-  import RideWithGpsSwitcher from '../components/Iframes/RideWithGpsSwitcher'
-  import MTBVAVideo from '../components/Iframes/MTBVAVideo'
-  import BlogPost from '../components/BlogPost'
-  import Quote from '../components/Card/Quote'
-  import Author from '../components/Card/Author'
+import BlogImage from "../components/Images/BlogImage"
+import RideWithGpsSwitcher from "../components/Iframes/RideWithGpsSwitcher"
+import MTBVAVideo from "../components/Iframes/MTBVAVideo"
+import BlogPost from "../components/BlogPost"
+import Quote from "../components/Card/Quote"
+import Author from "../components/Card/Author"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'middle-mt-momma-2018',
-    components: {
-      RideWithGpsSwitcher,
-      BlogPost,
-      MTBVAVideo,
-      BlogImage,
-      Quote,
-      Author
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "middle-mt-momma-2018",
+  components: {
+    RideWithGpsSwitcher,
+    BlogPost,
+    MTBVAVideo,
+    BlogImage,
+    Quote,
+    Author
+  },
+  mixins: [blogPost]
+}
 </script>
 <style>
-  .top-quote {
-    padding-bottom: 0 !important;
-  }
+.top-quote {
+  padding-bottom: 0 !important;
+}
 </style>
-

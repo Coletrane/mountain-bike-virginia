@@ -1,3 +1,3 @@
-export default function({store}) {
-  store.dispatch('emptyBanners')
+export default function({ store }) {
+  store.dispatch("emptyBanners")
 }

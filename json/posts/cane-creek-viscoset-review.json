@@ -1,8 +1,10 @@
 {
   "title": "Review: Cane Creek ViscoSet",
-  "subtitle": "An Unintended Trail Riding Enhancement: Cane Creek’s ViscoSet Steering Damper.",
+  "subtitle":
+    "An Unintended Trail Riding Enhancement: Cane Creek’s ViscoSet Steering Damper.",
   "author": "kyle",
-  "description": "Review of the Cane Creek ViscoSet, a damped headset designed for E-Bikes",
+  "description":
+    "Review of the Cane Creek ViscoSet, a damped headset designed for E-Bikes",
   "date": "March 25, 2018",
   "schema": {
     "type": "Review",
@@ -17,9 +19,7 @@
     }
   },
   "imgRoute": "viscoset.jpg",
-  "relatedPosts": [
-    "dt-swiss-54t-ratchet-review",
-    "pivot-switchblade-review"
-  ],
-  "keywords": "cane creek, headset, forty, viscoset, e-bike, mountain bike, parts, head, bearing, enduro, review"
+  "relatedPosts": ["dt-swiss-54t-ratchet-review", "pivot-switchblade-review"],
+  "keywords":
+    "cane creek, headset, forty, viscoset, e-bike, mountain bike, parts, head, bearing, enduro, review"
 }

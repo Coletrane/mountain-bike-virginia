@@ -1,19 +1,19 @@
 {
   "title": "RockStar VA 270",
   "subtitle": "The most ambitious race ever conceived.",
-  "description": "An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile race from Harrisonburg to Roanoke, Virginia. Facing snow in the first week of April wasn't part of the plan.Many bailed prior to the race, I was one of the only ones to bail during the race.",
+  "description":
+    "An absolutely insane, marvelous, and memorable experience. The innagural year of the RockStar VA, a 270 mile race from Harrisonburg to Roanoke, Virginia. Facing snow in the first week of April wasn't part of the plan.Many bailed prior to the race, I was one of the only ones to bail during the race.",
   "loc": "Black Sheep Cofee, Harrisonburg, VA",
   "author": "cole",
   "date": "April 7, 2018",
   "fbEvent": "https://www.facebook.com/events/1583483341702188/",
-  "rwGps": "https://rwgps-embeds.com/embeds?type=route&id=27086614&sampleGraph=true",
+  "rwGps":
+    "https://rwgps-embeds.com/embeds?type=route&id=27086614&sampleGraph=true",
   "schema": {
     "type": "NewsArticle"
   },
   "imgRoute": "stokesville-market-snow.jpg",
-  "relatedPosts": [
-    "middle-mt-momma-2018",
-    "creature-2017-recap"
-  ],
-  "keywords": "roanoke, harrisonburg, race, ride, endurance, virginia endurance series, bikepacking, gravel, trail, road, pave, snow, ultra"
+  "relatedPosts": ["middle-mt-momma-2018", "creature-2017-recap"],
+  "keywords":
+    "roanoke, harrisonburg, race, ride, endurance, virginia endurance series, bikepacking, gravel, trail, road, pave, snow, ultra"
 }

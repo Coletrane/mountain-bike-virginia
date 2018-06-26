@@ -67,21 +67,19 @@
 </template>
 
 <script>
-  import BlogPost from '../components/BlogPost'
-  import BlogImage from '../components/Images/BlogImage'
-  import Youtube from '../components/Iframes/Youtube'
+import BlogPost from "../components/BlogPost"
+import BlogImage from "../components/Images/BlogImage"
+import Youtube from "../components/Iframes/Youtube"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'dt-swiss-54t-ratchet-review',
-    components: {
-      Youtube,
-      BlogPost,
-      BlogImage
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "dt-swiss-54t-ratchet-review",
+  components: {
+    Youtube,
+    BlogPost,
+    BlogImage
+  },
+  mixins: [blogPost]
+}
 </script>

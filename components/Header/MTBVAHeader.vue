@@ -26,133 +26,131 @@
   </div>
 </template>
 <script>
-  import Parallax from './Parallax'
-  import {s3StaticImg} from '../../scripts/routes'
+import Parallax from "./Parallax"
+import { s3StaticImg } from "../../scripts/routes"
 
-  export default {
-    name: 'mtbva-header',
-    components: {
-      Parallax
+export default {
+  name: "mtbva-header",
+  components: {
+    Parallax
+  },
+  props: {
+    image: {
+      type: String,
+      required: true
     },
-    props: {
-      image: {
-        type: String,
-        required: true
-      },
-      title: {
-        type: String,
-        required: true
-      },
-      subtitle: {
-        type: String,
-        required: false
-      },
-      button: {
-        type: String,
-        required: false
-      },
-      buttonLink: {
-        type: String,
-        required: false
-      },
-      homePage: {
-        type: Boolean,
-        required: false,
-        default: false
-      }
+    title: {
+      type: String,
+      required: true
     },
-    data() {
-      return {
-        img: `${s3StaticImg}/`,
-      }
+    subtitle: {
+      type: String,
+      required: false
     },
-    computed: {
-      subpageTitleClass() {
-        if (this.$route.name !== 'index') {
-          return 'mtbva-title-subpage'
-        }
+    button: {
+      type: String,
+      required: false
+    },
+    buttonLink: {
+      type: String,
+      required: false
+    },
+    homePage: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+  data() {
+    return {
+      img: `${s3StaticImg}/`
+    }
+  },
+  computed: {
+    subpageTitleClass() {
+      if (this.$route.name !== "index") {
+        return "mtbva-title-subpage"
       }
     }
   }
+}
 </script>
 <style>
+.mtbva-header {
+  background-color: black;
+}
 
-  .mtbva-header {
-    background-color: black;
-  }
+.hero-content {
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  top: 60%;
+}
 
-  .hero-content {
-    padding: 1rem;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    width: 100%;
-    height: 500px;
-    transform: translate(-50%, -50%);
-    top: 60%
-  }
+.mtbva-title {
+  text-shadow: 4px 3px 3px rgb(0, 0, 0);
+  font-size: 6rem;
+}
+.mtbva-title-subpage {
+  font-size: 4rem;
+}
+.mtbva-subtitle {
+  text-shadow: 4px 3px 3px rgb(0, 0, 0);
+}
 
+@media (max-width: 700px) {
   .mtbva-title {
-    text-shadow: 4px 3px 3px rgb(0, 0, 0);
-    font-size: 6rem;
-  }
-  .mtbva-title-subpage {
     font-size: 4rem;
   }
+  .mtbva-title-subpage {
+    font-size: 3rem;
+  }
   .mtbva-subtitle {
-    text-shadow: 4px 3px 3px rgb(0, 0, 0);
+    font-size: 1.5rem;
   }
+}
 
-  @media (max-width: 700px) {
-
-    .mtbva-title {
-      font-size: 4rem;
-    }
-    .mtbva-title-subpage {
-      font-size: 3rem;
-    }
-    .mtbva-subtitle {
-      font-size: 1.5rem;
-    }
+@media (max-width: 450px) {
+  .mtbva-title {
+    font-size: 3.5rem;
   }
-
-  @media (max-width: 450px) {
-    .mtbva-title {
-      font-size: 3.5rem;
-    }
-    .mtbva-title-subpage {
-      font-size: 2rem;
-    }
-    .mtbva-subtitle {
-      font-size: .5rem;
-    }
+  .mtbva-title-subpage {
+    font-size: 2rem;
   }
+  .mtbva-subtitle {
+    font-size: 0.5rem;
+  }
+}
 
+.subpage-title {
+  font-size: 5em;
+}
+
+@media (max-width: 550px) {
   .subpage-title {
-    font-size: 5em;
+    font-size: 3rem;
   }
+}
 
-  @media (max-width: 550px) {
-    .subpage-title {
-      font-size: 3rem;
-    }
-  }
+.button-link {
+  color: transparent;
+}
 
-  .button-link {
-    color: transparent;
-  }
+.two-sec-fade-enter-to {
+  transition: opacity 2s ease;
+}
 
-  .two-sec-fade-enter-to {
-    transition: opacity 2s ease;
-  }
-
-  .two-sec-fade-enter {
-    opacity: 0;
-  }
+.two-sec-fade-enter {
+  opacity: 0;
+}
 </style>
 
 <style scoped>
-  .white-btn {
-    width: 200px;
-  }
+.white-btn {
+  width: 200px;
+}
 </style>

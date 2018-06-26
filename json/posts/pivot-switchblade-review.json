@@ -1,8 +1,10 @@
 {
   "title": "Review: Pivot Switchblade",
-  "subtitle": "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
+  "subtitle":
+    "In a world obsessed with what discipline you ride, this bike doesn't have time for that.",
   "author": "cole",
-  "description": "It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.",
+  "description":
+    "It's not enduro, it's not trail. Perhaps they should have called it the Swiss Army. No, that would never fly.",
   "date": "October 7, 2017",
   "schema": {
     "type": "Review",
@@ -21,5 +23,6 @@
     "rocky-mountain-instinct-review",
     "dt-swiss-54t-ratchet-review"
   ],
-  "keywords": "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail"
+  "keywords":
+    "mountain, bike, pivot, carbon, pivot bikes, review, switchblade, 29, 27 plus, 29er, enduro, all mountain, trail"
 }

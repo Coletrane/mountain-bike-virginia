@@ -4,64 +4,66 @@
        :alt="alt"/>
 </template>
 <script>
-  import {noExtension, justExtension} from '../../assets/functions'
+import { noExtension, justExtension } from "../../assets/functions"
 
-  export default {
-    name: 'responsive-img',
-    props: {
-      src: {
-        type: String,
-        required: true
-      },
-      portrait: {
-        default: false
-      },
-      alt: {
-        type: String,
-        default: 'Mountain Bike Virginia'
-      }
+export default {
+  name: "responsive-img",
+  props: {
+    src: {
+      type: String,
+      required: true
     },
-    computed: {
-      url() {
-        let result
-        const filename = noExtension(this.src)
-        const extension = justExtension(this.src)
+    portrait: {
+      default: false
+    },
+    alt: {
+      type: String,
+      default: "Mountain Bike Virginia"
+    }
+  },
+  computed: {
+    url() {
+      let result
+      const filename = noExtension(this.src)
+      const extension = justExtension(this.src)
 
-        if (filename && extension) {
-          if (process.browser) {
-            if (document.body.clientWidth <= 480) {
-              result = `${filename}-480${extension}`
-            } else if (document.body.clientWidth <= 720 &&
-                       document.body.clientWidth > 480) {
-              result = `${filename}-720${extension}`
-            } else {
-              result = this.src
-            }
+      if (filename && extension) {
+        if (process.browser) {
+          if (document.body.clientWidth <= 480) {
+            result = `${filename}-480${extension}`
+          } else if (
+            document.body.clientWidth <= 720 &&
+            document.body.clientWidth > 480
+          ) {
+            result = `${filename}-720${extension}`
+          } else {
+            result = this.src
           }
-        } else {
-          // Default to full size image
-          result = this.src
         }
-
-        return result
+      } else {
+        // Default to full size image
+        result = this.src
       }
+
+      return result
     }
   }
+}
 </script>
 <style>
-  .landscape[lazy=loaded] {
-    width: 100% !important;
-  }
+.landscape[lazy="loaded"] {
+  width: 100% !important;
+}
 
-  .portrait[lazy=loaded] {
-    width: 65%;
-    display: block;
-    margin: auto;
-  }
+.portrait[lazy="loaded"] {
+  width: 65%;
+  display: block;
+  margin: auto;
+}
 
-  @media (max-width: 800px) {
-    .portrait[lazy=loaded] {
-      width: 100%;
-    }
+@media (max-width: 800px) {
+  .portrait[lazy="loaded"] {
+    width: 100%;
   }
+}
 </style>

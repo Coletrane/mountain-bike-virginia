@@ -1,15 +1,15 @@
 {
   "title": "Video: Angelo Wash's race run at Downhill Southeast 2",
-  "subtitle": "Another great weekend in the books after taking on a rough track this past weekend I managed to finish 12 out of 69 other awesome racers.",
+  "subtitle":
+    "Another great weekend in the books after taking on a rough track this past weekend I managed to finish 12 out of 69 other awesome racers.",
   "ytSrc": "https://www.youtube.com/embed/VpLYhTODbjQ",
   "author": "angelo",
   "date": "April 30, 2018",
-  "description": "Race run video from the second Downhill Southeast race of the 2018 season at Massanutten Bike Park near Harrisonburg Virginia.",
+  "description":
+    "Race run video from the second Downhill Southeast race of the 2018 season at Massanutten Bike Park near Harrisonburg Virginia.",
   "loc": "Massanutten Bike Park, Massanutten VA",
   "imgRoute": "angelo.jpg",
-  "relatedPosts": [
-    "battle-at-blackhorse-2018",
-    "middle-mt-momma-2018"
-  ],
-  "keywords": "downhill, gravity, enduro, mtb, massanutten, bike park, gnar, dh, dh bike, race, downhill southeast, downhill race"
+  "relatedPosts": ["battle-at-blackhorse-2018", "middle-mt-momma-2018"],
+  "keywords":
+    "downhill, gravity, enduro, mtb, massanutten, bike park, gnar, dh, dh bike, race, downhill southeast, downhill race"
 }

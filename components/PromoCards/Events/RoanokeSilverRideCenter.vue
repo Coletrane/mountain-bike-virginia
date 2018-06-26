@@ -11,21 +11,19 @@
   </post-card>
 </template>
 <script>
-  import PostCard from '../../Card/PostCard'
-  import ImageLink from '../../Images/ImageLink'
-  import Instagram from '../../Iframes/Instagram'
+import PostCard from "../../Card/PostCard"
+import ImageLink from "../../Images/ImageLink"
+import Instagram from "../../Iframes/Instagram"
 
-  import promoCard from '../../../assets/mixins/promo-card'
+import promoCard from "../../../assets/mixins/promo-card"
 
-  export default {
-    name: 'events-roanoke-silver-ride-center-promo',
-    components: {
-      PostCard,
-      ImageLink,
-      Instagram
-    },
-    mixins: [
-      promoCard
-    ]
-  }
+export default {
+  name: "events-roanoke-silver-ride-center-promo",
+  components: {
+    PostCard,
+    ImageLink,
+    Instagram
+  },
+  mixins: [promoCard]
+}
 </script>

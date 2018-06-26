@@ -25,65 +25,62 @@
   </card>
 </template>
 <script>
-  import Card from './Card'
-  import SocialActions from './SocialActions'
+import Card from "./Card"
+import SocialActions from "./SocialActions"
 
-  export default {
-    name: 'abstract-post-card',
-    props: {
-      post: {
-        type: Object,
-        required: true
-      }
-    },
-    components: {
-      Card,
-      SocialActions
+export default {
+  name: "abstract-post-card",
+  props: {
+    post: {
+      type: Object,
+      required: true
     }
+  },
+  components: {
+    Card,
+    SocialActions
   }
+}
 </script>
 <style>
-  .words {
-    padding: 1rem;
-    font-size: 1.2rem;
-  }
-  .after-header a {
-    text-decoration: underline;
-    color: black;
-    background: rgba(115, 165, 51, 0.75);
-    background-size: 100% 1em;
-  }
-  .after-header a:hover {
-    background: rgba(61, 118, 53, 0.8);
-    transition: 600ms ease;
-  }
-  .after-header svg {
-    font-size: 1.2rem;
-  }
-
+.words {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.after-header a {
+  text-decoration: underline;
+  color: black;
+  background: rgba(115, 165, 51, 0.75);
+  background-size: 100% 1em;
+}
+.after-header a:hover {
+  background: rgba(61, 118, 53, 0.8);
+  transition: 600ms ease;
+}
+.after-header svg {
+  font-size: 1.2rem;
+}
 </style>
 <style scoped>
-  .social-right {
-    text-align: right;
-    padding-left: 0;
-  }
+.social-right {
+  text-align: right;
+  padding-left: 0;
+}
 
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
+}
 
-  .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
-  .abstract-post-card {
-    padding-top: 1rem;
-  }
+.abstract-post-card {
+  padding-top: 1rem;
+}
 
-  .after-header {
-    width: 100%
-  }
-
-
+.after-header {
+  width: 100%;
+}
 </style>

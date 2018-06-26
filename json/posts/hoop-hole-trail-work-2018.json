@@ -4,14 +4,13 @@
   "author": "cole",
   "date": "April 1, 2018",
   "loc": "Craig County, VA",
-  "description": "Cole Inman completing part of his trail work for his RockStar VA entry fee.",
+  "description":
+    "Cole Inman completing part of his trail work for his RockStar VA entry fee.",
   "schema": {
     "type": "NewsArticle"
   },
   "imgRoute": "cole-sly-lookback.jpg",
-  "relatedPosts": [
-    "rockstar-va-2018",
-    "middle-mt-momma-2018"
-  ],
-  "keywords": "mountain, bike, trail, trail work, saw, trail advocacy, rockstar, race, ride, backcountry, woods, clearing, trailwork, volunteer"
+  "relatedPosts": ["rockstar-va-2018", "middle-mt-momma-2018"],
+  "keywords":
+    "mountain, bike, trail, trail work, saw, trail advocacy, rockstar, race, ride, backcountry, woods, clearing, trailwork, volunteer"
 }

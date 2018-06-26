@@ -4,12 +4,11 @@
   "ytSrc": "https://www.youtube.com/embed/CahKXfMALw4",
   "author": "cole",
   "date": "May 6, 2018",
-  "description": "21st consecutive year of running this race. The rain threatened us all night, but we prevailed. We had about 100 racers come out and had 35 in do the XXC 40 mile course. Thank you to everyone who came out and heres to a drier 22nd year! ",
+  "description":
+    "21st consecutive year of running this race. The rain threatened us all night, but we prevailed. We had about 100 racers come out and had 35 in do the XXC 40 mile course. Thank you to everyone who came out and heres to a drier 22nd year! ",
   "loc": "Douthat State Park, Clifton Forge VA",
   "imgRoute": "P1010122.jpg",
-  "relatedPosts": [
-    "middle-mt-momma-2018",
-    "creature-2017-recap"
-  ],
-  "keywords": "race, douthat state park, douthat, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva lexington, xxc, enduro, bike race, mountain bike race"
+  "relatedPosts": ["middle-mt-momma-2018", "creature-2017-recap"],
+  "keywords":
+    "race, douthat state park, douthat, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva lexington, xxc, enduro, bike race, mountain bike race"
 }

@@ -1,3 +1,3 @@
-export default function ({store}) {
-  store.dispatch('closeMenu')
+export default function({ store }) {
+  store.dispatch("closeMenu")
 }

@@ -17,31 +17,31 @@
   </table>
 </template>
 <script>
-  export default {
-    name: "class-table",
-    props: {
-      items: {
-        required: true,
-        type: Array
-      }
+export default {
+  name: "class-table",
+  props: {
+    items: {
+      required: true,
+      type: Array
     }
   }
+}
 </script>
 <style scoped>
+thead {
+  display: table-column;
+}
 
-  thead {
-    display: table-column;
-  }
+th,
+td {
+  border: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 33%;
+}
 
-  th, td {
-    border: none;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    width: 33%;
-  }
-
-  tr:hover, tr:active {
-    border-bottom: 1px solid black;
-  }
-
+tr:hover,
+tr:active {
+  border-bottom: 1px solid black;
+}
 </style>

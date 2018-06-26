@@ -8,23 +8,23 @@
 </template>
 
 <script>
-  export default {
-    name: 'sponsor',
-    props: {
-      sponsor: {
-        type: Object,
-        required: true
-      },
-      columns: {
-        type: Number,
-        required: true
-      }
+export default {
+  name: "sponsor",
+  props: {
+    sponsor: {
+      type: Object,
+      required: true
+    },
+    columns: {
+      type: Number,
+      required: true
     }
   }
+}
 </script>
 
 <style scoped>
-  .sponsor {
-    width: 90%;
-  }
+.sponsor {
+  width: 90%;
+}
 </style>

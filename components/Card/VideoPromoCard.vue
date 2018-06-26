@@ -6,19 +6,17 @@
   </post-card>
 </template>
 <script>
-  import PostCard from '../Card/PostCard'
-  import Youtube from '../Iframes/Youtube'
+import PostCard from "../Card/PostCard"
+import Youtube from "../Iframes/Youtube"
 
-  import abstractPromoCard from '../../assets/mixins/abstract-promo-card'
+import abstractPromoCard from "../../assets/mixins/abstract-promo-card"
 
-  export default {
-    name: 'video-promo-card',
-    components: {
-      PostCard,
-      Youtube
-    },
-    mixins: [
-      abstractPromoCard
-    ]
-  }
+export default {
+  name: "video-promo-card",
+  components: {
+    PostCard,
+    Youtube
+  },
+  mixins: [abstractPromoCard]
+}
 </script>

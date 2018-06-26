@@ -16,27 +16,25 @@
   </div>
 </template>
 <script>
-  import iframeLoader from '../../assets/mixins/iframe-loader'
+import iframeLoader from "../../assets/mixins/iframe-loader"
 
-  export default {
-    name: 'youtube',
-    props: {
-      src: {
-        type: String,
-        required: true
-      }
-    },
-    mixins: [
-      iframeLoader
-    ]
-  }
+export default {
+  name: "youtube",
+  props: {
+    src: {
+      type: String,
+      required: true
+    }
+  },
+  mixins: [iframeLoader]
+}
 </script>
 <style scoped>
-  img {
-    width: 50%;
-    height: auto;
-    display: block;
-    margin: auto;
-    background-color: #FFFFFF;
-  }
+img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: auto;
+  background-color: #ffffff;
+}
 </style>

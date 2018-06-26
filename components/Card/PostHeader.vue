@@ -39,62 +39,59 @@
   </div>
 </template>
 <script>
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-  import faCalendarAlt from '@fortawesome/fontawesome-free-solid/faCalendarAlt'
-  import faLocationArrow from '@fortawesome/fontawesome-free-solid/faLocationArrow'
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
+import faCalendarAlt from "@fortawesome/fontawesome-free-solid/faCalendarAlt"
+import faLocationArrow from "@fortawesome/fontawesome-free-solid/faLocationArrow"
 
-  import postRoute from '../../assets/mixins/post-route'
+import postRoute from "../../assets/mixins/post-route"
 
-  export default {
-    name: 'post-header',
-    props: {
-      post: {
-        type: Object,
-        required: true
-      }
-    },
-    components: {
-      FontAwesomeIcon
-    },
-    mixins: [
-      postRoute
-    ],
-    data() {
-      return {
-        faCalendarAlt: faCalendarAlt,
-        faLocationArrow: faLocationArrow
-      }
+export default {
+  name: "post-header",
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  components: {
+    FontAwesomeIcon
+  },
+  mixins: [postRoute],
+  data() {
+    return {
+      faCalendarAlt: faCalendarAlt,
+      faLocationArrow: faLocationArrow
     }
   }
+}
 </script>
 <style scoped>
-  .post-card-header {
-    padding-top: .5rem;
-  }
+.post-card-header {
+  padding-top: 0.5rem;
+}
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  h2 {
-    text-decoration: underline;
-    font-weight: 800;
+h2 {
+  text-decoration: underline;
+  font-weight: 800;
+}
 
-  }
+h3 {
+  font-size: 1.7rem;
+  font-family: "lato", sans-serif;
+  font-style: italic;
+}
 
-  h3 {
-    font-size: 1.7rem;
-    font-family: 'lato', sans-serif;
-    font-style: italic;
-  }
+h4 {
+  font-size: 1.5rem;
+  font-family: "lato", sans-serif;
+}
 
-  h4 {
-    font-size: 1.5rem;
-    font-family: 'lato', sans-serif;
-  }
-
-  svg {
-    margin-right: .5rem;
-  }
+svg {
+  margin-right: 0.5rem;
+}
 </style>

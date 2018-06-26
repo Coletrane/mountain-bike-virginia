@@ -19,91 +19,89 @@
   </div>
 </template>
 <script>
-  import MTBVAHeader from './Header/MTBVAHeader.vue'
-  import Youtube from './Iframes/Youtube.vue'
-  import BlogPostCard from './Card/BlogPostCard'
-  import RideWithGps from './Iframes/RideWithGps.vue'
-  import SocialActions from './Card/SocialActions.vue'
-  import RelatedPosts from './Card/RelatedPosts'
-  import Banner from './Das/Banner'
+import MTBVAHeader from "./Header/MTBVAHeader.vue"
+import Youtube from "./Iframes/Youtube.vue"
+import BlogPostCard from "./Card/BlogPostCard"
+import RideWithGps from "./Iframes/RideWithGps.vue"
+import SocialActions from "./Card/SocialActions.vue"
+import RelatedPosts from "./Card/RelatedPosts"
+import Banner from "./Das/Banner"
 
+import { s3StaticImg, s3Banners } from "../scripts/routes"
 
-  import { s3StaticImg, s3Banners } from '../scripts/routes'
-
-  export default {
-    name: 'blog-post',
-    components: {
-      MTBVAHeader,
-      Youtube,
-      BlogPostCard,
-      RideWithGps,
-      SocialActions,
-      RelatedPosts,
-      Banner
+export default {
+  name: "blog-post",
+  components: {
+    MTBVAHeader,
+    Youtube,
+    BlogPostCard,
+    RideWithGps,
+    SocialActions,
+    RelatedPosts,
+    Banner
+  },
+  props: {
+    image: {
+      type: String,
+      required: true
     },
-    props: {
-      image: {
-        type: String,
-        required: true
-      },
-      post: {
-        required: true
-      },
-      headerAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      noAuthor: {
-        type: Boolean,
-        required: false,
-        default: false
-      },
-      relatedPosts: {
-        type: Array,
-        required: false
-      }
+    post: {
+      required: true
     },
-    data() {
+    headerAuthor: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    noAuthor: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    relatedPosts: {
+      type: Array,
+      required: false
+    }
+  },
+  data() {
+    return {
+      s3Banners: s3Banners
+    }
+  },
+  computed: {
+    backgroundImage() {
       return {
-        s3Banners: s3Banners,
-      }
-    },
-    computed: {
-      backgroundImage() {
-        return {
-          backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`
-        }
+        backgroundImage: `url("${s3StaticImg}/asfalt-light.png")`
       }
     }
   }
+}
 </script>
 <style>
-  .card-container {
-    padding-top: 2rem;
-  }
+.card-container {
+  padding-top: 2rem;
+}
 
-  .blog-p {
-    padding: .5rem 1rem;
-    font-size: 1.2rem;
-  }
+.blog-p {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
 
-  .blog-promo {
-    padding: 1rem;
-  }
+.blog-promo {
+  padding: 1rem;
+}
 
-  .center {
-    text-align: center;
-  }
+.center {
+  text-align: center;
+}
 
-  .caption {
-    text-align: center;
-    font-size: 1rem;
-    color: #5c5e5c;
-  }
-  p {
-    padding: .5rem 1rem;
-    font-size: 1.2rem;
-  }
+.caption {
+  text-align: center;
+  font-size: 1rem;
+  color: #5c5e5c;
+}
+p {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
 </style>
-

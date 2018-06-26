@@ -4,14 +4,13 @@
   "author": "cole",
   "date": "January 20, 2018",
   "loc": "Gravel Dr, Troutville, VA",
-  "description": "Who wants to do a gravel ride? Okay how about a 54 mile one? Okay how about 20 degrees? Perfect. Let's ride. Once again Gravelocity had a great turnout with people coming from Fredricksburg, Virginia Beach, and even Cincinnati!",
+  "description":
+    "Who wants to do a gravel ride? Okay how about a 54 mile one? Okay how about 20 degrees? Perfect. Let's ride. Once again Gravelocity had a great turnout with people coming from Fredricksburg, Virginia Beach, and even Cincinnati!",
   "schema": {
     "type": "NewsArticle"
   },
   "imgRoute": "bigfinish.jpg",
-  "relatedPosts": [
-    "gravelocity-2017-video",
-    "spec-mines-oct-29-2017"
-  ],
-  "keywords": "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail"
+  "relatedPosts": ["gravelocity-2017-video", "spec-mines-oct-29-2017"],
+  "keywords":
+    "gravel, ride, bike, road, blue ridge parkway, blue ridge, parkway, winter, group ride, gravelocity, beer, cross, cyclocross, adventure bike, cx, trail"
 }

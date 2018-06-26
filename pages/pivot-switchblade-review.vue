@@ -48,19 +48,17 @@
   </div>
 </template>
 <script>
-  import BlogPost from '../components/BlogPost.vue'
-  import BlogImage from '../components/Images/BlogImage'
+import BlogPost from "../components/BlogPost.vue"
+import BlogImage from "../components/Images/BlogImage"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'pivot-switchblade-review',
-    components: {
-      BlogPost,
-      BlogImage
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "pivot-switchblade-review",
+  components: {
+    BlogPost,
+    BlogImage
+  },
+  mixins: [blogPost]
+}
 </script>

@@ -1,16 +1,16 @@
 {
   "title": "Goodbye Nashville: Final Ride at Ravenwood Abbandoned Golf Course",
-  "subtitle": "Surrouned by suburbs, and more on the way in, I'm on my way out.",
+  "subtitle":
+    "Surrouned by suburbs, and more on the way in, I'm on my way out.",
   "ytSrc": "https://www.youtube.com/embed/SN1BRamTPEY",
   "author": "cole",
   "date": "March 8, 2018",
   "loc": "Shelby Bottoms Greenway, Nashville, TN",
-  "description": "Road Bike Ride on Ravenwood Abandoned Golf Course connected to Shelby Bottoms Greenway in East Nashville, Tennessee",
+  "description":
+    "Road Bike Ride on Ravenwood Abandoned Golf Course connected to Shelby Bottoms Greenway in East Nashville, Tennessee",
   "loc": "Shelby Bottoms Greenway, Nashville, TN",
   "imgRoute": "canyon-ravenwood.jpg",
-  "relatedPosts": [
-    "gravelocity-2017-video",
-    "gravelocity-2018"
-  ],
-  "keywords": "road, bike, greenway, nashville, ride, cycling, velo, canyon, golf course, riding"
+  "relatedPosts": ["gravelocity-2017-video", "gravelocity-2018"],
+  "keywords":
+    "road, bike, greenway, nashville, ride, cycling, velo, canyon, golf course, riding"
 }

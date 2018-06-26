@@ -9,19 +9,17 @@
   </post-card>
 </template>
 <script>
-  import PostCard from '../Card/PostCard'
-  import ImageLink from '../Images/ImageLink'
+import PostCard from "../Card/PostCard"
+import ImageLink from "../Images/ImageLink"
 
-  import abstractPromoCard from '../../assets/mixins/abstract-promo-card'
+import abstractPromoCard from "../../assets/mixins/abstract-promo-card"
 
-  export default {
-    name: 'blog-post-promo-card',
-    components: {
-      PostCard,
-      ImageLink
-    },
-    mixins: [
-      abstractPromoCard
-    ]
-  }
+export default {
+  name: "blog-post-promo-card",
+  components: {
+    PostCard,
+    ImageLink
+  },
+  mixins: [abstractPromoCard]
+}
 </script>

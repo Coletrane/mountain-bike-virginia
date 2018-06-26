@@ -1,8 +1,11 @@
 {
   "title": "Roanoke Announced as an IMBA Silver Ride Center",
-  "subtitle": "The East Coast Mountain Biking Capital of the World. Executive Director of IMBA, David Wiens makes the announcement at the annual Visit Virginia's Blue Ridge meeting.",
-  "description": "The East Coast Mountain Biking Capital of the World. Executive Director of IMBA, David Wiens makes the announcement at the annual Visit Virginia's Blue Ridge meeting.",
-  "promo": " The incredible keynote speaker and best selling author <a href=\"https://www.akadrewdavis.com/\">Andrew Davis</a> gives a gripping speech that touches on what makes a town unique, and how that can bring tourism. From Muscle Shoals Alabama, to Warsaw Indiana he gives astute examples of towns that have found their niche. Why are <i><strong>you</strong></i> here? The meeting culminates with multi Leadville 100 champion and IMBA Executive Director David Wiens announcing Roanoke as an IMBA Silver Ride Center, the only one on the East Coast. Andrew Davis toasts to <strong>Roanoke, The East Coast Mountain Biking Capital of the World.</strong>",
+  "subtitle":
+    "The East Coast Mountain Biking Capital of the World. Executive Director of IMBA, David Wiens makes the announcement at the annual Visit Virginia's Blue Ridge meeting.",
+  "description":
+    "The East Coast Mountain Biking Capital of the World. Executive Director of IMBA, David Wiens makes the announcement at the annual Visit Virginia's Blue Ridge meeting.",
+  "promo":
+    " The incredible keynote speaker and best selling author <a href=\"https://www.akadrewdavis.com/\">Andrew Davis</a> gives a gripping speech that touches on what makes a town unique, and how that can bring tourism. From Muscle Shoals Alabama, to Warsaw Indiana he gives astute examples of towns that have found their niche. Why are <i><strong>you</strong></i> here? The meeting culminates with multi Leadville 100 champion and IMBA Executive Director David Wiens announcing Roanoke as an IMBA Silver Ride Center, the only one on the East Coast. Andrew Davis toasts to <strong>Roanoke, The East Coast Mountain Biking Capital of the World.</strong>",
   "instagram": "https://www.instagram.com/p/Bi5yGWaA9Nd/embed",
   "date": "May 17, 2018",
   "author": "cole",
@@ -11,9 +14,7 @@
     "type": "NewsArticle"
   },
   "imgRoute": "IMG_3851.jpg",
-  "relatedPosts": [
-    "middle-mt-momma-2018",
-    "creature-2017-recap"
-  ],
-  "keywords": "virginia, virginias blue ridge, mountain biking, imba, silver ride center, biking, cycling, mtb, trails, tourism, visit, va blue ridge, blue ridge mountains, blue ridge parkway, carvins cove, mill mountain, enduro"
+  "relatedPosts": ["middle-mt-momma-2018", "creature-2017-recap"],
+  "keywords":
+    "virginia, virginias blue ridge, mountain biking, imba, silver ride center, biking, cycling, mtb, trails, tourism, visit, va blue ridge, blue ridge mountains, blue ridge parkway, carvins cove, mill mountain, enduro"
 }

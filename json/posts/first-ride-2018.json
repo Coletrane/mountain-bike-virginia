@@ -4,14 +4,13 @@
   "author": "corey",
   "date": "January 1, 2018",
   "loc": "Carvins Cove, Roanoke, VA",
-  "description": "For the 28th consecutive year the the first ride of the new year was a roaring (shivering) success. Thank you to everyone who turned out and cranked out some of the most frigid miles they'll have all year.",
+  "description":
+    "For the 28th consecutive year the the first ride of the new year was a roaring (shivering) success. Thank you to everyone who turned out and cranked out some of the most frigid miles they'll have all year.",
   "schema": {
     "type": "NewsArticle"
   },
   "imgRoute": "classic-shot-2018.jpg",
-  "relatedPosts": [
-    "creature-2017-recap",
-    "middle-mt-momma-2018"
-  ],
-  "keywords": "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january"
+  "relatedPosts": ["creature-2017-recap", "middle-mt-momma-2018"],
+  "keywords":
+    "mountain, bike, blue, ridge, carvins, cove, carvins cove, new year, new years day, new, year, first ride, first, trail, enduro, cross country, xc, xxc, cold, winter, january"
 }

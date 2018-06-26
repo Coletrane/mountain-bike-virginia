@@ -100,22 +100,19 @@
   </div>
 </template>
 <script>
-  import BlogPost from '../components/BlogPost.vue'
-  import Youtube from '../components/Iframes/Youtube.vue'
-  import BlogImage from '../components/Images/BlogImage.vue'
+import BlogPost from "../components/BlogPost.vue"
+import Youtube from "../components/Iframes/Youtube.vue"
+import BlogImage from "../components/Images/BlogImage.vue"
 
-  import blogPost from '../assets/mixins/blog-post'
+import blogPost from "../assets/mixins/blog-post"
 
-  export default {
-    name: 'creature-2017-recap',
-    components: {
-      BlogPost,
-      Youtube,
-      BlogImage
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "creature-2017-recap",
+  components: {
+    BlogPost,
+    Youtube,
+    BlogImage
+  },
+  mixins: [blogPost]
+}
 </script>
-

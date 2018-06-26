@@ -14,56 +14,54 @@
                   :alt="post.title"/>
 </template>
 <script>
-  import ResponsiveImg from './ResponsiveImg'
+import ResponsiveImg from "./ResponsiveImg"
 
-  import postRoute from '../../assets/mixins/post-route'
+import postRoute from "../../assets/mixins/post-route"
 
-  import { s3Pages } from '../../scripts/routes'
+import { s3Pages } from "../../scripts/routes"
 
-  export default {
-    components: {ResponsiveImg},
-    name: 'image-link',
-    props: {
-      post: {
-        required: true,
-        type: Object
-      },
-      href: {
-        type: String
-      },
-      src: {
-        type: String
-      }
+export default {
+  components: { ResponsiveImg },
+  name: "image-link",
+  props: {
+    post: {
+      required: true,
+      type: Object
     },
-    components: {
-      ResponsiveImg
+    href: {
+      type: String
     },
-    mixins: [
-      postRoute
-    ],
-    computed: {
-      img() {
-        if (this.src) {
-          return this.src
-        } else {
-          return `${s3Pages}/${this.post.route}/${this.post.imgRoute}`
-        }
+    src: {
+      type: String
+    }
+  },
+  components: {
+    ResponsiveImg
+  },
+  mixins: [postRoute],
+  computed: {
+    img() {
+      if (this.src) {
+        return this.src
+      } else {
+        return `${s3Pages}/${this.post.route}/${this.post.imgRoute}`
       }
     }
   }
+}
 </script>
 <style scoped>
+div {
+  min-height: 400px;
+}
+
+@media (max-width: 576px) {
   div {
-    min-height: 400px;
+    min-height: 200px;
   }
+}
 
-  @media (max-width: 576px) {
-    div {
-      min-height: 200px;
-    }
-  }
-
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
+}
 </style>

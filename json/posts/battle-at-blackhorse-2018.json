@@ -1,10 +1,12 @@
 {
   "title": "Battle at Blackhorse 2018",
-  "subtitle": "Enduro up the Glenwood Horse Trail, culminating on the famed Dody Ridge.",
+  "subtitle":
+    "Enduro up the Glenwood Horse Trail, culminating on the famed Dody Ridge.",
   "author": "gavin",
   "date": "February 25, 2018",
   "loc": "Day Creek, Blue Ridge, VA",
-  "description": "Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge",
+  "description":
+    "Enduro race on the Glenwood Horse Trail up to the Blue Ridge Parkway and finishing with Dody Ridge",
   "schema": {
     "type": "NewsArticle"
   },
@@ -13,5 +15,6 @@
     "battle-at-blackhorse-2018-video",
     "dody-ridge-run-fall-2017"
   ],
-  "keywords": "mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia"
+  "keywords":
+    "mountain, bike, race, enduro, trail, all mountain, time, blog, trails, blue, ridge, blue ridge, blue ridge parkway, glenwood horse trail, gnar, virginia"
 }

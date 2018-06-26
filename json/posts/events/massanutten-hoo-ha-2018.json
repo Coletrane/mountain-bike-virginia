@@ -1,7 +1,9 @@
 {
   "title": "30th Annual Massanutten Hoo-Ha!",
-  "subtitle": "Came Hell or high water (the latter delivered in tidal waves),  the 30th Massanutten Hoo-Ha! is in the books.",
-  "description": "Dateline Keezletown, VA, 1989. An ambitious ski manager early adopts the mountain bike thing and throws a whimsically titled event on a lark, complete with equally whimsical log pull and lake jump contests. Though the lake jump and log pull have been left by the trailside, the Hoo-Ha! continued the next 29 years with Kenny Hess still at the helm of one of the most enduring events in mountain bike racing, with a bright forecast for years to come.",
+  "subtitle":
+    "Came Hell or high water (the latter delivered in tidal waves),  the 30th Massanutten Hoo-Ha! is in the books.",
+  "description":
+    "Dateline Keezletown, VA, 1989. An ambitious ski manager early adopts the mountain bike thing and throws a whimsically titled event on a lark, complete with equally whimsical log pull and lake jump contests. Though the lake jump and log pull have been left by the trailside, the Hoo-Ha! continued the next 29 years with Kenny Hess still at the helm of one of the most enduring events in mountain bike racing, with a bright forecast for years to come.",
   "author": "kyle",
   "date": "June 3, 2018, 9:00",
   "loc": "Massanutten Western Slope, Keezletown, VA",
@@ -11,9 +13,7 @@
     "type": "NewsArticle"
   },
   "imgRoute": "IMG_3692.jpg",
-  "relatedPosts": [
-    "middle-mt-momma-2018",
-    "rockstar-va-2018"
-  ],
-  "keywords": "race, massanutten, harrisonburg, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva, xxc, enduro, bike race, mountain bike race xcm, xco"
+  "relatedPosts": ["middle-mt-momma-2018", "rockstar-va-2018"],
+  "keywords":
+    "race, massanutten, harrisonburg, marathon mtb, xcm, cross country, charlottesville, richmond, xxcva, xxc, enduro, bike race, mountain bike race xcm, xco"
 }
