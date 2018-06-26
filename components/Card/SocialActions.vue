@@ -1,11 +1,11 @@
 <template>
   <div class="social">
     <a :href="facebookLink"
-        class="fb-social-action">
+       class="fb-social-action">
       <font-awesome-icon :icon="faFacebook"/>
     </a>
     <a :href="redditLink"
-        class="reddit-social-action">
+       class="reddit-social-action">
       <font-awesome-icon :icon="faReddit"/>
     </a>
     <a :href="twitterLink"
@@ -25,7 +25,7 @@
   import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
 
   export default {
-    name: "social-actions",
+    name: 'social-actions',
     props: {
       post: {
         required: true
@@ -64,26 +64,10 @@
     }
   }
 </script>
-
-<style scoped>
-
-  a {
-    font-size: 2rem;
-  }
-  @media (max-width: 575px) {
-    a {
-      font-size: 1.5rem;
-    }
-  }
-
+<style>
   a.fb-social-action {
     color: #3B5998;
     padding-right: 1rem;
-  }
-  @media (max-width: 692px) {
-    .fa-facebook {
-      margin-right: 2px;
-    }
   }
 
   a.reddit-social-action {
@@ -94,9 +78,27 @@
     color: #1DA1F2;
     padding-left: 1rem;
   }
+</style>
+<style scoped>
+  a {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 575px) {
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 692px) {
+    .fa-facebook {
+      margin-right: 2px;
+    }
+  }
+
   /*@media (max-width: 460px) {*/
-    /*a.twitter-social-action {*/
-      /*padding-left: 0 !important;*/
-    /*}*/
+  /*a.twitter-social-action {*/
+  /*padding-left: 0 !important;*/
+  /*}*/
   /*}*/
 </style>

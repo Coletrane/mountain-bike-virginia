@@ -3,24 +3,51 @@
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
-      <blog-image :src="img + 'dragons-back-tshirt.jpg'"/>
+      <p>
+        {{post.description}}
+      </p>
+      <div class="blog-p">
+        <payment-methods product="Dragon's Back T-Shirt"
+                         :amount="18"
+                         class="pay-methods"/>
+      </div>
+      <blog-image :src="img + post.imgRoute"/>
     </div>
   </blog-post>
 </template>
 <script>
-  import BlogPost from '../components/BlogPost'
-  import BlogImage from '../components/Images/BlogImage'
+  import BlogPost from '@/components/BlogPost'
+  import BlogImage from '@/components/Images/BlogImage'
+  import PaymentMethods from '@/components/Images/PaymentMethods'
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope'
+  import faMobileAlt from '@fortawesome/fontawesome-free-solid/faMobileAlt'
 
-  import blogPost from '../assets/mixins/blog-post'
+  import blogPost from '@/assets/mixins/blog-post'
 
   export default {
     name: 'dragons-back-tshirt',
     components: {
       BlogImage,
-      BlogPost
+      BlogPost,
+      PaymentMethods,
+      FontAwesomeIcon
     },
     mixins: [
       blogPost
-    ]
+    ],
+    data() {
+      return {
+        faEnvelope,
+        faMobileAlt
+      }
+    }
   }
 </script>
+<style scoped>
+  @media (min-width: 1400px) {
+    .pay-methods {
+      margin-top: 2.5rem;
+    }
+  }
+</style>

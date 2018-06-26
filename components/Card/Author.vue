@@ -11,11 +11,13 @@
       </div>
     </div>
     <div class="social-icons">
-      <a :href="author.fbUrl">
+      <a :href="author.fbUrl"
+         class="fb-social-action">
         <font-awesome-icon :icon="faFacebook"/>
       </a>
       <a v-if="author.stravaUrl"
-         :href="author.stravaUrl">
+         :href="author.stravaUrl"
+         class="strava-icon">
         <font-awesome-icon :icon="faStrava"/>
       </a>
     </div>
@@ -50,6 +52,11 @@
     }
   }
 </script>
+<style>
+  .strava-icon {
+    color: #fc4c02 !important;
+  }
+</style>
 <style scoped>
   .author-container {
     padding-top: 1rem;
@@ -69,13 +76,15 @@
     text-align: center;
     font-size: 2rem;
     margin-top: .5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: .25rem;
+    margin-right: .25rem;
   }
 
   a {
     text-decoration: underline;
-    color: black;
     background: transparent;
+  }
+  a:hover {
+    background: none;
   }
 </style>

@@ -77,9 +77,8 @@ if (!newJson) {
       type: 'NewsArticle'
     }
   }
-  customPromoCard = rl.keyInYNStrict('Would you like a custom Promo Card Component? ')
 }
-
+customPromoCard = rl.keyInYNStrict('Would you like a custom Promo Card Component? ')
 
 let taskArr = []
 if (!newJson) {
@@ -162,9 +161,7 @@ const createPostComponent = (dir, route, post) => {
         })
 
         pics.forEach(pic => {
-          if ((pic.endsWith('.png') || pic.endsWith('.jpg')) &&
-              (!pic.endsWith('-480.png') && !pic.endsWith('-480.jpg') &&
-               !pic.endsWith('-720.png') && !pic.endsWith('-720.jpg'))) {
+          if (fileNeedsResponsiveImage(pic)) {
             imgTags.push(`    <blog-image :src="img + '${pic}'"/>`)
           }
         })
@@ -239,8 +236,8 @@ const createImageDir = (dir, route) => {
     let confirm
     while (confirm !== postRoute) {
       confirm = rl.question(`Copy the images to ${s3ImgDir(dir, route)}. Type this post's route to continue `)
-      return Promise.resolve()
     }
+    return Promise.resolve()
   }
 
   if (!fs.existsSync(s3ImgDir(dir, route))) {
@@ -256,7 +253,7 @@ const createImageDir = (dir, route) => {
   }
 }
 
-const fileNeedsResponsiveImage = (files, file) => {
+const fileNeedsResponsiveImage = (file) => {
   return (file.endsWith('.jpg')  || file.endsWith('.png')) &&
          !file.endsWith('-1280.jpg') && !file.endsWith('-1280.png') &&
          !file.endsWith('-720.jpg') && !file.endsWith('-720.png') &&
@@ -266,7 +263,7 @@ const fileNeedsResponsiveImage = (files, file) => {
 const generateResponsiveImages = (dir, route) => {
   fs.readdir(s3ImgDir(dir, route), (err, files) => {
     files.forEach((file) => {
-      if (fileNeedsResponsiveImage(files, file)) {
+      if (fileNeedsResponsiveImage(file)) {
         const origFile = `${s3ImgDir(dir, route)}/${file}`
         const fileWith1280 = resImgPath(dir, route, file, 1280)
 
