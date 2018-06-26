@@ -1,5 +1,5 @@
 <template>
-  <blog-post :image="img + post.imgRoute"
+  <blog-post :image="img + image"
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
@@ -40,6 +40,15 @@
       return {
         faEnvelope,
         faMobileAlt
+      }
+    },
+    computed: {
+      image() {
+        if (process.browser && document.body.clientWidth < 1100) {
+          return 'dragons-back-tshirt-back-only.jpg'
+        } else {
+          return this.post.imgRoute
+        }
       }
     }
   }

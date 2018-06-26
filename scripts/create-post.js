@@ -144,7 +144,7 @@ const createPostJson = (dir, route, post) => {
 }
 
 const createPostComponent = (dir, route, post) => {
-  const templateFile = post.ytSrc ? 'VideoPost.vue' : 'BlogPost.vue'
+  const templateFile = post.ytSrc ? 'VideoBlogPostTemplate.vue' : 'BlogPostTemplate.vue'
   fs.readFile(
     `./scripts/Templates/${templateFile}`,
     'utf-8',
@@ -193,7 +193,7 @@ const createPostComponent = (dir, route, post) => {
 
 const createCustomPromoCard = (dir, route) => {
   fs.readFile(
-    './scripts/Templates/CustomPromoCard.vue',
+    './scripts/Templates/CustomPromoCardTemplate.vue',
     'utf-8',
     (err, data) => {
       const componentFile = data.replace(`name: '',`, `name: '${dir}-${route}-promo',`)
@@ -203,7 +203,7 @@ const createCustomPromoCard = (dir, route) => {
       filenameArr = filenameArr.map(word => {
         return word.charAt(0).toUpperCase() + word.slice(1)
       })
-      const componentFilename = `${filenameArr.join('')}Promo.vue`
+      const componentFilename = `${filenameArr.join('')}.vue`
 
       fs.writeFile(
         `./components/PromoCards/${upperCaseDir}/${componentFilename}`,

@@ -6,11 +6,15 @@ const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 
+const blacklist = [
+  'dragons-back-tshirt-back-only.jpg'
+]
 const whitelist = (file) => {
   return !file.includes('-480') &&
          !file.includes('-720') &&
          (path.extname(file) === '.jpg' ||
-          path.extname(file) === '.png')
+          path.extname(file) === '.png') &&
+         !blacklist.find(blackFile => file.endsWith(blackFile))
 }
 
 const imageFiles = glob.sync(
