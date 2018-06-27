@@ -1,33 +1,33 @@
-import {s3Banners} from '../scripts/routes'
+import { s3Banners } from "../scripts/routes"
 
 export default {
   state: {
     banners: [
       {
-        url: 'https://viralstyle.com/store/angelo-wash/Sketchcollect',
+        url: "https://viralstyle.com/store/angelo-wash/Sketchcollect",
         img: `${s3Banners}/sketch-collect-banner.jpg`
       },
       {
-        url: 'https://www.visitroanokeva.com/',
+        url: "https://www.visitroanokeva.com/",
         img: `${s3Banners}/virginias-blue-ridge.jpg`
       },
       {
-        url: 'https://parkwaybrewing.com/',
+        url: "https://parkwaybrewing.com/",
         img: `${s3Banners}/parkway.jpg`
       },
       {
-        url: 'https://www.deschutesbrewery.com/',
+        url: "https://www.deschutesbrewery.com/",
         img: `${s3Banners}/deschutes.jpg`
       },
       {
-        url: 'http://jackmasonstavern.com/',
+        url: "http://jackmasonstavern.com/",
         img: `${s3Banners}/jack-masons-tavern.jpg`
       }
     ]
   },
 
   actions: {
-    randomBanner: (context) => {
+    randomBanner: context => {
       const notDisplayed = context.state.banners.filter(banner => {
         return !banner.displayed
       })
@@ -37,7 +37,7 @@ export default {
         random = notDisplayed[Math.floor(Math.random() * notDisplayed.length)]
         context.state.banners.map(banner => {
           if (banner.url === random.url) {
-            context.dispatch('bannerDisplayed', banner)
+            context.dispatch("bannerDisplayed", banner)
           }
         })
       }
@@ -45,10 +45,10 @@ export default {
       return random
     },
     bannerDisplayed: (context, banner) => {
-      context.commit('BANNER_DISPLAYED', banner)
+      context.commit("BANNER_DISPLAYED", banner)
     },
-    emptyBanners: (context) => {
-      context.commit('EMPTY_BANNERS')
+    emptyBanners: context => {
+      context.commit("EMPTY_BANNERS")
     }
   },
 
@@ -56,10 +56,9 @@ export default {
     BANNER_DISPLAYED: (state, banner) => {
       state.banners.find(ban => ban.url === banner.url).displayed = true
     },
-    ALL_BANNERS_LOADED: (state) => {
-    },
-    EMPTY_BANNERS: (state) => {
-      state.banners.map(banner => banner.displayed = false)
+    ALL_BANNERS_LOADED: state => {},
+    EMPTY_BANNERS: state => {
+      state.banners.map(banner => (banner.displayed = false))
     }
   },
 

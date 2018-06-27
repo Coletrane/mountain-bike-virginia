@@ -1,5 +1,5 @@
-import { s3Authors, s3StaticImg } from '../scripts/routes'
-import axios from 'axios'
+import { s3Authors, s3StaticImg } from "../scripts/routes"
+import axios from "axios"
 
 export default {
   state: {
@@ -17,7 +17,7 @@ export default {
           resultAuthor = res.data
           resultAuthor.imgUrl = `${s3StaticImg}/authors/${resultAuthor.imgUrl}`
           resultAuthor.route = route
-          context.commit('AUTHOR_LOADED', resultAuthor)
+          context.commit("AUTHOR_LOADED", resultAuthor)
         }
       } else {
         resultAuthor = context.getters.getAuthor(route)
@@ -38,5 +38,4 @@ export default {
       return state.loadedAuthors.find(author => author.route === route)
     }
   }
-
 }

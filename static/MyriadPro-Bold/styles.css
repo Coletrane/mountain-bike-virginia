@@ -1,15 +1,14 @@
-
 @font-face {
-  font-family: 'MyriadPro-Bold';
-  src: url('MyriadPro-Bold.eot') format('embedded-opentype');
+  font-family: "MyriadPro-Bold";
+  src: url("MyriadPro-Bold.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'MyriadPro-Bold';
-  src:  url('MyriadPro-Bold.otf')  format('opentype'),
-	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAMxcABAAAAAByagAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCQVNFAADL/AAAAEQA
+  font-family: "MyriadPro-Bold";
+  src: url("MyriadPro-Bold.otf") format("opentype"),
+    url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAMxcABAAAAAByagAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCQVNFAADL/AAAAEQA
 AABsCBApR0ZGVE0AAMxAAAAAGgAAABxDzILNR0RFRgAAowQAAABTAAAAYhdRE7JHUE9TAACtWAAA
 HqEAAFDGBbsUekdTVUIAAKNYAAAJ/QAAFaQPEhT9T1MvMgAAAegAAABbAAAAYH/HQkRjbWFwAAAI
 UAAAA1MAAASe3c2YBWdhc3AAAKL8AAAACAAAAAj//wADZ2x5ZgAAEigAAH9rAAEiPDyB7bpoZWFk
@@ -926,9 +925,10 @@ QQfhgwLwwXq8NRzQRjigs3BAqXBAMThgM+4N7YuF9kVC+xKhfaHQvmOc9rvAwbvjtC8C7ffhfj9j
 RsCVoH2p0L690L5YaJ8ntC8V2hcL7fOF9l2E9qVC+7agfR3aVg8OKBUOaCccUCocUCIcUCq0LxXa
 Fwjty4TqvYTSvcTi3F0o3VMobU63pUsgoTELdZVoFFs0SkCoGxTqOkLdEM9E7WHUPoqGo64baPR/
 Aw6b8OoAAAB42mNgZGBg4ABiFgY+BqbMlNT8ovzcPAbm5MqiHAaR9KLUbAatnMSSPAYHBjYGEGBk
-YAKq52Fg/B/LANJLgigAYWQNf3jaY2BgYGQAgmOp20+B6H2bUxthNABQ5AdcAAA=) format('woff'), url('MyriadPro-Bold.ttf')  format('truetype'), url('MyriadPro-Bold.svg#MyriadPro-Bold') format('svg');
+YAKq52Fg/B/LANJLgigAYWQNf3jaY2BgYGQAgmOp20+B6H2bUxthNABQ5AdcAAA=)
+      format("woff"),
+    url("MyriadPro-Bold.ttf") format("truetype"),
+    url("MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
-

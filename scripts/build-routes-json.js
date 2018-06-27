@@ -1,35 +1,35 @@
-const fs = require('fs')
-const glob = require('glob')
-const _ = require('lodash')
-const arrayMove = require('array-move')
+const fs = require("fs")
+const glob = require("glob")
+const _ = require("lodash")
+const arrayMove = require("array-move")
 
 // Get all the routes that Nuxt will generate
 let routes = []
-let files = glob.sync('pages/**/*.{vue,js}')
+let files = glob.sync("pages/**/*.{vue,js}")
 files.forEach(file => {
-  let route = file.replace(/\.(js|vue)$/, '')
-  route = route.replace('pages/', '')
-  route = route.replace('index', '')
-  if (route === '') {
-    route = '/'
+  let route = file.replace(/\.(js|vue)$/, "")
+  route = route.replace("pages/", "")
+  route = route.replace("index", "")
+  if (route === "") {
+    route = "/"
   }
   routes.push(route)
 })
 
 // Make sure .json files have a corresponding .vue file in /pages
 let posts = []
-const postJsonFiles = glob.sync('json/posts/**/*.json')
+const postJsonFiles = glob.sync("json/posts/**/*.json")
 postJsonFiles.forEach(file => {
-  let jsonFile = fs.readFileSync(file, 'utf8')
+  let jsonFile = fs.readFileSync(file, "utf8")
 
-  let fileNameRoute = file.replace('json/posts/', '')
-  fileNameRoute = fileNameRoute.replace('.json', '')
+  let fileNameRoute = file.replace("json/posts/", "")
+  fileNameRoute = fileNameRoute.replace(".json", "")
 
   let route = routes.find(route => route === fileNameRoute)
 
   const post = JSON.parse(jsonFile)
   if (!post.date) {
-    throw new Error('NO DATE! ' + fileNameRoute)
+    throw new Error("NO DATE! " + fileNameRoute)
   }
 
   post.route = route || fileNameRoute
@@ -43,28 +43,34 @@ posts.sort((a, b) => {
 })
 
 // Reinsert posts that we want out of order
-const silverIdx = _.findIndex(posts, post => post.route === 'events/roanoke-silver-ride-center')
+const silverIdx = _.findIndex(
+  posts,
+  post => post.route === "events/roanoke-silver-ride-center"
+)
 if (silverIdx === -1) {
-  throw new Error('')
+  throw new Error("")
 }
 posts = arrayMove(posts, silverIdx, 2)
 
-const mmmIdx = _.findIndex(posts, post => post.route === 'middle-mt-momma-2018')
-const mmmVideoIdx = _.findIndex(posts, post => post.route === 'videos/middle-mountain-momma-2018-video')
+const mmmIdx = _.findIndex(posts, post => post.route === "middle-mt-momma-2018")
+const mmmVideoIdx = _.findIndex(
+  posts,
+  post => post.route === "videos/middle-mountain-momma-2018-video"
+)
 if (mmmIdx === -1 || mmmVideoIdx === -1) {
-  throw new Error('')
+  throw new Error("")
 }
 posts = arrayMove(posts, mmmIdx, mmmVideoIdx)
 
-const ravenIdx = _.findIndex(posts, post => post.route === 'ravenwood-ride')
+const ravenIdx = _.findIndex(posts, post => post.route === "ravenwood-ride")
 if (ravenIdx === -1) {
-  throw new Error('')
+  throw new Error("")
 }
 posts = arrayMove(posts, ravenIdx, ravenIdx + 3)
 
 // Make sure there are no duplicates
 if (_.uniq(posts).length !== posts.length) {
-  throw new Error('_.uniq(posts.length) !== posts.length')
+  throw new Error("_.uniq(posts.length) !== posts.length")
 }
 posts = _.uniq(posts)
 
@@ -75,14 +81,12 @@ posts.forEach(post => {
 })
 
 // Initialize the pagination (sortof)
-const postsPerPage = [
-  10,
-  10
-]
+const postsPerPage = [10, 10]
 postsPerPage.push(
-  postsOrder.length - postsPerPage.reduce((accumulator, currentValue) => {
-                        return accumulator + currentValue
-                      })
+  postsOrder.length -
+    postsPerPage.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    })
 )
 
 // "Initialize" multi dimensional array
@@ -98,7 +102,7 @@ pages.forEach((page, pageNumber, pagesArr) => {
   }
 })
 
-console.log('Routes Builder: Writing JSON files')
+console.log("Routes Builder: Writing JSON files")
 console.log(pages)
 pages.forEach((page, i, arr) => {
   const json = JSON.stringify(page, null, 2)

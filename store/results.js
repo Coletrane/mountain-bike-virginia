@@ -1,12 +1,12 @@
-import {s3Results} from '../scripts/routes'
-import axios from 'axios'
+import { s3Results } from "../scripts/routes"
+import axios from "axios"
 
 const raceNames = [
-  'Middle Mountain Momma 2018',
-  'Battle At Blackhorse 2018',
-  'Creature From Carvins Cove 2017',
+  "Middle Mountain Momma 2018",
+  "Battle At Blackhorse 2018",
+  "Creature From Carvins Cove 2017",
   // 'Middle Mountain Momma 2017',
-  'Creature From Carvins Cove 2016',
+  "Creature From Carvins Cove 2016"
   // 'Middle Mountain Momma 2016'
 ]
 
@@ -14,7 +14,10 @@ let races = []
 raceNames.forEach(race => {
   races.push({
     name: race,
-    route: race.split(' ').join('-').toLowerCase()
+    route: race
+      .split(" ")
+      .join("-")
+      .toLowerCase()
   })
 })
 
@@ -35,8 +38,8 @@ export default {
         if (res.data) {
           resultRace = res.data
           resultRace.route = route
-          context.commit('RACE_LOADED', resultRace)
-          context.commit('SET_CURRENT_RACE', resultRace)
+          context.commit("RACE_LOADED", resultRace)
+          context.commit("SET_CURRENT_RACE", resultRace)
         }
       }
 

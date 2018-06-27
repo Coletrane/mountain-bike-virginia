@@ -1,13 +1,13 @@
-const glob = require('glob')
-const jimp = require('jimp')
-const config = require('./responsive-imgs.config')
+const glob = require("glob")
+const jimp = require("jimp")
+const config = require("./responsive-imgs.config")
 
 // TODO: either add responsiveness to all images, or whitelist images in /static
 // helpers for extracting filenames
-const noExtension = async (file) => {
+const noExtension = async file => {
   let filename
 
-  await config.supportedImgFormats.forEach(async (format) => {
+  await config.supportedImgFormats.forEach(async format => {
     if (file.endsWith(format)) {
       filename = await file.split(format)[0]
     }
@@ -16,10 +16,10 @@ const noExtension = async (file) => {
   return filename
 }
 
-const justExtension = async (file) => {
+const justExtension = async file => {
   let extension
 
-  await config.supportedImgFormats.forEach(async (format) => {
+  await config.supportedImgFormats.forEach(async format => {
     if (file.endsWith(format)) {
       const extensionStart = file.indexOf(format)
       extension = await file.slice(extensionStart)
@@ -38,8 +38,8 @@ const getFiles = async () => {
 
   // Filter files out by our supported image filetypes
   let imgFiles = []
-  allFiles.forEach(async (file) => {
-    config.supportedImgFormats.forEach(async (format) => {
+  allFiles.forEach(async file => {
+    config.supportedImgFormats.forEach(async format => {
       if (file.endsWith(format)) {
         await imgFiles.push(file)
       }
@@ -50,7 +50,7 @@ const getFiles = async () => {
 }
 
 // Filter files out if they already have their responsive counterparts
-const filterFiles = async (files) => {
+const filterFiles = async files => {
   let filteredImgFiles = []
 
   for (let file of files) {
@@ -58,17 +58,22 @@ const filterFiles = async (files) => {
     let extension = await justExtension(file)
 
     // Check if its the base file
-    if (!file.includes(`-${config.phone}`) && !file.includes(`-${config.tablet}`)) {
-      let hasPhone = await files.findIndex(async (file) => {
-        return await file === `${filename}-${config.phone}${extension}`
+    if (
+      !file.includes(`-${config.phone}`) &&
+      !file.includes(`-${config.tablet}`)
+    ) {
+      let hasPhone = await files.findIndex(async file => {
+        return (await file) === `${filename}-${config.phone}${extension}`
       })
-      let hasTablet = await files.findIndex((file) => {
+      let hasTablet = await files.findIndex(file => {
         return file === `${filename}-${config.tablet}${extension}`
       })
 
-      if (hasPhone === -1 ||
-          hasTablet === -1 ||
-        (hasPhone === -1 && hasTablet === -1)) {
+      if (
+        hasPhone === -1 ||
+        hasTablet === -1 ||
+        (hasPhone === -1 && hasTablet === -1)
+      ) {
         await filteredImgFiles.push(file)
       }
     }
@@ -79,8 +84,8 @@ const filterFiles = async (files) => {
 
 // TODO: figure out what to do with GIFS
 // Resize and save as 480px and 700px
-const resizeImages = (files) => {
-  files.forEach(async (file) => {
+const resizeImages = files => {
+  files.forEach(async file => {
     jimp.read(file, async (err, newFile) => {
       if (err) {
         throw err
@@ -88,15 +93,15 @@ const resizeImages = (files) => {
         // Remove the file extension
         let noExtension
         let extension
-        await config.supportedImgFormats.forEach(async (format) => {
+        await config.supportedImgFormats.forEach(async format => {
           if (file.endsWith(format)) {
             // Split the path/filename with no extension
             noExtension = file.split(format)[0]
 
             // Strip out the path and get just the file extension
-            let noPaths = file.split('/')
+            let noPaths = file.split("/")
             noPaths = noPaths[noPaths.length - 1]
-            extension = await noPaths.split('.')[1]
+            extension = await noPaths.split(".")[1]
           }
         })
 
@@ -106,7 +111,8 @@ const resizeImages = (files) => {
         // May turn this back on after some performance testing
         // await newFile.resize(parseInt(config.phone), jimp.AUTO)
         //   .write(phoneFile)
-        await newFile.resize(parseInt(config.tablet), jimp.AUTO)
+        await newFile
+          .resize(parseInt(config.tablet), jimp.AUTO)
           .write(tabletFile)
         console.log(`Successfully wrote \n${tabletFile}`)
       }
@@ -115,17 +121,19 @@ const resizeImages = (files) => {
 }
 
 const main = async () => {
-  console.log(`Generating responsive images in directory: ${config.s3BucketDir}`)
+  console.log(
+    `Generating responsive images in directory: ${config.s3BucketDir}`
+  )
   const imgFiles = await getFiles()
 
   console.log(`${imgFiles.length} images found`)
-  console.log('Filtering out files that already have responsive counterparts')
+  console.log("Filtering out files that already have responsive counterparts")
   const filteredImgFiles = await filterFiles(imgFiles)
 
-  console.log('Images to be copied and resized: ')
+  console.log("Images to be copied and resized: ")
   filteredImgFiles.forEach(img => console.log(img))
 
-  console.log('Resizing images...')
+  console.log("Resizing images...")
   await resizeImages(filteredImgFiles)
 }
 main()

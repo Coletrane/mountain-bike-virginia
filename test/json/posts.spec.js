@@ -1,7 +1,7 @@
-import { posts } from '../../scripts/build-routes-json'
+import { posts } from "../../scripts/build-routes-json"
 
-const expect = require('./global.spec').expect
-const glob = require('glob')
+const expect = require("./global.spec").expect
+const glob = require("glob")
 
 // Sort posts alphabetically
 posts.sort((a, b) => {
@@ -14,18 +14,18 @@ posts.sort((a, b) => {
   return 0
 })
 
-describe('/posts/ test', () => {
+describe("/posts/ test", () => {
   let postsJson = []
 
   before(() => {
-    const files = glob.sync('json/posts/**/*.json')
+    const files = glob.sync("json/posts/**/*.json")
     files.forEach(file => {
-      let filename = file.replace('json/posts/', '')
-      filename = filename.replace('.json', '')
+      let filename = file.replace("json/posts/", "")
+      filename = filename.replace(".json", "")
 
       postsJson.push({
         filename: filename,
-        json: require('../../' + file)
+        json: require("../../" + file)
       })
     })
 
@@ -42,100 +42,84 @@ describe('/posts/ test', () => {
   })
 
   for (const [i, post] of posts.entries()) {
-    if (post.route !== 'relaunch' &&
-        post.route !== 'creature-2016' &&
-        !post.route.startsWith('external')) {
+    if (
+      post.route !== "relaunch" &&
+      post.route !== "creature-2016" &&
+      !post.route.startsWith("external")
+    ) {
       describe(post.route, () => {
         let postJson
         before(async () => {
           postJson = await postsJson[i]
         })
 
-        it('posts and postsJson should be in sync', async () => {
-          expect(await postJson.filename)
-            .to.equal(post.route)
+        it("posts and postsJson should be in sync", async () => {
+          expect(await postJson.filename).to.equal(post.route)
         })
 
-        it('should have a title', async () => {
-          expect(await postJson.json.title)
-            .not.to.be.undefined
+        it("should have a title", async () => {
+          expect(await postJson.json.title).not.to.be.undefined
 
-          expect(await postJson.json.title)
-            .not.to.equal('')
+          expect(await postJson.json.title).not.to.equal("")
         })
 
-        it('should have a subtitle', async () => {
-          expect(await postJson.json.subtitle)
-            .not.to.be.undefined
+        it("should have a subtitle", async () => {
+          expect(await postJson.json.subtitle).not.to.be.undefined
 
-          expect(await postJson.json.subtitle)
-            .not.to.equal('')
+          expect(await postJson.json.subtitle).not.to.equal("")
         })
 
-        it('should have an author', async () => {
-          expect(await postJson.json.author)
-            .not.to.be.undefined
+        it("should have an author", async () => {
+          expect(await postJson.json.author).not.to.be.undefined
 
-          expect(await postJson.json.author)
-            .not.to.equal('')
+          expect(await postJson.json.author).not.to.equal("")
         })
 
-        describe('date', () => {
-          it('should have a date', async () => {
-            expect(await postJson.json.date)
-              .not.to.be.undefined
+        describe("date", () => {
+          it("should have a date", async () => {
+            expect(await postJson.json.date).not.to.be.undefined
 
-            expect(await postJson.json.date)
-              .not.to.equal('')
+            expect(await postJson.json.date).not.to.equal("")
           })
 
-          it('should be able to new Date()', async () => {
-            expect(new Date(await postJson.json.date))
-              .not.to.equal('Invalid Date')
+          it("should be able to new Date()", async () => {
+            expect(new Date(await postJson.json.date)).not.to.equal(
+              "Invalid Date"
+            )
           })
         })
 
-        it('should have a loc if its not a review', async () => {
+        it("should have a loc if its not a review", async () => {
           const schema = await postJson.json.schema
-          if ((schema && schema.type !== 'Review') ||
-              !schema) {
-            expect(await postJson.json.loc)
-              .not.to.be.undefined
+          if ((schema && schema.type !== "Review") || !schema) {
+            expect(await postJson.json.loc).not.to.be.undefined
 
-            expect(await postJson.json.loc)
-              .not.to.equal('')
+            expect(await postJson.json.loc).not.to.equal("")
           }
         })
 
-        it('should have a description', async () => {
-          expect(await postJson.json.description)
-            .not.to.be.undefined
+        it("should have a description", async () => {
+          expect(await postJson.json.description).not.to.be.undefined
 
-          expect(await postJson.json.description)
-            .not.to.equal('')
+          expect(await postJson.json.description).not.to.equal("")
         })
 
-        it('should have an imgRoute', async () => {
-          expect(await postJson.json.imgRoute)
-            .not.to.be.undefined
+        it("should have an imgRoute", async () => {
+          expect(await postJson.json.imgRoute).not.to.be.undefined
 
-          expect(await postJson.json.imgRoute)
-            .not.to.equal('')
+          expect(await postJson.json.imgRoute).not.to.equal("")
         })
 
-        describe('related posts', () => {
-          it('should have relatedPosts', async () => {
-            expect(await postJson.json.relatedPosts)
-              .not.to.be.undefined
+        describe("related posts", () => {
+          it("should have relatedPosts", async () => {
+            expect(await postJson.json.relatedPosts).not.to.be.undefined
 
-            expect(await postJson.json.relatedPosts)
-              .not.to.equal([])
+            expect(await postJson.json.relatedPosts).not.to.equal([])
 
-            expect(await postJson.json.relatedPosts)
-              .not.to.equal('')
+            expect(await postJson.json.relatedPosts).not.to.equal("")
           })
 
-          it('should have valid relatedPosts', async () => {
+          it("should have valid relatedPosts", async () => {
             for (const relatedPost of await postJson.json.relatedPosts) {
               let foundPost = await postsJson.find(postJ => {
                 return postJ.filename === relatedPost
@@ -144,45 +128,36 @@ describe('/posts/ test', () => {
                 console.log(`Could not find: ${relatedPost}`)
               }
 
-              expect(foundPost)
-                .not.to.be.undefined
+              expect(foundPost).not.to.be.undefined
 
-              expect(foundPost)
-                .not.to.equal('')
+              expect(foundPost).not.to.equal("")
             }
           })
         })
 
-        it('should have keywords', async () => {
-          expect(await postJson.json.keywords)
-            .not.to.be.undefined
+        it("should have keywords", async () => {
+          expect(await postJson.json.keywords).not.to.be.undefined
 
-          expect(await postJson.json.keywords)
-            .not.to.equal('')
+          expect(await postJson.json.keywords).not.to.equal("")
         })
 
-        describe('schema test', () => {
-          it('should have a schema if no ytSrc', async () => {
+        describe("schema test", () => {
+          it("should have a schema if no ytSrc", async () => {
             if (!(await postJson.json.ytSrc)) {
-              expect(await postJson.json.schema)
-                .not.to.be.undefined
+              expect(await postJson.json.schema).not.to.be.undefined
 
-              expect(await postJson.json.schema)
-                .not.to.equal('')
+              expect(await postJson.json.schema).not.to.equal("")
             }
           })
 
-          it('should not have a schema if ytSrc', async () => {
+          it("should not have a schema if ytSrc", async () => {
             if (await postJson.json.ytSrc) {
-              expect(await postJson.json.schema)
-                .to.be.undefined
+              expect(await postJson.json.schema).to.be.undefined
 
-              expect(await postJson.json.schema)
-                .not.to.equal('')
+              expect(await postJson.json.schema).not.to.equal("")
             }
           })
         })
-
       })
     }
   }

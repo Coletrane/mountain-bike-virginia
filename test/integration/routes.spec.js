@@ -1,5 +1,5 @@
-import {routes, posts} from '../../scripts/build-routes-json'
-const fs = require('fs')
+import { routes, posts } from "../../scripts/build-routes-json"
+const fs = require("fs")
 
 let routesToTest
 if (process.env.JUST_ONE) {
@@ -8,20 +8,21 @@ if (process.env.JUST_ONE) {
   routesToTest = routes
 }
 
-module.exports = (browser) => {
+module.exports = browser => {
   let global
   if (browser) {
     global = require(`./global.${browser}.spec`)
   } else {
     global = require(`./global.chrome.spec`)
   }
-  const By = require('selenium-webdriver').By
-  const until = require('selenium-webdriver').until
-  const request = require('request-promise')
+  const By = require("selenium-webdriver").By
+  const until = require("selenium-webdriver").until
+  const request = require("request-promise")
 
-  const googleDataValidator = 'https://search.google.com/structured-data/testing-tool/validate'
+  const googleDataValidator =
+    "https://search.google.com/structured-data/testing-tool/validate"
 
-  describe('routes tests', () => {
+  describe("routes tests", () => {
     let driver
     let expect
     let testUrl
@@ -38,15 +39,15 @@ module.exports = (browser) => {
         let post
 
         before(async () => {
-          if (route === '/') {
+          if (route === "/") {
             url = await testUrl
           } else {
             url = await `${testUrl}/${route}`
           }
           post = posts.find(post => post.route === route)
         })
-        describe('<head> tests', () => {
-          it('should navigate to route', async () => {
+        describe("<head> tests", () => {
+          it("should navigate to route", async () => {
             await driver.get(url)
 
             // Idk why Safari requires I do this
@@ -57,121 +58,120 @@ module.exports = (browser) => {
               resolveWithFullResponse: true
             })
 
-            expect(await res.statusCode)
-              .to.equal(200)
+            expect(await res.statusCode).to.equal(200)
           })
 
-          it('has title', async () => {
-            let title = await driver.findElement(
-              By.css('title'))
-            expect(await title)
-              .not.to.be.undefined
+          it("has title", async () => {
+            let title = await driver.findElement(By.css("title"))
+            expect(await title).not.to.be.undefined
             if (post) {
-              expect(await title.getAttribute('innerText'))
-                .to.equal(post.title)
+              expect(await title.getAttribute("innerText")).to.equal(post.title)
             }
           })
 
-          it('has keywords', async () => {
+          it("has keywords", async () => {
             let keywords = await driver.findElement(
-              By.xpath('//meta[@name=\'keywords\']'))
-            expect(await keywords)
-              .not.to.be.undefined
+              By.xpath("//meta[@name='keywords']")
+            )
+            expect(await keywords).not.to.be.undefined
             if (post) {
-              expect(await keywords.getAttribute('content'))
-                .to.equal(post.keywords)
+              expect(await keywords.getAttribute("content")).to.equal(
+                post.keywords
+              )
             }
           })
 
-          it('has viewport', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@name=\'viewport\']'))
-              .getAttribute('content'))
-              .not.to.be.undefined
+          it("has viewport", async () => {
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@name='viewport']"))
+                .getAttribute("content")
+            ).not.to.be.undefined
           })
 
-          it('has robots', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@name=\'robots\']'))
-              .getAttribute('content'))
-              .to.equal('index, follow')
+          it("has robots", async () => {
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@name='robots']"))
+                .getAttribute("content")
+            ).to.equal("index, follow")
           })
 
-          it('has revisit-after', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@name=\'revisit-after\']'))
-              .getAttribute('content'))
-              .to.equal('1 week')
+          it("has revisit-after", async () => {
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@name='revisit-after']"))
+                .getAttribute("content")
+            ).to.equal("1 week")
           })
 
-          it('has fb:app_id', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@property=\'fb:app_id\']'))
-              .getAttribute('content'))
-              .to.equal('1426359417419881')
+          it("has fb:app_id", async () => {
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@property='fb:app_id']"))
+                .getAttribute("content")
+            ).to.equal("1426359417419881")
           })
 
-          describe('og:image', () => {
+          describe("og:image", () => {
             let ogImage
 
             before(async () => {
-              ogImage = await driver.findElement(
-                By.xpath('//meta[@property=\'og:image\']'))
-                .getAttribute('content')
+              ogImage = await driver
+                .findElement(By.xpath("//meta[@property='og:image']"))
+                .getAttribute("content")
             })
 
-            it('has og:image meta tag', async () => {
-              expect(ogImage.endsWith('undefined'))
-                .to.be.false
-              expect(ogImage.endsWith('.jpg') ||
-                     ogImage.endsWith('.png'))
-                .to.be.true
+            it("has og:image meta tag", async () => {
+              expect(ogImage.endsWith("undefined")).to.be.false
+              expect(ogImage.endsWith(".jpg") || ogImage.endsWith(".png")).to.be
+                .true
             })
 
             it('can "GET" og:image url', async () => {
-              let imgPath = ogImage.replace(
-                'http://localhost:3000/',
-                '../')
-              expect(fs.existsSync(imgPath))
-                .to.be.true
+              let imgPath = ogImage.replace("http://localhost:3000/", "../")
+              expect(fs.existsSync(imgPath)).to.be.true
             })
           })
 
-          it('has og:title', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@property=\'og:title\']'))
-              .getAttribute('content'))
-              .not.to.be.undefined
+          it("has og:title", async () => {
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@property='og:title']"))
+                .getAttribute("content")
+            ).not.to.be.undefined
           })
 
-          it('has og:description', async () => {
-            expect(await driver.findElement(
-              By.xpath('//meta[@property=\'og:description\']')))
-              .not.to.be.undefined
+          it("has og:description", async () => {
+            expect(
+              await driver.findElement(
+                By.xpath("//meta[@property='og:description']")
+              )
+            ).not.to.be.undefined
           })
 
-          it('has og:url', async () => {
+          it("has og:url", async () => {
             let expected
-            if (route === '/') {
+            if (route === "/") {
               expected = `https://bikeva.com/`
-            } else if (route.endsWith('/')) {
+            } else if (route.endsWith("/")) {
               expected = `https://bikeva.com/${route}`
             } else {
               expected = `https://bikeva.com/${route}/`
             }
-            expect(await driver.findElement(
-              By.xpath('//meta[@property=\'og:url\']'))
-              .getAttribute('content'))
-              .to.equal(expected)
+            expect(
+              await driver
+                .findElement(By.xpath("//meta[@property='og:url']"))
+                .getAttribute("content")
+            ).to.equal(expected)
           })
 
-          it('has a valid schema <script> tag', async () => {
-            let schema = await driver.findElement(
-              By.xpath('//script[@type=\'application/ld+json\']'))
-              .getAttribute('innerText')
+          it("has a valid schema <script> tag", async () => {
+            let schema = await driver
+              .findElement(By.xpath("//script[@type='application/ld+json']"))
+              .getAttribute("innerText")
 
-            expect(await schema)
-              .not.to.be.undefined
+            expect(await schema).not.to.be.undefined
             //
             // console.log(jsonschema.validate(4, await JSON.parse(schema)))
             // expect(jsonschema.validate(4, await JSON.parse(schema)))
@@ -179,62 +179,57 @@ module.exports = (browser) => {
           })
         })
 
-        describe('<social-links> test', () => {
-          if (route === '/') {
-            describe('<home> social links test', () => {
-
-            })
-          } else if (!route.includes('results') &&
-                     routes === 'xxc-va-race-series/2018') { // TODO: add social links to results
+        describe("<social-links> test", () => {
+          if (route === "/") {
+            describe("<home> social links test", () => {})
+          } else if (
+            !route.includes("results") &&
+            routes === "xxc-va-race-series/2018"
+          ) {
+            // TODO: add social links to results
             describe(`${route} social links test`, () => {
               let social
               let links
               let hrefs = []
 
-              const testLinksValid = async (href) => {
+              const testLinksValid = async href => {
                 console.log(`test validity: ${href}`)
-                it('should not include undefined', async () => {
-                  expect(await href.includes('undefined'))
-                    .to.be.false
+                it("should not include undefined", async () => {
+                  expect(await href.includes("undefined")).to.be.false
                 })
 
-                it('should not end with //', async () => {
-                  expect(await href.endsWith('//'))
-                    .to.be.false
+                it("should not end with //", async () => {
+                  expect(await href.endsWith("//")).to.be.false
                 })
 
-                it('should include bikeva.com', async () => {
-                  expect(await href.includes(routes.baseUrl))
-                    .to.be.true
+                it("should include bikeva.com", async () => {
+                  expect(await href.includes(routes.baseUrl)).to.be.true
                 })
 
                 // TODO: GET the links
               }
 
               before(async () => {
-                social = await driver.findElement(
-                  By.className('social'))
+                social = await driver.findElement(By.className("social"))
 
-                links = await social.findElements(
-                  By.css('a'))
+                links = await social.findElements(By.css("a"))
 
                 for (const link of await links) {
-                  hrefs.push(await link.getAttribute('href'))
+                  hrefs.push(await link.getAttribute("href"))
                 }
               })
 
-              it('should have 3 links', async () => {
-                expect(await links.length)
-                  .to.equal(3)
+              it("should have 3 links", async () => {
+                expect(await links.length).to.equal(3)
               })
 
-              it('should have valid links', async () => {
+              it("should have valid links", async () => {
                 for (const href of await hrefs) {
-                  if (href.includes('facebook')) {
+                  if (href.includes("facebook")) {
                     testLinksValid(href)
-                  } else if (href.includes('reddit')) {
+                  } else if (href.includes("reddit")) {
                     testLinksValid(href)
-                  } else if (href.includes('twitter')) {
+                  } else if (href.includes("twitter")) {
                     testLinksValid(href)
                   }
                 }

@@ -1,5 +1,5 @@
-import {s3Posts, s3Routes} from '../scripts/routes'
-import axios from 'axios'
+import { s3Posts, s3Routes } from "../scripts/routes"
+import axios from "axios"
 
 export const numPages = 3
 
@@ -12,19 +12,23 @@ export default {
   },
 
   actions: {
-    loadPage: async (context) => {
+    loadPage: async context => {
       let resultRoutes = []
 
-      if (context.state.currentPage < numPages &&
-          !context.state.loadedPages[context.state.currentPage]) {
-        let res = await axios.get(`${s3Routes}/${context.state.currentPage}.json`)
+      if (
+        context.state.currentPage < numPages &&
+        !context.state.loadedPages[context.state.currentPage]
+      ) {
+        let res = await axios.get(
+          `${s3Routes}/${context.state.currentPage}.json`
+        )
         if (res.data) {
           resultRoutes = res.data
-          context.commit('PAGE_LOADED', {
+          context.commit("PAGE_LOADED", {
             routes: resultRoutes
           })
 
-          return await context.dispatch('loadPosts', resultRoutes)
+          return await context.dispatch("loadPosts", resultRoutes)
         }
       }
     },
@@ -41,8 +45,8 @@ export default {
 
             if (post.author) {
               let authorArr = []
-              for (const author of post.author.split(' ')) {
-                await context.dispatch('loadAuthor', author)
+              for (const author of post.author.split(" ")) {
+                await context.dispatch("loadAuthor", author)
                 authorArr.push(context.getters.getAuthor(author))
               }
               if (authorArr.length === 1) {
@@ -54,7 +58,7 @@ export default {
 
             resultPosts.push(post)
 
-            context.commit('POST_LOADED', post)
+            context.commit("POST_LOADED", post)
           }
         } else {
           resultPosts.push(context.getters.posts(route))
@@ -68,9 +72,11 @@ export default {
       }
     },
     setCurrentPost: (context, postRoute) => {
-      if (!context.state.currentPost ||
-          context.state.currentPost.route !== postRoute) {
-        context.commit('SET_CURRENT_POST', postRoute)
+      if (
+        !context.state.currentPost ||
+        context.state.currentPost.route !== postRoute
+      ) {
+        context.commit("SET_CURRENT_POST", postRoute)
       }
     }
   },
@@ -99,8 +105,7 @@ export default {
       }
 
       routes.forEach(route => {
-        let foundPost = state.loadedPosts
-                             .find(post => post.route === route)
+        let foundPost = state.loadedPosts.find(post => post.route === route)
         if (foundPost) {
           posts.push(foundPost)
         }

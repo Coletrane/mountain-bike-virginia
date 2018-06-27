@@ -9,19 +9,17 @@
   </blog-post>
 </template>
 <script>
-  import BlogPost from '@/components/BlogPost.vue'
-  import Youtube from '@/components/Iframes/Youtube.vue'
+import BlogPost from "@/components/BlogPost.vue"
+import Youtube from "@/components/Iframes/Youtube.vue"
 
-  import blogPost from '@/assets/mixins/blog-post'
+import blogPost from "@/assets/mixins/blog-post"
 
-  export default {
-    name: '',
-    components: {
-      BlogPost,
-      Youtube
-    },
-    mixins: [
-      blogPost
-    ]
-  }
+export default {
+  name: "",
+  components: {
+    BlogPost,
+    Youtube
+  },
+  mixins: [blogPost]
+}
 </script>

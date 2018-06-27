@@ -1,21 +1,20 @@
-const selenium = require('selenium-webdriver')
-const chai = require('chai')
-chai.use(require('chai-as-promised'))
+const selenium = require("selenium-webdriver")
+const chai = require("chai")
+chai.use(require("chai-as-promised"))
 const expect = chai.expect
 
-let testUrl = 'http://localhost:3000'
+let testUrl = "http://localhost:3000"
 
-const importTest = (path) => {
+const importTest = path => {
   describe(path, () => {
-    require(path)('chrome')
+    require(path)("chrome")
   })
 }
 
-describe('Google Chrome integration tests', () => {
+describe("Google Chrome integration tests", () => {
   let driver
 
   before(async () => {
-
     driver = await new selenium.Builder()
       .withCapabilities(selenium.Capabilities.chrome())
       .build()
@@ -28,11 +27,11 @@ describe('Google Chrome integration tests', () => {
   // Hook tests in here
 
   if (!process.env.JUST_ONE) {
-    importTest('./navigation.spec')
-    importTest('./home.spec')
-    importTest('./results.spec')
+    importTest("./navigation.spec")
+    importTest("./home.spec")
+    importTest("./results.spec")
   }
-  importTest('./routes.spec')
+  importTest("./routes.spec")
 
   after(() => {
     driver.quit()

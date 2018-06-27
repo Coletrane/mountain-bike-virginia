@@ -1,21 +1,20 @@
-const selenium = require('selenium-webdriver')
-const chai = require('chai')
-chai.use(require('chai-as-promised'))
+const selenium = require("selenium-webdriver")
+const chai = require("chai")
+chai.use(require("chai-as-promised"))
 const expect = chai.expect
 
-let testUrl = 'http://localhost:3000'
+let testUrl = "http://localhost:3000"
 
-const importTest = (path) => {
+const importTest = path => {
   describe(path, () => {
-    require(path)('safari')
+    require(path)("safari")
   })
 }
 
-describe('Safari integration tests', () => {
+describe("Safari integration tests", () => {
   let driver
 
   before(async () => {
-
     driver = await new selenium.Builder()
       .withCapabilities(selenium.Capabilities.safari())
       .build()
@@ -27,10 +26,10 @@ describe('Safari integration tests', () => {
 
   // Hook tests in here
 
-  importTest('./navigation.spec')
-  importTest('./home.spec')
-  importTest('./routes.spec')
-  importTest('./results.spec')
+  importTest("./navigation.spec")
+  importTest("./home.spec")
+  importTest("./routes.spec")
+  importTest("./results.spec")
 
   after(() => {
     driver.quit()
