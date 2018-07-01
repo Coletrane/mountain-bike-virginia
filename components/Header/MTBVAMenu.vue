@@ -7,7 +7,7 @@
       </a>
     </div>
     <div class="mtbva-nav-item">
-      <nuxt-link :to="{name: 'index'}"
+      <nuxt-link :to="{name: 'trails'}"
                  class="nav-link"
                  id="trails-nav-link">
         <font-awesome-icon :icon="faBicycle"/>

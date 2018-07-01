@@ -6,7 +6,10 @@ const fs = require("fs")
 const path = require("path")
 const glob = require("glob")
 
-const blacklist = ["dragons-back-tshirt-back-only.jpg"]
+const blacklist = [
+  "dragons-back-tshirt-back-only.jpg",
+  "carvins-cove-trail-map.jpg"
+]
 const whitelist = file => {
   return (
     !file.includes("-480") &&

@@ -112,6 +112,9 @@ export default {
   .mtbva-subtitle {
     font-size: 1.5rem;
   }
+  .hero-content {
+    height: 300px;
+  }
 }
 
 @media (max-width: 450px) {
