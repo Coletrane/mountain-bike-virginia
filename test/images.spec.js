@@ -8,6 +8,7 @@ const glob = require("glob")
 
 const blacklist = [
   "dragons-back-tshirt-back-only.jpg",
+  "middle-mt.jpg",
   "carvins-cove-trail-map.jpg"
 ]
 const whitelist = file => {

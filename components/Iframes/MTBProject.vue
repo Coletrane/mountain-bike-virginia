@@ -39,7 +39,7 @@ export default {
   created() {
     if (process.browser) {
       if (document.body.clientWidth > 1020) {
-        this.style.width = "80%"
+        this.style.width = "90%"
         this.style.height = "1000px"
         this.position = desktopCoordinates
       } else if (
@@ -53,8 +53,8 @@ export default {
         document.body.clientWidth <= 720 &&
         document.body.clientWidth > 400
       ) {
-        this.style.width = "90%"
-        this.style.height = "800px"
+        this.style.width = "100%"
+        this.style.height = "700px"
         this.position = mobileCoordinates
       } else if (document.body.clientWidth <= 400) {
         this.style.width = "100%"

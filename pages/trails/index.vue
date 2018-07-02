@@ -17,6 +17,8 @@ import MTBProject from "../../components/Iframes/MTBProject"
 
 import backgroundImage from "../../assets/mixins/background-image"
 
+import { home } from "../../assets/head-tags"
+import { headTags } from "../../assets/functions"
 import { s3Pages } from "../../scripts/routes"
 
 export default {
@@ -27,12 +29,16 @@ export default {
     MTBProject
   },
   mixins: [backgroundImage],
+  head() {
+    return headTags(`${home.title} Trails`, home.description, home.keywords, {
+      route: this.$route.path.substring(1),
+      ogImage: "carvins-cove-trail-map.jpg"
+    })
+  },
   data() {
     return {
-      headerImage: `${s3Pages}/trails/carvins-cove-trail-map.jpg`
+      headerImage: `${s3Pages}/trails/middle-mt.jpg`
     }
   }
 }
 </script>
-<style scoped>
-</style>

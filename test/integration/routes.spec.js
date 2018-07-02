@@ -172,10 +172,6 @@ module.exports = browser => {
               .getAttribute("innerText")
 
             expect(await schema).not.to.be.undefined
-            //
-            // console.log(jsonschema.validate(4, await JSON.parse(schema)))
-            // expect(jsonschema.validate(4, await JSON.parse(schema)))
-            //   .to.be.true
           })
         })
 
