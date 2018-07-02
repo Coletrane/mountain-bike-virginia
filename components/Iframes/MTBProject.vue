@@ -7,8 +7,8 @@
 </template>
 <script>
 const desktopCoordinates = {
-  x: "-8874701",
-  y: "4521512",
+  x: "-8883432",
+  y: "4509732",
   z: "7"
 }
 const tabletCoordinates = {
