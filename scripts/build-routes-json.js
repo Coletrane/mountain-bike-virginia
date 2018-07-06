@@ -43,30 +43,30 @@ posts.sort((a, b) => {
 })
 
 // Reinsert posts that we want out of order
-const silverIdx = _.findIndex(
-  posts,
-  post => post.route === "events/roanoke-silver-ride-center"
-)
-if (silverIdx === -1) {
-  throw new Error("")
-}
-posts = arrayMove(posts, silverIdx, 2)
-
-const mmmIdx = _.findIndex(posts, post => post.route === "middle-mt-momma-2018")
-const mmmVideoIdx = _.findIndex(
-  posts,
-  post => post.route === "videos/middle-mountain-momma-2018-video"
-)
-if (mmmIdx === -1 || mmmVideoIdx === -1) {
-  throw new Error("")
-}
-posts = arrayMove(posts, mmmIdx, mmmVideoIdx)
-
-const ravenIdx = _.findIndex(posts, post => post.route === "ravenwood-ride")
-if (ravenIdx === -1) {
-  throw new Error("")
-}
-posts = arrayMove(posts, ravenIdx, ravenIdx + 3)
+// const silverIdx = _.findIndex(
+//   posts,
+//   post => post.route === "events/roanoke-silver-ride-center"
+// )
+// if (silverIdx === -1) {
+//   throw new Error("")
+// }
+// posts = arrayMove(posts, silverIdx, 3)
+//
+// const mmmIdx = _.findIndex(posts, post => post.route === "middle-mt-momma-2018")
+// const mmmVideoIdx = _.findIndex(
+//   posts,
+//   post => post.route === "videos/middle-mountain-momma-2018-video"
+// )
+// if (mmmIdx === -1 || mmmVideoIdx === -1) {
+//   throw new Error("")
+// }
+// posts = arrayMove(posts, mmmIdx, mmmVideoIdx)
+//
+// const ravenIdx = _.findIndex(posts, post => post.route === "ravenwood-ride")
+// if (ravenIdx === -1) {
+//   throw new Error("")
+// }
+// posts = arrayMove(posts, ravenIdx, ravenIdx + 3)
 
 // Make sure there are no duplicates
 if (_.uniq(posts).length !== posts.length) {

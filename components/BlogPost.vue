@@ -103,5 +103,6 @@ export default {
 p {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
+  margin-bottom: 0 !important;
 }
 </style>

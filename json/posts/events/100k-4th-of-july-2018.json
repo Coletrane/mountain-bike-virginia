@@ -1,0 +1,17 @@
+{
+  "title": "100K On The Fourth",
+  "subtitle": "Ride up Price Mountain to the Seven Sisters up to Hoop Hole and back through Fincastle. Through heat and humidity we prevail, because we are free.",
+  "description": "Organized by Shuan Smith, a UCI para-cycling world champion, the 100k on the 4th was an ad hoc ride that gained traction faster than a road tire transferring from gravel to pavement. Despite the average temperature of 90 degrees (over 100 at points) and near 100% humidity, about 30 riders showed up to spin.",
+  "author": "cole",
+  "date": "Jul 4 2018",
+  "loc": "Ballast Point Brewery, Daleville, VA",
+  "imgRoute": "P1000144.jpg",
+  "keywords": "road, 100k, endurance, road biking, cycling, bike, virginia, daleville, craig county, clifton forge, fincastle, botetourt, endurance ride",
+  "relatedPosts": [
+    "events/roanoke-silver-ride-center",
+    "first-ride-2018"
+  ],
+  "schema": {
+    "type": "NewsArticle"
+  }
+}
