@@ -2,6 +2,8 @@ const routes = require("./scripts/build-routes-json")
 const s3Routes = require("./scripts/routes")
 require("dotenv").config()
 const webpack = require("webpack")
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin
 
 module.exports = {
   css: [
@@ -61,7 +63,20 @@ module.exports = {
   plugins: [{ src: "~/plugins/vue-lazyload", ssr: false }],
   build: {
     extractCss: true,
-    vendor: ["babel-polyfill"]
+    vendor: ["babel-polyfill"],
+    extend(config, { isDev, isClient }) {
+      if (!isDev && process.env.ANALYZE) {
+        config.plugins.push(
+          new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            generateStatsFile: true,
+            openAnalyzer: true,
+            logLevel: "info"
+          })
+        )
+        return config
+      }
+    }
   },
   modules: [
     "@nuxtjs/sitemap",

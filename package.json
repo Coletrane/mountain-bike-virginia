@@ -93,6 +93,7 @@
     "vue-template-compiler": "^2.5.16",
     "vue-test-utils": "^1.0.0-beta.11",
     "webpack": "^3.12.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "^2.11.2"
   },
   "engines": {
@@ -104,7 +105,7 @@
     "build-json": "rm ./json/routes/* && node ./scripts/build-routes-json.js && ./scripts/copy-json.sh && npm run test-j",
     "create-post": "node ./scripts/create-post.js",
     "delete-post": "node ./scripts/delete-post.js",
-    "generate": "nuxt generate",
+    "analyze": "ANALYZE=true nuxt generate",
     "clean": "rimraf .nuxt && rimraf ./dist",
     "start": "NODE_ENV=production node ./server.js",
     "static": "NODE_ENV=production node ./static.js",

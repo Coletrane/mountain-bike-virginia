@@ -56,9 +56,16 @@ export default {
         this.style.width = "100%"
         this.style.height = "700px"
         this.position = mobileCoordinates
-      } else if (document.body.clientWidth <= 400) {
+      } else if (
+        document.body.clientWidth <= 400 &&
+        document.body.clientWidth > 350
+      ) {
         this.style.width = "100%"
         this.style.height = "600px"
+        this.position = mobileCoordinates
+      } else if (document.body.clientWidth <= 350) {
+        this.style.width = "100%"
+        this.style.height = "450px"
         this.position = mobileCoordinates
       }
     }
@@ -67,7 +74,10 @@ export default {
     src() {
       return `https://www.mtbproject.com/widget/map?favs=1&location=fixed&x=${
         this.position.x
-      }&y=${this.position.y}&z=${this.position.z}&h=${this.style.height.replace("px", "")}`
+      }&y=${this.position.y}&z=${this.position.z}&h=${this.style.height.replace(
+        "px",
+        ""
+      )}`
     }
   }
 }
@@ -78,6 +88,7 @@ iframe {
   margin: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 @media (max-width: 500px) {

@@ -1,6 +1,5 @@
 <template>
-  <div class="mtbva-footer"
-       :class="backgroundClass">
+  <div class="mtbva-footer">
     <div class="sponsors-container">
       <logos-three-cols v-if="mobile"
                         :sponsors="sponsors"/>
@@ -168,15 +167,6 @@ export default {
         this.mobile = document.body.clientWidth <= 850
       }
     }
-  },
-  computed: {
-    backgroundClass() {
-      if (process.env === "production") {
-        return "mtbva-footer-image-prod"
-      } else {
-        return "mtbva-footer-image-dev"
-      }
-    }
   }
 }
 </script>
@@ -186,11 +176,6 @@ export default {
   background-size: 3000px;
   background-position-x: center;
   background-position-y: 0px;
-}
-.mtbva-footer-image-dev {
-  background-image: url("http://localhost:3000/mtbva-s3-bucket/static/img/blue_ridge_mountains.jpg");
-}
-.mtbva-footer-image-prod {
   background-image: url("https://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg");
 }
 

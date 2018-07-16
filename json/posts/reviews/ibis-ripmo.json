@@ -1,0 +1,17 @@
+{
+  "title": "Review: Ibis Ripmo",
+  "subtitle": "\"We knew we were gonna knock it out of the park with this one, we exceeded sales expectations by 4 times\"",
+  "description": "Review of the Ibis Ripmo long travel bike with 29 inch wheels and DW-Link suspension at Dirt Fest West Virginia mountain bike festival.",
+  "author": "cole",
+  "date": "Jul 15 2018",
+  "loc": "Big Bear Lake, Bruceton Mills, WV",
+  "imgRoute": "\"\"",
+  "keywords": "dirt rag, mtb, mountain bike, festival, mountain biking, cycling, ibis, ripmo, review, bike review, enduro, trail, all mountain, 29er, xc, cross country, big bear lake, west virginia",
+  "relatedPosts": [
+    "pivot-switchblade-review",
+    "rocky-mountain-instinct-review"
+  ],
+  "schema": {
+    "type": "NewsArticle"
+  }
+}
