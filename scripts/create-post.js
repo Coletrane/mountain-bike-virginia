@@ -62,11 +62,13 @@ if (!newJson) {
     posts.splice(posts.indexOf(dir), 1)
     const dirPosts = fs.readdirSync(`./json/posts/${dir}`)
     dirPosts.forEach(post => {
-      dir
+      if (post.endsWith(".json")) {
+        posts.push(post)
+      }
     })
   })
   console.log(posts)
-  // FIXME: this doesn't print all subdirectories
+
   post.relatedPosts = []
   for (let i = 0; i < numRelatedPosts; i++) {
     while (!fs.existsSync(`./json/posts/${post.relatedPosts[i]}.json`)) {
@@ -95,21 +97,27 @@ if (!newJson) {
   })
 }
 
-taskArr = taskArr.concat([
-  {
-    title: "Moving JSON to local S3 bucket",
-    task: () => {
-      execa(
-        "rsync",
-        ["./json/* ../mtbva-s3-bucket;"],
-        ["--checksum --delete -r -v "]
-      ).stdout.pipe(process.stdout)
+console.log(process.argv[2])
+if (process.argv[2] !== "images") {
+  taskArr = taskArr.concat([
+    {
+      title: "Moving JSON to local S3 bucket",
+      task: () => {
+        execa(
+          "rsync",
+          ["./json/* ../mtbva-s3-bucket;"],
+          ["--checksum --delete -r -v "]
+        ).stdout.pipe(process.stdout)
+      }
+    },
+    {
+      title: "Creating image directory",
+      task: () => createImageDir(postDir, postRoute)
     }
-  },
-  {
-    title: "Creating image directory",
-    task: () => createImageDir(postDir, postRoute)
-  },
+  ])
+}
+
+taskArr = taskArr.concat([
   {
     title: "Creating responsive images",
     task: () => generateResponsiveImages(postDir, postRoute)
@@ -117,19 +125,23 @@ taskArr = taskArr.concat([
   {
     title: "Minifying images",
     task: () => {}
-  },
-  {
-    title: "Creating Post Component",
-    task: () => createPostComponent(postDir, postRoute, post)
   }
 ])
-if (customPromoCard) {
-  taskArr.push({
-    title: "Creating Custom Promo Card",
-    task: () => createCustomPromoCard(postDir, postRoute)
-  })
-}
 
+if (process.argv[2] !== "images") {
+  taskArr.push([
+    {
+      title: "Creating Post Component",
+      task: () => createPostComponent(postDir, postRoute, post)
+    }
+  ])
+  if (customPromoCard) {
+    taskArr.push({
+      title: "Creating Custom Promo Card",
+      task: () => createCustomPromoCard(postDir, postRoute)
+    })
+  }
+}
 const tasks = new Listr(taskArr)
 
 tasks.run()
@@ -161,12 +173,8 @@ const createPostComponent = (dir, route, post) => {
     if (!post.ytSrc) {
       let imgTags = []
       let pics = fs.readdirSync(s3ImgDir(dir, route))
-      // FIXME: may need to sort by filename instead of mtime
       pics = pics.sort((a, b) => {
-        return (
-          fs.statSync(`${s3ImgDir(dir, route)}/${a}`).mtime.getTime() -
-          fs.statSync(`${s3ImgDir(dir, route)}/${b}`).mtime.getTime()
-        )
+        parseInt(a.replace(/\D/g, "")) - parseInt(b.replace(/\D/g, ""))
       })
 
       pics.forEach(pic => {
@@ -185,18 +193,16 @@ const createPostComponent = (dir, route, post) => {
       )
     }
 
-    fs.writeFile(
-      `./pages/${dir}/${route}.vue`,
-      componentFile,
-      "utf-8",
-      (err, data) => {
+    const postComponentFile = `./pages/${dir}/${route}.vue`
+    if (!fs.existsSync(postComponentFile)) {
+      fs.writeFile(fileName, componentFile, "utf-8", (err, data) => {
         if (err) {
           return Promise.reject(err)
         } else {
           return Promise.resolve()
         }
-      }
-    )
+      })
+    }
   })
 }
 

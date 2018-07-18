@@ -98,6 +98,7 @@ export default {
 .caption {
   text-align: center;
   font-size: 1rem;
+  font-style: italic;
   color: #5c5e5c;
 }
 p {

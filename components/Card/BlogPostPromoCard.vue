@@ -4,7 +4,12 @@
       <image-link :post="post"/>
     </div>
     <div slot="words">
-      {{post.description}}
+      <div v-if="post.promo">
+        {{post.promo}}
+      </div>
+      <div v-else>
+        {{post.description}}
+      </div>
     </div>
   </post-card>
 </template>

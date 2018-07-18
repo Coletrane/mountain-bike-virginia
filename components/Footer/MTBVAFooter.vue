@@ -1,5 +1,6 @@
 <template>
-  <div class="mtbva-footer">
+  <div class="mtbva-footer"
+       :style="backgroundImage">
     <div class="sponsors-container">
       <logos-three-cols v-if="mobile"
                         :sponsors="sponsors"/>
@@ -167,6 +168,13 @@ export default {
         this.mobile = document.body.clientWidth <= 850
       }
     }
+  },
+  computed: {
+    backgroundImage() {
+      return {
+        backgroundImage: `url("${s3StaticImg}/blue_ridge_mountains.jpg")`
+      }
+    }
   }
 }
 </script>
@@ -176,7 +184,6 @@ export default {
   background-size: 3000px;
   background-position-x: center;
   background-position-y: 0px;
-  background-image: url("https://d2i660bt0ywr9a.cloudfront.net/static/img/blue_ridge_mountains.jpg");
 }
 
 @media (max-width: 700px) {
