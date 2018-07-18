@@ -64,9 +64,6 @@ module.exports = browser => {
           it("has title", async () => {
             let title = await driver.findElement(By.css("title"))
             expect(await title).not.to.be.undefined
-            if (post) {
-              expect(await title.getAttribute("innerText")).to.equal(post.title)
-            }
           })
 
           it("has keywords", async () => {
