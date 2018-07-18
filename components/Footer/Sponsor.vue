@@ -1,12 +1,10 @@
 <template>
   <a :href="sponsor.url">
     <img v-lazy="sponsor.img"
-         :class="sponsor.class + '-img-' + columns"
-         class="sponsor"
+         :class="sponsor.class"
          :alt="sponsor.class"/>
   </a>
 </template>
-
 <script>
 export default {
   name: "sponsor",
@@ -14,17 +12,7 @@ export default {
     sponsor: {
       type: Object,
       required: true
-    },
-    columns: {
-      type: Number,
-      required: true
     }
   }
 }
 </script>
-
-<style scoped>
-.sponsor {
-  width: 90%;
-}
-</style>

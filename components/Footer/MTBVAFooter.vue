@@ -2,10 +2,10 @@
   <div class="mtbva-footer"
        :style="backgroundImage">
     <div class="sponsors-container">
-      <logos-three-cols v-if="mobile"
-                        :sponsors="sponsors"/>
-      <logos-four-cols v-else
-                       :sponsors="sponsors"/>
+      <div v-for="sponsor of sponsors"
+           class="sponsor">
+        <sponsor :sponsor="sponsor"/>
+      </div>
     </div>
     <div v-if="copyright"
          class="copyright">
@@ -24,8 +24,7 @@
   </div>
 </template>
 <script>
-import LogosFourCols from "./LogosFourCols"
-import LogosThreeCols from "./LogosTwoCols"
+import Sponsor from "./Sponsor"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faGithub from "@fortawesome/fontawesome-free-brands/faGithub"
 
@@ -35,8 +34,7 @@ import { noExtension, justExtension } from "../../assets/functions"
 export default {
   name: "mtbva-footer",
   components: {
-    LogosThreeCols,
-    LogosFourCols,
+    Sponsor,
     FontAwesomeIcon
   },
   props: {
@@ -64,6 +62,11 @@ export default {
           img: `${s3Sponsors}/starlight.png`,
           class: "starlight",
           url: "https://www.starlightapparel.com/"
+        },
+        {
+          img: `${s3Sponsors}/roanoke-outside.png`,
+          class: "roanoke-outside",
+          url: "https://www.roanokeoutside.com/"
         },
         {
           img: `${s3Sponsors}/deschutes.png`,
@@ -194,31 +197,37 @@ export default {
 }
 
 .sponsors-container {
-  /*background-color: white;*/
-  margin: auto;
-  /*opacity: .75;*/
   padding: 0.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }
 
-.sponsors-container {
-  margin-left: 4rem;
-  margin-right: 4rem;
+.sponsor {
+  flex: 1 1 auto;
+  padding: .25rem;
 }
+.sponsor, .sponsor img {
+  width: 13rem;
 
-@media (min-width: 1200px) {
-  .sponsors-container {
-    margin-left: 8rem;
-    margin-right: 8rem;
+}
+img.deschutes {
+  width: 12rem;
+}
+@media (max-width: 500px) {
+  .sponsor, .sponsor img {
+    width: 10rem;
+  }
+  img.deschutes {
+    width: 9rem;
   }
 }
 
-@media (max-width: 575px) {
-  .sponsors-container {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-}
+
 
 .copyright {
   padding-top: 2rem;

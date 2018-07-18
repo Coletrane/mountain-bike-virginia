@@ -14,6 +14,7 @@
         (title sponsor), Specialized, Trek, Transition, Surly, Norco, E-Motion, Yeti, Scott, and Ibis. I pressed on to
         Dirt Fest for one bike, and one bike only, the Ibis Ripmo.
       </p>
+      <blog-image :src="img + 'dirt-fest.jpg'"/>
       <blog-image :src="img + 'P1020175.jpg'"/>
       <p class="caption">
         Me and my father's Turner Sultans and Carlo Dy's Scott Genius. Someone remarked: "I've never seen so many
