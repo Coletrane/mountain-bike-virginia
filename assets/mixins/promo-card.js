@@ -2,6 +2,7 @@ import { postDirs } from "../../constants"
 
 export default {
   data() {
+    console.log(this.componentRoute())
     return {
       post: this.$store.getters.posts(this.componentRoute())
     }

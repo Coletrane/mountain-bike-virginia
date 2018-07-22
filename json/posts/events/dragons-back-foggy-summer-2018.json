@@ -1,0 +1,17 @@
+{
+  "title": "Trail Feature: Dragons Back",
+  "subtitle": "The Firedrake Smaug",
+  "description": " lol",
+  "author": "cole",
+  "date": "July 22, 2018",
+  "loc": "North Mountain, Catawba, VA",
+  "imgRoute": "P1020383.jpg",
+  "keywords": "mtb, mountain biking, cycling, trail, enduro, all mountain, cross country, xc, virginia, catawba, virginia tech, vt, dragons back, north mountain, carvins cove, salem, roanoke, bike",
+  "relatedPosts": [
+    "events/roanoke-silver-ride-center",
+    "battle-at-blackhorse-2018"
+  ],
+  "schema": {
+    "type": "NewsArticle"
+  }
+}

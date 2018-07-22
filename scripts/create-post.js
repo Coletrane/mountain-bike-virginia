@@ -7,6 +7,7 @@ const sharp = require("sharp")
 const imagemin = require("imagemin") // TODO
 const execa = require("execa")
 const Listr = require("listr")
+const glob = require("glob")
 
 // Internal
 const constants = require("../constants")
@@ -53,22 +54,11 @@ if (!newJson) {
   while (!post.keywords) {
     post.keywords = rl.question("Keywords: ")
   }
+  console.log(glob.sync("./json/posts/**/*.json"))
   let numRelatedPosts = -1
   while (numRelatedPosts < 0) {
     numRelatedPosts = rl.questionInt("How many related posts? ")
   }
-  let posts = fs.readdirSync("./json/posts/")
-  constants.postDirs.forEach(dir => {
-    posts.splice(posts.indexOf(dir), 1)
-    const dirPosts = fs.readdirSync(`./json/posts/${dir}`)
-    dirPosts.forEach(post => {
-      if (post.endsWith(".json")) {
-        posts.push(post)
-      }
-    })
-  })
-  console.log(posts)
-
   post.relatedPosts = []
   for (let i = 0; i < numRelatedPosts; i++) {
     while (!fs.existsSync(`./json/posts/${post.relatedPosts[i]}.json`)) {
@@ -97,7 +87,6 @@ if (!newJson) {
   })
 }
 
-console.log(process.argv[2])
 if (process.argv[2] !== "images") {
   taskArr = taskArr.concat([
     {
@@ -129,19 +118,18 @@ taskArr = taskArr.concat([
 ])
 
 if (process.argv[2] !== "images") {
-  taskArr.push([
-    {
-      title: "Creating Post Component",
-      task: () => createPostComponent(postDir, postRoute, post)
-    }
-  ])
-  if (customPromoCard) {
+  taskArr.push({
+    title: "Creating Post Component",
+    task: () => createPostComponent(postDir, postRoute, post)
+  })
+  if (true) {
     taskArr.push({
       title: "Creating Custom Promo Card",
       task: () => createCustomPromoCard(postDir, postRoute)
     })
   }
 }
+console.log(taskArr)
 const tasks = new Listr(taskArr)
 
 tasks.run()
@@ -168,6 +156,7 @@ const createPostComponent = (dir, route, post) => {
     ? "VideoBlogPostTemplate.vue"
     : "BlogPostTemplate.vue"
   fs.readFile(`./scripts/Templates/${templateFile}`, "utf-8", (err, data) => {
+    // TODO: fix this
     let componentFile = data.replace(`name: '',`, `name: '${route}',`)
 
     if (!post.ytSrc) {
@@ -195,7 +184,7 @@ const createPostComponent = (dir, route, post) => {
 
     const postComponentFile = `./pages/${dir}/${route}.vue`
     if (!fs.existsSync(postComponentFile)) {
-      fs.writeFile(fileName, componentFile, "utf-8", (err, data) => {
+      fs.writeFile(postComponentFile, componentFile, "utf-8", (err, data) => {
         if (err) {
           return Promise.reject(err)
         } else {
@@ -323,6 +312,7 @@ const generateResponsiveImages = (dir, route) => {
                           .resize(480)
                           .toFile(resImgPath(dir, route, file, 480))
                           .then(data => {
+                            console.log()
                             return Promise.resolve()
                           })
                       })
