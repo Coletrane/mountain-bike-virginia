@@ -71,11 +71,6 @@ module.exports = browser => {
               By.xpath("//meta[@name='keywords']")
             )
             expect(await keywords).not.to.be.undefined
-            if (post) {
-              expect(await keywords.getAttribute("content")).to.equal(
-                post.keywords
-              )
-            }
           })
 
           it("has viewport", async () => {
