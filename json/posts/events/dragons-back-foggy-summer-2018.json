@@ -1,13 +1,14 @@
 {
-  "title": "Trail Feature: Dragons Back",
+  "title": "Foggy Dragon's Back Ride",
   "subtitle": "The Firedrake Smaug",
-  "description": " lol",
-  "author": "cole",
+  "description": "Photo blog of a ride on North Mountain, also known as Dragon's Back.",
+  "author": "kyle",
   "date": "July 22, 2018",
   "loc": "North Mountain, Catawba, VA",
   "imgRoute": "P1020383.jpg",
   "keywords": "mtb, mountain biking, cycling, trail, enduro, all mountain, cross country, xc, virginia, catawba, virginia tech, vt, dragons back, north mountain, carvins cove, salem, roanoke, bike",
   "relatedPosts": [
+    "shop/dragons-back-tshirt",
     "events/roanoke-silver-ride-center",
     "battle-at-blackhorse-2018"
   ],

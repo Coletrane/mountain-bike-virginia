@@ -1,17 +1,17 @@
 <template>
   <div class="yt-wrapper embed-responsive embed-responsive-16by9">
     <div class="embed-responsive-item">
-    <img v-if="!loaded"
-         :src="loadingImg"/>
-    <iframe v-if="$store.state.misc.loaded"
-            v-show="loaded"
-            class="embed-responsive-item"
-            width="100%"
-            height="auto"
-            frameborder="0"
-            allowfullscreen
-            :src="src">
-    </iframe>
+      <img v-if="!loaded"
+           :src="loadingImg"/>
+      <iframe v-if="$store.state.misc.loaded"
+              v-show="loaded"
+              class="embed-responsive-item"
+              width="100%"
+              height="auto"
+              frameborder="0"
+              allowfullscreen
+              :src="src">
+      </iframe>
     </div>
   </div>
 </template>
