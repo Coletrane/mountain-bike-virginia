@@ -1,15 +1,15 @@
 <template>
-  <div class="video-wrapper">
-    <video v-if="$store.state.misc.loaded"
-           width="100%"
-           :preload="preload"
-           :autoplay="autoplay"
-           :muted="muted"
-           :loop="loop"
-           :controls="controls">
-      <source :src="url" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+      <div class="video-wrapper">
+        <video v-if="$store.state.misc.loaded"
+               width="100%"
+               :preload="preload"
+               :autoplay="autoplay"
+               :muted="muted"
+               :loop="loop"
+               :controls="getControls">
+          <source :src="url" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
   </div>
 </template>
 <script>
@@ -22,11 +22,6 @@ export default {
     src: {
       type: String,
       required: true
-    },
-    preload: {
-      type: Boolean,
-      required: false,
-      default: false
     },
     autoplay: {
       type: Boolean,
@@ -43,15 +38,15 @@ export default {
       required: false,
       default: false
     },
+    controls: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     responsive: {
       type: Boolean,
       required: false,
       default: false
-    }
-  },
-  data() {
-    return {
-      controls: false
     }
   },
   created() {
@@ -63,8 +58,9 @@ export default {
 
       if (isMobile()) {
         this.autoplay = false
-        this.preload = false
-        this.controls = true
+        this.preload = "none"
+      } else {
+        this.preload="auto"
       }
     }
   },
@@ -75,12 +71,20 @@ export default {
 
       if (this.responsive) {
         if (isMobile()) {
-          return `${filename}-Cellular Low${extension}`
+          return `${filename}-mobile${extension}`
         } else {
-          return `${filename}-Wi-Fi Low${extension}`
+          return `${filename}-desktop${extension}`
         }
       } else {
         return this.src
+      }
+    },
+    getControls() {
+      // Make sure mobile always has controls
+      if (isMobile()) {
+        return true
+      } else {
+        return this.controls
       }
     }
   }
@@ -94,26 +98,31 @@ export default {
   height: 0;
   overflow: hidden;
 }
+
 @media (max-width: 1280px) {
   .video-wrapper {
     padding-bottom: 52.5%;
   }
 }
+
 @media (max-width: 960px) {
   .video-wrapper {
-    padding-bottom: 48%;
+    padding-bottom: 51.75%;
   }
 }
+
 @media (max-width: 720px) {
   .video-wrapper {
     padding-bottom: 50%;
   }
 }
+
 @media (max-width: 500px) {
   .video-wrapper {
-    padding-bottom: 49%;
+    padding-bottom: 46%;
   }
 }
+
 .video-wrapper video {
   position: absolute;
   top: 0;

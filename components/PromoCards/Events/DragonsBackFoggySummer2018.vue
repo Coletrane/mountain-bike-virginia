@@ -1,9 +1,9 @@
 <template>
   <post-card :post="post">
     <div slot="media">
-      <image-link :post="post"/>
       <image-link :post="post"
-                  :src="img + 'P1020331.jpg'"/>
+                  :src="img + 'dragons-back-flyer.jpg'"/>
+      <image-link :post="post"/>
     </div>
   </post-card>
 </template>
