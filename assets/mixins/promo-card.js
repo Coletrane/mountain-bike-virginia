@@ -1,9 +1,12 @@
 import { postDirs } from "../../constants"
+import { s3Pages } from "../../scripts/routes"
 
 export default {
   data() {
+    const post = this.$store.getters.posts(this.componentRoute())
     return {
-      post: this.$store.getters.posts(this.componentRoute())
+      post: post,
+      img: `${s3Pages}/${post.route}/`
     }
   },
   methods: {

@@ -1,5 +1,5 @@
 import { baseUrl, s3StaticImg, s3Pages } from "../scripts/routes"
-import * as resImg from "../scripts/responsive-imgs.config"
+import * as resImg from "../constants"
 import { schemaTypes, schemaOrg } from "./schmea-types"
 import { results } from "./head-tags"
 import axios from "axios"

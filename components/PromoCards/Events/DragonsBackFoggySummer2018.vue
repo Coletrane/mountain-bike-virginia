@@ -2,10 +2,8 @@
   <post-card :post="post">
     <div slot="media">
       <image-link :post="post"/>
-    </div>
-    <div slot="words">
-      <div class="promo">
-      </div>
+      <image-link :post="post"
+                  :src="img + 'P1020331.jpg'"/>
     </div>
   </post-card>
 </template>

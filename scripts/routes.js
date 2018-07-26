@@ -1,10 +1,12 @@
 let s3
 if (process.env.NODE_ENV === "production") {
   s3 = "https://d2i660bt0ywr9a.cloudfront.net"
+} else if (process.env.NODE_ENV === "test") {
+  s3 = "http://localhost:3002/mtbva-s3-bucket"
 } else {
-  // Bad naming
   s3 = "http://localhost:3000/mtbva-s3-bucket"
 }
+
 const s3StaticImg = s3 + "/static/img"
 const s3Favicons = s3 + "/static/favicons"
 const s3Sponsors = s3 + "/static/sponsors"
