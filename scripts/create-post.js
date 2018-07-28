@@ -129,7 +129,6 @@ if (process.argv[2] !== "images") {
     })
   }
 }
-console.log(taskArr)
 const tasks = new Listr(taskArr)
 
 tasks.run()
@@ -157,7 +156,7 @@ const createPostComponent = (dir, route, post) => {
     : "BlogPostTemplate.vue"
   fs.readFile(`./scripts/Templates/${templateFile}`, "utf-8", (err, data) => {
     // TODO: fix this
-    let componentFile = data.replace(`name: '',`, `name: '${route}',`)
+    let componentFile = data.replace(`name: "",`, `name: "${route}",`)
 
     if (!post.ytSrc) {
       let imgTags = []
@@ -201,8 +200,8 @@ const createCustomPromoCard = (dir, route) => {
     "utf-8",
     (err, data) => {
       const componentFile = data.replace(
-        `name: '',`,
-        `name: '${dir}-${route}-promo',`
+        `name: "",`,
+        `name: "${dir}-${route}-promo",`
       )
       // Vue component naming convention has upper case
       const upperCaseDir = dir.charAt(0).toUpperCase() + dir.slice(1)
