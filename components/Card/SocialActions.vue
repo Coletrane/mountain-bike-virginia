@@ -84,12 +84,6 @@ a {
   font-size: 2rem;
 }
 
-@media (max-width: 575px) {
-  a {
-    font-size: 1.5rem;
-  }
-}
-
 @media (max-width: 692px) {
   .fa-facebook {
     margin-right: 2px;

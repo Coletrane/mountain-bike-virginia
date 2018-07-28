@@ -3,23 +3,24 @@
     <parallax :src="image">
       <div slot="hero"
            class="hero-container">
-        <div class="hero-content">
-            <div>
-              <h1 class="mtbva-title"
-                  :class="subpageTitleClass">
-                {{title.toUpperCase()}}
-              </h1>
-              <h2 class="white--text headline mtbva-subtitle">
-                {{subtitle}}
-              </h2>
-              <a v-if="buttonLink && button"
-                 :href="buttonLink"
-                 class="button-link">
-                <button class="btn btn-outline-primary white-btn">
-                    {{button.toUpperCase()}}
-                </button>
-              </a>
-            </div>
+        <div class="hero-content"
+             :style="mobileHeroStyles">
+          <div>
+            <h1 class="mtbva-title"
+                :class="subpageTitleClass">
+              {{title.toUpperCase()}}
+            </h1>
+            <h2 class="white--text headline mtbva-subtitle">
+              {{subtitle}}
+            </h2>
+            <a v-if="buttonLink && button"
+               :href="buttonLink"
+               class="button-link">
+              <button class="btn btn-outline-primary white-btn">
+                {{button.toUpperCase()}}
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </parallax>
@@ -27,7 +28,9 @@
 </template>
 <script>
 import Parallax from "./Parallax"
+
 import { s3StaticImg } from "../../scripts/routes"
+import isMobile from "../../assets/detect-mobile"
 
 export default {
   name: "mtbva-header",
@@ -71,6 +74,14 @@ export default {
       if (this.$route.name !== "index") {
         return "mtbva-title-subpage"
       }
+    },
+    // Important, if you check process.browser you MUST use inline styles and not class names
+    mobileHeroStyles() {
+      if (process.browser && isMobile() && this.$route.name === "index") {
+        return {
+          top: '42%'
+        }
+      }
     }
   }
 }
@@ -95,9 +106,11 @@ export default {
   text-shadow: 4px 3px 3px rgb(0, 0, 0);
   font-size: 6rem;
 }
+
 .mtbva-title-subpage {
   font-size: 4rem;
 }
+
 .mtbva-subtitle {
   text-shadow: 4px 3px 3px rgb(0, 0, 0);
 }
@@ -106,12 +119,15 @@ export default {
   .mtbva-title {
     font-size: 4rem;
   }
+
   .mtbva-title-subpage {
     font-size: 3rem;
   }
+
   .mtbva-subtitle {
     font-size: 1.5rem;
   }
+
   .hero-content {
     height: 300px;
   }
@@ -121,9 +137,11 @@ export default {
   .mtbva-title {
     font-size: 3.5rem;
   }
+
   .mtbva-title-subpage {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
+
   .mtbva-subtitle {
     font-size: 0.5rem;
   }
@@ -151,7 +169,6 @@ export default {
   opacity: 0;
 }
 </style>
-
 <style scoped>
 .white-btn {
   width: 200px;
