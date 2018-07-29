@@ -42,13 +42,19 @@ export const headTags = (title, desc, keywords, post) => {
     if (post.schema.type === schemaTypes.article) {
       schema = buildArticle(post, desc)
     } else if (post.schema.type === schemaTypes.event) {
-      schema = buildEvent(post, desc)
+      if (post.promo) {
+        schema = buildEvent(post, post.promo)
+      } else {
+        schema = buildEvent(post, desc)
+      }
     } else if (post.schema.type === schemaTypes.review) {
       schema = buildReview(post, desc)
     }
-  } else if (post.route === "/" ||
-             post.route.includes("xxc-va-race-series") ||
-             post.route === "trails") {
+  } else if (
+    post.route === "/" ||
+    post.route.includes("xxc-va-race-series") ||
+    post.route === "trails"
+  ) {
     schema = buildOrganization()
   } else if (post.route.includes("results")) {
     schema = buildDataset(post)
@@ -62,12 +68,7 @@ export const headTags = (title, desc, keywords, post) => {
   if (schema) {
     // Get rid of &quot
     head.__dangerouslyDisableSanitizers = ["script"]
-    head.script = [
-      {
-        type: "application/ld+json",
-        innerHTML: JSON.stringify(schema)
-      }
-    ]
+    head.script = [getSchemaObj(schema)]
   }
 
   // Disable sanitizers for video head()
@@ -89,6 +90,13 @@ const getImageRoute = post => {
     }
   } else {
     return `${s3Pages}/${post.route}/${post.imgRoute}`
+  }
+}
+
+export const getSchemaObj = schema => {
+  return {
+    type: "application/ld+json",
+    innerHTML: JSON.stringify(schema)
   }
 }
 
@@ -166,24 +174,19 @@ export const buildVideo = async post => {
     schema.uploadDate = res.data.items[0].snippet.publishedAt
   }
 
-  schema["@context"] = "http://schema.org/"
-  return [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify(schema)
-    }
-  ]
+  schema["@context"] = schemaOrg
+  return [getSchemaObj(schema)]
 }
 
-const buildEvent = (post, desc) => {
+export const buildEvent = (post, desc) => {
   let schema = {
     "@context": schemaOrg,
     "@type": schemaTypes.event,
     name: post.title,
-    startDate: new Date(post.schema.startDate).toISOString(),
+    startDate: new Date(post.schema.startDate || post.date).toISOString(),
     location: {
+      ...post.schema.location,
       "@type": schemaTypes.place,
-      ...post.schema.location
     },
     image: getImageRoute(post),
     description: desc
@@ -298,4 +301,13 @@ export const routeToComponentFilename = route => {
   }
 
   return postFilename
+}
+
+export const getRoute = matched => {
+  let route
+  if (matched.length === 1) {
+    return matched[0].path.slice(1)
+  } else {
+    throw new Error("route.matched has nothing!")
+  }
 }

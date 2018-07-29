@@ -1,14 +1,9 @@
-import { headTags, buildVideo } from "../functions"
+import { headTags, buildVideo, getRoute } from "../functions"
 import { s3Pages } from "../../scripts/routes"
 
 export default {
   async asyncData(context) {
-    let route
-    if (context.route.matched.length === 1) {
-      route = context.route.matched[0].path.slice(1)
-    } else {
-      throw new Error(`${route.name} route.matched has nothing!`)
-    }
+    let route = getRoute(context.route.matched)
 
     await context.store.dispatch("loadPosts", [route])
     const currentPost = context.store.getters.posts(route)
@@ -32,14 +27,7 @@ export default {
       this.realPost = this.post
       return this.blogHeadTags(this.post)
     } else {
-      let route
-      if (this.$route.matched.length === 1) {
-        route = this.$route.matched[0].path.slice(1)
-      } else {
-        throw new Error(`${route.name} route.matched has nothing!`)
-      }
-
-      return this.blogHeadTags(this.$store.getters.posts(route))
+      return this.blogHeadTags(this.$store.getters.posts(this.$route.matched))
     }
   },
   props: {
