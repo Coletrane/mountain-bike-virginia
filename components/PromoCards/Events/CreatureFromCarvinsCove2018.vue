@@ -6,12 +6,12 @@
     <div slot="words">
       <div class="promo">
         <div v-html="post.promo"></div>
-        <div>
+        <div class="center">
           <a :href="post.xxcRegister">
             XXC Registration on BikeReg
           </a>
         </div>
-        <div>
+        <div class="center">
           <a :href="post.xcRegister">
             XC Registration
           </a>
@@ -56,3 +56,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.center {
+  text-align: center;
+}
+</style>

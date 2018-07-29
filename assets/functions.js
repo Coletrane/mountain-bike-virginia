@@ -71,6 +71,11 @@ export const headTags = (title, desc, keywords, post) => {
     head.script = [getSchemaObj(schema)]
   }
 
+  if (post.route === "events/creature-from-carvins-cove-2018") {
+    head.__dangerouslyDisableSanitizers = ["script"]
+    head.script = buildCreatureEventsScript(post)
+  }
+
   // Disable sanitizers for video head()
   if (post.ytSrc) {
     head.__dangerouslyDisableSanitizers = ["script"]
@@ -178,7 +183,7 @@ export const buildVideo = async post => {
   return [getSchemaObj(schema)]
 }
 
-export const buildEvent = (post, desc) => {
+const buildEvent = (post, desc) => {
   let schema = {
     "@context": schemaOrg,
     "@type": schemaTypes.event,
@@ -186,13 +191,64 @@ export const buildEvent = (post, desc) => {
     startDate: new Date(post.schema.startDate || post.date).toISOString(),
     location: {
       ...post.schema.location,
-      "@type": schemaTypes.place,
+      "@type": schemaTypes.place
     },
     image: getImageRoute(post),
     description: desc
   }
 
   return schema
+}
+
+const buildCreatureEventsScript = post => {
+  const enduroPost = {
+    route: post.route,
+    imgRoute: "creatureduro.jpg",
+    title: "Creatureduro: Carvins Cove Enduro Mountain Bike Race",
+    schema: {
+      "@context": schemaOrg,
+      type: schemaTypes.event,
+      startDate: new Date("Oct 6, 2018"),
+      location: {
+        name: "Sherwood Archery Inc.",
+        address: {
+          "@type": schemaTypes.address,
+          streetAddress: "2720 Timberview Rd",
+          addressLocality: "Roanoke",
+          postalCode: "24019",
+          addressRegion: "VA",
+          addressCountry: "US"
+        }
+      }
+    }
+  }
+  const xxcPost = {
+    route: post.route,
+    imgRoute: post.imgRoute,
+    title:
+      "Virginia's Blue Ridge, Creature from Carvins Cove XC and XXC Marathon Mountain Bike Race",
+    schema: {
+      "@context": schemaOrg,
+      type: schemaTypes.event,
+      startDate: new Date("Oct 7, 2018"),
+      location: {
+        name: "Carvins Cove Reservoir Boat Dock",
+        address: {
+          "@type": schemaTypes.address,
+          streetAddress: "9644 Reservoir Rd",
+          addressLocality: "Roanoke",
+          postalCode: "24019",
+          addressRegion: "VA",
+          addressCountry: "US"
+        }
+      }
+    }
+  }
+
+  return [
+    getSchemaObj(buildEvent(enduroPost, post.promo)),
+    getSchemaObj(buildEvent(xxcPost, post.promo))
+  ]
 }
 
 const buildReview = (post, desc) => {

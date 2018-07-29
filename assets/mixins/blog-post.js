@@ -27,7 +27,9 @@ export default {
       this.realPost = this.post
       return this.blogHeadTags(this.post)
     } else {
-      return this.blogHeadTags(this.$store.getters.posts(this.$route.matched))
+      return this.blogHeadTags(
+        this.$store.getters.posts(getRoute(this.$route.matched))
+      )
     }
   },
   props: {
