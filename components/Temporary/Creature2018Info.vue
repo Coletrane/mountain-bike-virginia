@@ -103,6 +103,11 @@ export default {
 .center:first-child {
   margin-top: 0;
 }
+@media(min-width: 1440px) {
+  .center:first-child {
+    margin-top: 3rem;
+  }
+}
 
 .center:last-child {
   margin-bottom: 0;
