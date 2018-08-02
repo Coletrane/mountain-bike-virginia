@@ -48,6 +48,7 @@ export default {
   font-size: 1.2rem;
 }
 .after-header a {
+  padding: .25rem;
   text-decoration: underline;
   color: black;
   background: rgba(115, 165, 51, 0.75);

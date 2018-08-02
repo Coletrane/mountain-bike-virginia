@@ -16,14 +16,14 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "@/components/BlogPost"
-import BlogImage from "@/components/Images/BlogImage"
-import PaymentMethods from "@/components/Images/PaymentMethods"
+import BlogPost from "../../components/BlogPost"
+import BlogImage from "../../components/Images/BlogImage"
+import PaymentMethods from "../../components/Images/PaymentMethods"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faEnvelope from "@fortawesome/fontawesome-free-regular/faEnvelope"
 import faMobileAlt from "@fortawesome/fontawesome-free-solid/faMobileAlt"
 
-import blogPost from "@/assets/mixins/blog-post"
+import blogPost from "../../assets/mixins/blog-post"
 
 export default {
   name: "dragons-back-tshirt",

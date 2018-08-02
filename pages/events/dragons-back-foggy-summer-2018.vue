@@ -230,14 +230,14 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "@/components/BlogPost"
-import BlogImage from "@/components/Images/BlogImage"
+import BlogPost from "../../components/BlogPost"
+import BlogImage from "../../components/Images/BlogImage"
 import MTBVAVideo from "../../components/Iframes/MTBVAVideo"
 import Quote from "../../components/Card/Quote"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faStrava from "@fortawesome/fontawesome-free-brands/faStrava"
 
-import blogPost from "@/assets/mixins/blog-post"
+import blogPost from "../../assets/mixins/blog-post"
 
 export default {
   name: "events-dragons-back-foggy-summer-2018",

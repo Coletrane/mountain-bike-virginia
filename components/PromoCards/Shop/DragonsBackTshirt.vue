@@ -18,11 +18,11 @@
   </post-card>
 </template>
 <script>
-import PostCard from "@/components/Card/PostCard"
-import ImageLink from "@/components/Images/ImageLink"
-import PaymentMethods from "@/components/Images/PaymentMethods"
+import PostCard from "../../Card/PostCard"
+import ImageLink from "../../Images/ImageLink"
+import PaymentMethods from "../../Images/PaymentMethods"
 
-import promoCard from "@/assets/mixins/promo-card"
+import promoCard from "../../../assets/mixins/promo-card"
 
 export default {
   name: "shop-dragons-back-tshirt-promo",
