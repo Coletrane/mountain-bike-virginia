@@ -131,6 +131,7 @@ button {
 
 .app-fade-wrapper {
   background-color: black;
+  overflow-x: hidden;
 }
 
 .app-fade-enter-active {
