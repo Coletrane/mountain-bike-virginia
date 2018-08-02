@@ -5,19 +5,6 @@
       <div class="reg-links">
         <div class="center row">
           <div class="col-12 col-sm-6">
-            <a :href="post.xxcRegister">
-              XXC Registration on BikeReg
-            </a>
-          </div>
-          <div class="col-12 col-sm-6">
-            <a :href="post.xxcFb">
-              XXC Facebook Event
-              <font-awesome-icon :icon="faFacebook"/>
-            </a>
-          </div>
-        </div>
-        <div class="center row">
-          <div class="col-12 col-sm-6">
             <a :href="post.enduroRegister">
               Enduro Registration on BikeReg
             </a>
@@ -29,10 +16,31 @@
             </a>
           </div>
         </div>
-        <div class="center">
-          <a :href="post.xcRegister">
-            XC Registration
-          </a>
+        <div class="center row">
+          <div class="col-12 col-sm-6">
+            <a :href="post.xcRegister">
+              XC Registration
+            </a>
+          </div>
+          <div class="col-12 col-sm-6">
+            <a :href="post.xcFb">
+              XC Facebook Event
+              <font-awesome-icon :icon="faFacebook"/>
+            </a>
+          </div>
+        </div>
+        <div class="center row">
+          <div class="col-12 col-sm-6">
+            <a :href="post.xxcRegister">
+              XXC Registration on BikeReg
+            </a>
+          </div>
+          <div class="col-12 col-sm-6">
+            <a :href="post.xxcFb">
+              XXC Facebook Event
+              <font-awesome-icon :icon="faFacebook"/>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -41,13 +49,13 @@
   </div>
 </template>
 <script>
-import ImageLink from "../Images/ImageLink"
-import RideWithGpsSwitcher from "../Iframes/RideWithGpsSwitcher"
-import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
+import ImageLink from '../Images/ImageLink'
+import RideWithGpsSwitcher from '../Iframes/RideWithGpsSwitcher'
+import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
 export default {
-  name: "creature-2018-info",
+  name: 'creature-2018-info',
   components: {
     ImageLink,
     RideWithGpsSwitcher,
@@ -64,14 +72,14 @@ export default {
       faFacebook: faFacebook,
       creatureCourses: [
         {
-          name: "XC",
+          name: 'XC',
           url:
-            "https://rwgps-embeds.com/embeds?type=trip&id=26039891&sampleGraph=true"
+            'https://rwgps-embeds.com/embeds?type=trip&id=26039891&sampleGraph=true'
         },
         {
-          name: "XXC",
+          name: 'XXC',
           url:
-            "https://rwgps-embeds.com/embeds?type=route&id=25378656&sampleGraph=true"
+            'https://rwgps-embeds.com/embeds?type=route&id=25378656&sampleGraph=true'
         }
       ]
     }
@@ -87,12 +95,15 @@ export default {
   text-align: center;
   margin: 1.5rem 0;
 }
+
 .center div {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
+
 .center:first-child {
   margin-top: 0;
 }
+
 .center:last-child {
   margin-bottom: 0;
 }
