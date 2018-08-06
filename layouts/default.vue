@@ -113,10 +113,12 @@ button {
   font-family: "MyriadPro-Bold", sans-serif;
   font-weight: 800;
   color: white;
-  border-color: white;
+  border: 3px solid white;
   font-size: 2rem;
   box-shadow: 0px 0px 7px 1px rgb(0, 0, 0);
   text-shadow: 4px 3px 3px rgb(0, 0, 0);
+  background-color: transparent;
+  appearance: none;
 }
 
 .white-btn:hover {

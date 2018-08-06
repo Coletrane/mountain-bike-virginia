@@ -1,6 +1,10 @@
 import { s3Results } from "../scripts/routes"
 import axios from "axios"
 
+export const resultsActionTypes = {
+  selectRace: "selectRace"
+}
+
 const raceNames = [
   "Middle Mountain Momma 2018",
   "Battle At Blackhorse 2018",

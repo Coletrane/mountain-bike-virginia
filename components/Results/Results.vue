@@ -8,12 +8,13 @@
       <card>
         <div slot="content">
           <dropdown v-if="$store.state.results.currentRace.name"
-                    :current-item="$store.state.results.currentRace.name"
-                    :items="$store.state.results.races"/>
+                    :initial-item="$store.state.results.currentRace"
+                    :items="$store.state.results.races"
+                    :vuexAction="resultsActionTypes.selectRace"/>
           <div v-if="$store.state.results.currentRace">
             <div v-for="clazz in $store.state.results.currentRace.results.classes">
-            <h4>{{clazz.name}}</h4>
-            <class-table :items="clazz.riders"/>
+              <h4>{{clazz.name}}</h4>
+              <class-table :items="clazz.riders"/>
             </div>
           </div>
           <div v-else
@@ -30,6 +31,7 @@ import Dropdown from "./Dropdown"
 import ClassTable from "./ClassTable"
 
 import { s3StaticImg, s3Pages } from "../../scripts/routes"
+import { resultsActionTypes } from "../../store/results"
 
 export default {
   name: "results",
@@ -43,6 +45,11 @@ export default {
     headerImage: {
       type: String,
       required: false
+    }
+  },
+  data() {
+    return {
+      resultsActionTypes: resultsActionTypes
     }
   },
   computed: {
@@ -70,4 +77,13 @@ export default {
 .placeholder-card {
   height: 2000px;
 }
+
+.select {
+  margin: 1rem auto;
+}
+
+table {
+  width: 100%;
+}
+
 </style>

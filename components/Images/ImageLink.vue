@@ -51,6 +51,11 @@ export default {
 }
 </script>
 <style scoped>
+a {
+  background: transparent;
+  padding: 0;
+  background-size: 0;
+}
 div {
   min-height: 400px;
 }

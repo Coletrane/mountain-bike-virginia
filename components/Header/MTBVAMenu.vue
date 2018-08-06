@@ -103,6 +103,10 @@ export default {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.mtbva-nav-item {
+  padding-left: 1rem;
+}
+
 svg {
   margin-right: 1rem;
 }

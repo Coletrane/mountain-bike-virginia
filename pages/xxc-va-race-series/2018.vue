@@ -84,7 +84,7 @@ export default {
             map: "https://goo.gl/maps/qdK7VpJ7UrQ2"
           },
           fbEvent: "https://www.facebook.com/events/197357151055521/",
-          img: `${s3PagesEvents}/creature-from-carvins-cove-2018/creature.jpg`
+          img: `${s3PagesEvents}/creature-from-carvins-cove-2018/creature-2018-flyer.jpg`
         }
         // {
         //   title: 'Revenge of the Rattlesnake',

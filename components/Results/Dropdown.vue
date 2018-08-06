@@ -1,103 +1,134 @@
 <template>
-  <div class="dropdown mtbva-dropedown-container">
-    <button class="btn btn-primary dropdown-toggle mtbva-dropdown"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            @click="toggleDropdown()">
-      {{currentItem}}
-    </button>
-    <div v-if="expanded"
-         class="mtbva-dropdown-menu">
-      <div class="dropdown-menu"
-           :class="expanded ? 'mtbva-dropdown-menu-show' : ''"
-           aria-labelledby="dropdownMenuButton">
-        <a v-for="item in items"
-           class="dropdown-item mtbva-dropdown-item"
-           @click="selectRace(item)">
-          {{item.name}}
-        </a>
-      </div>
-    </div>
+  <div class="select">
+    <select v-model="selectedItem">
+      <option v-for="item in items"
+              :value="item"
+              :selected="selectedItem.route === item.route">
+        {{item.name}}
+      </option>
+    </select>
+    <span class="select-highlight"></span>
+    <span class="select-bar"></span>
   </div>
 </template>
 <script>
 export default {
   name: "dropdown",
   props: {
-    currentItem: {
+    initialItem: {
       required: true,
-      type: String
+      type: Object
     },
     items: {
       required: true,
       type: Array
+    },
+    vuexAction: {
+      required: true,
+      type: String
     }
   },
   data() {
     return {
-      expanded: false
+      selectedItem: this.initialItem
     }
   },
-  methods: {
-    toggleDropdown() {
-      this.expanded = !this.expanded
-    },
-    selectRace(race) {
-      this.$store.dispatch("selectRace", race.route)
-      this.toggleDropdown()
+  mounted() {
+    // This is a hack to get the item.name to show on initial page load
+    if (process.browser) {
+      const itemIndex = this.items.findIndex(item => {
+        return item.route === this.selectedItem.route
+      })
+      this.$el.getElementsByTagName('select')[0].selectedIndex = itemIndex
+    }
+  },
+  watch: {
+    selectedItem() {
+      this.$store.dispatch(this.vuexAction, this.selectedItem.route)
     }
   }
 }
 </script>
-<style>
-.mtbva-dropedown-container {
-  margin: auto;
-  padding: 1rem;
+<style scoped>
+.select {
   position: relative;
-  width: 315px;
+  width: 350px;
 }
 
-.mtbva-dropdown {
+select {
+  position: relative;
+  font-family: inherit;
   background-color: transparent;
-  border-color: black;
-  color: black;
+  width: 350px;
+  padding: 10px 10px 10px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.mtbva-dropdown:hover {
-  background-color: rgba(0, 0, 0, 0.25) !important;
-  border-color: #3d7635 !important;
+select:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
-.mtbva-dropdown:active,
-.mtbva-dropdown.active,
-.mtbva-dropdown-item:active,
-.mtbva-dropdown-item.active {
-  background-color: #3d7635 !important;
-  border-color: #3d7635 !important;
+.select select {
+  appearance: none;
 }
 
-.mtbva-dropdown:focus {
-  background-color: rgba(0, 0, 0, 0.25) !important;
-  border-color: #000000 !important;
+.select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(0, 0, 0);
+  pointer-events: none;
 }
 
-.mtbva-dropdown-menu-show {
-  display: inline;
-  top: 51px !important;
-  left: 13px !important;
+.select-bar {
+  position: relative;
+  display: block;
+  width: 350px;
 }
 
-.mtbva-dropdown-item {
-  cursor: pointer;
+.select-bar:before,
+.select-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #3d7635;
+  transition: 0.2s ease all;
 }
-.mtbva-dropdown-item:hover {
-  color: black !important;
-  background-color: rgba(0, 0, 0, 0.3) !important;
+
+.select-bar:before {
+  left: 50%;
 }
-.mtbva-dropdown-item:active {
-  color: black !important;
+
+.select-bar:after {
+  right: 50%;
+}
+
+/* active state */
+select:focus ~ .select-bar:before,
+select:focus ~ .select-bar:after {
+  width: 50%;
+}
+
+.select-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
 }
 </style>

@@ -8,10 +8,15 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 module.exports = {
   css: [
     {
-      src: "@/static/MyriadPro-Bold/styles.css"
+      src: "@/static/MyriadPro-Bold/styles.css",
+      lang: "css"
     },
     {
-      src: "bootstrap/dist/css/bootstrap.css",
+      src: "bootstrap/dist/css/bootstrap-reboot.css",
+      lang: "css"
+    },
+    {
+      src: "bootstrap/dist/css/bootstrap-grid.css",
       lang: "css"
     }
   ],
@@ -63,7 +68,9 @@ module.exports = {
   plugins: [{ src: "~/plugins/vue-lazyload", ssr: false }],
   build: {
     extractCss: true,
-    vendor: ["babel-polyfill"],
+    analyze: {
+      analyzerMode: "static"
+    },
     extend(config, { isDev, isClient }) {
       if (!isDev && process.env.ANALYZE) {
         config.plugins.push(
