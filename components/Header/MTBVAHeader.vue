@@ -101,6 +101,11 @@ export default {
   transform: translate(-50%, -50%);
   top: 60%;
 }
+@media (max-width: 450px) {
+  .hero-content {
+    top: 40%;
+  }
+}
 
 .mtbva-title {
   text-shadow: 4px 3px 3px rgb(0, 0, 0);

@@ -1,7 +1,6 @@
 <template>
   <blog-post :image="img + post.imgRoute"
              :post="post"
-             header-author
              :related-posts="relatedPosts">
     <div slot="content">
       <p>
@@ -53,11 +52,11 @@
         ingredients--like rocks--or custom built to spec. If you have experience or ideas on this, please scribble us a
         line with those suggestions.
       </p>
+      <youtube :src="post.ytSrc"/>
       <p>
         So if you think of it, believe it, then do it, and do it real hard real fast, it will happen. That might well
         indeed be Jeff Glenn’s convoluted-yet-deadly mantra.
       </p>
-      <youtube :src="post.ytSrc"/>
     </div>
   </blog-post>
 </template>

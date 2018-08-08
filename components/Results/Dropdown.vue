@@ -90,11 +90,18 @@ select:focus {
   border-top: 6px solid rgb(0, 0, 0);
   pointer-events: none;
 }
+@media (max-width: 350px) {
+  select, .select{
+    width: 295px;
+  }
+}
 
 .select-bar {
   position: relative;
   display: block;
   width: 350px;
+  height: 3px;
+  color: black;
 }
 
 .select-bar:before,

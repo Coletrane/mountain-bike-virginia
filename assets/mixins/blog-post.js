@@ -9,10 +9,14 @@ export default {
     const currentPost = context.store.getters.posts(route)
 
     await context.store.dispatch("loadPosts", currentPost.relatedPosts)
+    let relatedPosts = context.store.getters.posts(currentPost.relatedPosts)
+    if (!Array.isArray(relatedPosts)) {
+      relatedPosts = [relatedPosts]
+    }
 
     const postInstance = {
       post: currentPost,
-      relatedPosts: context.store.getters.posts(currentPost.relatedPosts),
+      relatedPosts: relatedPosts,
       img: `${s3Pages}/${route}/`
     }
 

@@ -1,5 +1,5 @@
 <template>
-  <blog-post :image="img + 'creatureduro.jpg'"
+  <blog-post :image="img + 'creature-render.jpg'"
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
