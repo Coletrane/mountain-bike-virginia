@@ -165,20 +165,24 @@ export const buildVideo = async post => {
 
   let ytId = post.ytSrc.split("/")
   ytId = ytId[ytId.length - 1]
-  let res = await axios.get(ytApi, {
-    params: {
-      key: process.env.google,
-      id: ytId,
-      part: "snippet"
+
+  try {
+    let res = await axios.get(ytApi, {
+      params: {
+        key: process.env.google,
+        id: ytId,
+        part: "snippet"
+      }
+    })
+    if (res.status === 200 || res.data.items.length > 0) {
+      schema.thumbnailUrl = [res.data.items[0].snippet.thumbnails.default.url]
+
+      schema.uploadDate = res.data.items[0].snippet.publishedAt
     }
-  })
-
-  if (res.status === 200 || res.data.items.length > 0) {
-    schema.thumbnailUrl = [res.data.items[0].snippet.thumbnails.default.url]
-
-    schema.uploadDate = res.data.items[0].snippet.publishedAt
+  } catch (err) {
+    console.log(err)
   }
-
+  
   schema["@context"] = schemaOrg
   return [getSchemaObj(schema)]
 }
