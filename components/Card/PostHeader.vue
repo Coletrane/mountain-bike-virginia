@@ -87,7 +87,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: "lato", sans-serif;
 }
 @media (max-width: 575px) {
@@ -96,12 +96,12 @@ h4 {
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 350px) {
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   h3 {
