@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="words">
-      <div>
+      <div class="creature-promo">
         {{post.promo}}
       </div>
       <div class="reg-links">
@@ -89,6 +89,10 @@ export default {
 }
 </script>
 <style scoped>
+.creature-promo {
+  padding: .5rem 0;
+}
+
 .reg-links {
   font-size: 1rem;
 }

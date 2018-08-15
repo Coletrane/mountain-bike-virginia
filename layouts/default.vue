@@ -198,14 +198,6 @@ button {
     padding-top: 0;
     padding-bottom: 0;
   }
-
-  .headline {
-    font-size: 2rem !important;
-  }
-
-  .subheading {
-    font-size: 1.8rem !important;
-  }
 }
 
 img[lazy="loading"] {

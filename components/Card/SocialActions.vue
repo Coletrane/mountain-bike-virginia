@@ -90,6 +90,12 @@ a {
   }
 }
 
+@media (max-width: 350px) {
+  a {
+    font-size: 1.5rem;
+  }
+}
+
 /*@media (max-width: 460px) {*/
 /*a.twitter-social-action {*/
 /*padding-left: 0 !important;*/

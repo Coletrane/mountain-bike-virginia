@@ -90,6 +90,28 @@ h4 {
   font-size: 1.5rem;
   font-family: "lato", sans-serif;
 }
+@media (max-width: 575px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 350px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+
+}
 
 svg {
   margin-right: 0.5rem;
