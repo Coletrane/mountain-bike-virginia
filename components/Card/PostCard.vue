@@ -8,7 +8,7 @@
         <slot name="media"/>
       </div>
       <div class="words"
-            :class="noPadding">
+           :class="noPadding">
         <slot name="words"/>
       </div>
     </div>

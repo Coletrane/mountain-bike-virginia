@@ -65,7 +65,6 @@
     </blog-post>
   </div>
 </template>
-
 <script>
 import BlogPost from "../components/BlogPost"
 import BlogImage from "../components/Images/BlogImage"

@@ -143,7 +143,10 @@ describe("/posts/ test", () => {
 
         describe("schema test", () => {
           it("should have a schema if no ytSrc", async () => {
-            if (!(await postJson.json.ytSrc) && post.route !== "events/creature-from-carvins-cove-2018") {
+            if (
+              !(await postJson.json.ytSrc) &&
+              post.route !== "events/creature-from-carvins-cove-2018"
+            ) {
               expect(await postJson.json.schema).not.to.be.undefined
 
               expect(await postJson.json.schema).not.to.equal("")

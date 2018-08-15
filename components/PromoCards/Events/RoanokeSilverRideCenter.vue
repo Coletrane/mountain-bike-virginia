@@ -4,8 +4,8 @@
       <instagram :src="post.instagram"/>
     </div>
     <div slot="words">
-      <div class="promo"
-            v-html="post.promo">
+      <div class="promo">
+        {{post.promo}}
       </div>
     </div>
   </post-card>

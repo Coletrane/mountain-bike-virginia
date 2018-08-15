@@ -1,15 +1,15 @@
 <template>
-      <div class="video-wrapper">
-        <video v-if="$store.state.misc.loaded"
-               width="100%"
-               :preload="preload"
-               :autoplay="autoplay"
-               :muted="muted"
-               :loop="loop"
-               :controls="getControls">
-          <source :src="url" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  <div class="video-wrapper">
+    <video v-if="$store.state.misc.loaded"
+           width="100%"
+           :preload="preload"
+           :autoplay="autoplay"
+           :muted="muted"
+           :loop="loop"
+           :controls="getControls">
+      <source :src="url" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </template>
 <script>
@@ -60,7 +60,7 @@ export default {
         this.autoplay = false
         this.preload = "none"
       } else {
-        this.preload="auto"
+        this.preload = "auto"
       }
     }
   },

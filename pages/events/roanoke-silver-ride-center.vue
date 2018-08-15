@@ -3,8 +3,9 @@
              :post="post"
              :related-posts="relatedPosts">
     <div slot="content">
-      <p v-html="post.promo"
-           style="padding-bottom: 1rem;"></p>
+      <p style="padding-bottom: 1rem;">
+        {{post.promo}}
+      </p>
       <instagram :src="post.instagram"/>
       <blog-image :src="img + 'disco-wiens-shake.jpg'"
                   portrait/>
@@ -14,7 +15,8 @@
       </p>
       <blog-image :src="img + 'IMG_0312.jpg'"/>
       <p>
-        Prior to the announcement, the waiters placed these East Coast Mountain Biking Capital of the World cups on our table topped off with a fine Belgian Tripel. Whoever is calling the shots on that, <strong>gets it.</strong>
+        Prior to the announcement, the waiters placed these East Coast Mountain Biking Capital of the World cups on our
+        table topped off with a fine Belgian Tripel. Whoever is calling the shots on that, <strong>gets it.</strong>
       </p>
       <blog-image :src="img + 'IMG_3867.jpg'"/>
       <p>

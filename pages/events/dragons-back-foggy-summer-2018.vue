@@ -85,8 +85,12 @@
         The North Mountain Trail has even earned the blue color coding on the National Geographic map #788 notation as a
         mountain bike trail, the only such designation on that map or many others in the Virginia NatGeo collection.
       </p>
-      <quote
-        quote="Would the namesake race ever make a return heralding a second age of the Dragon’s Back? It’s a nice idea--who knows? Anything is possible..."/>
+      <quote>
+        <span slot="quote">
+          Would the namesake race ever make a return heralding a second age of the Dragon’s Back? It’s a nice idea--who
+          knows? Anything is possible...
+        </span>
+      </quote>
       <div class="center-strava-link">
         <a href="https://www.strava.com/activities/1720842111"
            class="strava-link">
@@ -197,7 +201,11 @@
       <blog-image :src="img + 'P1020443.jpg'"/>
       <blog-image :src="img + 'P1020445.jpg'"/>
       <blog-image :src="img + 'P1020447.jpg'"/>
-      <quote quote="What an idiot."/>
+      <quote>
+        <span slot="quote">
+          What an idiot.
+        </span>
+      </quote>
       <blog-image :src="img + 'P1020449.jpg'"/>
       <blog-image :src="img + 'P1020450.jpg'"/>
       <m-t-b-v-a-video :src=" img + 'P1020451.mp4'"

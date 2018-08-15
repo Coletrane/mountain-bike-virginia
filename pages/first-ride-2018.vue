@@ -1,7 +1,7 @@
 <template>
   <blog-post :image="img + 'frozen-turner.jpg'"
-    :post="post"
-    :related-posts="relatedPosts">
+             :post="post"
+             :related-posts="relatedPosts">
     <div slot="content">
       <div class="blog-p">
         Cold? Yeah, you could say that. I mean, it IS winter after all, right? However, this is winter in

@@ -85,5 +85,4 @@ export default {
 table {
   width: 100%;
 }
-
 </style>

@@ -39,7 +39,7 @@ export default {
       const itemIndex = this.items.findIndex(item => {
         return item.route === this.selectedItem.route
       })
-      this.$el.getElementsByTagName('select')[0].selectedIndex = itemIndex
+      this.$el.getElementsByTagName("select")[0].selectedIndex = itemIndex
     }
   },
   watch: {
@@ -90,8 +90,10 @@ select:focus {
   border-top: 6px solid rgb(0, 0, 0);
   pointer-events: none;
 }
+
 @media (max-width: 350px) {
-  select, .select{
+  select,
+  .select {
     width: 295px;
   }
 }

@@ -209,25 +209,28 @@ export default {
 
 .sponsor {
   flex: 1 1 auto;
-  padding: .25rem;
+  padding: 0.25rem;
 }
-.sponsor, .sponsor img {
-  width: 13rem;
 
+.sponsor,
+.sponsor img {
+  width: 13rem;
 }
+
 img.deschutes {
   width: 12rem;
 }
+
 @media (max-width: 500px) {
-  .sponsor, .sponsor img {
+  .sponsor,
+  .sponsor img {
     width: 10rem;
   }
+
   img.deschutes {
     width: 9rem;
   }
 }
-
-
 
 .copyright {
   padding-top: 2rem;

@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="words">
-      <div v-html="post.promo"></div>
+      <div>
+        {{post.promo}}
+      </div>
       <div class="reg-links">
         <div class="center row">
           <div class="col-12 col-sm-6">
@@ -49,13 +51,13 @@
   </div>
 </template>
 <script>
-import ImageLink from '../Images/ImageLink'
-import RideWithGpsSwitcher from '../Iframes/RideWithGpsSwitcher'
-import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import ImageLink from "../Images/ImageLink"
+import RideWithGpsSwitcher from "../Iframes/RideWithGpsSwitcher"
+import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 
 export default {
-  name: 'creature-2018-info',
+  name: "creature-2018-info",
   components: {
     ImageLink,
     RideWithGpsSwitcher,
@@ -72,14 +74,14 @@ export default {
       faFacebook: faFacebook,
       creatureCourses: [
         {
-          name: 'XC',
+          name: "XC",
           url:
-            'https://rwgps-embeds.com/embeds?type=trip&id=26039891&sampleGraph=true'
+            "https://rwgps-embeds.com/embeds?type=trip&id=26039891&sampleGraph=true"
         },
         {
-          name: 'XXC',
+          name: "XXC",
           url:
-            'https://rwgps-embeds.com/embeds?type=route&id=25378656&sampleGraph=true'
+            "https://rwgps-embeds.com/embeds?type=route&id=25378656&sampleGraph=true"
         }
       ]
     }
@@ -103,7 +105,8 @@ export default {
 .center:first-child {
   margin-top: 0;
 }
-@media(min-width: 1440px) {
+
+@media (min-width: 1440px) {
   .center:first-child {
     margin-top: 3rem;
   }

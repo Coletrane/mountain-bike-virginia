@@ -1,7 +1,6 @@
 <template>
   <results header-image="connor-bell-dab.jpg"/>
 </template>
-
 <script>
 import Results from "../../components/Results/Results"
 

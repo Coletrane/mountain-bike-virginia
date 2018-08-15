@@ -79,7 +79,7 @@ export default {
     mobileHeroStyles() {
       if (process.browser && isMobile() && this.$route.name === "index") {
         return {
-          top: '42%'
+          top: "42%"
         }
       }
     }
@@ -101,6 +101,7 @@ export default {
   transform: translate(-50%, -50%);
   top: 60%;
 }
+
 @media (max-width: 450px) {
   .hero-content {
     top: 40%;

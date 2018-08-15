@@ -5,12 +5,15 @@
                :related-posts="relatedPosts"
                no-author>
       <div slot="content">
-        <quote quote="How high’s the water momma?<br>
-                      Five feet high and rising.<br>
-                      How high’s the water papa?<br>
-                      She said it’s five feet high and rising."
-               person="Johnny Cash"
-               class="top-quote"/>
+        <quote person="Johnny Cash"
+               class="top-quote">
+          <span slot="quote">
+            How high’s the water momma?<br>
+            Five feet high and rising.<br>
+            How high’s the water papa?<br>
+            She said it’s five feet high and rising.
+          </span>
+        </quote>
         <author :author="post.author"/>
         <p>
           Wilson Creek runs clean and cool most of the time, gurgling over a 1930’s dam pretending to be a lovely clear
@@ -120,7 +123,11 @@
           enrichment, I’d like to order early May droughts for the next two decades.
         </p>
         <blog-image :src="img + 'P1010106.jpg'"/>
-        <quote quote="We were the eye of the storm"/>
+        <quote>
+          <span slot="quote">
+            We were the eye of the storm
+          </span>
+        </quote>
         <blog-image :src="img + 'P1010110.jpg'"/>
         <blog-image :src="img + 'P1010115.jpg'"/>
         <p>
@@ -156,7 +163,10 @@
         <blog-image :src="img + 'P1010296.jpg'"/>
         <blog-image :src="img + 'P1010302.jpg'"/>
         <p>
-          When I put on races, markings are number one. I am, after all, a professional. You can find many trailhead signs and trees out at Douthat State Park with many staples lodged in them. My son, posted up at this turn in order to tell riders to go down the Salt Stump Trail (and snap some great shots!). Look closely at the two arrows above. Sabotage is one thing, but don't take down me and my son's hard work!
+          When I put on races, markings are number one. I am, after all, a professional. You can find many trailhead
+          signs and trees out at Douthat State Park with many staples lodged in them. My son, posted up at this turn in
+          order to tell riders to go down the Salt Stump Trail (and snap some great shots!). Look closely at the two
+          arrows above. Sabotage is one thing, but don't take down me and my son's hard work!
         </p>
         <blog-image :src="img + 'P1010304.jpg'"/>
         <blog-image :src="img + 'P1010310.jpg'"/>
@@ -179,7 +189,10 @@
         <blog-image :src="img + 'P1010424.jpg'"/>
         <blog-image :src="img + 'P1010427.jpg'"/>
         <p>
-          Philicia and Robert Marion from <a href="https://www.facebook.com/Carpediem-Racing-Xpedo-PRO-Mountain-Bike-Team-presented-by-Vittoria-326129354074041/"> Carpediem Racing</a> came out. From fatbikes, to electric bikes, to XC this couple does it all and we love the enthusiasm and drive!
+          Philicia and Robert Marion from <a
+          href="https://www.facebook.com/Carpediem-Racing-Xpedo-PRO-Mountain-Bike-Team-presented-by-Vittoria-326129354074041/">
+          Carpediem Racing</a> came out. From fatbikes, to electric bikes, to XC this couple does it all and we love the
+          enthusiasm and drive!
         </p>
         <blog-image :src="img + 'P1010431.jpg'"/>
         <blog-image :src="img + 'P1010440.jpg'"/>
@@ -240,7 +253,8 @@
         <blog-image :src="img + 'P1010755.jpg'"/>
         <blog-image :src="img + 'P1010769.jpg'"/>
         <p class="caption">
-          Connor Bell hitting the dab while claiming his podium with a stellar time of 2 hours 3 minutes on the 21 mile XC course.
+          Connor Bell hitting the dab while claiming his podium with a stellar time of 2 hours 3 minutes on the 21 mile
+          XC course.
         </p>
         <blog-image :src="img + 'P1010770.jpg'"/>
         <blog-image :src="img + 'P1010779.jpg'"/>
@@ -255,11 +269,17 @@
         <blog-image :src="img + 'P1010805.jpg'"/>
         <blog-image :src="img + 'P1010808.jpg'"/>
         <blog-image :src="img + 'P1010809.jpg'"/>
-        <quote quote="I'll be honest, this is the longest I've ridden my bike"
-               person="Lucas Weaver"/>
+        <quote person="Lucas Weaver">
+          <span slot="quote">
+            I'll be honest, this is the longest I've ridden my bike.
+          </span>
+        </quote>
         <blog-image :src="img + 'P1010812.jpg'"/>
-        <quote quote="Oh I'm not much of a mountain biker"
-               person="Andie Thompson 1st Place XC Sport Women"/>
+        <quote person="Andie Thompson 1st Place XC Sport Women">
+          <span slot="quote">
+            Oh I'm not much of a mountain biker.
+          </span>
+        </quote>
         <blog-image :src="img + 'P1010815.jpg'"/>
         <blog-image :src="img + 'P1010817.jpg'"/>
         <blog-image :src="img + 'P1010820.jpg'"/>
@@ -274,14 +294,20 @@
         <blog-image :src="img + 'P1010835.jpg'"/>
         <blog-image :src="img + 'P1010836.jpg'"/>
         <blog-image :src="img + 'P1010839.jpg'"/>
-        <quote quote="I just started riding 4 months ago"
-               person="Mike Sutherland, XXC 40 mile racer"/>
+        <quote person="Mike Sutherland, XXC 40 mile racer">
+          <span slot="quote">
+            I just started riding 4 months ago
+          </span>
+        </quote>
         <blog-image :src="img + 'P1010846.jpg'"/>
-        <quote quote="And the rain came down<br>
-                      Like an angel come down from above<br>
-                      And the rain came down<br>
-                      It’ll wash you away and there ain’t never enough."
-               person="Steve Earle"/>
+        <quote person="Steve Earle">
+          <span slot="quote">
+            And the rain came down<br>
+            Like an angel come down from above<br>
+            And the rain came down<br>
+            It’ll wash you away and there ain’t never enough.
+          </span>
+        </quote>
         <p class="center">
           <nuxt-link :to="{name: 'results-middle-mountain-momma-2018'}">View the rest of the results here</nuxt-link>
         </p>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <blog-post :image="img + post.imgRoute"
-      :post="post"
-      header-author>
+               :post="post"
+               header-author>
       <div slot="content">
         <youtube :src="post.ytSrc"/>
       </div>

@@ -3,7 +3,11 @@ const fs = require("fs")
 
 let routesToTest
 if (process.env.JUST_ONE) {
-  routesToTest = [routes[0]]
+  routesToTest = routes.filter(route => {
+    if (route === "middle-mt-momma-2018") {
+      return route
+    }
+  })
 } else {
   routesToTest = routes
 }
@@ -226,6 +230,20 @@ module.exports = browser => {
           }
         })
 
+        describe("<quote> test", () => {
+          let quotes
+          before(async () => {
+            quotes = await driver.findElements(By.className("quote-text"))
+          })
+
+          it("should have text if it has quote components", async () => {
+            for (const quote of await quotes) {
+              expect(await quote.getAttribute("innerText")).not.to.be.undefined
+            }
+          })
+        })
+
+        // TODO fix this
         // if (browser === 'chrome') {
         //   describe('<img> tests', () => {
         //     const notFoundLogString = 'Failed to load resource: the server responded with a status of 404 (Not Found)'

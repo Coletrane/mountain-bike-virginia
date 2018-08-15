@@ -56,6 +56,7 @@ a {
   padding: 0;
   background-size: 0;
 }
+
 div {
   min-height: 400px;
 }

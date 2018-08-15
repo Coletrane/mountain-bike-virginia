@@ -84,6 +84,7 @@ a {
   text-decoration: underline;
   background: transparent;
 }
+
 a:hover {
   background: none;
 }

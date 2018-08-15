@@ -36,8 +36,12 @@
         I didn't care, I needed something equally as cool as my mates.
       </p>
       <blog-image :src="img + 'P1020179.jpg'"/>
-      <quote
-        quote="We pretty much knew we knocked it out of the park with this one, and our sales exceeded expectations by 4 times."/>
+      <quote>
+        <span slot="quote">
+          We pretty much knew we knocked it out of the park with this one, and our sales exceeded expectations by 4
+          times
+        </span>
+      </quote>
       <blog-image :src="img + 'P1020194.jpg'"/>
       <p>
         Anyone brave enough to talk shop with me knows I am a Dave Weagle devotee. I spend much more time going up than
@@ -57,7 +61,11 @@
         Pivots, I never even thought about the climb switch.
       </p>
       <blog-image :src="img + 'P1020182.jpg'"/>
-      <quote quote="the DW-Link is so efficient I actually sometimes turn my rear lockout off"/>
+      <quote>
+        <span slot="quote">
+          The DW-Link is so efficient I actually sometimes turn my rear lockout off
+        </span>
+      </quote>
       <p>
         The night prior to riding the Ripmo, me and Carlo decided to leave at 12AM and go on a spontaneously epic night
         ride. With plenty of malt-fueled courage we set out to the Pine Spur trail. This trail is in an artificial pine

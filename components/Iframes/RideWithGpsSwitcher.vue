@@ -70,6 +70,6 @@ span {
   font-size: 1.5rem;
   font-weight: 800;
   color: black;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 </style>

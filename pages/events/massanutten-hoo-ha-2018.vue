@@ -61,7 +61,8 @@
       <blog-image :src="img + 'IMG_3767.jpg'"/>
       <blog-image :src="img + 'IMG_3769.jpg'"/>
       <p class="caption">
-        Multi national champion <a href="https://susanhaywood.com/">Sue Haywood</a> endurbroing it up! Sue had some mechanical trouble on the second stage, but was able to fix it on a transfer and take away a 5th place finish!
+        Multi national champion <a href="https://susanhaywood.com/">Sue Haywood</a> endurbroing it up! Sue had some
+        mechanical trouble on the second stage, but was able to fix it on a transfer and take away a 5th place finish!
       </p>
       <blog-image :src="img + 'IMG_3775.jpg'"/>
       <blog-image :src="img + 'IMG_3777.jpg'"/>

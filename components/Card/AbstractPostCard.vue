@@ -47,17 +47,20 @@ export default {
   padding: 1rem;
   font-size: 1.2rem;
 }
+
 .after-header a {
-  padding: .25rem;
+  padding: 0.25rem;
   text-decoration: underline;
   color: black;
   background: rgba(115, 165, 51, 0.75);
   background-size: 100% 1em;
 }
+
 .after-header a:hover {
   background: rgba(61, 118, 53, 0.8);
   transition: 600ms ease;
 }
+
 .after-header svg {
   font-size: 1.2rem;
 }

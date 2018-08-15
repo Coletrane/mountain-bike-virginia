@@ -1,15 +1,14 @@
 <template>
-    <div v-if="allLoaded"
-         class="weather">
-      <div class="city-name">{{cityName}}</div>
-      <div class="temp-icon">
-        <span class="temperature">{{tempStr}}</span>
-        <img v-if="imgLoaded"
-             :src="icon"/>
-      </div>
+  <div v-if="allLoaded"
+       class="weather">
+    <div class="city-name">{{cityName}}</div>
+    <div class="temp-icon">
+      <span class="temperature">{{tempStr}}</span>
+      <img v-if="imgLoaded"
+           :src="icon"/>
     </div>
+  </div>
 </template>
-
 <script>
 import { weatherIds, weatherIcons } from "../../assets/weather"
 import { s3WeatherIcons } from "../../scripts/routes"
@@ -79,7 +78,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .weather {
   text-align: center;
@@ -113,6 +111,7 @@ img {
   .temperature {
     font-size: 1.5rem;
   }
+
   img {
     width: 2.5rem;
   }

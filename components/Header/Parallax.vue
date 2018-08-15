@@ -6,7 +6,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "parallax",
@@ -37,9 +36,7 @@ export default {
       let limit = this.$el.offsetTop + this.$el.offsetHeight
       let backgroundPos
       if (scrolled > this.$el.offsetTop && scrolled <= limit) {
-        backgroundPos =(scrolled -
-          this.$el.offsetTop) /
-          3
+        backgroundPos = (scrolled - this.$el.offsetTop) / 3
       } else {
         backgroundPos = 0
       }
@@ -57,7 +54,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .parallax {
   position: relative;
@@ -86,11 +82,13 @@ export default {
     height: 900px;
   }
 }
+
 @media (max-width: 450px) {
   .parallax {
     height: 720px;
   }
 }
+
 @media (max-width: 350px) {
   .parallax {
     height: 580px;

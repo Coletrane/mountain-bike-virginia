@@ -12,7 +12,6 @@
           <slot name="content"/>
         </div>
       </blog-post-card>
-
       <related-posts v-if="relatedPosts && relatedPosts.length > 0"
                      :posts="relatedPosts"/>
     </div>
@@ -101,6 +100,7 @@ export default {
   font-style: italic;
   color: #5c5e5c;
 }
+
 p {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;

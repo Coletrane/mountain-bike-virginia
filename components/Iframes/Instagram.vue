@@ -65,6 +65,7 @@ export default {
 .embed-responsive-1by1::before {
   padding-top: 0 !important;
 }
+
 img {
   width: 70%;
   height: auto;

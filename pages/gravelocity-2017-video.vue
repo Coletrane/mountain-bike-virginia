@@ -10,7 +10,6 @@
     </blog-post>
   </div>
 </template>
-
 <script>
 import BlogPost from "../components/BlogPost"
 import Youtube from "../components/Iframes/Youtube"
