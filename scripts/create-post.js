@@ -271,7 +271,7 @@ const createImageDir = (dir, route) => {
   }
 }
 
-const fileNeedsResponsiveImage = file => {
+export const fileNeedsResponsiveImage = file => {
   return (
     (file.endsWith(".jpg") || file.endsWith(".png")) &&
     !file.endsWith("-1280.jpg") &&
