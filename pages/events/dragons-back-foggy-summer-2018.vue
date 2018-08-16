@@ -248,7 +248,7 @@ import faStrava from "@fortawesome/fontawesome-free-brands/faStrava"
 import blogPost from "../../assets/mixins/blog-post"
 
 export default {
-  name: "events-dragons-back-foggy-summer-2018",
+  name: "trails-dragons-back",
   components: {
     BlogImage,
     BlogPost,

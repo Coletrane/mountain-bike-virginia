@@ -14,7 +14,7 @@ import ImageLink from "../../Images/ImageLink"
 import promoCard from "../../../assets/mixins/promo-card"
 
 export default {
-  name: "events-dragons-back-foggy-summer-2018-promo",
+  name: "trails-dragons-back-promo",
   components: {
     PostCard,
     ImageLink
