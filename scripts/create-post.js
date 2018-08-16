@@ -8,6 +8,7 @@ const imagemin = require("imagemin") // TODO
 const execa = require("execa")
 const Listr = require("listr")
 const glob = require("glob")
+const helpers = require('./helper-functions')
 
 // Internal
 const constants = require("../constants")
@@ -166,7 +167,7 @@ const createPostComponent = (dir, route, post) => {
       })
 
       pics.forEach(pic => {
-        if (fileNeedsResponsiveImage(pic)) {
+        if (helpers.fileNeedsResponsiveImage(pic)) {
           imgTags.push(`    <blog-image :src="img + '${pic}'"/>`)
         }
       })
@@ -271,22 +272,10 @@ const createImageDir = (dir, route) => {
   }
 }
 
-export const fileNeedsResponsiveImage = file => {
-  return (
-    (file.endsWith(".jpg") || file.endsWith(".png")) &&
-    !file.endsWith("-1280.jpg") &&
-    !file.endsWith("-1280.png") &&
-    !file.endsWith("-720.jpg") &&
-    !file.endsWith("-720.png") &&
-    !file.endsWith("-480.jpg") &&
-    !file.endsWith("-480.png")
-  )
-}
-
 const generateResponsiveImages = (dir, route) => {
   fs.readdir(s3ImgDir(dir, route), (err, files) => {
     files.forEach(file => {
-      if (fileNeedsResponsiveImage(file)) {
+      if (helpers.fileNeedsResponsiveImage(file)) {
         const origFile = `${s3ImgDir(dir, route)}/${file}`
         const fileWith1280 = resImgPath(dir, route, file, 1280)
 

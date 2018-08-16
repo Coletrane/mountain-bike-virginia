@@ -91,6 +91,22 @@
           knows? Anything is possible...
         </span>
       </quote>
+      <blog-image :src="img + 'IMG_4210.jpg'"/>
+      <blog-image :src="img + 'IMG_4211.jpg'"/>
+      <blog-image :src="img + 'IMG_4209.jpg'"/>
+      <blog-image :src="img + 'IMG_4212.jpg'"/>
+      <blog-image :src="img + 'IMG_4213.jpg'"/>
+      <blog-image :src="img + 'IMG_4216.jpg'"/>
+      <blog-image :src="img + 'IMG_4217.jpg'"/>
+      <blog-image :src="img + 'IMG_4219.jpg'"/>
+      <blog-image :src="img + 'IMG_4218.jpg'"/>
+      <blog-image :src="img + 'IMG_4222.jpg'"/>
+      <blog-image :src="img + 'IMG_4223.jpg'"/>
+      <blog-image :src="img + 'IMG_4226.jpg'"/>
+      <blog-image :src="img + 'IMG_4227.jpg'"/>
+      <blog-image :src="img + 'P1020274.jpg'"/>
+      <blog-image :src="img + 'IMG_4228.jpg'"/>
+      <blog-image :src="img + 'IMG_4229.jpg'"/>
       <div class="center-strava-link">
         <a href="https://www.strava.com/activities/1720842111"
            class="strava-link">

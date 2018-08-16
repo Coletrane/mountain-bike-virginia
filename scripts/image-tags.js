@@ -1,37 +1,24 @@
-import {fileNeedsResponsiveImage} from './create-post'
-
 const fs = require('fs')
+const path = require('path')
 const glob = require('glob')
-const rl = require("realine-sync")
+const rl = require("readline-sync")
+const helpers = require("./helper-functions")
 
 const rootDir = "../mtbva-s3-bucket/pages"
 
-let route = ""
+let route
 while (!fs.existsSync(`${rootDir}/${route}`)) {
-  route = rl.question("What is this post's route?")
+  route = rl.question("What is this post's route? ")
 }
 
-const images = glob.sync(`${rootDir}/${route}/**/*.jpg`)
-images.filter(image => {
-  return fileNeedsResponsiveImage(file)
+let images = glob.sync(`${rootDir}/${route}/**/*.jpg`)
+
+images = images.filter(image => {
+  return helpers.fileNeedsResponsiveImage(image)
 })
 
-export const sortFilesByCreatedTime = (dir, files) => {
-  files = files.map(filename => {
-    return {
-      name: filename,
-      time: fs.statSync(`${dir}/${filename}`).birthtime.getTime()
-    }
-  })
-    .sort((a, b) => {
-      return a.time - b.time
-    })
-    .map(f => {
-      return f.name
-    })
-}
-
+const sortedImages = helpers.sortFilesByCreatedTime(images)
 
 images.forEach(image => {
-  console.log(`<blog-image :src="img + '${image}'"/>\``)
+  console.log(`<blog-image :src="img + '${path.basename(image)}'"/>`)
 })
