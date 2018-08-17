@@ -52,7 +52,7 @@ export default {
 </script>
 <style>
 .landscape[lazy="loaded"] {
-  width: 100% !important;
+  width: 100%;
 }
 
 .portrait[lazy="loaded"] {
