@@ -6,7 +6,7 @@
                       button="Events"
                       buttonLink="https://www.facebook.com/pg/bikevirginia/events/"
                       home-page/>
-    <banner/>
+    <banner :static-banner="dragonsBackTshirt"/>
     <div class="main-content"
          :style="backgroundImage">
       <div v-for="(page, i) of pages">
@@ -32,6 +32,7 @@ import { home } from "../assets/head-tags"
 import { headTags } from "../assets/functions"
 import { s3StaticImg, s3Banners } from "../scripts/routes"
 import { numPages } from "../store/posts"
+import { dragonsBackTshirt } from "../assets/static-banners"
 
 import backgroundImage from "../assets/mixins/background-image"
 
@@ -59,7 +60,8 @@ export default {
     return {
       img: foliage,
       s3Banners: s3Banners,
-      pages: new Array(numPages)
+      pages: new Array(numPages),
+      dragonsBackTshirt: dragonsBackTshirt
     }
   },
   mounted() {

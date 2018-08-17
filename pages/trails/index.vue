@@ -2,7 +2,7 @@
   <div>
     <m-t-b-v-a-header :image="headerImage"
                       title="Trails"/>
-    <banner/>
+    <banner :static-banner="dragonsBackTshirt"/>
     <div class="main-content"
          :style="{backgroundImage: backgroundImage.backgroundImage
       }">
@@ -19,7 +19,8 @@ import backgroundImage from "../../assets/mixins/background-image"
 
 import { home } from "../../assets/head-tags"
 import { headTags } from "../../assets/functions"
-import { s3Pages } from "../../scripts/routes"
+import { s3Pages, s3Banners } from "../../scripts/routes"
+import { dragonsBackTshirt } from "../../assets/static-banners"
 
 export default {
   name: "trails",
@@ -29,6 +30,11 @@ export default {
     MTBProject
   },
   mixins: [backgroundImage],
+  data() {
+    return {
+      dragonsBackTshirt: dragonsBackTshirt
+    }
+  },
   head() {
     return headTags(`${home.title} Trails`, home.description, home.keywords, {
       route: this.$route.path.substring(1),

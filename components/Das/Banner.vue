@@ -17,6 +17,12 @@ export default {
     ResponsiveImg
   },
   name: "banner",
+  props: {
+    staticBanner: {
+      type: Object,
+      required: false
+    }
+  },
   mixins: [da],
   data() {
     return {
@@ -24,7 +30,11 @@ export default {
     }
   },
   async mounted() {
-    this.banner = await this.$store.dispatch("randomBanner")
+    if (!this.staticBanner) {
+      this.banner = await this.$store.dispatch("randomBanner")
+    } else {
+      this.banner = this.staticBanner
+    }
   }
 }
 </script>

@@ -12,6 +12,7 @@
                          class="pay-methods"/>
       </div>
       <blog-image :src="img + post.imgRoute"/>
+      <blog-image :src="trailsDragonsBack + 'P1020465.jpg'"/>
     </div>
   </blog-post>
 </template>
@@ -20,8 +21,8 @@ import BlogPost from "../../components/BlogPost"
 import BlogImage from "../../components/Images/BlogImage"
 import PaymentMethods from "../../components/Images/PaymentMethods"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
-import faEnvelope from "@fortawesome/fontawesome-free-regular/faEnvelope"
-import faMobileAlt from "@fortawesome/fontawesome-free-solid/faMobileAlt"
+
+import { s3Pages } from "../../scripts/routes"
 
 import blogPost from "../../assets/mixins/blog-post"
 
@@ -36,8 +37,7 @@ export default {
   mixins: [blogPost],
   data() {
     return {
-      faEnvelope,
-      faMobileAlt
+      trailsDragonsBack: `${s3Pages}/trails/dragons-back/`
     }
   },
   computed: {
