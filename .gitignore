@@ -41,3 +41,6 @@ dist/
 static/sitemap.xml
 static/mtbva-s3-bucket
 .env
+
+.gradle
+build

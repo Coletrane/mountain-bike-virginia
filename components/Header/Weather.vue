@@ -1,6 +1,7 @@
 <template>
   <div v-if="allLoaded"
-       class="weather">
+       class="weather"
+      :id="`weather-${city}`">
     <div class="city-name">{{cityName}}</div>
     <div class="temp-icon">
       <span class="temperature">{{tempStr}}</span>
