@@ -1,4 +1,5 @@
 import { posts } from "../../scripts/build-routes-json"
+import { schemaTypes } from "../../assets/schmea-types"
 
 const expect = require("./global.spec").expect
 const glob = require("glob")
@@ -154,10 +155,38 @@ describe("/posts/ test", () => {
           })
 
           it("should not have a schema if ytSrc", async () => {
-            if (await postJson.json.ytSrc) {
-              expect(await postJson.json.schema).to.be.undefined
+            await postJson.json
+            if (postJson.json.ytSrc) {
+              expect(postJson.json.schema).to.be.undefined
 
-              expect(await postJson.json.schema).not.to.equal("")
+              expect(postJson.json.schema).not.to.equal("")
+            }
+          })
+
+          it("should have itemReviewed if is a review", async () => {
+            await postJson.json
+            if (
+              postJson.json.schema &&
+              postJson.json.schema.type === schemaTypes.review
+            ) {
+              expect(postJson.json.schema.itemReviewed).not.to.be.undefined
+              expect(postJson.json.schema.itemReviewed.brand).not.to.be
+                .undefined
+              expect(postJson.json.schema.itemReviewed.model).not.to.be
+                .undefined
+            }
+          })
+
+          it ("should have reviewRating if it is a review", async () => {
+            await postJson.json
+            if (
+              postJson.json.schema &&
+              postJson.json.schema.type === schemaTypes.review
+            ) {
+              expect(postJson.json.schema.reviewRating).not.to.be.undefined
+              expect(postJson.json.schema.reviewRating.ratingValue).not.to.be.undefined
+              expect(postJson.json.schema.reviewRating.bestRating).not.to.be.undefined
+              expect(postJson.json.schema.reviewRating.worstRating).not.to.be.undefined
             }
           })
         })

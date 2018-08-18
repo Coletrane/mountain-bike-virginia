@@ -1,0 +1,28 @@
+{
+  "title": "Review: Garmin Varia RTL510 Radar Tail Light",
+  "subtitle":
+    "A Science Fiction-esqe Advancement in Bicycle Technology and Safety",
+  "description": "Review of the Garmin Varia RTL510 radar tail light",
+  "author": "cole",
+  "date": "Aug 18 2018",
+  "loc": "Roanoke, VA",
+  "imgRoute": "",
+  "keywords":
+    "road, cycling, garmin, edge, varia, tail light, radar, safety, cars, bike, gravel, commuter, city bike, city, cross, bike safety",
+  "relatedPosts": [
+    "events/roanoke-silver-ride-center",
+    "dt-swiss-54t-ratchet-review"
+  ],
+  "schema": {
+    "type": "Review",
+    "itemReviewed": {
+      "brand": "Garmin",
+      "model": "Varia RTL510"
+    },
+    "reviewRating": {
+      "ratingValue": "8",
+      "bestRating": "10",
+      "worstRating": "1"
+    }
+  }
+}

@@ -1,18 +1,31 @@
 {
   "title": "Review: Ibis Ripmo",
-  "subtitle": "\"We knew we were gonna knock it out of the park with this one. We exceeded sales expectations by 4 times\"",
-  "promo": "There was a constant line outside of the Ibis tent at DirtFest West Virginia, with one bike on their mind; Ripmo. It is a bike that transcends internet hype, by providing it in person. It is a bike whos numbers actually paint a great picture at how capable it is, and it is capable at, well, everything.",
-  "description": "Review of the Ibis Ripmo long travel bike with 29 inch wheels and DW-Link suspension at Dirt Fest West Virginia mountain bike festival.",
+  "subtitle":
+    "\"We knew we were gonna knock it out of the park with this one. We exceeded sales expectations by 4 times\"",
+  "promo":
+    "There was a constant line outside of the Ibis tent at DirtFest West Virginia, with one bike on their mind; Ripmo. It is a bike that transcends internet hype, by providing it in person. It is a bike whos numbers actually paint a great picture at how capable it is, and it is capable at, well, everything.",
+  "description":
+    "Review of the Ibis Ripmo long travel bike with 29 inch wheels and DW-Link suspension at Dirt Fest West Virginia mountain bike festival.",
   "author": "cole",
   "date": "Jul 15 2018",
   "loc": "Big Bear Lake, Bruceton Mills, WV",
   "imgRoute": "P1020223.jpg",
-  "keywords": "dirt rag, mtb, mountain bike, festival, mountain biking, cycling, ibis, ripmo, review, bike review, enduro, trail, all mountain, 29er, xc, cross country, big bear lake, west virginia",
+  "keywords":
+    "dirt rag, mtb, mountain bike, festival, mountain biking, cycling, ibis, ripmo, review, bike review, enduro, trail, all mountain, 29er, xc, cross country, big bear lake, west virginia",
   "relatedPosts": [
     "pivot-switchblade-review",
     "rocky-mountain-instinct-review"
   ],
   "schema": {
-    "type": "NewsArticle"
+    "type": "Review",
+    "itemReviewed": {
+      "brand": "Ibis Cycles",
+      "model": "Ripmo"
+    },
+    "reviewRating": {
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
 }
