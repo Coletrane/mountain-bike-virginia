@@ -28,11 +28,13 @@
         class="subheading">
       {{post.subtitle}}
     </h3>
-    <h4 v-if="post.date">
+    <h4 v-if="post.date"
+        class="post-date">
       <font-awesome-icon :icon="faCalendarAlt"/>
       {{post.date}}
     </h4>
-    <h4 v-if="post.loc">
+    <h4 v-if="post.loc"
+        class="post-location">
       <font-awesome-icon :icon="faLocationArrow"/>
       {{post.loc}}
     </h4>
@@ -90,6 +92,7 @@ h4 {
   font-size: 1.2rem;
   font-family: "lato", sans-serif;
 }
+
 @media (max-width: 575px) {
   h2 {
     font-size: 2rem;
@@ -99,6 +102,7 @@ h4 {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 350px) {
   h2 {
     font-size: 1.3rem;
@@ -107,10 +111,10 @@ h4 {
   h3 {
     font-size: 1.2rem;
   }
+
   h4 {
     font-size: 1rem;
   }
-
 }
 
 svg {
