@@ -1,7 +1,6 @@
 const routes = require("./scripts/build-routes-json")
 const s3Routes = require("./scripts/routes")
 require("dotenv").config()
-const webpack = require("webpack")
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin
 
@@ -93,7 +92,8 @@ module.exports = {
         id: "UA-107968765-1"
       }
     ],
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "~/modules/typescript"
   ],
   sitemap: {
     path: "/sitemap.xml",
