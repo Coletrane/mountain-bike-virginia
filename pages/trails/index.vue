@@ -30,11 +30,6 @@ export default {
     MTBProject
   },
   mixins: [backgroundImage],
-  data() {
-    return {
-      dragonsBackTshirt: dragonsBackTshirt
-    }
-  },
   head() {
     return headTags(`${home.title} Trails`, home.description, home.keywords, {
       route: this.$route.path.substring(1),
@@ -43,7 +38,8 @@ export default {
   },
   data() {
     return {
-      headerImage: `${s3Pages}/trails/middle-mt.jpg`
+      headerImage: `${s3Pages}/trails/middle-mt.jpg`,
+      dragonsBackTshirt: dragonsBackTshirt
     }
   }
 }

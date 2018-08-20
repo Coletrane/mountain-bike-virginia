@@ -1,8 +1,8 @@
 let s3
 if (process.env.NODE_ENV === "production") {
   s3 = "https://d2i660bt0ywr9a.cloudfront.net"
-} else if (process.env.NODE_ENV === "test") {
-  s3 = "http://localhost:3002/mtbva-s3-bucket"
+}  else if (process.env.NODE_ENV === "iphone") {
+  s3 = "http://coletrane-3.local:3000/mtbva-s3-bucket"
 } else {
   s3 = "http://localhost:3000/mtbva-s3-bucket"
 }

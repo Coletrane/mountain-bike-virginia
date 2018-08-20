@@ -115,7 +115,7 @@
         screen.
       </p>
       <p>
-        As you can see from the picture above and below, the dots representing cars have a tolerance that is higher than
+        As you can see from the pictures above and below, the dots representing cars have a tolerance that is higher than
         one might expect. The dot on the screen is nearly as close as it possibly can be while the red Honda Ridgeline
         is a good 20 to 30 feet away. The radar's beam is 40 degrees to account for curves and corners.
       </p>
@@ -149,7 +149,7 @@
         Here we have the light mode in auto, which is what I leave it in. Garmin really went the extra mile on this
         light by altering the light's intensity, not only by the time of day, but also including an ambient light sensor
         to further get you to an optimal lumen level. The ambient light sensor really ties the package together with the
-        <strong>Trail mode.</strong> Any mountan biker who has tried to find sunglass lenses that work in a range of light
+        <strong>Trail mode.</strong> Any mountain biker who has tried to find sunglass lenses that work in a range of light
         levels from wide open, to lush foliage will see where I'm going with this. (and where I'm going on the trail) I
         would not have though I'd be using a radar tail light on my mountain bike, but here we all are. We are fortunate
         in Roanoke, VA to have trails that we can ride to from downtown, so this light complements the road sections,

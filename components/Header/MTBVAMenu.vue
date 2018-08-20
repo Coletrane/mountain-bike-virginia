@@ -8,7 +8,6 @@
     </div>
     <div class="mtbva-nav-item">
       <nuxt-link :to="{name: 'trails'}"
-                 class="nav-link"
                  id="trails-nav-link">
         <font-awesome-icon :icon="faBicycle"/>
         Trails
@@ -16,7 +15,6 @@
     </div>
     <div class="mtbva-nav-item">
       <nuxt-link :to="{name: 'xxc-va-race-series-2018'}"
-                 class="nav-link"
                  id="xxcva-nav-link">
         <font-awesome-icon :icon="faFlagCheckered"/>
         Races
@@ -24,24 +22,23 @@
     </div>
     <div class="mtbva-nav-item">
       <nuxt-link :to="{name: 'results'}"
-                 class="nav-link"
                  id="results-nav-link">
         <font-awesome-icon :icon="faListOl"/>
         Results
       </nuxt-link>
     </div>
     <div class="mtbva-nav-item">
-      <a class="nav-link"
-         id="facebook-nav-link"
-         href="https://www.facebook.com/bikevirginia/">
+      <a
+        id="facebook-nav-link"
+        href="https://www.facebook.com/bikevirginia/">
         <font-awesome-icon :icon="faFacebook"/>
         Facebook
       </a>
     </div>
     <div class="mtbva-nav-item">
-      <a class="nav-link"
-         id="instagram-nav-link"
-         href="https://www.instagram.com/cole_bikeva/">
+      <a
+        id="instagram-nav-link"
+        href="https://www.instagram.com/cole_bikeva/">
         <font-awesome-icon :icon="faInstagram"/>
         Instagram
       </a>
@@ -104,7 +101,7 @@ export default {
 }
 
 .mtbva-nav-item {
-  padding-left: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
 }
 
 svg {
@@ -129,7 +126,7 @@ a:hover {
   }
 
   a {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 

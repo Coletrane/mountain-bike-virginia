@@ -5,7 +5,7 @@ const dist = "./dist/"
 const options = {
   index: "index.html"
 }
-const port = 3002
+const port = 3000
 
 app.use(express.static(dist, options))
 
