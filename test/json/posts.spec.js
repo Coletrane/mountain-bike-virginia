@@ -144,13 +144,28 @@ describe("/posts/ test", () => {
 
         describe("schema test", () => {
           it("should have a schema if no ytSrc", async () => {
+            await postJson.json
             if (
-              !(await postJson.json.ytSrc) &&
+              !postJson.json.ytSrc &&
               post.route !== "events/creature-from-carvins-cove-2018"
             ) {
-              expect(await postJson.json.schema).not.to.be.undefined
+              expect(postJson.json.schema).not.to.be.undefined
 
-              expect(await postJson.json.schema).not.to.equal("")
+              expect(postJson.json.schema).not.to.equal("")
+            }
+          })
+
+          it("should have a valid schema type", async () => {
+            await postJson.json
+            if (
+              !postJson.json.ytSrc &&
+              post.route !== "events/creature-from-carvins-cove-2018"
+            ) {
+              const schemaType = Object.keys(schemaTypes).find(type => {
+                return schemaTypes[type] === postJson.json.schema.type
+              })
+
+              expect(schemaType).not.to.be.undefined
             }
           })
 
@@ -177,16 +192,19 @@ describe("/posts/ test", () => {
             }
           })
 
-          it ("should have reviewRating if it is a review", async () => {
+          it("should have reviewRating if it is a review", async () => {
             await postJson.json
             if (
               postJson.json.schema &&
               postJson.json.schema.type === schemaTypes.review
             ) {
               expect(postJson.json.schema.reviewRating).not.to.be.undefined
-              expect(postJson.json.schema.reviewRating.ratingValue).not.to.be.undefined
-              expect(postJson.json.schema.reviewRating.bestRating).not.to.be.undefined
-              expect(postJson.json.schema.reviewRating.worstRating).not.to.be.undefined
+              expect(postJson.json.schema.reviewRating.ratingValue).not.to.be
+                .undefined
+              expect(postJson.json.schema.reviewRating.bestRating).not.to.be
+                .undefined
+              expect(postJson.json.schema.reviewRating.worstRating).not.to.be
+                .undefined
             }
           })
         })

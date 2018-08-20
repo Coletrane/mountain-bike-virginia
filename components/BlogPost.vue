@@ -101,6 +101,10 @@ export default {
   color: #5c5e5c;
 }
 
+.half {
+  width: 50% !important;;
+}
+
 p {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
