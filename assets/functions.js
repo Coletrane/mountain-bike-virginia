@@ -84,7 +84,7 @@ export const headTags = (title, desc, keywords, post) => {
   return head
 }
 
-const getImageRoute = post => {
+export const getImageRoute = post => {
   if (post.ogImage) {
     if (post.route === "/" || post.route.startsWith("xxc-va-race-series")) {
       return post.ogImage
