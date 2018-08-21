@@ -6,14 +6,14 @@
     <div class="main-content"
          :style="{backgroundImage: backgroundImage.backgroundImage
       }">
-      <m-t-b-project/>
+      <trailforks/>
     </div>
   </div>
 </template>
 <script>
 import MTBVAHeader from "../../components/Header/MTBVAHeader"
 import Banner from "../../components/Das/Banner"
-import MTBProject from "../../components/Iframes/MTBProject"
+import Trailforks from "../../components/Iframes/Trailforks"
 
 import backgroundImage from "../../assets/mixins/background-image"
 
@@ -27,7 +27,7 @@ export default {
   components: {
     MTBVAHeader,
     Banner,
-    MTBProject
+    Trailforks
   },
   mixins: [backgroundImage],
   head() {
