@@ -1,8 +1,8 @@
-import { s3StaticImg, baseUrl } from "~/scripts/routes"
-import { Post } from "~/models/Post"
-import { getImageRoute } from "~/assets/functions"
+import { s3StaticImg, baseUrl } from "scripts/routes"
+import { Post } from "./Post"
+import { getImageRoute } from "assets/functions"
 
-enum SchemaTypes {
+export enum SchemaTypes {
   ARTICLE = "NewsArticle",
   VIDEO = "VideoObject",
   EVENT = "Event",
@@ -30,7 +30,7 @@ const PUBLISHER = {
 export class MetaSchema {
   readonly "@type": SchemaTypes
 
-  protected constructor(readonly type: SchemaTypes) {
+  constructor(readonly type: SchemaTypes) {
     this["@type"] = type
   }
 }

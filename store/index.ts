@@ -1,9 +1,13 @@
 import Vuex from "vuex"
 import misc from "./misc"
 import authors from "./authors"
-import posts from "./posts"
+import posts, { PostState } from "./posts"
 import results from "./results"
 import das from "./das"
+
+export class MTBVAState {
+  posts: PostState
+}
 
 export default () => {
   return new Vuex.Store({

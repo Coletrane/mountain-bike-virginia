@@ -1,7 +1,7 @@
 import { Author} from "~/models/Author"
 import { MetaSchema} from "~/models/Schema"
 
-enum PostCategories {
+export enum PostCategories {
   VIDEOS = "videos",
   EVENTS = "events",
   EXTERNAL = "external",
@@ -37,7 +37,6 @@ export class Post extends MetaPost {
 
 export class VideoPost extends Post {
   constructor(
-    category: PostCategories,
     route: string,
     title: string,
     subtitle: string,
@@ -51,7 +50,7 @@ export class VideoPost extends Post {
     readonly ytSrc: string
   ) {
     super(
-      category,
+      PostCategories.VIDEOS,
       route,
       title,
       subtitle,
