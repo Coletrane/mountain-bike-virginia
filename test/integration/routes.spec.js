@@ -37,7 +37,10 @@ module.exports = browser => {
       testUrl = await global.testUrl
     })
 
-    for (const route of routesToTest) {
+    for (let route of routesToTest) {
+      if (route.endsWith("/") && route !== "/") {
+        route = route.slice(0, route.length - 1)
+      }
       describe(route, () => {
         let url
         let post
@@ -49,20 +52,20 @@ module.exports = browser => {
             url = await `${testUrl}/${route}`
           }
           post = posts.find(post => post.route === route)
+          await driver.get(url)
+          await driver.sleep(1000)
         })
         describe("<head> tests", () => {
           it("should navigate to route", async () => {
-            await driver.get(url)
-
-            // Idk why Safari requires I do this
-            // await driver.sleep(6000)
-
-            let res = await request({
-              uri: await url,
-              resolveWithFullResponse: true
-            })
-
-            expect(await res.statusCode).to.equal(200)
+            try {
+              const res = await request({
+                uri: url,
+                resolveWithFullResponse: true
+              })
+              expect(res.statusCode).to.equal(200)
+            } catch (err) {
+              expect(false).to.be.true
+            }
           })
 
           it("has title", async () => {

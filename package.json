@@ -76,6 +76,7 @@
     "analyze": "nuxt build --analyze",
     "clean": "rimraf .nuxt && rimraf ./dist",
     "static": "npm run build:json && NODE_ENV=test nuxt generate && NODE_ENV=test node ./static.js",
+    "static:iphone": "npm run build:json && NODE_ENV=iphone nuxt generate && NODE_ENV=test node ./static.js",
     "lint": "eslint --fix **/*.js *.js **/*.vue  --ignore-pattern node_modules --ignore-pattern dist --ignore-pattern .nuxt",
     "test:one": "JUST_ONE=true mocha --require babel-core/register ./test/integration/global.chrome.spec.js --timeout 30000;",
     "test-i": "mocha --require babel-core/register ./test/integration/global.chrome.spec.js --timeout 30000; mocha --require babel-core/register ./test/integration/global.safari.spec.js --timeout 30000",

@@ -1,7 +1,7 @@
 <template>
   <iframe :style="style"
           frameborder="0"
-          scrolling="yes"
+          scrolling="no"
           :src="src">
   </iframe>
 </template>
