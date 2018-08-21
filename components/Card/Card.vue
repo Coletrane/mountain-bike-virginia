@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import { boxShadow } from "../../assets/styles"
+import { boxShadow } from "../../scripts/client/styles"
 
 export default {
   name: "card",

@@ -29,8 +29,8 @@
 <script>
 import Parallax from "./Parallax"
 
-import { s3StaticImg } from "../../scripts/routes"
-import isMobile from "../../assets/detect-mobile"
+import { s3StaticImg } from "../../routes"
+import isMobile from "../../scripts/client/detect-mobile"
 
 export default {
   name: "mtbva-header",

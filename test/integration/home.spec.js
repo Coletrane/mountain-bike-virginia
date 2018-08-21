@@ -1,5 +1,5 @@
 import { numPages } from "../../store/posts"
-import { posts } from "../../scripts/build-routes-json"
+import { posts } from "../../scripts/dev/build-routes-json"
 
 module.exports = browser => {
   const global = require(`./global.${browser}.spec`)

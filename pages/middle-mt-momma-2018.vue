@@ -323,7 +323,7 @@ import BlogPost from "../components/BlogPost"
 import Quote from "../components/Card/Quote"
 import Author from "../components/Card/Author"
 
-import blogPost from "../assets/mixins/blog-post"
+import blogPost from "../mixins/blog-post"
 
 export default {
   name: "middle-mt-momma-2018",

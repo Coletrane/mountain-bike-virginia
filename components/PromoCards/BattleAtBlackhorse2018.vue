@@ -18,7 +18,7 @@
 import PostCard from "../Card/PostCard"
 import ImageLink from "../Images/ImageLink"
 
-import promoCard from "../../assets/mixins/promo-card"
+import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "battle-at-blackhorse-2018-promo",

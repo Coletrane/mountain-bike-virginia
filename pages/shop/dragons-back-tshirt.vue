@@ -22,9 +22,9 @@ import BlogImage from "../../components/Images/BlogImage"
 import PaymentMethods from "../../components/Images/PaymentMethods"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 
-import { s3Pages } from "../../scripts/routes"
+import { s3Pages } from "../../routes"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "dragons-back-tshirt",

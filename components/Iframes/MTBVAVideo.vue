@@ -13,8 +13,8 @@
   </div>
 </template>
 <script>
-import isMobile from "../../assets/detect-mobile"
-import { noExtension, justExtension } from "../../assets/functions"
+import isMobile from "../../scripts/client/detect-mobile"
+import { noExtension, justExtension } from "../../scripts/client/functions"
 
 export default {
   name: "mtbva-video",

@@ -22,7 +22,7 @@ import PostCard from "../../Card/PostCard"
 import ImageLink from "../../Images/ImageLink"
 import PaymentMethods from "../../Images/PaymentMethods"
 
-import promoCard from "../../../assets/mixins/promo-card"
+import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "shop-dragons-back-tshirt-promo",

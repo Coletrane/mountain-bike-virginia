@@ -69,7 +69,7 @@
 import BlogPost from "../components/BlogPost"
 import BlogImage from "../components/Images/BlogImage"
 
-import blogPost from "../assets/mixins/blog-post"
+import blogPost from "../mixins/blog-post"
 
 export default {
   name: "cane-creek-viscoset-review",

@@ -1,4 +1,4 @@
-import { s3Authors, s3StaticImg } from "../scripts/routes"
+import { s3Authors, s3StaticImg } from "../routes"
 import axios from "axios"
 
 export default {

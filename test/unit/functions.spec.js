@@ -1,5 +1,5 @@
 // Use import when working with ES6 modules
-import { headTags } from "../../assets/functions"
+import { headTags } from "../../scripts/client/functions"
 
 const expect = require("./global.spec").expect
 

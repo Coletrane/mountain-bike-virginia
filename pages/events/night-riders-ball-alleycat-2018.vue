@@ -73,7 +73,7 @@ import BlogImage from "../../components/Images/BlogImage"
 import Quote from "../../components/Card/Quote"
 import Youtube from "../../components/Iframes/Youtube"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "night-riders-ball-alleycat-2018",

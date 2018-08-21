@@ -1,4 +1,4 @@
-import { routes } from "../../scripts/build-routes-json"
+import { routes } from "../../scripts/dev/build-routes-json"
 
 module.exports = browser => {
   const global = require(`./global.${browser}.spec`)

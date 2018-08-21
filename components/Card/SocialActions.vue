@@ -15,9 +15,9 @@
   </div>
 </template>
 <script>
-import { baseUrl } from "../../scripts/routes"
+import { baseUrl } from "../../routes"
 
-import postRoute from "../../assets/mixins/post-route"
+import postRoute from "../../mixins/post-route"
 
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"

@@ -42,7 +42,7 @@ import BlogImage from "../../components/Images/BlogImage"
 import Instagram from "../../components/Iframes/Instagram"
 import Youtube from "../../components/Iframes/Youtube"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "roanoke-silver-ride-center",

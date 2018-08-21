@@ -150,7 +150,7 @@ import RideWithGps from "../components/Iframes/RideWithGps"
 import MTBVAVideo from "../components/Iframes/MTBVAVideo"
 import Quote from "../components/Card/Quote"
 
-import blogPost from "../assets/mixins/blog-post"
+import blogPost from "../mixins/blog-post"
 import RideWithGpsSwitcher from "../components/Iframes/RideWithGpsSwitcher"
 
 export default {

@@ -51,7 +51,7 @@
   </nav>
 </template>
 <script>
-import { s3StaticImg } from "../../scripts/routes"
+import { s3StaticImg } from "../../routes"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
 import faInstagram from "@fortawesome/fontawesome-free-brands/faInstagram"

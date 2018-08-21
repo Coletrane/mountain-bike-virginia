@@ -14,7 +14,7 @@
 import BlogPost from "../components/BlogPost.vue"
 import Youtube from "../components/Iframes/Youtube.vue"
 
-import blogPost from "../assets/mixins/blog-post"
+import blogPost from "../mixins/blog-post"
 
 export default {
   name: "battle-at-blackhorse-2018-video",

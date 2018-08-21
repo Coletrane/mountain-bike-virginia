@@ -17,10 +17,10 @@ import MTBVAHeader from "../../components/Header/MTBVAHeader"
 import Banner from "../../components/Das/Banner"
 import Timeline from "../../components/Card/Timeline"
 
-import backgroundImage from "../../assets/mixins/background-image"
+import backgroundImage from "../../mixins/background-image"
 
-import { headTags } from "../../assets/functions"
-import { s3Pages, s3PagesEvents } from "../../scripts/routes"
+import { headTags } from "../../scripts/client/functions"
+import { s3Pages, s3PagesEvents } from "../../routes"
 
 const headerImage = `${s3Pages}/creature-2017-recap/wake-champ.jpg`
 

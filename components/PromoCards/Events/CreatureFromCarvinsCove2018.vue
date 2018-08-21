@@ -11,7 +11,7 @@ import PostCard from "../../Card/PostCard"
 import ImageLink from "../../Images/ImageLink"
 import Creature2018Info from "../../Temporary/Creature2018Info"
 
-import promoCard from "../../../assets/mixins/promo-card"
+import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "events-creature-from-carvins-cove-2018-promo",

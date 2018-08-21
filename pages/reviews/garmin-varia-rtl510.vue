@@ -212,7 +212,7 @@ import BlogPost from "../../components/BlogPost"
 import BlogImage from "../../components/Images/BlogImage"
 import Quote from "../../components/Card/Quote"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "garmin-varia-rtl510",

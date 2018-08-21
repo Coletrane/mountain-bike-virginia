@@ -42,8 +42,8 @@
   </nav>
 </template>
 <script>
-import { boxShadow } from "../../assets/styles"
-import { s3StaticImg } from "../../scripts/routes"
+import { boxShadow } from "../../scripts/client/styles"
+import { s3StaticImg } from "../../routes"
 import Weather from "./Weather"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faBars from "@fortawesome/fontawesome-free-solid/faBars"

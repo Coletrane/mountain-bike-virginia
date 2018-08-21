@@ -1,4 +1,4 @@
-import { s3Banners } from "../scripts/routes"
+import { s3Banners } from "../routes"
 
 export default {
   state: {

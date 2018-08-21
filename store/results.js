@@ -1,4 +1,4 @@
-import { s3Results } from "../scripts/routes"
+import { s3Results } from "../routes"
 import axios from "axios"
 
 export const resultsActionTypes = {

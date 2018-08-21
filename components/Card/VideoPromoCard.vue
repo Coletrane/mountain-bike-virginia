@@ -9,7 +9,7 @@
 import PostCard from "../Card/PostCard"
 import Youtube from "../Iframes/Youtube"
 
-import abstractPromoCard from "../../assets/mixins/abstract-promo-card"
+import abstractPromoCard from "../../mixins/abstract-promo-card"
 
 export default {
   name: "video-promo-card",

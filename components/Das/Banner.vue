@@ -10,7 +10,7 @@
 <script>
 import ResponsiveImg from "../Images/ResponsiveImg"
 
-import da from "../../assets/mixins/da"
+import da from "../../mixins/da"
 
 export default {
   components: {

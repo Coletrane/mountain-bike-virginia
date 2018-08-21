@@ -11,7 +11,7 @@ const glob = require("glob")
 const helpers = require('./helper-functions')
 
 // Internal
-const constants = require("../constants")
+const constants = require("../../constants")
 // const buildRoutes = require('./build-routes-json')
 
 const postDir =

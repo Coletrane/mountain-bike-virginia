@@ -30,7 +30,7 @@ import Card from "../Card/Card"
 import Dropdown from "./Dropdown"
 import ClassTable from "./ClassTable"
 
-import { s3StaticImg, s3Pages } from "../../scripts/routes"
+import { s3StaticImg, s3Pages } from "../../routes"
 import { resultsActionTypes } from "../../store/results"
 
 export default {

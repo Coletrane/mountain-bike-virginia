@@ -26,7 +26,7 @@ import SocialActions from "./Card/SocialActions.vue"
 import RelatedPosts from "./Card/RelatedPosts"
 import Banner from "./Das/Banner"
 
-import { s3StaticImg, s3Banners } from "../scripts/routes"
+import { s3StaticImg, s3Banners } from "../routes"
 
 export default {
   name: "blog-post",

@@ -4,7 +4,7 @@
 <script>
 import MTBVAHeader from "../components/Header/MTBVAHeader"
 
-import { s3StaticImg } from "../scripts/routes"
+import { s3StaticImg } from "../routes"
 
 export default {
   name: "error",

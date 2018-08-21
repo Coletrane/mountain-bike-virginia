@@ -43,7 +43,7 @@ import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faCalendarAlt from "@fortawesome/fontawesome-free-solid/faCalendarAlt"
 import faLocationArrow from "@fortawesome/fontawesome-free-solid/faLocationArrow"
 
-import postRoute from "../../assets/mixins/post-route"
+import postRoute from "../../mixins/post-route"
 
 export default {
   name: "post-header",

@@ -1,5 +1,5 @@
-import { headTags, buildVideo, getRoute } from "../functions"
-import { s3Pages } from "../../scripts/routes"
+import { headTags, buildVideo, getRoute } from "../scripts/client/functions"
+import { s3Pages } from "../routes"
 
 export default {
   async asyncData(context) {

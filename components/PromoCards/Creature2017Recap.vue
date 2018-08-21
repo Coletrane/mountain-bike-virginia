@@ -23,7 +23,7 @@
 import PostCard from "../Card/PostCard"
 import Youtube from "../Iframes/Youtube"
 
-import promoCard from "../../assets/mixins/promo-card"
+import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "creature-2017-recap-promo",
