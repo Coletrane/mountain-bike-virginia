@@ -19,7 +19,7 @@ import backgroundImage from "../../assets/mixins/background-image"
 
 import { home } from "../../assets/head-tags"
 import { headTags } from "../../assets/functions"
-import { s3Pages, s3Banners } from "../../scripts/routes"
+import { s3Pages } from "../../scripts/routes"
 import { dragonsBackTshirt } from "../../assets/static-banners"
 
 export default {
