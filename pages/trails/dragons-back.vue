@@ -290,7 +290,7 @@ import Tiles from "../../components/Images/Tiles"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faStrava from "@fortawesome/fontawesome-free-brands/faStrava"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "trails-dragons-back",

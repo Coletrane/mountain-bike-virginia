@@ -1,5 +1,5 @@
-import { weatherIcons } from "../../assets/weather"
-import { s3WeatherIcons } from "../../scripts/routes"
+import { weatherIcons } from "../../scripts/client/weather"
+import { s3WeatherIcons } from "../../routes"
 
 const request = require("request-promise")
 const expect = require("./global.spec").expect

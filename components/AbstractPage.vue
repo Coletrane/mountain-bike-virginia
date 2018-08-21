@@ -17,7 +17,7 @@
 <script>
 import Banner from "./Das/Banner"
 
-import { routeToComponentFilename } from "../assets/functions"
+import { routeToComponentFilename } from "../scripts/client/functions"
 
 export default {
   name: "abstract-page",

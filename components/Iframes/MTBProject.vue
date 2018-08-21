@@ -1,7 +1,7 @@
 <template>
   <iframe :style="style"
           frameborder="0"
-          scrolling="no"
+          scrolling="yes"
           :src="src">
   </iframe>
 </template>
@@ -14,12 +14,12 @@ const desktopCoordinates = {
 const tabletCoordinates = {
   x: "-8909019",
   y: "4505042",
-  z: "8"
+  z: "7"
 }
 const mobileCoordinates = {
   x: "-8891951",
   y: "4516883",
-  z: "7"
+  z: "6"
 }
 export default {
   name: "MTBProject",
@@ -88,7 +88,8 @@ iframe {
   margin: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  overflow: hidden;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 500px) {

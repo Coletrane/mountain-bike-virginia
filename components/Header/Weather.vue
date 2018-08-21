@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
-import { weatherIds, weatherIcons } from "../../assets/weather"
-import { s3WeatherIcons } from "../../scripts/routes"
+import { weatherIds, weatherIcons } from "../../scripts/client/weather"
+import { s3WeatherIcons } from "../../routes"
 
 export default {
   name: "weather",

@@ -11,7 +11,7 @@
 import PostCard from "../../Card/PostCard"
 import ImageLink from "../../Images/ImageLink"
 
-import promoCard from "../../../assets/mixins/promo-card"
+import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "trails-dragons-back-promo",

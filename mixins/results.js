@@ -1,5 +1,5 @@
-import { results } from "../../assets/head-tags"
-import { headTags } from "../../assets/functions"
+import { results } from "../scripts/client/head-tags"
+import { headTags } from "../scripts/client/functions"
 
 export default {
   head() {

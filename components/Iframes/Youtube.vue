@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import iframeLoader from "../../assets/mixins/iframe-loader"
+import iframeLoader from "../../mixins/iframe-loader"
 
 export default {
   name: "youtube",

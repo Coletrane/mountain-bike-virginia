@@ -1,4 +1,4 @@
-import { s3Posts, s3Routes } from "../scripts/routes"
+import { s3Posts, s3Routes } from "../routes"
 import axios from "axios"
 
 export const numPages = 3

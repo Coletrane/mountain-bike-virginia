@@ -112,7 +112,7 @@ import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faBicycle from "@fortawesome/fontawesome-free-solid/faBicycle"
 import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "massanutten-hoo-ha-2018",

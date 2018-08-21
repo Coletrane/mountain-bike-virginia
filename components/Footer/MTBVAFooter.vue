@@ -28,8 +28,8 @@ import Sponsor from "./Sponsor"
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faGithub from "@fortawesome/fontawesome-free-brands/faGithub"
 
-import { s3Sponsors, s3StaticImg } from "../../scripts/routes"
-import { noExtension, justExtension } from "../../assets/functions"
+import { s3Sponsors, s3StaticImg } from "../../routes"
+import { noExtension, justExtension } from "../../scripts/client/functions"
 
 export default {
   name: "mtbva-footer",

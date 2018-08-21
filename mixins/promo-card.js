@@ -1,5 +1,5 @@
-import { postDirs } from "../../constants"
-import { s3Pages } from "../../scripts/routes"
+import { postDirs } from "../constants"
+import { s3Pages } from "../routes"
 
 export default {
   data() {

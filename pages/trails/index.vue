@@ -15,12 +15,12 @@ import MTBVAHeader from "../../components/Header/MTBVAHeader"
 import Banner from "../../components/Das/Banner"
 import MTBProject from "../../components/Iframes/MTBProject"
 
-import backgroundImage from "../../assets/mixins/background-image"
+import backgroundImage from "../../mixins/background-image"
 
-import { home } from "../../assets/head-tags"
-import { headTags } from "../../assets/functions"
-import { s3Pages } from "../../scripts/routes"
-import { dragonsBackTshirt } from "../../assets/static-banners"
+import { home } from "../../scripts/client/head-tags"
+import { headTags } from "../../scripts/client/functions"
+import { s3Pages } from "../../routes"
+import { dragonsBackTshirt } from "../../scripts/client/static-banners"
 
 export default {
   name: "trails",

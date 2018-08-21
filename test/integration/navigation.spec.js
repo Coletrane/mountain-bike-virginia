@@ -1,5 +1,5 @@
 module.exports = browser => {
-  const weatherIds = require("../../assets/weather").weatherIds
+  const weatherIds = require("../../scripts/client/weather").weatherIds
 
   const global = require(`./global.${browser}.spec`)
   const By = require("selenium-webdriver").By

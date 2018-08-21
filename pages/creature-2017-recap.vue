@@ -104,7 +104,7 @@ import BlogPost from "../components/BlogPost.vue"
 import Youtube from "../components/Iframes/Youtube.vue"
 import BlogImage from "../components/Images/BlogImage.vue"
 
-import blogPost from "../assets/mixins/blog-post"
+import blogPost from "../mixins/blog-post"
 
 export default {
   name: "creature-2017-recap",

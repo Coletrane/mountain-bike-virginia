@@ -4,7 +4,7 @@
 <script>
 import Results from "../../components/Results/Results"
 
-import results from "../../assets/mixins/results"
+import results from "../../mixins/results"
 
 export default {
   name: "results-middle-mountain-momma-2018",

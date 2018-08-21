@@ -1,5 +1,5 @@
-const routes = require("./scripts/build-routes-json")
-const s3Routes = require("./scripts/routes")
+const routes = require("./scripts/dev/build-routes-json")
+const s3Routes = require("./routes")
 require("dotenv").config()
 const webpack = require("webpack")
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")

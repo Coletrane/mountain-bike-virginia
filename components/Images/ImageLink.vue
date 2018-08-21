@@ -16,9 +16,9 @@
 <script>
 import ResponsiveImg from "./ResponsiveImg"
 
-import postRoute from "../../assets/mixins/post-route"
+import postRoute from "../../mixins/post-route"
 
-import { s3Pages } from "../../scripts/routes"
+import { s3Pages } from "../../routes"
 
 export default {
   components: { ResponsiveImg },

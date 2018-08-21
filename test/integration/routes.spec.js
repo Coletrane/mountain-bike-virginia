@@ -1,4 +1,4 @@
-import { routes, posts } from "../../scripts/build-routes-json"
+import { routes, posts } from "../../scripts/dev/build-routes-json"
 const fs = require("fs")
 
 let routesToTest

@@ -11,7 +11,7 @@
 import BlogPost from "../../components/BlogPost"
 import Youtube from "../../components/Iframes/Youtube"
 
-import blogPost from "../../assets/mixins/blog-post"
+import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "blue-ridge-trailheads-foggy-spec",

@@ -4,7 +4,7 @@
        :alt="alt"/>
 </template>
 <script>
-import { noExtension, justExtension } from "../../assets/functions"
+import { noExtension, justExtension } from "../../scripts/client/functions"
 
 export default {
   name: "responsive-img",

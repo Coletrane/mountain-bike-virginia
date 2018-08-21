@@ -28,13 +28,13 @@ import Banner from "../components/Das/Banner"
 import MTBVAFooter from "../components/Footer/MTBVAFooter"
 import AbstractPage from "../components/AbstractPage"
 
-import { home } from "../assets/head-tags"
-import { headTags } from "../assets/functions"
-import { s3StaticImg, s3Banners } from "../scripts/routes"
+import { home } from "../scripts/client/head-tags"
+import { headTags } from "../scripts/client/functions"
+import { s3StaticImg, s3Banners } from "../routes"
 import { numPages } from "../store/posts"
-import { dragonsBackTshirt } from "../assets/static-banners"
+import { dragonsBackTshirt } from "../scripts/client/static-banners"
 
-import backgroundImage from "../assets/mixins/background-image"
+import backgroundImage from "../mixins/background-image"
 
 const foliage = `${s3StaticImg}/foliage.jpg`
 

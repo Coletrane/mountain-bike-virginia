@@ -1,5 +1,5 @@
-import { posts } from "../../scripts/build-routes-json"
-import { schemaTypes } from "../../assets/schmea-types"
+import { posts } from "../../scripts/dev/build-routes-json"
+import { schemaTypes } from "../../scripts/client/schmea-types"
 
 const expect = require("./global.spec").expect
 const glob = require("glob")
