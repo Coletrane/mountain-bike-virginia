@@ -22,6 +22,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.11",
     "array-move": "^1.0.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
@@ -60,6 +61,8 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "selenium-webdriver": "^4.0.0-alpha.1",
+    "serverless-offline": "^3.25.9",
+    "serverless-plugin-typescript": "^1.1.5",
     "sharp": "^0.20.5",
     "webpack-bundle-analyzer": "^2.13.1"
   },
