@@ -117,6 +117,11 @@ export default {
           img: `${s3Sponsors}/tavern.png`,
           class: "tavern",
           url: "http://jackmasonstavern.com/"
+        },
+        {
+          img: `${s3Sponsors}/skolrood.png`,
+          class: "skolrood",
+          url: "https://www.skolrood.com/"
         }
       ],
       mobile: true,
@@ -221,6 +226,16 @@ img.deschutes {
   width: 12rem;
 }
 
+img.skolrood {
+  width: 20rem;
+}
+
+@media (max-width: 550px) {
+  img.skolrood {
+    width: 15rem;
+  }
+}
+
 @media (max-width: 500px) {
   .sponsor,
   .sponsor img {
@@ -229,6 +244,10 @@ img.deschutes {
 
   img.deschutes {
     width: 9rem;
+  }
+
+  img.skolrood {
+    width: 12rem;
   }
 }
 
