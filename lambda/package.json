@@ -1,0 +1,32 @@
+{
+  "name": "mtbva",
+  "description": "Mountain Bike Virginia XXC VA Series",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coletrane/mountain-bike-virginia"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.300.0",
+    "axios": "^0.18.0",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.11",
+    "@types/dotenv": "^4.0.3",
+    "@types/node": "^10.9.1",
+    "serverless": "^1.30.1",
+    "serverless-offline": "^3.25.9",
+    "serverless-plugin-typescript": "^1.1.5"
+  },
+  "engines": {
+    "node": "8.10"
+  },
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "prettier": {
+    "semi": false
+  }
+}
