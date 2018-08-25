@@ -1,8 +1,9 @@
 import { Handler, Context, Callback } from "aws-lambda"
 import { AWSError, DynamoDB, HttpResponse } from "aws-sdk"
 import axios from "axios"
-import * as moment from "moment"
+import moment from "moment"
 import { CityWeather } from "./CityWeather"
+import ddb from "./dynamodb"
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -38,7 +39,6 @@ export const updateWeatherDB = async (
   context: Context,
   callback: Callback
 ) => {
-  const ddb = new DynamoDB({ apiVersion: "2012-10-08" })
 
   // Check when weather was last updated
   const scanParams = {
@@ -65,6 +65,7 @@ export const updateWeatherDB = async (
               .diff(moment().utc(), "minutes")
             // Older than 30 mins
             if (updatedDiff > 30) {
+              console.log("updatedDiff is greater than 30, updating data")
               let res
               try {
                 res = await axios.get(
@@ -93,8 +94,16 @@ export const updateWeatherDB = async (
                   (err: AWSError, data: DynamoDB.Types.PutItemOutput) => {
                     if (err) {
                       console.log(err)
+                      callback(err, {
+                        statusCode: 500,
+                        body: err.toString()
+                      } as HttpResponse)
                     } else {
-                      console.log("Success", data)
+                      console.log("Success ", data)
+                      callback(null, {
+                        statusCode: 201,
+                        body: data
+                      })
                     }
                   }
                 )

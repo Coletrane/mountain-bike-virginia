@@ -24,16 +24,7 @@ provider:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-
-#package:
-#  exclude:
-#    - node_modules/**/*
-#  include:
-#    - node_modules/aws-sdk
-#    - node_modules/axios
-#    - node_modules/moment
-#    - node_modules/dotenv
-
+  - serverless-dynamodb-local
 
 functions:
    weather:
@@ -48,6 +39,22 @@ functions:
         - http:
             path: weather
             method: post
+
+resources:
+  Resources:
+    mtbva-weather:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: mtbva-weather
+        AttributeDefinitions:
+          - AttributeName: city
+            AttributeType: S
+        KeySchema:
+          - AttributeName: city
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
