@@ -7,19 +7,18 @@
   </div>
 </template>
 <script>
+import responsiveImg from "../../mixins/responsive-img"
+
 export default {
   name: "parallax",
   props: {
-    src: {
-      type: String,
-      required: true
-    },
     alt: {
       type: String,
       required: false,
       default: "Mountain Bike Virginia"
     }
   },
+  mixins: [responsiveImg],
   created() {
     if (process.browser) {
       window.addEventListener("scroll", this.handleScroll)
@@ -48,7 +47,7 @@ export default {
   computed: {
     styles() {
       return {
-        backgroundImage: `url(${this.src})`
+        backgroundImage: `url(${this.url})`
       }
     }
   }

@@ -1,7 +1,6 @@
-import { s3Posts, s3Routes } from "../routes"
 import axios from "axios"
-
-export const numPages = 3
+import { s3Posts, s3Routes } from "../routes"
+import { postsPerPage } from "../constants"
 
 export default {
   state: {
@@ -16,7 +15,7 @@ export default {
       let resultRoutes = []
 
       if (
-        context.state.currentPage < numPages &&
+        context.state.currentPage < postsPerPage.length + 1 &&
         !context.state.loadedPages[context.state.currentPage]
       ) {
         let res = await axios.get(

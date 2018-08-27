@@ -40,27 +40,33 @@ export default {
 .tile-override + img {
   width: 100% !important;
 }
-.three img:nth-child(3n), .three img:nth-child(3n) + img {
+.three img:nth-child(3n),
+.three img:nth-child(3n) + img {
   width: 50%;
 }
 
-.four img:nth-child(4n), .four img:nth-child(4n) + img {
+.four img:nth-child(4n),
+.four img:nth-child(4n) + img {
   width: 50%;
 }
 
-.five img:nth-child(5n), .five img:nth-child(5n) + img {
+.five img:nth-child(5n),
+.five img:nth-child(5n) + img {
   width: 50%;
 }
 
-.six img:nth-child(6n), .six img:nth-child(6n) + img {
+.six img:nth-child(6n),
+.six img:nth-child(6n) + img {
   width: 50%;
 }
 
-.seven img:nth-child(7n), .seven img:nth-child(7n) + img {
+.seven img:nth-child(7n),
+.seven img:nth-child(7n) + img {
   width: 50%;
 }
 
-.eight img:nth-child(8n), .eight img:nth-child(8n) + img {
+.eight img:nth-child(8n),
+.eight img:nth-child(8n) + img {
   width: 50%;
 }
 

@@ -4,15 +4,11 @@
        :alt="alt"/>
 </template>
 <script>
-import { noExtension, justExtension } from "../../scripts/client/functions"
+import responsiveImg from "../../mixins/responsive-img"
 
 export default {
   name: "responsive-img",
   props: {
-    src: {
-      type: String,
-      required: true
-    },
     portrait: {
       default: false
     },
@@ -21,33 +17,7 @@ export default {
       default: "Mountain Bike Virginia"
     }
   },
-  computed: {
-    url() {
-      let result
-      const filename = noExtension(this.src)
-      const extension = justExtension(this.src)
-
-      if (filename && extension) {
-        if (process.browser) {
-          if (document.body.clientWidth <= 480) {
-            result = `${filename}-480${extension}`
-          } else if (
-            document.body.clientWidth <= 720 &&
-            document.body.clientWidth > 480
-          ) {
-            result = `${filename}-720${extension}`
-          } else {
-            result = this.src
-          }
-        }
-      } else {
-        // Default to full size image
-        result = this.src
-      }
-
-      return result
-    }
-  }
+  mixins: [responsiveImg]
 }
 </script>
 <style>

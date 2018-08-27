@@ -59,28 +59,28 @@ describe("/posts/ test", () => {
         })
 
         it("should have a title", async () => {
-          expect(await postJson.json.title).not.to.be.undefined
-
-          expect(await postJson.json.title).not.to.equal("")
+          await postJson.json
+          expect(postJson.json.title).not.to.be.undefined
+          expect(postJson.json.title).not.to.equal("")
         })
 
         it("should have a subtitle", async () => {
-          expect(await postJson.json.subtitle).not.to.be.undefined
-
-          expect(await postJson.json.subtitle).not.to.equal("")
+          await postJson.json
+          expect(postJson.json.subtitle).not.to.be.undefined
+          expect(postJson.json.subtitle).not.to.equal("")
         })
 
         it("should have an author", async () => {
-          expect(await postJson.json.author).not.to.be.undefined
-
-          expect(await postJson.json.author).not.to.equal("")
+          await postJson.json
+          expect(postJson.json.author).not.to.be.undefined
+          expect(postJson.json.author).not.to.equal("")
         })
 
         describe("date", () => {
           it("should have a date", async () => {
-            expect(await postJson.json.date).not.to.be.undefined
-
-            expect(await postJson.json.date).not.to.equal("")
+            await postJson.json
+            expect(postJson.json.date).not.to.be.undefined
+            expect(postJson.json.date).not.to.equal("")
           })
 
           it("should be able to new Date()", async () => {
@@ -93,31 +93,33 @@ describe("/posts/ test", () => {
         it("should have a loc if its not a review", async () => {
           const schema = await postJson.json.schema
           if ((schema && schema.type !== "Review") || !schema) {
-            expect(await postJson.json.loc).not.to.be.undefined
-
-            expect(await postJson.json.loc).not.to.equal("")
+            expect(postJson.json.loc).not.to.be.undefined
+            expect(postJson.json.loc).not.to.equal("")
           }
         })
 
         it("should have a description", async () => {
-          expect(await postJson.json.description).not.to.be.undefined
+          await postJson.json
 
-          expect(await postJson.json.description).not.to.equal("")
+          expect(postJson.json.description).not.to.be.undefined
+          expect(postJson.json.description).not.to.equal("")
         })
 
         it("should have an imgRoute", async () => {
-          expect(await postJson.json.imgRoute).not.to.be.undefined
+          await postJson.json
 
-          expect(await postJson.json.imgRoute).not.to.equal("")
+          expect(postJson.json.imgRoute).not.to.be.undefined
+          expect(postJson.json.imgRoute).not.to.equal("")
+          expect(postJson.json.imgRoute.startsWith('"')).to.be.false
+          expect(postJson.json.imgRoute.endsWith('"')).to.be.false
         })
 
         describe("related posts", () => {
           it("should have relatedPosts", async () => {
-            expect(await postJson.json.relatedPosts).not.to.be.undefined
-
-            expect(await postJson.json.relatedPosts).not.to.equal([])
-
-            expect(await postJson.json.relatedPosts).not.to.equal("")
+            await postJson.json
+            expect( postJson.json.relatedPosts).not.to.be.undefined
+            expect( postJson.json.relatedPosts).not.to.equal([])
+            expect( postJson.json.relatedPosts).not.to.equal("")
           })
 
           it("should have valid relatedPosts", async () => {
@@ -137,9 +139,9 @@ describe("/posts/ test", () => {
         })
 
         it("should have keywords", async () => {
-          expect(await postJson.json.keywords).not.to.be.undefined
-
-          expect(await postJson.json.keywords).not.to.equal("")
+          await postJson.json
+          expect( postJson.json.keywords).not.to.be.undefined
+          expect( postJson.json.keywords).not.to.equal("")
         })
 
         describe("schema test", () => {

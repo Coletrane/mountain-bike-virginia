@@ -1,0 +1,16 @@
+{
+  "title": "Creatureduro FIRST ENDURO AT CARVINS COVE",
+  "subtitle": "Rising from the monsterous depths to astound and terrorize the world!",
+  "description": "Promo video for the Creature from Carvins Cove Enduro bike race at Carvins Cove in Roanoke Virginia",
+  "author": "cole",
+  "date": "Oct 6, 2018 9:00 AM",
+  "loc": "Sherwood Archers Timberview Rd, Carvins Cove, VA",
+  "imgRoute": "creatureduro.jpg",
+  "keywords": "enduro, race, bike race, carvins cove, roanoke va, virginias blue ridge, blue ridge mountains, downhill, dh, mountain bike, mountain biking, cycling, bike",
+  "relatedPosts": [
+    "events/creature-from-carvins-cove-2018",
+    "creature-2017-recap",
+    "battle-at-blackhorse-2018"
+  ],
+  "ytSrc": "https://www.youtube.com/embed/GsKhahwDtzg"
+}

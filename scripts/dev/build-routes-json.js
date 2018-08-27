@@ -2,6 +2,7 @@ const fs = require("fs")
 const glob = require("glob")
 const _ = require("lodash")
 const arrayMove = require("array-move")
+const postsPerPage = require("../../constants").postsPerPage
 
 // Get all the routes that Nuxt will generate
 let routes = []
@@ -81,7 +82,6 @@ posts.forEach(post => {
 })
 
 // Initialize the pagination (sortof)
-const postsPerPage = [10, 10]
 postsPerPage.push(
   postsOrder.length -
     postsPerPage.reduce((accumulator, currentValue) => {

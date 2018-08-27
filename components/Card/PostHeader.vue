@@ -30,7 +30,7 @@
     </h3>
     <h4 v-if="post.date">
       <font-awesome-icon :icon="faCalendarAlt"/>
-      {{post.date}}
+      {{date}}
     </h4>
     <h4 v-if="post.loc">
       <font-awesome-icon :icon="faLocationArrow"/>
@@ -61,6 +61,26 @@ export default {
     return {
       faCalendarAlt: faCalendarAlt,
       faLocationArrow: faLocationArrow
+    }
+  },
+  computed: {
+    date() {
+      if (new Date(this.post.date) === "Invalid Date") {
+        return this.post.date
+      }
+
+      const dateFormatOptions = {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }
+      let date = new Date(this.post.date)
+      if (date.getHours() > 0) {
+        dateFormatOptions.hour = "2-digit"
+        dateFormatOptions.minute = "2-digit"
+      }
+
+      return date.toLocaleDateString("en-US", dateFormatOptions)
     }
   }
 }
@@ -110,7 +130,6 @@ h4 {
   h4 {
     font-size: 1rem;
   }
-
 }
 
 svg {

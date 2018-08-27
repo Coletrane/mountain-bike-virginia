@@ -31,7 +31,7 @@ import AbstractPage from "../components/AbstractPage"
 import { home } from "../scripts/client/head-tags"
 import { headTags } from "../scripts/client/functions"
 import { s3StaticImg, s3Banners } from "../routes"
-import { numPages } from "../store/posts"
+import { postsPerPage } from "../constants"
 import { dragonsBackTshirt } from "../scripts/client/static-banners"
 
 import backgroundImage from "../mixins/background-image"
@@ -60,7 +60,7 @@ export default {
     return {
       img: foliage,
       s3Banners: s3Banners,
-      pages: new Array(numPages),
+      pages: new Array(postsPerPage.length + 1),
       dragonsBackTshirt: dragonsBackTshirt
     }
   },
@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     async handleScroll() {
-      if (this.$store.state.posts.currentPage === numPages) {
+      if (this.$store.state.posts.currentPage === postsPerPage.length + 1) {
         window.removeEventListener("scroll", this.handleScroll)
         return
       }

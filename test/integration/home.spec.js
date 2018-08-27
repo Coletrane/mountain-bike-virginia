@@ -1,4 +1,3 @@
-import { numPages } from "../../store/posts"
 import { posts } from "../../scripts/dev/build-routes-json"
 
 module.exports = browser => {

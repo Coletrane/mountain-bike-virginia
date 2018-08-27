@@ -182,7 +182,7 @@ export const buildVideo = async post => {
   } catch (err) {
     console.log(err)
   }
-  
+
   schema["@context"] = schemaOrg
   return [getSchemaObj(schema)]
 }

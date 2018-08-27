@@ -69,7 +69,9 @@ export default {
       this.mapHeight = this.style.height - this.infoHeight
       this.mapUrl = `https://www.trailforks.com/widgets/region_map/?rid=3159&w=100%&h=${
         this.mapHeight
-      }&maptype=osm&trailstyle=difficulty&controls=1&list=0&layers=trail,labels,photo,poi,directory,region&hideunsanctioned=&z=${this.mapZoom}&lat=&lon=`
+      }&maptype=osm&trailstyle=difficulty&controls=1&list=0&layers=trail,labels,photo,poi,directory,region&hideunsanctioned=&z=${
+        this.mapZoom
+      }&lat=&lon=`
     }
   }
 }

@@ -102,7 +102,7 @@ export default {
 }
 
 .half {
-  width: 50% !important;;
+  width: 50% !important;
 }
 
 p {

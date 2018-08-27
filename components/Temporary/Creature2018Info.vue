@@ -90,7 +90,7 @@ export default {
 </script>
 <style scoped>
 .creature-promo {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .reg-links {

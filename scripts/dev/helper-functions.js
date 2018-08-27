@@ -12,7 +12,7 @@ const fileNeedsResponsiveImage = file => {
   )
 }
 
-const sortFilesByCreatedTime = (filesWithDir) => {
+const sortFilesByCreatedTime = filesWithDir => {
   return filesWithDir
     .map(file => {
       return {

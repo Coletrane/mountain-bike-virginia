@@ -6,11 +6,8 @@ const fs = require("fs")
 const path = require("path")
 const glob = require("glob")
 
-const blacklist = [
-  "dragons-back-tshirt-back-only.jpg",
-  "middle-mt.jpg",
-  "carvins-cove-trail-map.jpg"
-]
+// Danger Zone: try to make srcset for everything
+const blacklist = []
 const whitelist = file => {
   return (
     !file.includes("-480") &&

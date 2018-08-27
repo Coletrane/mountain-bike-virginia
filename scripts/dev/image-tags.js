@@ -1,6 +1,6 @@
-const fs = require('fs')
-const path = require('path')
-const glob = require('glob')
+const fs = require("fs")
+const path = require("path")
+const glob = require("glob")
 const rl = require("readline-sync")
 const helpers = require("./helper-functions")
 

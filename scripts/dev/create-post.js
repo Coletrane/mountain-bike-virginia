@@ -8,7 +8,7 @@ const imagemin = require("imagemin") // TODO
 const execa = require("execa")
 const Listr = require("listr")
 const glob = require("glob")
-const helpers = require('./helper-functions')
+const helpers = require("./helper-functions")
 
 // Internal
 const constants = require("../../constants")
@@ -123,7 +123,7 @@ if (process.argv[2] !== "images") {
     title: "Creating Post Component",
     task: () => createPostComponent(postDir, postRoute, post)
   })
-  if (true) {
+  if (customPromoCard) {
     taskArr.push({
       title: "Creating Custom Promo Card",
       task: () => createCustomPromoCard(postDir, postRoute)
