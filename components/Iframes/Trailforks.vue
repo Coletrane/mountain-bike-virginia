@@ -1,22 +1,22 @@
 <template>
   <div class="trailforks"
        :style="style">
-    <iframe v-if="$store.state.misc.loaded"
+    <iframe v-if="$store.state.misc.loaded && infoHeight"
             src="https://www.trailforks.com/widgets/region_info/?rid=3159&counts=1&stats=1&w=100%&h=150px&title=null"
             scrolling="no"
             frameborder="0"
             allowfullscreen="1"
             width="100%"
-            :height="infoHeight || ''"
+            :height="infoHeight"
             id="regioninfo0">
     </iframe>
-    <iframe v-if="$store.state.misc.loaded && mapUrl"
+    <iframe v-if="$store.state.misc.loaded && mapHeight && mapUrl"
             :src="mapUrl"
             scrolling="no"
             frameborder="0"
             allowfullscreen="1"
             width="100%"
-            :height="mapHeight || ''"
+            :height="mapHeight"
             id="map0">
     </iframe>
   </div>
@@ -52,18 +52,10 @@ export default {
         this.style.height = 900
         this.infoHeight = 200
         this.mapZoom = 7
-      } else if (
-        document.body.clientWidth <= 400 &&
-        document.body.clientWidth > 350
-      ) {
-        this.style.width = "100%"
-        this.style.height = 800
-        this.infoHeight = 230
-        this.mapZoom = 7
-      } else if (document.body.clientWidth <= 350) {
+      } else if (document.body.clientWidth <= 400) {
         this.style.width = "100%"
         this.style.height = 750
-        this.infoHeight = 250
+        this.infoHeight = 270
         this.mapZoom = 7
       }
       this.mapHeight = this.style.height - this.infoHeight

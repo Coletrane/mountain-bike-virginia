@@ -1,5 +1,5 @@
 <template>
-  <blog-post :image="img + post.imgRoute"
+  <blog-post :image="img + 'creature-render.jpg'"
              :post="post"
              header-author
              :related-posts="relatedPosts">

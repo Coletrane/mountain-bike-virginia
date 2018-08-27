@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <m-t-b-v-a-header :image="headerImage"
-                      title="Trails"/>
-    <banner :static-banner="dragonsBackTshirt"/>
-    <div class="main-content"
-         :style="{backgroundImage: backgroundImage.backgroundImage
+  <div class="mtbva-trails main-content"
+       :style="{
+        backgroundImage: backgroundImage.backgroundImage
       }">
-      <trailforks/>
-    </div>
+    <trailforks/>
+    <banner :static-banner="dragonsBackTshirt"/>
   </div>
 </template>
 <script>
-import MTBVAHeader from "../../components/Header/MTBVAHeader"
 import Banner from "../../components/Das/Banner"
 import Trailforks from "../../components/Iframes/Trailforks"
 
@@ -25,7 +21,6 @@ import { dragonsBackTshirt } from "../../scripts/client/static-banners"
 export default {
   name: "trails",
   components: {
-    MTBVAHeader,
     Banner,
     Trailforks
   },
@@ -33,14 +28,18 @@ export default {
   head() {
     return headTags(`${home.title} Trails`, home.description, home.keywords, {
       route: this.$route.path.substring(1),
-      ogImage: "carvins-cove-trail-map.jpg"
+      ogImage: "middle-mt.jpg"
     })
   },
   data() {
     return {
-      headerImage: `${s3Pages}/trails/middle-mt.jpg`,
       dragonsBackTshirt: dragonsBackTshirt
     }
   }
 }
 </script>
+<style scoped>
+.mtbva-trails {
+  padding-top: 7rem;
+}
+</style>

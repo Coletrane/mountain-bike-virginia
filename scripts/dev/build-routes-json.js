@@ -39,9 +39,24 @@ postJsonFiles.forEach(file => {
 })
 
 // Sort the posts by date
+const mapCreature = (func => {
+  posts = posts.map(post => {
+    if (post.route === "events/creature-from-carvins-cove-2018") {
+      func(post)
+    }
+    return post
+  })
+})
+
+let creatureDate
+mapCreature((post) => {
+  creatureDate = post.date
+  post.date = "Oct 7 2018"
+})
 posts.sort((a, b) => {
   return new Date(b.date) - new Date(a.date)
 })
+mapCreature((post) => post.date = creatureDate)
 
 // Reinsert posts that we want out of order
 // const silverIdx = _.findIndex(

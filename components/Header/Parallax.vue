@@ -46,6 +46,7 @@ export default {
   },
   computed: {
     styles() {
+      console.log(this.url)
       return {
         backgroundImage: `url(${this.url})`
       }
