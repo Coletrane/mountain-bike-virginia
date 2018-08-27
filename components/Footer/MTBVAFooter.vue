@@ -3,7 +3,8 @@
        :style="backgroundImage">
     <div class="sponsors-container">
       <div v-for="sponsor of sponsors"
-           class="sponsor">
+           class="sponsor"
+           :class="sponsor.class + '-container'">
         <sponsor :sponsor="sponsor"/>
       </div>
     </div>
@@ -54,14 +55,14 @@ export default {
           url: "https://www.visitroanokeva.com/region/blue-ridge-mountains/"
         },
         {
+          img: `${s3Sponsors}/skolrood.png`,
+          class: "skolrood",
+          url: "https://www.skolrood.com/"
+        },
+        {
           img: `${s3Sponsors}/parkway.png`,
           class: "parkway",
           url: "http://parkwaybrewing.com/"
-        },
-        {
-          img: `${s3Sponsors}/starlight.png`,
-          class: "starlight",
-          url: "https://www.starlightapparel.com/"
         },
         {
           img: `${s3Sponsors}/roanoke-outside.png`,
@@ -72,6 +73,11 @@ export default {
           img: `${s3Sponsors}/deschutes.png`,
           class: "deschutes",
           url: "https://www.deschutesbrewery.com/"
+        },
+        {
+          img: `${s3Sponsors}/starlight.png`,
+          class: "starlight",
+          url: "https://www.starlightapparel.com/"
         },
         {
           img: `${s3Sponsors}/bath.png`,
@@ -109,19 +115,14 @@ export default {
         //   url: "http://www.outdoortrails.com/"
         // },
         {
-          img: `${s3Sponsors}/woods.png`,
-          class: "woods",
-          url: "http://woodsac.com/"
-        },
-        {
           img: `${s3Sponsors}/tavern.png`,
           class: "tavern",
           url: "http://jackmasonstavern.com/"
         },
         {
-          img: `${s3Sponsors}/skolrood.png`,
-          class: "skolrood",
-          url: "https://www.skolrood.com/"
+          img: `${s3Sponsors}/woods.png`,
+          class: "woods",
+          url: "http://woodsac.com/"
         }
       ],
       mobile: true,
@@ -222,15 +223,27 @@ export default {
   width: 13rem;
 }
 
+.blueridge-container {
+  margin-bottom: 1rem;
+}
+img.blueridge {
+  width: 15rem;
+}
+img.bath {
+  width: 11rem;
+}
 img.deschutes {
   width: 12rem;
 }
 
+.skolrood-container {
+  width: 17rem;
+}
 img.skolrood {
-  width: 20rem;
+  width: 19rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 640px) {
   img.skolrood {
     width: 15rem;
   }
@@ -242,12 +255,16 @@ img.skolrood {
     width: 10rem;
   }
 
+  img.blueridge {
+    width: 11rem;
+  }
+
   img.deschutes {
     width: 9rem;
   }
 
   img.skolrood {
-    width: 12rem;
+    width: 14rem;
   }
 }
 
