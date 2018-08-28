@@ -226,12 +226,15 @@ export default {
 .blueridge-container {
   margin-bottom: 1rem;
 }
+
 img.blueridge {
   width: 15rem;
 }
+
 img.bath {
   width: 11rem;
 }
+
 img.deschutes {
   width: 12rem;
 }
@@ -239,6 +242,7 @@ img.deschutes {
 .skolrood-container {
   width: 17rem;
 }
+
 img.skolrood {
   width: 19rem;
 }

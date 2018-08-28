@@ -37,15 +37,24 @@ export default {
     }
   },
   components: {
-    BlogPost: () => import(/* webpackChunkName:'blog-post-components' */"../components/BlogPost"),
-    BlogImage: () => import(/* webpackChunkName:'blog-post-components' */"../components/Images/BlogImage"),
-    Quote: () => import(/* webpackChunkName:'blog-post-components' */"../components/Card/Quote"),
-    Youtube: () => import(/* webpackChunkName:'blog-post-components' */"../components/Iframes/Youtube"),
-    Instagram: () => import(/* webpackChunkName:'blog-post-components' */"../components/Iframes/Instagram"),
-    MTBVAVideo: () => import(/* webpackChunkName:'blog-post-components' */"../components/Iframes/MTBVAVideo"),
-    FontAwesomeIcon: () => import(/* webpackChunkName:'blog-post-components' */"@fortawesome/vue-fontawesome"),
-    Tiles: () => import(/* webpackChunkName:'blog-post-components' */"../components/Images/Tiles"),
-    RideWithGpsSwitcher: () => import(/*webpackChunkName:'blog-post'components' */"../components/Iframes/RideWithGpsSwitcher")
+    BlogPost: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/BlogPost"),
+    BlogImage: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Images/BlogImage"),
+    Quote: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Card/Quote"),
+    Youtube: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Iframes/Youtube"),
+    Instagram: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Iframes/Instagram"),
+    MTBVAVideo: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Iframes/MTBVAVideo"),
+    FontAwesomeIcon: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "@fortawesome/vue-fontawesome"),
+    Tiles: () =>
+      import(/* webpackChunkName:'blog-post-components' */ "../components/Images/Tiles"),
+    RideWithGpsSwitcher: () =>
+      import(/*webpackChunkName:'blog-post'components' */ "../components/Iframes/RideWithGpsSwitcher")
   },
   props: {
     // This is for when it is a related post

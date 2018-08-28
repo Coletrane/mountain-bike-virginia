@@ -119,7 +119,7 @@ module.exports = {
       // Don't prefetch every page
       // TODO: this may change with Nuxt 2.0
       shouldPrefetch: (file, type) => {
-        if (type === 'script' && routes.routes.find(route => route.includes(file))) {
+        if (type === "script" && routes.routes.find(route => route.includes(file))) {
           return false
         }
         return true

@@ -33,8 +33,12 @@ describe("/results/ test", () => {
 
           for (const clazz of times) {
             let sorted = await clazz.times.sort((a, b) => {
-              if (a < b) return -1
-              if (a > b) return 1
+              if (a < b) {
+                return -1
+              }
+              if (a > b) {
+                return 1
+              }
               return 0
             })
             clazz.times.forEach((time, i, arr) => {

@@ -20,17 +20,11 @@
   </div>
 </template>
 <script>
-import MTBVAFooter from "../components/Footer/MTBVAFooter.vue"
-import MTBVAMenu from "../components/Header/MTBVAMenu"
-import Navigation from "../components/Header/Navigation"
+import global from "../mixins/global"
 
 export default {
   name: "app",
-  components: {
-    MTBVAFooter,
-    MTBVAMenu,
-    Navigation
-  },
+  mixins: [global],
   data() {
     return {
       transition: "app-fade"

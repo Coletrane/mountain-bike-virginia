@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import Banner from "./Das/Banner"
+import global from "../mixins/global"
 
 import { routeToComponentFilename } from "../scripts/client/functions"
 
@@ -27,9 +27,7 @@ export default {
       required: true
     }
   },
-  components: {
-    Banner
-  },
+  mixins: [global],
   data() {
     return {
       postComponents: []

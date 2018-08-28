@@ -117,9 +117,9 @@ describe("/posts/ test", () => {
         describe("related posts", () => {
           it("should have relatedPosts", async () => {
             await postJson.json
-            expect( postJson.json.relatedPosts).not.to.be.undefined
-            expect( postJson.json.relatedPosts).not.to.equal([])
-            expect( postJson.json.relatedPosts).not.to.equal("")
+            expect(postJson.json.relatedPosts).not.to.be.undefined
+            expect(postJson.json.relatedPosts).not.to.equal([])
+            expect(postJson.json.relatedPosts).not.to.equal("")
           })
 
           it("should have valid relatedPosts", async () => {
@@ -140,8 +140,8 @@ describe("/posts/ test", () => {
 
         it("should have keywords", async () => {
           await postJson.json
-          expect( postJson.json.keywords).not.to.be.undefined
-          expect( postJson.json.keywords).not.to.equal("")
+          expect(postJson.json.keywords).not.to.be.undefined
+          expect(postJson.json.keywords).not.to.equal("")
         })
 
         describe("schema test", () => {

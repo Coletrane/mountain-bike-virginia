@@ -1,4 +1,4 @@
-import { s3Banners, baseUrl } from "../../routes"
+import { s3Banners } from "../../routes"
 
 export const dragonsBackTshirt = {
   url: `/shop/dragons-back-tshirt`,

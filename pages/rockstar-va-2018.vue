@@ -144,10 +144,7 @@
   </div>
 </template>
 <script>
-import RideWithGps from "../components/Iframes/RideWithGps"
-
 import blogPost from "../mixins/blog-post"
-import RideWithGpsSwitcher from "../components/Iframes/RideWithGpsSwitcher"
 
 export default {
   name: "rockstar-va-2018",

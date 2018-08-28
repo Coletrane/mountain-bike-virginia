@@ -37,9 +37,11 @@ export default {
 .tile-override {
   width: 100% !important;
 }
+
 .tile-override + img {
   width: 100% !important;
 }
+
 .three img:nth-child(3n),
 .three img:nth-child(3n) + img {
   width: 50%;

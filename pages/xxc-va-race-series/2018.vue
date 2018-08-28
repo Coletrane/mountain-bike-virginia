@@ -14,7 +14,6 @@
 </template>
 <script>
 import MTBVAHeader from "../../components/Header/MTBVAHeader"
-import Banner from "../../components/Das/Banner"
 import Timeline from "../../components/Card/Timeline"
 
 import backgroundImage from "../../mixins/background-image"
@@ -28,7 +27,7 @@ export default {
   name: "xxcva-race-series-2018",
   components: {
     MTBVAHeader,
-    Banner,
+
     Timeline
   },
   mixins: [backgroundImage],

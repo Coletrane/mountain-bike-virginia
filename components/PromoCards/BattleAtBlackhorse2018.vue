@@ -15,9 +15,6 @@
   </post-card>
 </template>
 <script>
-
-
-
 import promoCard from "../../mixins/promo-card"
 
 export default {

@@ -3,9 +3,14 @@ import { s3Pages } from "../routes"
 
 export default {
   components: {
-    PostCard: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Card/PostCard"),
-    ImageLink: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Images/ImageLink"),
-    Youtube: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Iframes/Youtube")
+    PostCard: () =>
+      import(/*webpackChunkName:'promo-card-components'*/ "../components/Card/PostCard"),
+    ImageLink: () =>
+      import(/*webpackChunkName:'promo-card-components'*/ "../components/Images/ImageLink"),
+    Youtube: () =>
+      import(/*webpackChunkName:'promo-card-components'*/ "../components/Iframes/Youtube"),
+    Instagram: () =>
+      import(/*webpackChunkName:'promo-card-components'*/ "../components/Iframes/Instagram")
   },
   data() {
     const post = this.$store.getters.posts(this.componentRoute())

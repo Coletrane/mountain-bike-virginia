@@ -92,7 +92,8 @@
           <i>actually</i> makes you any safer, but that is not the position I am depicting. Despite the outcome of these
           arguments (absolutely nothing) the Varia <i>does</i> increase your <strong>awareness.</strong> An easy
           comparison to make is that the Varia is like a motor vehicle's backup camera. Yes, we have mirrors and a neck
-          that can spin around and look, but why refuse the aid of a sophisticated machine? (in the case of the backup cam you now can't according to
+          that can spin around and look, but why refuse the aid of a sophisticated machine? (in the case of the backup
+          cam you now can't according to
           the US federal government) Awareness, like safety is a never ending uphill battle. It is not a binary, black
           and white, "ok I'm certainly safe", issue that our brains try to make it.
         </p>
@@ -115,7 +116,8 @@
         screen.
       </p>
       <p>
-        As you can see from the pictures above and below, the dots representing cars have a tolerance that is higher than
+        As you can see from the pictures above and below, the dots representing cars have a tolerance that is higher
+        than
         one might expect. The dot on the screen is nearly as close as it possibly can be while the red Honda Ridgeline
         is a good 20 to 30 feet away. The radar's beam is 40 degrees to account for curves and corners.
       </p>
@@ -138,7 +140,8 @@
           because I tend to RTFM (read the fucking manual), have done some digging, and found that on the Edge 1000 (or
           possibly different Varia lights) there exists a <a
           href="https://www8.garmin.com/manuals/webhelp/variabikelights/EN-US/GUID-4BCC3315-68A2-42E4-8D74-A37ABFB2BFB4.html">motion
-          activated option, that turns the light on and off based on weather or not your Edge device is moving.</a> This option could be useful for, oh say, a mid ride beer or three. This option is not
+          activated option, that turns the light on and off based on weather or not your Edge device is moving.</a> This
+          option could be useful for, oh say, a mid ride beer or three. This option is not
           available on my particular setup, <i>but</i> there are plenty of great options here that I will highlight.
           (pun intended)
         </p>
@@ -149,7 +152,8 @@
         Here we have the light mode in auto, which is what I leave it in. Garmin really went the extra mile on this
         light by altering the light's intensity, not only by the time of day, but also including an ambient light sensor
         to further get you to an optimal lumen level. The ambient light sensor really ties the package together with the
-        <strong>Trail mode.</strong> Any mountain biker who has tried to find sunglass lenses that work in a range of light
+        <strong>Trail mode.</strong> Any mountain biker who has tried to find sunglass lenses that work in a range of
+        light
         levels from wide open, to lush foliage will see where I'm going with this. (and where I'm going on the trail) I
         would not have though I'd be using a radar tail light on my mountain bike, but here we all are. We are fortunate
         in Roanoke, VA to have trails that we can ride to from downtown, so this light complements the road sections,

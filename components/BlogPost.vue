@@ -24,7 +24,6 @@ import BlogPostCard from "./Card/BlogPostCard"
 import RideWithGps from "./Iframes/RideWithGps.vue"
 import SocialActions from "./Card/SocialActions.vue"
 import RelatedPosts from "./Card/RelatedPosts"
-import Banner from "./Das/Banner"
 
 import { s3StaticImg, s3Banners } from "../routes"
 
@@ -36,8 +35,7 @@ export default {
     BlogPostCard,
     RideWithGps,
     SocialActions,
-    RelatedPosts,
-    Banner
+    RelatedPosts
   },
   props: {
     image: {

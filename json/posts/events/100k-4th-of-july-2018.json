@@ -7,10 +7,7 @@
   "loc": "Ballast Point Brewery, Daleville, VA",
   "imgRoute": "P1000144.jpg",
   "keywords": "road, 100k, endurance, road biking, cycling, bike, virginia, daleville, craig county, clifton forge, fincastle, botetourt, endurance ride",
-  "relatedPosts": [
-    "events/roanoke-silver-ride-center",
-    "first-ride-2018"
-  ],
+  "relatedPosts": ["events/roanoke-silver-ride-center", "first-ride-2018"],
   "schema": {
     "type": "NewsArticle"
   }

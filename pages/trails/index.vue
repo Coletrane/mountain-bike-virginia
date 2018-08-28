@@ -8,20 +8,17 @@
   </div>
 </template>
 <script>
-import Banner from "../../components/Das/Banner"
 import Trailforks from "../../components/Iframes/Trailforks"
 
 import backgroundImage from "../../mixins/background-image"
 
 import { home } from "../../scripts/client/head-tags"
 import { headTags } from "../../scripts/client/functions"
-import { s3Pages } from "../../routes"
 import { dragonsBackTshirt } from "../../scripts/client/static-banners"
 
 export default {
   name: "trails",
   components: {
-    Banner,
     Trailforks
   },
   mixins: [backgroundImage],

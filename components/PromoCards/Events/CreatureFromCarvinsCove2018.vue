@@ -7,15 +7,15 @@
   </post-card>
 </template>
 <script>
-
-
 import Creature2018Info from "../../Temporary/Creature2018Info"
 
 import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "events-creature-from-carvins-cove-2018-promo",
-
+  components: {
+    Creature2018Info
+  },
   mixins: [promoCard]
 }
 </script>

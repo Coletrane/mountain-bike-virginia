@@ -23,9 +23,6 @@
   </div>
 </template>
 <script>
-import MTBVAHeader from "../components/Header/MTBVAHeader"
-import Banner from "../components/Das/Banner"
-import MTBVAFooter from "../components/Footer/MTBVAFooter"
 import AbstractPage from "../components/AbstractPage"
 
 import { home } from "../scripts/client/head-tags"
@@ -35,18 +32,16 @@ import { postsPerPage } from "../constants"
 import { dragonsBackTshirt } from "../scripts/client/static-banners"
 
 import backgroundImage from "../mixins/background-image"
+import global from "../mixins/global"
 
 const foliage = `${s3StaticImg}/foliage.jpg`
 
 export default {
   name: "index",
   components: {
-    MTBVAHeader,
-    Banner,
-    MTBVAFooter,
     AbstractPage
   },
-  mixins: [backgroundImage],
+  mixins: [backgroundImage, global],
   async asyncData(context) {
     return await context.store.dispatch("loadPage")
   },
