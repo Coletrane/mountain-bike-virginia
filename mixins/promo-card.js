@@ -2,6 +2,11 @@ import { postDirs } from "../constants"
 import { s3Pages } from "../routes"
 
 export default {
+  components: {
+    PostCard: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Card/PostCard"),
+    ImageLink: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Images/ImageLink"),
+    Youtube: () => import(/*webpackChunkName:'promo-card-components'*/"../components/Iframes/Youtube")
+  },
   data() {
     const post = this.$store.getters.posts(this.componentRoute())
     return {

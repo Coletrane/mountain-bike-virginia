@@ -18,17 +18,14 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../Card/PostCard"
-import ImageLink from "../Images/ImageLink"
+
+
 
 import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "middle-mt-momma-2018-promo",
-  components: {
-    ImageLink,
-    PostCard
-  },
+
   mixins: [promoCard]
 }
 </script>

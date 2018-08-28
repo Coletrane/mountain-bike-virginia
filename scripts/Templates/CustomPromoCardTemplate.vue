@@ -10,17 +10,10 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../../Card/PostCard"
-import ImageLink from "../..//Images/ImageLink"
-
 import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "",
-  components: {
-    PostCard,
-    ImageLink
-  },
   mixins: [promoCard]
 }
 </script>

@@ -18,19 +18,15 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../../Card/PostCard"
-import ImageLink from "../../Images/ImageLink"
+
+
 import PaymentMethods from "../../Images/PaymentMethods"
 
 import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "shop-dragons-back-tshirt-promo",
-  components: {
-    PostCard,
-    ImageLink,
-    PaymentMethods
-  },
+
   mixins: [promoCard]
 }
 </script>

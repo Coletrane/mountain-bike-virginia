@@ -19,7 +19,6 @@
 <script>
 import PaymentMethods from "../../components/Images/PaymentMethods"
 
-
 import { s3Pages } from "../../routes"
 
 import blogPost from "../../mixins/blog-post"
@@ -27,7 +26,7 @@ import blogPost from "../../mixins/blog-post"
 export default {
   name: "dragons-back-tshirt",
   components: {
-    PaymentMethods,
+    PaymentMethods
   },
   mixins: [blogPost],
   data() {

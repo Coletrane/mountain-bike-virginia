@@ -8,17 +8,14 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../../Card/PostCard"
-import ImageLink from "../../Images/ImageLink"
+
+
 
 import promoCard from "../../../mixins/promo-card"
 
 export default {
   name: "trails-dragons-back-promo",
-  components: {
-    PostCard,
-    ImageLink
-  },
+
   mixins: [promoCard]
 }
 </script>

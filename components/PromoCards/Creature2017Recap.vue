@@ -20,17 +20,14 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../Card/PostCard"
-import Youtube from "../Iframes/Youtube"
+
+
 
 import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "creature-2017-recap-promo",
-  components: {
-    PostCard,
-    Youtube
-  },
+
   mixins: [promoCard]
 }
 </script>

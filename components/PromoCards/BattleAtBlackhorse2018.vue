@@ -15,17 +15,14 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../Card/PostCard"
-import ImageLink from "../Images/ImageLink"
+
+
 
 import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "battle-at-blackhorse-2018-promo",
-  components: {
-    PostCard,
-    ImageLink
-  },
+
   mixins: [promoCard]
 }
 </script>

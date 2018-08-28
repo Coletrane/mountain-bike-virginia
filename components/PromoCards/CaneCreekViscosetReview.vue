@@ -13,17 +13,14 @@
   </post-card>
 </template>
 <script>
-import PostCard from "../Card/PostCard"
-import ImageLink from "../Images/ImageLink"
+
+
 
 import promoCard from "../../mixins/promo-card"
 
 export default {
   name: "cane-creek-viscoset-review-promo",
-  components: {
-    PostCard,
-    ImageLink
-  },
+
   mixins: [promoCard]
 }
 </script>
