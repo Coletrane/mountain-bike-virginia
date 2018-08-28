@@ -110,17 +110,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../components/BlogPost"
-import BlogImage from "../components/Images/BlogImage"
+
 
 import blogPost from "../mixins/blog-post"
 
 export default {
   name: "gravelocity-2018",
-  components: {
-    BlogPost,
-    BlogImage
-  },
   mixins: [blogPost]
 }
 </script>

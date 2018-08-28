@@ -17,10 +17,9 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import BlogImage from "../../components/Images/BlogImage"
+
 import PaymentMethods from "../../components/Images/PaymentMethods"
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
+
 
 import { s3Pages } from "../../routes"
 
@@ -29,10 +28,7 @@ import blogPost from "../../mixins/blog-post"
 export default {
   name: "dragons-back-tshirt",
   components: {
-    BlogImage,
-    BlogPost,
     PaymentMethods,
-    FontAwesomeIcon
   },
   mixins: [blogPost],
   data() {

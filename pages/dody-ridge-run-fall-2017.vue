@@ -10,17 +10,12 @@
   </div>
 </template>
 <script>
-import BlogPost from "../components/BlogPost.vue"
-import Youtube from "../components/Iframes/Youtube.vue"
+
 
 import blogPost from "../mixins/blog-post"
 
 export default {
   name: "dody-ridge-run-fall-2017",
-  components: {
-    BlogPost,
-    Youtube
-  },
   mixins: [blogPost]
 }
 </script>

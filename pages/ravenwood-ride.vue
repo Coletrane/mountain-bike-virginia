@@ -20,17 +20,12 @@
   </div>
 </template>
 <script>
-import BlogPost from "../components/BlogPost"
-import Youtube from "../components/Iframes/Youtube"
+
 
 import blogPost from "../mixins/blog-post"
 
 export default {
   name: "ravenwood-ride",
-  components: {
-    BlogPost,
-    Youtube
-  },
   mixins: [blogPost]
 }
 </script>

@@ -8,17 +8,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import Youtube from "../../components/Iframes/Youtube"
+
 
 import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "blue-ridge-trailheads-massanutten-hoo-ha-enduro",
-  components: {
-    BlogPost,
-    Youtube
-  },
   mixins: [blogPost]
 }
 </script>

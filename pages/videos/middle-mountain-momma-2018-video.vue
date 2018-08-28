@@ -18,17 +18,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import Youtube from "../../components/Iframes/Youtube"
+
 
 import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "middle-mountain-momma-2018-video",
-  components: {
-    BlogPost,
-    Youtube
-  },
   mixins: [blogPost]
 }
 </script>

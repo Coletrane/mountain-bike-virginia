@@ -32,17 +32,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../components/BlogPost.vue"
-import BlogImage from "../components/Images/BlogImage"
+
 
 import blogPost from "../mixins/blog-post"
 
 export default {
   name: "spec-mines-oct-29-2017",
-  components: {
-    BlogPost,
-    BlogImage
-  },
   mixins: [blogPost]
 }
 </script>

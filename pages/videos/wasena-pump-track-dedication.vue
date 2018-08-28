@@ -61,17 +61,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import Youtube from "../../components/Iframes/Youtube"
+
 
 import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "wasena-pump-track-dedication",
-  components: {
-    BlogPost,
-    Youtube
-  },
   mixins: [blogPost]
 }
 </script>

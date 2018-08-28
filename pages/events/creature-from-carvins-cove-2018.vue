@@ -8,8 +8,6 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import BlogImage from "../../components/Images/BlogImage"
 import Creature2018Info from "../../components/Temporary/Creature2018Info"
 
 import blogPost from "../../mixins/blog-post"
@@ -17,8 +15,6 @@ import blogPost from "../../mixins/blog-post"
 export default {
   name: "events-creature-from-carvins-cove-2018",
   components: {
-    BlogImage,
-    BlogPost,
     Creature2018Info
   },
   mixins: [blogPost]

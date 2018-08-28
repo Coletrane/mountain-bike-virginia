@@ -173,21 +173,14 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import BlogImage from "../../components/Images/BlogImage"
-import Quote from "../../components/Card/Quote"
-import MTBVAVideo from "../../components/Iframes/MTBVAVideo"
+
+
+
 
 import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "reviews-ibis-ripmo",
-  components: {
-    BlogImage,
-    BlogPost,
-    Quote,
-    MTBVAVideo
-  },
   mixins: [blogPost]
 }
 </script>

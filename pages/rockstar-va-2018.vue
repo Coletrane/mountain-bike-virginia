@@ -144,25 +144,16 @@
   </div>
 </template>
 <script>
-import BlogPost from "../components/BlogPost"
-import BlogImage from "../components/Images/BlogImage"
+
 import RideWithGps from "../components/Iframes/RideWithGps"
-import MTBVAVideo from "../components/Iframes/MTBVAVideo"
-import Quote from "../components/Card/Quote"
+
+
 
 import blogPost from "../mixins/blog-post"
 import RideWithGpsSwitcher from "../components/Iframes/RideWithGpsSwitcher"
 
 export default {
   name: "rockstar-va-2018",
-  components: {
-    RideWithGpsSwitcher,
-    RideWithGps,
-    MTBVAVideo,
-    Quote,
-    BlogImage,
-    BlogPost
-  },
   mixins: [blogPost]
 }
 </script>

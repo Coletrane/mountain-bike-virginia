@@ -282,26 +282,12 @@
   </blog-post>
 </template>
 <script>
-import BlogPost from "../../components/BlogPost"
-import BlogImage from "../../components/Images/BlogImage"
-import MTBVAVideo from "../../components/Iframes/MTBVAVideo"
-import Quote from "../../components/Card/Quote"
-import Tiles from "../../components/Images/Tiles"
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
 import faStrava from "@fortawesome/fontawesome-free-brands/faStrava"
 
 import blogPost from "../../mixins/blog-post"
 
 export default {
   name: "trails-dragons-back",
-  components: {
-    BlogImage,
-    BlogPost,
-    MTBVAVideo,
-    Quote,
-    Tiles,
-    FontAwesomeIcon
-  },
   mixins: [blogPost],
   data() {
     return {

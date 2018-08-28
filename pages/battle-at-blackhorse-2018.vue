@@ -93,17 +93,12 @@
   </div>
 </template>
 <script>
-import BlogPost from "../components/BlogPost"
-import BlogImage from "../components/Images/BlogImage"
+
 
 import blogPost from "../mixins/blog-post"
 
 export default {
   name: "battle-at-blackhorse-2018",
-  components: {
-    BlogImage,
-    BlogPost
-  },
   mixins: [blogPost]
 }
 </script>
