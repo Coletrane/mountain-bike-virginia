@@ -114,6 +114,16 @@ module.exports = {
   render: {
     static: {
       maxAge: 1000 * 60 * 60 * 24
+    },
+    bundleRenderer: {
+      // Don't prefetch every page
+      // TODO: this may change with Nuxt 2.0
+      shouldPrefetch: (file, type) => {
+        if (type === 'script' && routes.routes.find(route => route.includes(file))) {
+          return false
+        }
+        return true
+      }
     }
   },
   router: {

@@ -89,7 +89,6 @@ export default {
               bottomScrollPosition < arr[i + 1]
             const isLastPost = !arr[i + 1] && bottomScrollPosition > arr[i - 1]
             if (isMiddlePost || isLastPost) {
-              console.log(this.posts[i].title)
               document.title = this.posts[i].title
             }
           })
