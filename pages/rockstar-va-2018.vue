@@ -144,7 +144,6 @@
   </div>
 </template>
 <script>
-
 import RideWithGps from "../components/Iframes/RideWithGps"
 
 

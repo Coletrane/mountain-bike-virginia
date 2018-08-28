@@ -106,8 +106,6 @@
   </blog-post>
 </template>
 <script>
-
-
 import faBicycle from "@fortawesome/fontawesome-free-solid/faBicycle"
 import faFacebook from "@fortawesome/fontawesome-free-brands/faFacebook"
 

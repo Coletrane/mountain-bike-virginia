@@ -11,8 +11,6 @@
   </div>
 </template>
 <script>
-
-
 import blogPost from "../mixins/blog-post"
 
 export default {

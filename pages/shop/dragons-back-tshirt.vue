@@ -17,7 +17,6 @@
   </blog-post>
 </template>
 <script>
-
 import PaymentMethods from "../../components/Images/PaymentMethods"
 
 
